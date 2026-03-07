@@ -1,0 +1,521 @@
+[
+  {
+    "model": "WoodenCabin",
+    "pattern_desc": "Large Actor Placement@Centrally positioned cabin grounded on flat terrain",
+    "nodes": [
+      {
+        "type": "PCGGetLandscapeSettings@[0,0]",
+        "parameters": {}
+      },
+      {
+        "type": "PCGSurfaceSamplerSettings@[200,0]",
+        "parameters": {
+          "PointsPerSquaredMeter": 0.1,
+          "PointExtents": {
+            "X": 50,
+            "Y": 50,
+            "Z": 50
+          },
+          "Looseness": 1.0,
+          "PointSteepness": 0.5,
+          "Seed": 1699508531
+        }
+      },
+      {
+        "type": "PCGTransformPointsSettings@[400,0]",
+        "parameters": {
+          "OffsetMin": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "OffsetMax": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "RotationMin": {
+            "X": 0,
+            "Y": 0,
+            "Z": -180
+          },
+          "RotationMax": {
+            "X": 0,
+            "Y": 0,
+            "Z": 180
+          },
+          "bAbsoluteRotation": false,
+          "ScaleMin": {
+            "X": 1,
+            "Y": 1,
+            "Z": 1
+          },
+          "ScaleMax": {
+            "X": 1,
+            "Y": 1,
+            "Z": 1
+          },
+          "bRecomputeSeed": true
+        }
+      },
+      {
+        "type": "PCGSelectRandomPointsSettings@[600,0]",
+        "parameters": {
+          "SelectMode": "ByCount",
+          "NumPoints": 1,
+          "Seed": 1932468690
+        }
+      },
+      {
+        "type": "PCGBoundsModifierSettings@[800,0]",
+        "parameters": {
+          "BoundsMin": {
+            "X": -10,
+            "Y": -10,
+            "Z": -10
+          },
+          "BoundsMax": {
+            "X": 10,
+            "Y": 10,
+            "Z": 10
+          },
+          "ss": 0.0
+        }
+      },
+      {
+        "type": "PCGSelfPruningSettings@[1000,0]",
+        "parameters": {}
+      },
+      {
+        "type": "PCGSpawnActorSettings@[1200,0]",
+        "parameters": {
+          "TemplateActor": "AWoodenCabinInteractiveObject"
+        }
+      }
+    ],
+    "connections": [
+      "0.Out|1.Surface",
+      "1.Out|2.In",
+      "2.Out|3.In",
+      "3.Out|4.In",
+      "4.Out|5.In",
+      "5.Out|6.In"
+    ]
+  },
+  {
+    "model": "Campfire",
+    "pattern_desc": "Large Actor Placement@Precisely centered campfire aligned with cabin entrance",
+    "nodes": [
+      {
+        "type": "PCGGetLandscapeSettings@[0,200]",
+        "parameters": {}
+      },
+      {
+        "type": "PCGSurfaceSamplerSettings@[200,200]",
+        "parameters": {
+          "PointsPerSquaredMeter": 0.1,
+          "PointExtents": {
+            "X": 50.0,
+            "Y": 50.0,
+            "Z": 50.0
+          },
+          "Looseness": 1.0,
+          "PointSteepness": 0.5,
+          "Seed": 1122687728
+        }
+      },
+      {
+        "type": "PCGTransformPointsSettings@[400,200]",
+        "parameters": {
+          "OffsetMin": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "OffsetMax": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "RotationMin": {
+            "X": 0,
+            "Y": 0,
+            "Z": -5.0
+          },
+          "RotationMax": {
+            "X": 0,
+            "Y": 0,
+            "Z": 5.0
+          },
+          "ScaleMin": {
+            "X": 1.0,
+            "Y": 1.0,
+            "Z": 1.0
+          },
+          "ScaleMax": {
+            "X": 1.0,
+            "Y": 1.0,
+            "Z": 1.0
+          },
+          "bAbsoluteRotation": false,
+          "bRecomputeSeed": true
+        }
+      },
+      {
+        "type": "PCGSelectRandomPointsSettings@[600,200]",
+        "parameters": {
+          "SelectMode": "ByCount",
+          "NumPoints": 1,
+          "Seed": 44786978
+        }
+      },
+      {
+        "type": "PCGBoundsModifierSettings@[800,200]",
+        "parameters": {
+          "BoundsMin": {
+            "X": -10.0,
+            "Y": -10.0,
+            "Z": -10.0
+          },
+          "BoundsMax": {
+            "X": 10.0,
+            "Y": 10.0,
+            "Z": 10.0
+          },
+          "ss": 0.0
+        }
+      },
+      {
+        "type": "PCGSelfPruningSettings@[1000,200]",
+        "parameters": {}
+      },
+      {
+        "type": "PCGSpawnActorSettings@[1200,200]",
+        "parameters": {
+          "TemplateActor": "ACampfireInteractiveObject"
+        }
+      }
+    ],
+    "connections": [
+      "0.Out|1.In",
+      "1.Out|2.In",
+      "2.Out|3.In",
+      "3.Out|4.In",
+      "4.Out|5.In",
+      "5.Out|6.In"
+    ]
+  },
+  {
+    "model": "WoodenChest",
+    "pattern_desc": "Large Actor Placement@Anchored left-side chest near ferns/rocks",
+    "nodes": [
+      {
+        "type": "PCGGetLandscapeSettings@[0,400]",
+        "parameters": {}
+      },
+      {
+        "type": "PCGSurfaceSamplerSettings@[200,400]",
+        "parameters": {
+          "PointsPerSquaredMeter": 0.1,
+          "PointExtents": {
+            "X": 50.0,
+            "Y": 50.0,
+            "Z": 50.0
+          },
+          "Looseness": 1.0,
+          "PointSteepness": 0.5,
+          "Seed": 949896838
+        }
+      },
+      {
+        "type": "PCGTransformPointsSettings@[400,400]",
+        "parameters": {
+          "OffsetMin": {
+            "X": -10.0,
+            "Y": -10.0,
+            "Z": 0.0
+          },
+          "OffsetMax": {
+            "X": 10.0,
+            "Y": 10.0,
+            "Z": 0.0
+          },
+          "RotationMin": {
+            "X": 0,
+            "Y": 0,
+            "Z": -45.0
+          },
+          "RotationMax": {
+            "X": 0,
+            "Y": 0,
+            "Z": 45.0
+          },
+          "ScaleMin": {
+            "X": 0.9,
+            "Y": 0.9,
+            "Z": 0.9
+          },
+          "ScaleMax": {
+            "X": 1.1,
+            "Y": 1.1,
+            "Z": 1.1
+          },
+          "bAbsoluteRotation": false,
+          "bRecomputeSeed": true
+        }
+      },
+      {
+        "type": "PCGSelectRandomPointsSettings@[600,400]",
+        "parameters": {
+          "SelectMode": "ByCount",
+          "NumPoints": 1,
+          "Seed": 1743740169
+        }
+      },
+      {
+        "type": "PCGBoundsModifierSettings@[800,400]",
+        "parameters": {
+          "BoundsMin": {
+            "X": -200.0,
+            "Y": -200.0,
+            "Z": -100.0
+          },
+          "BoundsMax": {
+            "X": 200.0,
+            "Y": 200.0,
+            "Z": 100.0
+          },
+          "ss": 0.0
+        }
+      },
+      {
+        "type": "PCGSelfPruningSettings@[1000,400]",
+        "parameters": {}
+      },
+      {
+        "type": "PCGSpawnActorSettings@[1200,400]",
+        "parameters": {
+          "TemplateActor": "AWoodenChestInteractiveObject"
+        }
+      }
+    ],
+    "connections": [
+      "0.Out|1.In",
+      "1.Out|2.In",
+      "2.Out|3.In",
+      "3.Out|4.In",
+      "4.Out|5.In",
+      "5.Out|6.In"
+    ]
+  },
+  {
+    "model": "BirchTree",
+    "pattern_desc": "Large Actor Placement@Low-to-medium density perimeter trees aligned to terrain",
+    "nodes": [
+      {
+        "type": "PCGGetLandscapeSettings@[0,600]",
+        "parameters": {}
+      },
+      {
+        "type": "PCGSurfaceSamplerSettings@[200,600]",
+        "parameters": {
+          "PointsPerSquaredMeter": 0.05,
+          "PointExtents": {
+            "X": 50.0,
+            "Y": 50.0,
+            "Z": 50.0
+          },
+          "Looseness": 1.0,
+          "PointSteepness": 0.5,
+          "Seed": 1628212382
+        }
+      },
+      {
+        "type": "PCGTransformPointsSettings@[400,600]",
+        "parameters": {
+          "OffsetMin": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "OffsetMax": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "RotationMin": {
+            "X": 0,
+            "Y": 0,
+            "Z": -15.0
+          },
+          "RotationMax": {
+            "X": 0,
+            "Y": 0,
+            "Z": 15.0
+          },
+          "ScaleMin": {
+            "X": 1.0,
+            "Y": 1.0,
+            "Z": 1.0
+          },
+          "ScaleMax": {
+            "X": 1.0,
+            "Y": 1.0,
+            "Z": 1.0
+          },
+          "bAbsoluteRotation": false,
+          "bRecomputeSeed": true
+        }
+      },
+      {
+        "type": "PCGSelectRandomPointsSettings@[600,600]",
+        "parameters": {
+          "SelectMode": "ByRatio",
+          "Ratio": 0.3,
+          "Seed": 188451873
+        }
+      },
+      {
+        "type": "PCGBoundsModifierSettings@[800,600]",
+        "parameters": {
+          "BoundsMin": {
+            "X": -1000.0,
+            "Y": -1000.0,
+            "Z": 0.0
+          },
+          "BoundsMax": {
+            "X": 1000.0,
+            "Y": 1000.0,
+            "Z": 0.0
+          },
+          "ss": 0.0
+        }
+      },
+      {
+        "type": "PCGSelfPruningSettings@[1000,600]",
+        "parameters": {}
+      },
+      {
+        "type": "PCGSpawnActorSettings@[1200,600]",
+        "parameters": {
+          "TemplateActor": "ABirchTreeInteractiveObject"
+        }
+      }
+    ],
+    "connections": [
+      "0.Out|1.Surface",
+      "1.Out|2.In",
+      "2.Out|3.In",
+      "3.Out|4.In",
+      "4.Out|5.In",
+      "5.Out|6.In"
+    ]
+  },
+  {
+    "model": "GraniteRock",
+    "pattern_desc": "Large Actor Placement@Randomly distributed forest floor rocks varying in size/orientation",
+    "nodes": [
+      {
+        "type": "PCGGetLandscapeSettings@[0,800]",
+        "parameters": {}
+      },
+      {
+        "type": "PCGSurfaceSamplerSettings@[200,800]",
+        "parameters": {
+          "PointsPerSquaredMeter": 0.15,
+          "PointExtents": {
+            "X": 30.0,
+            "Y": 30.0,
+            "Z": 30.0
+          },
+          "Looseness": 1.0,
+          "PointSteepness": 0.5,
+          "Seed": 1258172737
+        }
+      },
+      {
+        "type": "PCGTransformPointsSettings@[400,800]",
+        "parameters": {
+          "OffsetMin": {
+            "X": -10.0,
+            "Y": -10.0,
+            "Z": 0.0
+          },
+          "OffsetMax": {
+            "X": 10.0,
+            "Y": 10.0,
+            "Z": 0.0
+          },
+          "RotationMin": {
+            "X": 0,
+            "Y": 0,
+            "Z": -45.0
+          },
+          "RotationMax": {
+            "X": 0,
+            "Y": 0,
+            "Z": 45.0
+          },
+          "ScaleMin": {
+            "X": 0.8,
+            "Y": 0.8,
+            "Z": 0.8
+          },
+          "ScaleMax": {
+            "X": 1.5,
+            "Y": 1.5,
+            "Z": 1.5
+          },
+          "bAbsoluteRotation": false,
+          "bRecomputeSeed": true
+        }
+      },
+      {
+        "type": "PCGSelectRandomPointsSettings@[600,800]",
+        "parameters": {
+          "SelectMode": "ByRatio",
+          "Ratio": 0.7,
+          "Seed": 1490660377
+        }
+      },
+      {
+        "type": "PCGBoundsModifierSettings@[800,800]",
+        "parameters": {
+          "BoundsMin": {
+            "X": -5.0,
+            "Y": -5.0,
+            "Z": -2.0
+          },
+          "BoundsMax": {
+            "X": 5.0,
+            "Y": 5.0,
+            "Z": 2.0
+          },
+          "ss": 0.0
+        }
+      },
+      {
+        "type": "PCGSelfPruningSettings@[1000,800]",
+        "parameters": {
+          "bEnable": true,
+          "MinDistance": 15.0,
+          "Seed": 1948178318
+        }
+      },
+      {
+        "type": "PCGSpawnActorSettings@[1200,800]",
+        "parameters": {
+          "TemplateActor": "AGraniteRockInteractiveObject"
+        }
+      }
+    ],
+    "connections": [
+      "0.Out|1.In",
+      "1.Out|2.In",
+      "2.Out|3.In",
+      "3.Out|4.In",
+      "4.Out|5.In",
+      "5.Out|6.In"
+    ]
+  }
+]

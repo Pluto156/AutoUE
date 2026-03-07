@@ -1,0 +1,44 @@
+{
+  "interactive_objects": [
+    {
+      "model_name": "WoodenCabin",
+      "interaction_summary": "Static architecture element serving as scene anchor; no direct player interaction or gameplay function.",
+      "linked_modules": [],
+      "interaction_flow": "TriggerInteract() → HandleInteraction() → (no module call; interaction ignored or returns early)",
+      "requires_battle_system": false,
+      "is_movable_ai_unit": false
+    },
+    {
+      "model_name": "Campfire",
+      "interaction_summary": "Player can interact to ignite it, activating flame visuals and triggering a quest-related event via QuestModule.",
+      "linked_modules": ["CampfireModule", "QuestModule"],
+      "interaction_flow": "TriggerInteract() → HandleInteraction() → FCampfireModule::InteractWithCampfire() → FQuestModule::TriggerEvent()",
+      "requires_battle_system": false,
+      "is_movable_ai_unit": false
+    },
+    {
+      "model_name": "WoodenChest",
+      "interaction_summary": "Player can open it to obtain loot items, which are added to inventory via InventoryModule.",
+      "linked_modules": ["ChestModule", "InventoryModule"],
+      "interaction_flow": "TriggerInteract() → HandleInteraction() → FChestModule::OpenChest() → FInventoryModule::AddItem()",
+      "requires_battle_system": false,
+      "is_movable_ai_unit": false
+    },
+    {
+      "model_name": "BirchTree",
+      "interaction_summary": "Non-interactive decorative nature element with no gameplay behavior or interaction logic.",
+      "linked_modules": [],
+      "interaction_flow": "TriggerInteract() → HandleInteraction() → (no module call; interaction ignored or returns early)",
+      "requires_battle_system": false,
+      "is_movable_ai_unit": false
+    },
+    {
+      "model_name": "GraniteRock",
+      "interaction_summary": "Non-interactive decorative nature element used for environmental dressing without functional interaction.",
+      "linked_modules": [],
+      "interaction_flow": "TriggerInteract() → HandleInteraction() → (no module call; interaction ignored or returns early)",
+      "requires_battle_system": false,
+      "is_movable_ai_unit": false
+    }
+  ]
+}

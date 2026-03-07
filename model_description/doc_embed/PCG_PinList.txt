@@ -1,0 +1,1131 @@
+[PCGAddComponentSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+    - TargetActor (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGAddTagSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGApplyHierarchySettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGApplyOnActorSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+    - Property Overrides (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGApplyScaleToBoundsSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGAttractSettings]
+  Input Pins:
+    - Source (EPCGDataType::Point)
+    - Target (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGAttributeCastSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGAttributeFilteringSettings]
+  Input Pins:
+    - In (EPCGDataType::PointOrParam)
+    - Filter (EPCGDataType::Any)
+  Output Pins:
+    - InsideFilter (EPCGDataType::PointOrParam)
+    - OutsideFilter (EPCGDataType::PointOrParam)
+
+[PCGAttributeFilteringRangeSettings]
+  Input Pins:
+    - In (EPCGDataType::PointOrParam)
+    - FilterMin (EPCGDataType::Any)
+    - FilterMax (EPCGDataType::Any)
+  Output Pins:
+    - InsideFilter (EPCGDataType::PointOrParam)
+    - OutsideFilter (EPCGDataType::PointOrParam)
+
+[PCGAttributeRemapSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGAttributeRemoveDuplicatesSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGCopyAttributesSettings]
+  Input Pins:
+    - Target (EPCGDataType::Any)
+    - Source (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGAttributeTransferSettings]
+  Input Pins:
+    - Target (EPCGDataType::Any)
+    - Source (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGBlurSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGBooleanSelectSettings]
+  Input Pins:
+    - Input A (EPCGDataType::Any)
+    - Input B (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGBoundsFromMeshSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+    - Attribute (EPCGDataType::Param)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGBranchSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Output A (EPCGDataType::Any)
+    - Output B (EPCGDataType::Any)
+
+[PCGCleanSplineSettings]
+  Input Pins:
+    - In (EPCGDataType::Spline)
+  Output Pins:
+    - Out (EPCGDataType::Spline)
+
+[PCGClusterSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+    - Initial Centroids (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGCollapsePointsSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGCombinePointsSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGConvexHull2DSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGCreatePointsSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGCreatePointsGridSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGCullPointsOutsideActorBoundsSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGDataAttributesToTagsSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGTagsToDataAttributesSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGLoadDataTableSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGDeleteAttributesSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGDeleteTagsSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGDistanceSettings]
+  Input Pins:
+    - Source (EPCGDataType::Point)
+    - Target (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGDuplicateCrossSectionsSettings]
+  Input Pins:
+    - In (EPCGDataType::Spline)
+  Output Pins:
+    - Out (EPCGDataType::Spline)
+
+[PCGDuplicatePointSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGBadOutputsNodeSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Spatial)
+
+[PCGElevationIsolinesSettings]
+  Input Pins:
+    - In (EPCGDataType::Surface)
+    - BoundingShape (EPCGDataType::Spatial)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGExportSelectedAttributesSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Execution Dependency (EPCGDataType::Any)
+
+[PCGFilterByAttributeSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - InsideFilter (EPCGDataType::Any)
+    - OutsideFilter (EPCGDataType::Any)
+
+[PCGFilterElementsByIndexSettings]
+  Input Pins:
+    - In (EPCGDataType::PointOrParam)
+    - Filter (EPCGDataType::PointOrParam)
+  Output Pins:
+    - In Filter (EPCGDataType::PointOrParam)
+
+[PCGGatherSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGGetActorDataLayersSettings]
+  Input Pins:
+    - In (EPCGDataType::PointOrParam)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGGetActorPropertySettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGGetBoundsSettings]
+  Input Pins:
+    - In (EPCGDataType::Spatial)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGGetPropertyFromObjectPathSettings]
+  Input Pins:
+    - In (EPCGDataType::Param)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGGetSplineControlPointsSettings]
+  Input Pins:
+    - In (EPCGDataType::PolyLine)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGGraphAuthoringTestHelperSettings]
+  Input Pins:
+    - In (EPCGDataType::None)
+  Output Pins:
+    - Out (EPCGDataType::None)
+
+[PCGHashAttributeSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGHiGenGridSizeSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+    - Grid Cell Volume (EPCGDataType::Spatial)
+
+[PCGLoadDataAssetSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Spatial)
+
+[PCGMakeConcreteSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Concrete)
+
+[PCGMetadataOperationSettings]
+  Input Pins:
+    - Target (EPCGDataType::Any)
+    - Source (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGMetadataMakeRotatorSettings]
+  Input Pins:
+    - Forward (EPCGDataType::Any)
+    - Right (EPCGDataType::Any)
+    - Up (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGMultiSelectSettings]
+  Input Pins:
+    - 0 (EPCGDataType::Any)
+    - Default (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGMutateSeedSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGNormalToDensitySettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGNumberOfPointsSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGNumberOfEntriesSettings]
+  Input Pins:
+    - In (EPCGDataType::Param)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGOuterIntersectionSettings]
+  Input Pins:
+    - Primary Source (EPCGDataType::Spatial)
+    - Source1 (EPCGDataType::Spatial)
+  Output Pins:
+    - Out (EPCGDataType::Spatial)
+
+[PCGParseStringSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGPartitionByActorDataLayersSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+    - DataLayerPartitions (EPCGDataType::Param)
+
+[PCGPathfindingSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Spline)
+
+[PCGPointNeighborhoodSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGPrintElementSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGPrintGrammarSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Description (EPCGDataType::Param)
+
+[PCGQualityBranchSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Default (EPCGDataType::Any)
+
+[PCGQualitySelectSettings]
+  Input Pins:
+    - Default (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGRandomChoiceSettings]
+  Input Pins:
+    - In (EPCGDataType::PointOrParam)
+  Output Pins:
+    - Chosen (EPCGDataType::PointOrParam)
+    - Discarded (EPCGDataType::PointOrParam)
+
+[PCGRemoveEmptyDataSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGReplaceTagsSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGRerouteSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGNamedRerouteBaseSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGNamedRerouteDeclarationSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+    - InvisiblePin (EPCGDataType::Any)
+
+[PCGNamedRerouteUsageSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGResetPointCenterSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGSampleTextureSettings]
+  Input Pins:
+    - Point (EPCGDataType::Point)
+    - BaseTexture (EPCGDataType::BaseTexture)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGSanityCheckPointDataSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGSaveDataAssetSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins: (None)
+
+[PCGSelectGrammarSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGSortAttributesSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGSortTagsSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGSpawnSplineSettings]
+  Input Pins:
+    - In (EPCGDataType::Spline)
+  Output Pins:
+    - Out (EPCGDataType::Spline)
+
+[PCGSpawnSplineMeshSettings]
+  Input Pins:
+    - In (EPCGDataType::PolyLine)
+  Output Pins:
+    - Out (EPCGDataType::PolyLine)
+
+[PCGReverseSplineSettings]
+  Input Pins:
+    - In (EPCGDataType::Spline)
+  Output Pins:
+    - Out (EPCGDataType::Spline)
+
+[PCGSplineToSegmentSettings]
+  Input Pins:
+    - In (EPCGDataType::Spline)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGSplitPointsSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Before Split (EPCGDataType::Point)
+    - After Split (EPCGDataType::Point)
+
+[PCGSubdivideSegmentSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGSubdivideSplineSettings]
+  Input Pins:
+    - In (EPCGDataType::PolyLine)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGSwitchSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - 0 (EPCGDataType::Any)
+    - Default (EPCGDataType::Any)
+
+[PCGUserParameterGetSettings]
+  Input Pins: (None)
+  Output Pins:
+    - None (EPCGDataType::Param)
+
+[PCGGenericUserParameterGetSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGVisualizeAttributeSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGWaitSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Execution Dependency (EPCGDataType::Any)
+
+[PCGWaitLandscapeReadySettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGComputeGraphSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Spatial)
+
+[PCGCustomHLSLSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGMetadataBitwiseSettings]
+  Input Pins:
+    - InA (EPCGDataType::Any)
+    - InB (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGMetadataBooleanSettings]
+  Input Pins:
+    - InA (EPCGDataType::Any)
+    - InB (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGMetadataBreakTransformSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Translation (EPCGDataType::Any)
+    - Rotation (EPCGDataType::Any)
+    - Scale (EPCGDataType::Any)
+
+[PCGMetadataBreakVectorSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - X (EPCGDataType::Any)
+    - Y (EPCGDataType::Any)
+    - Z (EPCGDataType::Any)
+    - W (EPCGDataType::Any)
+
+[PCGMetadataCompareSettings]
+  Input Pins:
+    - InA (EPCGDataType::Any)
+    - InB (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGMetadataMakeTransformSettings]
+  Input Pins:
+    - Translation (EPCGDataType::Any)
+    - Rotation (EPCGDataType::Any)
+    - Scale (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGMetadataMakeVectorSettings]
+  Input Pins:
+    - X (EPCGDataType::Any)
+    - Y (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGMetadataMathsSettings]
+  Input Pins:
+    - InA (EPCGDataType::Any)
+    - InB (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGMetadataPartitionSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGMetadataRenameSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGMetadataRotatorSettings]
+  Input Pins:
+    - InA (EPCGDataType::Any)
+    - InB (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGMetadataStringOpSettings]
+  Input Pins:
+    - InA (EPCGDataType::Any)
+    - InB (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGMetadataTransformSettings]
+  Input Pins:
+    - InA (EPCGDataType::Any)
+    - InB (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGMetadataTrigSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGMetadataVectorSettings]
+  Input Pins:
+    - InA (EPCGDataType::Any)
+    - InB (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGAttributeGetFromIndexSettings]
+  Input Pins:
+    - In (EPCGDataType::Param)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGAttributeGetFromPointIndexSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Attribute (EPCGDataType::Param)
+    - Point (EPCGDataType::Point)
+
+[PCGAttributeNoiseSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGAttributeReduceSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGAttributeSelectSettings]
+  Input Pins:
+    - In (EPCGDataType::Spatial)
+  Output Pins:
+    - Attribute (EPCGDataType::Param)
+    - Point (EPCGDataType::Point)
+
+[PCGBoundsModifierSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGCollapseSettings]
+  Input Pins:
+    - In (EPCGDataType::Spatial)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGConvertToPointDataSettings]
+  Input Pins:
+    - In (EPCGDataType::Param)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGConvertToAttributeSetSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGTagsToAttributeSetSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGCopyPointsSettings]
+  Input Pins:
+    - Source (EPCGDataType::Point)
+    - Target (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGAddAttributeSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+    - Attributes (EPCGDataType::Param)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGCreateAttributeSetSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGCreateCollisionDataSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Primitive)
+
+[PCGCreatePointsSphereSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGCreateSplineSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Spline)
+
+[PCGCreateSurfaceFromSplineSettings]
+  Input Pins:
+    - In (EPCGDataType::Spline)
+  Output Pins:
+    - Out (EPCGDataType::Surface)
+
+[PCGCreateTargetActor]
+  Input Pins:
+    - Property Overrides (EPCGDataType::Param)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGDataFromActorSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Spatial)
+
+[PCGDataNumSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGDataTableRowToParamDataSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGDebugSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins: (None)
+
+[PCGDensityFilterSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGDensityRemapSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGDifferenceSettings]
+  Input Pins:
+    - Source (EPCGDataType::Spatial)
+    - Differences (EPCGDataType::Spatial)
+  Output Pins:
+    - Out (EPCGDataType::Spatial)
+
+[PCGBlueprintSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Spatial)
+
+[PCGFilterByIndexSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - InsideFilter (EPCGDataType::Any)
+    - OutsideFilter (EPCGDataType::Any)
+
+[PCGFilterByTagSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - InsideFilter (EPCGDataType::Any)
+    - OutsideFilter (EPCGDataType::Any)
+
+[PCGFilterByTypeSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - InsideFilter (EPCGDataType::Any)
+
+[PCGGenerateGrassMapsSettings]
+  Input Pins:
+    - Landscape (EPCGDataType::Landscape)
+  Output Pins:
+    - Out (EPCGDataType::Texture)
+
+[PCGGenerateSeedSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGGetConsoleVariableSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGGetTagsSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGGetAttributesSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGGetExecutionContextSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGGetLoopIndexSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGGetResourcePath]
+  Input Pins:
+    - In (EPCGDataType::StaticMeshResource)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGGetStaticMeshResourceDataSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::StaticMeshResource)
+
+[PCGGetSubgraphDepthSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGIndirectionSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Spatial)
+
+[PCGInnerIntersectionSettings]
+  Input Pins:
+    - In (EPCGDataType::Spatial)
+  Output Pins:
+    - Out (EPCGDataType::Spatial)
+
+[PCGSubgraphSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGLoopSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGMatchAndSetAttributesSettings]
+  Input Pins:
+    - In (EPCGDataType::PointOrParam)
+    - Match Data (EPCGDataType::Param)
+  Output Pins:
+    - Out (EPCGDataType::PointOrParam)
+
+[PCGMergeAttributesSettings]
+  Input Pins:
+    - In (EPCGDataType::Param)
+  Output Pins:
+    - Out (EPCGDataType::Param)
+
+[PCGMergeSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGPointExtentsModifierSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGPointFromMeshSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGPointMatchAndSetSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGProjectionSettings]
+  Input Pins:
+    - In (EPCGDataType::Concrete)
+    - Projection Target (EPCGDataType::Concrete)
+  Output Pins:
+    - Out (EPCGDataType::Spatial)
+
+[PCGSelectPointsSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGSelfPruningSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGSkinnedMeshSpawnerSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGSpatialNoiseSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGSpawnActorSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGSplineSamplerSettings]
+  Input Pins:
+    - Spline (EPCGDataType::PolyLine)
+    - Bounding Shape (EPCGDataType::Spatial)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGStaticMeshSpawnerSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGSurfaceSamplerSettings]
+  Input Pins:
+    - Surface (EPCGDataType::Surface)
+    - Bounding Shape (EPCGDataType::Spatial)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGTextureSamplerSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::BaseTexture)
+
+[PCGTransformPointsSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGGetLandscapeSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Landscape)
+
+[PCGGetSplineSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::PolyLine)
+
+[PCGGetVolumeSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Volume)
+
+[PCGGetPrimitiveSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Primitive)
+
+[PCGGetPCGComponentSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Any)
+
+[PCGGetVirtualTextureSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::VirtualTexture)
+
+[PCGUnionSettings]
+  Input Pins:
+    - In (EPCGDataType::Spatial)
+  Output Pins:
+    - Out (EPCGDataType::Spatial)
+
+[PCGVolumeSamplerSettings]
+  Input Pins:
+    - Volume (EPCGDataType::Spatial)
+    - Bounding Shape (EPCGDataType::Spatial)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGWorldQuerySettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Volume)
+
+[PCGWorldRayHitSettings]
+  Input Pins: (None)
+  Output Pins:
+    - Out (EPCGDataType::Surface)
+
+[PCGWorldRaycastElementSettings]
+  Input Pins:
+    - Origins (EPCGDataType::PointOrParam)
+    - Bounding Shape (EPCGDataType::Spatial)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+
+[PCGGridLinkageSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Spatial)
+
+[PCGGraphInputOutputSettings]
+  Input Pins: (None)
+  Output Pins: (None)
+
+[PCGTrivialSettings]
+  Input Pins:
+    - In (EPCGDataType::Any)
+  Output Pins:
+    - Out (EPCGDataType::Spatial)
+
+[PCGSelectRandomPointsSettings]
+  Input Pins:
+    - In (EPCGDataType::Point)
+  Output Pins:
+    - Out (EPCGDataType::Point)
+

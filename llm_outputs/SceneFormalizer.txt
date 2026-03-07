@@ -1,0 +1,19 @@
+{
+  "scene_name": "Forest Cabin Clearing",
+  "theme": "forest campsite",
+  "style": "realistic",
+  "environment": {
+    "terrain_type": "forest",
+    "climate": "clear day",
+    "lighting": "midday natural lighting"
+  },
+  "main_elements": [
+    "central wooden cabin",
+    "decorative trees (birch, pine, ferns)",
+    "scattered natural rocks",
+    "campfire at clearing center",
+    "wooden chest on left side of camp",
+    "perimeter path for patrolling"
+  ],
+  "mood": "tense yet serene — peaceful forest ambiance subtly underscored by vigilance and latent threat"
+}

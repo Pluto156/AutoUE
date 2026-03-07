@@ -1,0 +1,39 @@
+{
+  "models": [
+    {
+      "name": "WoodenCabin",
+      "category": "Architecture",
+      "placement_method": "point_placement",
+      "placement_description": "Centrally positioned in the clearing, oriented with main entrance facing campfire, grounded on flat terrain.",
+      "prompt_for_embedding": "Wooden cabin, log construction, rustic roof, forest setting, midday lighting, realistic timber texture, small windows"
+    },
+    {
+      "name": "Campfire",
+      "category": "Furniture & Home",
+      "placement_method": "point_placement",
+      "placement_description": "Precisely at the geometric center of the clearing, on bare earth or shallow ash bed, aligned with cabin entrance.",
+      "prompt_for_embedding": "Campfire, realistic burning logs, glowing embers, smoke wisps, circular stone ring, outdoor forest setting, midday ambient light"
+    },
+    {
+      "name": "WoodenChest",
+      "category": "Furniture & Home",
+      "placement_method": "anchored_to_feature",
+      "placement_description": "Placed on left side of cabin (player’s perspective when facing cabin), resting on ground near ferns or low rocks.",
+      "prompt_for_embedding": "Wooden chest, latched lid, weathered pine planks, iron hinges, forest floor placement, realistic grain and scratches"
+    },
+    {
+      "name": "BirchTree",
+      "category": "Nature & Plants",
+      "placement_method": "surface_sampling",
+      "placement_description": "Scattered around clearing perimeter at low-to-medium density, leaning slightly for natural variation, aligned to terrain normals.",
+      "prompt_for_embedding": "Birch tree, white peeling bark, slender trunk, sparse green foliage, forest edge, realistic texture, midday lighting"
+    },
+    {
+      "name": "GraniteRock",
+      "category": "Nature & Plants",
+      "placement_method": "surface_sampling",
+      "placement_description": "Randomly distributed across forest floor near cabin base and along perimeter path, varying in size and orientation.",
+      "prompt_for_embedding": "Granite rock, gray mottled surface, weathered texture, irregular shape, natural forest ground placement, realistic lighting and shading"
+    }
+  ]
+}

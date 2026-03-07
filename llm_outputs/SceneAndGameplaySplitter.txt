@@ -1,0 +1,4 @@
+{
+  "scene_description": "A small forest clearing featuring a central wooden cabin, surrounded by decorative trees and rocks. Interactive objects include a chest on the left side of the camp, a campfire at the center, and an EnemyGuard patrolling the outer perimeter. The environment supports free player movement and proximity-based interactions.",
+  "gameplay_description": "The player can move freely around the clearing to approach interactive objects. Core gameplay actions include opening the chest to collect items (integrated with InventoryModule) and lighting the campfire to trigger a quest-related event (handled by QuestModule). An EnemyGuard patrols nearby and initiates combat upon player approach, adding a light threat layer to exploration."
+}

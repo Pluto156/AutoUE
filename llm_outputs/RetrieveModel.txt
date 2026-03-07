@@ -1,0 +1,24 @@
+{
+  "selected_models": [
+    {
+      "model_name": "WoodenCabin",
+      "selected_uid": "model_uid_1"
+    },
+    {
+      "model_name": "Campfire",
+      "selected_uid": "model_uid_4"
+    },
+    {
+      "model_name": "WoodenChest",
+      "selected_uid": "model_uid_3"
+    },
+    {
+      "model_name": "BirchTree",
+      "selected_uid": "model_uid_2"
+    },
+    {
+      "model_name": "GraniteRock",
+      "selected_uid": "model_uid_5"
+    }
+  ]
+}

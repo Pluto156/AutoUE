@@ -1,0 +1,26 @@
+{
+  "game_concept": "A narrative-driven exploration loop in a static clearing where players interact with environmental objects (chest, campfire) to progress quests and manage inventory, while navigating light tension from a patrolling enemy that triggers pre-existing combat logic.",
+  "core_modules": [
+    {
+      "module_name": "ChestModule",
+      "purpose": "Handles chest interaction: checks lock state, plays opening animation, spawns loot, and delegates item collection to InventoryModule.",
+      "interaction_usage": "Called from HandleInteraction() when the interactive object is a chest; validates player proximity and interaction conditions before invoking InventoryModule::AddItems().",
+      "key_classes": ["FChestModule", "UChestData"],
+      "dependencies": []
+    },
+    {
+      "module_name": "CampfireModule",
+      "purpose": "Manages campfire ignition state, visual feedback (flame activation), and quest event triggering (e.g., marking quest step complete or spawning quest NPC).",
+      "interaction_usage": "Called from HandleInteraction() when the interactive object is a campfire; toggles ignited state and calls QuestModule::TriggerEvent() with the associated quest ID.",
+      "key_classes": ["FCampfireModule", "UCampfireStateComponent"],
+      "dependencies": ["ChestModule"]
+    },
+    {
+      "module_name": "PatrolAwarenessModule",
+      "purpose": "Monitors player proximity to EnemyGuard patrol paths and emits contextual awareness signals (e.g., guard pauses, turns, or enters alert state) — *without* initiating combat (handled externally by BattleModule).",
+      "interaction_usage": "Not invoked from HandleInteraction(); instead, runs continuously via tick or overlap events. However, it is *required* for the described threat layer and must be initialized/registered during world setup — included here as a core gameplay module because it directly enables the 'light threat layer' behavior specified in the gameplay description.",
+      "key_classes": ["FPatrolAwarenessModule", "UEnemyGuardAwarenessComponent"],
+      "dependencies": ["ChestModule", "CampfireModule"]
+    }
+  ]
+}
