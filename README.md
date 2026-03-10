@@ -23,6 +23,8 @@ The system decomposes a game description into:
 
 These are processed by five coordinated agents.
 
+All benchmark data, including 20 generated demo games, model embedding index vectors, and experimental data, as well as associated 3D assets used in our experiments, are publicly available at: [AutoUE_DataSet](https://huggingface.co/datasets/Pluto156/AutoUE_DataSet)
+
 ---
 
 # Setup and Usage
