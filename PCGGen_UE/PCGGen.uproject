@@ -1,0 +1,28 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "5.6",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "PCGGen",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+    {
+        "Name": "ModelingToolsEditorMode",
+        "Enabled": true,
+        "TargetAllowList": ["Editor"]
+    },
+    {
+        "Name": "LLMHttpServer",
+        "Enabled": true
+    },
+    {
+        "Name": "PCG",
+        "Enabled": true
+    }
+	]
+}

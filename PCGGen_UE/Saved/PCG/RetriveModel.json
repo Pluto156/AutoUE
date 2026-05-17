@@ -1,0 +1,32 @@
+{
+  "selected_models": [
+    {
+      "model_name": "WoodenCabin",
+      "selected_uid": "2e171641298f46629c0db73728540109"
+    },
+    {
+      "model_name": "Chest",
+      "selected_uid": "5c1b991c9e474ff69be1f51300c98226"
+    },
+    {
+      "model_name": "Campfire",
+      "selected_uid": "baab3d0269464566b4bfb92204647257"
+    },
+    {
+      "model_name": "EnemyGuard",
+      "selected_uid": "cd278ee381344183b870cfc190f9b540"
+    },
+    {
+      "model_name": "ForestTrees",
+      "selected_uid": "40da979cb23f492583ec89c4196cff4e"
+    },
+    {
+      "model_name": "Rocks",
+      "selected_uid": "5a0ecd41663c4072abb224806151f7cb"
+    },
+    {
+      "model_name": "GroundVegetation",
+      "selected_uid": "81317d6bbe0244acad3de44046d077df"
+    }
+  ]
+}

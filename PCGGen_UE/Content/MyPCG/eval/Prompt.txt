@@ -1,0 +1,14 @@
+【Scene Description】
+The game takes place in a small forest clearing. At the center of the scene stands a wooden cabin, with several interactive objects distributed around it:
+Chest: Placed on the left side of the camp. It can be opened to obtain items.
+Campfire: Located at the center of the camp. It can be lit or extinguished.
+EnemyGuard: Patrols around the outer area of the camp and will enter a combat state when the player approaches.
+The surrounding area contains non-interactive decorative elements such as trees and rocks. The player character can move freely, and interaction actions can be performed when approaching interactive objects.
+【Gameplay Description】
+The player’s objective is to complete a series of basic interaction tasks within the forest camp. The core gameplay includes:
+Movement
+The player can move freely to any interactive object in the scene.
+Open Chest (Chest)
+When the player approaches the chest, an interaction action can be performed to add the items inside the chest to the inventory (InventoryModule).
+Light Campfire (Campfire)
+When the player moves near the campfire and interacts with it, the campfire can be lit, triggering a small quest-related event (QuestModule).

@@ -1,0 +1,61 @@
+
+{
+  "interactive_objects": [
+    {
+      "model_name": "WoodenCabin",
+      "interaction_summary": "The player can approach and potentially enter the cabin, though it may serve primarily as a backdrop or shelter.",
+      "linked_modules": [],
+      "interaction_flow": "TriggerInteract() → HandleInteraction() → (No direct module call, may trigger a simple animation or sound)",
+      "requires_battle_system": false,
+      "is_movable_ai_unit": false
+    },
+    {
+      "model_name": "Chest",
+      "interaction_summary": "The player can open the chest to obtain items which are added to the inventory.",
+      "linked_modules": ["InventoryModule"],
+      "interaction_flow": "TriggerInteract() → HandleInteraction() → FInventoryModule::AddItemFromChest()",
+      "requires_battle_system": false,
+      "is_movable_ai_unit": false
+    },
+    {
+      "model_name": "Campfire",
+      "interaction_summary": "The player can light the campfire, triggering quest progression and environmental effects.",
+      "linked_modules": ["QuestModule", "EnvironmentModule"],
+      "interaction_flow": "TriggerInteract() → HandleInteraction() → FQuestModule::UpdateQuestFromCampfire() and FEnvironmentModule::ActivateCampfire()",
+      "requires_battle_system": false,
+      "is_movable_ai_unit": false
+    },
+    {
+      "model_name": "EnemyGuard",
+      "interaction_summary": "A hostile unit that patrols the camp perimeter and will attack the player when detected.",
+      "linked_modules": [],
+      "interaction_flow": "TriggerInteract() → HandleInteraction() → (Initiates combat, likely calls a battle system interface)",
+      "requires_battle_system": true,
+      "is_movable_ai_unit": true
+    },
+    {
+      "model_name": "ForestTrees",
+      "interaction_summary": "Non-interactive environmental elements that form the forest border.",
+      "linked_modules": [],
+      "interaction_flow": "TriggerInteract() → HandleInteraction() → (No interaction, object is static scenery)",
+      "requires_battle_system": false,
+      "is_movable_ai_unit": false
+    },
+    {
+      "model_name": "Rocks",
+      "interaction_summary": "Non-interactive environmental scatter objects that add to the natural setting.",
+      "linked_modules": [],
+      "interaction_flow": "TriggerInteract() → HandleInteraction() → (No interaction, object is static scenery)",
+      "requires_battle_system": false,
+      "is_movable_ai_unit": false
+    },
+    {
+      "model_name": "GroundVegetation",
+      "interaction_summary": "Non-interactive ground cover that completes the forest floor aesthetic.",
+      "linked_modules": [],
+      "interaction_flow": "TriggerInteract() → HandleInteraction() → (No interaction, object is static scenery)",
+      "requires_battle_system": false,
+      "is_movable_ai_unit": false
+    }
+  ]
+}

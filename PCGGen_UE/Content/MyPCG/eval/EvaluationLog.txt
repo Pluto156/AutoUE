@@ -1,0 +1,4 @@
+BP_GroundVegetationInteractiveObject_C_UAID_B025AA71C86BB4C402_1146523220 was interacted by MyInteractiveCharacter_C_0 (default logic).
+[GroundVegetationInteractiveObject] BP_GroundVegetationInteractiveObject_C_UAID_B025AA71C86BB4C402_1146523220 was interacted with by MyInteractiveCharacter_C_0, but is non-interactive.
+BP_ForestTreesInteractiveObject_C_UAID_B025AA71C86BB4C402_1146580234 was interacted by MyInteractiveCharacter_C_0 (default logic).
+[ForestTreesInteractiveObject] BP_ForestTreesInteractiveObject_C_UAID_B025AA71C86BB4C402_1146580234 was interacted with by MyInteractiveCharacter_C_0, but is non-interactive.

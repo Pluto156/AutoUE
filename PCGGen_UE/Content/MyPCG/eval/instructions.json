@@ -1,0 +1,88 @@
+{
+    "evaluation_instructions": [
+        {
+            "step_id": 1,
+            "action": "move_to",
+            "target": "WoodenCabinInteractiveObject",
+            "description": "The AI moves near the object"
+        },
+        {
+            "step_id": 2,
+            "action": "interact",
+            "target": "WoodenCabinInteractiveObject",
+            "description": "The AI interacts with the object"
+        },
+        {
+            "step_id": 3,
+            "action": "move_to",
+            "target": "ChestInteractiveObject",
+            "description": "The AI moves near the object"
+        },
+        {
+            "step_id": 4,
+            "action": "interact",
+            "target": "ChestInteractiveObject",
+            "description": "The AI interacts with the object"
+        },
+        {
+            "step_id": 5,
+            "action": "move_to",
+            "target": "CampfireInteractiveObject",
+            "description": "The AI moves near the object"
+        },
+        {
+            "step_id": 6,
+            "action": "interact",
+            "target": "CampfireInteractiveObject",
+            "description": "The AI interacts with the object"
+        },
+        {
+            "step_id": 7,
+            "action": "move_to",
+            "target": "EnemyGuardInteractiveObject",
+            "description": "The AI moves near the object"
+        },
+        {
+            "step_id": 8,
+            "action": "interact",
+            "target": "EnemyGuardInteractiveObject",
+            "description": "The AI interacts with the object"
+        },
+        {
+            "step_id": 9,
+            "action": "move_to",
+            "target": "ForestTreesInteractiveObject",
+            "description": "The AI moves near the object"
+        },
+        {
+            "step_id": 10,
+            "action": "interact",
+            "target": "ForestTreesInteractiveObject",
+            "description": "The AI interacts with the object"
+        },
+        {
+            "step_id": 11,
+            "action": "move_to",
+            "target": "RocksInteractiveObject",
+            "description": "The AI moves near the object"
+        },
+        {
+            "step_id": 12,
+            "action": "interact",
+            "target": "RocksInteractiveObject",
+            "description": "The AI interacts with the object"
+        },
+        {
+            "step_id": 13,
+            "action": "move_to",
+            "target": "GroundVegetationInteractiveObject",
+            "description": "The AI moves near the object"
+        },
+        {
+            "step_id": 14,
+            "action": "interact",
+            "target": "GroundVegetationInteractiveObject",
+            "description": "The AI interacts with the object"
+        }
+    ]
+}
