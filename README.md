@@ -6,6 +6,14 @@ This repository contains the anonymous implementation accompanying our paper sub
 
 ---
 
+# Demo Video
+
+<video src="https://raw.githubusercontent.com/Pluto156/AutoUE/main/assets/show.mp4" controls="controls" width="100%" style="max-width: 960px;">
+  Your browser does not support the video tag.
+</video>
+
+---
+
 # Overview
 
 Automatically generating a complete 3D game inside a commercial engine is a complex workflow problem. It requires:
