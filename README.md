@@ -8,7 +8,7 @@ This repository contains the anonymous implementation accompanying our paper sub
 
 # Demo Video
 
-[![AutoUE Demo](assets/preview.png)](https://www.bilibili.com/video/BV1oALp6YEvr/)
+[![AutoUE Demo](assets/preview.png)](https://www.bilibili.com/video/BV1bqLH6HEqF/)
 
 Click the image above to watch the full demo video.
 
