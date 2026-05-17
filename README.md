@@ -12,6 +12,8 @@ This repository contains the anonymous implementation accompanying our paper sub
   Your browser does not support the video tag.
 </video>
 
+Full video on Bilibili: [AutoUE Demo](https://www.bilibili.com/video/BV1oALp6YEvr/)
+
 ---
 
 # Overview
