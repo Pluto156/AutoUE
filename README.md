@@ -8,11 +8,13 @@ This repository contains the anonymous implementation accompanying our paper sub
 
 # Demo Video
 
-<video src="https://raw.githubusercontent.com/Pluto156/AutoUE/main/assets/show.mp4" controls="controls" width="100%" style="max-width: 960px;">
-  Your browser does not support the video tag.
-</video>
+[![AutoUE Demo](assets/preview.png)](https://www.bilibili.com/video/BV1oALp6YEvr/)
 
-Full video on Bilibili: [AutoUE Demo](https://www.bilibili.com/video/BV1oALp6YEvr/)
+Click the image above to watch the full demo video.
+
+You can also directly download the demo video here:
+
+- [show.mp4](assets/show.mp4)
 
 ---
 
