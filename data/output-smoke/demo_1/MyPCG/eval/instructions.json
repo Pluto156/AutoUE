@@ -1,0 +1,127 @@
+{
+    "evaluation_instructions": [
+        {
+            "step_id": 1,
+            "action": "setup",
+            "target": "SmokeRoom",
+            "description": "Prepare static trace validation context.",
+            "driver": "static_trace_only",
+            "executor_action": "verify_trace",
+            "expected": [
+                {
+                    "type": "trace_exists",
+                    "key": "behavior_id",
+                    "expected_value": "player.combat.attack"
+                }
+            ],
+            "trace": {
+                "entity_id": "player",
+                "ability_id": "player.combat",
+                "behavior_id": "player.combat.attack",
+                "flow_id": "flow_player_combat_attack",
+                "engine_port_ids": [
+                    "input.action_binding",
+                    "damage.apply"
+                ],
+                "adjudication_paths": [
+                    "flow/04-ue-api-mcp/adjudication/input.action_binding.json",
+                    "flow/04-ue-api-mcp/adjudication/damage.apply.json"
+                ],
+                "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+                "ts_files": [
+                    "TypeScript/content/generated/interactive/SmokeInteractable.ts",
+                    "TypeScript/content/generated/SmokeGame.ts"
+                ]
+            }
+        },
+        {
+            "step_id": 2,
+            "action": "attack",
+            "target": "Enemy",
+            "description": "Call the mapped attack behavior through adapter_call.",
+            "driver": "adapter_call",
+            "executor_action": "call_behavior",
+            "expected": [
+                {
+                    "type": "state_changed",
+                    "key": "enemy.state",
+                    "expected_value": "defeated"
+                }
+            ],
+            "trace": {
+                "entity_id": "player",
+                "ability_id": "player.combat",
+                "behavior_id": "player.combat.attack",
+                "flow_id": "flow_player_combat_attack",
+                "engine_port_ids": [
+                    "input.action_binding",
+                    "damage.apply"
+                ],
+                "adjudication_paths": [
+                    "flow/04-ue-api-mcp/adjudication/input.action_binding.json",
+                    "flow/04-ue-api-mcp/adjudication/damage.apply.json"
+                ],
+                "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+                "ts_files": [
+                    "TypeScript/content/generated/interactive/SmokeInteractable.ts",
+                    "TypeScript/content/generated/SmokeGame.ts"
+                ]
+            }
+        },
+        {
+            "step_id": 3,
+            "action": "observe",
+            "target": "Result",
+            "description": "Verify generated TypeScript trace files are present.",
+            "driver": "static_trace_only",
+            "executor_action": "verify_trace",
+            "expected": [
+                {
+                    "type": "file_exists",
+                    "key": "TypeScript/content/generated/SmokeGame.ts",
+                    "expected_value": "true"
+                }
+            ],
+            "trace": {
+                "entity_id": "player",
+                "ability_id": "player.combat",
+                "behavior_id": "player.combat.attack",
+                "flow_id": "flow_player_combat_attack",
+                "engine_port_ids": [
+                    "input.action_binding",
+                    "damage.apply"
+                ],
+                "adjudication_paths": [
+                    "flow/04-ue-api-mcp/adjudication/input.action_binding.json",
+                    "flow/04-ue-api-mcp/adjudication/damage.apply.json"
+                ],
+                "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+                "ts_files": [
+                    "TypeScript/content/generated/interactive/SmokeInteractable.ts",
+                    "TypeScript/content/generated/SmokeGame.ts"
+                ]
+            }
+        }
+    ],
+    "coverage": [
+        {
+            "entity_id": "player",
+            "ability_id": "player.combat",
+            "behavior_id": "player.combat.attack",
+            "flow_id": "flow_player_combat_attack",
+            "engine_port_ids": [
+                "input.action_binding",
+                "damage.apply"
+            ],
+            "adjudication_paths": [
+                "flow/04-ue-api-mcp/adjudication/input.action_binding.json",
+                "flow/04-ue-api-mcp/adjudication/damage.apply.json"
+            ],
+            "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+            "ts_files": [
+                "TypeScript/content/generated/interactive/SmokeInteractable.ts",
+                "TypeScript/content/generated/SmokeGame.ts"
+            ]
+        }
+    ]
+}

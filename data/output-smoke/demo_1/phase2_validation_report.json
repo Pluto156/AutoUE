@@ -1,0 +1,71 @@
+{
+  "result": "pass",
+  "errors": [],
+  "evidence": {
+    "root": "D:\\ClaudeTasks\\active\\autoue-puerts-workflow-adaptation\\repo\\AutoUE\\data\\output-smoke\\demo_1",
+    "validated_llm_nodes": [
+      "SceneAndGameplaySplitter",
+      "EntityAbilityBehaviorPlanner",
+      "ThinGameplayFlowPlanner",
+      "UEApiMCPFeasibilitySearcher",
+      "PuerTSRuntimeMappingPlanner",
+      "TypeScriptScriptAnalyzer",
+      "TypeScriptInteractiveObjectGenerator",
+      "TypeScriptCodeGenerator",
+      "EvaluateInstructionGenerator"
+    ],
+    "behavior_ids": [
+      "player.combat.attack"
+    ],
+    "flow_ids": [
+      "flow_player_combat_attack"
+    ],
+    "engine_port_ids": [
+      "damage.apply",
+      "input.action_binding"
+    ],
+    "mcp_adjudication_paths": [
+      "flow/04-ue-api-mcp/adjudication/damage.apply.json",
+      "flow/04-ue-api-mcp/adjudication/input.action_binding.json"
+    ],
+    "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+    "analyzer_targets": [
+      "TypeScript/content/generated/SmokeGame.ts"
+    ],
+    "interactive_files": [
+      "TypeScript/content/generated/interactive/SmokeInteractable.ts"
+    ],
+    "codegen_files": [
+      "TypeScript/content/generated/SmokeGame.ts"
+    ],
+    "behavior_trace_coverage": {
+      "player.combat.attack": [
+        "EvaluateInstructionGenerator",
+        "PuerTSRuntimeMappingPlanner",
+        "ThinGameplayFlowPlanner",
+        "TypeScriptCodeGenerator",
+        "TypeScriptInteractiveObjectGenerator",
+        "TypeScriptScriptAnalyzer",
+        "UEApiMCPFeasibilitySearcher"
+      ]
+    },
+    "generated_ts_files": [
+      "TypeScript\\content\\generated\\interactive\\SmokeInteractable.ts",
+      "TypeScript\\content\\generated\\SmokeGame.ts"
+    ],
+    "declared_ts_files": [
+      "TypeScript/content/generated/interactive/SmokeInteractable.ts",
+      "TypeScript/content/generated/SmokeGame.ts"
+    ],
+    "mcp_artifacts": [
+      "flow/04-ue-api-mcp/raw/input.action_binding.raw.json",
+      "flow/04-ue-api-mcp/adjudication/input.action_binding.json",
+      "flow/04-ue-api-mcp/raw/damage.apply.raw.json",
+      "flow/04-ue-api-mcp/adjudication/damage.apply.json",
+      "flow/03-thin-gameplay-flow.json",
+      "flow/04-ue-api-mcp/summary.json",
+      "flow/05-puerts-runtime-mapping.json"
+    ],
+    "instruction_count": 3
+  }
+}

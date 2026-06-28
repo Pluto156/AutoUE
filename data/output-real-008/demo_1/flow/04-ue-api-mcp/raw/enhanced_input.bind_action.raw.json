@@ -1,0 +1,825 @@
+{
+  "engine_port_id": "enhanced_input.bind_action",
+  "flow_ids": [
+    "flow_player_movement_move"
+  ],
+  "behavior_ids": [
+    "player.movement.move"
+  ],
+  "contracts": [
+    "Accept horizontal movement input from the player."
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for enhanced_input.bind_action; exact symbol hints: Enhanced.InputBindAction, EnhancedInputBindAction, enhanced input bind action. Intent: Accept horizontal movement input from the player.",
+  "raw_path": "flow/04-ue-api-mcp/raw/enhanced_input.bind_action.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json",
+  "raw_result": {
+    "tool": "ue_api_semantic_search",
+    "query": "Unreal Engine PuerTS gameplay API for enhanced_input.bind_action; exact symbol hints: Enhanced.InputBindAction, EnhancedInputBindAction, enhanced input bind action. Intent: Accept horizontal movement input from the player.",
+    "limit": 5,
+    "raw_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"ok\",\n  \"mode\": \"semantic\",\n  \"query\": \"Unreal Engine PuerTS gameplay API for enhanced_input.bind_action; exact symbol hints: Enhanced.InputBindAction, EnhancedInputBindAction, enhanced input bind action. Intent: Accept horizontal movement input from the player.\",\n  \"searchText\": \"EnhancedInputComponent PlayerController input component Character movement input carrier bind_action InputAction EnhancedInput triggered event input action value movement axis AddMovementInput horizontal axis character movement input consumption EnhancedInputActionDelegate callback FScriptDelegate bind action handler\",\n  \"rewrite\": {\n    \"status\": \"rewritten\",\n    \"domainStatus\": \"ue_relevant\",\n    \"intentSummary\": \"Bind an Enhanced Input action in PuerTS to receive horizontal movement input for a character.\",\n    \"warnings\": [],\n    \"activeSubqueries\": [\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The UE object that owns or receives the input binding.\",\n        \"subqueryId\": \"carrier_context_1\",\n        \"text\": \"EnhancedInputComponent\",\n        \"weight\": 0.4,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The UE object that owns or receives the input binding.\",\n        \"subqueryId\": \"carrier_context_2\",\n        \"text\": \"PlayerController input component\",\n        \"weight\": 0.3,\n        \"subqueryWeight\": 0.3\n      },\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The UE object that owns or receives the input binding.\",\n        \"subqueryId\": \"carrier_context_3\",\n        \"text\": \"Character movement input carrier\",\n        \"weight\": 0.3,\n        \"subqueryWeight\": 0.3\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The trigger that binds an input action and fires when the player provides horizontal input.\",\n        \"subqueryId\": \"activation_trigger_1\",\n        \"text\": \"bind_action InputAction\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The trigger that binds an input action and fires when the player provides horizontal input.\",\n        \"subqueryId\": \"activation_trigger_2\",\n        \"text\": \"EnhancedInput triggered event\",\n        \"weight\": 0.3,\n        \"subqueryWeight\": 0.3\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The trigger that binds an input action and fires when the player provides horizontal input.\",\n        \"subqueryId\": \"activation_trigger_3\",\n        \"text\": \"input action value movement axis\",\n        \"weight\": 0.2,\n        \"subqueryWeight\": 0.2\n      },\n      {\n        \"facetId\": \"movement_navigation\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"The movement mechanic that consumes the horizontal input to move the character.\",\n        \"subqueryId\": \"movement_navigation_1\",\n        \"text\": \"AddMovementInput horizontal axis\",\n        \"weight\": 0.36,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"movement_navigation\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"The movement mechanic that consumes the horizontal input to move the character.\",\n        \"subqueryId\": \"movement_navigation_2\",\n        \"text\": \"character movement input consumption\",\n        \"weight\": 0.24,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"integration_event\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"Delegates or callbacks that handle bind_action firing in PuerTS.\",\n        \"subqueryId\": \"integration_event_1\",\n        \"text\": \"EnhancedInputActionDelegate callback\",\n        \"weight\": 0.36,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"integration_event\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"Delegates or callbacks that handle bind_action firing in PuerTS.\",\n        \"subqueryId\": \"integration_event_2\",\n        \"text\": \"FScriptDelegate bind action handler\",\n        \"weight\": 0.24,\n        \"subqueryWeight\": 0.4\n      }\n    ]\n  },\n  \"embedding\": {\n    \"enabled\": true,\n    \"provider\": \"ollama\",\n    \"model\": \"bge-m3\",\n    \"dimensions\": 1024,\n    \"indexedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"status\": \"ready\"\n  },\n  \"partitions\": {\n    \"enabled\": true,\n    \"classifierEnabled\": true,\n    \"provider\": \"aaa\",\n    \"binaryAvailable\": true,\n    \"timeoutMs\": 90000,\n    \"candidateCount\": 20361,\n    \"processedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"validAssignmentCount\": 14733,\n    \"partitionedEntryCount\": 12532,\n    \"partitionedEntryRatio\": 0.6155,\n    \"searchReady\": true,\n    \"byFacet\": {\n      \"activation_trigger\": 241,\n      \"ai_behavior\": 948,\n      \"animation\": 1856,\n      \"audio\": 704,\n      \"camera_feedback_ui\": 1336,\n      \"carrier_context\": 1362,\n      \"damage_state\": 548,\n      \"integration_event\": 1069,\n      \"level_world\": 342,\n      \"lighting\": 134,\n      \"material_visual_state\": 1065,\n      \"mesh_geometry\": 1545,\n      \"movement_navigation\": 256,\n      \"networking_authority\": 414,\n      \"persistence_assets\": 612,\n      \"physics\": 666,\n      \"spatial_targeting\": 466,\n      \"spawn_lifecycle\": 117,\n      \"visual_effects\": 1052\n    },\n    \"status\": \"ready\",\n    \"searchScoped\": true\n  },\n  \"filters\": {},\n  \"confidence\": {\n    \"minConfidence\": 0.55,\n    \"status\": \"ok\",\n    \"topConfidence\": 0.7365\n  },\n  \"count\": 5,\n  \"results\": [\n    {\n      \"ref\": \"2e659247de52\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.PawnMovementComponent\",\n      \"kind\": \"class\",\n      \"score\": 92.5,\n      \"confidence\": 0.7365,\n      \"extends\": \"UE.NavMovementComponent\",\n      \"source\": \"Engine/GameFramework\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"2d2b7d641616\",\n          \"symbol\": \"UE.PawnMovementComponent.AddInputVector\",\n          \"kind\": \"method\",\n          \"signature\": \"AddInputVector(WorldVector: UE.Vector, bForce?: boolean /* = false */) : void;\",\n          \"summary\": \"Adds the given vector to the accumulated input in world space. Input vectors are usually between 0 and 1 in magnitude. They are accumulated during a frame then applied as acceleration during the movement update.\"\n        },\n        {\n          \"ref\": \"4f821a51696c\",\n          \"symbol\": \"UE.PawnMovementComponent.ConsumeInputVector\",\n          \"kind\": \"method\",\n          \"signature\": \"ConsumeInputVector() : UE.Vector;\",\n          \"summary\": \"Returns the pending input vector and resets it to zero. This should be used during a movement update (by the Pawn or PawnMovementComponent) to prevent accumulation of control input between frames. Copies the pending inpu\"\n        },\n        {\n          \"ref\": \"c72b0bfff7a6\",\n          \"symbol\": \"UE.PawnMovementComponent.GetLastInputVector\",\n          \"kind\": \"method\",\n          \"signature\": \"GetLastInputVector() : UE.Vector;\",\n          \"summary\": \"Return the last input vector in world space that was processed by ConsumeInputVector(), which is usually done by the Pawn or PawnMovementComponent. Any user that needs to know about the input that last affected movement \"\n        },\n        {\n          \"ref\": \"7e512da034d7\",\n          \"symbol\": \"UE.PawnMovementComponent.GetPendingInputVector\",\n          \"kind\": \"method\",\n          \"signature\": \"GetPendingInputVector() : UE.Vector;\",\n          \"summary\": \"Return the pending input vector in world space. This is the most up-to-date value of the input vector, pending ConsumeMovementInputVector() which clears it. PawnMovementComponents implementing movement usually want to us\"\n        },\n        {\n          \"ref\": \"7c717e33f7d1\",\n          \"symbol\": \"UE.PawnMovementComponent.IsMoveInputIgnored\",\n          \"kind\": \"method\",\n          \"signature\": \"IsMoveInputIgnored() : boolean;\",\n          \"summary\": \"Helper to see if move input is ignored. If there is no Pawn or UpdatedComponent, returns true, otherwise defers to the Pawn's implementation of IsMoveInputIgnored().\"\n        },\n        {\n          \"ref\": \"3b8bbaf6e2cb\",\n          \"symbol\": \"UE.PawnMovementComponent.GetPawnOwner\",\n          \"kind\": \"method\",\n          \"signature\": \"GetPawnOwner() : UE.Pawn;\",\n          \"summary\": \"Return the Pawn that owns UpdatedComponent.\"\n        },\n        {\n          \"ref\": \"ad69b5022c93\",\n          \"symbol\": \"UE.PawnMovementComponent.MulticastAsyncPhysicsStateAction\",\n          \"kind\": \"method\",\n          \"signature\": \"MulticastAsyncPhysicsStateAction(ActionComponent: $Nullable<UE.PrimitiveComponent>, BoneName: string, Timestamp: UE.AsyncPhysicsTimestamp, ActionType: UE.EPhysicsStateAction, ActionDatas: UE.Vector, ActionPosition: UE.Vector) : void;\",\n          \"summary\": \"Dispatch back the physics command onto all the clients\"\n        },\n        {\n          \"ref\": \"2a6304dc2cf4\",\n          \"symbol\": \"UE.PawnMovementComponent.PawnOwner\",\n          \"kind\": \"property\",\n          \"signature\": \"PawnOwner: UE.Pawn;\",\n          \"summary\": \"\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Bind an Enhanced Input action in PuerTS to receive horizontal movement input for a character.\",\n        \"name: component, movement\",\n        \"members: AddInputVector, ConsumeInputVector, GetLastInputVector, GetPendingInputVector\",\n        \"facets: movement_navigation/bm25, movement_navigation/vector\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"66b5cb10a44a\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.BlueprintEnhancedInputActionBinding\",\n      \"kind\": \"class\",\n      \"score\": 90.0,\n      \"confidence\": 0.7338,\n      \"source\": \"Plugin/EnhancedInput\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"9b5b60e65821\",\n          \"symbol\": \"UE.BlueprintEnhancedInputActionBinding.FunctionNameToBind\",\n          \"kind\": \"property\",\n          \"signature\": \"FunctionNameToBind: string;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"31d412adde54\",\n          \"symbol\": \"UE.BlueprintEnhancedInputActionBinding.TriggerEvent\",\n          \"kind\": \"property\",\n          \"signature\": \"TriggerEvent: UE.ETriggerEvent;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"347fffd2e7b8\",\n          \"symbol\": \"UE.BlueprintEnhancedInputActionBinding.InputAction\",\n          \"kind\": \"property\",\n          \"signature\": \"InputAction: UE.InputAction;\",\n          \"summary\": \"\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Bind an Enhanced Input action in PuerTS to receive horizontal movement input for a character.\",\n        \"name: action, enhanced, input\",\n        \"members: FunctionNameToBind, TriggerEvent, InputAction\",\n        \"facets: activation_trigger/bm25, activation_trigger/vector\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"11ef70891aed\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.HeadMountedDisplayFunctionLibrary.ClearXRTimedInputActionDelegate\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.HeadMountedDisplayFunctionLibrary\",\n      \"signature\": \"static ClearXRTimedInputActionDelegate(ActionPath: string) : void;\",\n      \"score\": 92.7504,\n      \"confidence\": 0.7381,\n      \"summary\": \"_ Clear a delegate to get an OpenXR action event with action time.\",\n      \"source\": \"Plugin/XRBase\",\n      \"why\": [\n        \"rewrite: Bind an Enhanced Input action in PuerTS to receive horizontal movement input for a character.\",\n        \"name: action, delegate, input\",\n        \"doc: action, delegate, event\",\n        \"facets: integration_event/bm25, integration_event/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"482cfc85011b\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.EnhancedInputWorldSubsystem\",\n      \"kind\": \"class\",\n      \"score\": 90.0,\n      \"confidence\": 0.7304,\n      \"extends\": \"UE.WorldSubsystem\",\n      \"source\": \"Plugin/EnhancedInput\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"228aa0dd756e\",\n          \"symbol\": \"UE.EnhancedInputWorldSubsystem.AddActorInputComponent\",\n          \"kind\": \"method\",\n          \"signature\": \"AddActorInputComponent(Actor: $Nullable<UE.Actor>) : void;\",\n          \"summary\": \"Adds this Actor's input component onto the stack to be processed by this subsystem's tick function\"\n        },\n        {\n          \"ref\": \"c0f81096d2c1\",\n          \"symbol\": \"UE.EnhancedInputWorldSubsystem.CurrentInputStack\",\n          \"kind\": \"property\",\n          \"signature\": \"CurrentInputStack: TArray<TWeakObjectPtr<UE.InputComponent>>;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"3e9287ef9cd8\",\n          \"symbol\": \"UE.EnhancedInputWorldSubsystem.GetAllPlayerMappableActionKeyMappings\",\n          \"kind\": \"method\",\n          \"signature\": \"GetAllPlayerMappableActionKeyMappings() : TArray<UE.EnhancedActionKeyMapping>;\",\n          \"summary\": \"Get an array of the currently applied key mappings that are marked as Player Mappable.\"\n        },\n        {\n          \"ref\": \"d6b774d344f4\",\n          \"symbol\": \"UE.EnhancedInputWorldSubsystem.GetInputMode\",\n          \"kind\": \"method\",\n          \"signature\": \"GetInputMode() : UE.GameplayTagContainer;\",\n          \"summary\": \"Returns the current input mode set on Enhanced Input. This mode will control what mappings are currently being processed by the player. If the Input Mapping Context's InputModeQuery is not empty and does not match this t\"\n        },\n        {\n          \"ref\": \"18587c7c464d\",\n          \"symbol\": \"UE.EnhancedInputWorldSubsystem.InjectInputForPlayerMapping\",\n          \"kind\": \"method\",\n          \"signature\": \"InjectInputForPlayerMapping(MappingName: string, RawValue: UE.InputActionValue, Modifiers: TArray<UE.InputModifier>, Triggers: TArray<UE.InputTrigger>) : void;\",\n          \"summary\": \"Input simulation via injection. Runs modifiers and triggers delegates as if the input had come through the underlying input system as FKeys. Applies action modifiers and triggers on top.\"\n        },\n        {\n          \"ref\": \"d40f7e9f4134\",\n          \"symbol\": \"UE.EnhancedInputWorldSubsystem.InjectInputVectorForPlayerMapping\",\n          \"kind\": \"method\",\n          \"signature\": \"InjectInputVectorForPlayerMapping(MappingName: string, Value: UE.Vector, Modifiers: TArray<UE.InputModifier>, Triggers: TArray<UE.InputTrigger>) : void;\",\n          \"summary\": \"Input simulation via injection. Runs modifiers and triggers delegates as if the input had come through the underlying input system as FKeys. Applies action modifiers and triggers on top.\"\n        },\n        {\n          \"ref\": \"bbcaeee24e5f\",\n          \"symbol\": \"UE.EnhancedInputWorldSubsystem.OnUserKeyProfileChanged\",\n          \"kind\": \"method\",\n          \"signature\": \"OnUserKeyProfileChanged(InNewProfile: $Nullable<UE.EnhancedPlayerMappableKeyProfile>) : void;\",\n          \"summary\": \"A callback for when the user has applied a new mappable key profile.\"\n        },\n        {\n          \"ref\": \"3f1b035dfe45\",\n          \"symbol\": \"UE.EnhancedInputWorldSubsystem.PlayerInput\",\n          \"kind\": \"property\",\n          \"signature\": \"PlayerInput: UE.EnhancedPlayerInput;\",\n          \"summary\": \"\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Bind an Enhanced Input action in PuerTS to receive horizontal movement input for a character.\",\n        \"name: enhanced, input\",\n        \"members: AddActorInputComponent, CurrentInputStack, GetAllPlayerMappableActionKeyMappings, GetInputMode\",\n        \"facets: carrier_context/bm25, carrier_context/vector\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"efa17e99fe67\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.SceneComponent.IsGroupedComponentMovementEnabled\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.SceneComponent\",\n      \"signature\": \"static IsGroupedComponentMovementEnabled() : boolean;\",\n      \"score\": 88.4753,\n      \"confidence\": 0.7365,\n      \"source\": \"Engine/Components\",\n      \"why\": [\n        \"rewrite: Bind an Enhanced Input action in PuerTS to receive horizontal movement input for a character.\",\n        \"name: component, movement\",\n        \"facets: movement_navigation/bm25, movement_navigation/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    }\n  ],\n  \"profile\": {\n    \"load\": 0.7428,\n    \"rewrite\": 12.3666,\n    \"embed\": 0.2292,\n    \"bm25\": 0.1784,\n    \"vector\": 0.4021,\n    \"score\": 0.18,\n    \"select\": 0.0002,\n    \"total\": 13.8714\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "status": "ok",
+        "mode": "semantic",
+        "query": "Unreal Engine PuerTS gameplay API for enhanced_input.bind_action; exact symbol hints: Enhanced.InputBindAction, EnhancedInputBindAction, enhanced input bind action. Intent: Accept horizontal movement input from the player.",
+        "searchText": "EnhancedInputComponent PlayerController input component Character movement input carrier bind_action InputAction EnhancedInput triggered event input action value movement axis AddMovementInput horizontal axis character movement input consumption EnhancedInputActionDelegate callback FScriptDelegate bind action handler",
+        "rewrite": {
+          "status": "rewritten",
+          "domainStatus": "ue_relevant",
+          "intentSummary": "Bind an Enhanced Input action in PuerTS to receive horizontal movement input for a character.",
+          "warnings": [],
+          "activeSubqueries": [
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The UE object that owns or receives the input binding.",
+              "subqueryId": "carrier_context_1",
+              "text": "EnhancedInputComponent",
+              "weight": 0.4,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The UE object that owns or receives the input binding.",
+              "subqueryId": "carrier_context_2",
+              "text": "PlayerController input component",
+              "weight": 0.3,
+              "subqueryWeight": 0.3
+            },
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The UE object that owns or receives the input binding.",
+              "subqueryId": "carrier_context_3",
+              "text": "Character movement input carrier",
+              "weight": 0.3,
+              "subqueryWeight": 0.3
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "The trigger that binds an input action and fires when the player provides horizontal input.",
+              "subqueryId": "activation_trigger_1",
+              "text": "bind_action InputAction",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "The trigger that binds an input action and fires when the player provides horizontal input.",
+              "subqueryId": "activation_trigger_2",
+              "text": "EnhancedInput triggered event",
+              "weight": 0.3,
+              "subqueryWeight": 0.3
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "The trigger that binds an input action and fires when the player provides horizontal input.",
+              "subqueryId": "activation_trigger_3",
+              "text": "input action value movement axis",
+              "weight": 0.2,
+              "subqueryWeight": 0.2
+            },
+            {
+              "facetId": "movement_navigation",
+              "facetStatus": "optional",
+              "facetIntent": "The movement mechanic that consumes the horizontal input to move the character.",
+              "subqueryId": "movement_navigation_1",
+              "text": "AddMovementInput horizontal axis",
+              "weight": 0.36,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "movement_navigation",
+              "facetStatus": "optional",
+              "facetIntent": "The movement mechanic that consumes the horizontal input to move the character.",
+              "subqueryId": "movement_navigation_2",
+              "text": "character movement input consumption",
+              "weight": 0.24,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "integration_event",
+              "facetStatus": "optional",
+              "facetIntent": "Delegates or callbacks that handle bind_action firing in PuerTS.",
+              "subqueryId": "integration_event_1",
+              "text": "EnhancedInputActionDelegate callback",
+              "weight": 0.36,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "integration_event",
+              "facetStatus": "optional",
+              "facetIntent": "Delegates or callbacks that handle bind_action firing in PuerTS.",
+              "subqueryId": "integration_event_2",
+              "text": "FScriptDelegate bind action handler",
+              "weight": 0.24,
+              "subqueryWeight": 0.4
+            }
+          ]
+        },
+        "embedding": {
+          "enabled": true,
+          "provider": "ollama",
+          "model": "bge-m3",
+          "dimensions": 1024,
+          "indexedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "status": "ready"
+        },
+        "partitions": {
+          "enabled": true,
+          "classifierEnabled": true,
+          "provider": "aaa",
+          "binaryAvailable": true,
+          "timeoutMs": 90000,
+          "candidateCount": 20361,
+          "processedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "validAssignmentCount": 14733,
+          "partitionedEntryCount": 12532,
+          "partitionedEntryRatio": 0.6155,
+          "searchReady": true,
+          "byFacet": {
+            "activation_trigger": 241,
+            "ai_behavior": 948,
+            "animation": 1856,
+            "audio": 704,
+            "camera_feedback_ui": 1336,
+            "carrier_context": 1362,
+            "damage_state": 548,
+            "integration_event": 1069,
+            "level_world": 342,
+            "lighting": 134,
+            "material_visual_state": 1065,
+            "mesh_geometry": 1545,
+            "movement_navigation": 256,
+            "networking_authority": 414,
+            "persistence_assets": 612,
+            "physics": 666,
+            "spatial_targeting": 466,
+            "spawn_lifecycle": 117,
+            "visual_effects": 1052
+          },
+          "status": "ready",
+          "searchScoped": true
+        },
+        "filters": {},
+        "confidence": {
+          "minConfidence": 0.55,
+          "status": "ok",
+          "topConfidence": 0.7365
+        },
+        "count": 5,
+        "results": [
+          {
+            "ref": "2e659247de52",
+            "entryType": "type",
+            "symbol": "UE.PawnMovementComponent",
+            "kind": "class",
+            "score": 92.5,
+            "confidence": 0.7365,
+            "extends": "UE.NavMovementComponent",
+            "source": "Engine/GameFramework",
+            "matchedMembers": [
+              {
+                "ref": "2d2b7d641616",
+                "symbol": "UE.PawnMovementComponent.AddInputVector",
+                "kind": "method",
+                "signature": "AddInputVector(WorldVector: UE.Vector, bForce?: boolean /* = false */) : void;",
+                "summary": "Adds the given vector to the accumulated input in world space. Input vectors are usually between 0 and 1 in magnitude. They are accumulated during a frame then applied as acceleration during the movement update."
+              },
+              {
+                "ref": "4f821a51696c",
+                "symbol": "UE.PawnMovementComponent.ConsumeInputVector",
+                "kind": "method",
+                "signature": "ConsumeInputVector() : UE.Vector;",
+                "summary": "Returns the pending input vector and resets it to zero. This should be used during a movement update (by the Pawn or PawnMovementComponent) to prevent accumulation of control input between frames. Copies the pending inpu"
+              },
+              {
+                "ref": "c72b0bfff7a6",
+                "symbol": "UE.PawnMovementComponent.GetLastInputVector",
+                "kind": "method",
+                "signature": "GetLastInputVector() : UE.Vector;",
+                "summary": "Return the last input vector in world space that was processed by ConsumeInputVector(), which is usually done by the Pawn or PawnMovementComponent. Any user that needs to know about the input that last affected movement "
+              },
+              {
+                "ref": "7e512da034d7",
+                "symbol": "UE.PawnMovementComponent.GetPendingInputVector",
+                "kind": "method",
+                "signature": "GetPendingInputVector() : UE.Vector;",
+                "summary": "Return the pending input vector in world space. This is the most up-to-date value of the input vector, pending ConsumeMovementInputVector() which clears it. PawnMovementComponents implementing movement usually want to us"
+              },
+              {
+                "ref": "7c717e33f7d1",
+                "symbol": "UE.PawnMovementComponent.IsMoveInputIgnored",
+                "kind": "method",
+                "signature": "IsMoveInputIgnored() : boolean;",
+                "summary": "Helper to see if move input is ignored. If there is no Pawn or UpdatedComponent, returns true, otherwise defers to the Pawn's implementation of IsMoveInputIgnored()."
+              },
+              {
+                "ref": "3b8bbaf6e2cb",
+                "symbol": "UE.PawnMovementComponent.GetPawnOwner",
+                "kind": "method",
+                "signature": "GetPawnOwner() : UE.Pawn;",
+                "summary": "Return the Pawn that owns UpdatedComponent."
+              },
+              {
+                "ref": "ad69b5022c93",
+                "symbol": "UE.PawnMovementComponent.MulticastAsyncPhysicsStateAction",
+                "kind": "method",
+                "signature": "MulticastAsyncPhysicsStateAction(ActionComponent: $Nullable<UE.PrimitiveComponent>, BoneName: string, Timestamp: UE.AsyncPhysicsTimestamp, ActionType: UE.EPhysicsStateAction, ActionDatas: UE.Vector, ActionPosition: UE.Vector) : void;",
+                "summary": "Dispatch back the physics command onto all the clients"
+              },
+              {
+                "ref": "2a6304dc2cf4",
+                "symbol": "UE.PawnMovementComponent.PawnOwner",
+                "kind": "property",
+                "signature": "PawnOwner: UE.Pawn;",
+                "summary": ""
+              }
+            ],
+            "why": [
+              "rewrite: Bind an Enhanced Input action in PuerTS to receive horizontal movement input for a character.",
+              "name: component, movement",
+              "members: AddInputVector, ConsumeInputVector, GetLastInputVector, GetPendingInputVector",
+              "facets: movement_navigation/bm25, movement_navigation/vector",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "66b5cb10a44a",
+            "entryType": "type",
+            "symbol": "UE.BlueprintEnhancedInputActionBinding",
+            "kind": "class",
+            "score": 90.0,
+            "confidence": 0.7338,
+            "source": "Plugin/EnhancedInput",
+            "matchedMembers": [
+              {
+                "ref": "9b5b60e65821",
+                "symbol": "UE.BlueprintEnhancedInputActionBinding.FunctionNameToBind",
+                "kind": "property",
+                "signature": "FunctionNameToBind: string;",
+                "summary": ""
+              },
+              {
+                "ref": "31d412adde54",
+                "symbol": "UE.BlueprintEnhancedInputActionBinding.TriggerEvent",
+                "kind": "property",
+                "signature": "TriggerEvent: UE.ETriggerEvent;",
+                "summary": ""
+              },
+              {
+                "ref": "347fffd2e7b8",
+                "symbol": "UE.BlueprintEnhancedInputActionBinding.InputAction",
+                "kind": "property",
+                "signature": "InputAction: UE.InputAction;",
+                "summary": ""
+              }
+            ],
+            "why": [
+              "rewrite: Bind an Enhanced Input action in PuerTS to receive horizontal movement input for a character.",
+              "name: action, enhanced, input",
+              "members: FunctionNameToBind, TriggerEvent, InputAction",
+              "facets: activation_trigger/bm25, activation_trigger/vector",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "11ef70891aed",
+            "entryType": "static_function",
+            "symbol": "UE.HeadMountedDisplayFunctionLibrary.ClearXRTimedInputActionDelegate",
+            "kind": "method",
+            "owner": "UE.HeadMountedDisplayFunctionLibrary",
+            "signature": "static ClearXRTimedInputActionDelegate(ActionPath: string) : void;",
+            "score": 92.7504,
+            "confidence": 0.7381,
+            "summary": "_ Clear a delegate to get an OpenXR action event with action time.",
+            "source": "Plugin/XRBase",
+            "why": [
+              "rewrite: Bind an Enhanced Input action in PuerTS to receive horizontal movement input for a character.",
+              "name: action, delegate, input",
+              "doc: action, delegate, event",
+              "facets: integration_event/bm25, integration_event/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "482cfc85011b",
+            "entryType": "type",
+            "symbol": "UE.EnhancedInputWorldSubsystem",
+            "kind": "class",
+            "score": 90.0,
+            "confidence": 0.7304,
+            "extends": "UE.WorldSubsystem",
+            "source": "Plugin/EnhancedInput",
+            "matchedMembers": [
+              {
+                "ref": "228aa0dd756e",
+                "symbol": "UE.EnhancedInputWorldSubsystem.AddActorInputComponent",
+                "kind": "method",
+                "signature": "AddActorInputComponent(Actor: $Nullable<UE.Actor>) : void;",
+                "summary": "Adds this Actor's input component onto the stack to be processed by this subsystem's tick function"
+              },
+              {
+                "ref": "c0f81096d2c1",
+                "symbol": "UE.EnhancedInputWorldSubsystem.CurrentInputStack",
+                "kind": "property",
+                "signature": "CurrentInputStack: TArray<TWeakObjectPtr<UE.InputComponent>>;",
+                "summary": ""
+              },
+              {
+                "ref": "3e9287ef9cd8",
+                "symbol": "UE.EnhancedInputWorldSubsystem.GetAllPlayerMappableActionKeyMappings",
+                "kind": "method",
+                "signature": "GetAllPlayerMappableActionKeyMappings() : TArray<UE.EnhancedActionKeyMapping>;",
+                "summary": "Get an array of the currently applied key mappings that are marked as Player Mappable."
+              },
+              {
+                "ref": "d6b774d344f4",
+                "symbol": "UE.EnhancedInputWorldSubsystem.GetInputMode",
+                "kind": "method",
+                "signature": "GetInputMode() : UE.GameplayTagContainer;",
+                "summary": "Returns the current input mode set on Enhanced Input. This mode will control what mappings are currently being processed by the player. If the Input Mapping Context's InputModeQuery is not empty and does not match this t"
+              },
+              {
+                "ref": "18587c7c464d",
+                "symbol": "UE.EnhancedInputWorldSubsystem.InjectInputForPlayerMapping",
+                "kind": "method",
+                "signature": "InjectInputForPlayerMapping(MappingName: string, RawValue: UE.InputActionValue, Modifiers: TArray<UE.InputModifier>, Triggers: TArray<UE.InputTrigger>) : void;",
+                "summary": "Input simulation via injection. Runs modifiers and triggers delegates as if the input had come through the underlying input system as FKeys. Applies action modifiers and triggers on top."
+              },
+              {
+                "ref": "d40f7e9f4134",
+                "symbol": "UE.EnhancedInputWorldSubsystem.InjectInputVectorForPlayerMapping",
+                "kind": "method",
+                "signature": "InjectInputVectorForPlayerMapping(MappingName: string, Value: UE.Vector, Modifiers: TArray<UE.InputModifier>, Triggers: TArray<UE.InputTrigger>) : void;",
+                "summary": "Input simulation via injection. Runs modifiers and triggers delegates as if the input had come through the underlying input system as FKeys. Applies action modifiers and triggers on top."
+              },
+              {
+                "ref": "bbcaeee24e5f",
+                "symbol": "UE.EnhancedInputWorldSubsystem.OnUserKeyProfileChanged",
+                "kind": "method",
+                "signature": "OnUserKeyProfileChanged(InNewProfile: $Nullable<UE.EnhancedPlayerMappableKeyProfile>) : void;",
+                "summary": "A callback for when the user has applied a new mappable key profile."
+              },
+              {
+                "ref": "3f1b035dfe45",
+                "symbol": "UE.EnhancedInputWorldSubsystem.PlayerInput",
+                "kind": "property",
+                "signature": "PlayerInput: UE.EnhancedPlayerInput;",
+                "summary": ""
+              }
+            ],
+            "why": [
+              "rewrite: Bind an Enhanced Input action in PuerTS to receive horizontal movement input for a character.",
+              "name: enhanced, input",
+              "members: AddActorInputComponent, CurrentInputStack, GetAllPlayerMappableActionKeyMappings, GetInputMode",
+              "facets: carrier_context/bm25, carrier_context/vector",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "efa17e99fe67",
+            "entryType": "static_function",
+            "symbol": "UE.SceneComponent.IsGroupedComponentMovementEnabled",
+            "kind": "method",
+            "owner": "UE.SceneComponent",
+            "signature": "static IsGroupedComponentMovementEnabled() : boolean;",
+            "score": 88.4753,
+            "confidence": 0.7365,
+            "source": "Engine/Components",
+            "why": [
+              "rewrite: Bind an Enhanced Input action in PuerTS to receive horizontal movement input for a character.",
+              "name: component, movement",
+              "facets: movement_navigation/bm25, movement_navigation/vector",
+              "static function result",
+              "vector recall"
+            ]
+          }
+        ],
+        "profile": {
+          "load": 0.7428,
+          "rewrite": 12.3666,
+          "embed": 0.2292,
+          "bm25": 0.1784,
+          "vector": 0.4021,
+          "score": 0.18,
+          "select": 0.0002,
+          "total": 13.8714
+        }
+      },
+      "isError": false
+    },
+    "payload": {
+      "status": "ok",
+      "mode": "semantic",
+      "query": "Unreal Engine PuerTS gameplay API for enhanced_input.bind_action; exact symbol hints: Enhanced.InputBindAction, EnhancedInputBindAction, enhanced input bind action. Intent: Accept horizontal movement input from the player.",
+      "searchText": "EnhancedInputComponent PlayerController input component Character movement input carrier bind_action InputAction EnhancedInput triggered event input action value movement axis AddMovementInput horizontal axis character movement input consumption EnhancedInputActionDelegate callback FScriptDelegate bind action handler",
+      "rewrite": {
+        "status": "rewritten",
+        "domainStatus": "ue_relevant",
+        "intentSummary": "Bind an Enhanced Input action in PuerTS to receive horizontal movement input for a character.",
+        "warnings": [],
+        "activeSubqueries": [
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The UE object that owns or receives the input binding.",
+            "subqueryId": "carrier_context_1",
+            "text": "EnhancedInputComponent",
+            "weight": 0.4,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The UE object that owns or receives the input binding.",
+            "subqueryId": "carrier_context_2",
+            "text": "PlayerController input component",
+            "weight": 0.3,
+            "subqueryWeight": 0.3
+          },
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The UE object that owns or receives the input binding.",
+            "subqueryId": "carrier_context_3",
+            "text": "Character movement input carrier",
+            "weight": 0.3,
+            "subqueryWeight": 0.3
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "The trigger that binds an input action and fires when the player provides horizontal input.",
+            "subqueryId": "activation_trigger_1",
+            "text": "bind_action InputAction",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "The trigger that binds an input action and fires when the player provides horizontal input.",
+            "subqueryId": "activation_trigger_2",
+            "text": "EnhancedInput triggered event",
+            "weight": 0.3,
+            "subqueryWeight": 0.3
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "The trigger that binds an input action and fires when the player provides horizontal input.",
+            "subqueryId": "activation_trigger_3",
+            "text": "input action value movement axis",
+            "weight": 0.2,
+            "subqueryWeight": 0.2
+          },
+          {
+            "facetId": "movement_navigation",
+            "facetStatus": "optional",
+            "facetIntent": "The movement mechanic that consumes the horizontal input to move the character.",
+            "subqueryId": "movement_navigation_1",
+            "text": "AddMovementInput horizontal axis",
+            "weight": 0.36,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "movement_navigation",
+            "facetStatus": "optional",
+            "facetIntent": "The movement mechanic that consumes the horizontal input to move the character.",
+            "subqueryId": "movement_navigation_2",
+            "text": "character movement input consumption",
+            "weight": 0.24,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "integration_event",
+            "facetStatus": "optional",
+            "facetIntent": "Delegates or callbacks that handle bind_action firing in PuerTS.",
+            "subqueryId": "integration_event_1",
+            "text": "EnhancedInputActionDelegate callback",
+            "weight": 0.36,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "integration_event",
+            "facetStatus": "optional",
+            "facetIntent": "Delegates or callbacks that handle bind_action firing in PuerTS.",
+            "subqueryId": "integration_event_2",
+            "text": "FScriptDelegate bind action handler",
+            "weight": 0.24,
+            "subqueryWeight": 0.4
+          }
+        ]
+      },
+      "embedding": {
+        "enabled": true,
+        "provider": "ollama",
+        "model": "bge-m3",
+        "dimensions": 1024,
+        "indexedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "status": "ready"
+      },
+      "partitions": {
+        "enabled": true,
+        "classifierEnabled": true,
+        "provider": "aaa",
+        "binaryAvailable": true,
+        "timeoutMs": 90000,
+        "candidateCount": 20361,
+        "processedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "validAssignmentCount": 14733,
+        "partitionedEntryCount": 12532,
+        "partitionedEntryRatio": 0.6155,
+        "searchReady": true,
+        "byFacet": {
+          "activation_trigger": 241,
+          "ai_behavior": 948,
+          "animation": 1856,
+          "audio": 704,
+          "camera_feedback_ui": 1336,
+          "carrier_context": 1362,
+          "damage_state": 548,
+          "integration_event": 1069,
+          "level_world": 342,
+          "lighting": 134,
+          "material_visual_state": 1065,
+          "mesh_geometry": 1545,
+          "movement_navigation": 256,
+          "networking_authority": 414,
+          "persistence_assets": 612,
+          "physics": 666,
+          "spatial_targeting": 466,
+          "spawn_lifecycle": 117,
+          "visual_effects": 1052
+        },
+        "status": "ready",
+        "searchScoped": true
+      },
+      "filters": {},
+      "confidence": {
+        "minConfidence": 0.55,
+        "status": "ok",
+        "topConfidence": 0.7365
+      },
+      "count": 5,
+      "results": [
+        {
+          "ref": "2e659247de52",
+          "entryType": "type",
+          "symbol": "UE.PawnMovementComponent",
+          "kind": "class",
+          "score": 92.5,
+          "confidence": 0.7365,
+          "extends": "UE.NavMovementComponent",
+          "source": "Engine/GameFramework",
+          "matchedMembers": [
+            {
+              "ref": "2d2b7d641616",
+              "symbol": "UE.PawnMovementComponent.AddInputVector",
+              "kind": "method",
+              "signature": "AddInputVector(WorldVector: UE.Vector, bForce?: boolean /* = false */) : void;",
+              "summary": "Adds the given vector to the accumulated input in world space. Input vectors are usually between 0 and 1 in magnitude. They are accumulated during a frame then applied as acceleration during the movement update."
+            },
+            {
+              "ref": "4f821a51696c",
+              "symbol": "UE.PawnMovementComponent.ConsumeInputVector",
+              "kind": "method",
+              "signature": "ConsumeInputVector() : UE.Vector;",
+              "summary": "Returns the pending input vector and resets it to zero. This should be used during a movement update (by the Pawn or PawnMovementComponent) to prevent accumulation of control input between frames. Copies the pending inpu"
+            },
+            {
+              "ref": "c72b0bfff7a6",
+              "symbol": "UE.PawnMovementComponent.GetLastInputVector",
+              "kind": "method",
+              "signature": "GetLastInputVector() : UE.Vector;",
+              "summary": "Return the last input vector in world space that was processed by ConsumeInputVector(), which is usually done by the Pawn or PawnMovementComponent. Any user that needs to know about the input that last affected movement "
+            },
+            {
+              "ref": "7e512da034d7",
+              "symbol": "UE.PawnMovementComponent.GetPendingInputVector",
+              "kind": "method",
+              "signature": "GetPendingInputVector() : UE.Vector;",
+              "summary": "Return the pending input vector in world space. This is the most up-to-date value of the input vector, pending ConsumeMovementInputVector() which clears it. PawnMovementComponents implementing movement usually want to us"
+            },
+            {
+              "ref": "7c717e33f7d1",
+              "symbol": "UE.PawnMovementComponent.IsMoveInputIgnored",
+              "kind": "method",
+              "signature": "IsMoveInputIgnored() : boolean;",
+              "summary": "Helper to see if move input is ignored. If there is no Pawn or UpdatedComponent, returns true, otherwise defers to the Pawn's implementation of IsMoveInputIgnored()."
+            },
+            {
+              "ref": "3b8bbaf6e2cb",
+              "symbol": "UE.PawnMovementComponent.GetPawnOwner",
+              "kind": "method",
+              "signature": "GetPawnOwner() : UE.Pawn;",
+              "summary": "Return the Pawn that owns UpdatedComponent."
+            },
+            {
+              "ref": "ad69b5022c93",
+              "symbol": "UE.PawnMovementComponent.MulticastAsyncPhysicsStateAction",
+              "kind": "method",
+              "signature": "MulticastAsyncPhysicsStateAction(ActionComponent: $Nullable<UE.PrimitiveComponent>, BoneName: string, Timestamp: UE.AsyncPhysicsTimestamp, ActionType: UE.EPhysicsStateAction, ActionDatas: UE.Vector, ActionPosition: UE.Vector) : void;",
+              "summary": "Dispatch back the physics command onto all the clients"
+            },
+            {
+              "ref": "2a6304dc2cf4",
+              "symbol": "UE.PawnMovementComponent.PawnOwner",
+              "kind": "property",
+              "signature": "PawnOwner: UE.Pawn;",
+              "summary": ""
+            }
+          ],
+          "why": [
+            "rewrite: Bind an Enhanced Input action in PuerTS to receive horizontal movement input for a character.",
+            "name: component, movement",
+            "members: AddInputVector, ConsumeInputVector, GetLastInputVector, GetPendingInputVector",
+            "facets: movement_navigation/bm25, movement_navigation/vector",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "66b5cb10a44a",
+          "entryType": "type",
+          "symbol": "UE.BlueprintEnhancedInputActionBinding",
+          "kind": "class",
+          "score": 90.0,
+          "confidence": 0.7338,
+          "source": "Plugin/EnhancedInput",
+          "matchedMembers": [
+            {
+              "ref": "9b5b60e65821",
+              "symbol": "UE.BlueprintEnhancedInputActionBinding.FunctionNameToBind",
+              "kind": "property",
+              "signature": "FunctionNameToBind: string;",
+              "summary": ""
+            },
+            {
+              "ref": "31d412adde54",
+              "symbol": "UE.BlueprintEnhancedInputActionBinding.TriggerEvent",
+              "kind": "property",
+              "signature": "TriggerEvent: UE.ETriggerEvent;",
+              "summary": ""
+            },
+            {
+              "ref": "347fffd2e7b8",
+              "symbol": "UE.BlueprintEnhancedInputActionBinding.InputAction",
+              "kind": "property",
+              "signature": "InputAction: UE.InputAction;",
+              "summary": ""
+            }
+          ],
+          "why": [
+            "rewrite: Bind an Enhanced Input action in PuerTS to receive horizontal movement input for a character.",
+            "name: action, enhanced, input",
+            "members: FunctionNameToBind, TriggerEvent, InputAction",
+            "facets: activation_trigger/bm25, activation_trigger/vector",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "11ef70891aed",
+          "entryType": "static_function",
+          "symbol": "UE.HeadMountedDisplayFunctionLibrary.ClearXRTimedInputActionDelegate",
+          "kind": "method",
+          "owner": "UE.HeadMountedDisplayFunctionLibrary",
+          "signature": "static ClearXRTimedInputActionDelegate(ActionPath: string) : void;",
+          "score": 92.7504,
+          "confidence": 0.7381,
+          "summary": "_ Clear a delegate to get an OpenXR action event with action time.",
+          "source": "Plugin/XRBase",
+          "why": [
+            "rewrite: Bind an Enhanced Input action in PuerTS to receive horizontal movement input for a character.",
+            "name: action, delegate, input",
+            "doc: action, delegate, event",
+            "facets: integration_event/bm25, integration_event/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "482cfc85011b",
+          "entryType": "type",
+          "symbol": "UE.EnhancedInputWorldSubsystem",
+          "kind": "class",
+          "score": 90.0,
+          "confidence": 0.7304,
+          "extends": "UE.WorldSubsystem",
+          "source": "Plugin/EnhancedInput",
+          "matchedMembers": [
+            {
+              "ref": "228aa0dd756e",
+              "symbol": "UE.EnhancedInputWorldSubsystem.AddActorInputComponent",
+              "kind": "method",
+              "signature": "AddActorInputComponent(Actor: $Nullable<UE.Actor>) : void;",
+              "summary": "Adds this Actor's input component onto the stack to be processed by this subsystem's tick function"
+            },
+            {
+              "ref": "c0f81096d2c1",
+              "symbol": "UE.EnhancedInputWorldSubsystem.CurrentInputStack",
+              "kind": "property",
+              "signature": "CurrentInputStack: TArray<TWeakObjectPtr<UE.InputComponent>>;",
+              "summary": ""
+            },
+            {
+              "ref": "3e9287ef9cd8",
+              "symbol": "UE.EnhancedInputWorldSubsystem.GetAllPlayerMappableActionKeyMappings",
+              "kind": "method",
+              "signature": "GetAllPlayerMappableActionKeyMappings() : TArray<UE.EnhancedActionKeyMapping>;",
+              "summary": "Get an array of the currently applied key mappings that are marked as Player Mappable."
+            },
+            {
+              "ref": "d6b774d344f4",
+              "symbol": "UE.EnhancedInputWorldSubsystem.GetInputMode",
+              "kind": "method",
+              "signature": "GetInputMode() : UE.GameplayTagContainer;",
+              "summary": "Returns the current input mode set on Enhanced Input. This mode will control what mappings are currently being processed by the player. If the Input Mapping Context's InputModeQuery is not empty and does not match this t"
+            },
+            {
+              "ref": "18587c7c464d",
+              "symbol": "UE.EnhancedInputWorldSubsystem.InjectInputForPlayerMapping",
+              "kind": "method",
+              "signature": "InjectInputForPlayerMapping(MappingName: string, RawValue: UE.InputActionValue, Modifiers: TArray<UE.InputModifier>, Triggers: TArray<UE.InputTrigger>) : void;",
+              "summary": "Input simulation via injection. Runs modifiers and triggers delegates as if the input had come through the underlying input system as FKeys. Applies action modifiers and triggers on top."
+            },
+            {
+              "ref": "d40f7e9f4134",
+              "symbol": "UE.EnhancedInputWorldSubsystem.InjectInputVectorForPlayerMapping",
+              "kind": "method",
+              "signature": "InjectInputVectorForPlayerMapping(MappingName: string, Value: UE.Vector, Modifiers: TArray<UE.InputModifier>, Triggers: TArray<UE.InputTrigger>) : void;",
+              "summary": "Input simulation via injection. Runs modifiers and triggers delegates as if the input had come through the underlying input system as FKeys. Applies action modifiers and triggers on top."
+            },
+            {
+              "ref": "bbcaeee24e5f",
+              "symbol": "UE.EnhancedInputWorldSubsystem.OnUserKeyProfileChanged",
+              "kind": "method",
+              "signature": "OnUserKeyProfileChanged(InNewProfile: $Nullable<UE.EnhancedPlayerMappableKeyProfile>) : void;",
+              "summary": "A callback for when the user has applied a new mappable key profile."
+            },
+            {
+              "ref": "3f1b035dfe45",
+              "symbol": "UE.EnhancedInputWorldSubsystem.PlayerInput",
+              "kind": "property",
+              "signature": "PlayerInput: UE.EnhancedPlayerInput;",
+              "summary": ""
+            }
+          ],
+          "why": [
+            "rewrite: Bind an Enhanced Input action in PuerTS to receive horizontal movement input for a character.",
+            "name: enhanced, input",
+            "members: AddActorInputComponent, CurrentInputStack, GetAllPlayerMappableActionKeyMappings, GetInputMode",
+            "facets: carrier_context/bm25, carrier_context/vector",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "efa17e99fe67",
+          "entryType": "static_function",
+          "symbol": "UE.SceneComponent.IsGroupedComponentMovementEnabled",
+          "kind": "method",
+          "owner": "UE.SceneComponent",
+          "signature": "static IsGroupedComponentMovementEnabled() : boolean;",
+          "score": 88.4753,
+          "confidence": 0.7365,
+          "source": "Engine/Components",
+          "why": [
+            "rewrite: Bind an Enhanced Input action in PuerTS to receive horizontal movement input for a character.",
+            "name: component, movement",
+            "facets: movement_navigation/bm25, movement_navigation/vector",
+            "static function result",
+            "vector recall"
+          ]
+        }
+      ],
+      "profile": {
+        "load": 0.7428,
+        "rewrite": 12.3666,
+        "embed": 0.2292,
+        "bm25": 0.1784,
+        "vector": 0.4021,
+        "score": 0.18,
+        "select": 0.0002,
+        "total": 13.8714
+      }
+    }
+  }
+}

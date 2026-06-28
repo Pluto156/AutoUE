@@ -1,0 +1,74 @@
+{
+  "entities": [
+    {
+      "entity_id": "player",
+      "display_name": "Player",
+      "summary": "The controllable character and all player-driven gameplay actions.",
+      "abilities": [
+        {
+          "ability_id": "player.movement",
+          "display_name": "Movement",
+          "summary": "Player navigation inside the side-scroller room.",
+          "behaviors": [
+            {
+              "behavior_id": "player.movement.move",
+              "display_name": "Move Through Room",
+              "trigger": "Player provides movement input.",
+              "execution": "The player character moves left or right within the room bounds.",
+              "result": "Player position changes inside the side-scroller room.",
+              "source_refs": []
+            }
+          ]
+        },
+        {
+          "ability_id": "player.combat",
+          "display_name": "Combat",
+          "summary": "Player attacks the single enemy.",
+          "behaviors": [
+            {
+              "behavior_id": "player.combat.attack_enemy",
+              "display_name": "Attack Enemy",
+              "trigger": "Player uses the attack action while near or facing the enemy.",
+              "execution": "The player performs an attack against the enemy.",
+              "result": "The enemy is defeated or removed as an obstacle.",
+              "source_refs": []
+            }
+          ]
+        },
+        {
+          "ability_id": "player.collection",
+          "display_name": "Collection",
+          "summary": "Player collects the room reward.",
+          "behaviors": [
+            {
+              "behavior_id": "player.collection.collect_reward",
+              "display_name": "Collect Reward",
+              "trigger": "Player reaches the reward after it is available.",
+              "execution": "The player picks up the reward.",
+              "result": "The reward is collected and no longer available in the room.",
+              "source_refs": []
+            }
+          ]
+        },
+        {
+          "ability_id": "player.exit",
+          "display_name": "Exit",
+          "summary": "Player leaves the room through the exit.",
+          "behaviors": [
+            {
+              "behavior_id": "player.exit.leave_room",
+              "display_name": "Leave Room",
+              "trigger": "Player reaches the exit after completing required room interactions.",
+              "execution": "The player activates or enters the exit.",
+              "result": "The room is completed and the player exits.",
+              "source_refs": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "non_goals": [
+    "Detailed scene art, camera setup, physics tuning, implementation files, engine ports, and template inputs are outside this definition-only plan."
+  ]
+}

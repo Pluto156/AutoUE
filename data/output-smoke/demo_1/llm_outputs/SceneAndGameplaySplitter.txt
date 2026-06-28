@@ -1,0 +1,4 @@
+{
+  "scene_description": "A tiny side-scroller test room.",
+  "gameplay_description": "The player moves, attacks one enemy, collects a reward, and exits."
+}

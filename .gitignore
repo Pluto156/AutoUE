@@ -1,3 +1,6 @@
 .langgraph_api/
 .vscode/
 __pycache__/
+.venv/
+data/output*/
+demo_finish_log.txt

@@ -1,0 +1,260 @@
+{
+    "evaluation_instructions": [
+        {
+            "step_id": 1,
+            "action": "move",
+            "target": "side-scroller room",
+            "description": "Statically validate that player movement behavior traces from generated interaction adapter through rendered PuerTS ability module to mapped movement engine ports without launching PIE.",
+            "driver": "adapter_call",
+            "executor_action": "call_behavior",
+            "expected": [
+                {
+                    "type": "static_trace_present",
+                    "key": "ability_module_export",
+                    "expected_value": "runPlayerMovementAbility"
+                },
+                {
+                    "type": "static_trace_present",
+                    "key": "interactive_adapter_export",
+                    "expected_value": "runPlayerMovementMoveInteraction"
+                },
+                {
+                    "type": "static_trace_present",
+                    "key": "engine_ports_mapped",
+                    "expected_value": [
+                        "enhanced_input.bind_action",
+                        "pawn.add_movement_input"
+                    ]
+                }
+            ],
+            "trace": {
+                "entity_id": "player",
+                "ability_id": "player.movement",
+                "behavior_id": "player.movement.move",
+                "flow_id": "flow_player_movement_move",
+                "engine_port_ids": [
+                    "enhanced_input.bind_action",
+                    "pawn.add_movement_input"
+                ],
+                "adjudication_paths": [
+                    "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json",
+                    "flow/04-ue-api-mcp/adjudication/pawn.add_movement_input.json"
+                ],
+                "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+                "ts_files": [
+                    "TypeScript/content/generated/PlayerMovementAbility.ts",
+                    "TypeScript/content/generated/interactive/PlayerMovementMoveInteractable.ts"
+                ]
+            }
+        },
+        {
+            "step_id": 2,
+            "action": "attack",
+            "target": "enemy",
+            "description": "Statically validate that player combat behavior traces from generated interaction adapter through rendered PuerTS ability module to mapped trace and damage engine ports without launching PIE.",
+            "driver": "adapter_call",
+            "executor_action": "call_behavior",
+            "expected": [
+                {
+                    "type": "static_trace_present",
+                    "key": "ability_module_export",
+                    "expected_value": "runPlayerCombatAbility"
+                },
+                {
+                    "type": "static_trace_present",
+                    "key": "interactive_adapter_export",
+                    "expected_value": "runPlayerCombatAttackEnemyInteraction"
+                },
+                {
+                    "type": "static_trace_present",
+                    "key": "engine_ports_mapped",
+                    "expected_value": [
+                        "kismet.line_trace_single",
+                        "gameplay_statics.apply_damage"
+                    ]
+                }
+            ],
+            "trace": {
+                "entity_id": "player",
+                "ability_id": "player.combat",
+                "behavior_id": "player.combat.attack_enemy",
+                "flow_id": "flow_player_combat_attack_enemy",
+                "engine_port_ids": [
+                    "kismet.line_trace_single",
+                    "gameplay_statics.apply_damage"
+                ],
+                "adjudication_paths": [
+                    "flow/04-ue-api-mcp/adjudication/kismet.line_trace_single.json",
+                    "flow/04-ue-api-mcp/adjudication/gameplay_statics.apply_damage.json"
+                ],
+                "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+                "ts_files": [
+                    "TypeScript/content/generated/PlayerCombatAbility.ts",
+                    "TypeScript/content/generated/interactive/PlayerCombatAttackEnemyInteractable.ts"
+                ]
+            }
+        },
+        {
+            "step_id": 3,
+            "action": "collect",
+            "target": "reward",
+            "description": "Statically validate that player reward collection behavior traces from generated interaction adapter through rendered PuerTS ability module to mapped overlap engine port without launching PIE.",
+            "driver": "adapter_call",
+            "executor_action": "call_behavior",
+            "expected": [
+                {
+                    "type": "static_trace_present",
+                    "key": "ability_module_export",
+                    "expected_value": "runPlayerCollectionAbility"
+                },
+                {
+                    "type": "static_trace_present",
+                    "key": "interactive_adapter_export",
+                    "expected_value": "runPlayerCollectionCollectRewardInteraction"
+                },
+                {
+                    "type": "static_trace_present",
+                    "key": "engine_ports_mapped",
+                    "expected_value": [
+                        "primitive.on_component_begin_overlap"
+                    ]
+                }
+            ],
+            "trace": {
+                "entity_id": "player",
+                "ability_id": "player.collection",
+                "behavior_id": "player.collection.collect_reward",
+                "flow_id": "flow_player_collection_collect_reward",
+                "engine_port_ids": [
+                    "primitive.on_component_begin_overlap"
+                ],
+                "adjudication_paths": [
+                    "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json"
+                ],
+                "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+                "ts_files": [
+                    "TypeScript/content/generated/PlayerCollectionAbility.ts",
+                    "TypeScript/content/generated/interactive/PlayerCollectionCollectRewardInteractable.ts"
+                ]
+            }
+        },
+        {
+            "step_id": 4,
+            "action": "exit",
+            "target": "room exit",
+            "description": "Statically validate that player room exit behavior traces from generated interaction adapter through rendered PuerTS ability module to mapped overlap engine port without launching PIE.",
+            "driver": "adapter_call",
+            "executor_action": "call_behavior",
+            "expected": [
+                {
+                    "type": "static_trace_present",
+                    "key": "ability_module_export",
+                    "expected_value": "runPlayerExitAbility"
+                },
+                {
+                    "type": "static_trace_present",
+                    "key": "interactive_adapter_export",
+                    "expected_value": "runPlayerExitLeaveRoomInteraction"
+                },
+                {
+                    "type": "static_trace_present",
+                    "key": "engine_ports_mapped",
+                    "expected_value": [
+                        "primitive.on_component_begin_overlap"
+                    ]
+                }
+            ],
+            "trace": {
+                "entity_id": "player",
+                "ability_id": "player.exit",
+                "behavior_id": "player.exit.leave_room",
+                "flow_id": "flow_player_exit_leave_room",
+                "engine_port_ids": [
+                    "primitive.on_component_begin_overlap"
+                ],
+                "adjudication_paths": [
+                    "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json"
+                ],
+                "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+                "ts_files": [
+                    "TypeScript/content/generated/PlayerExitAbility.ts",
+                    "TypeScript/content/generated/interactive/PlayerExitLeaveRoomInteractable.ts"
+                ]
+            }
+        }
+    ],
+    "coverage": [
+        {
+            "entity_id": "player",
+            "ability_id": "player.movement",
+            "behavior_id": "player.movement.move",
+            "flow_id": "flow_player_movement_move",
+            "engine_port_ids": [
+                "enhanced_input.bind_action",
+                "pawn.add_movement_input"
+            ],
+            "adjudication_paths": [
+                "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json",
+                "flow/04-ue-api-mcp/adjudication/pawn.add_movement_input.json"
+            ],
+            "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+            "ts_files": [
+                "TypeScript/content/generated/PlayerMovementAbility.ts",
+                "TypeScript/content/generated/interactive/PlayerMovementMoveInteractable.ts"
+            ]
+        },
+        {
+            "entity_id": "player",
+            "ability_id": "player.combat",
+            "behavior_id": "player.combat.attack_enemy",
+            "flow_id": "flow_player_combat_attack_enemy",
+            "engine_port_ids": [
+                "kismet.line_trace_single",
+                "gameplay_statics.apply_damage"
+            ],
+            "adjudication_paths": [
+                "flow/04-ue-api-mcp/adjudication/kismet.line_trace_single.json",
+                "flow/04-ue-api-mcp/adjudication/gameplay_statics.apply_damage.json"
+            ],
+            "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+            "ts_files": [
+                "TypeScript/content/generated/PlayerCombatAbility.ts",
+                "TypeScript/content/generated/interactive/PlayerCombatAttackEnemyInteractable.ts"
+            ]
+        },
+        {
+            "entity_id": "player",
+            "ability_id": "player.collection",
+            "behavior_id": "player.collection.collect_reward",
+            "flow_id": "flow_player_collection_collect_reward",
+            "engine_port_ids": [
+                "primitive.on_component_begin_overlap"
+            ],
+            "adjudication_paths": [
+                "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json"
+            ],
+            "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+            "ts_files": [
+                "TypeScript/content/generated/PlayerCollectionAbility.ts",
+                "TypeScript/content/generated/interactive/PlayerCollectionCollectRewardInteractable.ts"
+            ]
+        },
+        {
+            "entity_id": "player",
+            "ability_id": "player.exit",
+            "behavior_id": "player.exit.leave_room",
+            "flow_id": "flow_player_exit_leave_room",
+            "engine_port_ids": [
+                "primitive.on_component_begin_overlap"
+            ],
+            "adjudication_paths": [
+                "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json"
+            ],
+            "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+            "ts_files": [
+                "TypeScript/content/generated/PlayerExitAbility.ts",
+                "TypeScript/content/generated/interactive/PlayerExitLeaveRoomInteractable.ts"
+            ]
+        }
+    ]
+}

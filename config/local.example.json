@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "llm_profile": "codex_cli_planning",
+  "workflow": "config/workflows/default.json",
+  "paths": {
+    "input_dir": "data/input",
+    "output_dir": "data/output",
+    "copy_dirs": [],
+    "prompt_dir": "prompts",
+    "llm_outputs_dir_name": "llm_outputs"
+  },
+  "post_actions": {
+    "copy_dirs": true,
+    "copy_prompt_to_eval": true,
+    "render_gltf": false
+  },
+  "mcp": {
+    "ue_api_search": {
+      "command": "",
+      "args": [],
+      "env": {},
+      "timeout_sec": 120,
+      "tool": "ue_api_semantic_search",
+      "fallback": "If empty, AutoUE reads [mcp_servers.ue-api-search] from ~/.codex/config.toml."
+    }
+  }
+}

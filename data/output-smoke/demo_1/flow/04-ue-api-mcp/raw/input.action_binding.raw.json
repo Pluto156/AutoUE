@@ -1,0 +1,32 @@
+{
+  "engine_port_id": "input.action_binding",
+  "flow_ids": [
+    "flow_player_combat_attack"
+  ],
+  "behavior_ids": [
+    "player.combat.attack"
+  ],
+  "contracts": [
+    "bind player attack input"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for input.action_binding: bind player attack input",
+  "raw_path": "flow/04-ue-api-mcp/raw/input.action_binding.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/input.action_binding.json",
+  "raw_result": {
+    "tool": "ue_api_semantic_search",
+    "query": "Unreal Engine PuerTS gameplay API for input.action_binding: bind player attack input",
+    "limit": 5,
+    "fixture": true,
+    "payload": {
+      "results": [
+        {
+          "symbol": "UE.EnhancedInputComponent.BindAction",
+          "entryType": "function",
+          "signature": "UE.EnhancedInputComponent.BindAction(...)",
+          "summary": "scripted smoke UE API evidence",
+          "confidence": 0.99
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "typescript_sources": [
+    {
+      "path": "TypeScript/content/generated/SmokeGame.ts",
+      "role": "ability",
+      "notes": "runtime_owner from smoke mapping"
+    }
+  ],
+  "implementation_slots": [
+    {
+      "entity_id": "player",
+      "behavior_id": "player.combat.attack",
+      "flow_id": "flow_player_combat_attack",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "target_ts_file": "TypeScript/content/generated/SmokeGame.ts",
+      "reason": "scripted smoke runtime mapping"
+    }
+  ],
+  "missing_slots": []
+}

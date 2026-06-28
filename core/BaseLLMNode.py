@@ -97,6 +97,7 @@ class BaseLLMNode:
         enable_feedback: bool = True,
         pre_action: callable = None,
         post_action: callable = None,
+        output_validator: callable = None,
         extra_prompt_action: callable = None,
         copy_graph_state: GraphState = None,
         useLastNodeOutPut: bool = True,
@@ -110,6 +111,7 @@ class BaseLLMNode:
         self.enable_feedback = enable_feedback
         self.pre_action = pre_action
         self.post_action = post_action
+        self.output_validator = output_validator
         self.extra_prompt_action = extra_prompt_action
         self.executed = False
         self.copy_graph_state = copy_graph_state
@@ -222,7 +224,8 @@ class BaseLLMNode:
                         )
                 except Exception as e:
                     if self.isDebug:
-                        print(f"[WARN] extra_prompt_action failed: {e}")
+                        print(f"[ERROR] extra_prompt_action failed in {node}: {e}")
+                    raise RuntimeError(f"{node} extra_prompt_action failed") from e
 
             # -------- pre action --------
             if callable(self.pre_action):
@@ -232,7 +235,8 @@ class BaseLLMNode:
                     self.pre_action(self, state, self.full_input)
                 except Exception as e:
                     if self.isDebug:
-                        print(f"[WARN] pre_action failed: {e}")
+                        print(f"[ERROR] pre_action failed in {node}: {e}")
+                    raise RuntimeError(f"{node} pre_action failed") from e
 
             self.executed = True
 
@@ -241,6 +245,12 @@ class BaseLLMNode:
 
             # -------- LLM call --------
             output = self.call_model(self.full_input, state)
+            if callable(self.output_validator):
+                if self.isDebug:
+                    print(f"[DEBUG] Validating {node} output ...")
+                validated_output = self.output_validator(self, state, output)
+                if isinstance(validated_output, str):
+                    output = validated_output
             llm_outputs[node] = output
 
             if self.isDebug:
@@ -254,7 +264,8 @@ class BaseLLMNode:
                     self.post_action(state, output)
                 except Exception as e:
                     if self.isDebug:
-                        print(f"[WARN] post_action failed: {e}")
+                        print(f"[ERROR] post_action failed in {node}: {e}")
+                    raise RuntimeError(f"{node} post_action failed") from e
 
         output = llm_outputs.get(node, "(No Output)")
 

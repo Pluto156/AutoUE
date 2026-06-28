@@ -1,0 +1,44 @@
+{
+  "queries": [
+    {
+      "engine_port_id": "input.action_binding",
+      "flow_ids": [
+        "flow_player_combat_attack"
+      ],
+      "behavior_ids": [
+        "player.combat.attack"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for input.action_binding: bind player attack input",
+      "raw_path": "flow/04-ue-api-mcp/raw/input.action_binding.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/input.action_binding.json",
+      "verdict": "hit",
+      "hit_type": "direct_hit",
+      "evidence_symbols": [
+        "UE.EnhancedInputComponent.BindAction"
+      ],
+      "notes": "MCP fixture returns an input binding symbol."
+    },
+    {
+      "engine_port_id": "damage.apply",
+      "flow_ids": [
+        "flow_player_combat_attack"
+      ],
+      "behavior_ids": [
+        "player.combat.attack"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for damage.apply: apply damage to enemy",
+      "raw_path": "flow/04-ue-api-mcp/raw/damage.apply.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/damage.apply.json",
+      "verdict": "hit",
+      "hit_type": "direct_hit",
+      "evidence_symbols": [
+        "UE.GameplayStatics.ApplyDamage"
+      ],
+      "notes": "MCP fixture returns a damage application symbol."
+    }
+  ],
+  "summary": {
+    "all_required_ports_hit": true,
+    "blocked_engine_ports": []
+  }
+}

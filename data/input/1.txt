@@ -1,0 +1,1 @@
+Create a tiny side-scroller room where the player can move, attack one enemy, collect a reward, and exit.

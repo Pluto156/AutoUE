@@ -1,0 +1,633 @@
+{
+  "engine_port_id": "gameplay_statics.apply_damage",
+  "flow_ids": [
+    "flow_player_combat_attack_enemy"
+  ],
+  "behavior_ids": [
+    "player.combat.attack_enemy"
+  ],
+  "contracts": [
+    "Apply damage or defeat logic to the hit enemy."
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for gameplay_statics.apply_damage; exact symbol hints: Gameplay.StaticsApplyDamage, GameplayStaticsApplyDamage, gameplay statics apply damage. Intent: Apply damage or defeat logic to the hit enemy.",
+  "raw_path": "flow/04-ue-api-mcp/raw/gameplay_statics.apply_damage.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/gameplay_statics.apply_damage.json",
+  "raw_result": {
+    "tool": "ue_api_semantic_search",
+    "query": "Unreal Engine PuerTS gameplay API for gameplay_statics.apply_damage; exact symbol hints: Gameplay.StaticsApplyDamage, GameplayStaticsApplyDamage, gameplay statics apply damage. Intent: Apply damage or defeat logic to the hit enemy.",
+    "limit": 5,
+    "raw_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"ok\",\n  \"mode\": \"semantic\",\n  \"query\": \"Unreal Engine PuerTS gameplay API for gameplay_statics.apply_damage; exact symbol hints: Gameplay.StaticsApplyDamage, GameplayStaticsApplyDamage, gameplay statics apply damage. Intent: Apply damage or defeat logic to the hit enemy.\",\n  \"searchText\": \"ApplyDamage gameplay statics damage health defeat controller actor damage causer instigator hit event overlap on damage apply trigger trace hit target actor\",\n  \"rewrite\": {\n    \"status\": \"rewritten\",\n    \"domainStatus\": \"ue_relevant\",\n    \"intentSummary\": \"Apply damage and defeat logic to a hit enemy using GameplayStatics::ApplyDamage.\",\n    \"warnings\": [],\n    \"activeSubqueries\": [\n      {\n        \"facetId\": \"damage_state\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"Damage application, health reduction, and defeat logic.\",\n        \"subqueryId\": \"damage_state_1\",\n        \"text\": \"ApplyDamage gameplay statics\",\n        \"weight\": 0.6,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"damage_state\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"Damage application, health reduction, and defeat logic.\",\n        \"subqueryId\": \"damage_state_2\",\n        \"text\": \"damage health defeat\",\n        \"weight\": 0.4,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The gameplay object that owns and calls the damage function.\",\n        \"subqueryId\": \"carrier_context_1\",\n        \"text\": \"controller actor\",\n        \"weight\": 0.6,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The gameplay object that owns and calls the damage function.\",\n        \"subqueryId\": \"carrier_context_2\",\n        \"text\": \"damage causer instigator\",\n        \"weight\": 0.4,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"The event or overlap that triggers applying damage.\",\n        \"subqueryId\": \"activation_trigger_1\",\n        \"text\": \"hit event overlap\",\n        \"weight\": 0.3,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"The event or overlap that triggers applying damage.\",\n        \"subqueryId\": \"activation_trigger_2\",\n        \"text\": \"on damage apply trigger\",\n        \"weight\": 0.3,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"spatial_targeting\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"Targeting the enemy actor to receive damage.\",\n        \"subqueryId\": \"spatial_targeting_1\",\n        \"text\": \"trace hit target actor\",\n        \"weight\": 0.6,\n        \"subqueryWeight\": 1.0\n      }\n    ]\n  },\n  \"embedding\": {\n    \"enabled\": true,\n    \"provider\": \"ollama\",\n    \"model\": \"bge-m3\",\n    \"dimensions\": 1024,\n    \"indexedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"status\": \"ready\"\n  },\n  \"partitions\": {\n    \"enabled\": true,\n    \"classifierEnabled\": true,\n    \"provider\": \"aaa\",\n    \"binaryAvailable\": true,\n    \"timeoutMs\": 90000,\n    \"candidateCount\": 20361,\n    \"processedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"validAssignmentCount\": 14733,\n    \"partitionedEntryCount\": 12532,\n    \"partitionedEntryRatio\": 0.6155,\n    \"searchReady\": true,\n    \"byFacet\": {\n      \"activation_trigger\": 241,\n      \"ai_behavior\": 948,\n      \"animation\": 1856,\n      \"audio\": 704,\n      \"camera_feedback_ui\": 1336,\n      \"carrier_context\": 1362,\n      \"damage_state\": 548,\n      \"integration_event\": 1069,\n      \"level_world\": 342,\n      \"lighting\": 134,\n      \"material_visual_state\": 1065,\n      \"mesh_geometry\": 1545,\n      \"movement_navigation\": 256,\n      \"networking_authority\": 414,\n      \"persistence_assets\": 612,\n      \"physics\": 666,\n      \"spatial_targeting\": 466,\n      \"spawn_lifecycle\": 117,\n      \"visual_effects\": 1052\n    },\n    \"status\": \"ready\",\n    \"searchScoped\": true\n  },\n  \"filters\": {},\n  \"confidence\": {\n    \"minConfidence\": 0.55,\n    \"status\": \"ok\",\n    \"topConfidence\": 0.7529\n  },\n  \"count\": 5,\n  \"results\": [\n    {\n      \"ref\": \"0d33f585e6fa\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.GameplayStatics.ApplyDamage\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.GameplayStatics\",\n      \"signature\": \"static ApplyDamage(DamagedActor: $Nullable<UE.Actor>, BaseDamage: number, EventInstigator: $Nullable<UE.Controller>, DamageCauser: $Nullable<UE.Actor>, DamageTypeClass: $Nullable<UE.Class>) : number;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7529,\n      \"summary\": \"Hurts the specified actor with generic damage.\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Apply damage and defeat logic to a hit enemy using GameplayStatics::ApplyDamage.\",\n        \"name: apply, damage, gameplay, statics\",\n        \"doc: actor, damage\",\n        \"params: actor, apply, causer, controller, damage, event\",\n        \"facets: damage_state/bm25, damage_state/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"5b6bdf8706d4\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.GameplayStatics.BreakHitResult\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.GameplayStatics\",\n      \"signature\": \"static BreakHitResult(Hit: UE.HitResult, bBlockingHit: $Ref<boolean>, bInitialOverlap: $Ref<boolean>, Time: $Ref<number>, Distance: $Ref<number>, Location: $Ref<UE.Vector>, ImpactPoint: $Ref<UE.Vector>, Normal: $Ref<UE.Vector>, ImpactNormal: $Ref<UE.Vector>, PhysMat: $Ref<UE.PhysicalMaterial>, HitActor: $Ref<UE.Actor>, HitComponent: $Ref<UE.PrimitiveComponent>, HitBoneName: $Ref<string>, BoneName: $Ref<string>, HitItem: $Ref<number>, ElementIndex: $Ref<number>, FaceIndex: $Ref<number>, TraceStart: $Ref<UE.Vector>, TraceEnd: $Ref<UE.Vector>) : void;\",\n      \"score\": 93.0,\n      \"confidence\": 0.75,\n      \"summary\": \"Extracts data from a HitResult.\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Apply damage and defeat logic to a hit enemy using GameplayStatics::ApplyDamage.\",\n        \"name: gameplay, hit, statics\",\n        \"doc: hit\",\n        \"params: actor, hit, overlap, trace\",\n        \"facets: spatial_targeting/bm25, spatial_targeting/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"338a158893c8\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetInputLibrary.PointerEvent_IsTouchEvent\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetInputLibrary\",\n      \"signature\": \"static PointerEvent_IsTouchEvent(Input: UE.PointerEvent) : boolean;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7431,\n      \"summary\": \"Returns true if this event a result from a touch (as opposed to a mouse)\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Apply damage and defeat logic to a hit enemy using GameplayStatics::ApplyDamage.\",\n        \"name: event\",\n        \"doc: event\",\n        \"facets: activation_trigger/bm25, activation_trigger/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"2bed9e2aa7a2\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.Controller\",\n      \"kind\": \"class\",\n      \"score\": 92.5,\n      \"confidence\": 0.7326,\n      \"extends\": \"UE.Actor\",\n      \"source\": \"Engine/GameFramework\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"bdb7926184c8\",\n          \"symbol\": \"UE.Controller.OnInstigatedAnyDamage\",\n          \"kind\": \"property\",\n          \"signature\": \"OnInstigatedAnyDamage: $MulticastDelegate<(Damage: number, DamageType: $Nullable<UE.DamageType>, DamagedActor: $Nullable<UE.Actor>, DamageCauser: $Nullable<UE.Actor>) => void>;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"0394bacc50eb\",\n          \"symbol\": \"UE.Controller.ReceiveInstigatedAnyDamage\",\n          \"kind\": \"method\",\n          \"signature\": \"ReceiveInstigatedAnyDamage(Damage: number, DamageType: $Nullable<UE.DamageType>, DamagedActor: $Nullable<UE.Actor>, DamageCauser: $Nullable<UE.Actor>) : void;\",\n          \"summary\": \"Event when this controller instigates ANY damage\"\n        },\n        {\n          \"ref\": \"c7534884fb62\",\n          \"symbol\": \"UE.Controller.GetViewTarget\",\n          \"kind\": \"method\",\n          \"signature\": \"GetViewTarget() : UE.Actor;\",\n          \"summary\": \"Get the actor the controller is looking at\"\n        },\n        {\n          \"ref\": \"0bf6678c62f4\",\n          \"symbol\": \"UE.Controller.LineOfSightTo\",\n          \"kind\": \"method\",\n          \"signature\": \"LineOfSightTo(Other: $Nullable<UE.Actor>, ViewPoint?: UE.Vector /* = */, bAlternateChecks?: boolean /* = false */) : boolean;\",\n          \"summary\": \"Checks line to center and top of other actor\"\n        },\n        {\n          \"ref\": \"30019c41cfb4\",\n          \"symbol\": \"UE.Controller.Character\",\n          \"kind\": \"property\",\n          \"signature\": \"Character: UE.Character;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"b8b96920a7e0\",\n          \"symbol\": \"UE.Controller.ClientSetLocation\",\n          \"kind\": \"method\",\n          \"signature\": \"ClientSetLocation(NewLocation: UE.Vector, NewRotation: UE.Rotator) : void;\",\n          \"summary\": \"Replicated function to set the pawn location and rotation, allowing server to force (ex. teleports).\"\n        },\n        {\n          \"ref\": \"4fc41da99dd0\",\n          \"symbol\": \"UE.Controller.ClientSetRotation\",\n          \"kind\": \"method\",\n          \"signature\": \"ClientSetRotation(NewRotation: UE.Rotator, bResetCamera: boolean) : void;\",\n          \"summary\": \"Replicated function to set the pawn rotation, allowing the server to force.\"\n        },\n        {\n          \"ref\": \"51e1f996a944\",\n          \"symbol\": \"UE.Controller.ControlRotation\",\n          \"kind\": \"property\",\n          \"signature\": \"ControlRotation: UE.Rotator;\",\n          \"summary\": \"\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Apply damage and defeat logic to a hit enemy using GameplayStatics::ApplyDamage.\",\n        \"name: controller\",\n        \"members: OnInstigatedAnyDamage, ReceiveInstigatedAnyDamage, GetViewTarget, LineOfSightTo\",\n        \"facets: carrier_context/bm25, carrier_context/vector\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"381b4199aae2\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.GameplayStatics.ApplyPointDamage\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.GameplayStatics\",\n      \"signature\": \"static ApplyPointDamage(DamagedActor: $Nullable<UE.Actor>, BaseDamage: number, HitFromDirection: UE.Vector, HitInfo: UE.HitResult, EventInstigator: $Nullable<UE.Controller>, DamageCauser: $Nullable<UE.Actor>, DamageTypeClass: $Nullable<UE.Class>) : number;\",\n      \"score\": 89.9628,\n      \"confidence\": 0.7481,\n      \"summary\": \"Hurts the specified actor with the specified impact.\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Apply damage and defeat logic to a hit enemy using GameplayStatics::ApplyDamage.\",\n        \"name: apply, damage, gameplay, statics\",\n        \"doc: actor\",\n        \"params: actor, apply, causer, controller, damage, event\",\n        \"facets: damage_state/bm25, damage_state/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    }\n  ],\n  \"profile\": {\n    \"load\": 0.7537,\n    \"rewrite\": 5.3664,\n    \"embed\": 0.1941,\n    \"bm25\": 0.0592,\n    \"vector\": 0.2723,\n    \"score\": 0.1253,\n    \"select\": 0.0002,\n    \"total\": 6.5337\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "status": "ok",
+        "mode": "semantic",
+        "query": "Unreal Engine PuerTS gameplay API for gameplay_statics.apply_damage; exact symbol hints: Gameplay.StaticsApplyDamage, GameplayStaticsApplyDamage, gameplay statics apply damage. Intent: Apply damage or defeat logic to the hit enemy.",
+        "searchText": "ApplyDamage gameplay statics damage health defeat controller actor damage causer instigator hit event overlap on damage apply trigger trace hit target actor",
+        "rewrite": {
+          "status": "rewritten",
+          "domainStatus": "ue_relevant",
+          "intentSummary": "Apply damage and defeat logic to a hit enemy using GameplayStatics::ApplyDamage.",
+          "warnings": [],
+          "activeSubqueries": [
+            {
+              "facetId": "damage_state",
+              "facetStatus": "required",
+              "facetIntent": "Damage application, health reduction, and defeat logic.",
+              "subqueryId": "damage_state_1",
+              "text": "ApplyDamage gameplay statics",
+              "weight": 0.6,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "damage_state",
+              "facetStatus": "required",
+              "facetIntent": "Damage application, health reduction, and defeat logic.",
+              "subqueryId": "damage_state_2",
+              "text": "damage health defeat",
+              "weight": 0.4,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The gameplay object that owns and calls the damage function.",
+              "subqueryId": "carrier_context_1",
+              "text": "controller actor",
+              "weight": 0.6,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The gameplay object that owns and calls the damage function.",
+              "subqueryId": "carrier_context_2",
+              "text": "damage causer instigator",
+              "weight": 0.4,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "optional",
+              "facetIntent": "The event or overlap that triggers applying damage.",
+              "subqueryId": "activation_trigger_1",
+              "text": "hit event overlap",
+              "weight": 0.3,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "optional",
+              "facetIntent": "The event or overlap that triggers applying damage.",
+              "subqueryId": "activation_trigger_2",
+              "text": "on damage apply trigger",
+              "weight": 0.3,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "spatial_targeting",
+              "facetStatus": "optional",
+              "facetIntent": "Targeting the enemy actor to receive damage.",
+              "subqueryId": "spatial_targeting_1",
+              "text": "trace hit target actor",
+              "weight": 0.6,
+              "subqueryWeight": 1.0
+            }
+          ]
+        },
+        "embedding": {
+          "enabled": true,
+          "provider": "ollama",
+          "model": "bge-m3",
+          "dimensions": 1024,
+          "indexedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "status": "ready"
+        },
+        "partitions": {
+          "enabled": true,
+          "classifierEnabled": true,
+          "provider": "aaa",
+          "binaryAvailable": true,
+          "timeoutMs": 90000,
+          "candidateCount": 20361,
+          "processedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "validAssignmentCount": 14733,
+          "partitionedEntryCount": 12532,
+          "partitionedEntryRatio": 0.6155,
+          "searchReady": true,
+          "byFacet": {
+            "activation_trigger": 241,
+            "ai_behavior": 948,
+            "animation": 1856,
+            "audio": 704,
+            "camera_feedback_ui": 1336,
+            "carrier_context": 1362,
+            "damage_state": 548,
+            "integration_event": 1069,
+            "level_world": 342,
+            "lighting": 134,
+            "material_visual_state": 1065,
+            "mesh_geometry": 1545,
+            "movement_navigation": 256,
+            "networking_authority": 414,
+            "persistence_assets": 612,
+            "physics": 666,
+            "spatial_targeting": 466,
+            "spawn_lifecycle": 117,
+            "visual_effects": 1052
+          },
+          "status": "ready",
+          "searchScoped": true
+        },
+        "filters": {},
+        "confidence": {
+          "minConfidence": 0.55,
+          "status": "ok",
+          "topConfidence": 0.7529
+        },
+        "count": 5,
+        "results": [
+          {
+            "ref": "0d33f585e6fa",
+            "entryType": "static_function",
+            "symbol": "UE.GameplayStatics.ApplyDamage",
+            "kind": "method",
+            "owner": "UE.GameplayStatics",
+            "signature": "static ApplyDamage(DamagedActor: $Nullable<UE.Actor>, BaseDamage: number, EventInstigator: $Nullable<UE.Controller>, DamageCauser: $Nullable<UE.Actor>, DamageTypeClass: $Nullable<UE.Class>) : number;",
+            "score": 93.0,
+            "confidence": 0.7529,
+            "summary": "Hurts the specified actor with generic damage.",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Apply damage and defeat logic to a hit enemy using GameplayStatics::ApplyDamage.",
+              "name: apply, damage, gameplay, statics",
+              "doc: actor, damage",
+              "params: actor, apply, causer, controller, damage, event",
+              "facets: damage_state/bm25, damage_state/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "5b6bdf8706d4",
+            "entryType": "static_function",
+            "symbol": "UE.GameplayStatics.BreakHitResult",
+            "kind": "method",
+            "owner": "UE.GameplayStatics",
+            "signature": "static BreakHitResult(Hit: UE.HitResult, bBlockingHit: $Ref<boolean>, bInitialOverlap: $Ref<boolean>, Time: $Ref<number>, Distance: $Ref<number>, Location: $Ref<UE.Vector>, ImpactPoint: $Ref<UE.Vector>, Normal: $Ref<UE.Vector>, ImpactNormal: $Ref<UE.Vector>, PhysMat: $Ref<UE.PhysicalMaterial>, HitActor: $Ref<UE.Actor>, HitComponent: $Ref<UE.PrimitiveComponent>, HitBoneName: $Ref<string>, BoneName: $Ref<string>, HitItem: $Ref<number>, ElementIndex: $Ref<number>, FaceIndex: $Ref<number>, TraceStart: $Ref<UE.Vector>, TraceEnd: $Ref<UE.Vector>) : void;",
+            "score": 93.0,
+            "confidence": 0.75,
+            "summary": "Extracts data from a HitResult.",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Apply damage and defeat logic to a hit enemy using GameplayStatics::ApplyDamage.",
+              "name: gameplay, hit, statics",
+              "doc: hit",
+              "params: actor, hit, overlap, trace",
+              "facets: spatial_targeting/bm25, spatial_targeting/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "338a158893c8",
+            "entryType": "static_function",
+            "symbol": "UE.KismetInputLibrary.PointerEvent_IsTouchEvent",
+            "kind": "method",
+            "owner": "UE.KismetInputLibrary",
+            "signature": "static PointerEvent_IsTouchEvent(Input: UE.PointerEvent) : boolean;",
+            "score": 93.0,
+            "confidence": 0.7431,
+            "summary": "Returns true if this event a result from a touch (as opposed to a mouse)",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Apply damage and defeat logic to a hit enemy using GameplayStatics::ApplyDamage.",
+              "name: event",
+              "doc: event",
+              "facets: activation_trigger/bm25, activation_trigger/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "2bed9e2aa7a2",
+            "entryType": "type",
+            "symbol": "UE.Controller",
+            "kind": "class",
+            "score": 92.5,
+            "confidence": 0.7326,
+            "extends": "UE.Actor",
+            "source": "Engine/GameFramework",
+            "matchedMembers": [
+              {
+                "ref": "bdb7926184c8",
+                "symbol": "UE.Controller.OnInstigatedAnyDamage",
+                "kind": "property",
+                "signature": "OnInstigatedAnyDamage: $MulticastDelegate<(Damage: number, DamageType: $Nullable<UE.DamageType>, DamagedActor: $Nullable<UE.Actor>, DamageCauser: $Nullable<UE.Actor>) => void>;",
+                "summary": ""
+              },
+              {
+                "ref": "0394bacc50eb",
+                "symbol": "UE.Controller.ReceiveInstigatedAnyDamage",
+                "kind": "method",
+                "signature": "ReceiveInstigatedAnyDamage(Damage: number, DamageType: $Nullable<UE.DamageType>, DamagedActor: $Nullable<UE.Actor>, DamageCauser: $Nullable<UE.Actor>) : void;",
+                "summary": "Event when this controller instigates ANY damage"
+              },
+              {
+                "ref": "c7534884fb62",
+                "symbol": "UE.Controller.GetViewTarget",
+                "kind": "method",
+                "signature": "GetViewTarget() : UE.Actor;",
+                "summary": "Get the actor the controller is looking at"
+              },
+              {
+                "ref": "0bf6678c62f4",
+                "symbol": "UE.Controller.LineOfSightTo",
+                "kind": "method",
+                "signature": "LineOfSightTo(Other: $Nullable<UE.Actor>, ViewPoint?: UE.Vector /* = */, bAlternateChecks?: boolean /* = false */) : boolean;",
+                "summary": "Checks line to center and top of other actor"
+              },
+              {
+                "ref": "30019c41cfb4",
+                "symbol": "UE.Controller.Character",
+                "kind": "property",
+                "signature": "Character: UE.Character;",
+                "summary": ""
+              },
+              {
+                "ref": "b8b96920a7e0",
+                "symbol": "UE.Controller.ClientSetLocation",
+                "kind": "method",
+                "signature": "ClientSetLocation(NewLocation: UE.Vector, NewRotation: UE.Rotator) : void;",
+                "summary": "Replicated function to set the pawn location and rotation, allowing server to force (ex. teleports)."
+              },
+              {
+                "ref": "4fc41da99dd0",
+                "symbol": "UE.Controller.ClientSetRotation",
+                "kind": "method",
+                "signature": "ClientSetRotation(NewRotation: UE.Rotator, bResetCamera: boolean) : void;",
+                "summary": "Replicated function to set the pawn rotation, allowing the server to force."
+              },
+              {
+                "ref": "51e1f996a944",
+                "symbol": "UE.Controller.ControlRotation",
+                "kind": "property",
+                "signature": "ControlRotation: UE.Rotator;",
+                "summary": ""
+              }
+            ],
+            "why": [
+              "rewrite: Apply damage and defeat logic to a hit enemy using GameplayStatics::ApplyDamage.",
+              "name: controller",
+              "members: OnInstigatedAnyDamage, ReceiveInstigatedAnyDamage, GetViewTarget, LineOfSightTo",
+              "facets: carrier_context/bm25, carrier_context/vector",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "381b4199aae2",
+            "entryType": "static_function",
+            "symbol": "UE.GameplayStatics.ApplyPointDamage",
+            "kind": "method",
+            "owner": "UE.GameplayStatics",
+            "signature": "static ApplyPointDamage(DamagedActor: $Nullable<UE.Actor>, BaseDamage: number, HitFromDirection: UE.Vector, HitInfo: UE.HitResult, EventInstigator: $Nullable<UE.Controller>, DamageCauser: $Nullable<UE.Actor>, DamageTypeClass: $Nullable<UE.Class>) : number;",
+            "score": 89.9628,
+            "confidence": 0.7481,
+            "summary": "Hurts the specified actor with the specified impact.",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Apply damage and defeat logic to a hit enemy using GameplayStatics::ApplyDamage.",
+              "name: apply, damage, gameplay, statics",
+              "doc: actor",
+              "params: actor, apply, causer, controller, damage, event",
+              "facets: damage_state/bm25, damage_state/vector",
+              "static function result",
+              "vector recall"
+            ]
+          }
+        ],
+        "profile": {
+          "load": 0.7537,
+          "rewrite": 5.3664,
+          "embed": 0.1941,
+          "bm25": 0.0592,
+          "vector": 0.2723,
+          "score": 0.1253,
+          "select": 0.0002,
+          "total": 6.5337
+        }
+      },
+      "isError": false
+    },
+    "payload": {
+      "status": "ok",
+      "mode": "semantic",
+      "query": "Unreal Engine PuerTS gameplay API for gameplay_statics.apply_damage; exact symbol hints: Gameplay.StaticsApplyDamage, GameplayStaticsApplyDamage, gameplay statics apply damage. Intent: Apply damage or defeat logic to the hit enemy.",
+      "searchText": "ApplyDamage gameplay statics damage health defeat controller actor damage causer instigator hit event overlap on damage apply trigger trace hit target actor",
+      "rewrite": {
+        "status": "rewritten",
+        "domainStatus": "ue_relevant",
+        "intentSummary": "Apply damage and defeat logic to a hit enemy using GameplayStatics::ApplyDamage.",
+        "warnings": [],
+        "activeSubqueries": [
+          {
+            "facetId": "damage_state",
+            "facetStatus": "required",
+            "facetIntent": "Damage application, health reduction, and defeat logic.",
+            "subqueryId": "damage_state_1",
+            "text": "ApplyDamage gameplay statics",
+            "weight": 0.6,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "damage_state",
+            "facetStatus": "required",
+            "facetIntent": "Damage application, health reduction, and defeat logic.",
+            "subqueryId": "damage_state_2",
+            "text": "damage health defeat",
+            "weight": 0.4,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The gameplay object that owns and calls the damage function.",
+            "subqueryId": "carrier_context_1",
+            "text": "controller actor",
+            "weight": 0.6,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The gameplay object that owns and calls the damage function.",
+            "subqueryId": "carrier_context_2",
+            "text": "damage causer instigator",
+            "weight": 0.4,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "optional",
+            "facetIntent": "The event or overlap that triggers applying damage.",
+            "subqueryId": "activation_trigger_1",
+            "text": "hit event overlap",
+            "weight": 0.3,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "optional",
+            "facetIntent": "The event or overlap that triggers applying damage.",
+            "subqueryId": "activation_trigger_2",
+            "text": "on damage apply trigger",
+            "weight": 0.3,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "spatial_targeting",
+            "facetStatus": "optional",
+            "facetIntent": "Targeting the enemy actor to receive damage.",
+            "subqueryId": "spatial_targeting_1",
+            "text": "trace hit target actor",
+            "weight": 0.6,
+            "subqueryWeight": 1.0
+          }
+        ]
+      },
+      "embedding": {
+        "enabled": true,
+        "provider": "ollama",
+        "model": "bge-m3",
+        "dimensions": 1024,
+        "indexedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "status": "ready"
+      },
+      "partitions": {
+        "enabled": true,
+        "classifierEnabled": true,
+        "provider": "aaa",
+        "binaryAvailable": true,
+        "timeoutMs": 90000,
+        "candidateCount": 20361,
+        "processedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "validAssignmentCount": 14733,
+        "partitionedEntryCount": 12532,
+        "partitionedEntryRatio": 0.6155,
+        "searchReady": true,
+        "byFacet": {
+          "activation_trigger": 241,
+          "ai_behavior": 948,
+          "animation": 1856,
+          "audio": 704,
+          "camera_feedback_ui": 1336,
+          "carrier_context": 1362,
+          "damage_state": 548,
+          "integration_event": 1069,
+          "level_world": 342,
+          "lighting": 134,
+          "material_visual_state": 1065,
+          "mesh_geometry": 1545,
+          "movement_navigation": 256,
+          "networking_authority": 414,
+          "persistence_assets": 612,
+          "physics": 666,
+          "spatial_targeting": 466,
+          "spawn_lifecycle": 117,
+          "visual_effects": 1052
+        },
+        "status": "ready",
+        "searchScoped": true
+      },
+      "filters": {},
+      "confidence": {
+        "minConfidence": 0.55,
+        "status": "ok",
+        "topConfidence": 0.7529
+      },
+      "count": 5,
+      "results": [
+        {
+          "ref": "0d33f585e6fa",
+          "entryType": "static_function",
+          "symbol": "UE.GameplayStatics.ApplyDamage",
+          "kind": "method",
+          "owner": "UE.GameplayStatics",
+          "signature": "static ApplyDamage(DamagedActor: $Nullable<UE.Actor>, BaseDamage: number, EventInstigator: $Nullable<UE.Controller>, DamageCauser: $Nullable<UE.Actor>, DamageTypeClass: $Nullable<UE.Class>) : number;",
+          "score": 93.0,
+          "confidence": 0.7529,
+          "summary": "Hurts the specified actor with generic damage.",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Apply damage and defeat logic to a hit enemy using GameplayStatics::ApplyDamage.",
+            "name: apply, damage, gameplay, statics",
+            "doc: actor, damage",
+            "params: actor, apply, causer, controller, damage, event",
+            "facets: damage_state/bm25, damage_state/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "5b6bdf8706d4",
+          "entryType": "static_function",
+          "symbol": "UE.GameplayStatics.BreakHitResult",
+          "kind": "method",
+          "owner": "UE.GameplayStatics",
+          "signature": "static BreakHitResult(Hit: UE.HitResult, bBlockingHit: $Ref<boolean>, bInitialOverlap: $Ref<boolean>, Time: $Ref<number>, Distance: $Ref<number>, Location: $Ref<UE.Vector>, ImpactPoint: $Ref<UE.Vector>, Normal: $Ref<UE.Vector>, ImpactNormal: $Ref<UE.Vector>, PhysMat: $Ref<UE.PhysicalMaterial>, HitActor: $Ref<UE.Actor>, HitComponent: $Ref<UE.PrimitiveComponent>, HitBoneName: $Ref<string>, BoneName: $Ref<string>, HitItem: $Ref<number>, ElementIndex: $Ref<number>, FaceIndex: $Ref<number>, TraceStart: $Ref<UE.Vector>, TraceEnd: $Ref<UE.Vector>) : void;",
+          "score": 93.0,
+          "confidence": 0.75,
+          "summary": "Extracts data from a HitResult.",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Apply damage and defeat logic to a hit enemy using GameplayStatics::ApplyDamage.",
+            "name: gameplay, hit, statics",
+            "doc: hit",
+            "params: actor, hit, overlap, trace",
+            "facets: spatial_targeting/bm25, spatial_targeting/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "338a158893c8",
+          "entryType": "static_function",
+          "symbol": "UE.KismetInputLibrary.PointerEvent_IsTouchEvent",
+          "kind": "method",
+          "owner": "UE.KismetInputLibrary",
+          "signature": "static PointerEvent_IsTouchEvent(Input: UE.PointerEvent) : boolean;",
+          "score": 93.0,
+          "confidence": 0.7431,
+          "summary": "Returns true if this event a result from a touch (as opposed to a mouse)",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Apply damage and defeat logic to a hit enemy using GameplayStatics::ApplyDamage.",
+            "name: event",
+            "doc: event",
+            "facets: activation_trigger/bm25, activation_trigger/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "2bed9e2aa7a2",
+          "entryType": "type",
+          "symbol": "UE.Controller",
+          "kind": "class",
+          "score": 92.5,
+          "confidence": 0.7326,
+          "extends": "UE.Actor",
+          "source": "Engine/GameFramework",
+          "matchedMembers": [
+            {
+              "ref": "bdb7926184c8",
+              "symbol": "UE.Controller.OnInstigatedAnyDamage",
+              "kind": "property",
+              "signature": "OnInstigatedAnyDamage: $MulticastDelegate<(Damage: number, DamageType: $Nullable<UE.DamageType>, DamagedActor: $Nullable<UE.Actor>, DamageCauser: $Nullable<UE.Actor>) => void>;",
+              "summary": ""
+            },
+            {
+              "ref": "0394bacc50eb",
+              "symbol": "UE.Controller.ReceiveInstigatedAnyDamage",
+              "kind": "method",
+              "signature": "ReceiveInstigatedAnyDamage(Damage: number, DamageType: $Nullable<UE.DamageType>, DamagedActor: $Nullable<UE.Actor>, DamageCauser: $Nullable<UE.Actor>) : void;",
+              "summary": "Event when this controller instigates ANY damage"
+            },
+            {
+              "ref": "c7534884fb62",
+              "symbol": "UE.Controller.GetViewTarget",
+              "kind": "method",
+              "signature": "GetViewTarget() : UE.Actor;",
+              "summary": "Get the actor the controller is looking at"
+            },
+            {
+              "ref": "0bf6678c62f4",
+              "symbol": "UE.Controller.LineOfSightTo",
+              "kind": "method",
+              "signature": "LineOfSightTo(Other: $Nullable<UE.Actor>, ViewPoint?: UE.Vector /* = */, bAlternateChecks?: boolean /* = false */) : boolean;",
+              "summary": "Checks line to center and top of other actor"
+            },
+            {
+              "ref": "30019c41cfb4",
+              "symbol": "UE.Controller.Character",
+              "kind": "property",
+              "signature": "Character: UE.Character;",
+              "summary": ""
+            },
+            {
+              "ref": "b8b96920a7e0",
+              "symbol": "UE.Controller.ClientSetLocation",
+              "kind": "method",
+              "signature": "ClientSetLocation(NewLocation: UE.Vector, NewRotation: UE.Rotator) : void;",
+              "summary": "Replicated function to set the pawn location and rotation, allowing server to force (ex. teleports)."
+            },
+            {
+              "ref": "4fc41da99dd0",
+              "symbol": "UE.Controller.ClientSetRotation",
+              "kind": "method",
+              "signature": "ClientSetRotation(NewRotation: UE.Rotator, bResetCamera: boolean) : void;",
+              "summary": "Replicated function to set the pawn rotation, allowing the server to force."
+            },
+            {
+              "ref": "51e1f996a944",
+              "symbol": "UE.Controller.ControlRotation",
+              "kind": "property",
+              "signature": "ControlRotation: UE.Rotator;",
+              "summary": ""
+            }
+          ],
+          "why": [
+            "rewrite: Apply damage and defeat logic to a hit enemy using GameplayStatics::ApplyDamage.",
+            "name: controller",
+            "members: OnInstigatedAnyDamage, ReceiveInstigatedAnyDamage, GetViewTarget, LineOfSightTo",
+            "facets: carrier_context/bm25, carrier_context/vector",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "381b4199aae2",
+          "entryType": "static_function",
+          "symbol": "UE.GameplayStatics.ApplyPointDamage",
+          "kind": "method",
+          "owner": "UE.GameplayStatics",
+          "signature": "static ApplyPointDamage(DamagedActor: $Nullable<UE.Actor>, BaseDamage: number, HitFromDirection: UE.Vector, HitInfo: UE.HitResult, EventInstigator: $Nullable<UE.Controller>, DamageCauser: $Nullable<UE.Actor>, DamageTypeClass: $Nullable<UE.Class>) : number;",
+          "score": 89.9628,
+          "confidence": 0.7481,
+          "summary": "Hurts the specified actor with the specified impact.",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Apply damage and defeat logic to a hit enemy using GameplayStatics::ApplyDamage.",
+            "name: apply, damage, gameplay, statics",
+            "doc: actor",
+            "params: actor, apply, causer, controller, damage, event",
+            "facets: damage_state/bm25, damage_state/vector",
+            "static function result",
+            "vector recall"
+          ]
+        }
+      ],
+      "profile": {
+        "load": 0.7537,
+        "rewrite": 5.3664,
+        "embed": 0.1941,
+        "bm25": 0.0592,
+        "vector": 0.2723,
+        "score": 0.1253,
+        "select": 0.0002,
+        "total": 6.5337
+      }
+    }
+  }
+}

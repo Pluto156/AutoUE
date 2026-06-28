@@ -1,0 +1,682 @@
+{
+  "engine_port_id": "primitive.on_component_begin_overlap",
+  "flow_ids": [
+    "flow_player_collection_collect_reward",
+    "flow_player_exit_leave_room"
+  ],
+  "behavior_ids": [
+    "player.collection.collect_reward",
+    "player.exit.leave_room"
+  ],
+  "contracts": [
+    "Detect the player entering the reward collection boundary after the reward is available.",
+    "Detect the player entering the exit activation boundary after required room interactions are complete."
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for primitive.on_component_begin_overlap; exact symbol hints: Primitive.OnComponentBeginOverlap, PrimitiveOnComponentBeginOverlap, primitive on component begin overlap. Intent: Detect the player entering the reward collection boundary after the reward is available.",
+  "raw_path": "flow/04-ue-api-mcp/raw/primitive.on_component_begin_overlap.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json",
+  "raw_result": {
+    "tool": "ue_api_semantic_search",
+    "query": "Unreal Engine PuerTS gameplay API for primitive.on_component_begin_overlap; exact symbol hints: Primitive.OnComponentBeginOverlap, PrimitiveOnComponentBeginOverlap, primitive on component begin overlap. Intent: Detect the player entering the reward collection boundary after the reward is available.",
+    "limit": 5,
+    "raw_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"ok\",\n  \"mode\": \"semantic\",\n  \"query\": \"Unreal Engine PuerTS gameplay API for primitive.on_component_begin_overlap; exact symbol hints: Primitive.OnComponentBeginOverlap, PrimitiveOnComponentBeginOverlap, primitive on component begin overlap. Intent: Detect the player entering the reward collection boundary after the reward is available.\",\n  \"searchText\": \"PrimitiveComponent actor component PrimitiveComponent collision volume owner OnComponentBeginOverlap delegate event component overlap begin notify OverlapResult overlapping actor detection collision overlap query volume bind delegate OnComponentBeginOverlap OnComponentBeginOverlap callback handler\",\n  \"rewrite\": {\n    \"status\": \"rewritten\",\n    \"domainStatus\": \"ue_relevant\",\n    \"intentSummary\": \"Detect the player object entering a reward collection volume using Primitive OnComponentBeginOverlap delegate after the reward is spawned and active.\",\n    \"warnings\": [],\n    \"activeSubqueries\": [\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The primitive component that owns the overlap volume and triggers the event.\",\n        \"subqueryId\": \"carrier_context_1\",\n        \"text\": \"PrimitiveComponent actor component\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The primitive component that owns the overlap volume and triggers the event.\",\n        \"subqueryId\": \"carrier_context_2\",\n        \"text\": \"PrimitiveComponent collision volume owner\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The overlap event delegate that fires when another primitive overlaps this component.\",\n        \"subqueryId\": \"activation_trigger_1\",\n        \"text\": \"OnComponentBeginOverlap delegate event\",\n        \"weight\": 0.6,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The overlap event delegate that fires when another primitive overlaps this component.\",\n        \"subqueryId\": \"activation_trigger_2\",\n        \"text\": \"component overlap begin notify\",\n        \"weight\": 0.4,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"spatial_targeting\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"Overlap detection to identify the overlapping actor and its primitive component.\",\n        \"subqueryId\": \"spatial_targeting_1\",\n        \"text\": \"OverlapResult overlapping actor detection\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"spatial_targeting\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"Overlap detection to identify the overlapping actor and its primitive component.\",\n        \"subqueryId\": \"spatial_targeting_2\",\n        \"text\": \"collision overlap query volume\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"integration_event\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"Binding and handling the OnComponentBeginOverlap delegate in gameplay code.\",\n        \"subqueryId\": \"integration_event_1\",\n        \"text\": \"bind delegate OnComponentBeginOverlap\",\n        \"weight\": 0.36,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"integration_event\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"Binding and handling the OnComponentBeginOverlap delegate in gameplay code.\",\n        \"subqueryId\": \"integration_event_2\",\n        \"text\": \"OnComponentBeginOverlap callback handler\",\n        \"weight\": 0.24,\n        \"subqueryWeight\": 0.4\n      }\n    ]\n  },\n  \"embedding\": {\n    \"enabled\": true,\n    \"provider\": \"ollama\",\n    \"model\": \"bge-m3\",\n    \"dimensions\": 1024,\n    \"indexedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"status\": \"ready\"\n  },\n  \"partitions\": {\n    \"enabled\": true,\n    \"classifierEnabled\": true,\n    \"provider\": \"aaa\",\n    \"binaryAvailable\": true,\n    \"timeoutMs\": 90000,\n    \"candidateCount\": 20361,\n    \"processedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"validAssignmentCount\": 14733,\n    \"partitionedEntryCount\": 12532,\n    \"partitionedEntryRatio\": 0.6155,\n    \"searchReady\": true,\n    \"byFacet\": {\n      \"activation_trigger\": 241,\n      \"ai_behavior\": 948,\n      \"animation\": 1856,\n      \"audio\": 704,\n      \"camera_feedback_ui\": 1336,\n      \"carrier_context\": 1362,\n      \"damage_state\": 548,\n      \"integration_event\": 1069,\n      \"level_world\": 342,\n      \"lighting\": 134,\n      \"material_visual_state\": 1065,\n      \"mesh_geometry\": 1545,\n      \"movement_navigation\": 256,\n      \"networking_authority\": 414,\n      \"persistence_assets\": 612,\n      \"physics\": 666,\n      \"spatial_targeting\": 466,\n      \"spawn_lifecycle\": 117,\n      \"visual_effects\": 1052\n    },\n    \"status\": \"ready\",\n    \"searchScoped\": true\n  },\n  \"filters\": {},\n  \"confidence\": {\n    \"minConfidence\": 0.55,\n    \"status\": \"ok\",\n    \"topConfidence\": 0.7382\n  },\n  \"count\": 5,\n  \"results\": [\n    {\n      \"ref\": \"4043f846781c\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetSystemLibrary.ComponentOverlapActors\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetSystemLibrary\",\n      \"signature\": \"static ComponentOverlapActors(Component: $Nullable<UE.PrimitiveComponent>, ComponentTransform: UE.Transform, ObjectTypes: TArray<UE.EObjectTypeQuery>, ActorClassFilter: $Nullable<UE.Class>, ActorsToIgnore: TArray<UE.Actor>, OutActors: $Ref<TArray<UE.Actor>>) : boolean;\",\n      \"score\": 91.6014,\n      \"confidence\": 0.7382,\n      \"summary\": \"Returns an array of actors that overlap the given component.\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Detect the player object entering a reward collection volume using Primitive OnComponentBeginOverlap delegate after the reward is spawned and active.\",\n        \"name: component, overlap\",\n        \"doc: component, overlap\",\n        \"params: component, overlap\",\n        \"facets: spatial_targeting/bm25, spatial_targeting/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"0eebc6b66da7\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.StateTreeComponent\",\n      \"kind\": \"class\",\n      \"score\": 92.5,\n      \"confidence\": 0.749,\n      \"extends\": \"UE.BrainComponent\",\n      \"source\": \"Plugin/GameplayStateTreeModule\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"8e9b95517551\",\n          \"symbol\": \"UE.StateTreeComponent.OnStateTreeRunStatusChanged\",\n          \"kind\": \"property\",\n          \"signature\": \"OnStateTreeRunStatusChanged: $MulticastDelegate<(StateTreeRunStatus: UE.EStateTreeRunStatus) => void>;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"f911e3e01e32\",\n          \"symbol\": \"UE.StateTreeComponent.SendStateTreeEvent\",\n          \"kind\": \"method\",\n          \"signature\": \"SendStateTreeEvent(Event: UE.StateTreeEvent) : void;\",\n          \"summary\": \"Sends event to the running StateTree.\"\n        },\n        {\n          \"ref\": \"1cb7bd5a9be3\",\n          \"symbol\": \"UE.StateTreeComponent.SetStartLogicAutomatically\",\n          \"kind\": \"method\",\n          \"signature\": \"SetStartLogicAutomatically(bInStartLogicAutomatically: boolean) : void;\",\n          \"summary\": \"Sets whether the State Tree is started automatically on begin play. This function sets the bStartLogicAutomatically property, and should be used mostly from constructions scripts. If you wish to start the logic manually,\"\n        },\n        {\n          \"ref\": \"861de8ad05dd\",\n          \"symbol\": \"UE.StateTreeComponent.AddLinkedStateTreeOverrides\",\n          \"kind\": \"method\",\n          \"signature\": \"AddLinkedStateTreeOverrides(StateTag: UE.GameplayTag, StateTreeReference: UE.StateTreeReference) : void;\",\n          \"summary\": \"Add a linked state tree override. The override won't be set if it doesn't use the StateTreeComponentSchema schema.\"\n        },\n        {\n          \"ref\": \"04f8345e7c57\",\n          \"symbol\": \"UE.StateTreeComponent.GetStateTreeRunStatus\",\n          \"kind\": \"method\",\n          \"signature\": \"GetStateTreeRunStatus() : UE.EStateTreeRunStatus;\",\n          \"summary\": \"Returns the current run status of the StateTree.\"\n        },\n        {\n          \"ref\": \"c939aa478ee4\",\n          \"symbol\": \"UE.StateTreeComponent.InstanceData\",\n          \"kind\": \"property\",\n          \"signature\": \"InstanceData: UE.StateTreeInstanceData;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"44eebe909203\",\n          \"symbol\": \"UE.StateTreeComponent.LinkedStateTreeOverrides\",\n          \"kind\": \"property\",\n          \"signature\": \"LinkedStateTreeOverrides: UE.StateTreeReferenceOverrides;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"3e7d749fb159\",\n          \"symbol\": \"UE.StateTreeComponent.RemoveLinkedStateTreeOverrides\",\n          \"kind\": \"method\",\n          \"signature\": \"RemoveLinkedStateTreeOverrides(StateTag: UE.GameplayTag) : void;\",\n          \"summary\": \"Remove a linked state tree override.\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Detect the player object entering a reward collection volume using Primitive OnComponentBeginOverlap delegate after the reward is spawned and active.\",\n        \"name: component\",\n        \"members: OnStateTreeRunStatusChanged, SendStateTreeEvent, SetStartLogicAutomatically, AddLinkedStateTreeOverrides\",\n        \"facets: activation_trigger/bm25, activation_trigger/vector\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"33608fe04eff\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.BlueprintComponentDelegateBinding\",\n      \"kind\": \"class\",\n      \"score\": 90.0,\n      \"confidence\": 0.7347,\n      \"source\": \"Engine/Engine\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"81e94273fa00\",\n          \"symbol\": \"UE.BlueprintComponentDelegateBinding.FunctionNameToBind\",\n          \"kind\": \"property\",\n          \"signature\": \"FunctionNameToBind: string;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"89d0c35898dc\",\n          \"symbol\": \"UE.BlueprintComponentDelegateBinding.ComponentPropertyName\",\n          \"kind\": \"property\",\n          \"signature\": \"ComponentPropertyName: string;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"87641f70d288\",\n          \"symbol\": \"UE.BlueprintComponentDelegateBinding.DelegatePropertyName\",\n          \"kind\": \"property\",\n          \"signature\": \"DelegatePropertyName: string;\",\n          \"summary\": \"\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Detect the player object entering a reward collection volume using Primitive OnComponentBeginOverlap delegate after the reward is spawned and active.\",\n        \"name: component, delegate\",\n        \"members: FunctionNameToBind, ComponentPropertyName, DelegatePropertyName\",\n        \"facets: integration_event/bm25, integration_event/vector\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"5b5aa4dfca74\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.PrimitiveComponentBackedTarget\",\n      \"kind\": \"class\",\n      \"score\": 90.0,\n      \"confidence\": 0.7344,\n      \"extends\": \"UE.SceneComponentBackedTarget\",\n      \"source\": \"Engine/InteractiveToolsFramework\",\n      \"why\": [\n        \"rewrite: Detect the player object entering a reward collection volume using Primitive OnComponentBeginOverlap delegate after the reward is spawned and active.\",\n        \"name: component, primitive\",\n        \"facets: carrier_context/bm25, carrier_context/vector\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"9dda4fdef397\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetSystemLibrary.ComponentOverlapComponents\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetSystemLibrary\",\n      \"signature\": \"static ComponentOverlapComponents(Component: $Nullable<UE.PrimitiveComponent>, ComponentTransform: UE.Transform, ObjectTypes: TArray<UE.EObjectTypeQuery>, ComponentClassFilter: $Nullable<UE.Class>, ActorsToIgnore: TArray<UE.Actor>, OutComponents: $Ref<TArray<UE.PrimitiveComponent>>) : boolean;\",\n      \"score\": 90.2471,\n      \"confidence\": 0.7364,\n      \"summary\": \"Returns an array of components that overlap the given component.\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Detect the player object entering a reward collection volume using Primitive OnComponentBeginOverlap delegate after the reward is spawned and active.\",\n        \"name: component, overlap\",\n        \"doc: component, overlap\",\n        \"params: component, overlap\",\n        \"facets: spatial_targeting/bm25, spatial_targeting/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    }\n  ],\n  \"profile\": {\n    \"load\": 0.7528,\n    \"rewrite\": 7.8776,\n    \"embed\": 0.1701,\n    \"bm25\": 0.1411,\n    \"vector\": 0.3321,\n    \"score\": 0.1617,\n    \"select\": 0.0001,\n    \"total\": 9.1851\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "status": "ok",
+        "mode": "semantic",
+        "query": "Unreal Engine PuerTS gameplay API for primitive.on_component_begin_overlap; exact symbol hints: Primitive.OnComponentBeginOverlap, PrimitiveOnComponentBeginOverlap, primitive on component begin overlap. Intent: Detect the player entering the reward collection boundary after the reward is available.",
+        "searchText": "PrimitiveComponent actor component PrimitiveComponent collision volume owner OnComponentBeginOverlap delegate event component overlap begin notify OverlapResult overlapping actor detection collision overlap query volume bind delegate OnComponentBeginOverlap OnComponentBeginOverlap callback handler",
+        "rewrite": {
+          "status": "rewritten",
+          "domainStatus": "ue_relevant",
+          "intentSummary": "Detect the player object entering a reward collection volume using Primitive OnComponentBeginOverlap delegate after the reward is spawned and active.",
+          "warnings": [],
+          "activeSubqueries": [
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The primitive component that owns the overlap volume and triggers the event.",
+              "subqueryId": "carrier_context_1",
+              "text": "PrimitiveComponent actor component",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The primitive component that owns the overlap volume and triggers the event.",
+              "subqueryId": "carrier_context_2",
+              "text": "PrimitiveComponent collision volume owner",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "The overlap event delegate that fires when another primitive overlaps this component.",
+              "subqueryId": "activation_trigger_1",
+              "text": "OnComponentBeginOverlap delegate event",
+              "weight": 0.6,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "The overlap event delegate that fires when another primitive overlaps this component.",
+              "subqueryId": "activation_trigger_2",
+              "text": "component overlap begin notify",
+              "weight": 0.4,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "spatial_targeting",
+              "facetStatus": "required",
+              "facetIntent": "Overlap detection to identify the overlapping actor and its primitive component.",
+              "subqueryId": "spatial_targeting_1",
+              "text": "OverlapResult overlapping actor detection",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "spatial_targeting",
+              "facetStatus": "required",
+              "facetIntent": "Overlap detection to identify the overlapping actor and its primitive component.",
+              "subqueryId": "spatial_targeting_2",
+              "text": "collision overlap query volume",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "integration_event",
+              "facetStatus": "optional",
+              "facetIntent": "Binding and handling the OnComponentBeginOverlap delegate in gameplay code.",
+              "subqueryId": "integration_event_1",
+              "text": "bind delegate OnComponentBeginOverlap",
+              "weight": 0.36,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "integration_event",
+              "facetStatus": "optional",
+              "facetIntent": "Binding and handling the OnComponentBeginOverlap delegate in gameplay code.",
+              "subqueryId": "integration_event_2",
+              "text": "OnComponentBeginOverlap callback handler",
+              "weight": 0.24,
+              "subqueryWeight": 0.4
+            }
+          ]
+        },
+        "embedding": {
+          "enabled": true,
+          "provider": "ollama",
+          "model": "bge-m3",
+          "dimensions": 1024,
+          "indexedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "status": "ready"
+        },
+        "partitions": {
+          "enabled": true,
+          "classifierEnabled": true,
+          "provider": "aaa",
+          "binaryAvailable": true,
+          "timeoutMs": 90000,
+          "candidateCount": 20361,
+          "processedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "validAssignmentCount": 14733,
+          "partitionedEntryCount": 12532,
+          "partitionedEntryRatio": 0.6155,
+          "searchReady": true,
+          "byFacet": {
+            "activation_trigger": 241,
+            "ai_behavior": 948,
+            "animation": 1856,
+            "audio": 704,
+            "camera_feedback_ui": 1336,
+            "carrier_context": 1362,
+            "damage_state": 548,
+            "integration_event": 1069,
+            "level_world": 342,
+            "lighting": 134,
+            "material_visual_state": 1065,
+            "mesh_geometry": 1545,
+            "movement_navigation": 256,
+            "networking_authority": 414,
+            "persistence_assets": 612,
+            "physics": 666,
+            "spatial_targeting": 466,
+            "spawn_lifecycle": 117,
+            "visual_effects": 1052
+          },
+          "status": "ready",
+          "searchScoped": true
+        },
+        "filters": {},
+        "confidence": {
+          "minConfidence": 0.55,
+          "status": "ok",
+          "topConfidence": 0.7382
+        },
+        "count": 5,
+        "results": [
+          {
+            "ref": "4043f846781c",
+            "entryType": "static_function",
+            "symbol": "UE.KismetSystemLibrary.ComponentOverlapActors",
+            "kind": "method",
+            "owner": "UE.KismetSystemLibrary",
+            "signature": "static ComponentOverlapActors(Component: $Nullable<UE.PrimitiveComponent>, ComponentTransform: UE.Transform, ObjectTypes: TArray<UE.EObjectTypeQuery>, ActorClassFilter: $Nullable<UE.Class>, ActorsToIgnore: TArray<UE.Actor>, OutActors: $Ref<TArray<UE.Actor>>) : boolean;",
+            "score": 91.6014,
+            "confidence": 0.7382,
+            "summary": "Returns an array of actors that overlap the given component.",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Detect the player object entering a reward collection volume using Primitive OnComponentBeginOverlap delegate after the reward is spawned and active.",
+              "name: component, overlap",
+              "doc: component, overlap",
+              "params: component, overlap",
+              "facets: spatial_targeting/bm25, spatial_targeting/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "0eebc6b66da7",
+            "entryType": "type",
+            "symbol": "UE.StateTreeComponent",
+            "kind": "class",
+            "score": 92.5,
+            "confidence": 0.749,
+            "extends": "UE.BrainComponent",
+            "source": "Plugin/GameplayStateTreeModule",
+            "matchedMembers": [
+              {
+                "ref": "8e9b95517551",
+                "symbol": "UE.StateTreeComponent.OnStateTreeRunStatusChanged",
+                "kind": "property",
+                "signature": "OnStateTreeRunStatusChanged: $MulticastDelegate<(StateTreeRunStatus: UE.EStateTreeRunStatus) => void>;",
+                "summary": ""
+              },
+              {
+                "ref": "f911e3e01e32",
+                "symbol": "UE.StateTreeComponent.SendStateTreeEvent",
+                "kind": "method",
+                "signature": "SendStateTreeEvent(Event: UE.StateTreeEvent) : void;",
+                "summary": "Sends event to the running StateTree."
+              },
+              {
+                "ref": "1cb7bd5a9be3",
+                "symbol": "UE.StateTreeComponent.SetStartLogicAutomatically",
+                "kind": "method",
+                "signature": "SetStartLogicAutomatically(bInStartLogicAutomatically: boolean) : void;",
+                "summary": "Sets whether the State Tree is started automatically on begin play. This function sets the bStartLogicAutomatically property, and should be used mostly from constructions scripts. If you wish to start the logic manually,"
+              },
+              {
+                "ref": "861de8ad05dd",
+                "symbol": "UE.StateTreeComponent.AddLinkedStateTreeOverrides",
+                "kind": "method",
+                "signature": "AddLinkedStateTreeOverrides(StateTag: UE.GameplayTag, StateTreeReference: UE.StateTreeReference) : void;",
+                "summary": "Add a linked state tree override. The override won't be set if it doesn't use the StateTreeComponentSchema schema."
+              },
+              {
+                "ref": "04f8345e7c57",
+                "symbol": "UE.StateTreeComponent.GetStateTreeRunStatus",
+                "kind": "method",
+                "signature": "GetStateTreeRunStatus() : UE.EStateTreeRunStatus;",
+                "summary": "Returns the current run status of the StateTree."
+              },
+              {
+                "ref": "c939aa478ee4",
+                "symbol": "UE.StateTreeComponent.InstanceData",
+                "kind": "property",
+                "signature": "InstanceData: UE.StateTreeInstanceData;",
+                "summary": ""
+              },
+              {
+                "ref": "44eebe909203",
+                "symbol": "UE.StateTreeComponent.LinkedStateTreeOverrides",
+                "kind": "property",
+                "signature": "LinkedStateTreeOverrides: UE.StateTreeReferenceOverrides;",
+                "summary": ""
+              },
+              {
+                "ref": "3e7d749fb159",
+                "symbol": "UE.StateTreeComponent.RemoveLinkedStateTreeOverrides",
+                "kind": "method",
+                "signature": "RemoveLinkedStateTreeOverrides(StateTag: UE.GameplayTag) : void;",
+                "summary": "Remove a linked state tree override."
+              }
+            ],
+            "why": [
+              "rewrite: Detect the player object entering a reward collection volume using Primitive OnComponentBeginOverlap delegate after the reward is spawned and active.",
+              "name: component",
+              "members: OnStateTreeRunStatusChanged, SendStateTreeEvent, SetStartLogicAutomatically, AddLinkedStateTreeOverrides",
+              "facets: activation_trigger/bm25, activation_trigger/vector",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "33608fe04eff",
+            "entryType": "type",
+            "symbol": "UE.BlueprintComponentDelegateBinding",
+            "kind": "class",
+            "score": 90.0,
+            "confidence": 0.7347,
+            "source": "Engine/Engine",
+            "matchedMembers": [
+              {
+                "ref": "81e94273fa00",
+                "symbol": "UE.BlueprintComponentDelegateBinding.FunctionNameToBind",
+                "kind": "property",
+                "signature": "FunctionNameToBind: string;",
+                "summary": ""
+              },
+              {
+                "ref": "89d0c35898dc",
+                "symbol": "UE.BlueprintComponentDelegateBinding.ComponentPropertyName",
+                "kind": "property",
+                "signature": "ComponentPropertyName: string;",
+                "summary": ""
+              },
+              {
+                "ref": "87641f70d288",
+                "symbol": "UE.BlueprintComponentDelegateBinding.DelegatePropertyName",
+                "kind": "property",
+                "signature": "DelegatePropertyName: string;",
+                "summary": ""
+              }
+            ],
+            "why": [
+              "rewrite: Detect the player object entering a reward collection volume using Primitive OnComponentBeginOverlap delegate after the reward is spawned and active.",
+              "name: component, delegate",
+              "members: FunctionNameToBind, ComponentPropertyName, DelegatePropertyName",
+              "facets: integration_event/bm25, integration_event/vector",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "5b5aa4dfca74",
+            "entryType": "type",
+            "symbol": "UE.PrimitiveComponentBackedTarget",
+            "kind": "class",
+            "score": 90.0,
+            "confidence": 0.7344,
+            "extends": "UE.SceneComponentBackedTarget",
+            "source": "Engine/InteractiveToolsFramework",
+            "why": [
+              "rewrite: Detect the player object entering a reward collection volume using Primitive OnComponentBeginOverlap delegate after the reward is spawned and active.",
+              "name: component, primitive",
+              "facets: carrier_context/bm25, carrier_context/vector",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "9dda4fdef397",
+            "entryType": "static_function",
+            "symbol": "UE.KismetSystemLibrary.ComponentOverlapComponents",
+            "kind": "method",
+            "owner": "UE.KismetSystemLibrary",
+            "signature": "static ComponentOverlapComponents(Component: $Nullable<UE.PrimitiveComponent>, ComponentTransform: UE.Transform, ObjectTypes: TArray<UE.EObjectTypeQuery>, ComponentClassFilter: $Nullable<UE.Class>, ActorsToIgnore: TArray<UE.Actor>, OutComponents: $Ref<TArray<UE.PrimitiveComponent>>) : boolean;",
+            "score": 90.2471,
+            "confidence": 0.7364,
+            "summary": "Returns an array of components that overlap the given component.",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Detect the player object entering a reward collection volume using Primitive OnComponentBeginOverlap delegate after the reward is spawned and active.",
+              "name: component, overlap",
+              "doc: component, overlap",
+              "params: component, overlap",
+              "facets: spatial_targeting/bm25, spatial_targeting/vector",
+              "static function result",
+              "vector recall"
+            ]
+          }
+        ],
+        "profile": {
+          "load": 0.7528,
+          "rewrite": 7.8776,
+          "embed": 0.1701,
+          "bm25": 0.1411,
+          "vector": 0.3321,
+          "score": 0.1617,
+          "select": 0.0001,
+          "total": 9.1851
+        }
+      },
+      "isError": false
+    },
+    "payload": {
+      "status": "ok",
+      "mode": "semantic",
+      "query": "Unreal Engine PuerTS gameplay API for primitive.on_component_begin_overlap; exact symbol hints: Primitive.OnComponentBeginOverlap, PrimitiveOnComponentBeginOverlap, primitive on component begin overlap. Intent: Detect the player entering the reward collection boundary after the reward is available.",
+      "searchText": "PrimitiveComponent actor component PrimitiveComponent collision volume owner OnComponentBeginOverlap delegate event component overlap begin notify OverlapResult overlapping actor detection collision overlap query volume bind delegate OnComponentBeginOverlap OnComponentBeginOverlap callback handler",
+      "rewrite": {
+        "status": "rewritten",
+        "domainStatus": "ue_relevant",
+        "intentSummary": "Detect the player object entering a reward collection volume using Primitive OnComponentBeginOverlap delegate after the reward is spawned and active.",
+        "warnings": [],
+        "activeSubqueries": [
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The primitive component that owns the overlap volume and triggers the event.",
+            "subqueryId": "carrier_context_1",
+            "text": "PrimitiveComponent actor component",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The primitive component that owns the overlap volume and triggers the event.",
+            "subqueryId": "carrier_context_2",
+            "text": "PrimitiveComponent collision volume owner",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "The overlap event delegate that fires when another primitive overlaps this component.",
+            "subqueryId": "activation_trigger_1",
+            "text": "OnComponentBeginOverlap delegate event",
+            "weight": 0.6,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "The overlap event delegate that fires when another primitive overlaps this component.",
+            "subqueryId": "activation_trigger_2",
+            "text": "component overlap begin notify",
+            "weight": 0.4,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "spatial_targeting",
+            "facetStatus": "required",
+            "facetIntent": "Overlap detection to identify the overlapping actor and its primitive component.",
+            "subqueryId": "spatial_targeting_1",
+            "text": "OverlapResult overlapping actor detection",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "spatial_targeting",
+            "facetStatus": "required",
+            "facetIntent": "Overlap detection to identify the overlapping actor and its primitive component.",
+            "subqueryId": "spatial_targeting_2",
+            "text": "collision overlap query volume",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "integration_event",
+            "facetStatus": "optional",
+            "facetIntent": "Binding and handling the OnComponentBeginOverlap delegate in gameplay code.",
+            "subqueryId": "integration_event_1",
+            "text": "bind delegate OnComponentBeginOverlap",
+            "weight": 0.36,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "integration_event",
+            "facetStatus": "optional",
+            "facetIntent": "Binding and handling the OnComponentBeginOverlap delegate in gameplay code.",
+            "subqueryId": "integration_event_2",
+            "text": "OnComponentBeginOverlap callback handler",
+            "weight": 0.24,
+            "subqueryWeight": 0.4
+          }
+        ]
+      },
+      "embedding": {
+        "enabled": true,
+        "provider": "ollama",
+        "model": "bge-m3",
+        "dimensions": 1024,
+        "indexedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "status": "ready"
+      },
+      "partitions": {
+        "enabled": true,
+        "classifierEnabled": true,
+        "provider": "aaa",
+        "binaryAvailable": true,
+        "timeoutMs": 90000,
+        "candidateCount": 20361,
+        "processedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "validAssignmentCount": 14733,
+        "partitionedEntryCount": 12532,
+        "partitionedEntryRatio": 0.6155,
+        "searchReady": true,
+        "byFacet": {
+          "activation_trigger": 241,
+          "ai_behavior": 948,
+          "animation": 1856,
+          "audio": 704,
+          "camera_feedback_ui": 1336,
+          "carrier_context": 1362,
+          "damage_state": 548,
+          "integration_event": 1069,
+          "level_world": 342,
+          "lighting": 134,
+          "material_visual_state": 1065,
+          "mesh_geometry": 1545,
+          "movement_navigation": 256,
+          "networking_authority": 414,
+          "persistence_assets": 612,
+          "physics": 666,
+          "spatial_targeting": 466,
+          "spawn_lifecycle": 117,
+          "visual_effects": 1052
+        },
+        "status": "ready",
+        "searchScoped": true
+      },
+      "filters": {},
+      "confidence": {
+        "minConfidence": 0.55,
+        "status": "ok",
+        "topConfidence": 0.7382
+      },
+      "count": 5,
+      "results": [
+        {
+          "ref": "4043f846781c",
+          "entryType": "static_function",
+          "symbol": "UE.KismetSystemLibrary.ComponentOverlapActors",
+          "kind": "method",
+          "owner": "UE.KismetSystemLibrary",
+          "signature": "static ComponentOverlapActors(Component: $Nullable<UE.PrimitiveComponent>, ComponentTransform: UE.Transform, ObjectTypes: TArray<UE.EObjectTypeQuery>, ActorClassFilter: $Nullable<UE.Class>, ActorsToIgnore: TArray<UE.Actor>, OutActors: $Ref<TArray<UE.Actor>>) : boolean;",
+          "score": 91.6014,
+          "confidence": 0.7382,
+          "summary": "Returns an array of actors that overlap the given component.",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Detect the player object entering a reward collection volume using Primitive OnComponentBeginOverlap delegate after the reward is spawned and active.",
+            "name: component, overlap",
+            "doc: component, overlap",
+            "params: component, overlap",
+            "facets: spatial_targeting/bm25, spatial_targeting/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "0eebc6b66da7",
+          "entryType": "type",
+          "symbol": "UE.StateTreeComponent",
+          "kind": "class",
+          "score": 92.5,
+          "confidence": 0.749,
+          "extends": "UE.BrainComponent",
+          "source": "Plugin/GameplayStateTreeModule",
+          "matchedMembers": [
+            {
+              "ref": "8e9b95517551",
+              "symbol": "UE.StateTreeComponent.OnStateTreeRunStatusChanged",
+              "kind": "property",
+              "signature": "OnStateTreeRunStatusChanged: $MulticastDelegate<(StateTreeRunStatus: UE.EStateTreeRunStatus) => void>;",
+              "summary": ""
+            },
+            {
+              "ref": "f911e3e01e32",
+              "symbol": "UE.StateTreeComponent.SendStateTreeEvent",
+              "kind": "method",
+              "signature": "SendStateTreeEvent(Event: UE.StateTreeEvent) : void;",
+              "summary": "Sends event to the running StateTree."
+            },
+            {
+              "ref": "1cb7bd5a9be3",
+              "symbol": "UE.StateTreeComponent.SetStartLogicAutomatically",
+              "kind": "method",
+              "signature": "SetStartLogicAutomatically(bInStartLogicAutomatically: boolean) : void;",
+              "summary": "Sets whether the State Tree is started automatically on begin play. This function sets the bStartLogicAutomatically property, and should be used mostly from constructions scripts. If you wish to start the logic manually,"
+            },
+            {
+              "ref": "861de8ad05dd",
+              "symbol": "UE.StateTreeComponent.AddLinkedStateTreeOverrides",
+              "kind": "method",
+              "signature": "AddLinkedStateTreeOverrides(StateTag: UE.GameplayTag, StateTreeReference: UE.StateTreeReference) : void;",
+              "summary": "Add a linked state tree override. The override won't be set if it doesn't use the StateTreeComponentSchema schema."
+            },
+            {
+              "ref": "04f8345e7c57",
+              "symbol": "UE.StateTreeComponent.GetStateTreeRunStatus",
+              "kind": "method",
+              "signature": "GetStateTreeRunStatus() : UE.EStateTreeRunStatus;",
+              "summary": "Returns the current run status of the StateTree."
+            },
+            {
+              "ref": "c939aa478ee4",
+              "symbol": "UE.StateTreeComponent.InstanceData",
+              "kind": "property",
+              "signature": "InstanceData: UE.StateTreeInstanceData;",
+              "summary": ""
+            },
+            {
+              "ref": "44eebe909203",
+              "symbol": "UE.StateTreeComponent.LinkedStateTreeOverrides",
+              "kind": "property",
+              "signature": "LinkedStateTreeOverrides: UE.StateTreeReferenceOverrides;",
+              "summary": ""
+            },
+            {
+              "ref": "3e7d749fb159",
+              "symbol": "UE.StateTreeComponent.RemoveLinkedStateTreeOverrides",
+              "kind": "method",
+              "signature": "RemoveLinkedStateTreeOverrides(StateTag: UE.GameplayTag) : void;",
+              "summary": "Remove a linked state tree override."
+            }
+          ],
+          "why": [
+            "rewrite: Detect the player object entering a reward collection volume using Primitive OnComponentBeginOverlap delegate after the reward is spawned and active.",
+            "name: component",
+            "members: OnStateTreeRunStatusChanged, SendStateTreeEvent, SetStartLogicAutomatically, AddLinkedStateTreeOverrides",
+            "facets: activation_trigger/bm25, activation_trigger/vector",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "33608fe04eff",
+          "entryType": "type",
+          "symbol": "UE.BlueprintComponentDelegateBinding",
+          "kind": "class",
+          "score": 90.0,
+          "confidence": 0.7347,
+          "source": "Engine/Engine",
+          "matchedMembers": [
+            {
+              "ref": "81e94273fa00",
+              "symbol": "UE.BlueprintComponentDelegateBinding.FunctionNameToBind",
+              "kind": "property",
+              "signature": "FunctionNameToBind: string;",
+              "summary": ""
+            },
+            {
+              "ref": "89d0c35898dc",
+              "symbol": "UE.BlueprintComponentDelegateBinding.ComponentPropertyName",
+              "kind": "property",
+              "signature": "ComponentPropertyName: string;",
+              "summary": ""
+            },
+            {
+              "ref": "87641f70d288",
+              "symbol": "UE.BlueprintComponentDelegateBinding.DelegatePropertyName",
+              "kind": "property",
+              "signature": "DelegatePropertyName: string;",
+              "summary": ""
+            }
+          ],
+          "why": [
+            "rewrite: Detect the player object entering a reward collection volume using Primitive OnComponentBeginOverlap delegate after the reward is spawned and active.",
+            "name: component, delegate",
+            "members: FunctionNameToBind, ComponentPropertyName, DelegatePropertyName",
+            "facets: integration_event/bm25, integration_event/vector",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "5b5aa4dfca74",
+          "entryType": "type",
+          "symbol": "UE.PrimitiveComponentBackedTarget",
+          "kind": "class",
+          "score": 90.0,
+          "confidence": 0.7344,
+          "extends": "UE.SceneComponentBackedTarget",
+          "source": "Engine/InteractiveToolsFramework",
+          "why": [
+            "rewrite: Detect the player object entering a reward collection volume using Primitive OnComponentBeginOverlap delegate after the reward is spawned and active.",
+            "name: component, primitive",
+            "facets: carrier_context/bm25, carrier_context/vector",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "9dda4fdef397",
+          "entryType": "static_function",
+          "symbol": "UE.KismetSystemLibrary.ComponentOverlapComponents",
+          "kind": "method",
+          "owner": "UE.KismetSystemLibrary",
+          "signature": "static ComponentOverlapComponents(Component: $Nullable<UE.PrimitiveComponent>, ComponentTransform: UE.Transform, ObjectTypes: TArray<UE.EObjectTypeQuery>, ComponentClassFilter: $Nullable<UE.Class>, ActorsToIgnore: TArray<UE.Actor>, OutComponents: $Ref<TArray<UE.PrimitiveComponent>>) : boolean;",
+          "score": 90.2471,
+          "confidence": 0.7364,
+          "summary": "Returns an array of components that overlap the given component.",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Detect the player object entering a reward collection volume using Primitive OnComponentBeginOverlap delegate after the reward is spawned and active.",
+            "name: component, overlap",
+            "doc: component, overlap",
+            "params: component, overlap",
+            "facets: spatial_targeting/bm25, spatial_targeting/vector",
+            "static function result",
+            "vector recall"
+          ]
+        }
+      ],
+      "profile": {
+        "load": 0.7528,
+        "rewrite": 7.8776,
+        "embed": 0.1701,
+        "bm25": 0.1411,
+        "vector": 0.3321,
+        "score": 0.1617,
+        "select": 0.0001,
+        "total": 9.1851
+      }
+    }
+  }
+}

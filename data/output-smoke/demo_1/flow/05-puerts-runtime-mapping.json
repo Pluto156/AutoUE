@@ -1,0 +1,42 @@
+{
+  "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+  "mappings": [
+    {
+      "entity_id": "player",
+      "ability_id": "player.combat",
+      "behavior_id": "player.combat.attack",
+      "flow_id": "flow_player_combat_attack",
+      "runtime_owner": "TypeScript/content/generated/SmokeGame.ts",
+      "implementation_carrier": "template_rendered_ts",
+      "selected_runtime_owner": "SmokeGameAbility",
+      "engine_port_mappings": [
+        {
+          "engine_port_id": "input.action_binding",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/input.action_binding.json",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.EnhancedInputComponent.BindAction"
+          ]
+        },
+        {
+          "engine_port_id": "damage.apply",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/damage.apply.json",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.GameplayStatics.ApplyDamage"
+          ]
+        }
+      ],
+      "thin_contracts": [
+        "bind attack input",
+        "apply damage to enemy"
+      ],
+      "ability_binding": "adapter_call:tickSmokeGame",
+      "verification_evidence": [
+        "adapter_call can invoke generated ability",
+        "MCP adjudications exist for required ports"
+      ]
+    }
+  ],
+  "blocked_mappings": []
+}

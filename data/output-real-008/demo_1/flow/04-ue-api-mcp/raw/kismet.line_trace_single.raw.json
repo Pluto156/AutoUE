@@ -1,0 +1,617 @@
+{
+  "engine_port_id": "kismet.line_trace_single",
+  "flow_ids": [
+    "flow_player_combat_attack_enemy"
+  ],
+  "behavior_ids": [
+    "player.combat.attack_enemy"
+  ],
+  "contracts": [
+    "Check whether the enemy is in the player's attack direction or reach."
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for kismet.line_trace_single; exact symbol hints: Kismet.LineTraceSingle, KismetLineTraceSingle, kismet line trace single. Intent: Check whether the enemy is in the player's attack direction or reach.",
+  "raw_path": "flow/04-ue-api-mcp/raw/kismet.line_trace_single.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/kismet.line_trace_single.json",
+  "raw_result": {
+    "tool": "ue_api_semantic_search",
+    "query": "Unreal Engine PuerTS gameplay API for kismet.line_trace_single; exact symbol hints: Kismet.LineTraceSingle, KismetLineTraceSingle, kismet line trace single. Intent: Check whether the enemy is in the player's attack direction or reach.",
+    "limit": 5,
+    "raw_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"ok\",\n  \"mode\": \"semantic\",\n  \"query\": \"Unreal Engine PuerTS gameplay API for kismet.line_trace_single; exact symbol hints: Kismet.LineTraceSingle, KismetLineTraceSingle, kismet line trace single. Intent: Check whether the enemy is in the player's attack direction or reach.\",\n  \"searchText\": \"actor character weapon component player controller pawn owner input action key press event attack ability activate line trace single raycast collision query hit result channel health damage attributes gameplay effect\",\n  \"rewrite\": {\n    \"status\": \"rewritten\",\n    \"domainStatus\": \"ue_relevant\",\n    \"intentSummary\": \"Perform a single line trace (raycast) to determine if an enemy is within the player's attack direction or reach for gameplay targeting.\",\n    \"warnings\": [],\n    \"activeSubqueries\": [\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The gameplay object performing the line trace.\",\n        \"subqueryId\": \"carrier_context_1\",\n        \"text\": \"actor character weapon component\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The gameplay object performing the line trace.\",\n        \"subqueryId\": \"carrier_context_2\",\n        \"text\": \"player controller pawn owner\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"How the trace is initiated, e.g. input or attack ability.\",\n        \"subqueryId\": \"activation_trigger_1\",\n        \"text\": \"input action key press event\",\n        \"weight\": 0.3,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"How the trace is initiated, e.g. input or attack ability.\",\n        \"subqueryId\": \"activation_trigger_2\",\n        \"text\": \"attack ability activate\",\n        \"weight\": 0.3,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"spatial_targeting\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The line trace / raycast targeting mechanic.\",\n        \"subqueryId\": \"spatial_targeting_1\",\n        \"text\": \"line trace single raycast\",\n        \"weight\": 0.6,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"spatial_targeting\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The line trace / raycast targeting mechanic.\",\n        \"subqueryId\": \"spatial_targeting_2\",\n        \"text\": \"collision query hit result channel\",\n        \"weight\": 0.4,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"damage_state\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"Enemy health and damage application upon successful trace hit.\",\n        \"subqueryId\": \"damage_state_1\",\n        \"text\": \"health damage attributes gameplay effect\",\n        \"weight\": 0.6,\n        \"subqueryWeight\": 1.0\n      }\n    ]\n  },\n  \"embedding\": {\n    \"enabled\": true,\n    \"provider\": \"ollama\",\n    \"model\": \"bge-m3\",\n    \"dimensions\": 1024,\n    \"indexedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"status\": \"ready\"\n  },\n  \"partitions\": {\n    \"enabled\": true,\n    \"classifierEnabled\": true,\n    \"provider\": \"aaa\",\n    \"binaryAvailable\": true,\n    \"timeoutMs\": 90000,\n    \"candidateCount\": 20361,\n    \"processedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"validAssignmentCount\": 14733,\n    \"partitionedEntryCount\": 12532,\n    \"partitionedEntryRatio\": 0.6155,\n    \"searchReady\": true,\n    \"byFacet\": {\n      \"activation_trigger\": 241,\n      \"ai_behavior\": 948,\n      \"animation\": 1856,\n      \"audio\": 704,\n      \"camera_feedback_ui\": 1336,\n      \"carrier_context\": 1362,\n      \"damage_state\": 548,\n      \"integration_event\": 1069,\n      \"level_world\": 342,\n      \"lighting\": 134,\n      \"material_visual_state\": 1065,\n      \"mesh_geometry\": 1545,\n      \"movement_navigation\": 256,\n      \"networking_authority\": 414,\n      \"persistence_assets\": 612,\n      \"physics\": 666,\n      \"spatial_targeting\": 466,\n      \"spawn_lifecycle\": 117,\n      \"visual_effects\": 1052\n    },\n    \"status\": \"ready\",\n    \"searchScoped\": true\n  },\n  \"filters\": {},\n  \"confidence\": {\n    \"minConfidence\": 0.55,\n    \"status\": \"ok\",\n    \"topConfidence\": 0.7432\n  },\n  \"count\": 5,\n  \"results\": [\n    {\n      \"ref\": \"36bb55a1b5d9\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetSystemLibrary.LineTraceSingle\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetSystemLibrary\",\n      \"signature\": \"static LineTraceSingle(WorldContextObject: $Nullable<UE.Object>, Start: UE.Vector, End: UE.Vector, TraceChannel: UE.ETraceTypeQuery, bTraceComplex: boolean, ActorsToIgnore: TArray<UE.Actor>, DrawDebugType: UE.EDrawDebugTrace, OutHit: $Ref<UE.HitResult>, bIgnoreSelf: boolean, TraceColor?: UE.LinearColor /* = (R=1.000000,G=0.000000,B=0.000000,A=1.000000) */, TraceHitColor?: UE.LinearColor /* = (R=0.000000,G=1.000000,B=0.000000,A=1.000000) */, DrawTime?: number /* = 5.000000 */) : boolean;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7432,\n      \"summary\": \"Does a collision trace along the given line and returns the first blocking hit encountered. This trace finds the objects that RESPONDS to the given TraceChannel\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Perform a single line trace (raycast) to determine if an enemy is within the player's attack direction or reach for gameplay targeting.\",\n        \"name: line, single, trace\",\n        \"doc: channel, collision, hit, line, trace\",\n        \"params: channel, collision, hit, line, trace\",\n        \"facets: spatial_targeting/bm25, spatial_targeting/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"7365d346c842\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.AbilitySystemTestAttributeSet\",\n      \"kind\": \"class\",\n      \"score\": 90.0,\n      \"confidence\": 0.7388,\n      \"extends\": \"UE.AttributeSet\",\n      \"source\": \"Plugin/GameplayAbilities\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"45068bb5cfd5\",\n          \"symbol\": \"UE.AbilitySystemTestAttributeSet.ArmorDamageReduction\",\n          \"kind\": \"property\",\n          \"signature\": \"ArmorDamageReduction: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"fef4811febea\",\n          \"symbol\": \"UE.AbilitySystemTestAttributeSet.Damage\",\n          \"kind\": \"property\",\n          \"signature\": \"Damage: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"cc7ee97426d9\",\n          \"symbol\": \"UE.AbilitySystemTestAttributeSet.Health\",\n          \"kind\": \"property\",\n          \"signature\": \"Health: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"ef30de14bd08\",\n          \"symbol\": \"UE.AbilitySystemTestAttributeSet.Mana\",\n          \"kind\": \"property\",\n          \"signature\": \"Mana: UE.GameplayAttributeData;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"77c388ccc7ff\",\n          \"symbol\": \"UE.AbilitySystemTestAttributeSet.MaxHealth\",\n          \"kind\": \"property\",\n          \"signature\": \"MaxHealth: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"77f6f8f332b5\",\n          \"symbol\": \"UE.AbilitySystemTestAttributeSet.PhysicalDamage\",\n          \"kind\": \"property\",\n          \"signature\": \"PhysicalDamage: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"a675effb0c29\",\n          \"symbol\": \"UE.AbilitySystemTestAttributeSet.SpellDamage\",\n          \"kind\": \"property\",\n          \"signature\": \"SpellDamage: number;\",\n          \"summary\": \"\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Perform a single line trace (raycast) to determine if an enemy is within the player's attack direction or reach for gameplay targeting.\",\n        \"name: ability\",\n        \"members: ArmorDamageReduction, Damage, Health, Mana\",\n        \"facets: damage_state/bm25, damage_state/vector\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"6f18d7d93f60\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetInputLibrary.PointerEvent_GetEffectingButton\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetInputLibrary\",\n      \"signature\": \"static PointerEvent_GetEffectingButton(Input: UE.PointerEvent) : UE.Key;\",\n      \"score\": 90.711,\n      \"confidence\": 0.7372,\n      \"summary\": \"Mouse button that caused this event to be raised (possibly FKey::Invalid)\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Perform a single line trace (raycast) to determine if an enemy is within the player's attack direction or reach for gameplay targeting.\",\n        \"name: event, input\",\n        \"doc: event, key\",\n        \"facets: activation_trigger/bm25, activation_trigger/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"87417ce50473\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.Pawn.GetMovementBaseActor\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.Pawn\",\n      \"signature\": \"static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;\",\n      \"score\": 95.0,\n      \"confidence\": 0.7485,\n      \"summary\": \"Gets the owning actor of the Movement Base Component on which the pawn is standing.\",\n      \"source\": \"Engine/GameFramework\",\n      \"why\": [\n        \"rewrite: Perform a single line trace (raycast) to determine if an enemy is within the player's attack direction or reach for gameplay targeting.\",\n        \"name: actor, pawn\",\n        \"doc: actor, component, pawn\",\n        \"facets: carrier_context/bm25, carrier_context/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"b9b78604f2bd\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetSystemLibrary.LineTraceSingleForObjects\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetSystemLibrary\",\n      \"signature\": \"static LineTraceSingleForObjects(WorldContextObject: $Nullable<UE.Object>, Start: UE.Vector, End: UE.Vector, ObjectTypes: TArray<UE.EObjectTypeQuery>, bTraceComplex: boolean, ActorsToIgnore: TArray<UE.Actor>, DrawDebugType: UE.EDrawDebugTrace, OutHit: $Ref<UE.HitResult>, bIgnoreSelf: boolean, TraceColor?: UE.LinearColor /* = (R=1.000000,G=0.000000,B=0.000000,A=1.000000) */, TraceHitColor?: UE.LinearColor /* = (R=0.000000,G=1.000000,B=0.000000,A=1.000000) */, DrawTime?: number /* = 5.000000 */) : boolean;\",\n      \"score\": 88.5349,\n      \"confidence\": 0.7364,\n      \"summary\": \"Does a collision trace along the given line and returns the first hit encountered. This only finds objects that are of a type specified by ObjectTypes.\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Perform a single line trace (raycast) to determine if an enemy is within the player's attack direction or reach for gameplay targeting.\",\n        \"name: line, single, trace\",\n        \"doc: collision, hit, line, trace\",\n        \"params: collision, hit, line, trace\",\n        \"facets: spatial_targeting/bm25, spatial_targeting/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    }\n  ],\n  \"profile\": {\n    \"load\": 0.7497,\n    \"rewrite\": 7.5595,\n    \"embed\": 0.1906,\n    \"bm25\": 0.0989,\n    \"vector\": 0.264,\n    \"score\": 0.154,\n    \"select\": 0.0002,\n    \"total\": 8.7725\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "status": "ok",
+        "mode": "semantic",
+        "query": "Unreal Engine PuerTS gameplay API for kismet.line_trace_single; exact symbol hints: Kismet.LineTraceSingle, KismetLineTraceSingle, kismet line trace single. Intent: Check whether the enemy is in the player's attack direction or reach.",
+        "searchText": "actor character weapon component player controller pawn owner input action key press event attack ability activate line trace single raycast collision query hit result channel health damage attributes gameplay effect",
+        "rewrite": {
+          "status": "rewritten",
+          "domainStatus": "ue_relevant",
+          "intentSummary": "Perform a single line trace (raycast) to determine if an enemy is within the player's attack direction or reach for gameplay targeting.",
+          "warnings": [],
+          "activeSubqueries": [
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The gameplay object performing the line trace.",
+              "subqueryId": "carrier_context_1",
+              "text": "actor character weapon component",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The gameplay object performing the line trace.",
+              "subqueryId": "carrier_context_2",
+              "text": "player controller pawn owner",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "optional",
+              "facetIntent": "How the trace is initiated, e.g. input or attack ability.",
+              "subqueryId": "activation_trigger_1",
+              "text": "input action key press event",
+              "weight": 0.3,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "optional",
+              "facetIntent": "How the trace is initiated, e.g. input or attack ability.",
+              "subqueryId": "activation_trigger_2",
+              "text": "attack ability activate",
+              "weight": 0.3,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "spatial_targeting",
+              "facetStatus": "required",
+              "facetIntent": "The line trace / raycast targeting mechanic.",
+              "subqueryId": "spatial_targeting_1",
+              "text": "line trace single raycast",
+              "weight": 0.6,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "spatial_targeting",
+              "facetStatus": "required",
+              "facetIntent": "The line trace / raycast targeting mechanic.",
+              "subqueryId": "spatial_targeting_2",
+              "text": "collision query hit result channel",
+              "weight": 0.4,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "damage_state",
+              "facetStatus": "optional",
+              "facetIntent": "Enemy health and damage application upon successful trace hit.",
+              "subqueryId": "damage_state_1",
+              "text": "health damage attributes gameplay effect",
+              "weight": 0.6,
+              "subqueryWeight": 1.0
+            }
+          ]
+        },
+        "embedding": {
+          "enabled": true,
+          "provider": "ollama",
+          "model": "bge-m3",
+          "dimensions": 1024,
+          "indexedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "status": "ready"
+        },
+        "partitions": {
+          "enabled": true,
+          "classifierEnabled": true,
+          "provider": "aaa",
+          "binaryAvailable": true,
+          "timeoutMs": 90000,
+          "candidateCount": 20361,
+          "processedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "validAssignmentCount": 14733,
+          "partitionedEntryCount": 12532,
+          "partitionedEntryRatio": 0.6155,
+          "searchReady": true,
+          "byFacet": {
+            "activation_trigger": 241,
+            "ai_behavior": 948,
+            "animation": 1856,
+            "audio": 704,
+            "camera_feedback_ui": 1336,
+            "carrier_context": 1362,
+            "damage_state": 548,
+            "integration_event": 1069,
+            "level_world": 342,
+            "lighting": 134,
+            "material_visual_state": 1065,
+            "mesh_geometry": 1545,
+            "movement_navigation": 256,
+            "networking_authority": 414,
+            "persistence_assets": 612,
+            "physics": 666,
+            "spatial_targeting": 466,
+            "spawn_lifecycle": 117,
+            "visual_effects": 1052
+          },
+          "status": "ready",
+          "searchScoped": true
+        },
+        "filters": {},
+        "confidence": {
+          "minConfidence": 0.55,
+          "status": "ok",
+          "topConfidence": 0.7432
+        },
+        "count": 5,
+        "results": [
+          {
+            "ref": "36bb55a1b5d9",
+            "entryType": "static_function",
+            "symbol": "UE.KismetSystemLibrary.LineTraceSingle",
+            "kind": "method",
+            "owner": "UE.KismetSystemLibrary",
+            "signature": "static LineTraceSingle(WorldContextObject: $Nullable<UE.Object>, Start: UE.Vector, End: UE.Vector, TraceChannel: UE.ETraceTypeQuery, bTraceComplex: boolean, ActorsToIgnore: TArray<UE.Actor>, DrawDebugType: UE.EDrawDebugTrace, OutHit: $Ref<UE.HitResult>, bIgnoreSelf: boolean, TraceColor?: UE.LinearColor /* = (R=1.000000,G=0.000000,B=0.000000,A=1.000000) */, TraceHitColor?: UE.LinearColor /* = (R=0.000000,G=1.000000,B=0.000000,A=1.000000) */, DrawTime?: number /* = 5.000000 */) : boolean;",
+            "score": 93.0,
+            "confidence": 0.7432,
+            "summary": "Does a collision trace along the given line and returns the first blocking hit encountered. This trace finds the objects that RESPONDS to the given TraceChannel",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Perform a single line trace (raycast) to determine if an enemy is within the player's attack direction or reach for gameplay targeting.",
+              "name: line, single, trace",
+              "doc: channel, collision, hit, line, trace",
+              "params: channel, collision, hit, line, trace",
+              "facets: spatial_targeting/bm25, spatial_targeting/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "7365d346c842",
+            "entryType": "type",
+            "symbol": "UE.AbilitySystemTestAttributeSet",
+            "kind": "class",
+            "score": 90.0,
+            "confidence": 0.7388,
+            "extends": "UE.AttributeSet",
+            "source": "Plugin/GameplayAbilities",
+            "matchedMembers": [
+              {
+                "ref": "45068bb5cfd5",
+                "symbol": "UE.AbilitySystemTestAttributeSet.ArmorDamageReduction",
+                "kind": "property",
+                "signature": "ArmorDamageReduction: number;",
+                "summary": ""
+              },
+              {
+                "ref": "fef4811febea",
+                "symbol": "UE.AbilitySystemTestAttributeSet.Damage",
+                "kind": "property",
+                "signature": "Damage: number;",
+                "summary": ""
+              },
+              {
+                "ref": "cc7ee97426d9",
+                "symbol": "UE.AbilitySystemTestAttributeSet.Health",
+                "kind": "property",
+                "signature": "Health: number;",
+                "summary": ""
+              },
+              {
+                "ref": "ef30de14bd08",
+                "symbol": "UE.AbilitySystemTestAttributeSet.Mana",
+                "kind": "property",
+                "signature": "Mana: UE.GameplayAttributeData;",
+                "summary": ""
+              },
+              {
+                "ref": "77c388ccc7ff",
+                "symbol": "UE.AbilitySystemTestAttributeSet.MaxHealth",
+                "kind": "property",
+                "signature": "MaxHealth: number;",
+                "summary": ""
+              },
+              {
+                "ref": "77f6f8f332b5",
+                "symbol": "UE.AbilitySystemTestAttributeSet.PhysicalDamage",
+                "kind": "property",
+                "signature": "PhysicalDamage: number;",
+                "summary": ""
+              },
+              {
+                "ref": "a675effb0c29",
+                "symbol": "UE.AbilitySystemTestAttributeSet.SpellDamage",
+                "kind": "property",
+                "signature": "SpellDamage: number;",
+                "summary": ""
+              }
+            ],
+            "why": [
+              "rewrite: Perform a single line trace (raycast) to determine if an enemy is within the player's attack direction or reach for gameplay targeting.",
+              "name: ability",
+              "members: ArmorDamageReduction, Damage, Health, Mana",
+              "facets: damage_state/bm25, damage_state/vector",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "6f18d7d93f60",
+            "entryType": "static_function",
+            "symbol": "UE.KismetInputLibrary.PointerEvent_GetEffectingButton",
+            "kind": "method",
+            "owner": "UE.KismetInputLibrary",
+            "signature": "static PointerEvent_GetEffectingButton(Input: UE.PointerEvent) : UE.Key;",
+            "score": 90.711,
+            "confidence": 0.7372,
+            "summary": "Mouse button that caused this event to be raised (possibly FKey::Invalid)",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Perform a single line trace (raycast) to determine if an enemy is within the player's attack direction or reach for gameplay targeting.",
+              "name: event, input",
+              "doc: event, key",
+              "facets: activation_trigger/bm25, activation_trigger/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "87417ce50473",
+            "entryType": "static_function",
+            "symbol": "UE.Pawn.GetMovementBaseActor",
+            "kind": "method",
+            "owner": "UE.Pawn",
+            "signature": "static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;",
+            "score": 95.0,
+            "confidence": 0.7485,
+            "summary": "Gets the owning actor of the Movement Base Component on which the pawn is standing.",
+            "source": "Engine/GameFramework",
+            "why": [
+              "rewrite: Perform a single line trace (raycast) to determine if an enemy is within the player's attack direction or reach for gameplay targeting.",
+              "name: actor, pawn",
+              "doc: actor, component, pawn",
+              "facets: carrier_context/bm25, carrier_context/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "b9b78604f2bd",
+            "entryType": "static_function",
+            "symbol": "UE.KismetSystemLibrary.LineTraceSingleForObjects",
+            "kind": "method",
+            "owner": "UE.KismetSystemLibrary",
+            "signature": "static LineTraceSingleForObjects(WorldContextObject: $Nullable<UE.Object>, Start: UE.Vector, End: UE.Vector, ObjectTypes: TArray<UE.EObjectTypeQuery>, bTraceComplex: boolean, ActorsToIgnore: TArray<UE.Actor>, DrawDebugType: UE.EDrawDebugTrace, OutHit: $Ref<UE.HitResult>, bIgnoreSelf: boolean, TraceColor?: UE.LinearColor /* = (R=1.000000,G=0.000000,B=0.000000,A=1.000000) */, TraceHitColor?: UE.LinearColor /* = (R=0.000000,G=1.000000,B=0.000000,A=1.000000) */, DrawTime?: number /* = 5.000000 */) : boolean;",
+            "score": 88.5349,
+            "confidence": 0.7364,
+            "summary": "Does a collision trace along the given line and returns the first hit encountered. This only finds objects that are of a type specified by ObjectTypes.",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Perform a single line trace (raycast) to determine if an enemy is within the player's attack direction or reach for gameplay targeting.",
+              "name: line, single, trace",
+              "doc: collision, hit, line, trace",
+              "params: collision, hit, line, trace",
+              "facets: spatial_targeting/bm25, spatial_targeting/vector",
+              "static function result",
+              "vector recall"
+            ]
+          }
+        ],
+        "profile": {
+          "load": 0.7497,
+          "rewrite": 7.5595,
+          "embed": 0.1906,
+          "bm25": 0.0989,
+          "vector": 0.264,
+          "score": 0.154,
+          "select": 0.0002,
+          "total": 8.7725
+        }
+      },
+      "isError": false
+    },
+    "payload": {
+      "status": "ok",
+      "mode": "semantic",
+      "query": "Unreal Engine PuerTS gameplay API for kismet.line_trace_single; exact symbol hints: Kismet.LineTraceSingle, KismetLineTraceSingle, kismet line trace single. Intent: Check whether the enemy is in the player's attack direction or reach.",
+      "searchText": "actor character weapon component player controller pawn owner input action key press event attack ability activate line trace single raycast collision query hit result channel health damage attributes gameplay effect",
+      "rewrite": {
+        "status": "rewritten",
+        "domainStatus": "ue_relevant",
+        "intentSummary": "Perform a single line trace (raycast) to determine if an enemy is within the player's attack direction or reach for gameplay targeting.",
+        "warnings": [],
+        "activeSubqueries": [
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The gameplay object performing the line trace.",
+            "subqueryId": "carrier_context_1",
+            "text": "actor character weapon component",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The gameplay object performing the line trace.",
+            "subqueryId": "carrier_context_2",
+            "text": "player controller pawn owner",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "optional",
+            "facetIntent": "How the trace is initiated, e.g. input or attack ability.",
+            "subqueryId": "activation_trigger_1",
+            "text": "input action key press event",
+            "weight": 0.3,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "optional",
+            "facetIntent": "How the trace is initiated, e.g. input or attack ability.",
+            "subqueryId": "activation_trigger_2",
+            "text": "attack ability activate",
+            "weight": 0.3,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "spatial_targeting",
+            "facetStatus": "required",
+            "facetIntent": "The line trace / raycast targeting mechanic.",
+            "subqueryId": "spatial_targeting_1",
+            "text": "line trace single raycast",
+            "weight": 0.6,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "spatial_targeting",
+            "facetStatus": "required",
+            "facetIntent": "The line trace / raycast targeting mechanic.",
+            "subqueryId": "spatial_targeting_2",
+            "text": "collision query hit result channel",
+            "weight": 0.4,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "damage_state",
+            "facetStatus": "optional",
+            "facetIntent": "Enemy health and damage application upon successful trace hit.",
+            "subqueryId": "damage_state_1",
+            "text": "health damage attributes gameplay effect",
+            "weight": 0.6,
+            "subqueryWeight": 1.0
+          }
+        ]
+      },
+      "embedding": {
+        "enabled": true,
+        "provider": "ollama",
+        "model": "bge-m3",
+        "dimensions": 1024,
+        "indexedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "status": "ready"
+      },
+      "partitions": {
+        "enabled": true,
+        "classifierEnabled": true,
+        "provider": "aaa",
+        "binaryAvailable": true,
+        "timeoutMs": 90000,
+        "candidateCount": 20361,
+        "processedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "validAssignmentCount": 14733,
+        "partitionedEntryCount": 12532,
+        "partitionedEntryRatio": 0.6155,
+        "searchReady": true,
+        "byFacet": {
+          "activation_trigger": 241,
+          "ai_behavior": 948,
+          "animation": 1856,
+          "audio": 704,
+          "camera_feedback_ui": 1336,
+          "carrier_context": 1362,
+          "damage_state": 548,
+          "integration_event": 1069,
+          "level_world": 342,
+          "lighting": 134,
+          "material_visual_state": 1065,
+          "mesh_geometry": 1545,
+          "movement_navigation": 256,
+          "networking_authority": 414,
+          "persistence_assets": 612,
+          "physics": 666,
+          "spatial_targeting": 466,
+          "spawn_lifecycle": 117,
+          "visual_effects": 1052
+        },
+        "status": "ready",
+        "searchScoped": true
+      },
+      "filters": {},
+      "confidence": {
+        "minConfidence": 0.55,
+        "status": "ok",
+        "topConfidence": 0.7432
+      },
+      "count": 5,
+      "results": [
+        {
+          "ref": "36bb55a1b5d9",
+          "entryType": "static_function",
+          "symbol": "UE.KismetSystemLibrary.LineTraceSingle",
+          "kind": "method",
+          "owner": "UE.KismetSystemLibrary",
+          "signature": "static LineTraceSingle(WorldContextObject: $Nullable<UE.Object>, Start: UE.Vector, End: UE.Vector, TraceChannel: UE.ETraceTypeQuery, bTraceComplex: boolean, ActorsToIgnore: TArray<UE.Actor>, DrawDebugType: UE.EDrawDebugTrace, OutHit: $Ref<UE.HitResult>, bIgnoreSelf: boolean, TraceColor?: UE.LinearColor /* = (R=1.000000,G=0.000000,B=0.000000,A=1.000000) */, TraceHitColor?: UE.LinearColor /* = (R=0.000000,G=1.000000,B=0.000000,A=1.000000) */, DrawTime?: number /* = 5.000000 */) : boolean;",
+          "score": 93.0,
+          "confidence": 0.7432,
+          "summary": "Does a collision trace along the given line and returns the first blocking hit encountered. This trace finds the objects that RESPONDS to the given TraceChannel",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Perform a single line trace (raycast) to determine if an enemy is within the player's attack direction or reach for gameplay targeting.",
+            "name: line, single, trace",
+            "doc: channel, collision, hit, line, trace",
+            "params: channel, collision, hit, line, trace",
+            "facets: spatial_targeting/bm25, spatial_targeting/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "7365d346c842",
+          "entryType": "type",
+          "symbol": "UE.AbilitySystemTestAttributeSet",
+          "kind": "class",
+          "score": 90.0,
+          "confidence": 0.7388,
+          "extends": "UE.AttributeSet",
+          "source": "Plugin/GameplayAbilities",
+          "matchedMembers": [
+            {
+              "ref": "45068bb5cfd5",
+              "symbol": "UE.AbilitySystemTestAttributeSet.ArmorDamageReduction",
+              "kind": "property",
+              "signature": "ArmorDamageReduction: number;",
+              "summary": ""
+            },
+            {
+              "ref": "fef4811febea",
+              "symbol": "UE.AbilitySystemTestAttributeSet.Damage",
+              "kind": "property",
+              "signature": "Damage: number;",
+              "summary": ""
+            },
+            {
+              "ref": "cc7ee97426d9",
+              "symbol": "UE.AbilitySystemTestAttributeSet.Health",
+              "kind": "property",
+              "signature": "Health: number;",
+              "summary": ""
+            },
+            {
+              "ref": "ef30de14bd08",
+              "symbol": "UE.AbilitySystemTestAttributeSet.Mana",
+              "kind": "property",
+              "signature": "Mana: UE.GameplayAttributeData;",
+              "summary": ""
+            },
+            {
+              "ref": "77c388ccc7ff",
+              "symbol": "UE.AbilitySystemTestAttributeSet.MaxHealth",
+              "kind": "property",
+              "signature": "MaxHealth: number;",
+              "summary": ""
+            },
+            {
+              "ref": "77f6f8f332b5",
+              "symbol": "UE.AbilitySystemTestAttributeSet.PhysicalDamage",
+              "kind": "property",
+              "signature": "PhysicalDamage: number;",
+              "summary": ""
+            },
+            {
+              "ref": "a675effb0c29",
+              "symbol": "UE.AbilitySystemTestAttributeSet.SpellDamage",
+              "kind": "property",
+              "signature": "SpellDamage: number;",
+              "summary": ""
+            }
+          ],
+          "why": [
+            "rewrite: Perform a single line trace (raycast) to determine if an enemy is within the player's attack direction or reach for gameplay targeting.",
+            "name: ability",
+            "members: ArmorDamageReduction, Damage, Health, Mana",
+            "facets: damage_state/bm25, damage_state/vector",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "6f18d7d93f60",
+          "entryType": "static_function",
+          "symbol": "UE.KismetInputLibrary.PointerEvent_GetEffectingButton",
+          "kind": "method",
+          "owner": "UE.KismetInputLibrary",
+          "signature": "static PointerEvent_GetEffectingButton(Input: UE.PointerEvent) : UE.Key;",
+          "score": 90.711,
+          "confidence": 0.7372,
+          "summary": "Mouse button that caused this event to be raised (possibly FKey::Invalid)",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Perform a single line trace (raycast) to determine if an enemy is within the player's attack direction or reach for gameplay targeting.",
+            "name: event, input",
+            "doc: event, key",
+            "facets: activation_trigger/bm25, activation_trigger/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "87417ce50473",
+          "entryType": "static_function",
+          "symbol": "UE.Pawn.GetMovementBaseActor",
+          "kind": "method",
+          "owner": "UE.Pawn",
+          "signature": "static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;",
+          "score": 95.0,
+          "confidence": 0.7485,
+          "summary": "Gets the owning actor of the Movement Base Component on which the pawn is standing.",
+          "source": "Engine/GameFramework",
+          "why": [
+            "rewrite: Perform a single line trace (raycast) to determine if an enemy is within the player's attack direction or reach for gameplay targeting.",
+            "name: actor, pawn",
+            "doc: actor, component, pawn",
+            "facets: carrier_context/bm25, carrier_context/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "b9b78604f2bd",
+          "entryType": "static_function",
+          "symbol": "UE.KismetSystemLibrary.LineTraceSingleForObjects",
+          "kind": "method",
+          "owner": "UE.KismetSystemLibrary",
+          "signature": "static LineTraceSingleForObjects(WorldContextObject: $Nullable<UE.Object>, Start: UE.Vector, End: UE.Vector, ObjectTypes: TArray<UE.EObjectTypeQuery>, bTraceComplex: boolean, ActorsToIgnore: TArray<UE.Actor>, DrawDebugType: UE.EDrawDebugTrace, OutHit: $Ref<UE.HitResult>, bIgnoreSelf: boolean, TraceColor?: UE.LinearColor /* = (R=1.000000,G=0.000000,B=0.000000,A=1.000000) */, TraceHitColor?: UE.LinearColor /* = (R=0.000000,G=1.000000,B=0.000000,A=1.000000) */, DrawTime?: number /* = 5.000000 */) : boolean;",
+          "score": 88.5349,
+          "confidence": 0.7364,
+          "summary": "Does a collision trace along the given line and returns the first hit encountered. This only finds objects that are of a type specified by ObjectTypes.",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Perform a single line trace (raycast) to determine if an enemy is within the player's attack direction or reach for gameplay targeting.",
+            "name: line, single, trace",
+            "doc: collision, hit, line, trace",
+            "params: collision, hit, line, trace",
+            "facets: spatial_targeting/bm25, spatial_targeting/vector",
+            "static function result",
+            "vector recall"
+          ]
+        }
+      ],
+      "profile": {
+        "load": 0.7497,
+        "rewrite": 7.5595,
+        "embed": 0.1906,
+        "bm25": 0.0989,
+        "vector": 0.264,
+        "score": 0.154,
+        "select": 0.0002,
+        "total": 8.7725
+      }
+    }
+  }
+}

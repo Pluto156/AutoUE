@@ -1,0 +1,30 @@
+{
+  "template_inputs": [
+    {
+      "template": "interactive_object",
+      "path": "TypeScript/content/generated/interactive/SmokeInteractable.ts",
+      "entity_id": "player",
+      "behavior_id": "player.combat.attack",
+      "flow_id": "flow_player_combat_attack",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runSmokeInteraction",
+      "interface_name": "SmokeInteractionContext",
+      "action_label": "attacks",
+      "target_label": "Enemy",
+      "result_label": "enemy defeated"
+    }
+  ],
+  "behavior_traces": [
+    {
+      "entity_id": "player",
+      "behavior_id": "player.combat.attack",
+      "flow_id": "flow_player_combat_attack",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/interactive/SmokeInteractable.ts",
+      "export_name": "runSmokeInteraction"
+    }
+  ],
+  "validation_notes": [
+    "scripted smoke interactive object template"
+  ]
+}

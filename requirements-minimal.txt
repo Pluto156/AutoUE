@@ -1,0 +1,10 @@
+langchain-core
+langgraph
+langchain-community
+openai
+pytest
+python-dotenv
+requests
+beautifulsoup4
+numpy
+tqdm

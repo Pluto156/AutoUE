@@ -1,0 +1,151 @@
+{
+  "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+  "mappings": [
+    {
+      "entity_id": "player",
+      "ability_id": "player.movement",
+      "behavior_id": "player.movement.move",
+      "flow_id": "flow_player_movement_move",
+      "runtime_owner": "TypeScript/content/generated/PlayerMovementAbility.ts",
+      "implementation_carrier": "template_rendered_ts",
+      "selected_runtime_owner": "PlayerMovementAbility",
+      "engine_port_mappings": [
+        {
+          "engine_port_id": "enhanced_input.bind_action",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.BlueprintEnhancedInputActionBinding",
+            "UE.EnhancedInputWorldSubsystem"
+          ]
+        },
+        {
+          "engine_port_id": "pawn.add_movement_input",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/pawn.add_movement_input.json",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.NavMovementComponent",
+            "UE.Pawn.GetMovementBaseActor",
+            "UE.EnhancedInputLibrary.Conv_InputActionValueToAxis1D"
+          ]
+        }
+      ],
+      "thin_contracts": [
+        "Accept horizontal movement input from the player.",
+        "Move the player left or right while respecting the side-scroller room bounds.",
+        "Confirm the player position changed within valid room bounds."
+      ],
+      "ability_binding": "Bind the generated PuerTS movement ability to the player's horizontal movement input action and call the movement handler with the resolved axis value and player actor.",
+      "verification_evidence": [
+        "Movement input changes player position horizontally.",
+        "Player remains inside the side-scroller room bounds.",
+        "Generated TypeScript target file is TypeScript/content/generated/PlayerMovementAbility.ts."
+      ]
+    },
+    {
+      "entity_id": "player",
+      "ability_id": "player.combat",
+      "behavior_id": "player.combat.attack_enemy",
+      "flow_id": "flow_player_combat_attack_enemy",
+      "runtime_owner": "TypeScript/content/generated/PlayerCombatAbility.ts",
+      "implementation_carrier": "template_rendered_ts",
+      "selected_runtime_owner": "PlayerCombatAbility",
+      "engine_port_mappings": [
+        {
+          "engine_port_id": "kismet.line_trace_single",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/kismet.line_trace_single.json",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.KismetSystemLibrary.LineTraceSingle",
+            "UE.KismetSystemLibrary.LineTraceSingleForObjects"
+          ]
+        },
+        {
+          "engine_port_id": "gameplay_statics.apply_damage",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/gameplay_statics.apply_damage.json",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.GameplayStatics.ApplyDamage",
+            "UE.GameplayStatics.ApplyPointDamage",
+            "UE.GameplayStatics.BreakHitResult"
+          ]
+        }
+      ],
+      "thin_contracts": [
+        "Accept the player attack action.",
+        "Check whether the enemy is in the player's attack direction or reach.",
+        "Apply damage or defeat logic to the hit enemy.",
+        "Enemy is defeated or no longer blocks room progression."
+      ],
+      "ability_binding": "Bind the generated PuerTS combat ability to the player's attack action and call the attack handler to trace in the attack direction, inspect hit data, and apply damage to the hit enemy.",
+      "verification_evidence": [
+        "Attack query can identify the enemy when in range or facing direction.",
+        "Successful attack produces enemy defeated state.",
+        "Generated TypeScript target file is TypeScript/content/generated/PlayerCombatAbility.ts."
+      ]
+    },
+    {
+      "entity_id": "player",
+      "ability_id": "player.collection",
+      "behavior_id": "player.collection.collect_reward",
+      "flow_id": "flow_player_collection_collect_reward",
+      "runtime_owner": "TypeScript/content/generated/PlayerCollectionAbility.ts",
+      "implementation_carrier": "template_rendered_ts",
+      "selected_runtime_owner": "PlayerCollectionAbility",
+      "engine_port_mappings": [
+        {
+          "engine_port_id": "primitive.on_component_begin_overlap",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.KismetSystemLibrary.ComponentOverlapActors",
+            "UE.KismetSystemLibrary.ComponentOverlapComponents",
+            "UE.BlueprintComponentDelegateBinding"
+          ]
+        }
+      ],
+      "thin_contracts": [
+        "Detect the player entering the reward collection boundary after the reward is available.",
+        "Mark the reward as collected and unavailable in the room runtime state."
+      ],
+      "ability_binding": "Bind the generated PuerTS collection ability to the reward boundary overlap carrier or overlap query and call the collection handler when the player overlaps an available reward.",
+      "verification_evidence": [
+        "Reward overlap only succeeds when reward is available.",
+        "Reward collected state becomes true after valid player overlap.",
+        "Generated TypeScript target file is TypeScript/content/generated/PlayerCollectionAbility.ts."
+      ]
+    },
+    {
+      "entity_id": "player",
+      "ability_id": "player.exit",
+      "behavior_id": "player.exit.leave_room",
+      "flow_id": "flow_player_exit_leave_room",
+      "runtime_owner": "TypeScript/content/generated/PlayerExitAbility.ts",
+      "implementation_carrier": "template_rendered_ts",
+      "selected_runtime_owner": "PlayerExitAbility",
+      "engine_port_mappings": [
+        {
+          "engine_port_id": "primitive.on_component_begin_overlap",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.KismetSystemLibrary.ComponentOverlapActors",
+            "UE.KismetSystemLibrary.ComponentOverlapComponents",
+            "UE.BlueprintComponentDelegateBinding"
+          ]
+        }
+      ],
+      "thin_contracts": [
+        "Detect the player entering the exit activation boundary after required room interactions are complete.",
+        "Mark the room as completed and trigger the player exit result in runtime state."
+      ],
+      "ability_binding": "Bind the generated PuerTS exit ability to the exit boundary overlap carrier or overlap query and call the exit handler only when room requirements are complete.",
+      "verification_evidence": [
+        "Exit activation only succeeds after required room interactions are complete.",
+        "Valid exit overlap produces room completed and player exited state.",
+        "Generated TypeScript target file is TypeScript/content/generated/PlayerExitAbility.ts."
+      ]
+    }
+  ],
+  "blocked_mappings": []
+}

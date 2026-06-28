@@ -1,0 +1,108 @@
+{
+  "queries": [
+    {
+      "engine_port_id": "enhanced_input.bind_action",
+      "flow_ids": [
+        "flow_player_movement_move"
+      ],
+      "behavior_ids": [
+        "player.movement.move"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for enhanced_input.bind_action; exact symbol hints: Enhanced.InputBindAction, EnhancedInputBindAction, enhanced input bind action. Intent: Accept horizontal movement input from the player.",
+      "raw_path": "flow/04-ue-api-mcp/raw/enhanced_input.bind_action.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json",
+      "verdict": "hit",
+      "hit_type": "direct_hit",
+      "evidence_symbols": [
+        "UE.BlueprintEnhancedInputActionBinding",
+        "UE.EnhancedInputWorldSubsystem"
+      ],
+      "notes": "EnhancedInput action binding and subsystem symbols are usable evidence for binding an input action to accept horizontal movement input."
+    },
+    {
+      "engine_port_id": "pawn.add_movement_input",
+      "flow_ids": [
+        "flow_player_movement_move"
+      ],
+      "behavior_ids": [
+        "player.movement.move"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for pawn.add_movement_input; exact symbol hints: Pawn.AddMovementInput, PawnAddMovementInput, pawn add movement input. Intent: Move the player left or right while respecting the side-scroller room bounds.",
+      "raw_path": "flow/04-ue-api-mcp/raw/pawn.add_movement_input.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/pawn.add_movement_input.json",
+      "verdict": "hit",
+      "hit_type": "indirect_hit",
+      "evidence_symbols": [
+        "UE.NavMovementComponent",
+        "UE.Pawn.GetMovementBaseActor",
+        "UE.EnhancedInputLibrary.Conv_InputActionValueToAxis1D"
+      ],
+      "notes": "No exact AddMovementInput symbol appears, but the results include pawn movement and input-axis helper evidence usable to carry horizontal pawn movement implementation."
+    },
+    {
+      "engine_port_id": "kismet.line_trace_single",
+      "flow_ids": [
+        "flow_player_combat_attack_enemy"
+      ],
+      "behavior_ids": [
+        "player.combat.attack_enemy"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for kismet.line_trace_single; exact symbol hints: Kismet.LineTraceSingle, KismetLineTraceSingle, kismet line trace single. Intent: Check whether the enemy is in the player's attack direction or reach.",
+      "raw_path": "flow/04-ue-api-mcp/raw/kismet.line_trace_single.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/kismet.line_trace_single.json",
+      "verdict": "hit",
+      "hit_type": "direct_hit",
+      "evidence_symbols": [
+        "UE.KismetSystemLibrary.LineTraceSingle",
+        "UE.KismetSystemLibrary.LineTraceSingleForObjects"
+      ],
+      "notes": "LineTraceSingle directly supports checking an enemy along the player's attack direction or reach and returns hit data."
+    },
+    {
+      "engine_port_id": "gameplay_statics.apply_damage",
+      "flow_ids": [
+        "flow_player_combat_attack_enemy"
+      ],
+      "behavior_ids": [
+        "player.combat.attack_enemy"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for gameplay_statics.apply_damage; exact symbol hints: Gameplay.StaticsApplyDamage, GameplayStaticsApplyDamage, gameplay statics apply damage. Intent: Apply damage or defeat logic to the hit enemy.",
+      "raw_path": "flow/04-ue-api-mcp/raw/gameplay_statics.apply_damage.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/gameplay_statics.apply_damage.json",
+      "verdict": "hit",
+      "hit_type": "direct_hit",
+      "evidence_symbols": [
+        "UE.GameplayStatics.ApplyDamage",
+        "UE.GameplayStatics.ApplyPointDamage",
+        "UE.GameplayStatics.BreakHitResult"
+      ],
+      "notes": "ApplyDamage directly supports generic damage to the hit enemy; ApplyPointDamage and BreakHitResult support hit-based damage flow."
+    },
+    {
+      "engine_port_id": "primitive.on_component_begin_overlap",
+      "flow_ids": [
+        "flow_player_collection_collect_reward",
+        "flow_player_exit_leave_room"
+      ],
+      "behavior_ids": [
+        "player.collection.collect_reward",
+        "player.exit.leave_room"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for primitive.on_component_begin_overlap; exact symbol hints: Primitive.OnComponentBeginOverlap, PrimitiveOnComponentBeginOverlap, primitive on component begin overlap. Intent: Detect the player entering the reward collection boundary after the reward is available.",
+      "raw_path": "flow/04-ue-api-mcp/raw/primitive.on_component_begin_overlap.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json",
+      "verdict": "hit",
+      "hit_type": "indirect_hit",
+      "evidence_symbols": [
+        "UE.KismetSystemLibrary.ComponentOverlapActors",
+        "UE.KismetSystemLibrary.ComponentOverlapComponents",
+        "UE.BlueprintComponentDelegateBinding"
+      ],
+      "notes": "No exact OnComponentBeginOverlap delegate symbol appears, but component overlap query APIs and delegate binding evidence can implement reward and exit boundary overlap detection."
+    }
+  ],
+  "summary": {
+    "all_required_ports_hit": true,
+    "blocked_engine_ports": []
+  }
+}

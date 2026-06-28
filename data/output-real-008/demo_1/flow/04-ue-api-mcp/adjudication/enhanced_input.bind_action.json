@@ -1,0 +1,19 @@
+{
+  "engine_port_id": "enhanced_input.bind_action",
+  "flow_ids": [
+    "flow_player_movement_move"
+  ],
+  "behavior_ids": [
+    "player.movement.move"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for enhanced_input.bind_action; exact symbol hints: Enhanced.InputBindAction, EnhancedInputBindAction, enhanced input bind action. Intent: Accept horizontal movement input from the player.",
+  "raw_path": "flow/04-ue-api-mcp/raw/enhanced_input.bind_action.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json",
+  "verdict": "hit",
+  "hit_type": "direct_hit",
+  "evidence_symbols": [
+    "UE.BlueprintEnhancedInputActionBinding",
+    "UE.EnhancedInputWorldSubsystem"
+  ],
+  "notes": "EnhancedInput action binding and subsystem symbols are usable evidence for binding an input action to accept horizontal movement input."
+}

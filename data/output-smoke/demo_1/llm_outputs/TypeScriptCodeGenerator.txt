@@ -1,0 +1,33 @@
+{
+  "template_inputs": [
+    {
+      "template": "ability_module",
+      "path": "TypeScript/content/generated/SmokeGame.ts",
+      "entity_id": "player",
+      "behavior_id": "player.combat.attack",
+      "flow_id": "flow_player_combat_attack",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "tickSmokeGame",
+      "interface_name": "SmokeGameContext",
+      "action_label": "attacks",
+      "target_label": "Enemy",
+      "result_label": "enemy defeated"
+    }
+  ],
+  "behavior_traces": [
+    {
+      "entity_id": "player",
+      "behavior_id": "player.combat.attack",
+      "flow_id": "flow_player_combat_attack",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/SmokeGame.ts",
+      "export_name": "tickSmokeGame"
+    }
+  ],
+  "consumed_interactive_files": [
+    "TypeScript/content/generated/interactive/SmokeInteractable.ts"
+  ],
+  "validation_notes": [
+    "scripted smoke runtime template"
+  ]
+}

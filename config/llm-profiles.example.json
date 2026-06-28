@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "default_profile": "codex_cli_planning",
+  "profiles": {
+    "openai_compatible": {
+      "provider": "openai_compatible",
+      "api_key_env": "OPENAI_API_KEY",
+      "base_url_env": "OPENAI_BASE_URL",
+      "model_env": "OPENAI_MODEL",
+      "default_base_url": "http://127.0.0.1:8000/v1",
+      "default_model": "local-model",
+      "temperature": 0.2
+    },
+    "qwen_tongyi": {
+      "provider": "tongyi",
+      "api_key_env": "DASHSCOPE_API_KEY",
+      "model": "qwen-plus",
+      "temperature": 0.2
+    },
+    "scripted_smoke": {
+      "provider": "scripted_smoke"
+    },
+    "codex_cli_fast": {
+      "provider": "codex_cli",
+      "command_env": "CODEX_CLI_PATH",
+      "model_env": "CODEX_FAST_MODEL",
+      "default_model": "gpt-5.5",
+      "cwd": ".",
+      "timeout": 900,
+      "reasoning_effort": "high"
+    },
+    "codex_cli_planning": {
+      "provider": "codex_cli",
+      "command_env": "CODEX_CLI_PATH",
+      "model_env": "CODEX_PLANNING_MODEL",
+      "default_model": "gpt-5.5",
+      "cwd": ".",
+      "timeout": 1200,
+      "reasoning_effort": "xhigh"
+    },
+    "codex_cli_codegen": {
+      "provider": "codex_cli",
+      "command_env": "CODEX_CLI_PATH",
+      "model_env": "CODEX_CODEGEN_MODEL",
+      "default_model": "gpt-5.5",
+      "cwd": ".",
+      "timeout": 1800,
+      "reasoning_effort": "xhigh"
+    }
+  }
+}

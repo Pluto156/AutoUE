@@ -1,0 +1,41 @@
+{
+  "flows": [
+    {
+      "flow_id": "flow_player_combat_attack",
+      "entity_id": "player",
+      "ability_id": "player.combat",
+      "source_behavior_id": "player.combat.attack",
+      "stages": [
+        {
+          "stage": "Input",
+          "contract": "bind player attack input",
+          "inputs": [
+            "attack input"
+          ],
+          "outputs": [
+            "attack requested"
+          ],
+          "engine_ports": [
+            "input.action_binding"
+          ]
+        },
+        {
+          "stage": "Damage/Resource",
+          "contract": "apply damage to enemy",
+          "inputs": [
+            "enemy target"
+          ],
+          "outputs": [
+            "enemy defeated"
+          ],
+          "engine_ports": [
+            "damage.apply"
+          ]
+        }
+      ],
+      "verification": [
+        "enemy state becomes defeated"
+      ]
+    }
+  ]
+}

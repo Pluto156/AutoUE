@@ -1,0 +1,18 @@
+{
+  "engine_port_id": "input.action_binding",
+  "flow_ids": [
+    "flow_player_combat_attack"
+  ],
+  "behavior_ids": [
+    "player.combat.attack"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for input.action_binding: bind player attack input",
+  "raw_path": "flow/04-ue-api-mcp/raw/input.action_binding.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/input.action_binding.json",
+  "verdict": "hit",
+  "hit_type": "direct_hit",
+  "evidence_symbols": [
+    "UE.EnhancedInputComponent.BindAction"
+  ],
+  "notes": "MCP fixture returns an input binding symbol."
+}

@@ -1,0 +1,22 @@
+{
+  "engine_port_id": "primitive.on_component_begin_overlap",
+  "flow_ids": [
+    "flow_player_collection_collect_reward",
+    "flow_player_exit_leave_room"
+  ],
+  "behavior_ids": [
+    "player.collection.collect_reward",
+    "player.exit.leave_room"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for primitive.on_component_begin_overlap; exact symbol hints: Primitive.OnComponentBeginOverlap, PrimitiveOnComponentBeginOverlap, primitive on component begin overlap. Intent: Detect the player entering the reward collection boundary after the reward is available.",
+  "raw_path": "flow/04-ue-api-mcp/raw/primitive.on_component_begin_overlap.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json",
+  "verdict": "hit",
+  "hit_type": "indirect_hit",
+  "evidence_symbols": [
+    "UE.KismetSystemLibrary.ComponentOverlapActors",
+    "UE.KismetSystemLibrary.ComponentOverlapComponents",
+    "UE.BlueprintComponentDelegateBinding"
+  ],
+  "notes": "No exact OnComponentBeginOverlap delegate symbol appears, but component overlap query APIs and delegate binding evidence can implement reward and exit boundary overlap detection."
+}

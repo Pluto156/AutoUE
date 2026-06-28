@@ -1,0 +1,20 @@
+{
+  "engine_port_id": "pawn.add_movement_input",
+  "flow_ids": [
+    "flow_player_movement_move"
+  ],
+  "behavior_ids": [
+    "player.movement.move"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for pawn.add_movement_input; exact symbol hints: Pawn.AddMovementInput, PawnAddMovementInput, pawn add movement input. Intent: Move the player left or right while respecting the side-scroller room bounds.",
+  "raw_path": "flow/04-ue-api-mcp/raw/pawn.add_movement_input.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/pawn.add_movement_input.json",
+  "verdict": "hit",
+  "hit_type": "indirect_hit",
+  "evidence_symbols": [
+    "UE.NavMovementComponent",
+    "UE.Pawn.GetMovementBaseActor",
+    "UE.EnhancedInputLibrary.Conv_InputActionValueToAxis1D"
+  ],
+  "notes": "No exact AddMovementInput symbol appears, but the results include pawn movement and input-axis helper evidence usable to carry horizontal pawn movement implementation."
+}

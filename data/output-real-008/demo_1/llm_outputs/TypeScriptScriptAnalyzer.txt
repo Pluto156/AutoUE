@@ -1,0 +1,59 @@
+{
+  "typescript_sources": [
+    {
+      "path": "TypeScript/content/generated/PlayerMovementAbility.ts",
+      "role": "ability",
+      "notes": "runtime_owner from mapping"
+    },
+    {
+      "path": "TypeScript/content/generated/PlayerCombatAbility.ts",
+      "role": "ability",
+      "notes": "runtime_owner from mapping"
+    },
+    {
+      "path": "TypeScript/content/generated/PlayerCollectionAbility.ts",
+      "role": "ability",
+      "notes": "runtime_owner from mapping"
+    },
+    {
+      "path": "TypeScript/content/generated/PlayerExitAbility.ts",
+      "role": "ability",
+      "notes": "runtime_owner from mapping"
+    }
+  ],
+  "implementation_slots": [
+    {
+      "entity_id": "player",
+      "behavior_id": "player.movement.move",
+      "flow_id": "flow_player_movement_move",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "target_ts_file": "TypeScript/content/generated/PlayerMovementAbility.ts",
+      "reason": "mapped from PuerTSRuntimeMappingPlanner.runtime_owner"
+    },
+    {
+      "entity_id": "player",
+      "behavior_id": "player.combat.attack_enemy",
+      "flow_id": "flow_player_combat_attack_enemy",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "target_ts_file": "TypeScript/content/generated/PlayerCombatAbility.ts",
+      "reason": "mapped from PuerTSRuntimeMappingPlanner.runtime_owner"
+    },
+    {
+      "entity_id": "player",
+      "behavior_id": "player.collection.collect_reward",
+      "flow_id": "flow_player_collection_collect_reward",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "target_ts_file": "TypeScript/content/generated/PlayerCollectionAbility.ts",
+      "reason": "mapped from PuerTSRuntimeMappingPlanner.runtime_owner"
+    },
+    {
+      "entity_id": "player",
+      "behavior_id": "player.exit.leave_room",
+      "flow_id": "flow_player_exit_leave_room",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "target_ts_file": "TypeScript/content/generated/PlayerExitAbility.ts",
+      "reason": "mapped from PuerTSRuntimeMappingPlanner.runtime_owner"
+    }
+  ],
+  "missing_slots": []
+}

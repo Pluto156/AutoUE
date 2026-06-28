@@ -1,0 +1,137 @@
+{
+  "result": "pass",
+  "errors": [],
+  "evidence": {
+    "root": "D:\\ClaudeTasks\\active\\autoue-puerts-workflow-adaptation\\repo\\AutoUE\\data\\output-real-008\\demo_1",
+    "validated_llm_nodes": [
+      "SceneAndGameplaySplitter",
+      "EntityAbilityBehaviorPlanner",
+      "ThinGameplayFlowPlanner",
+      "UEApiMCPFeasibilitySearcher",
+      "PuerTSRuntimeMappingPlanner",
+      "TypeScriptScriptAnalyzer",
+      "TypeScriptInteractiveObjectGenerator",
+      "TypeScriptCodeGenerator",
+      "EvaluateInstructionGenerator"
+    ],
+    "behavior_ids": [
+      "player.collection.collect_reward",
+      "player.combat.attack_enemy",
+      "player.exit.leave_room",
+      "player.movement.move"
+    ],
+    "flow_ids": [
+      "flow_player_collection_collect_reward",
+      "flow_player_combat_attack_enemy",
+      "flow_player_exit_leave_room",
+      "flow_player_movement_move"
+    ],
+    "engine_port_ids": [
+      "enhanced_input.bind_action",
+      "gameplay_statics.apply_damage",
+      "kismet.line_trace_single",
+      "pawn.add_movement_input",
+      "primitive.on_component_begin_overlap"
+    ],
+    "mcp_adjudication_paths": [
+      "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json",
+      "flow/04-ue-api-mcp/adjudication/gameplay_statics.apply_damage.json",
+      "flow/04-ue-api-mcp/adjudication/kismet.line_trace_single.json",
+      "flow/04-ue-api-mcp/adjudication/pawn.add_movement_input.json",
+      "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json"
+    ],
+    "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+    "analyzer_targets": [
+      "TypeScript/content/generated/PlayerCollectionAbility.ts",
+      "TypeScript/content/generated/PlayerCombatAbility.ts",
+      "TypeScript/content/generated/PlayerExitAbility.ts",
+      "TypeScript/content/generated/PlayerMovementAbility.ts"
+    ],
+    "interactive_files": [
+      "TypeScript/content/generated/interactive/PlayerCollectionCollectRewardInteractable.ts",
+      "TypeScript/content/generated/interactive/PlayerCombatAttackEnemyInteractable.ts",
+      "TypeScript/content/generated/interactive/PlayerExitLeaveRoomInteractable.ts",
+      "TypeScript/content/generated/interactive/PlayerMovementMoveInteractable.ts"
+    ],
+    "codegen_files": [
+      "TypeScript/content/generated/PlayerCollectionAbility.ts",
+      "TypeScript/content/generated/PlayerCombatAbility.ts",
+      "TypeScript/content/generated/PlayerExitAbility.ts",
+      "TypeScript/content/generated/PlayerMovementAbility.ts"
+    ],
+    "behavior_trace_coverage": {
+      "player.collection.collect_reward": [
+        "EvaluateInstructionGenerator",
+        "PuerTSRuntimeMappingPlanner",
+        "ThinGameplayFlowPlanner",
+        "TypeScriptCodeGenerator",
+        "TypeScriptInteractiveObjectGenerator",
+        "TypeScriptScriptAnalyzer",
+        "UEApiMCPFeasibilitySearcher"
+      ],
+      "player.combat.attack_enemy": [
+        "EvaluateInstructionGenerator",
+        "PuerTSRuntimeMappingPlanner",
+        "ThinGameplayFlowPlanner",
+        "TypeScriptCodeGenerator",
+        "TypeScriptInteractiveObjectGenerator",
+        "TypeScriptScriptAnalyzer",
+        "UEApiMCPFeasibilitySearcher"
+      ],
+      "player.exit.leave_room": [
+        "EvaluateInstructionGenerator",
+        "PuerTSRuntimeMappingPlanner",
+        "ThinGameplayFlowPlanner",
+        "TypeScriptCodeGenerator",
+        "TypeScriptInteractiveObjectGenerator",
+        "TypeScriptScriptAnalyzer",
+        "UEApiMCPFeasibilitySearcher"
+      ],
+      "player.movement.move": [
+        "EvaluateInstructionGenerator",
+        "PuerTSRuntimeMappingPlanner",
+        "ThinGameplayFlowPlanner",
+        "TypeScriptCodeGenerator",
+        "TypeScriptInteractiveObjectGenerator",
+        "TypeScriptScriptAnalyzer",
+        "UEApiMCPFeasibilitySearcher"
+      ]
+    },
+    "generated_ts_files": [
+      "TypeScript\\content\\generated\\interactive\\PlayerCollectionCollectRewardInteractable.ts",
+      "TypeScript\\content\\generated\\interactive\\PlayerCombatAttackEnemyInteractable.ts",
+      "TypeScript\\content\\generated\\interactive\\PlayerExitLeaveRoomInteractable.ts",
+      "TypeScript\\content\\generated\\interactive\\PlayerMovementMoveInteractable.ts",
+      "TypeScript\\content\\generated\\PlayerCollectionAbility.ts",
+      "TypeScript\\content\\generated\\PlayerCombatAbility.ts",
+      "TypeScript\\content\\generated\\PlayerExitAbility.ts",
+      "TypeScript\\content\\generated\\PlayerMovementAbility.ts"
+    ],
+    "declared_ts_files": [
+      "TypeScript/content/generated/interactive/PlayerMovementMoveInteractable.ts",
+      "TypeScript/content/generated/interactive/PlayerCombatAttackEnemyInteractable.ts",
+      "TypeScript/content/generated/interactive/PlayerCollectionCollectRewardInteractable.ts",
+      "TypeScript/content/generated/interactive/PlayerExitLeaveRoomInteractable.ts",
+      "TypeScript/content/generated/PlayerMovementAbility.ts",
+      "TypeScript/content/generated/PlayerCombatAbility.ts",
+      "TypeScript/content/generated/PlayerCollectionAbility.ts",
+      "TypeScript/content/generated/PlayerExitAbility.ts"
+    ],
+    "mcp_artifacts": [
+      "flow/04-ue-api-mcp/raw/enhanced_input.bind_action.raw.json",
+      "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json",
+      "flow/04-ue-api-mcp/raw/pawn.add_movement_input.raw.json",
+      "flow/04-ue-api-mcp/adjudication/pawn.add_movement_input.json",
+      "flow/04-ue-api-mcp/raw/kismet.line_trace_single.raw.json",
+      "flow/04-ue-api-mcp/adjudication/kismet.line_trace_single.json",
+      "flow/04-ue-api-mcp/raw/gameplay_statics.apply_damage.raw.json",
+      "flow/04-ue-api-mcp/adjudication/gameplay_statics.apply_damage.json",
+      "flow/04-ue-api-mcp/raw/primitive.on_component_begin_overlap.raw.json",
+      "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json",
+      "flow/03-thin-gameplay-flow.json",
+      "flow/04-ue-api-mcp/summary.json",
+      "flow/05-puerts-runtime-mapping.json"
+    ],
+    "instruction_count": 4
+  }
+}

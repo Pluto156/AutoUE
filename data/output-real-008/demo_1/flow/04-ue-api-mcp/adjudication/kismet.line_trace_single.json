@@ -1,0 +1,19 @@
+{
+  "engine_port_id": "kismet.line_trace_single",
+  "flow_ids": [
+    "flow_player_combat_attack_enemy"
+  ],
+  "behavior_ids": [
+    "player.combat.attack_enemy"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for kismet.line_trace_single; exact symbol hints: Kismet.LineTraceSingle, KismetLineTraceSingle, kismet line trace single. Intent: Check whether the enemy is in the player's attack direction or reach.",
+  "raw_path": "flow/04-ue-api-mcp/raw/kismet.line_trace_single.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/kismet.line_trace_single.json",
+  "verdict": "hit",
+  "hit_type": "direct_hit",
+  "evidence_symbols": [
+    "UE.KismetSystemLibrary.LineTraceSingle",
+    "UE.KismetSystemLibrary.LineTraceSingleForObjects"
+  ],
+  "notes": "LineTraceSingle directly supports checking an enemy along the player's attack direction or reach and returns hit data."
+}

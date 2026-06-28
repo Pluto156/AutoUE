@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "name": "autoue_default_cpp_research_flow",
+  "description": "Original AutoUE node order, but node calls and prompts are configured outside Python code.",
+  "nodes": [
+    {
+      "name": "SceneAndGameplaySplitter",
+      "factory": "custom_nodes.scene_and_gameplay_splitter:create_scene_and_gameplay_splitter",
+      "prompt_file": "prompts/scene_and_gameplay_splitter.md",
+      "enabled": true,
+      "llm_profile": "openai_compatible"
+    },
+    {
+      "name": "SceneFormalizer",
+      "factory": "custom_nodes.scene_formalizer:create_scene_formalizer",
+      "prompt_file": "prompts/scene_formalizer.md",
+      "enabled": true,
+      "llm_profile": "openai_compatible"
+    },
+    {
+      "name": "KeyElementExtractor",
+      "factory": "custom_nodes.key_element_extractor:create_key_element_extractor",
+      "prompt_file": "prompts/key_element_extractor.md",
+      "enabled": true,
+      "llm_profile": "openai_compatible"
+    },
+    {
+      "name": "RetrieveModel",
+      "factory": "custom_nodes.retrieve_model:create_retrieve_model_node",
+      "prompt_file": "prompts/retrieve_model.md",
+      "enabled": true,
+      "llm_profile": "openai_compatible"
+    },
+    {
+      "name": "ModuleAnalyzer",
+      "factory": "custom_nodes.module_analyzer:create_module_analyzer",
+      "prompt_file": "prompts/module_analyzer.md",
+      "enabled": true,
+      "llm_profile": "openai_compatible"
+    },
+    {
+      "name": "ModuleCodeGenerator",
+      "factory": "custom_nodes.module_code_generator:create_module_code_generator",
+      "prompt_file": "prompts/module_code_generator.md",
+      "enabled": true,
+      "llm_profile": "openai_compatible"
+    },
+    {
+      "name": "InteractiveObjectAnalyzer",
+      "factory": "custom_nodes.interactive_object_analyzer:create_interactive_object_analyzer",
+      "prompt_file": "prompts/interactive_object_analyzer.md",
+      "enabled": true,
+      "llm_profile": "openai_compatible"
+    },
+    {
+      "name": "InteractiveObjectCodeGenerator",
+      "factory": "custom_nodes.interactive_object_code_generator:create_interactive_object_code_generator",
+      "prompt_file": "prompts/interactive_object_code_generator.md",
+      "enabled": true,
+      "llm_profile": "openai_compatible"
+    },
+    {
+      "name": "PCGGraphComposer",
+      "factory": "custom_nodes.pcg_graph_composer:create_pcg_graph_composer",
+      "prompt_file": "prompts/pcg_graph_composer.md",
+      "enabled": true,
+      "llm_profile": "openai_compatible"
+    },
+    {
+      "name": "PCGPlanner",
+      "factory": "custom_nodes.pcg_planner:create_pcg_planner",
+      "prompt_file": "prompts/pcg_planner.md",
+      "enabled": true,
+      "llm_profile": "openai_compatible"
+    },
+    {
+      "name": "EvaluateInstructionGenerator",
+      "factory": "custom_nodes.evaluate_instruction_generator:create_evaluate_instruction_generator",
+      "prompt_file": "prompts/evaluate_instruction_generator.md",
+      "enabled": true,
+      "llm_profile": "openai_compatible"
+    }
+  ]
+}

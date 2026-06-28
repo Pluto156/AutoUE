@@ -27,3 +27,4 @@ mathutils
 unreal
 openpyxl
 pandas
+pytest

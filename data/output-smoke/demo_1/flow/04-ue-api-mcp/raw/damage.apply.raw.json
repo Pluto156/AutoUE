@@ -1,0 +1,32 @@
+{
+  "engine_port_id": "damage.apply",
+  "flow_ids": [
+    "flow_player_combat_attack"
+  ],
+  "behavior_ids": [
+    "player.combat.attack"
+  ],
+  "contracts": [
+    "apply damage to enemy"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for damage.apply: apply damage to enemy",
+  "raw_path": "flow/04-ue-api-mcp/raw/damage.apply.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/damage.apply.json",
+  "raw_result": {
+    "tool": "ue_api_semantic_search",
+    "query": "Unreal Engine PuerTS gameplay API for damage.apply: apply damage to enemy",
+    "limit": 5,
+    "fixture": true,
+    "payload": {
+      "results": [
+        {
+          "symbol": "UE.GameplayStatics.ApplyDamage",
+          "entryType": "function",
+          "signature": "UE.GameplayStatics.ApplyDamage(...)",
+          "summary": "scripted smoke UE API evidence",
+          "confidence": 0.99
+        }
+      ]
+    }
+  }
+}

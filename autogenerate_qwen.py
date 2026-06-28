@@ -1,230 +1,192 @@
-import os
+from __future__ import annotations
+
+import argparse
+import json
 import shutil
+from datetime import datetime
+from pathlib import Path
+
 from dotenv import load_dotenv
 load_dotenv()
-from datetime import datetime
-from typing import Any, Dict, List
-from dataclasses import dataclass, field
 
-from langchain_community.chat_models import ChatTongyi
-
-from langgraph.graph import StateGraph
-from langchain_core.messages import HumanMessage
-
-from core.BaseLLMGraph import BaseLLMGraph
-from core.BaseLLMNode import GraphState
-
-from custom_nodes.scene_and_gameplay_splitter import create_scene_and_gameplay_splitter
-from custom_nodes.scene_formalizer import create_scene_formalizer
-from custom_nodes.key_element_extractor import create_key_element_extractor
-from custom_nodes.retrieve_model import create_retrieve_model_node
-from custom_nodes.module_analyzer import create_module_analyzer
-from custom_nodes.module_code_generator import create_module_code_generator
-from custom_nodes.interactive_object_analyzer import create_interactive_object_analyzer
-from custom_nodes.interactive_object_code_generator import create_interactive_object_code_generator
-from custom_nodes.pcg_graph_composer import create_pcg_graph_composer
-from custom_nodes.pcg_planner import create_pcg_planner
-from custom_nodes.evaluate_instruction_generator import create_evaluate_instruction_generator
-from model_description.batch_render_gltf import render_gltf
+from core.config import (
+    iter_enabled_nodes,
+    load_runtime_config,
+    load_workflow_config,
+    resolve_configured_path,
+    resolve_copy_dirs,
+    repo_path,
+)
+from core.llm_factory import create_llm
+from core.config import load_llm_profiles
 
 
-# =========================
-# Path configuration
-# =========================
-INPUT_DIR = os.getenv("INPUT_DIR") 
-OUTPUT_DIR = os.getenv("OUTPUT_DIR")
-COPY_DIRS = os.getenv("COPY_DIRS", "").split(";")
-
-# =========================
-# Demo finish log file
-# =========================
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-DEMO_FINISH_LOG_PATH = os.path.join(SCRIPT_DIR, "demo_finish_log.txt")
+SCRIPT_DIR = Path(__file__).resolve().parent
+DEMO_FINISH_LOG_PATH = SCRIPT_DIR / "demo_finish_log.txt"
 
 
-# =========================
-# Robust txt reader
-# =========================
-def read_prompt_text(txt_path: str) -> str:
-    with open(txt_path, "rb") as f:
-        raw = f.read()
-
-    if raw.startswith(b"\xff\xfe"):
-        text = raw.decode("utf-16-le")
-    elif raw.startswith(b"\xfe\xff"):
-        text = raw.decode("utf-16-be")
-    else:
-        text = raw.decode("utf-8", errors="ignore")
-
-    return text.replace("\ufeff", "").strip()
-
-
-# =========================
-# Copy all required directories
-# =========================
-def copy_all_dirs_to_output(demo_output_dir: str):
-    for src_dir in COPY_DIRS:
-        if not os.path.exists(src_dir):
+def copy_all_dirs_to_output(demo_output_dir: Path, copy_dirs: list[Path]):
+    for src_dir in copy_dirs:
+        if not src_dir.exists():
             print(f"[WARN] Source directory does not exist, skipping: {src_dir}")
             continue
-
-        dst_dir = os.path.join(demo_output_dir, os.path.basename(src_dir))
+        dst_dir = demo_output_dir / src_dir.name
         print(f"[DEBUG] Copying {src_dir} -> {dst_dir}")
-
-        if os.path.exists(dst_dir):
+        if dst_dir.exists():
             shutil.rmtree(dst_dir)
-
         shutil.copytree(src_dir, dst_dir)
 
 
-# =========================
-# Copy prompt txt to MyPCG/eval/Prompt.txt
-# =========================
-def copy_prompt_to_eval(txt_path: str, demo_output_dir: str):
-    eval_dir = os.path.join(demo_output_dir, "MyPCG", "eval")
-    os.makedirs(eval_dir, exist_ok=True)
-
-    target_path = os.path.join(eval_dir, "Prompt.txt")
-
-    if os.path.exists(target_path):
-        os.remove(target_path)
-
+def copy_prompt_to_eval(txt_path: Path, demo_output_dir: Path):
+    eval_dir = demo_output_dir / "MyPCG" / "eval"
+    eval_dir.mkdir(parents=True, exist_ok=True)
+    target_path = eval_dir / "Prompt.txt"
+    if target_path.exists():
+        target_path.unlink()
     shutil.copy(txt_path, target_path)
     print(f"[DEBUG] Prompt copied to {target_path}")
 
 
-# =========================
-# Save llm_outputs
-# =========================
-def save_llm_outputs(graph_state: GraphState, demo_output_dir: str):
-    llm_outputs = getattr(graph_state, "llm_outputs", None)
+def save_llm_outputs(graph_state, demo_output_dir: Path, dir_name: str = "llm_outputs"):
+    llm_outputs = graph_state.get("llm_outputs") if isinstance(graph_state, dict) else getattr(graph_state, "llm_outputs", None)
     if not llm_outputs:
         print("[WARN] No llm_outputs found in GraphState")
         return
-
-    output_dir = os.path.join(demo_output_dir, "llm_outputs")
-    os.makedirs(output_dir, exist_ok=True)
-
+    output_dir = demo_output_dir / dir_name
+    output_dir.mkdir(parents=True, exist_ok=True)
     for key, value in llm_outputs.items():
-        file_path = os.path.join(output_dir, f"{key}.txt")
-        with open(file_path, "w", encoding="utf-8") as f:
-            f.write(value)
-
+        file_path = output_dir / f"{key}.txt"
+        file_path.write_text(value, encoding="utf-8")
         print(f"[DEBUG] Saved llm_output: {file_path}")
 
 
-# =========================
-# Build Graph
-# =========================
-def build_graph():
-    model = ChatTongyi(
-        model="qwen-plus",
-        temperature=0.2
-    )
+def build_graph(runtime_config: dict | None = None, workflow_config: dict | None = None, *, llm_profile: str | None = None):
+    from langgraph.graph import StateGraph
+    from core.BaseLLMGraph import BaseLLMGraph
+    from core.BaseLLMNode import GraphState
+    from core.workflow_loader import create_node_from_spec
 
-    scene_and_gameplay_splitter = create_scene_and_gameplay_splitter()
-    scene_formalizer = create_scene_formalizer()
-    key_element_extractor = create_key_element_extractor()
-    retrieve_model_node = create_retrieve_model_node()
-    module_analyzer = create_module_analyzer()
-    module_code_generator = create_module_code_generator()
-    interactive_object_analyzer = create_interactive_object_analyzer()
-    interactive_object_code_generator = create_interactive_object_code_generator()
-    pcg_graph_composer = create_pcg_graph_composer()
-    pcg_planner = create_pcg_planner()
-    evaluate_instruction_generator = create_evaluate_instruction_generator()
+    runtime_config = runtime_config or load_runtime_config()
+    workflow_config = workflow_config or load_workflow_config(None, runtime_config)
+    profiles = load_llm_profiles()
+    selected_profile = llm_profile or runtime_config.get("llm_profile") or profiles.get("default_profile")
+    model = create_llm(selected_profile, profiles)
 
-    baseLLMGraph = BaseLLMGraph(model=model)
-    (
-        baseLLMGraph
-        .AddNode(scene_and_gameplay_splitter)
-        .AddNode(scene_formalizer)
-        .AddNode(key_element_extractor)
-        .AddNode(retrieve_model_node)
-        .AddNode(module_analyzer)
-        .AddNode(module_code_generator)
-        .AddNode(interactive_object_analyzer)
-        .AddNode(interactive_object_code_generator)
-        .AddNode(pcg_graph_composer)
-        .AddNode(pcg_planner)
-        .AddNode(evaluate_instruction_generator)
-    )
+    base_graph = BaseLLMGraph(model=model)
+    nodes = []
+    for spec in iter_enabled_nodes(workflow_config):
+        node_profile = selected_profile if llm_profile else (spec.get("llm_profile") or selected_profile)
+        node_model = create_llm(node_profile, profiles) if node_profile != selected_profile else model
+        node = create_node_from_spec(spec)
+        node.set_model(node_model)
+        base_graph.AddNode(node)
+        nodes.append(node)
 
-    graph = StateGraph(GraphState, name="SceneAnalyserGraph")
+    if not nodes:
+        raise RuntimeError("Workflow has no enabled nodes")
 
-    graph.add_node(scene_and_gameplay_splitter.name, scene_and_gameplay_splitter.execute)
-    graph.add_node(scene_formalizer.name, scene_formalizer.execute)
-    graph.add_node(key_element_extractor.name, key_element_extractor.execute)
-    graph.add_node(retrieve_model_node.name, retrieve_model_node.execute)
-    graph.add_node(module_analyzer.name, module_analyzer.execute)
-    graph.add_node(module_code_generator.name, module_code_generator.execute)
-    graph.add_node(interactive_object_analyzer.name, interactive_object_analyzer.execute)
-    graph.add_node(interactive_object_code_generator.name, interactive_object_code_generator.execute)
-    graph.add_node(pcg_graph_composer.name, pcg_graph_composer.execute)
-    graph.add_node(pcg_planner.name, pcg_planner.execute)
-    graph.add_node(evaluate_instruction_generator.name, evaluate_instruction_generator.execute)
+    graph = StateGraph(GraphState, name=workflow_config.get("name", "AutoUEGraph"))
+    for node in nodes:
+        graph.add_node(node.name, node.execute)
+    graph.set_entry_point(nodes[0].name)
+    return graph.compile(), nodes
 
-    graph.set_entry_point(scene_and_gameplay_splitter.name)
 
-    return graph.compile()
+def dry_run_config(args) -> int:
+    runtime = load_runtime_config(args.config)
+    workflow = load_workflow_config(args.workflow, runtime)
+    input_dir = Path(args.input_dir).resolve() if args.input_dir else resolve_configured_path(runtime, "input_dir")
+    output_dir = Path(args.output_dir).resolve() if args.output_dir else resolve_configured_path(runtime, "output_dir")
+    enabled = list(iter_enabled_nodes(workflow))
+    prompt_files = [repo_path(n["prompt_file"]) for n in enabled if n.get("prompt_file")]
+    missing_prompts = [str(p) for p in prompt_files if not p.exists()]
+    summary = {
+        "runtime_config": runtime,
+        "workflow_name": workflow.get("name"),
+        "enabled_nodes": [n.get("name") for n in enabled],
+        "input_dir": str(input_dir),
+        "output_dir": str(output_dir),
+        "missing_prompts": missing_prompts,
+    }
+    print(json.dumps(summary, indent=2, ensure_ascii=False))
+    return 2 if missing_prompts else 0
 
-# =========================
-# main
-# =========================
-def main():
-    
-    if not os.getenv("DASHSCOPE_API_KEY"):
-        raise RuntimeError("DASHSCOPE_API_KEY not found")
 
-    print("[DEBUG] Qwen API key loaded")
+def run_workflow(args) -> int:
+    from langchain_core.messages import HumanMessage
+    from core.BaseLLMNode import GraphState
+    from core.workflow_loader import read_prompt_text
 
-    txt_files = [
-        f for f in os.listdir(INPUT_DIR)
-        if f.endswith(".txt") and f[:-4].isdigit()
-    ]
-    txt_files.sort(key=lambda x: int(x[:-4]))
+    runtime = load_runtime_config(args.config)
+    workflow = load_workflow_config(args.workflow, runtime)
+    input_dir = Path(args.input_dir).resolve() if args.input_dir else resolve_configured_path(runtime, "input_dir")
+    output_dir = Path(args.output_dir).resolve() if args.output_dir else resolve_configured_path(runtime, "output_dir")
+    llm_outputs_dir_name = runtime.get("paths", {}).get("llm_outputs_dir_name", "llm_outputs")
+    post_actions = runtime.get("post_actions", {})
+    copy_dirs = resolve_copy_dirs(runtime)
 
-    for txt_file in txt_files:
-        demo_id = txt_file[:-4]
-        txt_path = os.path.join(INPUT_DIR, txt_file)
+    if not input_dir.exists():
+        raise FileNotFoundError(f"input_dir does not exist: {input_dir}")
+    output_dir.mkdir(parents=True, exist_ok=True)
 
+    txt_files = [p for p in input_dir.iterdir() if p.suffix == ".txt" and p.stem.isdigit()]
+    txt_files.sort(key=lambda p: int(p.stem))
+    if not txt_files:
+        print(f"[WARN] No numeric .txt prompts found in {input_dir}")
+        return 0
+
+    for txt_path in txt_files:
+        demo_id = txt_path.stem
         print(f"\n[DEBUG] ===== Processing demo_{demo_id} =====")
-
         prompt = read_prompt_text(txt_path)
         if not prompt:
-            print(f"[WARN] Empty prompt, skipping: {txt_file}")
+            print(f"[WARN] Empty prompt, skipping: {txt_path.name}")
             continue
 
-        scene_analyser = build_graph()
+        scene_analyser, _nodes = build_graph(runtime, workflow, llm_profile=args.llm_profile)
         print("[DEBUG] Graph rebuilt for this demo")
-
-        initial_state = GraphState(
-            messages=[HumanMessage(content=prompt)]
-        )
-
+        demo_output_dir = output_dir / f"demo_{demo_id}"
+        demo_output_dir.mkdir(parents=True, exist_ok=True)
+        initial_state = GraphState(messages=[HumanMessage(content=prompt)], save_dir=str(demo_output_dir))
         print("[DEBUG] Start Graph Execution")
         final_state: GraphState = scene_analyser.invoke(initial_state)
 
-        demo_output_dir = os.path.join(OUTPUT_DIR, f"demo_{demo_id}")
-        os.makedirs(demo_output_dir, exist_ok=True)
-
-        copy_all_dirs_to_output(demo_output_dir)
-        copy_prompt_to_eval(txt_path, demo_output_dir)
-
-        save_llm_outputs(final_state, demo_output_dir)
+        if post_actions.get("copy_dirs", True):
+            copy_all_dirs_to_output(demo_output_dir, copy_dirs)
+        if post_actions.get("copy_prompt_to_eval", True):
+            copy_prompt_to_eval(txt_path, demo_output_dir)
+        save_llm_outputs(final_state, demo_output_dir, llm_outputs_dir_name)
 
         finish_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         log_line = f"demo_{demo_id} finished at {finish_time}\n"
-
-        print(f"[DEBUG] ⏱ {log_line.strip()}")
-
-        with open(DEMO_FINISH_LOG_PATH, "a", encoding="utf-8") as f:
-            f.write(log_line)
-
+        print(f"[DEBUG] {log_line.strip()}")
+        DEMO_FINISH_LOG_PATH.open("a", encoding="utf-8").write(log_line)
         print(f"[DEBUG] demo_{demo_id} output completed")
 
-    render_gltf()
+    if post_actions.get("render_gltf", False) and not args.skip_render:
+        from model_description.batch_render_gltf import render_gltf
+        render_gltf()
+    return 0
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Run AutoUE workflow with config-driven paths, LLM profiles, nodes, and prompts.")
+    parser.add_argument("--config", help="Runtime config JSON. Defaults to config/local.json if present, else local.example.json.")
+    parser.add_argument("--workflow", help="Workflow JSON. Defaults to config value or AUTOUE_WORKFLOW.")
+    parser.add_argument("--llm-profile", help="Override runtime LLM profile.")
+    parser.add_argument("--input-dir", help="Override input prompt directory.")
+    parser.add_argument("--output-dir", help="Override output directory.")
+    parser.add_argument("--dry-run-config", action="store_true", help="Validate config/workflow/prompt wiring without calling LLM.")
+    parser.add_argument("--skip-render", action="store_true", help="Do not run optional GLTF rendering post-action.")
+    return parser.parse_args()
+
+
+def main() -> int:
+    args = parse_args()
+    if args.dry_run_config:
+        return dry_run_config(args)
+    return run_workflow(args)
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

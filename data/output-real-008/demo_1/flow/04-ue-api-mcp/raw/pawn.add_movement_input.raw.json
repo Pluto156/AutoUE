@@ -1,0 +1,619 @@
+{
+  "engine_port_id": "pawn.add_movement_input",
+  "flow_ids": [
+    "flow_player_movement_move"
+  ],
+  "behavior_ids": [
+    "player.movement.move"
+  ],
+  "contracts": [
+    "Move the player left or right while respecting the side-scroller room bounds."
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for pawn.add_movement_input; exact symbol hints: Pawn.AddMovementInput, PawnAddMovementInput, pawn add movement input. Intent: Move the player left or right while respecting the side-scroller room bounds.",
+  "raw_path": "flow/04-ue-api-mcp/raw/pawn.add_movement_input.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/pawn.add_movement_input.json",
+  "raw_result": {
+    "tool": "ue_api_semantic_search",
+    "query": "Unreal Engine PuerTS gameplay API for pawn.add_movement_input; exact symbol hints: Pawn.AddMovementInput, PawnAddMovementInput, pawn add movement input. Intent: Move the player left or right while respecting the side-scroller room bounds.",
+    "limit": 5,
+    "raw_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"ok\",\n  \"mode\": \"semantic\",\n  \"query\": \"Unreal Engine PuerTS gameplay API for pawn.add_movement_input; exact symbol hints: Pawn.AddMovementInput, PawnAddMovementInput, pawn add movement input. Intent: Move the player left or right while respecting the side-scroller room bounds.\",\n  \"searchText\": \"pawn character actor input axis binding keyboard horizontal input AddMovementInput movement input direction world bounds trace collision overlap room edge\",\n  \"rewrite\": {\n    \"status\": \"rewritten\",\n    \"domainStatus\": \"ue_relevant\",\n    \"intentSummary\": \"Implement left/right pawn movement via AddMovementInput constrained by side-scroller room bounds.\",\n    \"warnings\": [],\n    \"activeSubqueries\": [\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"Gameplay object that receives movement input.\",\n        \"subqueryId\": \"carrier_context_1\",\n        \"text\": \"pawn character actor\",\n        \"weight\": 1.0,\n        \"subqueryWeight\": 1.0\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"Input mechanism that triggers movement.\",\n        \"subqueryId\": \"activation_trigger_1\",\n        \"text\": \"input axis binding\",\n        \"weight\": 0.6,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"Input mechanism that triggers movement.\",\n        \"subqueryId\": \"activation_trigger_2\",\n        \"text\": \"keyboard horizontal input\",\n        \"weight\": 0.4,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"movement_navigation\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"Movement API that applies directional input to the pawn.\",\n        \"subqueryId\": \"movement_navigation_1\",\n        \"text\": \"AddMovementInput\",\n        \"weight\": 0.6,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"movement_navigation\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"Movement API that applies directional input to the pawn.\",\n        \"subqueryId\": \"movement_navigation_2\",\n        \"text\": \"movement input direction\",\n        \"weight\": 0.4,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"spatial_targeting\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"Geometry queries to enforce side-scroller room bounds.\",\n        \"subqueryId\": \"spatial_targeting_1\",\n        \"text\": \"world bounds trace\",\n        \"weight\": 0.3,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"spatial_targeting\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"Geometry queries to enforce side-scroller room bounds.\",\n        \"subqueryId\": \"spatial_targeting_2\",\n        \"text\": \"collision overlap room edge\",\n        \"weight\": 0.3,\n        \"subqueryWeight\": 0.5\n      }\n    ]\n  },\n  \"embedding\": {\n    \"enabled\": true,\n    \"provider\": \"ollama\",\n    \"model\": \"bge-m3\",\n    \"dimensions\": 1024,\n    \"indexedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"status\": \"ready\"\n  },\n  \"partitions\": {\n    \"enabled\": true,\n    \"classifierEnabled\": true,\n    \"provider\": \"aaa\",\n    \"binaryAvailable\": true,\n    \"timeoutMs\": 90000,\n    \"candidateCount\": 20361,\n    \"processedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"validAssignmentCount\": 14733,\n    \"partitionedEntryCount\": 12532,\n    \"partitionedEntryRatio\": 0.6155,\n    \"searchReady\": true,\n    \"byFacet\": {\n      \"activation_trigger\": 241,\n      \"ai_behavior\": 948,\n      \"animation\": 1856,\n      \"audio\": 704,\n      \"camera_feedback_ui\": 1336,\n      \"carrier_context\": 1362,\n      \"damage_state\": 548,\n      \"integration_event\": 1069,\n      \"level_world\": 342,\n      \"lighting\": 134,\n      \"material_visual_state\": 1065,\n      \"mesh_geometry\": 1545,\n      \"movement_navigation\": 256,\n      \"networking_authority\": 414,\n      \"persistence_assets\": 612,\n      \"physics\": 666,\n      \"spatial_targeting\": 466,\n      \"spawn_lifecycle\": 117,\n      \"visual_effects\": 1052\n    },\n    \"status\": \"ready\",\n    \"searchScoped\": true\n  },\n  \"filters\": {},\n  \"confidence\": {\n    \"minConfidence\": 0.55,\n    \"status\": \"ok\",\n    \"topConfidence\": 0.7306\n  },\n  \"count\": 5,\n  \"results\": [\n    {\n      \"ref\": \"b62b8a9d0bcc\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.NavMovementComponent\",\n      \"kind\": \"class\",\n      \"score\": 90.3499,\n      \"confidence\": 0.7306,\n      \"extends\": \"UE.MovementComponent\",\n      \"source\": \"Engine/GameFramework\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"0833aa5c6ebc\",\n          \"symbol\": \"UE.NavMovementComponent.RequestPathMove\",\n          \"kind\": \"method\",\n          \"signature\": \"RequestPathMove(MoveInput: UE.Vector) : void;\",\n          \"summary\": \"path following: request movement through a new move input (normal vector = full strength)\"\n        },\n        {\n          \"ref\": \"bb0f462aa74a\",\n          \"symbol\": \"UE.NavMovementComponent.FixedPathBrakingDistance\",\n          \"kind\": \"property\",\n          \"signature\": \"FixedPathBrakingDistance: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"2db533ee69aa\",\n          \"symbol\": \"UE.NavMovementComponent.GetMaxSpeedForNavMovement\",\n          \"kind\": \"method\",\n          \"signature\": \"GetMaxSpeedForNavMovement() : number;\",\n          \"summary\": \"Get maximum movement speed of the agent\"\n        },\n        {\n          \"ref\": \"5cd64b323006\",\n          \"symbol\": \"UE.NavMovementComponent.GetVelocityForNavMovement\",\n          \"kind\": \"method\",\n          \"signature\": \"GetVelocityForNavMovement() : UE.Vector;\",\n          \"summary\": \"Get the current velocity of the movement component\"\n        },\n        {\n          \"ref\": \"7499a70db863\",\n          \"symbol\": \"UE.NavMovementComponent.IsCrouching\",\n          \"kind\": \"method\",\n          \"signature\": \"IsCrouching() : boolean;\",\n          \"summary\": \"Returns true if currently crouching\"\n        },\n        {\n          \"ref\": \"129c0433d72d\",\n          \"symbol\": \"UE.NavMovementComponent.IsFalling\",\n          \"kind\": \"method\",\n          \"signature\": \"IsFalling() : boolean;\",\n          \"summary\": \"Returns true if currently falling (not flying, in a non-fluid volume, and not on the ground)\"\n        },\n        {\n          \"ref\": \"e0f391571cd9\",\n          \"symbol\": \"UE.NavMovementComponent.IsFlying\",\n          \"kind\": \"method\",\n          \"signature\": \"IsFlying() : boolean;\",\n          \"summary\": \"Returns true if currently flying (moving through a non-fluid volume without resting on the ground)\"\n        },\n        {\n          \"ref\": \"13c0984f8be0\",\n          \"symbol\": \"UE.NavMovementComponent.IsMovingOnGround\",\n          \"kind\": \"method\",\n          \"signature\": \"IsMovingOnGround() : boolean;\",\n          \"summary\": \"Returns true if currently moving on the ground (e.g. walking or driving)\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Implement left/right pawn movement via AddMovementInput constrained by side-scroller room bounds.\",\n        \"name: movement\",\n        \"members: RequestPathMove, FixedPathBrakingDistance, GetMaxSpeedForNavMovement, GetVelocityForNavMovement\",\n        \"facets: movement_navigation/bm25, movement_navigation/vector\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"bd11c4decb52\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetSystemLibrary.CapsuleTraceSingle\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetSystemLibrary\",\n      \"signature\": \"static CapsuleTraceSingle(WorldContextObject: $Nullable<UE.Object>, Start: UE.Vector, End: UE.Vector, Radius: number, HalfHeight: number, TraceChannel: UE.ETraceTypeQuery, bTraceComplex: boolean, ActorsToIgnore: TArray<UE.Actor>, DrawDebugType: UE.EDrawDebugTrace, OutHit: $Ref<UE.HitResult>, bIgnoreSelf: boolean, TraceColor?: UE.LinearColor /* = (R=1.000000,G=0.000000,B=0.000000,A=1.000000) */, TraceHitColor?: UE.LinearColor /* = (R=0.000000,G=1.000000,B=0.000000,A=1.000000) */, DrawTime?: number /* = 5.000000 */) : boolean;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7438,\n      \"summary\": \"Sweeps a capsule along the given line and returns the first blocking hit encountered. This trace finds the objects that RESPOND to the given TraceChannel\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Implement left/right pawn movement via AddMovementInput constrained by side-scroller room bounds.\",\n        \"name: trace\",\n        \"doc: trace\",\n        \"params: collision, trace, world\",\n        \"facets: spatial_targeting/bm25, spatial_targeting/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"90da863179eb\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.EnhancedInputLibrary.Conv_InputActionValueToAxis1D\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.EnhancedInputLibrary\",\n      \"signature\": \"static Conv_InputActionValueToAxis1D(InValue: UE.InputActionValue) : number;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7362,\n      \"summary\": \"Interpret an InputActionValue as a 1D axis (double) input\",\n      \"source\": \"Plugin/EnhancedInput\",\n      \"why\": [\n        \"rewrite: Implement left/right pawn movement via AddMovementInput constrained by side-scroller room bounds.\",\n        \"name: input\",\n        \"doc: axis, input\",\n        \"facets: activation_trigger/bm25, activation_trigger/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"87417ce50473\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.Pawn.GetMovementBaseActor\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.Pawn\",\n      \"signature\": \"static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;\",\n      \"score\": 95.0,\n      \"confidence\": 0.7434,\n      \"summary\": \"Gets the owning actor of the Movement Base Component on which the pawn is standing.\",\n      \"source\": \"Engine/GameFramework\",\n      \"why\": [\n        \"rewrite: Implement left/right pawn movement via AddMovementInput constrained by side-scroller room bounds.\",\n        \"name: actor, movement, pawn\",\n        \"doc: actor, movement, pawn\",\n        \"facets: carrier_context/bm25, carrier_context/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"f11fde23bee4\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.EMassMovementAction\",\n      \"kind\": \"enum\",\n      \"score\": 90.0,\n      \"confidence\": 0.7307,\n      \"source\": \"Plugin/MassNavigation\",\n      \"why\": [\n        \"rewrite: Implement left/right pawn movement via AddMovementInput constrained by side-scroller room bounds.\",\n        \"name: movement\",\n        \"facets: movement_navigation/bm25, movement_navigation/vector\",\n        \"vector recall\"\n      ]\n    }\n  ],\n  \"profile\": {\n    \"load\": 0.7396,\n    \"rewrite\": 7.2675,\n    \"embed\": 0.2021,\n    \"bm25\": 0.0845,\n    \"vector\": 0.1993,\n    \"score\": 0.1087,\n    \"select\": 0.0001,\n    \"total\": 8.3781\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "status": "ok",
+        "mode": "semantic",
+        "query": "Unreal Engine PuerTS gameplay API for pawn.add_movement_input; exact symbol hints: Pawn.AddMovementInput, PawnAddMovementInput, pawn add movement input. Intent: Move the player left or right while respecting the side-scroller room bounds.",
+        "searchText": "pawn character actor input axis binding keyboard horizontal input AddMovementInput movement input direction world bounds trace collision overlap room edge",
+        "rewrite": {
+          "status": "rewritten",
+          "domainStatus": "ue_relevant",
+          "intentSummary": "Implement left/right pawn movement via AddMovementInput constrained by side-scroller room bounds.",
+          "warnings": [],
+          "activeSubqueries": [
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "Gameplay object that receives movement input.",
+              "subqueryId": "carrier_context_1",
+              "text": "pawn character actor",
+              "weight": 1.0,
+              "subqueryWeight": 1.0
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "Input mechanism that triggers movement.",
+              "subqueryId": "activation_trigger_1",
+              "text": "input axis binding",
+              "weight": 0.6,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "Input mechanism that triggers movement.",
+              "subqueryId": "activation_trigger_2",
+              "text": "keyboard horizontal input",
+              "weight": 0.4,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "movement_navigation",
+              "facetStatus": "required",
+              "facetIntent": "Movement API that applies directional input to the pawn.",
+              "subqueryId": "movement_navigation_1",
+              "text": "AddMovementInput",
+              "weight": 0.6,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "movement_navigation",
+              "facetStatus": "required",
+              "facetIntent": "Movement API that applies directional input to the pawn.",
+              "subqueryId": "movement_navigation_2",
+              "text": "movement input direction",
+              "weight": 0.4,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "spatial_targeting",
+              "facetStatus": "optional",
+              "facetIntent": "Geometry queries to enforce side-scroller room bounds.",
+              "subqueryId": "spatial_targeting_1",
+              "text": "world bounds trace",
+              "weight": 0.3,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "spatial_targeting",
+              "facetStatus": "optional",
+              "facetIntent": "Geometry queries to enforce side-scroller room bounds.",
+              "subqueryId": "spatial_targeting_2",
+              "text": "collision overlap room edge",
+              "weight": 0.3,
+              "subqueryWeight": 0.5
+            }
+          ]
+        },
+        "embedding": {
+          "enabled": true,
+          "provider": "ollama",
+          "model": "bge-m3",
+          "dimensions": 1024,
+          "indexedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "status": "ready"
+        },
+        "partitions": {
+          "enabled": true,
+          "classifierEnabled": true,
+          "provider": "aaa",
+          "binaryAvailable": true,
+          "timeoutMs": 90000,
+          "candidateCount": 20361,
+          "processedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "validAssignmentCount": 14733,
+          "partitionedEntryCount": 12532,
+          "partitionedEntryRatio": 0.6155,
+          "searchReady": true,
+          "byFacet": {
+            "activation_trigger": 241,
+            "ai_behavior": 948,
+            "animation": 1856,
+            "audio": 704,
+            "camera_feedback_ui": 1336,
+            "carrier_context": 1362,
+            "damage_state": 548,
+            "integration_event": 1069,
+            "level_world": 342,
+            "lighting": 134,
+            "material_visual_state": 1065,
+            "mesh_geometry": 1545,
+            "movement_navigation": 256,
+            "networking_authority": 414,
+            "persistence_assets": 612,
+            "physics": 666,
+            "spatial_targeting": 466,
+            "spawn_lifecycle": 117,
+            "visual_effects": 1052
+          },
+          "status": "ready",
+          "searchScoped": true
+        },
+        "filters": {},
+        "confidence": {
+          "minConfidence": 0.55,
+          "status": "ok",
+          "topConfidence": 0.7306
+        },
+        "count": 5,
+        "results": [
+          {
+            "ref": "b62b8a9d0bcc",
+            "entryType": "type",
+            "symbol": "UE.NavMovementComponent",
+            "kind": "class",
+            "score": 90.3499,
+            "confidence": 0.7306,
+            "extends": "UE.MovementComponent",
+            "source": "Engine/GameFramework",
+            "matchedMembers": [
+              {
+                "ref": "0833aa5c6ebc",
+                "symbol": "UE.NavMovementComponent.RequestPathMove",
+                "kind": "method",
+                "signature": "RequestPathMove(MoveInput: UE.Vector) : void;",
+                "summary": "path following: request movement through a new move input (normal vector = full strength)"
+              },
+              {
+                "ref": "bb0f462aa74a",
+                "symbol": "UE.NavMovementComponent.FixedPathBrakingDistance",
+                "kind": "property",
+                "signature": "FixedPathBrakingDistance: number;",
+                "summary": ""
+              },
+              {
+                "ref": "2db533ee69aa",
+                "symbol": "UE.NavMovementComponent.GetMaxSpeedForNavMovement",
+                "kind": "method",
+                "signature": "GetMaxSpeedForNavMovement() : number;",
+                "summary": "Get maximum movement speed of the agent"
+              },
+              {
+                "ref": "5cd64b323006",
+                "symbol": "UE.NavMovementComponent.GetVelocityForNavMovement",
+                "kind": "method",
+                "signature": "GetVelocityForNavMovement() : UE.Vector;",
+                "summary": "Get the current velocity of the movement component"
+              },
+              {
+                "ref": "7499a70db863",
+                "symbol": "UE.NavMovementComponent.IsCrouching",
+                "kind": "method",
+                "signature": "IsCrouching() : boolean;",
+                "summary": "Returns true if currently crouching"
+              },
+              {
+                "ref": "129c0433d72d",
+                "symbol": "UE.NavMovementComponent.IsFalling",
+                "kind": "method",
+                "signature": "IsFalling() : boolean;",
+                "summary": "Returns true if currently falling (not flying, in a non-fluid volume, and not on the ground)"
+              },
+              {
+                "ref": "e0f391571cd9",
+                "symbol": "UE.NavMovementComponent.IsFlying",
+                "kind": "method",
+                "signature": "IsFlying() : boolean;",
+                "summary": "Returns true if currently flying (moving through a non-fluid volume without resting on the ground)"
+              },
+              {
+                "ref": "13c0984f8be0",
+                "symbol": "UE.NavMovementComponent.IsMovingOnGround",
+                "kind": "method",
+                "signature": "IsMovingOnGround() : boolean;",
+                "summary": "Returns true if currently moving on the ground (e.g. walking or driving)"
+              }
+            ],
+            "why": [
+              "rewrite: Implement left/right pawn movement via AddMovementInput constrained by side-scroller room bounds.",
+              "name: movement",
+              "members: RequestPathMove, FixedPathBrakingDistance, GetMaxSpeedForNavMovement, GetVelocityForNavMovement",
+              "facets: movement_navigation/bm25, movement_navigation/vector",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "bd11c4decb52",
+            "entryType": "static_function",
+            "symbol": "UE.KismetSystemLibrary.CapsuleTraceSingle",
+            "kind": "method",
+            "owner": "UE.KismetSystemLibrary",
+            "signature": "static CapsuleTraceSingle(WorldContextObject: $Nullable<UE.Object>, Start: UE.Vector, End: UE.Vector, Radius: number, HalfHeight: number, TraceChannel: UE.ETraceTypeQuery, bTraceComplex: boolean, ActorsToIgnore: TArray<UE.Actor>, DrawDebugType: UE.EDrawDebugTrace, OutHit: $Ref<UE.HitResult>, bIgnoreSelf: boolean, TraceColor?: UE.LinearColor /* = (R=1.000000,G=0.000000,B=0.000000,A=1.000000) */, TraceHitColor?: UE.LinearColor /* = (R=0.000000,G=1.000000,B=0.000000,A=1.000000) */, DrawTime?: number /* = 5.000000 */) : boolean;",
+            "score": 93.0,
+            "confidence": 0.7438,
+            "summary": "Sweeps a capsule along the given line and returns the first blocking hit encountered. This trace finds the objects that RESPOND to the given TraceChannel",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Implement left/right pawn movement via AddMovementInput constrained by side-scroller room bounds.",
+              "name: trace",
+              "doc: trace",
+              "params: collision, trace, world",
+              "facets: spatial_targeting/bm25, spatial_targeting/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "90da863179eb",
+            "entryType": "static_function",
+            "symbol": "UE.EnhancedInputLibrary.Conv_InputActionValueToAxis1D",
+            "kind": "method",
+            "owner": "UE.EnhancedInputLibrary",
+            "signature": "static Conv_InputActionValueToAxis1D(InValue: UE.InputActionValue) : number;",
+            "score": 93.0,
+            "confidence": 0.7362,
+            "summary": "Interpret an InputActionValue as a 1D axis (double) input",
+            "source": "Plugin/EnhancedInput",
+            "why": [
+              "rewrite: Implement left/right pawn movement via AddMovementInput constrained by side-scroller room bounds.",
+              "name: input",
+              "doc: axis, input",
+              "facets: activation_trigger/bm25, activation_trigger/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "87417ce50473",
+            "entryType": "static_function",
+            "symbol": "UE.Pawn.GetMovementBaseActor",
+            "kind": "method",
+            "owner": "UE.Pawn",
+            "signature": "static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;",
+            "score": 95.0,
+            "confidence": 0.7434,
+            "summary": "Gets the owning actor of the Movement Base Component on which the pawn is standing.",
+            "source": "Engine/GameFramework",
+            "why": [
+              "rewrite: Implement left/right pawn movement via AddMovementInput constrained by side-scroller room bounds.",
+              "name: actor, movement, pawn",
+              "doc: actor, movement, pawn",
+              "facets: carrier_context/bm25, carrier_context/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "f11fde23bee4",
+            "entryType": "type",
+            "symbol": "UE.EMassMovementAction",
+            "kind": "enum",
+            "score": 90.0,
+            "confidence": 0.7307,
+            "source": "Plugin/MassNavigation",
+            "why": [
+              "rewrite: Implement left/right pawn movement via AddMovementInput constrained by side-scroller room bounds.",
+              "name: movement",
+              "facets: movement_navigation/bm25, movement_navigation/vector",
+              "vector recall"
+            ]
+          }
+        ],
+        "profile": {
+          "load": 0.7396,
+          "rewrite": 7.2675,
+          "embed": 0.2021,
+          "bm25": 0.0845,
+          "vector": 0.1993,
+          "score": 0.1087,
+          "select": 0.0001,
+          "total": 8.3781
+        }
+      },
+      "isError": false
+    },
+    "payload": {
+      "status": "ok",
+      "mode": "semantic",
+      "query": "Unreal Engine PuerTS gameplay API for pawn.add_movement_input; exact symbol hints: Pawn.AddMovementInput, PawnAddMovementInput, pawn add movement input. Intent: Move the player left or right while respecting the side-scroller room bounds.",
+      "searchText": "pawn character actor input axis binding keyboard horizontal input AddMovementInput movement input direction world bounds trace collision overlap room edge",
+      "rewrite": {
+        "status": "rewritten",
+        "domainStatus": "ue_relevant",
+        "intentSummary": "Implement left/right pawn movement via AddMovementInput constrained by side-scroller room bounds.",
+        "warnings": [],
+        "activeSubqueries": [
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "Gameplay object that receives movement input.",
+            "subqueryId": "carrier_context_1",
+            "text": "pawn character actor",
+            "weight": 1.0,
+            "subqueryWeight": 1.0
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "Input mechanism that triggers movement.",
+            "subqueryId": "activation_trigger_1",
+            "text": "input axis binding",
+            "weight": 0.6,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "Input mechanism that triggers movement.",
+            "subqueryId": "activation_trigger_2",
+            "text": "keyboard horizontal input",
+            "weight": 0.4,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "movement_navigation",
+            "facetStatus": "required",
+            "facetIntent": "Movement API that applies directional input to the pawn.",
+            "subqueryId": "movement_navigation_1",
+            "text": "AddMovementInput",
+            "weight": 0.6,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "movement_navigation",
+            "facetStatus": "required",
+            "facetIntent": "Movement API that applies directional input to the pawn.",
+            "subqueryId": "movement_navigation_2",
+            "text": "movement input direction",
+            "weight": 0.4,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "spatial_targeting",
+            "facetStatus": "optional",
+            "facetIntent": "Geometry queries to enforce side-scroller room bounds.",
+            "subqueryId": "spatial_targeting_1",
+            "text": "world bounds trace",
+            "weight": 0.3,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "spatial_targeting",
+            "facetStatus": "optional",
+            "facetIntent": "Geometry queries to enforce side-scroller room bounds.",
+            "subqueryId": "spatial_targeting_2",
+            "text": "collision overlap room edge",
+            "weight": 0.3,
+            "subqueryWeight": 0.5
+          }
+        ]
+      },
+      "embedding": {
+        "enabled": true,
+        "provider": "ollama",
+        "model": "bge-m3",
+        "dimensions": 1024,
+        "indexedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "status": "ready"
+      },
+      "partitions": {
+        "enabled": true,
+        "classifierEnabled": true,
+        "provider": "aaa",
+        "binaryAvailable": true,
+        "timeoutMs": 90000,
+        "candidateCount": 20361,
+        "processedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "validAssignmentCount": 14733,
+        "partitionedEntryCount": 12532,
+        "partitionedEntryRatio": 0.6155,
+        "searchReady": true,
+        "byFacet": {
+          "activation_trigger": 241,
+          "ai_behavior": 948,
+          "animation": 1856,
+          "audio": 704,
+          "camera_feedback_ui": 1336,
+          "carrier_context": 1362,
+          "damage_state": 548,
+          "integration_event": 1069,
+          "level_world": 342,
+          "lighting": 134,
+          "material_visual_state": 1065,
+          "mesh_geometry": 1545,
+          "movement_navigation": 256,
+          "networking_authority": 414,
+          "persistence_assets": 612,
+          "physics": 666,
+          "spatial_targeting": 466,
+          "spawn_lifecycle": 117,
+          "visual_effects": 1052
+        },
+        "status": "ready",
+        "searchScoped": true
+      },
+      "filters": {},
+      "confidence": {
+        "minConfidence": 0.55,
+        "status": "ok",
+        "topConfidence": 0.7306
+      },
+      "count": 5,
+      "results": [
+        {
+          "ref": "b62b8a9d0bcc",
+          "entryType": "type",
+          "symbol": "UE.NavMovementComponent",
+          "kind": "class",
+          "score": 90.3499,
+          "confidence": 0.7306,
+          "extends": "UE.MovementComponent",
+          "source": "Engine/GameFramework",
+          "matchedMembers": [
+            {
+              "ref": "0833aa5c6ebc",
+              "symbol": "UE.NavMovementComponent.RequestPathMove",
+              "kind": "method",
+              "signature": "RequestPathMove(MoveInput: UE.Vector) : void;",
+              "summary": "path following: request movement through a new move input (normal vector = full strength)"
+            },
+            {
+              "ref": "bb0f462aa74a",
+              "symbol": "UE.NavMovementComponent.FixedPathBrakingDistance",
+              "kind": "property",
+              "signature": "FixedPathBrakingDistance: number;",
+              "summary": ""
+            },
+            {
+              "ref": "2db533ee69aa",
+              "symbol": "UE.NavMovementComponent.GetMaxSpeedForNavMovement",
+              "kind": "method",
+              "signature": "GetMaxSpeedForNavMovement() : number;",
+              "summary": "Get maximum movement speed of the agent"
+            },
+            {
+              "ref": "5cd64b323006",
+              "symbol": "UE.NavMovementComponent.GetVelocityForNavMovement",
+              "kind": "method",
+              "signature": "GetVelocityForNavMovement() : UE.Vector;",
+              "summary": "Get the current velocity of the movement component"
+            },
+            {
+              "ref": "7499a70db863",
+              "symbol": "UE.NavMovementComponent.IsCrouching",
+              "kind": "method",
+              "signature": "IsCrouching() : boolean;",
+              "summary": "Returns true if currently crouching"
+            },
+            {
+              "ref": "129c0433d72d",
+              "symbol": "UE.NavMovementComponent.IsFalling",
+              "kind": "method",
+              "signature": "IsFalling() : boolean;",
+              "summary": "Returns true if currently falling (not flying, in a non-fluid volume, and not on the ground)"
+            },
+            {
+              "ref": "e0f391571cd9",
+              "symbol": "UE.NavMovementComponent.IsFlying",
+              "kind": "method",
+              "signature": "IsFlying() : boolean;",
+              "summary": "Returns true if currently flying (moving through a non-fluid volume without resting on the ground)"
+            },
+            {
+              "ref": "13c0984f8be0",
+              "symbol": "UE.NavMovementComponent.IsMovingOnGround",
+              "kind": "method",
+              "signature": "IsMovingOnGround() : boolean;",
+              "summary": "Returns true if currently moving on the ground (e.g. walking or driving)"
+            }
+          ],
+          "why": [
+            "rewrite: Implement left/right pawn movement via AddMovementInput constrained by side-scroller room bounds.",
+            "name: movement",
+            "members: RequestPathMove, FixedPathBrakingDistance, GetMaxSpeedForNavMovement, GetVelocityForNavMovement",
+            "facets: movement_navigation/bm25, movement_navigation/vector",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "bd11c4decb52",
+          "entryType": "static_function",
+          "symbol": "UE.KismetSystemLibrary.CapsuleTraceSingle",
+          "kind": "method",
+          "owner": "UE.KismetSystemLibrary",
+          "signature": "static CapsuleTraceSingle(WorldContextObject: $Nullable<UE.Object>, Start: UE.Vector, End: UE.Vector, Radius: number, HalfHeight: number, TraceChannel: UE.ETraceTypeQuery, bTraceComplex: boolean, ActorsToIgnore: TArray<UE.Actor>, DrawDebugType: UE.EDrawDebugTrace, OutHit: $Ref<UE.HitResult>, bIgnoreSelf: boolean, TraceColor?: UE.LinearColor /* = (R=1.000000,G=0.000000,B=0.000000,A=1.000000) */, TraceHitColor?: UE.LinearColor /* = (R=0.000000,G=1.000000,B=0.000000,A=1.000000) */, DrawTime?: number /* = 5.000000 */) : boolean;",
+          "score": 93.0,
+          "confidence": 0.7438,
+          "summary": "Sweeps a capsule along the given line and returns the first blocking hit encountered. This trace finds the objects that RESPOND to the given TraceChannel",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Implement left/right pawn movement via AddMovementInput constrained by side-scroller room bounds.",
+            "name: trace",
+            "doc: trace",
+            "params: collision, trace, world",
+            "facets: spatial_targeting/bm25, spatial_targeting/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "90da863179eb",
+          "entryType": "static_function",
+          "symbol": "UE.EnhancedInputLibrary.Conv_InputActionValueToAxis1D",
+          "kind": "method",
+          "owner": "UE.EnhancedInputLibrary",
+          "signature": "static Conv_InputActionValueToAxis1D(InValue: UE.InputActionValue) : number;",
+          "score": 93.0,
+          "confidence": 0.7362,
+          "summary": "Interpret an InputActionValue as a 1D axis (double) input",
+          "source": "Plugin/EnhancedInput",
+          "why": [
+            "rewrite: Implement left/right pawn movement via AddMovementInput constrained by side-scroller room bounds.",
+            "name: input",
+            "doc: axis, input",
+            "facets: activation_trigger/bm25, activation_trigger/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "87417ce50473",
+          "entryType": "static_function",
+          "symbol": "UE.Pawn.GetMovementBaseActor",
+          "kind": "method",
+          "owner": "UE.Pawn",
+          "signature": "static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;",
+          "score": 95.0,
+          "confidence": 0.7434,
+          "summary": "Gets the owning actor of the Movement Base Component on which the pawn is standing.",
+          "source": "Engine/GameFramework",
+          "why": [
+            "rewrite: Implement left/right pawn movement via AddMovementInput constrained by side-scroller room bounds.",
+            "name: actor, movement, pawn",
+            "doc: actor, movement, pawn",
+            "facets: carrier_context/bm25, carrier_context/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "f11fde23bee4",
+          "entryType": "type",
+          "symbol": "UE.EMassMovementAction",
+          "kind": "enum",
+          "score": 90.0,
+          "confidence": 0.7307,
+          "source": "Plugin/MassNavigation",
+          "why": [
+            "rewrite: Implement left/right pawn movement via AddMovementInput constrained by side-scroller room bounds.",
+            "name: movement",
+            "facets: movement_navigation/bm25, movement_navigation/vector",
+            "vector recall"
+          ]
+        }
+      ],
+      "profile": {
+        "load": 0.7396,
+        "rewrite": 7.2675,
+        "embed": 0.2021,
+        "bm25": 0.0845,
+        "vector": 0.1993,
+        "score": 0.1087,
+        "select": 0.0001,
+        "total": 8.3781
+      }
+    }
+  }
+}

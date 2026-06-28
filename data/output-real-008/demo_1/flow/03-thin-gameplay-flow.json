@@ -1,0 +1,197 @@
+{
+  "flows": [
+    {
+      "flow_id": "flow_player_movement_move",
+      "entity_id": "player",
+      "ability_id": "player.movement",
+      "source_behavior_id": "player.movement.move",
+      "stages": [
+        {
+          "stage": "Input",
+          "contract": "Accept horizontal movement input from the player.",
+          "inputs": [
+            "movement_axis"
+          ],
+          "outputs": [
+            "desired_horizontal_direction"
+          ],
+          "engine_ports": [
+            "enhanced_input.bind_action"
+          ]
+        },
+        {
+          "stage": "Ability/Action",
+          "contract": "Move the player left or right while respecting the side-scroller room bounds.",
+          "inputs": [
+            "desired_horizontal_direction",
+            "player_actor"
+          ],
+          "outputs": [
+            "updated_player_position"
+          ],
+          "engine_ports": [
+            "pawn.add_movement_input"
+          ]
+        },
+        {
+          "stage": "Event/Result",
+          "contract": "Confirm the player position changed within valid room bounds.",
+          "inputs": [
+            "updated_player_position",
+            "room_bounds"
+          ],
+          "outputs": [
+            "movement_result"
+          ],
+          "engine_ports": []
+        }
+      ],
+      "verification": [
+        "Movement input changes player position horizontally.",
+        "Player remains inside the side-scroller room bounds."
+      ]
+    },
+    {
+      "flow_id": "flow_player_combat_attack_enemy",
+      "entity_id": "player",
+      "ability_id": "player.combat",
+      "source_behavior_id": "player.combat.attack_enemy",
+      "stages": [
+        {
+          "stage": "Input",
+          "contract": "Accept the player attack action.",
+          "inputs": [
+            "attack_action"
+          ],
+          "outputs": [
+            "attack_requested"
+          ],
+          "engine_ports": []
+        },
+        {
+          "stage": "SpatialQuery/HitQuery",
+          "contract": "Check whether the enemy is in the player's attack direction or reach.",
+          "inputs": [
+            "player_actor",
+            "attack_direction",
+            "attack_range"
+          ],
+          "outputs": [
+            "enemy_hit"
+          ],
+          "engine_ports": [
+            "kismet.line_trace_single"
+          ]
+        },
+        {
+          "stage": "Damage/Resource",
+          "contract": "Apply damage or defeat logic to the hit enemy.",
+          "inputs": [
+            "enemy_hit",
+            "attack_damage"
+          ],
+          "outputs": [
+            "enemy_defeated"
+          ],
+          "engine_ports": [
+            "gameplay_statics.apply_damage"
+          ]
+        },
+        {
+          "stage": "Event/Result",
+          "contract": "Enemy is defeated or no longer blocks room progression.",
+          "inputs": [
+            "enemy_defeated"
+          ],
+          "outputs": [
+            "combat_result"
+          ],
+          "engine_ports": []
+        }
+      ],
+      "verification": [
+        "Attack query can identify the enemy when in range or facing direction.",
+        "Successful attack produces enemy defeated state."
+      ]
+    },
+    {
+      "flow_id": "flow_player_collection_collect_reward",
+      "entity_id": "player",
+      "ability_id": "player.collection",
+      "source_behavior_id": "player.collection.collect_reward",
+      "stages": [
+        {
+          "stage": "SpatialQuery/HitQuery",
+          "contract": "Detect the player entering the reward collection boundary after the reward is available.",
+          "inputs": [
+            "player_actor",
+            "reward_actor",
+            "reward_available"
+          ],
+          "outputs": [
+            "reward_overlap"
+          ],
+          "engine_ports": [
+            "primitive.on_component_begin_overlap"
+          ]
+        },
+        {
+          "stage": "Event/Result",
+          "contract": "Mark the reward as collected and unavailable in the room runtime state.",
+          "inputs": [
+            "reward_overlap",
+            "reward_available"
+          ],
+          "outputs": [
+            "reward_collected"
+          ],
+          "engine_ports": []
+        }
+      ],
+      "verification": [
+        "Reward overlap only succeeds when reward is available.",
+        "Reward collected state becomes true after valid player overlap."
+      ]
+    },
+    {
+      "flow_id": "flow_player_exit_leave_room",
+      "entity_id": "player",
+      "ability_id": "player.exit",
+      "source_behavior_id": "player.exit.leave_room",
+      "stages": [
+        {
+          "stage": "SpatialQuery/HitQuery",
+          "contract": "Detect the player entering the exit activation boundary after required room interactions are complete.",
+          "inputs": [
+            "player_actor",
+            "exit_actor",
+            "room_requirements_complete"
+          ],
+          "outputs": [
+            "exit_overlap"
+          ],
+          "engine_ports": [
+            "primitive.on_component_begin_overlap"
+          ]
+        },
+        {
+          "stage": "Event/Result",
+          "contract": "Mark the room as completed and trigger the player exit result in runtime state.",
+          "inputs": [
+            "exit_overlap",
+            "room_requirements_complete"
+          ],
+          "outputs": [
+            "room_completed",
+            "player_exited"
+          ],
+          "engine_ports": []
+        }
+      ],
+      "verification": [
+        "Exit activation only succeeds after required room interactions are complete.",
+        "Valid exit overlap produces room completed and player exited state."
+      ]
+    }
+  ]
+}

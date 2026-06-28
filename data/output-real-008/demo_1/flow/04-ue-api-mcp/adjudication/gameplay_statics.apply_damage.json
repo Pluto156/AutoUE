@@ -1,0 +1,20 @@
+{
+  "engine_port_id": "gameplay_statics.apply_damage",
+  "flow_ids": [
+    "flow_player_combat_attack_enemy"
+  ],
+  "behavior_ids": [
+    "player.combat.attack_enemy"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for gameplay_statics.apply_damage; exact symbol hints: Gameplay.StaticsApplyDamage, GameplayStaticsApplyDamage, gameplay statics apply damage. Intent: Apply damage or defeat logic to the hit enemy.",
+  "raw_path": "flow/04-ue-api-mcp/raw/gameplay_statics.apply_damage.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/gameplay_statics.apply_damage.json",
+  "verdict": "hit",
+  "hit_type": "direct_hit",
+  "evidence_symbols": [
+    "UE.GameplayStatics.ApplyDamage",
+    "UE.GameplayStatics.ApplyPointDamage",
+    "UE.GameplayStatics.BreakHitResult"
+  ],
+  "notes": "ApplyDamage directly supports generic damage to the hit enemy; ApplyPointDamage and BreakHitResult support hit-based damage flow."
+}

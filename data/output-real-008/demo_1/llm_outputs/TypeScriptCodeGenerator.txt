@@ -1,0 +1,97 @@
+{
+  "template_inputs": [
+    {
+      "template": "ability_module",
+      "path": "TypeScript/content/generated/PlayerMovementAbility.ts",
+      "entity_id": "player",
+      "behavior_id": "player.movement.move",
+      "flow_id": "flow_player_movement_move",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runPlayerMovementAbility",
+      "interface_name": "PlayerMovementAbilityContext",
+      "action_label": "move horizontally",
+      "target_label": "side-scroller room",
+      "result_label": "player position changes"
+    },
+    {
+      "template": "ability_module",
+      "path": "TypeScript/content/generated/PlayerCombatAbility.ts",
+      "entity_id": "player",
+      "behavior_id": "player.combat.attack_enemy",
+      "flow_id": "flow_player_combat_attack_enemy",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runPlayerCombatAbility",
+      "interface_name": "PlayerCombatAbilityContext",
+      "action_label": "attack",
+      "target_label": "enemy",
+      "result_label": "enemy defeated"
+    },
+    {
+      "template": "ability_module",
+      "path": "TypeScript/content/generated/PlayerCollectionAbility.ts",
+      "entity_id": "player",
+      "behavior_id": "player.collection.collect_reward",
+      "flow_id": "flow_player_collection_collect_reward",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runPlayerCollectionAbility",
+      "interface_name": "PlayerCollectionAbilityContext",
+      "action_label": "collect",
+      "target_label": "reward",
+      "result_label": "reward collected"
+    },
+    {
+      "template": "ability_module",
+      "path": "TypeScript/content/generated/PlayerExitAbility.ts",
+      "entity_id": "player",
+      "behavior_id": "player.exit.leave_room",
+      "flow_id": "flow_player_exit_leave_room",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runPlayerExitAbility",
+      "interface_name": "PlayerExitAbilityContext",
+      "action_label": "leave",
+      "target_label": "room exit",
+      "result_label": "room completed"
+    }
+  ],
+  "behavior_traces": [
+    {
+      "entity_id": "player",
+      "behavior_id": "player.movement.move",
+      "flow_id": "flow_player_movement_move",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/PlayerMovementAbility.ts",
+      "export_name": "runPlayerMovementAbility"
+    },
+    {
+      "entity_id": "player",
+      "behavior_id": "player.combat.attack_enemy",
+      "flow_id": "flow_player_combat_attack_enemy",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/PlayerCombatAbility.ts",
+      "export_name": "runPlayerCombatAbility"
+    },
+    {
+      "entity_id": "player",
+      "behavior_id": "player.collection.collect_reward",
+      "flow_id": "flow_player_collection_collect_reward",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/PlayerCollectionAbility.ts",
+      "export_name": "runPlayerCollectionAbility"
+    },
+    {
+      "entity_id": "player",
+      "behavior_id": "player.exit.leave_room",
+      "flow_id": "flow_player_exit_leave_room",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/PlayerExitAbility.ts",
+      "export_name": "runPlayerExitAbility"
+    }
+  ],
+  "consumed_interactive_files": [
+    "TypeScript/content/generated/interactive/PlayerMovementMoveInteractable.ts",
+    "TypeScript/content/generated/interactive/PlayerCombatAttackEnemyInteractable.ts",
+    "TypeScript/content/generated/interactive/PlayerCollectionCollectRewardInteractable.ts",
+    "TypeScript/content/generated/interactive/PlayerExitLeaveRoomInteractable.ts"
+  ],
+  "validation_notes": []
+}
