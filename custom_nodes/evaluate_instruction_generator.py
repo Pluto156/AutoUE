@@ -28,7 +28,7 @@ def GetInput(node: BaseLLMNode, state: GraphState, full_input: str) -> str:
         f"Scene Description:\n{getattr(state, 'scene_description', '')}\n\n"
         f"Gameplay Description:\n{getattr(state, 'gameplay_description', '')}\n\n"
         + "\n\n".join(f"{name} JSON:\n{value}" for name, value in required.items())
-        + "\n\nPhase2 only generates a static validation plan. Use driver=adapter_call or static_trace_only. Do not claim PIE/runtime pass."
+        + "\n\nPhase2 emits a static adapter_call plan for the Phase3 Python harness. Use driver=adapter_call only and expected.type=static_trace_present only. Do not claim PIE/runtime pass."
     )
 
 def SaveInstructionjson(state: GraphState, output: str) -> None:

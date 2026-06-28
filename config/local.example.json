@@ -23,5 +23,15 @@
       "tool": "ue_api_semantic_search",
       "fallback": "If empty, AutoUE reads [mcp_servers.ue-api-search] from ~/.codex/config.toml."
     }
+  },
+  "runtime_validation": {
+    "enabled": false,
+    "summary_path": "runtime/runtime-summary.json",
+    "log_path": "runtime/runtime-log.jsonl",
+    "supported_driver": "adapter_call",
+    "supported_expected_type": "static_trace_present",
+    "launches_ue_editor": false,
+    "launches_pie": false,
+    "injects_player_input": false
   }
 }

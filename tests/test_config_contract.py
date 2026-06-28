@@ -101,7 +101,11 @@ def codegen():
 
 def eval_plan():
     trace = {'entity_id': 'player', 'ability_id': 'player.combat', 'behavior_id': 'player.combat.attack', 'flow_id': 'flow_player_combat_attack', 'engine_port_ids': ['input.action_binding', 'damage.apply'], 'adjudication_paths': [ADJ_INPUT, ADJ_DAMAGE], 'runtime_mapping_path': RUNTIME_MAPPING_PATH, 'ts_files': ['TypeScript/content/generated/interactive/SmokeInteractable.ts', 'TypeScript/content/generated/SmokeGame.ts']}
-    return {'evaluation_instructions': [{'step_id': 1, 'action': 'attack', 'target': 'Enemy', 'description': 'validate attack', 'driver': 'adapter_call', 'executor_action': 'call_behavior', 'expected': [{'type': 'state_changed', 'key': 'enemy.state', 'expected_value': 'defeated'}], 'trace': trace}], 'coverage': [trace]}
+    return {'evaluation_instructions': [{'step_id': 1, 'action': 'attack', 'target': 'Enemy', 'description': 'validate static adapter call trace', 'driver': 'adapter_call', 'executor_action': 'call_behavior', 'expected': [
+        {'type': 'static_trace_present', 'key': 'ability_module_export', 'expected_value': 'tickSmokeGame'},
+        {'type': 'static_trace_present', 'key': 'interactive_adapter_export', 'expected_value': 'runSmokeInteraction'},
+        {'type': 'static_trace_present', 'key': 'engine_ports_mapped', 'expected_value': ['input.action_binding', 'damage.apply']},
+    ], 'trace': trace}], 'coverage': [trace]}
 
 
 def good_outputs():
@@ -132,6 +136,8 @@ def test_dry_run_config_has_prompts():
     data = json.loads(result.stdout)
     assert data['missing_prompts'] == []
     assert data['enabled_nodes'] == ORDER
+    assert data['runtime_validation']['enabled'] is False
+    assert data['runtime_validation']['supported_drivers'] == ['adapter_call']
 
 
 def test_phase2_workflow_uses_task_specific_codex_profiles():

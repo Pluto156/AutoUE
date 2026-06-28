@@ -19,6 +19,7 @@ from core.config import (
 )
 from core.llm_factory import create_llm
 from core.config import load_llm_profiles
+from core.runtime_validation import run_runtime_validation, runtime_validation_config
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -58,6 +59,16 @@ def save_llm_outputs(graph_state, demo_output_dir: Path, dir_name: str = "llm_ou
         file_path = output_dir / f"{key}.txt"
         file_path.write_text(value, encoding="utf-8")
         print(f"[DEBUG] Saved llm_output: {file_path}")
+
+
+def is_runtime_validation_enabled(args, runtime_config: dict) -> bool:
+    runtime_section = runtime_config.get("runtime_validation", {})
+    config_enabled = bool(runtime_section.get("enabled", False)) if isinstance(runtime_section, dict) else False
+    return bool(getattr(args, "run_runtime_validation", False) or config_enabled)
+
+
+def run_runtime_validation_for_demo(demo_output_dir: Path) -> dict:
+    return run_runtime_validation(demo_output_dir, write_outputs=True)
 
 
 def build_graph(runtime_config: dict | None = None, workflow_config: dict | None = None, *, llm_profile: str | None = None):
@@ -106,6 +117,7 @@ def dry_run_config(args) -> int:
         "enabled_nodes": [n.get("name") for n in enabled],
         "input_dir": str(input_dir),
         "output_dir": str(output_dir),
+        "runtime_validation": runtime_validation_config(enabled=is_runtime_validation_enabled(args, runtime)),
         "missing_prompts": missing_prompts,
     }
     print(json.dumps(summary, indent=2, ensure_ascii=False))
@@ -124,6 +136,8 @@ def run_workflow(args) -> int:
     llm_outputs_dir_name = runtime.get("paths", {}).get("llm_outputs_dir_name", "llm_outputs")
     post_actions = runtime.get("post_actions", {})
     copy_dirs = resolve_copy_dirs(runtime)
+    run_runtime = is_runtime_validation_enabled(args, runtime)
+    runtime_failures: list[dict] = []
 
     if not input_dir.exists():
         raise FileNotFoundError(f"input_dir does not exist: {input_dir}")
@@ -157,6 +171,12 @@ def run_workflow(args) -> int:
             copy_prompt_to_eval(txt_path, demo_output_dir)
         save_llm_outputs(final_state, demo_output_dir, llm_outputs_dir_name)
 
+        if run_runtime:
+            runtime_summary = run_runtime_validation_for_demo(demo_output_dir)
+            print(f"[DEBUG] runtime validation result for demo_{demo_id}: {runtime_summary.get('result')}")
+            if runtime_summary.get("result") != "pass":
+                runtime_failures.append({"demo_id": demo_id, "errors": runtime_summary.get("errors", [])})
+
         finish_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         log_line = f"demo_{demo_id} finished at {finish_time}\n"
         print(f"[DEBUG] {log_line.strip()}")
@@ -166,6 +186,9 @@ def run_workflow(args) -> int:
     if post_actions.get("render_gltf", False) and not args.skip_render:
         from model_description.batch_render_gltf import render_gltf
         render_gltf()
+    if runtime_failures:
+        print(json.dumps({"runtime_validation": "fail", "failures": runtime_failures}, ensure_ascii=False, indent=2))
+        return 1
     return 0
 
 
@@ -177,6 +200,7 @@ def parse_args():
     parser.add_argument("--input-dir", help="Override input prompt directory.")
     parser.add_argument("--output-dir", help="Override output directory.")
     parser.add_argument("--dry-run-config", action="store_true", help="Validate config/workflow/prompt wiring without calling LLM.")
+    parser.add_argument("--run-runtime-validation", action="store_true", help="Run Phase3 Python runtime validation after each demo output is written.")
     parser.add_argument("--skip-render", action="store_true", help="Do not run optional GLTF rendering post-action.")
     return parser.parse_args()
 

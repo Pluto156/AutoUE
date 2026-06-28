@@ -171,9 +171,20 @@ class ScriptedSmokeChatModel:
         if "SCHEMA: EvaluateInstructionGenerator" in system:
             content = json.dumps({
                 "evaluation_instructions": [
-                    {"step_id": 1, "action": "setup", "target": "SmokeRoom", "description": "Prepare static trace validation context.", "driver": "static_trace_only", "executor_action": "verify_trace", "expected": [{"type": "trace_exists", "key": "behavior_id", "expected_value": "player.combat.attack"}], "trace": trace},
-                    {"step_id": 2, "action": "attack", "target": "Enemy", "description": "Call the mapped attack behavior through adapter_call.", "driver": "adapter_call", "executor_action": "call_behavior", "expected": [{"type": "state_changed", "key": "enemy.state", "expected_value": "defeated"}], "trace": trace},
-                    {"step_id": 3, "action": "observe", "target": "Result", "description": "Verify generated TypeScript trace files are present.", "driver": "static_trace_only", "executor_action": "verify_trace", "expected": [{"type": "file_exists", "key": "TypeScript/content/generated/SmokeGame.ts", "expected_value": "true"}], "trace": trace},
+                    {
+                        "step_id": 1,
+                        "action": "attack",
+                        "target": "Enemy",
+                        "description": "Statically validate the scripted smoke adapter_call trace without launching PIE.",
+                        "driver": "adapter_call",
+                        "executor_action": "call_behavior",
+                        "expected": [
+                            {"type": "static_trace_present", "key": "ability_module_export", "expected_value": "tickSmokeGame"},
+                            {"type": "static_trace_present", "key": "interactive_adapter_export", "expected_value": "runSmokeInteraction"},
+                            {"type": "static_trace_present", "key": "engine_ports_mapped", "expected_value": [port_input, port_damage]},
+                        ],
+                        "trace": trace,
+                    },
                 ],
                 "coverage": [trace],
             })
