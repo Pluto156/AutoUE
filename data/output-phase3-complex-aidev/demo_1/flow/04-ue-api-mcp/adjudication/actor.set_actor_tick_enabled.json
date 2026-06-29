@@ -1,0 +1,18 @@
+{
+  "engine_port_id": "actor.set_actor_tick_enabled",
+  "flow_ids": [
+    "flow.patrolling_melee_enemy.health.become_defeated"
+  ],
+  "behavior_ids": [
+    "patrolling_melee_enemy.health.become_defeated"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for actor.set_actor_tick_enabled; exact symbol hints: Actor.SetActorTickEnabled, ActorSetActorTickEnabled, actor set actor tick enabled. Intent: Stop the defeated enemy from acting as an active patrol threat.",
+  "raw_path": "flow/04-ue-api-mcp/raw/actor.set_actor_tick_enabled.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/actor.set_actor_tick_enabled.json",
+  "verdict": "hit",
+  "hit_type": "direct_hit",
+  "evidence_symbols": [
+    "UE.Actor.SetActorTickEnabled"
+  ],
+  "notes": "Actor.SetActorTickEnabled directly supports disabling active patrol/threat ticking after defeat."
+}

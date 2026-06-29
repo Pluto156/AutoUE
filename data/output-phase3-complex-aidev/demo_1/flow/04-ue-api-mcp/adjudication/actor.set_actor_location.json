@@ -1,0 +1,18 @@
+{
+  "engine_port_id": "actor.set_actor_location",
+  "flow_ids": [
+    "flow.patrolling_melee_enemy.patrol.move_back_and_forth"
+  ],
+  "behavior_ids": [
+    "patrolling_melee_enemy.patrol.move_back_and_forth"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for actor.set_actor_location; exact symbol hints: Actor.SetActorLocation, ActorSetActorLocation, actor set actor location. Intent: Move the active undefeated enemy along a short horizontal patrol path.",
+  "raw_path": "flow/04-ue-api-mcp/raw/actor.set_actor_location.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/actor.set_actor_location.json",
+  "verdict": "hit",
+  "hit_type": "direct_hit",
+  "evidence_symbols": [
+    "UE.Actor.SetActorLocation"
+  ],
+  "notes": "Actor.SetActorLocation directly supports moving the enemy actor along the patrol path."
+}

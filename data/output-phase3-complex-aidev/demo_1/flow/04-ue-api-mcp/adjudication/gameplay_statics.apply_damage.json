@@ -1,0 +1,19 @@
+{
+  "engine_port_id": "gameplay_statics.apply_damage",
+  "flow_ids": [
+    "flow.player.short_melee_attack.strike_enemy"
+  ],
+  "behavior_ids": [
+    "player.short_melee_attack.strike_enemy"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for gameplay_statics.apply_damage; exact symbol hints: Gameplay.StaticsApplyDamage, GameplayStaticsApplyDamage, gameplay statics apply damage. Intent: Apply melee damage to the hit enemy.",
+  "raw_path": "flow/04-ue-api-mcp/raw/gameplay_statics.apply_damage.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/gameplay_statics.apply_damage.json",
+  "verdict": "hit",
+  "hit_type": "direct_hit",
+  "evidence_symbols": [
+    "UE.GameplayStatics.ApplyDamage",
+    "UE.GameplayStatics.ApplyRadialDamageWithFalloff"
+  ],
+  "notes": "GameplayStatics.ApplyDamage directly supports applying melee damage to the hit actor."
+}

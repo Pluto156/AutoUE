@@ -7,8 +7,73 @@
       "behavior_id": "player.combat.attack",
       "flow_id": "flow_player_combat_attack",
       "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "action_label": "attacks",
+      "target_label": "Enemy",
+      "result_label": "enemy defeated",
       "export_name": "tickSmokeGame",
-      "interface_name": "SmokeGameContext",
+      "interface_name": "SmokeGameContext"
+    },
+    {
+      "template": "aid_runtime_orchestrator",
+      "path": "TypeScript/content/generated/AutoUEGeneratedRuntime.ts",
+      "export_name": "runAutoUEGeneratedRuntime",
+      "interface_name": "AutoUEGeneratedRuntimeContext",
+      "entity_id": "player",
+      "behavior_id": "player.combat.attack",
+      "flow_id": "flow_player_combat_attack",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "action_label": "attacks",
+      "target_label": "Enemy",
+      "result_label": "enemy defeated"
+    },
+    {
+      "template": "aid_character_adapter",
+      "path": "TypeScript/AutoUEGeneratedCharacterAdapter.ts",
+      "export_name": "AutoUEGeneratedCharacterAdapter",
+      "interface_name": "AutoUEGeneratedCharacterAdapterContext",
+      "entity_id": "player",
+      "behavior_id": "player.combat.attack",
+      "flow_id": "flow_player_combat_attack",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "action_label": "attacks",
+      "target_label": "Enemy",
+      "result_label": "enemy defeated"
+    },
+    {
+      "template": "aid_gamemode_adapter",
+      "path": "TypeScript/AutoUEGeneratedGameModeAdapter.ts",
+      "export_name": "AutoUEGeneratedGameModeAdapter",
+      "interface_name": "AutoUEGeneratedGameModeAdapterContext",
+      "entity_id": "player",
+      "behavior_id": "player.combat.attack",
+      "flow_id": "flow_player_combat_attack",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "action_label": "attacks",
+      "target_label": "Enemy",
+      "result_label": "enemy defeated"
+    },
+    {
+      "template": "aid_camera_setup",
+      "path": "TypeScript/content/generated/AutoUEGeneratedCameraHelper.ts",
+      "export_name": "setupAutoUEGeneratedCamera",
+      "interface_name": "AutoUEGeneratedCameraOptions",
+      "entity_id": "player",
+      "behavior_id": "player.combat.attack",
+      "flow_id": "flow_player_combat_attack",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "action_label": "attacks",
+      "target_label": "Enemy",
+      "result_label": "enemy defeated"
+    },
+    {
+      "template": "scene_manifest_helper",
+      "path": "TypeScript/content/generated/AutoUEGeneratedSceneManifest.ts",
+      "export_name": "getAutoUEGeneratedSceneManifest",
+      "interface_name": "AutoUEGeneratedSceneManifestContext",
+      "entity_id": "player",
+      "behavior_id": "player.combat.attack",
+      "flow_id": "flow_player_combat_attack",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
       "action_label": "attacks",
       "target_label": "Enemy",
       "result_label": "enemy defeated"
@@ -28,6 +93,6 @@
     "TypeScript/content/generated/interactive/SmokeInteractable.ts"
   ],
   "validation_notes": [
-    "scripted smoke runtime template"
+    "scripted smoke runtime and AIDev bridge templates"
   ]
 }

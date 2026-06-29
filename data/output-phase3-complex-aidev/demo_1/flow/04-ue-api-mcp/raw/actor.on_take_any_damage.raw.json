@@ -1,0 +1,503 @@
+{
+  "engine_port_id": "actor.on_take_any_damage",
+  "flow_ids": [
+    "flow.patrolling_melee_enemy.health.take_melee_damage"
+  ],
+  "behavior_ids": [
+    "patrolling_melee_enemy.health.take_melee_damage"
+  ],
+  "contracts": [
+    "Receive melee damage from the player's successful strike."
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for actor.on_take_any_damage; exact symbol hints: Actor.OnTakeAnyDamage, ActorOnTakeAnyDamage, actor on take any damage. Intent: Receive melee damage from the player's successful strike.",
+  "raw_path": "flow/04-ue-api-mcp/raw/actor.on_take_any_damage.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/actor.on_take_any_damage.json",
+  "raw_result": {
+    "tool": "ue_api_semantic_search",
+    "query": "Unreal Engine PuerTS gameplay API for actor.on_take_any_damage; exact symbol hints: Actor.OnTakeAnyDamage, ActorOnTakeAnyDamage, actor on take any damage. Intent: Receive melee damage from the player's successful strike.",
+    "limit": 5,
+    "raw_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"ok\",\n  \"mode\": \"semantic\",\n  \"query\": \"Unreal Engine PuerTS gameplay API for actor.on_take_any_damage; exact symbol hints: Actor.OnTakeAnyDamage, ActorOnTakeAnyDamage, actor on take any damage. Intent: Receive melee damage from the player's successful strike.\",\n  \"searchText\": \"actor pawn character OnTakeAnyDamage delegate event take damage health damage event handler melee bind delegate OnTakeAnyDamage callback event dispatcher damage binding\",\n  \"rewrite\": {\n    \"status\": \"rewritten\",\n    \"domainStatus\": \"ue_relevant\",\n    \"intentSummary\": \"Bind to the OnTakeAnyDamage delegate on an actor to handle melee damage received from a player's successful strike in PuerTS.\",\n    \"warnings\": [],\n    \"activeSubqueries\": [\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The actor that receives the damage event.\",\n        \"subqueryId\": \"carrier_context_1\",\n        \"text\": \"actor pawn character\",\n        \"weight\": 1.0,\n        \"subqueryWeight\": 1.0\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The delegate that fires when damage is taken.\",\n        \"subqueryId\": \"activation_trigger_1\",\n        \"text\": \"OnTakeAnyDamage delegate event\",\n        \"weight\": 1.0,\n        \"subqueryWeight\": 1.0\n      },\n      {\n        \"facetId\": \"damage_state\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"Handling damage receipt, health changes, and damage type.\",\n        \"subqueryId\": \"damage_state_1\",\n        \"text\": \"take damage health\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"damage_state\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"Handling damage receipt, health changes, and damage type.\",\n        \"subqueryId\": \"damage_state_2\",\n        \"text\": \"damage event handler melee\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"integration_event\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"Binding to the damage delegate in PuerTS.\",\n        \"subqueryId\": \"integration_event_1\",\n        \"text\": \"bind delegate OnTakeAnyDamage callback\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"integration_event\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"Binding to the damage delegate in PuerTS.\",\n        \"subqueryId\": \"integration_event_2\",\n        \"text\": \"event dispatcher damage binding\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      }\n    ]\n  },\n  \"embedding\": {\n    \"enabled\": true,\n    \"provider\": \"ollama\",\n    \"model\": \"bge-m3\",\n    \"dimensions\": 1024,\n    \"indexedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"status\": \"ready\"\n  },\n  \"partitions\": {\n    \"enabled\": true,\n    \"classifierEnabled\": true,\n    \"provider\": \"aaa\",\n    \"binaryAvailable\": true,\n    \"timeoutMs\": 90000,\n    \"candidateCount\": 20361,\n    \"processedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"validAssignmentCount\": 14733,\n    \"partitionedEntryCount\": 12532,\n    \"partitionedEntryRatio\": 0.6155,\n    \"searchReady\": true,\n    \"byFacet\": {\n      \"activation_trigger\": 241,\n      \"ai_behavior\": 948,\n      \"animation\": 1856,\n      \"audio\": 704,\n      \"camera_feedback_ui\": 1336,\n      \"carrier_context\": 1362,\n      \"damage_state\": 548,\n      \"integration_event\": 1069,\n      \"level_world\": 342,\n      \"lighting\": 134,\n      \"material_visual_state\": 1065,\n      \"mesh_geometry\": 1545,\n      \"movement_navigation\": 256,\n      \"networking_authority\": 414,\n      \"persistence_assets\": 612,\n      \"physics\": 666,\n      \"spatial_targeting\": 466,\n      \"spawn_lifecycle\": 117,\n      \"visual_effects\": 1052\n    },\n    \"status\": \"ready\",\n    \"searchScoped\": true\n  },\n  \"filters\": {},\n  \"confidence\": {\n    \"minConfidence\": 0.55,\n    \"status\": \"ok\",\n    \"topConfidence\": 0.7542\n  },\n  \"count\": 5,\n  \"results\": [\n    {\n      \"ref\": \"0d33f585e6fa\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.GameplayStatics.ApplyDamage\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.GameplayStatics\",\n      \"signature\": \"static ApplyDamage(DamagedActor: $Nullable<UE.Actor>, BaseDamage: number, EventInstigator: $Nullable<UE.Controller>, DamageCauser: $Nullable<UE.Actor>, DamageTypeClass: $Nullable<UE.Class>) : number;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7542,\n      \"summary\": \"Hurts the specified actor with generic damage.\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Bind to the OnTakeAnyDamage delegate on an actor to handle melee damage received from a player's successful strike in PuerTS.\",\n        \"name: damage\",\n        \"doc: actor, damage\",\n        \"params: actor, damage, event\",\n        \"facets: damage_state/bm25, damage_state/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"cf7c412cc625\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetSystemLibrary.K2_SetTimerForNextTickDelegate\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetSystemLibrary\",\n      \"signature\": \"static K2_SetTimerForNextTickDelegate(Delegate: $Delegate<() => void>) : UE.TimerHandle;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7406,\n      \"summary\": \"Set a timer to execute a delegate next tick.\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Bind to the OnTakeAnyDamage delegate on an actor to handle melee damage received from a player's successful strike in PuerTS.\",\n        \"name: delegate\",\n        \"doc: delegate\",\n        \"params: event\",\n        \"facets: activation_trigger/bm25, activation_trigger/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"1b7a8eb2f31d\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.AISense_Damage.ReportDamageEvent\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.AISense_Damage\",\n      \"signature\": \"static ReportDamageEvent(WorldContextObject: $Nullable<UE.Object>, DamagedActor: $Nullable<UE.Actor>, Instigator: $Nullable<UE.Actor>, DamageAmount: number, EventLocation: UE.Vector, HitLocation: UE.Vector, Tag?: string /* = \\\"None\\\" */) : void;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7405,\n      \"summary\": \"EventLocation will be reported as Instigator's location at the moment of event happening\",\n      \"source\": \"Engine/AIModule\",\n      \"why\": [\n        \"rewrite: Bind to the OnTakeAnyDamage delegate on an actor to handle melee damage received from a player's successful strike in PuerTS.\",\n        \"name: damage, event\",\n        \"doc: event\",\n        \"facets: integration_event/bm25, integration_event/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"87417ce50473\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.Pawn.GetMovementBaseActor\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.Pawn\",\n      \"signature\": \"static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;\",\n      \"score\": 95.0,\n      \"confidence\": 0.7428,\n      \"summary\": \"Gets the owning actor of the Movement Base Component on which the pawn is standing.\",\n      \"source\": \"Engine/GameFramework\",\n      \"why\": [\n        \"rewrite: Bind to the OnTakeAnyDamage delegate on an actor to handle melee damage received from a player's successful strike in PuerTS.\",\n        \"name: actor, pawn\",\n        \"doc: actor, pawn\",\n        \"facets: carrier_context/bm25, carrier_context/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"fc71a7273e11\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.GameplayStatics.ApplyRadialDamage\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.GameplayStatics\",\n      \"signature\": \"static ApplyRadialDamage(WorldContextObject: $Nullable<UE.Object>, BaseDamage: number, Origin: UE.Vector, DamageRadius: number, DamageTypeClass: $Nullable<UE.Class>, IgnoreActors: TArray<UE.Actor>, DamageCauser?: UE.Actor /* = None */, InstigatedByController?: UE.Controller /* = None */, bDoFullDamage?: boolean /* = false */, DamagePreventionChannel?: UE.ECollisionChannel /* = ECC_Visibility */) : boolean;\",\n      \"score\": 89.1667,\n      \"confidence\": 0.748,\n      \"summary\": \"Hurt locally authoritative actors within the radius. Will only hit components that block the Visibility channel.\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Bind to the OnTakeAnyDamage delegate on an actor to handle melee damage received from a player's successful strike in PuerTS.\",\n        \"name: damage\",\n        \"params: actor, damage\",\n        \"facets: damage_state/bm25, damage_state/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    }\n  ],\n  \"profile\": {\n    \"load\": 0.7467,\n    \"rewrite\": 6.4104,\n    \"embed\": 0.1552,\n    \"bm25\": 0.0569,\n    \"vector\": 0.3746,\n    \"score\": 0.1131,\n    \"select\": 0.0001,\n    \"total\": 7.5844\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "status": "ok",
+        "mode": "semantic",
+        "query": "Unreal Engine PuerTS gameplay API for actor.on_take_any_damage; exact symbol hints: Actor.OnTakeAnyDamage, ActorOnTakeAnyDamage, actor on take any damage. Intent: Receive melee damage from the player's successful strike.",
+        "searchText": "actor pawn character OnTakeAnyDamage delegate event take damage health damage event handler melee bind delegate OnTakeAnyDamage callback event dispatcher damage binding",
+        "rewrite": {
+          "status": "rewritten",
+          "domainStatus": "ue_relevant",
+          "intentSummary": "Bind to the OnTakeAnyDamage delegate on an actor to handle melee damage received from a player's successful strike in PuerTS.",
+          "warnings": [],
+          "activeSubqueries": [
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The actor that receives the damage event.",
+              "subqueryId": "carrier_context_1",
+              "text": "actor pawn character",
+              "weight": 1.0,
+              "subqueryWeight": 1.0
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "The delegate that fires when damage is taken.",
+              "subqueryId": "activation_trigger_1",
+              "text": "OnTakeAnyDamage delegate event",
+              "weight": 1.0,
+              "subqueryWeight": 1.0
+            },
+            {
+              "facetId": "damage_state",
+              "facetStatus": "required",
+              "facetIntent": "Handling damage receipt, health changes, and damage type.",
+              "subqueryId": "damage_state_1",
+              "text": "take damage health",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "damage_state",
+              "facetStatus": "required",
+              "facetIntent": "Handling damage receipt, health changes, and damage type.",
+              "subqueryId": "damage_state_2",
+              "text": "damage event handler melee",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "integration_event",
+              "facetStatus": "required",
+              "facetIntent": "Binding to the damage delegate in PuerTS.",
+              "subqueryId": "integration_event_1",
+              "text": "bind delegate OnTakeAnyDamage callback",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "integration_event",
+              "facetStatus": "required",
+              "facetIntent": "Binding to the damage delegate in PuerTS.",
+              "subqueryId": "integration_event_2",
+              "text": "event dispatcher damage binding",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            }
+          ]
+        },
+        "embedding": {
+          "enabled": true,
+          "provider": "ollama",
+          "model": "bge-m3",
+          "dimensions": 1024,
+          "indexedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "status": "ready"
+        },
+        "partitions": {
+          "enabled": true,
+          "classifierEnabled": true,
+          "provider": "aaa",
+          "binaryAvailable": true,
+          "timeoutMs": 90000,
+          "candidateCount": 20361,
+          "processedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "validAssignmentCount": 14733,
+          "partitionedEntryCount": 12532,
+          "partitionedEntryRatio": 0.6155,
+          "searchReady": true,
+          "byFacet": {
+            "activation_trigger": 241,
+            "ai_behavior": 948,
+            "animation": 1856,
+            "audio": 704,
+            "camera_feedback_ui": 1336,
+            "carrier_context": 1362,
+            "damage_state": 548,
+            "integration_event": 1069,
+            "level_world": 342,
+            "lighting": 134,
+            "material_visual_state": 1065,
+            "mesh_geometry": 1545,
+            "movement_navigation": 256,
+            "networking_authority": 414,
+            "persistence_assets": 612,
+            "physics": 666,
+            "spatial_targeting": 466,
+            "spawn_lifecycle": 117,
+            "visual_effects": 1052
+          },
+          "status": "ready",
+          "searchScoped": true
+        },
+        "filters": {},
+        "confidence": {
+          "minConfidence": 0.55,
+          "status": "ok",
+          "topConfidence": 0.7542
+        },
+        "count": 5,
+        "results": [
+          {
+            "ref": "0d33f585e6fa",
+            "entryType": "static_function",
+            "symbol": "UE.GameplayStatics.ApplyDamage",
+            "kind": "method",
+            "owner": "UE.GameplayStatics",
+            "signature": "static ApplyDamage(DamagedActor: $Nullable<UE.Actor>, BaseDamage: number, EventInstigator: $Nullable<UE.Controller>, DamageCauser: $Nullable<UE.Actor>, DamageTypeClass: $Nullable<UE.Class>) : number;",
+            "score": 93.0,
+            "confidence": 0.7542,
+            "summary": "Hurts the specified actor with generic damage.",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Bind to the OnTakeAnyDamage delegate on an actor to handle melee damage received from a player's successful strike in PuerTS.",
+              "name: damage",
+              "doc: actor, damage",
+              "params: actor, damage, event",
+              "facets: damage_state/bm25, damage_state/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "cf7c412cc625",
+            "entryType": "static_function",
+            "symbol": "UE.KismetSystemLibrary.K2_SetTimerForNextTickDelegate",
+            "kind": "method",
+            "owner": "UE.KismetSystemLibrary",
+            "signature": "static K2_SetTimerForNextTickDelegate(Delegate: $Delegate<() => void>) : UE.TimerHandle;",
+            "score": 93.0,
+            "confidence": 0.7406,
+            "summary": "Set a timer to execute a delegate next tick.",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Bind to the OnTakeAnyDamage delegate on an actor to handle melee damage received from a player's successful strike in PuerTS.",
+              "name: delegate",
+              "doc: delegate",
+              "params: event",
+              "facets: activation_trigger/bm25, activation_trigger/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "1b7a8eb2f31d",
+            "entryType": "static_function",
+            "symbol": "UE.AISense_Damage.ReportDamageEvent",
+            "kind": "method",
+            "owner": "UE.AISense_Damage",
+            "signature": "static ReportDamageEvent(WorldContextObject: $Nullable<UE.Object>, DamagedActor: $Nullable<UE.Actor>, Instigator: $Nullable<UE.Actor>, DamageAmount: number, EventLocation: UE.Vector, HitLocation: UE.Vector, Tag?: string /* = \"None\" */) : void;",
+            "score": 93.0,
+            "confidence": 0.7405,
+            "summary": "EventLocation will be reported as Instigator's location at the moment of event happening",
+            "source": "Engine/AIModule",
+            "why": [
+              "rewrite: Bind to the OnTakeAnyDamage delegate on an actor to handle melee damage received from a player's successful strike in PuerTS.",
+              "name: damage, event",
+              "doc: event",
+              "facets: integration_event/bm25, integration_event/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "87417ce50473",
+            "entryType": "static_function",
+            "symbol": "UE.Pawn.GetMovementBaseActor",
+            "kind": "method",
+            "owner": "UE.Pawn",
+            "signature": "static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;",
+            "score": 95.0,
+            "confidence": 0.7428,
+            "summary": "Gets the owning actor of the Movement Base Component on which the pawn is standing.",
+            "source": "Engine/GameFramework",
+            "why": [
+              "rewrite: Bind to the OnTakeAnyDamage delegate on an actor to handle melee damage received from a player's successful strike in PuerTS.",
+              "name: actor, pawn",
+              "doc: actor, pawn",
+              "facets: carrier_context/bm25, carrier_context/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "fc71a7273e11",
+            "entryType": "static_function",
+            "symbol": "UE.GameplayStatics.ApplyRadialDamage",
+            "kind": "method",
+            "owner": "UE.GameplayStatics",
+            "signature": "static ApplyRadialDamage(WorldContextObject: $Nullable<UE.Object>, BaseDamage: number, Origin: UE.Vector, DamageRadius: number, DamageTypeClass: $Nullable<UE.Class>, IgnoreActors: TArray<UE.Actor>, DamageCauser?: UE.Actor /* = None */, InstigatedByController?: UE.Controller /* = None */, bDoFullDamage?: boolean /* = false */, DamagePreventionChannel?: UE.ECollisionChannel /* = ECC_Visibility */) : boolean;",
+            "score": 89.1667,
+            "confidence": 0.748,
+            "summary": "Hurt locally authoritative actors within the radius. Will only hit components that block the Visibility channel.",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Bind to the OnTakeAnyDamage delegate on an actor to handle melee damage received from a player's successful strike in PuerTS.",
+              "name: damage",
+              "params: actor, damage",
+              "facets: damage_state/bm25, damage_state/vector",
+              "static function result",
+              "vector recall"
+            ]
+          }
+        ],
+        "profile": {
+          "load": 0.7467,
+          "rewrite": 6.4104,
+          "embed": 0.1552,
+          "bm25": 0.0569,
+          "vector": 0.3746,
+          "score": 0.1131,
+          "select": 0.0001,
+          "total": 7.5844
+        }
+      },
+      "isError": false
+    },
+    "payload": {
+      "status": "ok",
+      "mode": "semantic",
+      "query": "Unreal Engine PuerTS gameplay API for actor.on_take_any_damage; exact symbol hints: Actor.OnTakeAnyDamage, ActorOnTakeAnyDamage, actor on take any damage. Intent: Receive melee damage from the player's successful strike.",
+      "searchText": "actor pawn character OnTakeAnyDamage delegate event take damage health damage event handler melee bind delegate OnTakeAnyDamage callback event dispatcher damage binding",
+      "rewrite": {
+        "status": "rewritten",
+        "domainStatus": "ue_relevant",
+        "intentSummary": "Bind to the OnTakeAnyDamage delegate on an actor to handle melee damage received from a player's successful strike in PuerTS.",
+        "warnings": [],
+        "activeSubqueries": [
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The actor that receives the damage event.",
+            "subqueryId": "carrier_context_1",
+            "text": "actor pawn character",
+            "weight": 1.0,
+            "subqueryWeight": 1.0
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "The delegate that fires when damage is taken.",
+            "subqueryId": "activation_trigger_1",
+            "text": "OnTakeAnyDamage delegate event",
+            "weight": 1.0,
+            "subqueryWeight": 1.0
+          },
+          {
+            "facetId": "damage_state",
+            "facetStatus": "required",
+            "facetIntent": "Handling damage receipt, health changes, and damage type.",
+            "subqueryId": "damage_state_1",
+            "text": "take damage health",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "damage_state",
+            "facetStatus": "required",
+            "facetIntent": "Handling damage receipt, health changes, and damage type.",
+            "subqueryId": "damage_state_2",
+            "text": "damage event handler melee",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "integration_event",
+            "facetStatus": "required",
+            "facetIntent": "Binding to the damage delegate in PuerTS.",
+            "subqueryId": "integration_event_1",
+            "text": "bind delegate OnTakeAnyDamage callback",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "integration_event",
+            "facetStatus": "required",
+            "facetIntent": "Binding to the damage delegate in PuerTS.",
+            "subqueryId": "integration_event_2",
+            "text": "event dispatcher damage binding",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          }
+        ]
+      },
+      "embedding": {
+        "enabled": true,
+        "provider": "ollama",
+        "model": "bge-m3",
+        "dimensions": 1024,
+        "indexedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "status": "ready"
+      },
+      "partitions": {
+        "enabled": true,
+        "classifierEnabled": true,
+        "provider": "aaa",
+        "binaryAvailable": true,
+        "timeoutMs": 90000,
+        "candidateCount": 20361,
+        "processedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "validAssignmentCount": 14733,
+        "partitionedEntryCount": 12532,
+        "partitionedEntryRatio": 0.6155,
+        "searchReady": true,
+        "byFacet": {
+          "activation_trigger": 241,
+          "ai_behavior": 948,
+          "animation": 1856,
+          "audio": 704,
+          "camera_feedback_ui": 1336,
+          "carrier_context": 1362,
+          "damage_state": 548,
+          "integration_event": 1069,
+          "level_world": 342,
+          "lighting": 134,
+          "material_visual_state": 1065,
+          "mesh_geometry": 1545,
+          "movement_navigation": 256,
+          "networking_authority": 414,
+          "persistence_assets": 612,
+          "physics": 666,
+          "spatial_targeting": 466,
+          "spawn_lifecycle": 117,
+          "visual_effects": 1052
+        },
+        "status": "ready",
+        "searchScoped": true
+      },
+      "filters": {},
+      "confidence": {
+        "minConfidence": 0.55,
+        "status": "ok",
+        "topConfidence": 0.7542
+      },
+      "count": 5,
+      "results": [
+        {
+          "ref": "0d33f585e6fa",
+          "entryType": "static_function",
+          "symbol": "UE.GameplayStatics.ApplyDamage",
+          "kind": "method",
+          "owner": "UE.GameplayStatics",
+          "signature": "static ApplyDamage(DamagedActor: $Nullable<UE.Actor>, BaseDamage: number, EventInstigator: $Nullable<UE.Controller>, DamageCauser: $Nullable<UE.Actor>, DamageTypeClass: $Nullable<UE.Class>) : number;",
+          "score": 93.0,
+          "confidence": 0.7542,
+          "summary": "Hurts the specified actor with generic damage.",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Bind to the OnTakeAnyDamage delegate on an actor to handle melee damage received from a player's successful strike in PuerTS.",
+            "name: damage",
+            "doc: actor, damage",
+            "params: actor, damage, event",
+            "facets: damage_state/bm25, damage_state/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "cf7c412cc625",
+          "entryType": "static_function",
+          "symbol": "UE.KismetSystemLibrary.K2_SetTimerForNextTickDelegate",
+          "kind": "method",
+          "owner": "UE.KismetSystemLibrary",
+          "signature": "static K2_SetTimerForNextTickDelegate(Delegate: $Delegate<() => void>) : UE.TimerHandle;",
+          "score": 93.0,
+          "confidence": 0.7406,
+          "summary": "Set a timer to execute a delegate next tick.",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Bind to the OnTakeAnyDamage delegate on an actor to handle melee damage received from a player's successful strike in PuerTS.",
+            "name: delegate",
+            "doc: delegate",
+            "params: event",
+            "facets: activation_trigger/bm25, activation_trigger/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "1b7a8eb2f31d",
+          "entryType": "static_function",
+          "symbol": "UE.AISense_Damage.ReportDamageEvent",
+          "kind": "method",
+          "owner": "UE.AISense_Damage",
+          "signature": "static ReportDamageEvent(WorldContextObject: $Nullable<UE.Object>, DamagedActor: $Nullable<UE.Actor>, Instigator: $Nullable<UE.Actor>, DamageAmount: number, EventLocation: UE.Vector, HitLocation: UE.Vector, Tag?: string /* = \"None\" */) : void;",
+          "score": 93.0,
+          "confidence": 0.7405,
+          "summary": "EventLocation will be reported as Instigator's location at the moment of event happening",
+          "source": "Engine/AIModule",
+          "why": [
+            "rewrite: Bind to the OnTakeAnyDamage delegate on an actor to handle melee damage received from a player's successful strike in PuerTS.",
+            "name: damage, event",
+            "doc: event",
+            "facets: integration_event/bm25, integration_event/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "87417ce50473",
+          "entryType": "static_function",
+          "symbol": "UE.Pawn.GetMovementBaseActor",
+          "kind": "method",
+          "owner": "UE.Pawn",
+          "signature": "static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;",
+          "score": 95.0,
+          "confidence": 0.7428,
+          "summary": "Gets the owning actor of the Movement Base Component on which the pawn is standing.",
+          "source": "Engine/GameFramework",
+          "why": [
+            "rewrite: Bind to the OnTakeAnyDamage delegate on an actor to handle melee damage received from a player's successful strike in PuerTS.",
+            "name: actor, pawn",
+            "doc: actor, pawn",
+            "facets: carrier_context/bm25, carrier_context/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "fc71a7273e11",
+          "entryType": "static_function",
+          "symbol": "UE.GameplayStatics.ApplyRadialDamage",
+          "kind": "method",
+          "owner": "UE.GameplayStatics",
+          "signature": "static ApplyRadialDamage(WorldContextObject: $Nullable<UE.Object>, BaseDamage: number, Origin: UE.Vector, DamageRadius: number, DamageTypeClass: $Nullable<UE.Class>, IgnoreActors: TArray<UE.Actor>, DamageCauser?: UE.Actor /* = None */, InstigatedByController?: UE.Controller /* = None */, bDoFullDamage?: boolean /* = false */, DamagePreventionChannel?: UE.ECollisionChannel /* = ECC_Visibility */) : boolean;",
+          "score": 89.1667,
+          "confidence": 0.748,
+          "summary": "Hurt locally authoritative actors within the radius. Will only hit components that block the Visibility channel.",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Bind to the OnTakeAnyDamage delegate on an actor to handle melee damage received from a player's successful strike in PuerTS.",
+            "name: damage",
+            "params: actor, damage",
+            "facets: damage_state/bm25, damage_state/vector",
+            "static function result",
+            "vector recall"
+          ]
+        }
+      ],
+      "profile": {
+        "load": 0.7467,
+        "rewrite": 6.4104,
+        "embed": 0.1552,
+        "bm25": 0.0569,
+        "vector": 0.3746,
+        "score": 0.1131,
+        "select": 0.0001,
+        "total": 7.5844
+      }
+    }
+  }
+}

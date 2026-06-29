@@ -4,7 +4,7 @@ from core.BaseLLMNode import BaseLLMNode, GraphState
 from core.phase2_validation import validate_phase2_node_output
 
 TYPESCRIPT_SCRIPT_ANALYZER_PROMPT = """SCHEMA: TypeScriptScriptAnalyzer
-Convert PuerTS runtime mappings into TypeScript/PuerTS implementation slots. Return JSON only.
+Convert PuerTS runtime mappings into behavior-level TypeScript/PuerTS implementation slots. Support bridge files are generated later by TypeScriptCodeGenerator. Return JSON only.
 """
 
 def build_ts_context(node: BaseLLMNode, state: GraphState, full_input: str) -> None:

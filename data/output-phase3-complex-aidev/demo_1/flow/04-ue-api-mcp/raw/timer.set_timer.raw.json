@@ -1,0 +1,485 @@
+{
+  "engine_port_id": "timer.set_timer",
+  "flow_ids": [
+    "flow.player.frozen_state.become_frozen"
+  ],
+  "behavior_ids": [
+    "player.frozen_state.become_frozen"
+  ],
+  "contracts": [
+    "Schedule the frozen state to end after the short duration."
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for timer.set_timer; exact symbol hints: Timer.SetTimer, TimerSetTimer, timer set timer. Intent: Schedule the frozen state to end after the short duration.",
+  "raw_path": "flow/04-ue-api-mcp/raw/timer.set_timer.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/timer.set_timer.json",
+  "raw_result": {
+    "tool": "ue_api_semantic_search",
+    "query": "Unreal Engine PuerTS gameplay API for timer.set_timer; exact symbol hints: Timer.SetTimer, TimerSetTimer, timer set timer. Intent: Schedule the frozen state to end after the short duration.",
+    "limit": 5,
+    "raw_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"ok\",\n  \"mode\": \"semantic\",\n  \"query\": \"Unreal Engine PuerTS gameplay API for timer.set_timer; exact symbol hints: Timer.SetTimer, TimerSetTimer, timer set timer. Intent: Schedule the frozen state to end after the short duration.\",\n  \"searchText\": \"character pawn actor actor component Timer SetTimer timer handle delay timer schedule function frozen state status effect gameplay effect condition tag\",\n  \"rewrite\": {\n    \"status\": \"rewritten\",\n    \"domainStatus\": \"ue_relevant\",\n    \"intentSummary\": \"Schedule a timer to end a frozen state after a short duration using Timer.SetTimer.\",\n    \"warnings\": [],\n    \"activeSubqueries\": [\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The gameplay object that owns the frozen state and timer.\",\n        \"subqueryId\": \"carrier_context_1\",\n        \"text\": \"character pawn actor actor component\",\n        \"weight\": 1.0,\n        \"subqueryWeight\": 1.0\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"Timer scheduling mechanism to trigger the end of the frozen state.\",\n        \"subqueryId\": \"activation_trigger_1\",\n        \"text\": \"Timer SetTimer timer handle\",\n        \"weight\": 0.6,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"Timer scheduling mechanism to trigger the end of the frozen state.\",\n        \"subqueryId\": \"activation_trigger_2\",\n        \"text\": \"delay timer schedule function\",\n        \"weight\": 0.4,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"damage_state\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The frozen state that ends when the timer fires.\",\n        \"subqueryId\": \"damage_state_1\",\n        \"text\": \"frozen state status effect\",\n        \"weight\": 0.6,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"damage_state\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The frozen state that ends when the timer fires.\",\n        \"subqueryId\": \"damage_state_2\",\n        \"text\": \"gameplay effect condition tag\",\n        \"weight\": 0.4,\n        \"subqueryWeight\": 0.4\n      }\n    ]\n  },\n  \"embedding\": {\n    \"enabled\": true,\n    \"provider\": \"ollama\",\n    \"model\": \"bge-m3\",\n    \"dimensions\": 1024,\n    \"indexedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"status\": \"ready\"\n  },\n  \"partitions\": {\n    \"enabled\": true,\n    \"classifierEnabled\": true,\n    \"provider\": \"aaa\",\n    \"binaryAvailable\": true,\n    \"timeoutMs\": 90000,\n    \"candidateCount\": 20361,\n    \"processedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"validAssignmentCount\": 14733,\n    \"partitionedEntryCount\": 12532,\n    \"partitionedEntryRatio\": 0.6155,\n    \"searchReady\": true,\n    \"byFacet\": {\n      \"activation_trigger\": 241,\n      \"ai_behavior\": 948,\n      \"animation\": 1856,\n      \"audio\": 704,\n      \"camera_feedback_ui\": 1336,\n      \"carrier_context\": 1362,\n      \"damage_state\": 548,\n      \"integration_event\": 1069,\n      \"level_world\": 342,\n      \"lighting\": 134,\n      \"material_visual_state\": 1065,\n      \"mesh_geometry\": 1545,\n      \"movement_navigation\": 256,\n      \"networking_authority\": 414,\n      \"persistence_assets\": 612,\n      \"physics\": 666,\n      \"spatial_targeting\": 466,\n      \"spawn_lifecycle\": 117,\n      \"visual_effects\": 1052\n    },\n    \"status\": \"ready\",\n    \"searchScoped\": true\n  },\n  \"filters\": {},\n  \"confidence\": {\n    \"minConfidence\": 0.55,\n    \"status\": \"ok\",\n    \"topConfidence\": 0.7419\n  },\n  \"count\": 5,\n  \"results\": [\n    {\n      \"ref\": \"395800353c68\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.AbilitySystemBlueprintLibrary.GetGameplayEffectGrantedTags\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.AbilitySystemBlueprintLibrary\",\n      \"signature\": \"static GetGameplayEffectGrantedTags(EffectClass: $Nullable<UE.Class>) : UE.GameplayTagContainer;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7419,\n      \"summary\": \"Returns all tags that the Gameplay Effect grants to the target Actor\",\n      \"source\": \"Plugin/GameplayAbilities\",\n      \"why\": [\n        \"rewrite: Schedule a timer to end a frozen state after a short duration using Timer.SetTimer.\",\n        \"name: effect, gameplay\",\n        \"doc: actor, effect, gameplay\",\n        \"facets: damage_state/bm25, damage_state/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"cf7c412cc625\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetSystemLibrary.K2_SetTimerForNextTickDelegate\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetSystemLibrary\",\n      \"signature\": \"static K2_SetTimerForNextTickDelegate(Delegate: $Delegate<() => void>) : UE.TimerHandle;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7389,\n      \"summary\": \"Set a timer to execute a delegate next tick.\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Schedule a timer to end a frozen state after a short duration using Timer.SetTimer.\",\n        \"name: set, timer\",\n        \"doc: set, timer\",\n        \"params: function\",\n        \"facets: activation_trigger/bm25, activation_trigger/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"87417ce50473\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.Pawn.GetMovementBaseActor\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.Pawn\",\n      \"signature\": \"static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;\",\n      \"score\": 95.0,\n      \"confidence\": 0.7445,\n      \"summary\": \"Gets the owning actor of the Movement Base Component on which the pawn is standing.\",\n      \"source\": \"Engine/GameFramework\",\n      \"why\": [\n        \"rewrite: Schedule a timer to end a frozen state after a short duration using Timer.SetTimer.\",\n        \"name: actor, pawn\",\n        \"doc: actor, component, pawn\",\n        \"facets: carrier_context/bm25, carrier_context/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"002846a84bf1\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.AbilitySystemBlueprintLibrary.GetEffectContext\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.AbilitySystemBlueprintLibrary\",\n      \"signature\": \"static GetEffectContext(SpecHandle: UE.GameplayEffectSpecHandle) : UE.GameplayEffectContextHandle;\",\n      \"score\": 89.3565,\n      \"confidence\": 0.7405,\n      \"summary\": \"Gets the GameplayEffectSpec's effect context handle\",\n      \"source\": \"Plugin/GameplayAbilities\",\n      \"why\": [\n        \"rewrite: Schedule a timer to end a frozen state after a short duration using Timer.SetTimer.\",\n        \"name: effect\",\n        \"doc: effect, gameplay, handle\",\n        \"facets: damage_state/bm25, damage_state/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"9a8142d86b6e\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetSystemLibrary.K2_ClearTimerHandle\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetSystemLibrary\",\n      \"signature\": \"static K2_ClearTimerHandle(WorldContextObject: $Nullable<UE.Object>, Handle: UE.TimerHandle) : void;\",\n      \"score\": 91.1954,\n      \"confidence\": 0.7361,\n      \"summary\": \"Clears a set timer.\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Schedule a timer to end a frozen state after a short duration using Timer.SetTimer.\",\n        \"name: handle, timer\",\n        \"doc: set, timer\",\n        \"params: handle, timer\",\n        \"facets: activation_trigger/bm25, activation_trigger/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    }\n  ],\n  \"profile\": {\n    \"load\": 0.7648,\n    \"rewrite\": 9.0589,\n    \"embed\": 0.172,\n    \"bm25\": 0.0855,\n    \"vector\": 0.1905,\n    \"score\": 0.0703,\n    \"select\": 0.0002,\n    \"total\": 10.1083\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "status": "ok",
+        "mode": "semantic",
+        "query": "Unreal Engine PuerTS gameplay API for timer.set_timer; exact symbol hints: Timer.SetTimer, TimerSetTimer, timer set timer. Intent: Schedule the frozen state to end after the short duration.",
+        "searchText": "character pawn actor actor component Timer SetTimer timer handle delay timer schedule function frozen state status effect gameplay effect condition tag",
+        "rewrite": {
+          "status": "rewritten",
+          "domainStatus": "ue_relevant",
+          "intentSummary": "Schedule a timer to end a frozen state after a short duration using Timer.SetTimer.",
+          "warnings": [],
+          "activeSubqueries": [
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The gameplay object that owns the frozen state and timer.",
+              "subqueryId": "carrier_context_1",
+              "text": "character pawn actor actor component",
+              "weight": 1.0,
+              "subqueryWeight": 1.0
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "Timer scheduling mechanism to trigger the end of the frozen state.",
+              "subqueryId": "activation_trigger_1",
+              "text": "Timer SetTimer timer handle",
+              "weight": 0.6,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "Timer scheduling mechanism to trigger the end of the frozen state.",
+              "subqueryId": "activation_trigger_2",
+              "text": "delay timer schedule function",
+              "weight": 0.4,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "damage_state",
+              "facetStatus": "required",
+              "facetIntent": "The frozen state that ends when the timer fires.",
+              "subqueryId": "damage_state_1",
+              "text": "frozen state status effect",
+              "weight": 0.6,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "damage_state",
+              "facetStatus": "required",
+              "facetIntent": "The frozen state that ends when the timer fires.",
+              "subqueryId": "damage_state_2",
+              "text": "gameplay effect condition tag",
+              "weight": 0.4,
+              "subqueryWeight": 0.4
+            }
+          ]
+        },
+        "embedding": {
+          "enabled": true,
+          "provider": "ollama",
+          "model": "bge-m3",
+          "dimensions": 1024,
+          "indexedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "status": "ready"
+        },
+        "partitions": {
+          "enabled": true,
+          "classifierEnabled": true,
+          "provider": "aaa",
+          "binaryAvailable": true,
+          "timeoutMs": 90000,
+          "candidateCount": 20361,
+          "processedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "validAssignmentCount": 14733,
+          "partitionedEntryCount": 12532,
+          "partitionedEntryRatio": 0.6155,
+          "searchReady": true,
+          "byFacet": {
+            "activation_trigger": 241,
+            "ai_behavior": 948,
+            "animation": 1856,
+            "audio": 704,
+            "camera_feedback_ui": 1336,
+            "carrier_context": 1362,
+            "damage_state": 548,
+            "integration_event": 1069,
+            "level_world": 342,
+            "lighting": 134,
+            "material_visual_state": 1065,
+            "mesh_geometry": 1545,
+            "movement_navigation": 256,
+            "networking_authority": 414,
+            "persistence_assets": 612,
+            "physics": 666,
+            "spatial_targeting": 466,
+            "spawn_lifecycle": 117,
+            "visual_effects": 1052
+          },
+          "status": "ready",
+          "searchScoped": true
+        },
+        "filters": {},
+        "confidence": {
+          "minConfidence": 0.55,
+          "status": "ok",
+          "topConfidence": 0.7419
+        },
+        "count": 5,
+        "results": [
+          {
+            "ref": "395800353c68",
+            "entryType": "static_function",
+            "symbol": "UE.AbilitySystemBlueprintLibrary.GetGameplayEffectGrantedTags",
+            "kind": "method",
+            "owner": "UE.AbilitySystemBlueprintLibrary",
+            "signature": "static GetGameplayEffectGrantedTags(EffectClass: $Nullable<UE.Class>) : UE.GameplayTagContainer;",
+            "score": 93.0,
+            "confidence": 0.7419,
+            "summary": "Returns all tags that the Gameplay Effect grants to the target Actor",
+            "source": "Plugin/GameplayAbilities",
+            "why": [
+              "rewrite: Schedule a timer to end a frozen state after a short duration using Timer.SetTimer.",
+              "name: effect, gameplay",
+              "doc: actor, effect, gameplay",
+              "facets: damage_state/bm25, damage_state/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "cf7c412cc625",
+            "entryType": "static_function",
+            "symbol": "UE.KismetSystemLibrary.K2_SetTimerForNextTickDelegate",
+            "kind": "method",
+            "owner": "UE.KismetSystemLibrary",
+            "signature": "static K2_SetTimerForNextTickDelegate(Delegate: $Delegate<() => void>) : UE.TimerHandle;",
+            "score": 93.0,
+            "confidence": 0.7389,
+            "summary": "Set a timer to execute a delegate next tick.",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Schedule a timer to end a frozen state after a short duration using Timer.SetTimer.",
+              "name: set, timer",
+              "doc: set, timer",
+              "params: function",
+              "facets: activation_trigger/bm25, activation_trigger/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "87417ce50473",
+            "entryType": "static_function",
+            "symbol": "UE.Pawn.GetMovementBaseActor",
+            "kind": "method",
+            "owner": "UE.Pawn",
+            "signature": "static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;",
+            "score": 95.0,
+            "confidence": 0.7445,
+            "summary": "Gets the owning actor of the Movement Base Component on which the pawn is standing.",
+            "source": "Engine/GameFramework",
+            "why": [
+              "rewrite: Schedule a timer to end a frozen state after a short duration using Timer.SetTimer.",
+              "name: actor, pawn",
+              "doc: actor, component, pawn",
+              "facets: carrier_context/bm25, carrier_context/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "002846a84bf1",
+            "entryType": "static_function",
+            "symbol": "UE.AbilitySystemBlueprintLibrary.GetEffectContext",
+            "kind": "method",
+            "owner": "UE.AbilitySystemBlueprintLibrary",
+            "signature": "static GetEffectContext(SpecHandle: UE.GameplayEffectSpecHandle) : UE.GameplayEffectContextHandle;",
+            "score": 89.3565,
+            "confidence": 0.7405,
+            "summary": "Gets the GameplayEffectSpec's effect context handle",
+            "source": "Plugin/GameplayAbilities",
+            "why": [
+              "rewrite: Schedule a timer to end a frozen state after a short duration using Timer.SetTimer.",
+              "name: effect",
+              "doc: effect, gameplay, handle",
+              "facets: damage_state/bm25, damage_state/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "9a8142d86b6e",
+            "entryType": "static_function",
+            "symbol": "UE.KismetSystemLibrary.K2_ClearTimerHandle",
+            "kind": "method",
+            "owner": "UE.KismetSystemLibrary",
+            "signature": "static K2_ClearTimerHandle(WorldContextObject: $Nullable<UE.Object>, Handle: UE.TimerHandle) : void;",
+            "score": 91.1954,
+            "confidence": 0.7361,
+            "summary": "Clears a set timer.",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Schedule a timer to end a frozen state after a short duration using Timer.SetTimer.",
+              "name: handle, timer",
+              "doc: set, timer",
+              "params: handle, timer",
+              "facets: activation_trigger/bm25, activation_trigger/vector",
+              "static function result",
+              "vector recall"
+            ]
+          }
+        ],
+        "profile": {
+          "load": 0.7648,
+          "rewrite": 9.0589,
+          "embed": 0.172,
+          "bm25": 0.0855,
+          "vector": 0.1905,
+          "score": 0.0703,
+          "select": 0.0002,
+          "total": 10.1083
+        }
+      },
+      "isError": false
+    },
+    "payload": {
+      "status": "ok",
+      "mode": "semantic",
+      "query": "Unreal Engine PuerTS gameplay API for timer.set_timer; exact symbol hints: Timer.SetTimer, TimerSetTimer, timer set timer. Intent: Schedule the frozen state to end after the short duration.",
+      "searchText": "character pawn actor actor component Timer SetTimer timer handle delay timer schedule function frozen state status effect gameplay effect condition tag",
+      "rewrite": {
+        "status": "rewritten",
+        "domainStatus": "ue_relevant",
+        "intentSummary": "Schedule a timer to end a frozen state after a short duration using Timer.SetTimer.",
+        "warnings": [],
+        "activeSubqueries": [
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The gameplay object that owns the frozen state and timer.",
+            "subqueryId": "carrier_context_1",
+            "text": "character pawn actor actor component",
+            "weight": 1.0,
+            "subqueryWeight": 1.0
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "Timer scheduling mechanism to trigger the end of the frozen state.",
+            "subqueryId": "activation_trigger_1",
+            "text": "Timer SetTimer timer handle",
+            "weight": 0.6,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "Timer scheduling mechanism to trigger the end of the frozen state.",
+            "subqueryId": "activation_trigger_2",
+            "text": "delay timer schedule function",
+            "weight": 0.4,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "damage_state",
+            "facetStatus": "required",
+            "facetIntent": "The frozen state that ends when the timer fires.",
+            "subqueryId": "damage_state_1",
+            "text": "frozen state status effect",
+            "weight": 0.6,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "damage_state",
+            "facetStatus": "required",
+            "facetIntent": "The frozen state that ends when the timer fires.",
+            "subqueryId": "damage_state_2",
+            "text": "gameplay effect condition tag",
+            "weight": 0.4,
+            "subqueryWeight": 0.4
+          }
+        ]
+      },
+      "embedding": {
+        "enabled": true,
+        "provider": "ollama",
+        "model": "bge-m3",
+        "dimensions": 1024,
+        "indexedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "status": "ready"
+      },
+      "partitions": {
+        "enabled": true,
+        "classifierEnabled": true,
+        "provider": "aaa",
+        "binaryAvailable": true,
+        "timeoutMs": 90000,
+        "candidateCount": 20361,
+        "processedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "validAssignmentCount": 14733,
+        "partitionedEntryCount": 12532,
+        "partitionedEntryRatio": 0.6155,
+        "searchReady": true,
+        "byFacet": {
+          "activation_trigger": 241,
+          "ai_behavior": 948,
+          "animation": 1856,
+          "audio": 704,
+          "camera_feedback_ui": 1336,
+          "carrier_context": 1362,
+          "damage_state": 548,
+          "integration_event": 1069,
+          "level_world": 342,
+          "lighting": 134,
+          "material_visual_state": 1065,
+          "mesh_geometry": 1545,
+          "movement_navigation": 256,
+          "networking_authority": 414,
+          "persistence_assets": 612,
+          "physics": 666,
+          "spatial_targeting": 466,
+          "spawn_lifecycle": 117,
+          "visual_effects": 1052
+        },
+        "status": "ready",
+        "searchScoped": true
+      },
+      "filters": {},
+      "confidence": {
+        "minConfidence": 0.55,
+        "status": "ok",
+        "topConfidence": 0.7419
+      },
+      "count": 5,
+      "results": [
+        {
+          "ref": "395800353c68",
+          "entryType": "static_function",
+          "symbol": "UE.AbilitySystemBlueprintLibrary.GetGameplayEffectGrantedTags",
+          "kind": "method",
+          "owner": "UE.AbilitySystemBlueprintLibrary",
+          "signature": "static GetGameplayEffectGrantedTags(EffectClass: $Nullable<UE.Class>) : UE.GameplayTagContainer;",
+          "score": 93.0,
+          "confidence": 0.7419,
+          "summary": "Returns all tags that the Gameplay Effect grants to the target Actor",
+          "source": "Plugin/GameplayAbilities",
+          "why": [
+            "rewrite: Schedule a timer to end a frozen state after a short duration using Timer.SetTimer.",
+            "name: effect, gameplay",
+            "doc: actor, effect, gameplay",
+            "facets: damage_state/bm25, damage_state/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "cf7c412cc625",
+          "entryType": "static_function",
+          "symbol": "UE.KismetSystemLibrary.K2_SetTimerForNextTickDelegate",
+          "kind": "method",
+          "owner": "UE.KismetSystemLibrary",
+          "signature": "static K2_SetTimerForNextTickDelegate(Delegate: $Delegate<() => void>) : UE.TimerHandle;",
+          "score": 93.0,
+          "confidence": 0.7389,
+          "summary": "Set a timer to execute a delegate next tick.",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Schedule a timer to end a frozen state after a short duration using Timer.SetTimer.",
+            "name: set, timer",
+            "doc: set, timer",
+            "params: function",
+            "facets: activation_trigger/bm25, activation_trigger/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "87417ce50473",
+          "entryType": "static_function",
+          "symbol": "UE.Pawn.GetMovementBaseActor",
+          "kind": "method",
+          "owner": "UE.Pawn",
+          "signature": "static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;",
+          "score": 95.0,
+          "confidence": 0.7445,
+          "summary": "Gets the owning actor of the Movement Base Component on which the pawn is standing.",
+          "source": "Engine/GameFramework",
+          "why": [
+            "rewrite: Schedule a timer to end a frozen state after a short duration using Timer.SetTimer.",
+            "name: actor, pawn",
+            "doc: actor, component, pawn",
+            "facets: carrier_context/bm25, carrier_context/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "002846a84bf1",
+          "entryType": "static_function",
+          "symbol": "UE.AbilitySystemBlueprintLibrary.GetEffectContext",
+          "kind": "method",
+          "owner": "UE.AbilitySystemBlueprintLibrary",
+          "signature": "static GetEffectContext(SpecHandle: UE.GameplayEffectSpecHandle) : UE.GameplayEffectContextHandle;",
+          "score": 89.3565,
+          "confidence": 0.7405,
+          "summary": "Gets the GameplayEffectSpec's effect context handle",
+          "source": "Plugin/GameplayAbilities",
+          "why": [
+            "rewrite: Schedule a timer to end a frozen state after a short duration using Timer.SetTimer.",
+            "name: effect",
+            "doc: effect, gameplay, handle",
+            "facets: damage_state/bm25, damage_state/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "9a8142d86b6e",
+          "entryType": "static_function",
+          "symbol": "UE.KismetSystemLibrary.K2_ClearTimerHandle",
+          "kind": "method",
+          "owner": "UE.KismetSystemLibrary",
+          "signature": "static K2_ClearTimerHandle(WorldContextObject: $Nullable<UE.Object>, Handle: UE.TimerHandle) : void;",
+          "score": 91.1954,
+          "confidence": 0.7361,
+          "summary": "Clears a set timer.",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Schedule a timer to end a frozen state after a short duration using Timer.SetTimer.",
+            "name: handle, timer",
+            "doc: set, timer",
+            "params: handle, timer",
+            "facets: activation_trigger/bm25, activation_trigger/vector",
+            "static function result",
+            "vector recall"
+          ]
+        }
+      ],
+      "profile": {
+        "load": 0.7648,
+        "rewrite": 9.0589,
+        "embed": 0.172,
+        "bm25": 0.0855,
+        "vector": 0.1905,
+        "score": 0.0703,
+        "select": 0.0002,
+        "total": 10.1083
+      }
+    }
+  }
+}

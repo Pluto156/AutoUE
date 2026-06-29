@@ -1,0 +1,76 @@
+{
+  "result": "pass",
+  "root": "D:\\ClaudeTasks\\active\\autoue-puerts-workflow-adaptation\\repo\\AutoUE\\data\\output-smoke\\demo_1",
+  "contract": {
+    "enabled": true,
+    "runner": "tools/run_runtime_validation.py",
+    "validator": "tools/validate_runtime_results.py",
+    "summary_path": "runtime/runtime-summary.json",
+    "log_path": "runtime/runtime-log.jsonl",
+    "supported_drivers": [
+      "adapter_call"
+    ],
+    "supported_expected_types": [
+      "static_trace_present"
+    ],
+    "supported_static_trace_keys": [
+      "ability_module_export",
+      "engine_ports_mapped",
+      "interactive_adapter_export"
+    ],
+    "launches_ue_editor": false,
+    "launches_pie": false,
+    "injects_player_input": false
+  },
+  "instruction_count": 1,
+  "steps": [
+    {
+      "step_id": 1,
+      "action": "attack",
+      "target": "Enemy",
+      "driver": "adapter_call",
+      "status": "pass",
+      "checks": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "evidence": {
+    "runtime_mapping_paths": [
+      "flow/05-puerts-runtime-mapping.json"
+    ],
+    "adjudication_paths": [
+      "flow/04-ue-api-mcp/adjudication/damage.apply.json",
+      "flow/04-ue-api-mcp/adjudication/input.action_binding.json"
+    ],
+    "ts_files": [
+      "TypeScript/content/generated/SmokeGame.ts",
+      "TypeScript/content/generated/interactive/SmokeInteractable.ts"
+    ],
+    "engine_port_ids": [
+      "damage.apply",
+      "input.action_binding"
+    ]
+  },
+  "notes": [
+    "Phase3 runtime validation is a Python static adapter_call harness only.",
+    "It does not launch UE Editor, does not launch PIE, and does not inject real player input."
+  ],
+  "summary_path": "D:\\ClaudeTasks\\active\\autoue-puerts-workflow-adaptation\\repo\\AutoUE\\data\\output-smoke\\demo_1\\runtime\\runtime-summary.json",
+  "log_path": "D:\\ClaudeTasks\\active\\autoue-puerts-workflow-adaptation\\repo\\AutoUE\\data\\output-smoke\\demo_1\\runtime\\runtime-log.jsonl"
+}

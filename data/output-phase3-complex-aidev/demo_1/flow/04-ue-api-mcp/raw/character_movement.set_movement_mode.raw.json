@@ -1,0 +1,569 @@
+{
+  "engine_port_id": "character_movement.set_movement_mode",
+  "flow_ids": [
+    "flow.player.frozen_state.thaw"
+  ],
+  "behavior_ids": [
+    "player.frozen_state.thaw"
+  ],
+  "contracts": [
+    "Restore normal movement capability after thawing."
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for character_movement.set_movement_mode; exact symbol hints: Character.MovementSetMovementMode, CharacterMovementSetMovementMode, character movement set movement mode. Intent: Restore normal movement capability after thawing.",
+  "raw_path": "flow/04-ue-api-mcp/raw/character_movement.set_movement_mode.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/character_movement.set_movement_mode.json",
+  "raw_result": {
+    "tool": "ue_api_semantic_search",
+    "query": "Unreal Engine PuerTS gameplay API for character_movement.set_movement_mode; exact symbol hints: Character.MovementSetMovementMode, CharacterMovementSetMovementMode, character movement set movement mode. Intent: Restore normal movement capability after thawing.",
+    "limit": 5,
+    "raw_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"ok\",\n  \"mode\": \"semantic\",\n  \"query\": \"Unreal Engine PuerTS gameplay API for character_movement.set_movement_mode; exact symbol hints: Character.MovementSetMovementMode, CharacterMovementSetMovementMode, character movement set movement mode. Intent: Restore normal movement capability after thawing.\",\n  \"searchText\": \"character movement component pawn set movement mode walking character movement set movement mode function thaw unfreeze event restore movement\",\n  \"rewrite\": {\n    \"status\": \"rewritten\",\n    \"domainStatus\": \"ue_relevant\",\n    \"intentSummary\": \"Restore normal movement capability on a character after thawing by setting the movement mode.\",\n    \"warnings\": [],\n    \"activeSubqueries\": [\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The object that owns the movement component.\",\n        \"subqueryId\": \"carrier_context_1\",\n        \"text\": \"character movement component pawn\",\n        \"weight\": 1.0,\n        \"subqueryWeight\": 1.0\n      },\n      {\n        \"facetId\": \"movement_navigation\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"Set movement mode to restore normal movement.\",\n        \"subqueryId\": \"movement_navigation_1\",\n        \"text\": \"set movement mode walking\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"movement_navigation\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"Set movement mode to restore normal movement.\",\n        \"subqueryId\": \"movement_navigation_2\",\n        \"text\": \"character movement set movement mode function\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"Trigger that fires when thaw completes.\",\n        \"subqueryId\": \"activation_trigger_1\",\n        \"text\": \"thaw unfreeze event restore movement\",\n        \"weight\": 1.0,\n        \"subqueryWeight\": 1.0\n      }\n    ]\n  },\n  \"embedding\": {\n    \"enabled\": true,\n    \"provider\": \"ollama\",\n    \"model\": \"bge-m3\",\n    \"dimensions\": 1024,\n    \"indexedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"status\": \"ready\"\n  },\n  \"partitions\": {\n    \"enabled\": true,\n    \"classifierEnabled\": true,\n    \"provider\": \"aaa\",\n    \"binaryAvailable\": true,\n    \"timeoutMs\": 90000,\n    \"candidateCount\": 20361,\n    \"processedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"validAssignmentCount\": 14733,\n    \"partitionedEntryCount\": 12532,\n    \"partitionedEntryRatio\": 0.6155,\n    \"searchReady\": true,\n    \"byFacet\": {\n      \"activation_trigger\": 241,\n      \"ai_behavior\": 948,\n      \"animation\": 1856,\n      \"audio\": 704,\n      \"camera_feedback_ui\": 1336,\n      \"carrier_context\": 1362,\n      \"damage_state\": 548,\n      \"integration_event\": 1069,\n      \"level_world\": 342,\n      \"lighting\": 134,\n      \"material_visual_state\": 1065,\n      \"mesh_geometry\": 1545,\n      \"movement_navigation\": 256,\n      \"networking_authority\": 414,\n      \"persistence_assets\": 612,\n      \"physics\": 666,\n      \"spatial_targeting\": 466,\n      \"spawn_lifecycle\": 117,\n      \"visual_effects\": 1052\n    },\n    \"status\": \"ready\",\n    \"searchScoped\": true\n  },\n  \"filters\": {},\n  \"confidence\": {\n    \"minConfidence\": 0.55,\n    \"status\": \"ok\",\n    \"topConfidence\": 0.7324\n  },\n  \"count\": 5,\n  \"results\": [\n    {\n      \"ref\": \"b62b8a9d0bcc\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.NavMovementComponent\",\n      \"kind\": \"class\",\n      \"score\": 92.2031,\n      \"confidence\": 0.7324,\n      \"extends\": \"UE.MovementComponent\",\n      \"source\": \"Engine/GameFramework\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"13c0984f8be0\",\n          \"symbol\": \"UE.NavMovementComponent.IsMovingOnGround\",\n          \"kind\": \"method\",\n          \"signature\": \"IsMovingOnGround() : boolean;\",\n          \"summary\": \"Returns true if currently moving on the ground (e.g. walking or driving)\"\n        },\n        {\n          \"ref\": \"bb0f462aa74a\",\n          \"symbol\": \"UE.NavMovementComponent.FixedPathBrakingDistance\",\n          \"kind\": \"property\",\n          \"signature\": \"FixedPathBrakingDistance: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"2db533ee69aa\",\n          \"symbol\": \"UE.NavMovementComponent.GetMaxSpeedForNavMovement\",\n          \"kind\": \"method\",\n          \"signature\": \"GetMaxSpeedForNavMovement() : number;\",\n          \"summary\": \"Get maximum movement speed of the agent\"\n        },\n        {\n          \"ref\": \"5cd64b323006\",\n          \"symbol\": \"UE.NavMovementComponent.GetVelocityForNavMovement\",\n          \"kind\": \"method\",\n          \"signature\": \"GetVelocityForNavMovement() : UE.Vector;\",\n          \"summary\": \"Get the current velocity of the movement component\"\n        },\n        {\n          \"ref\": \"7499a70db863\",\n          \"symbol\": \"UE.NavMovementComponent.IsCrouching\",\n          \"kind\": \"method\",\n          \"signature\": \"IsCrouching() : boolean;\",\n          \"summary\": \"Returns true if currently crouching\"\n        },\n        {\n          \"ref\": \"129c0433d72d\",\n          \"symbol\": \"UE.NavMovementComponent.IsFalling\",\n          \"kind\": \"method\",\n          \"signature\": \"IsFalling() : boolean;\",\n          \"summary\": \"Returns true if currently falling (not flying, in a non-fluid volume, and not on the ground)\"\n        },\n        {\n          \"ref\": \"e0f391571cd9\",\n          \"symbol\": \"UE.NavMovementComponent.IsFlying\",\n          \"kind\": \"method\",\n          \"signature\": \"IsFlying() : boolean;\",\n          \"summary\": \"Returns true if currently flying (moving through a non-fluid volume without resting on the ground)\"\n        },\n        {\n          \"ref\": \"c75d82986398\",\n          \"symbol\": \"UE.NavMovementComponent.IsSwimming\",\n          \"kind\": \"method\",\n          \"signature\": \"IsSwimming() : boolean;\",\n          \"summary\": \"Returns true if currently swimming (moving through a fluid volume)\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Restore normal movement capability on a character after thawing by setting the movement mode.\",\n        \"name: component, movement\",\n        \"members: IsMovingOnGround, FixedPathBrakingDistance, GetMaxSpeedForNavMovement, GetVelocityForNavMovement\",\n        \"facets: movement_navigation/bm25, movement_navigation/vector\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"338a158893c8\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetInputLibrary.PointerEvent_IsTouchEvent\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetInputLibrary\",\n      \"signature\": \"static PointerEvent_IsTouchEvent(Input: UE.PointerEvent) : boolean;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7366,\n      \"summary\": \"Returns true if this event a result from a touch (as opposed to a mouse)\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Restore normal movement capability on a character after thawing by setting the movement mode.\",\n        \"name: event\",\n        \"doc: event\",\n        \"facets: activation_trigger/bm25, activation_trigger/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"87417ce50473\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.Pawn.GetMovementBaseActor\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.Pawn\",\n      \"signature\": \"static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;\",\n      \"score\": 95.0,\n      \"confidence\": 0.7533,\n      \"summary\": \"Gets the owning actor of the Movement Base Component on which the pawn is standing.\",\n      \"source\": \"Engine/GameFramework\",\n      \"why\": [\n        \"rewrite: Restore normal movement capability on a character after thawing by setting the movement mode.\",\n        \"name: movement, pawn\",\n        \"doc: component, movement, pawn\",\n        \"facets: carrier_context/bm25, carrier_context/vector, movement_navigation/bm25, movement_navigation/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"efa17e99fe67\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.SceneComponent.IsGroupedComponentMovementEnabled\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.SceneComponent\",\n      \"signature\": \"static IsGroupedComponentMovementEnabled() : boolean;\",\n      \"score\": 90.101,\n      \"confidence\": 0.7362,\n      \"source\": \"Engine/Components\",\n      \"why\": [\n        \"rewrite: Restore normal movement capability on a character after thawing by setting the movement mode.\",\n        \"name: component, movement\",\n        \"facets: movement_navigation/bm25, movement_navigation/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"4a500b9bbf00\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetInputLibrary.PointerEvent_GetWheelDelta\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetInputLibrary\",\n      \"signature\": \"static PointerEvent_GetWheelDelta(Input: UE.PointerEvent) : number;\",\n      \"score\": 92.6023,\n      \"confidence\": 0.738,\n      \"summary\": \"How much did the mouse wheel turn since the last mouse event\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Restore normal movement capability on a character after thawing by setting the movement mode.\",\n        \"name: event\",\n        \"doc: event\",\n        \"facets: activation_trigger/bm25, activation_trigger/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    }\n  ],\n  \"profile\": {\n    \"load\": 0.7532,\n    \"rewrite\": 5.6874,\n    \"embed\": 0.1425,\n    \"bm25\": 0.0728,\n    \"vector\": 0.1501,\n    \"score\": 0.1115,\n    \"select\": 0.0001,\n    \"total\": 6.6559\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "status": "ok",
+        "mode": "semantic",
+        "query": "Unreal Engine PuerTS gameplay API for character_movement.set_movement_mode; exact symbol hints: Character.MovementSetMovementMode, CharacterMovementSetMovementMode, character movement set movement mode. Intent: Restore normal movement capability after thawing.",
+        "searchText": "character movement component pawn set movement mode walking character movement set movement mode function thaw unfreeze event restore movement",
+        "rewrite": {
+          "status": "rewritten",
+          "domainStatus": "ue_relevant",
+          "intentSummary": "Restore normal movement capability on a character after thawing by setting the movement mode.",
+          "warnings": [],
+          "activeSubqueries": [
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The object that owns the movement component.",
+              "subqueryId": "carrier_context_1",
+              "text": "character movement component pawn",
+              "weight": 1.0,
+              "subqueryWeight": 1.0
+            },
+            {
+              "facetId": "movement_navigation",
+              "facetStatus": "required",
+              "facetIntent": "Set movement mode to restore normal movement.",
+              "subqueryId": "movement_navigation_1",
+              "text": "set movement mode walking",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "movement_navigation",
+              "facetStatus": "required",
+              "facetIntent": "Set movement mode to restore normal movement.",
+              "subqueryId": "movement_navigation_2",
+              "text": "character movement set movement mode function",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "Trigger that fires when thaw completes.",
+              "subqueryId": "activation_trigger_1",
+              "text": "thaw unfreeze event restore movement",
+              "weight": 1.0,
+              "subqueryWeight": 1.0
+            }
+          ]
+        },
+        "embedding": {
+          "enabled": true,
+          "provider": "ollama",
+          "model": "bge-m3",
+          "dimensions": 1024,
+          "indexedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "status": "ready"
+        },
+        "partitions": {
+          "enabled": true,
+          "classifierEnabled": true,
+          "provider": "aaa",
+          "binaryAvailable": true,
+          "timeoutMs": 90000,
+          "candidateCount": 20361,
+          "processedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "validAssignmentCount": 14733,
+          "partitionedEntryCount": 12532,
+          "partitionedEntryRatio": 0.6155,
+          "searchReady": true,
+          "byFacet": {
+            "activation_trigger": 241,
+            "ai_behavior": 948,
+            "animation": 1856,
+            "audio": 704,
+            "camera_feedback_ui": 1336,
+            "carrier_context": 1362,
+            "damage_state": 548,
+            "integration_event": 1069,
+            "level_world": 342,
+            "lighting": 134,
+            "material_visual_state": 1065,
+            "mesh_geometry": 1545,
+            "movement_navigation": 256,
+            "networking_authority": 414,
+            "persistence_assets": 612,
+            "physics": 666,
+            "spatial_targeting": 466,
+            "spawn_lifecycle": 117,
+            "visual_effects": 1052
+          },
+          "status": "ready",
+          "searchScoped": true
+        },
+        "filters": {},
+        "confidence": {
+          "minConfidence": 0.55,
+          "status": "ok",
+          "topConfidence": 0.7324
+        },
+        "count": 5,
+        "results": [
+          {
+            "ref": "b62b8a9d0bcc",
+            "entryType": "type",
+            "symbol": "UE.NavMovementComponent",
+            "kind": "class",
+            "score": 92.2031,
+            "confidence": 0.7324,
+            "extends": "UE.MovementComponent",
+            "source": "Engine/GameFramework",
+            "matchedMembers": [
+              {
+                "ref": "13c0984f8be0",
+                "symbol": "UE.NavMovementComponent.IsMovingOnGround",
+                "kind": "method",
+                "signature": "IsMovingOnGround() : boolean;",
+                "summary": "Returns true if currently moving on the ground (e.g. walking or driving)"
+              },
+              {
+                "ref": "bb0f462aa74a",
+                "symbol": "UE.NavMovementComponent.FixedPathBrakingDistance",
+                "kind": "property",
+                "signature": "FixedPathBrakingDistance: number;",
+                "summary": ""
+              },
+              {
+                "ref": "2db533ee69aa",
+                "symbol": "UE.NavMovementComponent.GetMaxSpeedForNavMovement",
+                "kind": "method",
+                "signature": "GetMaxSpeedForNavMovement() : number;",
+                "summary": "Get maximum movement speed of the agent"
+              },
+              {
+                "ref": "5cd64b323006",
+                "symbol": "UE.NavMovementComponent.GetVelocityForNavMovement",
+                "kind": "method",
+                "signature": "GetVelocityForNavMovement() : UE.Vector;",
+                "summary": "Get the current velocity of the movement component"
+              },
+              {
+                "ref": "7499a70db863",
+                "symbol": "UE.NavMovementComponent.IsCrouching",
+                "kind": "method",
+                "signature": "IsCrouching() : boolean;",
+                "summary": "Returns true if currently crouching"
+              },
+              {
+                "ref": "129c0433d72d",
+                "symbol": "UE.NavMovementComponent.IsFalling",
+                "kind": "method",
+                "signature": "IsFalling() : boolean;",
+                "summary": "Returns true if currently falling (not flying, in a non-fluid volume, and not on the ground)"
+              },
+              {
+                "ref": "e0f391571cd9",
+                "symbol": "UE.NavMovementComponent.IsFlying",
+                "kind": "method",
+                "signature": "IsFlying() : boolean;",
+                "summary": "Returns true if currently flying (moving through a non-fluid volume without resting on the ground)"
+              },
+              {
+                "ref": "c75d82986398",
+                "symbol": "UE.NavMovementComponent.IsSwimming",
+                "kind": "method",
+                "signature": "IsSwimming() : boolean;",
+                "summary": "Returns true if currently swimming (moving through a fluid volume)"
+              }
+            ],
+            "why": [
+              "rewrite: Restore normal movement capability on a character after thawing by setting the movement mode.",
+              "name: component, movement",
+              "members: IsMovingOnGround, FixedPathBrakingDistance, GetMaxSpeedForNavMovement, GetVelocityForNavMovement",
+              "facets: movement_navigation/bm25, movement_navigation/vector",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "338a158893c8",
+            "entryType": "static_function",
+            "symbol": "UE.KismetInputLibrary.PointerEvent_IsTouchEvent",
+            "kind": "method",
+            "owner": "UE.KismetInputLibrary",
+            "signature": "static PointerEvent_IsTouchEvent(Input: UE.PointerEvent) : boolean;",
+            "score": 93.0,
+            "confidence": 0.7366,
+            "summary": "Returns true if this event a result from a touch (as opposed to a mouse)",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Restore normal movement capability on a character after thawing by setting the movement mode.",
+              "name: event",
+              "doc: event",
+              "facets: activation_trigger/bm25, activation_trigger/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "87417ce50473",
+            "entryType": "static_function",
+            "symbol": "UE.Pawn.GetMovementBaseActor",
+            "kind": "method",
+            "owner": "UE.Pawn",
+            "signature": "static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;",
+            "score": 95.0,
+            "confidence": 0.7533,
+            "summary": "Gets the owning actor of the Movement Base Component on which the pawn is standing.",
+            "source": "Engine/GameFramework",
+            "why": [
+              "rewrite: Restore normal movement capability on a character after thawing by setting the movement mode.",
+              "name: movement, pawn",
+              "doc: component, movement, pawn",
+              "facets: carrier_context/bm25, carrier_context/vector, movement_navigation/bm25, movement_navigation/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "efa17e99fe67",
+            "entryType": "static_function",
+            "symbol": "UE.SceneComponent.IsGroupedComponentMovementEnabled",
+            "kind": "method",
+            "owner": "UE.SceneComponent",
+            "signature": "static IsGroupedComponentMovementEnabled() : boolean;",
+            "score": 90.101,
+            "confidence": 0.7362,
+            "source": "Engine/Components",
+            "why": [
+              "rewrite: Restore normal movement capability on a character after thawing by setting the movement mode.",
+              "name: component, movement",
+              "facets: movement_navigation/bm25, movement_navigation/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "4a500b9bbf00",
+            "entryType": "static_function",
+            "symbol": "UE.KismetInputLibrary.PointerEvent_GetWheelDelta",
+            "kind": "method",
+            "owner": "UE.KismetInputLibrary",
+            "signature": "static PointerEvent_GetWheelDelta(Input: UE.PointerEvent) : number;",
+            "score": 92.6023,
+            "confidence": 0.738,
+            "summary": "How much did the mouse wheel turn since the last mouse event",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Restore normal movement capability on a character after thawing by setting the movement mode.",
+              "name: event",
+              "doc: event",
+              "facets: activation_trigger/bm25, activation_trigger/vector",
+              "static function result",
+              "vector recall"
+            ]
+          }
+        ],
+        "profile": {
+          "load": 0.7532,
+          "rewrite": 5.6874,
+          "embed": 0.1425,
+          "bm25": 0.0728,
+          "vector": 0.1501,
+          "score": 0.1115,
+          "select": 0.0001,
+          "total": 6.6559
+        }
+      },
+      "isError": false
+    },
+    "payload": {
+      "status": "ok",
+      "mode": "semantic",
+      "query": "Unreal Engine PuerTS gameplay API for character_movement.set_movement_mode; exact symbol hints: Character.MovementSetMovementMode, CharacterMovementSetMovementMode, character movement set movement mode. Intent: Restore normal movement capability after thawing.",
+      "searchText": "character movement component pawn set movement mode walking character movement set movement mode function thaw unfreeze event restore movement",
+      "rewrite": {
+        "status": "rewritten",
+        "domainStatus": "ue_relevant",
+        "intentSummary": "Restore normal movement capability on a character after thawing by setting the movement mode.",
+        "warnings": [],
+        "activeSubqueries": [
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The object that owns the movement component.",
+            "subqueryId": "carrier_context_1",
+            "text": "character movement component pawn",
+            "weight": 1.0,
+            "subqueryWeight": 1.0
+          },
+          {
+            "facetId": "movement_navigation",
+            "facetStatus": "required",
+            "facetIntent": "Set movement mode to restore normal movement.",
+            "subqueryId": "movement_navigation_1",
+            "text": "set movement mode walking",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "movement_navigation",
+            "facetStatus": "required",
+            "facetIntent": "Set movement mode to restore normal movement.",
+            "subqueryId": "movement_navigation_2",
+            "text": "character movement set movement mode function",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "Trigger that fires when thaw completes.",
+            "subqueryId": "activation_trigger_1",
+            "text": "thaw unfreeze event restore movement",
+            "weight": 1.0,
+            "subqueryWeight": 1.0
+          }
+        ]
+      },
+      "embedding": {
+        "enabled": true,
+        "provider": "ollama",
+        "model": "bge-m3",
+        "dimensions": 1024,
+        "indexedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "status": "ready"
+      },
+      "partitions": {
+        "enabled": true,
+        "classifierEnabled": true,
+        "provider": "aaa",
+        "binaryAvailable": true,
+        "timeoutMs": 90000,
+        "candidateCount": 20361,
+        "processedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "validAssignmentCount": 14733,
+        "partitionedEntryCount": 12532,
+        "partitionedEntryRatio": 0.6155,
+        "searchReady": true,
+        "byFacet": {
+          "activation_trigger": 241,
+          "ai_behavior": 948,
+          "animation": 1856,
+          "audio": 704,
+          "camera_feedback_ui": 1336,
+          "carrier_context": 1362,
+          "damage_state": 548,
+          "integration_event": 1069,
+          "level_world": 342,
+          "lighting": 134,
+          "material_visual_state": 1065,
+          "mesh_geometry": 1545,
+          "movement_navigation": 256,
+          "networking_authority": 414,
+          "persistence_assets": 612,
+          "physics": 666,
+          "spatial_targeting": 466,
+          "spawn_lifecycle": 117,
+          "visual_effects": 1052
+        },
+        "status": "ready",
+        "searchScoped": true
+      },
+      "filters": {},
+      "confidence": {
+        "minConfidence": 0.55,
+        "status": "ok",
+        "topConfidence": 0.7324
+      },
+      "count": 5,
+      "results": [
+        {
+          "ref": "b62b8a9d0bcc",
+          "entryType": "type",
+          "symbol": "UE.NavMovementComponent",
+          "kind": "class",
+          "score": 92.2031,
+          "confidence": 0.7324,
+          "extends": "UE.MovementComponent",
+          "source": "Engine/GameFramework",
+          "matchedMembers": [
+            {
+              "ref": "13c0984f8be0",
+              "symbol": "UE.NavMovementComponent.IsMovingOnGround",
+              "kind": "method",
+              "signature": "IsMovingOnGround() : boolean;",
+              "summary": "Returns true if currently moving on the ground (e.g. walking or driving)"
+            },
+            {
+              "ref": "bb0f462aa74a",
+              "symbol": "UE.NavMovementComponent.FixedPathBrakingDistance",
+              "kind": "property",
+              "signature": "FixedPathBrakingDistance: number;",
+              "summary": ""
+            },
+            {
+              "ref": "2db533ee69aa",
+              "symbol": "UE.NavMovementComponent.GetMaxSpeedForNavMovement",
+              "kind": "method",
+              "signature": "GetMaxSpeedForNavMovement() : number;",
+              "summary": "Get maximum movement speed of the agent"
+            },
+            {
+              "ref": "5cd64b323006",
+              "symbol": "UE.NavMovementComponent.GetVelocityForNavMovement",
+              "kind": "method",
+              "signature": "GetVelocityForNavMovement() : UE.Vector;",
+              "summary": "Get the current velocity of the movement component"
+            },
+            {
+              "ref": "7499a70db863",
+              "symbol": "UE.NavMovementComponent.IsCrouching",
+              "kind": "method",
+              "signature": "IsCrouching() : boolean;",
+              "summary": "Returns true if currently crouching"
+            },
+            {
+              "ref": "129c0433d72d",
+              "symbol": "UE.NavMovementComponent.IsFalling",
+              "kind": "method",
+              "signature": "IsFalling() : boolean;",
+              "summary": "Returns true if currently falling (not flying, in a non-fluid volume, and not on the ground)"
+            },
+            {
+              "ref": "e0f391571cd9",
+              "symbol": "UE.NavMovementComponent.IsFlying",
+              "kind": "method",
+              "signature": "IsFlying() : boolean;",
+              "summary": "Returns true if currently flying (moving through a non-fluid volume without resting on the ground)"
+            },
+            {
+              "ref": "c75d82986398",
+              "symbol": "UE.NavMovementComponent.IsSwimming",
+              "kind": "method",
+              "signature": "IsSwimming() : boolean;",
+              "summary": "Returns true if currently swimming (moving through a fluid volume)"
+            }
+          ],
+          "why": [
+            "rewrite: Restore normal movement capability on a character after thawing by setting the movement mode.",
+            "name: component, movement",
+            "members: IsMovingOnGround, FixedPathBrakingDistance, GetMaxSpeedForNavMovement, GetVelocityForNavMovement",
+            "facets: movement_navigation/bm25, movement_navigation/vector",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "338a158893c8",
+          "entryType": "static_function",
+          "symbol": "UE.KismetInputLibrary.PointerEvent_IsTouchEvent",
+          "kind": "method",
+          "owner": "UE.KismetInputLibrary",
+          "signature": "static PointerEvent_IsTouchEvent(Input: UE.PointerEvent) : boolean;",
+          "score": 93.0,
+          "confidence": 0.7366,
+          "summary": "Returns true if this event a result from a touch (as opposed to a mouse)",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Restore normal movement capability on a character after thawing by setting the movement mode.",
+            "name: event",
+            "doc: event",
+            "facets: activation_trigger/bm25, activation_trigger/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "87417ce50473",
+          "entryType": "static_function",
+          "symbol": "UE.Pawn.GetMovementBaseActor",
+          "kind": "method",
+          "owner": "UE.Pawn",
+          "signature": "static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;",
+          "score": 95.0,
+          "confidence": 0.7533,
+          "summary": "Gets the owning actor of the Movement Base Component on which the pawn is standing.",
+          "source": "Engine/GameFramework",
+          "why": [
+            "rewrite: Restore normal movement capability on a character after thawing by setting the movement mode.",
+            "name: movement, pawn",
+            "doc: component, movement, pawn",
+            "facets: carrier_context/bm25, carrier_context/vector, movement_navigation/bm25, movement_navigation/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "efa17e99fe67",
+          "entryType": "static_function",
+          "symbol": "UE.SceneComponent.IsGroupedComponentMovementEnabled",
+          "kind": "method",
+          "owner": "UE.SceneComponent",
+          "signature": "static IsGroupedComponentMovementEnabled() : boolean;",
+          "score": 90.101,
+          "confidence": 0.7362,
+          "source": "Engine/Components",
+          "why": [
+            "rewrite: Restore normal movement capability on a character after thawing by setting the movement mode.",
+            "name: component, movement",
+            "facets: movement_navigation/bm25, movement_navigation/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "4a500b9bbf00",
+          "entryType": "static_function",
+          "symbol": "UE.KismetInputLibrary.PointerEvent_GetWheelDelta",
+          "kind": "method",
+          "owner": "UE.KismetInputLibrary",
+          "signature": "static PointerEvent_GetWheelDelta(Input: UE.PointerEvent) : number;",
+          "score": 92.6023,
+          "confidence": 0.738,
+          "summary": "How much did the mouse wheel turn since the last mouse event",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Restore normal movement capability on a character after thawing by setting the movement mode.",
+            "name: event",
+            "doc: event",
+            "facets: activation_trigger/bm25, activation_trigger/vector",
+            "static function result",
+            "vector recall"
+          ]
+        }
+      ],
+      "profile": {
+        "load": 0.7532,
+        "rewrite": 5.6874,
+        "embed": 0.1425,
+        "bm25": 0.0728,
+        "vector": 0.1501,
+        "score": 0.1115,
+        "select": 0.0001,
+        "total": 6.6559
+      }
+    }
+  }
+}

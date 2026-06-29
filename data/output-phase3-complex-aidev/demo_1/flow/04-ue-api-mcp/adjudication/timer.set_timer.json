@@ -1,0 +1,19 @@
+{
+  "engine_port_id": "timer.set_timer",
+  "flow_ids": [
+    "flow.player.frozen_state.become_frozen"
+  ],
+  "behavior_ids": [
+    "player.frozen_state.become_frozen"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for timer.set_timer; exact symbol hints: Timer.SetTimer, TimerSetTimer, timer set timer. Intent: Schedule the frozen state to end after the short duration.",
+  "raw_path": "flow/04-ue-api-mcp/raw/timer.set_timer.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/timer.set_timer.json",
+  "verdict": "hit",
+  "hit_type": "indirect_hit",
+  "evidence_symbols": [
+    "UE.KismetSystemLibrary.K2_SetTimerForNextTickDelegate",
+    "UE.KismetSystemLibrary.K2_ClearTimerHandle"
+  ],
+  "notes": "Kismet timer handle/set/clear evidence supports the timer API path indirectly."
+}

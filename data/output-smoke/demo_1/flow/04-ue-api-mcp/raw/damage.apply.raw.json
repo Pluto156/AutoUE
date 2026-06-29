@@ -9,12 +9,12 @@
   "contracts": [
     "apply damage to enemy"
   ],
-  "query": "Unreal Engine PuerTS gameplay API for damage.apply: apply damage to enemy",
+  "query": "Unreal Engine PuerTS gameplay API for damage.apply; exact symbol hints: Damage.Apply, DamageApply, damage apply. Intent: apply damage to enemy",
   "raw_path": "flow/04-ue-api-mcp/raw/damage.apply.raw.json",
   "adjudication_path": "flow/04-ue-api-mcp/adjudication/damage.apply.json",
   "raw_result": {
     "tool": "ue_api_semantic_search",
-    "query": "Unreal Engine PuerTS gameplay API for damage.apply: apply damage to enemy",
+    "query": "Unreal Engine PuerTS gameplay API for damage.apply; exact symbol hints: Damage.Apply, DamageApply, damage apply. Intent: apply damage to enemy",
     "limit": 5,
     "fixture": true,
     "payload": {

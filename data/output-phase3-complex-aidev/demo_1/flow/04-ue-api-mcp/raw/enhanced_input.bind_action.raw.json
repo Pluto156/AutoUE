@@ -1,0 +1,542 @@
+{
+  "engine_port_id": "enhanced_input.bind_action",
+  "flow_ids": [
+    "flow.player.horizontal_movement.move_left_right",
+    "flow.player.brief_dash.dash_horizontally"
+  ],
+  "behavior_ids": [
+    "player.horizontal_movement.move_left_right",
+    "player.brief_dash.dash_horizontally"
+  ],
+  "contracts": [
+    "Read horizontal movement input only when the player is not frozen.",
+    "Accept dash input only when the player is not frozen."
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for enhanced_input.bind_action; exact symbol hints: Enhanced.InputBindAction, EnhancedInputBindAction, enhanced input bind action. Intent: Read horizontal movement input only when the player is not frozen.",
+  "raw_path": "flow/04-ue-api-mcp/raw/enhanced_input.bind_action.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json",
+  "raw_result": {
+    "tool": "ue_api_semantic_search",
+    "query": "Unreal Engine PuerTS gameplay API for enhanced_input.bind_action; exact symbol hints: Enhanced.InputBindAction, EnhancedInputBindAction, enhanced input bind action. Intent: Read horizontal movement input only when the player is not frozen.",
+    "limit": 5,
+    "raw_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"ok\",\n  \"mode\": \"semantic\",\n  \"query\": \"Unreal Engine PuerTS gameplay API for enhanced_input.bind_action; exact symbol hints: Enhanced.InputBindAction, EnhancedInputBindAction, enhanced input bind action. Intent: Read horizontal movement input only when the player is not frozen.\",\n  \"searchText\": \"character pawn player controller actor component enhanced input owner enhanced input bind action input action bind action horizontal movement axis value gameplay tag frozen boolean condition gameplay effect frozen status check\",\n  \"rewrite\": {\n    \"status\": \"rewritten\",\n    \"domainStatus\": \"ue_relevant\",\n    \"intentSummary\": \"Read Enhanced Input horizontal movement axis binding only when the player is not in a frozen state.\",\n    \"warnings\": [],\n    \"activeSubqueries\": [\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The gameplay object that owns the input binding and frozen state.\",\n        \"subqueryId\": \"carrier_context_1\",\n        \"text\": \"character pawn player controller\",\n        \"weight\": 0.6,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The gameplay object that owns the input binding and frozen state.\",\n        \"subqueryId\": \"carrier_context_2\",\n        \"text\": \"actor component enhanced input owner\",\n        \"weight\": 0.4,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The Enhanced Input binding that reads horizontal movement axis input.\",\n        \"subqueryId\": \"activation_trigger_1\",\n        \"text\": \"enhanced input bind action input action\",\n        \"weight\": 0.6,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The Enhanced Input binding that reads horizontal movement axis input.\",\n        \"subqueryId\": \"activation_trigger_2\",\n        \"text\": \"bind action horizontal movement axis value\",\n        \"weight\": 0.4,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"damage_state\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The frozen state condition that gates input processing.\",\n        \"subqueryId\": \"damage_state_1\",\n        \"text\": \"gameplay tag frozen boolean condition\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"damage_state\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The frozen state condition that gates input processing.\",\n        \"subqueryId\": \"damage_state_2\",\n        \"text\": \"gameplay effect frozen status check\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      }\n    ]\n  },\n  \"embedding\": {\n    \"enabled\": true,\n    \"provider\": \"ollama\",\n    \"model\": \"bge-m3\",\n    \"dimensions\": 1024,\n    \"indexedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"status\": \"ready\"\n  },\n  \"partitions\": {\n    \"enabled\": true,\n    \"classifierEnabled\": true,\n    \"provider\": \"aaa\",\n    \"binaryAvailable\": true,\n    \"timeoutMs\": 90000,\n    \"candidateCount\": 20361,\n    \"processedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"validAssignmentCount\": 14733,\n    \"partitionedEntryCount\": 12532,\n    \"partitionedEntryRatio\": 0.6155,\n    \"searchReady\": true,\n    \"byFacet\": {\n      \"activation_trigger\": 241,\n      \"ai_behavior\": 948,\n      \"animation\": 1856,\n      \"audio\": 704,\n      \"camera_feedback_ui\": 1336,\n      \"carrier_context\": 1362,\n      \"damage_state\": 548,\n      \"integration_event\": 1069,\n      \"level_world\": 342,\n      \"lighting\": 134,\n      \"material_visual_state\": 1065,\n      \"mesh_geometry\": 1545,\n      \"movement_navigation\": 256,\n      \"networking_authority\": 414,\n      \"persistence_assets\": 612,\n      \"physics\": 666,\n      \"spatial_targeting\": 466,\n      \"spawn_lifecycle\": 117,\n      \"visual_effects\": 1052\n    },\n    \"status\": \"ready\",\n    \"searchScoped\": true\n  },\n  \"filters\": {},\n  \"confidence\": {\n    \"minConfidence\": 0.55,\n    \"status\": \"ok\",\n    \"topConfidence\": 0.7363\n  },\n  \"count\": 5,\n  \"results\": [\n    {\n      \"ref\": \"7c75c4183828\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.BlueprintGameplayTagLibrary.IsGameplayTagValid\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.BlueprintGameplayTagLibrary\",\n      \"signature\": \"static IsGameplayTagValid(GameplayTag: UE.GameplayTag) : boolean;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7363,\n      \"summary\": \"Returns true if the passed in gameplay tag is non-null\",\n      \"source\": \"Engine/GameplayTags\",\n      \"why\": [\n        \"rewrite: Read Enhanced Input horizontal movement axis binding only when the player is not in a frozen state.\",\n        \"name: gameplay, tag\",\n        \"doc: gameplay, tag\",\n        \"facets: damage_state/bm25, damage_state/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"14f79f487c9a\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.EnhancedInputLibrary.GetBoundActionValue\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.EnhancedInputLibrary\",\n      \"signature\": \"static GetBoundActionValue(Actor: $Nullable<UE.Actor>, Action: $Nullable<UE.InputAction>) : UE.InputActionValue;\",\n      \"score\": 92.7362,\n      \"confidence\": 0.7404,\n      \"summary\": \"GetInputActionvalue internal accessor function for actions that have been bound to from a UEnhancedInputComponent\",\n      \"source\": \"Plugin/EnhancedInput\",\n      \"why\": [\n        \"rewrite: Read Enhanced Input horizontal movement axis binding only when the player is not in a frozen state.\",\n        \"name: action, enhanced, input, value\",\n        \"doc: component, enhanced, input\",\n        \"facets: activation_trigger/bm25, activation_trigger/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"87417ce50473\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.Pawn.GetMovementBaseActor\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.Pawn\",\n      \"signature\": \"static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;\",\n      \"score\": 95.0,\n      \"confidence\": 0.7426,\n      \"summary\": \"Gets the owning actor of the Movement Base Component on which the pawn is standing.\",\n      \"source\": \"Engine/GameFramework\",\n      \"why\": [\n        \"rewrite: Read Enhanced Input horizontal movement axis binding only when the player is not in a frozen state.\",\n        \"name: actor, movement, pawn\",\n        \"doc: actor, component, movement, pawn\",\n        \"facets: carrier_context/bm25, carrier_context/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"6cf701abc642\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.BlueprintGameplayTagLibrary.HasTag\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.BlueprintGameplayTagLibrary\",\n      \"signature\": \"static HasTag(TagContainer: UE.GameplayTagContainer, Tag: UE.GameplayTag, bExactMatch: boolean) : boolean;\",\n      \"score\": 92.8025,\n      \"confidence\": 0.7394,\n      \"summary\": \"Check if the tag container has the specified tag\",\n      \"source\": \"Engine/GameplayTags\",\n      \"why\": [\n        \"rewrite: Read Enhanced Input horizontal movement axis binding only when the player is not in a frozen state.\",\n        \"name: gameplay, tag\",\n        \"doc: check, tag\",\n        \"params: check, tag\",\n        \"facets: damage_state/bm25, damage_state/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"66b5cb10a44a\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.BlueprintEnhancedInputActionBinding\",\n      \"kind\": \"class\",\n      \"score\": 90.0,\n      \"confidence\": 0.7328,\n      \"source\": \"Plugin/EnhancedInput\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"9b5b60e65821\",\n          \"symbol\": \"UE.BlueprintEnhancedInputActionBinding.FunctionNameToBind\",\n          \"kind\": \"property\",\n          \"signature\": \"FunctionNameToBind: string;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"347fffd2e7b8\",\n          \"symbol\": \"UE.BlueprintEnhancedInputActionBinding.InputAction\",\n          \"kind\": \"property\",\n          \"signature\": \"InputAction: UE.InputAction;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"31d412adde54\",\n          \"symbol\": \"UE.BlueprintEnhancedInputActionBinding.TriggerEvent\",\n          \"kind\": \"property\",\n          \"signature\": \"TriggerEvent: UE.ETriggerEvent;\",\n          \"summary\": \"\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Read Enhanced Input horizontal movement axis binding only when the player is not in a frozen state.\",\n        \"name: action, enhanced, input\",\n        \"members: FunctionNameToBind, InputAction, TriggerEvent\",\n        \"facets: activation_trigger/bm25, activation_trigger/vector\",\n        \"vector recall\"\n      ]\n    }\n  ],\n  \"profile\": {\n    \"load\": 1.4578,\n    \"rewrite\": 11.2955,\n    \"embed\": 0.1909,\n    \"bm25\": 0.5153,\n    \"vector\": 0.4144,\n    \"score\": 0.1188,\n    \"select\": 0.0001,\n    \"total\": 13.8866\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "status": "ok",
+        "mode": "semantic",
+        "query": "Unreal Engine PuerTS gameplay API for enhanced_input.bind_action; exact symbol hints: Enhanced.InputBindAction, EnhancedInputBindAction, enhanced input bind action. Intent: Read horizontal movement input only when the player is not frozen.",
+        "searchText": "character pawn player controller actor component enhanced input owner enhanced input bind action input action bind action horizontal movement axis value gameplay tag frozen boolean condition gameplay effect frozen status check",
+        "rewrite": {
+          "status": "rewritten",
+          "domainStatus": "ue_relevant",
+          "intentSummary": "Read Enhanced Input horizontal movement axis binding only when the player is not in a frozen state.",
+          "warnings": [],
+          "activeSubqueries": [
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The gameplay object that owns the input binding and frozen state.",
+              "subqueryId": "carrier_context_1",
+              "text": "character pawn player controller",
+              "weight": 0.6,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The gameplay object that owns the input binding and frozen state.",
+              "subqueryId": "carrier_context_2",
+              "text": "actor component enhanced input owner",
+              "weight": 0.4,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "The Enhanced Input binding that reads horizontal movement axis input.",
+              "subqueryId": "activation_trigger_1",
+              "text": "enhanced input bind action input action",
+              "weight": 0.6,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "The Enhanced Input binding that reads horizontal movement axis input.",
+              "subqueryId": "activation_trigger_2",
+              "text": "bind action horizontal movement axis value",
+              "weight": 0.4,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "damage_state",
+              "facetStatus": "required",
+              "facetIntent": "The frozen state condition that gates input processing.",
+              "subqueryId": "damage_state_1",
+              "text": "gameplay tag frozen boolean condition",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "damage_state",
+              "facetStatus": "required",
+              "facetIntent": "The frozen state condition that gates input processing.",
+              "subqueryId": "damage_state_2",
+              "text": "gameplay effect frozen status check",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            }
+          ]
+        },
+        "embedding": {
+          "enabled": true,
+          "provider": "ollama",
+          "model": "bge-m3",
+          "dimensions": 1024,
+          "indexedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "status": "ready"
+        },
+        "partitions": {
+          "enabled": true,
+          "classifierEnabled": true,
+          "provider": "aaa",
+          "binaryAvailable": true,
+          "timeoutMs": 90000,
+          "candidateCount": 20361,
+          "processedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "validAssignmentCount": 14733,
+          "partitionedEntryCount": 12532,
+          "partitionedEntryRatio": 0.6155,
+          "searchReady": true,
+          "byFacet": {
+            "activation_trigger": 241,
+            "ai_behavior": 948,
+            "animation": 1856,
+            "audio": 704,
+            "camera_feedback_ui": 1336,
+            "carrier_context": 1362,
+            "damage_state": 548,
+            "integration_event": 1069,
+            "level_world": 342,
+            "lighting": 134,
+            "material_visual_state": 1065,
+            "mesh_geometry": 1545,
+            "movement_navigation": 256,
+            "networking_authority": 414,
+            "persistence_assets": 612,
+            "physics": 666,
+            "spatial_targeting": 466,
+            "spawn_lifecycle": 117,
+            "visual_effects": 1052
+          },
+          "status": "ready",
+          "searchScoped": true
+        },
+        "filters": {},
+        "confidence": {
+          "minConfidence": 0.55,
+          "status": "ok",
+          "topConfidence": 0.7363
+        },
+        "count": 5,
+        "results": [
+          {
+            "ref": "7c75c4183828",
+            "entryType": "static_function",
+            "symbol": "UE.BlueprintGameplayTagLibrary.IsGameplayTagValid",
+            "kind": "method",
+            "owner": "UE.BlueprintGameplayTagLibrary",
+            "signature": "static IsGameplayTagValid(GameplayTag: UE.GameplayTag) : boolean;",
+            "score": 93.0,
+            "confidence": 0.7363,
+            "summary": "Returns true if the passed in gameplay tag is non-null",
+            "source": "Engine/GameplayTags",
+            "why": [
+              "rewrite: Read Enhanced Input horizontal movement axis binding only when the player is not in a frozen state.",
+              "name: gameplay, tag",
+              "doc: gameplay, tag",
+              "facets: damage_state/bm25, damage_state/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "14f79f487c9a",
+            "entryType": "static_function",
+            "symbol": "UE.EnhancedInputLibrary.GetBoundActionValue",
+            "kind": "method",
+            "owner": "UE.EnhancedInputLibrary",
+            "signature": "static GetBoundActionValue(Actor: $Nullable<UE.Actor>, Action: $Nullable<UE.InputAction>) : UE.InputActionValue;",
+            "score": 92.7362,
+            "confidence": 0.7404,
+            "summary": "GetInputActionvalue internal accessor function for actions that have been bound to from a UEnhancedInputComponent",
+            "source": "Plugin/EnhancedInput",
+            "why": [
+              "rewrite: Read Enhanced Input horizontal movement axis binding only when the player is not in a frozen state.",
+              "name: action, enhanced, input, value",
+              "doc: component, enhanced, input",
+              "facets: activation_trigger/bm25, activation_trigger/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "87417ce50473",
+            "entryType": "static_function",
+            "symbol": "UE.Pawn.GetMovementBaseActor",
+            "kind": "method",
+            "owner": "UE.Pawn",
+            "signature": "static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;",
+            "score": 95.0,
+            "confidence": 0.7426,
+            "summary": "Gets the owning actor of the Movement Base Component on which the pawn is standing.",
+            "source": "Engine/GameFramework",
+            "why": [
+              "rewrite: Read Enhanced Input horizontal movement axis binding only when the player is not in a frozen state.",
+              "name: actor, movement, pawn",
+              "doc: actor, component, movement, pawn",
+              "facets: carrier_context/bm25, carrier_context/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "6cf701abc642",
+            "entryType": "static_function",
+            "symbol": "UE.BlueprintGameplayTagLibrary.HasTag",
+            "kind": "method",
+            "owner": "UE.BlueprintGameplayTagLibrary",
+            "signature": "static HasTag(TagContainer: UE.GameplayTagContainer, Tag: UE.GameplayTag, bExactMatch: boolean) : boolean;",
+            "score": 92.8025,
+            "confidence": 0.7394,
+            "summary": "Check if the tag container has the specified tag",
+            "source": "Engine/GameplayTags",
+            "why": [
+              "rewrite: Read Enhanced Input horizontal movement axis binding only when the player is not in a frozen state.",
+              "name: gameplay, tag",
+              "doc: check, tag",
+              "params: check, tag",
+              "facets: damage_state/bm25, damage_state/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "66b5cb10a44a",
+            "entryType": "type",
+            "symbol": "UE.BlueprintEnhancedInputActionBinding",
+            "kind": "class",
+            "score": 90.0,
+            "confidence": 0.7328,
+            "source": "Plugin/EnhancedInput",
+            "matchedMembers": [
+              {
+                "ref": "9b5b60e65821",
+                "symbol": "UE.BlueprintEnhancedInputActionBinding.FunctionNameToBind",
+                "kind": "property",
+                "signature": "FunctionNameToBind: string;",
+                "summary": ""
+              },
+              {
+                "ref": "347fffd2e7b8",
+                "symbol": "UE.BlueprintEnhancedInputActionBinding.InputAction",
+                "kind": "property",
+                "signature": "InputAction: UE.InputAction;",
+                "summary": ""
+              },
+              {
+                "ref": "31d412adde54",
+                "symbol": "UE.BlueprintEnhancedInputActionBinding.TriggerEvent",
+                "kind": "property",
+                "signature": "TriggerEvent: UE.ETriggerEvent;",
+                "summary": ""
+              }
+            ],
+            "why": [
+              "rewrite: Read Enhanced Input horizontal movement axis binding only when the player is not in a frozen state.",
+              "name: action, enhanced, input",
+              "members: FunctionNameToBind, InputAction, TriggerEvent",
+              "facets: activation_trigger/bm25, activation_trigger/vector",
+              "vector recall"
+            ]
+          }
+        ],
+        "profile": {
+          "load": 1.4578,
+          "rewrite": 11.2955,
+          "embed": 0.1909,
+          "bm25": 0.5153,
+          "vector": 0.4144,
+          "score": 0.1188,
+          "select": 0.0001,
+          "total": 13.8866
+        }
+      },
+      "isError": false
+    },
+    "payload": {
+      "status": "ok",
+      "mode": "semantic",
+      "query": "Unreal Engine PuerTS gameplay API for enhanced_input.bind_action; exact symbol hints: Enhanced.InputBindAction, EnhancedInputBindAction, enhanced input bind action. Intent: Read horizontal movement input only when the player is not frozen.",
+      "searchText": "character pawn player controller actor component enhanced input owner enhanced input bind action input action bind action horizontal movement axis value gameplay tag frozen boolean condition gameplay effect frozen status check",
+      "rewrite": {
+        "status": "rewritten",
+        "domainStatus": "ue_relevant",
+        "intentSummary": "Read Enhanced Input horizontal movement axis binding only when the player is not in a frozen state.",
+        "warnings": [],
+        "activeSubqueries": [
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The gameplay object that owns the input binding and frozen state.",
+            "subqueryId": "carrier_context_1",
+            "text": "character pawn player controller",
+            "weight": 0.6,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The gameplay object that owns the input binding and frozen state.",
+            "subqueryId": "carrier_context_2",
+            "text": "actor component enhanced input owner",
+            "weight": 0.4,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "The Enhanced Input binding that reads horizontal movement axis input.",
+            "subqueryId": "activation_trigger_1",
+            "text": "enhanced input bind action input action",
+            "weight": 0.6,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "The Enhanced Input binding that reads horizontal movement axis input.",
+            "subqueryId": "activation_trigger_2",
+            "text": "bind action horizontal movement axis value",
+            "weight": 0.4,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "damage_state",
+            "facetStatus": "required",
+            "facetIntent": "The frozen state condition that gates input processing.",
+            "subqueryId": "damage_state_1",
+            "text": "gameplay tag frozen boolean condition",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "damage_state",
+            "facetStatus": "required",
+            "facetIntent": "The frozen state condition that gates input processing.",
+            "subqueryId": "damage_state_2",
+            "text": "gameplay effect frozen status check",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          }
+        ]
+      },
+      "embedding": {
+        "enabled": true,
+        "provider": "ollama",
+        "model": "bge-m3",
+        "dimensions": 1024,
+        "indexedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "status": "ready"
+      },
+      "partitions": {
+        "enabled": true,
+        "classifierEnabled": true,
+        "provider": "aaa",
+        "binaryAvailable": true,
+        "timeoutMs": 90000,
+        "candidateCount": 20361,
+        "processedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "validAssignmentCount": 14733,
+        "partitionedEntryCount": 12532,
+        "partitionedEntryRatio": 0.6155,
+        "searchReady": true,
+        "byFacet": {
+          "activation_trigger": 241,
+          "ai_behavior": 948,
+          "animation": 1856,
+          "audio": 704,
+          "camera_feedback_ui": 1336,
+          "carrier_context": 1362,
+          "damage_state": 548,
+          "integration_event": 1069,
+          "level_world": 342,
+          "lighting": 134,
+          "material_visual_state": 1065,
+          "mesh_geometry": 1545,
+          "movement_navigation": 256,
+          "networking_authority": 414,
+          "persistence_assets": 612,
+          "physics": 666,
+          "spatial_targeting": 466,
+          "spawn_lifecycle": 117,
+          "visual_effects": 1052
+        },
+        "status": "ready",
+        "searchScoped": true
+      },
+      "filters": {},
+      "confidence": {
+        "minConfidence": 0.55,
+        "status": "ok",
+        "topConfidence": 0.7363
+      },
+      "count": 5,
+      "results": [
+        {
+          "ref": "7c75c4183828",
+          "entryType": "static_function",
+          "symbol": "UE.BlueprintGameplayTagLibrary.IsGameplayTagValid",
+          "kind": "method",
+          "owner": "UE.BlueprintGameplayTagLibrary",
+          "signature": "static IsGameplayTagValid(GameplayTag: UE.GameplayTag) : boolean;",
+          "score": 93.0,
+          "confidence": 0.7363,
+          "summary": "Returns true if the passed in gameplay tag is non-null",
+          "source": "Engine/GameplayTags",
+          "why": [
+            "rewrite: Read Enhanced Input horizontal movement axis binding only when the player is not in a frozen state.",
+            "name: gameplay, tag",
+            "doc: gameplay, tag",
+            "facets: damage_state/bm25, damage_state/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "14f79f487c9a",
+          "entryType": "static_function",
+          "symbol": "UE.EnhancedInputLibrary.GetBoundActionValue",
+          "kind": "method",
+          "owner": "UE.EnhancedInputLibrary",
+          "signature": "static GetBoundActionValue(Actor: $Nullable<UE.Actor>, Action: $Nullable<UE.InputAction>) : UE.InputActionValue;",
+          "score": 92.7362,
+          "confidence": 0.7404,
+          "summary": "GetInputActionvalue internal accessor function for actions that have been bound to from a UEnhancedInputComponent",
+          "source": "Plugin/EnhancedInput",
+          "why": [
+            "rewrite: Read Enhanced Input horizontal movement axis binding only when the player is not in a frozen state.",
+            "name: action, enhanced, input, value",
+            "doc: component, enhanced, input",
+            "facets: activation_trigger/bm25, activation_trigger/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "87417ce50473",
+          "entryType": "static_function",
+          "symbol": "UE.Pawn.GetMovementBaseActor",
+          "kind": "method",
+          "owner": "UE.Pawn",
+          "signature": "static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;",
+          "score": 95.0,
+          "confidence": 0.7426,
+          "summary": "Gets the owning actor of the Movement Base Component on which the pawn is standing.",
+          "source": "Engine/GameFramework",
+          "why": [
+            "rewrite: Read Enhanced Input horizontal movement axis binding only when the player is not in a frozen state.",
+            "name: actor, movement, pawn",
+            "doc: actor, component, movement, pawn",
+            "facets: carrier_context/bm25, carrier_context/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "6cf701abc642",
+          "entryType": "static_function",
+          "symbol": "UE.BlueprintGameplayTagLibrary.HasTag",
+          "kind": "method",
+          "owner": "UE.BlueprintGameplayTagLibrary",
+          "signature": "static HasTag(TagContainer: UE.GameplayTagContainer, Tag: UE.GameplayTag, bExactMatch: boolean) : boolean;",
+          "score": 92.8025,
+          "confidence": 0.7394,
+          "summary": "Check if the tag container has the specified tag",
+          "source": "Engine/GameplayTags",
+          "why": [
+            "rewrite: Read Enhanced Input horizontal movement axis binding only when the player is not in a frozen state.",
+            "name: gameplay, tag",
+            "doc: check, tag",
+            "params: check, tag",
+            "facets: damage_state/bm25, damage_state/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "66b5cb10a44a",
+          "entryType": "type",
+          "symbol": "UE.BlueprintEnhancedInputActionBinding",
+          "kind": "class",
+          "score": 90.0,
+          "confidence": 0.7328,
+          "source": "Plugin/EnhancedInput",
+          "matchedMembers": [
+            {
+              "ref": "9b5b60e65821",
+              "symbol": "UE.BlueprintEnhancedInputActionBinding.FunctionNameToBind",
+              "kind": "property",
+              "signature": "FunctionNameToBind: string;",
+              "summary": ""
+            },
+            {
+              "ref": "347fffd2e7b8",
+              "symbol": "UE.BlueprintEnhancedInputActionBinding.InputAction",
+              "kind": "property",
+              "signature": "InputAction: UE.InputAction;",
+              "summary": ""
+            },
+            {
+              "ref": "31d412adde54",
+              "symbol": "UE.BlueprintEnhancedInputActionBinding.TriggerEvent",
+              "kind": "property",
+              "signature": "TriggerEvent: UE.ETriggerEvent;",
+              "summary": ""
+            }
+          ],
+          "why": [
+            "rewrite: Read Enhanced Input horizontal movement axis binding only when the player is not in a frozen state.",
+            "name: action, enhanced, input",
+            "members: FunctionNameToBind, InputAction, TriggerEvent",
+            "facets: activation_trigger/bm25, activation_trigger/vector",
+            "vector recall"
+          ]
+        }
+      ],
+      "profile": {
+        "load": 1.4578,
+        "rewrite": 11.2955,
+        "embed": 0.1909,
+        "bm25": 0.5153,
+        "vector": 0.4144,
+        "score": 0.1188,
+        "select": 0.0001,
+        "total": 13.8866
+      }
+    }
+  }
+}

@@ -25,6 +25,16 @@ def _output_root(state: GraphState) -> Path:
 
 
 def _query_symbol_hints(engine_port_id: str) -> str:
+    special_hints = {
+        "primitive.on_component_begin_overlap": (
+            "primitive.on_component_begin_overlap; exact symbol hints: "
+            "UE.PrimitiveComponent.OnComponentBeginOverlap, OnComponentBeginOverlap, "
+            "FComponentBeginOverlapSignature, UE.KismetSystemLibrary.SphereOverlapActors, "
+            "UE.KismetSystemLibrary.ComponentOverlapActors, component begin overlap, sphere overlap actors"
+        ),
+    }
+    if engine_port_id in special_hints:
+        return special_hints[engine_port_id]
     pieces = [p for p in re.split(r"[._\-]+", engine_port_id) if p]
     if not pieces:
         return engine_port_id

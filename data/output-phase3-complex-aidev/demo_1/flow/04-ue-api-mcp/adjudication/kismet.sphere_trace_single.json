@@ -1,0 +1,19 @@
+{
+  "engine_port_id": "kismet.sphere_trace_single",
+  "flow_ids": [
+    "flow.player.short_melee_attack.strike_enemy"
+  ],
+  "behavior_ids": [
+    "player.short_melee_attack.strike_enemy"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for kismet.sphere_trace_single; exact symbol hints: Kismet.SphereTraceSingle, KismetSphereTraceSingle, kismet sphere trace single. Intent: Check a short close-range area in front of the player for the patrolling melee enemy.",
+  "raw_path": "flow/04-ue-api-mcp/raw/kismet.sphere_trace_single.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/kismet.sphere_trace_single.json",
+  "verdict": "hit",
+  "hit_type": "direct_hit",
+  "evidence_symbols": [
+    "UE.KismetSystemLibrary.SphereTraceSingle",
+    "UE.KismetSystemLibrary.SphereTraceMulti"
+  ],
+  "notes": "SphereTraceSingle exactly matches the requested close-range sphere trace operation."
+}

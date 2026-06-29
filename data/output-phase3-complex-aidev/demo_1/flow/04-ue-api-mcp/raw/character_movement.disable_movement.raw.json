@@ -1,0 +1,621 @@
+{
+  "engine_port_id": "character_movement.disable_movement",
+  "flow_ids": [
+    "flow.player.frozen_state.become_frozen"
+  ],
+  "behavior_ids": [
+    "player.frozen_state.become_frozen"
+  ],
+  "contracts": [
+    "Block player movement while frozen."
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for character_movement.disable_movement; exact symbol hints: Character.MovementDisableMovement, CharacterMovementDisableMovement, character movement disable movement. Intent: Block player movement while frozen.",
+  "raw_path": "flow/04-ue-api-mcp/raw/character_movement.disable_movement.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/character_movement.disable_movement.json",
+  "raw_result": {
+    "tool": "ue_api_semantic_search",
+    "query": "Unreal Engine PuerTS gameplay API for character_movement.disable_movement; exact symbol hints: Character.MovementDisableMovement, CharacterMovementDisableMovement, character movement disable movement. Intent: Block player movement while frozen.",
+    "limit": 5,
+    "raw_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"ok\",\n  \"mode\": \"semantic\",\n  \"query\": \"Unreal Engine PuerTS gameplay API for character_movement.disable_movement; exact symbol hints: Character.MovementDisableMovement, CharacterMovementDisableMovement, character movement disable movement. Intent: Block player movement while frozen.\",\n  \"searchText\": \"character pawn actor CharacterMovementComponent disable movement CharacterMovementComponent SetMovementMode MOVE_None movement frozen blocked frozen status effect gameplay tag disable input while frozen\",\n  \"rewrite\": {\n    \"status\": \"rewritten\",\n    \"domainStatus\": \"ue_relevant\",\n    \"intentSummary\": \"Block character movement by calling an API to disable movement when the player is frozen.\",\n    \"warnings\": [],\n    \"activeSubqueries\": [\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The character or pawn that owns the movement and receives the disable.\",\n        \"subqueryId\": \"carrier_context_1\",\n        \"text\": \"character pawn actor\",\n        \"weight\": 0.6,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The character or pawn that owns the movement and receives the disable.\",\n        \"subqueryId\": \"carrier_context_2\",\n        \"text\": \"CharacterMovementComponent\",\n        \"weight\": 0.4,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"movement_navigation\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The movement component API that enables or disables movement.\",\n        \"subqueryId\": \"movement_navigation_1\",\n        \"text\": \"disable movement CharacterMovementComponent\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"movement_navigation\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The movement component API that enables or disables movement.\",\n        \"subqueryId\": \"movement_navigation_2\",\n        \"text\": \"SetMovementMode MOVE_None\",\n        \"weight\": 0.3,\n        \"subqueryWeight\": 0.3\n      },\n      {\n        \"facetId\": \"movement_navigation\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The movement component API that enables or disables movement.\",\n        \"subqueryId\": \"movement_navigation_3\",\n        \"text\": \"movement frozen blocked\",\n        \"weight\": 0.2,\n        \"subqueryWeight\": 0.2\n      },\n      {\n        \"facetId\": \"damage_state\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"The frozen status effect that triggers the movement disable.\",\n        \"subqueryId\": \"damage_state_1\",\n        \"text\": \"frozen status effect gameplay tag\",\n        \"weight\": 0.3,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"damage_state\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"The frozen status effect that triggers the movement disable.\",\n        \"subqueryId\": \"damage_state_2\",\n        \"text\": \"disable input while frozen\",\n        \"weight\": 0.3,\n        \"subqueryWeight\": 0.5\n      }\n    ]\n  },\n  \"embedding\": {\n    \"enabled\": true,\n    \"provider\": \"ollama\",\n    \"model\": \"bge-m3\",\n    \"dimensions\": 1024,\n    \"indexedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"status\": \"ready\"\n  },\n  \"partitions\": {\n    \"enabled\": true,\n    \"classifierEnabled\": true,\n    \"provider\": \"aaa\",\n    \"binaryAvailable\": true,\n    \"timeoutMs\": 90000,\n    \"candidateCount\": 20361,\n    \"processedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"validAssignmentCount\": 14733,\n    \"partitionedEntryCount\": 12532,\n    \"partitionedEntryRatio\": 0.6155,\n    \"searchReady\": true,\n    \"byFacet\": {\n      \"activation_trigger\": 241,\n      \"ai_behavior\": 948,\n      \"animation\": 1856,\n      \"audio\": 704,\n      \"camera_feedback_ui\": 1336,\n      \"carrier_context\": 1362,\n      \"damage_state\": 548,\n      \"integration_event\": 1069,\n      \"level_world\": 342,\n      \"lighting\": 134,\n      \"material_visual_state\": 1065,\n      \"mesh_geometry\": 1545,\n      \"movement_navigation\": 256,\n      \"networking_authority\": 414,\n      \"persistence_assets\": 612,\n      \"physics\": 666,\n      \"spatial_targeting\": 466,\n      \"spawn_lifecycle\": 117,\n      \"visual_effects\": 1052\n    },\n    \"status\": \"ready\",\n    \"searchScoped\": true\n  },\n  \"filters\": {},\n  \"confidence\": {\n    \"minConfidence\": 0.55,\n    \"status\": \"ok\",\n    \"topConfidence\": 0.7455\n  },\n  \"count\": 5,\n  \"results\": [\n    {\n      \"ref\": \"efa17e99fe67\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.SceneComponent.IsGroupedComponentMovementEnabled\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.SceneComponent\",\n      \"signature\": \"static IsGroupedComponentMovementEnabled() : boolean;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7455,\n      \"source\": \"Engine/Components\",\n      \"why\": [\n        \"rewrite: Block character movement by calling an API to disable movement when the player is frozen.\",\n        \"name: component, movement\",\n        \"facets: movement_navigation/bm25, movement_navigation/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"0f923e922457\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.AbilityTask_WaitAbilityActivate.WaitForAbilityActivateWithTagRequirements\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.AbilityTask_WaitAbilityActivate\",\n      \"signature\": \"static WaitForAbilityActivateWithTagRequirements(OwningAbility: $Nullable<UE.GameplayAbility>, TagRequirements: UE.GameplayTagRequirements, IncludeTriggeredAbilities?: boolean /* = false */, TriggerOnce?: boolean /* = true */) : UE.AbilityTask_WaitAbilityActivate;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7495,\n      \"summary\": \"Wait until a new ability (of the same or different type) is activated. Only input based abilities will be counted unless IncludeTriggeredAbilities is true. Uses a tag requirements structure to filter abilities.\",\n      \"source\": \"Plugin/GameplayAbilities\",\n      \"why\": [\n        \"rewrite: Block character movement by calling an API to disable movement when the player is frozen.\",\n        \"name: tag\",\n        \"doc: input, tag\",\n        \"facets: damage_state/bm25, damage_state/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"87417ce50473\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.Pawn.GetMovementBaseActor\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.Pawn\",\n      \"signature\": \"static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;\",\n      \"score\": 95.0,\n      \"confidence\": 0.7366,\n      \"summary\": \"Gets the owning actor of the Movement Base Component on which the pawn is standing.\",\n      \"source\": \"Engine/GameFramework\",\n      \"why\": [\n        \"rewrite: Block character movement by calling an API to disable movement when the player is frozen.\",\n        \"name: actor, movement, pawn\",\n        \"doc: actor, component, movement, pawn\",\n        \"facets: carrier_context/bm25, carrier_context/vector, movement_navigation/bm25, movement_navigation/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"b62b8a9d0bcc\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.NavMovementComponent\",\n      \"kind\": \"class\",\n      \"score\": 86.0447,\n      \"confidence\": 0.7335,\n      \"extends\": \"UE.MovementComponent\",\n      \"source\": \"Engine/GameFramework\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"cb9503ad1cbf\",\n          \"symbol\": \"UE.NavMovementComponent.RequestDirectMove\",\n          \"kind\": \"method\",\n          \"signature\": \"RequestDirectMove(MoveVelocity: UE.Vector, bForceMaxSpeed: boolean) : void;\",\n          \"summary\": \"path following: request movement through a velocity directly\"\n        },\n        {\n          \"ref\": \"0833aa5c6ebc\",\n          \"symbol\": \"UE.NavMovementComponent.RequestPathMove\",\n          \"kind\": \"method\",\n          \"signature\": \"RequestPathMove(MoveInput: UE.Vector) : void;\",\n          \"summary\": \"path following: request movement through a new move input (normal vector = full strength)\"\n        },\n        {\n          \"ref\": \"bb0f462aa74a\",\n          \"symbol\": \"UE.NavMovementComponent.FixedPathBrakingDistance\",\n          \"kind\": \"property\",\n          \"signature\": \"FixedPathBrakingDistance: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"2db533ee69aa\",\n          \"symbol\": \"UE.NavMovementComponent.GetMaxSpeedForNavMovement\",\n          \"kind\": \"method\",\n          \"signature\": \"GetMaxSpeedForNavMovement() : number;\",\n          \"summary\": \"Get maximum movement speed of the agent\"\n        },\n        {\n          \"ref\": \"5cd64b323006\",\n          \"symbol\": \"UE.NavMovementComponent.GetVelocityForNavMovement\",\n          \"kind\": \"method\",\n          \"signature\": \"GetVelocityForNavMovement() : UE.Vector;\",\n          \"summary\": \"Get the current velocity of the movement component\"\n        },\n        {\n          \"ref\": \"7499a70db863\",\n          \"symbol\": \"UE.NavMovementComponent.IsCrouching\",\n          \"kind\": \"method\",\n          \"signature\": \"IsCrouching() : boolean;\",\n          \"summary\": \"Returns true if currently crouching\"\n        },\n        {\n          \"ref\": \"129c0433d72d\",\n          \"symbol\": \"UE.NavMovementComponent.IsFalling\",\n          \"kind\": \"method\",\n          \"signature\": \"IsFalling() : boolean;\",\n          \"summary\": \"Returns true if currently falling (not flying, in a non-fluid volume, and not on the ground)\"\n        },\n        {\n          \"ref\": \"e0f391571cd9\",\n          \"symbol\": \"UE.NavMovementComponent.IsFlying\",\n          \"kind\": \"method\",\n          \"signature\": \"IsFlying() : boolean;\",\n          \"summary\": \"Returns true if currently flying (moving through a non-fluid volume without resting on the ground)\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Block character movement by calling an API to disable movement when the player is frozen.\",\n        \"name: component, movement\",\n        \"members: RequestDirectMove, RequestPathMove, FixedPathBrakingDistance, GetMaxSpeedForNavMovement\",\n        \"facets: movement_navigation/bm25, movement_navigation/vector\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"cee6838fd4ce\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.AbilityTask_WaitAbilityActivate.WaitForAbilityActivate\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.AbilityTask_WaitAbilityActivate\",\n      \"signature\": \"static WaitForAbilityActivate(OwningAbility: $Nullable<UE.GameplayAbility>, WithTag: UE.GameplayTag, WithoutTag: UE.GameplayTag, IncludeTriggeredAbilities?: boolean /* = false */, TriggerOnce?: boolean /* = true */) : UE.AbilityTask_WaitAbilityActivate;\",\n      \"score\": 84.6444,\n      \"confidence\": 0.7436,\n      \"summary\": \"Wait until a new ability (of the same or different type) is activated. Only input based abilities will be counted unless IncludeTriggeredAbilities is true.\",\n      \"source\": \"Plugin/GameplayAbilities\",\n      \"why\": [\n        \"rewrite: Block character movement by calling an API to disable movement when the player is frozen.\",\n        \"doc: input\",\n        \"facets: damage_state/bm25, damage_state/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    }\n  ],\n  \"profile\": {\n    \"load\": 0.7439,\n    \"rewrite\": 6.3653,\n    \"embed\": 0.1913,\n    \"bm25\": 0.1062,\n    \"vector\": 0.249,\n    \"score\": 0.1269,\n    \"select\": 0.0001,\n    \"total\": 7.5366\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "status": "ok",
+        "mode": "semantic",
+        "query": "Unreal Engine PuerTS gameplay API for character_movement.disable_movement; exact symbol hints: Character.MovementDisableMovement, CharacterMovementDisableMovement, character movement disable movement. Intent: Block player movement while frozen.",
+        "searchText": "character pawn actor CharacterMovementComponent disable movement CharacterMovementComponent SetMovementMode MOVE_None movement frozen blocked frozen status effect gameplay tag disable input while frozen",
+        "rewrite": {
+          "status": "rewritten",
+          "domainStatus": "ue_relevant",
+          "intentSummary": "Block character movement by calling an API to disable movement when the player is frozen.",
+          "warnings": [],
+          "activeSubqueries": [
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The character or pawn that owns the movement and receives the disable.",
+              "subqueryId": "carrier_context_1",
+              "text": "character pawn actor",
+              "weight": 0.6,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The character or pawn that owns the movement and receives the disable.",
+              "subqueryId": "carrier_context_2",
+              "text": "CharacterMovementComponent",
+              "weight": 0.4,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "movement_navigation",
+              "facetStatus": "required",
+              "facetIntent": "The movement component API that enables or disables movement.",
+              "subqueryId": "movement_navigation_1",
+              "text": "disable movement CharacterMovementComponent",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "movement_navigation",
+              "facetStatus": "required",
+              "facetIntent": "The movement component API that enables or disables movement.",
+              "subqueryId": "movement_navigation_2",
+              "text": "SetMovementMode MOVE_None",
+              "weight": 0.3,
+              "subqueryWeight": 0.3
+            },
+            {
+              "facetId": "movement_navigation",
+              "facetStatus": "required",
+              "facetIntent": "The movement component API that enables or disables movement.",
+              "subqueryId": "movement_navigation_3",
+              "text": "movement frozen blocked",
+              "weight": 0.2,
+              "subqueryWeight": 0.2
+            },
+            {
+              "facetId": "damage_state",
+              "facetStatus": "optional",
+              "facetIntent": "The frozen status effect that triggers the movement disable.",
+              "subqueryId": "damage_state_1",
+              "text": "frozen status effect gameplay tag",
+              "weight": 0.3,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "damage_state",
+              "facetStatus": "optional",
+              "facetIntent": "The frozen status effect that triggers the movement disable.",
+              "subqueryId": "damage_state_2",
+              "text": "disable input while frozen",
+              "weight": 0.3,
+              "subqueryWeight": 0.5
+            }
+          ]
+        },
+        "embedding": {
+          "enabled": true,
+          "provider": "ollama",
+          "model": "bge-m3",
+          "dimensions": 1024,
+          "indexedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "status": "ready"
+        },
+        "partitions": {
+          "enabled": true,
+          "classifierEnabled": true,
+          "provider": "aaa",
+          "binaryAvailable": true,
+          "timeoutMs": 90000,
+          "candidateCount": 20361,
+          "processedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "validAssignmentCount": 14733,
+          "partitionedEntryCount": 12532,
+          "partitionedEntryRatio": 0.6155,
+          "searchReady": true,
+          "byFacet": {
+            "activation_trigger": 241,
+            "ai_behavior": 948,
+            "animation": 1856,
+            "audio": 704,
+            "camera_feedback_ui": 1336,
+            "carrier_context": 1362,
+            "damage_state": 548,
+            "integration_event": 1069,
+            "level_world": 342,
+            "lighting": 134,
+            "material_visual_state": 1065,
+            "mesh_geometry": 1545,
+            "movement_navigation": 256,
+            "networking_authority": 414,
+            "persistence_assets": 612,
+            "physics": 666,
+            "spatial_targeting": 466,
+            "spawn_lifecycle": 117,
+            "visual_effects": 1052
+          },
+          "status": "ready",
+          "searchScoped": true
+        },
+        "filters": {},
+        "confidence": {
+          "minConfidence": 0.55,
+          "status": "ok",
+          "topConfidence": 0.7455
+        },
+        "count": 5,
+        "results": [
+          {
+            "ref": "efa17e99fe67",
+            "entryType": "static_function",
+            "symbol": "UE.SceneComponent.IsGroupedComponentMovementEnabled",
+            "kind": "method",
+            "owner": "UE.SceneComponent",
+            "signature": "static IsGroupedComponentMovementEnabled() : boolean;",
+            "score": 93.0,
+            "confidence": 0.7455,
+            "source": "Engine/Components",
+            "why": [
+              "rewrite: Block character movement by calling an API to disable movement when the player is frozen.",
+              "name: component, movement",
+              "facets: movement_navigation/bm25, movement_navigation/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "0f923e922457",
+            "entryType": "static_function",
+            "symbol": "UE.AbilityTask_WaitAbilityActivate.WaitForAbilityActivateWithTagRequirements",
+            "kind": "method",
+            "owner": "UE.AbilityTask_WaitAbilityActivate",
+            "signature": "static WaitForAbilityActivateWithTagRequirements(OwningAbility: $Nullable<UE.GameplayAbility>, TagRequirements: UE.GameplayTagRequirements, IncludeTriggeredAbilities?: boolean /* = false */, TriggerOnce?: boolean /* = true */) : UE.AbilityTask_WaitAbilityActivate;",
+            "score": 93.0,
+            "confidence": 0.7495,
+            "summary": "Wait until a new ability (of the same or different type) is activated. Only input based abilities will be counted unless IncludeTriggeredAbilities is true. Uses a tag requirements structure to filter abilities.",
+            "source": "Plugin/GameplayAbilities",
+            "why": [
+              "rewrite: Block character movement by calling an API to disable movement when the player is frozen.",
+              "name: tag",
+              "doc: input, tag",
+              "facets: damage_state/bm25, damage_state/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "87417ce50473",
+            "entryType": "static_function",
+            "symbol": "UE.Pawn.GetMovementBaseActor",
+            "kind": "method",
+            "owner": "UE.Pawn",
+            "signature": "static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;",
+            "score": 95.0,
+            "confidence": 0.7366,
+            "summary": "Gets the owning actor of the Movement Base Component on which the pawn is standing.",
+            "source": "Engine/GameFramework",
+            "why": [
+              "rewrite: Block character movement by calling an API to disable movement when the player is frozen.",
+              "name: actor, movement, pawn",
+              "doc: actor, component, movement, pawn",
+              "facets: carrier_context/bm25, carrier_context/vector, movement_navigation/bm25, movement_navigation/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "b62b8a9d0bcc",
+            "entryType": "type",
+            "symbol": "UE.NavMovementComponent",
+            "kind": "class",
+            "score": 86.0447,
+            "confidence": 0.7335,
+            "extends": "UE.MovementComponent",
+            "source": "Engine/GameFramework",
+            "matchedMembers": [
+              {
+                "ref": "cb9503ad1cbf",
+                "symbol": "UE.NavMovementComponent.RequestDirectMove",
+                "kind": "method",
+                "signature": "RequestDirectMove(MoveVelocity: UE.Vector, bForceMaxSpeed: boolean) : void;",
+                "summary": "path following: request movement through a velocity directly"
+              },
+              {
+                "ref": "0833aa5c6ebc",
+                "symbol": "UE.NavMovementComponent.RequestPathMove",
+                "kind": "method",
+                "signature": "RequestPathMove(MoveInput: UE.Vector) : void;",
+                "summary": "path following: request movement through a new move input (normal vector = full strength)"
+              },
+              {
+                "ref": "bb0f462aa74a",
+                "symbol": "UE.NavMovementComponent.FixedPathBrakingDistance",
+                "kind": "property",
+                "signature": "FixedPathBrakingDistance: number;",
+                "summary": ""
+              },
+              {
+                "ref": "2db533ee69aa",
+                "symbol": "UE.NavMovementComponent.GetMaxSpeedForNavMovement",
+                "kind": "method",
+                "signature": "GetMaxSpeedForNavMovement() : number;",
+                "summary": "Get maximum movement speed of the agent"
+              },
+              {
+                "ref": "5cd64b323006",
+                "symbol": "UE.NavMovementComponent.GetVelocityForNavMovement",
+                "kind": "method",
+                "signature": "GetVelocityForNavMovement() : UE.Vector;",
+                "summary": "Get the current velocity of the movement component"
+              },
+              {
+                "ref": "7499a70db863",
+                "symbol": "UE.NavMovementComponent.IsCrouching",
+                "kind": "method",
+                "signature": "IsCrouching() : boolean;",
+                "summary": "Returns true if currently crouching"
+              },
+              {
+                "ref": "129c0433d72d",
+                "symbol": "UE.NavMovementComponent.IsFalling",
+                "kind": "method",
+                "signature": "IsFalling() : boolean;",
+                "summary": "Returns true if currently falling (not flying, in a non-fluid volume, and not on the ground)"
+              },
+              {
+                "ref": "e0f391571cd9",
+                "symbol": "UE.NavMovementComponent.IsFlying",
+                "kind": "method",
+                "signature": "IsFlying() : boolean;",
+                "summary": "Returns true if currently flying (moving through a non-fluid volume without resting on the ground)"
+              }
+            ],
+            "why": [
+              "rewrite: Block character movement by calling an API to disable movement when the player is frozen.",
+              "name: component, movement",
+              "members: RequestDirectMove, RequestPathMove, FixedPathBrakingDistance, GetMaxSpeedForNavMovement",
+              "facets: movement_navigation/bm25, movement_navigation/vector",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "cee6838fd4ce",
+            "entryType": "static_function",
+            "symbol": "UE.AbilityTask_WaitAbilityActivate.WaitForAbilityActivate",
+            "kind": "method",
+            "owner": "UE.AbilityTask_WaitAbilityActivate",
+            "signature": "static WaitForAbilityActivate(OwningAbility: $Nullable<UE.GameplayAbility>, WithTag: UE.GameplayTag, WithoutTag: UE.GameplayTag, IncludeTriggeredAbilities?: boolean /* = false */, TriggerOnce?: boolean /* = true */) : UE.AbilityTask_WaitAbilityActivate;",
+            "score": 84.6444,
+            "confidence": 0.7436,
+            "summary": "Wait until a new ability (of the same or different type) is activated. Only input based abilities will be counted unless IncludeTriggeredAbilities is true.",
+            "source": "Plugin/GameplayAbilities",
+            "why": [
+              "rewrite: Block character movement by calling an API to disable movement when the player is frozen.",
+              "doc: input",
+              "facets: damage_state/bm25, damage_state/vector",
+              "static function result",
+              "vector recall"
+            ]
+          }
+        ],
+        "profile": {
+          "load": 0.7439,
+          "rewrite": 6.3653,
+          "embed": 0.1913,
+          "bm25": 0.1062,
+          "vector": 0.249,
+          "score": 0.1269,
+          "select": 0.0001,
+          "total": 7.5366
+        }
+      },
+      "isError": false
+    },
+    "payload": {
+      "status": "ok",
+      "mode": "semantic",
+      "query": "Unreal Engine PuerTS gameplay API for character_movement.disable_movement; exact symbol hints: Character.MovementDisableMovement, CharacterMovementDisableMovement, character movement disable movement. Intent: Block player movement while frozen.",
+      "searchText": "character pawn actor CharacterMovementComponent disable movement CharacterMovementComponent SetMovementMode MOVE_None movement frozen blocked frozen status effect gameplay tag disable input while frozen",
+      "rewrite": {
+        "status": "rewritten",
+        "domainStatus": "ue_relevant",
+        "intentSummary": "Block character movement by calling an API to disable movement when the player is frozen.",
+        "warnings": [],
+        "activeSubqueries": [
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The character or pawn that owns the movement and receives the disable.",
+            "subqueryId": "carrier_context_1",
+            "text": "character pawn actor",
+            "weight": 0.6,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The character or pawn that owns the movement and receives the disable.",
+            "subqueryId": "carrier_context_2",
+            "text": "CharacterMovementComponent",
+            "weight": 0.4,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "movement_navigation",
+            "facetStatus": "required",
+            "facetIntent": "The movement component API that enables or disables movement.",
+            "subqueryId": "movement_navigation_1",
+            "text": "disable movement CharacterMovementComponent",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "movement_navigation",
+            "facetStatus": "required",
+            "facetIntent": "The movement component API that enables or disables movement.",
+            "subqueryId": "movement_navigation_2",
+            "text": "SetMovementMode MOVE_None",
+            "weight": 0.3,
+            "subqueryWeight": 0.3
+          },
+          {
+            "facetId": "movement_navigation",
+            "facetStatus": "required",
+            "facetIntent": "The movement component API that enables or disables movement.",
+            "subqueryId": "movement_navigation_3",
+            "text": "movement frozen blocked",
+            "weight": 0.2,
+            "subqueryWeight": 0.2
+          },
+          {
+            "facetId": "damage_state",
+            "facetStatus": "optional",
+            "facetIntent": "The frozen status effect that triggers the movement disable.",
+            "subqueryId": "damage_state_1",
+            "text": "frozen status effect gameplay tag",
+            "weight": 0.3,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "damage_state",
+            "facetStatus": "optional",
+            "facetIntent": "The frozen status effect that triggers the movement disable.",
+            "subqueryId": "damage_state_2",
+            "text": "disable input while frozen",
+            "weight": 0.3,
+            "subqueryWeight": 0.5
+          }
+        ]
+      },
+      "embedding": {
+        "enabled": true,
+        "provider": "ollama",
+        "model": "bge-m3",
+        "dimensions": 1024,
+        "indexedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "status": "ready"
+      },
+      "partitions": {
+        "enabled": true,
+        "classifierEnabled": true,
+        "provider": "aaa",
+        "binaryAvailable": true,
+        "timeoutMs": 90000,
+        "candidateCount": 20361,
+        "processedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "validAssignmentCount": 14733,
+        "partitionedEntryCount": 12532,
+        "partitionedEntryRatio": 0.6155,
+        "searchReady": true,
+        "byFacet": {
+          "activation_trigger": 241,
+          "ai_behavior": 948,
+          "animation": 1856,
+          "audio": 704,
+          "camera_feedback_ui": 1336,
+          "carrier_context": 1362,
+          "damage_state": 548,
+          "integration_event": 1069,
+          "level_world": 342,
+          "lighting": 134,
+          "material_visual_state": 1065,
+          "mesh_geometry": 1545,
+          "movement_navigation": 256,
+          "networking_authority": 414,
+          "persistence_assets": 612,
+          "physics": 666,
+          "spatial_targeting": 466,
+          "spawn_lifecycle": 117,
+          "visual_effects": 1052
+        },
+        "status": "ready",
+        "searchScoped": true
+      },
+      "filters": {},
+      "confidence": {
+        "minConfidence": 0.55,
+        "status": "ok",
+        "topConfidence": 0.7455
+      },
+      "count": 5,
+      "results": [
+        {
+          "ref": "efa17e99fe67",
+          "entryType": "static_function",
+          "symbol": "UE.SceneComponent.IsGroupedComponentMovementEnabled",
+          "kind": "method",
+          "owner": "UE.SceneComponent",
+          "signature": "static IsGroupedComponentMovementEnabled() : boolean;",
+          "score": 93.0,
+          "confidence": 0.7455,
+          "source": "Engine/Components",
+          "why": [
+            "rewrite: Block character movement by calling an API to disable movement when the player is frozen.",
+            "name: component, movement",
+            "facets: movement_navigation/bm25, movement_navigation/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "0f923e922457",
+          "entryType": "static_function",
+          "symbol": "UE.AbilityTask_WaitAbilityActivate.WaitForAbilityActivateWithTagRequirements",
+          "kind": "method",
+          "owner": "UE.AbilityTask_WaitAbilityActivate",
+          "signature": "static WaitForAbilityActivateWithTagRequirements(OwningAbility: $Nullable<UE.GameplayAbility>, TagRequirements: UE.GameplayTagRequirements, IncludeTriggeredAbilities?: boolean /* = false */, TriggerOnce?: boolean /* = true */) : UE.AbilityTask_WaitAbilityActivate;",
+          "score": 93.0,
+          "confidence": 0.7495,
+          "summary": "Wait until a new ability (of the same or different type) is activated. Only input based abilities will be counted unless IncludeTriggeredAbilities is true. Uses a tag requirements structure to filter abilities.",
+          "source": "Plugin/GameplayAbilities",
+          "why": [
+            "rewrite: Block character movement by calling an API to disable movement when the player is frozen.",
+            "name: tag",
+            "doc: input, tag",
+            "facets: damage_state/bm25, damage_state/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "87417ce50473",
+          "entryType": "static_function",
+          "symbol": "UE.Pawn.GetMovementBaseActor",
+          "kind": "method",
+          "owner": "UE.Pawn",
+          "signature": "static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;",
+          "score": 95.0,
+          "confidence": 0.7366,
+          "summary": "Gets the owning actor of the Movement Base Component on which the pawn is standing.",
+          "source": "Engine/GameFramework",
+          "why": [
+            "rewrite: Block character movement by calling an API to disable movement when the player is frozen.",
+            "name: actor, movement, pawn",
+            "doc: actor, component, movement, pawn",
+            "facets: carrier_context/bm25, carrier_context/vector, movement_navigation/bm25, movement_navigation/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "b62b8a9d0bcc",
+          "entryType": "type",
+          "symbol": "UE.NavMovementComponent",
+          "kind": "class",
+          "score": 86.0447,
+          "confidence": 0.7335,
+          "extends": "UE.MovementComponent",
+          "source": "Engine/GameFramework",
+          "matchedMembers": [
+            {
+              "ref": "cb9503ad1cbf",
+              "symbol": "UE.NavMovementComponent.RequestDirectMove",
+              "kind": "method",
+              "signature": "RequestDirectMove(MoveVelocity: UE.Vector, bForceMaxSpeed: boolean) : void;",
+              "summary": "path following: request movement through a velocity directly"
+            },
+            {
+              "ref": "0833aa5c6ebc",
+              "symbol": "UE.NavMovementComponent.RequestPathMove",
+              "kind": "method",
+              "signature": "RequestPathMove(MoveInput: UE.Vector) : void;",
+              "summary": "path following: request movement through a new move input (normal vector = full strength)"
+            },
+            {
+              "ref": "bb0f462aa74a",
+              "symbol": "UE.NavMovementComponent.FixedPathBrakingDistance",
+              "kind": "property",
+              "signature": "FixedPathBrakingDistance: number;",
+              "summary": ""
+            },
+            {
+              "ref": "2db533ee69aa",
+              "symbol": "UE.NavMovementComponent.GetMaxSpeedForNavMovement",
+              "kind": "method",
+              "signature": "GetMaxSpeedForNavMovement() : number;",
+              "summary": "Get maximum movement speed of the agent"
+            },
+            {
+              "ref": "5cd64b323006",
+              "symbol": "UE.NavMovementComponent.GetVelocityForNavMovement",
+              "kind": "method",
+              "signature": "GetVelocityForNavMovement() : UE.Vector;",
+              "summary": "Get the current velocity of the movement component"
+            },
+            {
+              "ref": "7499a70db863",
+              "symbol": "UE.NavMovementComponent.IsCrouching",
+              "kind": "method",
+              "signature": "IsCrouching() : boolean;",
+              "summary": "Returns true if currently crouching"
+            },
+            {
+              "ref": "129c0433d72d",
+              "symbol": "UE.NavMovementComponent.IsFalling",
+              "kind": "method",
+              "signature": "IsFalling() : boolean;",
+              "summary": "Returns true if currently falling (not flying, in a non-fluid volume, and not on the ground)"
+            },
+            {
+              "ref": "e0f391571cd9",
+              "symbol": "UE.NavMovementComponent.IsFlying",
+              "kind": "method",
+              "signature": "IsFlying() : boolean;",
+              "summary": "Returns true if currently flying (moving through a non-fluid volume without resting on the ground)"
+            }
+          ],
+          "why": [
+            "rewrite: Block character movement by calling an API to disable movement when the player is frozen.",
+            "name: component, movement",
+            "members: RequestDirectMove, RequestPathMove, FixedPathBrakingDistance, GetMaxSpeedForNavMovement",
+            "facets: movement_navigation/bm25, movement_navigation/vector",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "cee6838fd4ce",
+          "entryType": "static_function",
+          "symbol": "UE.AbilityTask_WaitAbilityActivate.WaitForAbilityActivate",
+          "kind": "method",
+          "owner": "UE.AbilityTask_WaitAbilityActivate",
+          "signature": "static WaitForAbilityActivate(OwningAbility: $Nullable<UE.GameplayAbility>, WithTag: UE.GameplayTag, WithoutTag: UE.GameplayTag, IncludeTriggeredAbilities?: boolean /* = false */, TriggerOnce?: boolean /* = true */) : UE.AbilityTask_WaitAbilityActivate;",
+          "score": 84.6444,
+          "confidence": 0.7436,
+          "summary": "Wait until a new ability (of the same or different type) is activated. Only input based abilities will be counted unless IncludeTriggeredAbilities is true.",
+          "source": "Plugin/GameplayAbilities",
+          "why": [
+            "rewrite: Block character movement by calling an API to disable movement when the player is frozen.",
+            "doc: input",
+            "facets: damage_state/bm25, damage_state/vector",
+            "static function result",
+            "vector recall"
+          ]
+        }
+      ],
+      "profile": {
+        "load": 0.7439,
+        "rewrite": 6.3653,
+        "embed": 0.1913,
+        "bm25": 0.1062,
+        "vector": 0.249,
+        "score": 0.1269,
+        "select": 0.0001,
+        "total": 7.5366
+      }
+    }
+  }
+}

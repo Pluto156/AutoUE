@@ -1,0 +1,28 @@
+{
+  "engine_port_id": "primitive.on_component_begin_overlap",
+  "flow_ids": [
+    "flow.patrolling_melee_enemy.melee_pressure.threaten_close_player",
+    "flow.ice_trap.freeze_trigger.freeze_overlapping_player",
+    "flow.locked_exit.enemy_gate.remain_locked",
+    "flow.locked_exit.enemy_gate.unlock_after_enemy_defeat",
+    "flow.locked_exit.room_completion.complete_on_reach"
+  ],
+  "behavior_ids": [
+    "patrolling_melee_enemy.melee_pressure.threaten_close_player",
+    "ice_trap.freeze_trigger.freeze_overlapping_player",
+    "locked_exit.enemy_gate.remain_locked",
+    "locked_exit.enemy_gate.unlock_after_enemy_defeat",
+    "locked_exit.room_completion.complete_on_reach"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for primitive.on_component_begin_overlap; exact symbol hints: UE.PrimitiveComponent.OnComponentBeginOverlap, OnComponentBeginOverlap, FComponentBeginOverlapSignature, UE.KismetSystemLibrary.SphereOverlapActors, UE.KismetSystemLibrary.ComponentOverlapActors, component begin overlap, sphere overlap actors. Intent: Detect when the active enemy is close enough to the player to represent melee danger.",
+  "raw_path": "flow/04-ue-api-mcp/raw/primitive.on_component_begin_overlap.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json",
+  "verdict": "hit",
+  "hit_type": "indirect_hit",
+  "evidence_symbols": [
+    "UE.KismetSystemLibrary.SphereOverlapActors",
+    "UE.KismetSystemLibrary.SphereOverlapComponents",
+    "UE.KismetSystemLibrary.GetActorListFromComponentList"
+  ],
+  "notes": "Overlap query helpers are usable for overlap-boundary detection even though the exact begin-overlap delegate symbol is absent."
+}

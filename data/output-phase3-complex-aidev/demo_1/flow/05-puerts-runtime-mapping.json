@@ -1,0 +1,628 @@
+{
+  "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+  "mappings": [
+    {
+      "entity_id": "player",
+      "ability_id": "player.horizontal_movement",
+      "behavior_id": "player.horizontal_movement.move_left_right",
+      "flow_id": "flow.player.horizontal_movement.move_left_right",
+      "runtime_owner": "TypeScript/content/generated/PlayerHorizontalMovementMoveLeftRightAbility.ts",
+      "implementation_carrier": "template_rendered_ts",
+      "selected_runtime_owner": "PlayerHorizontalMovementMoveLeftRightAbility",
+      "existing_framework_candidates": [
+        "UE.BlueprintEnhancedInputActionBinding",
+        "UE.EnhancedInputLibrary.GetBoundActionValue",
+        "UE.NavMovementComponent",
+        "UE.MovementComponent"
+      ],
+      "why_not_existing_framework": "Existing UE/PuerTS symbols cover input value access and movement components, but the frozen-state gate and horizontal movement contract need a behavior-level generated TS carrier.",
+      "temporary_or_canonical": "temporary",
+      "migration_path": "Move the frozen-state gate and horizontal movement call into a canonical PlayerMovement runtime module, keeping the generated file as the replayable scaffold.",
+      "engine_port_mappings": [
+        {
+          "engine_port_id": "enhanced_input.bind_action",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json",
+          "adapter_or_helper": "GeneratedInputAdapter.bindEnhancedActionAndReadValue",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.BlueprintEnhancedInputActionBinding",
+            "UE.EnhancedInputLibrary.GetBoundActionValue"
+          ]
+        },
+        {
+          "engine_port_id": "pawn.add_movement_input",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/pawn.add_movement_input.json",
+          "adapter_or_helper": "CharacterMovementAdapter.addHorizontalMovementInput",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.NavMovementComponent",
+            "UE.MovementComponent",
+            "UE.Pawn.GetMovementBaseActor"
+          ]
+        }
+      ],
+      "thin_contracts": [
+        "Read horizontal movement input only when the player is not frozen.",
+        "Apply horizontal movement across the room floor from the accepted input."
+      ],
+      "ability_binding": "PuerTS bootstrap instantiates this ability for the player actor and binds the horizontal Enhanced Input action to execute movement only when is_frozen is false.",
+      "verification_evidence": [
+        "When not frozen, left/right input changes player horizontal position.",
+        "When frozen, left/right input produces no movement intent.",
+        "Validation should observe Enhanced Input value read and CharacterMovementAdapter movement call."
+      ]
+    },
+    {
+      "entity_id": "player",
+      "ability_id": "player.short_melee_attack",
+      "behavior_id": "player.short_melee_attack.strike_enemy",
+      "flow_id": "flow.player.short_melee_attack.strike_enemy",
+      "runtime_owner": "TypeScript/content/generated/PlayerShortMeleeAttackStrikeEnemyAbility.ts",
+      "implementation_carrier": "template_rendered_ts",
+      "selected_runtime_owner": "PlayerShortMeleeAttackStrikeEnemyAbility",
+      "existing_framework_candidates": [
+        "UE.KismetSystemLibrary.SphereTraceSingle",
+        "UE.GameplayStatics.ApplyDamage"
+      ],
+      "why_not_existing_framework": "UE trace and damage calls are available, but the attack intent, short-range filtering, and enemy-only damage routing need a generated behavior-level carrier.",
+      "temporary_or_canonical": "temporary",
+      "migration_path": "Migrate attack input, trace parameters, and damage dispatch into a canonical PlayerCombat runtime module after prototype validation.",
+      "engine_port_mappings": [
+        {
+          "engine_port_id": "kismet.sphere_trace_single",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/kismet.sphere_trace_single.json",
+          "adapter_or_helper": "CombatTraceAdapter.sphereTraceSingle",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.KismetSystemLibrary.SphereTraceSingle",
+            "UE.KismetSystemLibrary.SphereTraceMulti"
+          ]
+        },
+        {
+          "engine_port_id": "gameplay_statics.apply_damage",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/gameplay_statics.apply_damage.json",
+          "adapter_or_helper": "DamageAdapter.applyMeleeDamage",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.GameplayStatics.ApplyDamage",
+            "UE.GameplayStatics.ApplyRadialDamageWithFalloff"
+          ]
+        }
+      ],
+      "thin_contracts": [
+        "Accept a melee attack request from the player.",
+        "Check a short close-range area in front of the player for the patrolling melee enemy.",
+        "Apply melee damage to the hit enemy."
+      ],
+      "ability_binding": "PuerTS input dispatcher invokes this generated ability on attack_pressed; the ability performs the sphere trace and routes successful hits through DamageAdapter.applyMeleeDamage.",
+      "verification_evidence": [
+        "Melee attack near the enemy produces a hit and damage event.",
+        "Melee attack outside short range does not damage the enemy.",
+        "Validation should confirm the attack input path, SphereTraceSingle call, and ApplyDamage call."
+      ]
+    },
+    {
+      "entity_id": "player",
+      "ability_id": "player.brief_dash",
+      "behavior_id": "player.brief_dash.dash_horizontally",
+      "flow_id": "flow.player.brief_dash.dash_horizontally",
+      "runtime_owner": "TypeScript/content/generated/PlayerBriefDashDashHorizontallyAbility.ts",
+      "implementation_carrier": "template_rendered_ts",
+      "selected_runtime_owner": "PlayerBriefDashDashHorizontallyAbility",
+      "existing_framework_candidates": [
+        "UE.BlueprintEnhancedInputActionBinding",
+        "UE.EnhancedInputLibrary.GetBoundActionValue",
+        "UE.CharacterMovementComponent"
+      ],
+      "why_not_existing_framework": "Input and movement component evidence exists, but dash gating, direction selection, and burst distance need generated behavior logic.",
+      "temporary_or_canonical": "temporary",
+      "migration_path": "Move dash tuning and frozen-state guard into canonical PlayerMovement runtime after validation.",
+      "engine_port_mappings": [
+        {
+          "engine_port_id": "enhanced_input.bind_action",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json",
+          "adapter_or_helper": "GeneratedInputAdapter.bindDashAction",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.BlueprintEnhancedInputActionBinding",
+            "UE.EnhancedInputLibrary.GetBoundActionValue"
+          ]
+        },
+        {
+          "engine_port_id": "character.launch_character",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/character.launch_character.json",
+          "adapter_or_helper": "CharacterMovementAdapter.launchHorizontalDash",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.CharacterMovementComponent"
+          ]
+        }
+      ],
+      "thin_contracts": [
+        "Accept dash input only when the player is not frozen.",
+        "Move the player a short burst distance in the current horizontal direction."
+      ],
+      "ability_binding": "PuerTS bootstrap binds the dash Enhanced Input action to this ability; execution is ignored while is_frozen is true and otherwise launches in the current horizontal direction.",
+      "verification_evidence": [
+        "Dash while not frozen briefly moves the player faster than normal movement.",
+        "Dash while frozen is ignored.",
+        "Validation should observe dash input binding and CharacterMovementAdapter.launchHorizontalDash."
+      ]
+    },
+    {
+      "entity_id": "player",
+      "ability_id": "player.frozen_state",
+      "behavior_id": "player.frozen_state.become_frozen",
+      "flow_id": "flow.player.frozen_state.become_frozen",
+      "runtime_owner": "TypeScript/content/generated/PlayerFrozenStateBecomeFrozenAbility.ts",
+      "implementation_carrier": "generated_runtime_orchestrator",
+      "selected_runtime_owner": "PlayerFrozenStateBecomeFrozenAbility",
+      "existing_framework_candidates": [
+        "UE.NavMovementComponent",
+        "UE.KismetSystemLibrary.K2_SetTimerForNextTickDelegate",
+        "UE.KismetSystemLibrary.K2_ClearTimerHandle"
+      ],
+      "why_not_existing_framework": "Movement and timer symbols are available, but the freeze event, state mutation, movement block, and thaw scheduling require generated orchestration.",
+      "temporary_or_canonical": "temporary",
+      "migration_path": "Promote freeze state and timer scheduling into canonical PlayerStatusRuntime with explicit event bus ownership.",
+      "engine_port_mappings": [
+        {
+          "engine_port_id": "character_movement.disable_movement",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/character_movement.disable_movement.json",
+          "adapter_or_helper": "CharacterMovementAdapter.disableMovementForFreeze",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.NavMovementComponent"
+          ]
+        },
+        {
+          "engine_port_id": "timer.set_timer",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/timer.set_timer.json",
+          "adapter_or_helper": "TimerAdapter.scheduleThaw",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.KismetSystemLibrary.K2_SetTimerForNextTickDelegate",
+            "UE.KismetSystemLibrary.K2_ClearTimerHandle"
+          ]
+        }
+      ],
+      "thin_contracts": [
+        "Enter frozen state when a freeze event is received.",
+        "Block player movement while frozen.",
+        "Schedule the frozen state to end after the short duration."
+      ],
+      "ability_binding": "Generated runtime event bus invokes this ability on freeze_event; it sets is_frozen, disables movement, and schedules the thaw behavior.",
+      "verification_evidence": [
+        "Freeze event sets the player frozen state.",
+        "Frozen player cannot move or dash until thaw.",
+        "Validation should confirm movement disable and thaw timer scheduling."
+      ]
+    },
+    {
+      "entity_id": "player",
+      "ability_id": "player.frozen_state",
+      "behavior_id": "player.frozen_state.thaw",
+      "flow_id": "flow.player.frozen_state.thaw",
+      "runtime_owner": "TypeScript/content/generated/PlayerFrozenStateThawAbility.ts",
+      "implementation_carrier": "generated_runtime_orchestrator",
+      "selected_runtime_owner": "PlayerFrozenStateThawAbility",
+      "existing_framework_candidates": [
+        "UE.NavMovementComponent"
+      ],
+      "why_not_existing_framework": "Movement restore evidence exists, but thaw event consumption and frozen-state mutation require generated runtime orchestration.",
+      "temporary_or_canonical": "temporary",
+      "migration_path": "Merge thaw handling into canonical PlayerStatusRuntime with freeze timer ownership.",
+      "engine_port_mappings": [
+        {
+          "engine_port_id": "character_movement.set_movement_mode",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/character_movement.set_movement_mode.json",
+          "adapter_or_helper": "CharacterMovementAdapter.restoreWalkingMovementMode",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.NavMovementComponent"
+          ]
+        }
+      ],
+      "thin_contracts": [
+        "End frozen state when the freeze duration expires.",
+        "Restore normal movement capability after thawing."
+      ],
+      "ability_binding": "TimerAdapter.scheduleThaw emits thaw_pending into the generated runtime event bus, which invokes this ability to clear is_frozen and restore movement.",
+      "verification_evidence": [
+        "After the freeze duration ends, the player can move again.",
+        "After thawing, dash input is accepted again.",
+        "Validation should confirm movement mode restore after the scheduled thaw."
+      ]
+    },
+    {
+      "entity_id": "patrolling_melee_enemy",
+      "ability_id": "patrolling_melee_enemy.patrol",
+      "behavior_id": "patrolling_melee_enemy.patrol.move_back_and_forth",
+      "flow_id": "flow.patrolling_melee_enemy.patrol.move_back_and_forth",
+      "runtime_owner": "TypeScript/content/generated/PatrollingMeleeEnemyPatrolMoveBackAndForthAbility.ts",
+      "implementation_carrier": "template_rendered_ts",
+      "selected_runtime_owner": "PatrollingMeleeEnemyPatrolMoveBackAndForthAbility",
+      "existing_framework_candidates": [
+        "UE.Actor.SetActorLocation"
+      ],
+      "why_not_existing_framework": "Actor location setting exists, but patrol bounds, direction reversal, and defeated-state gating need generated behavior logic.",
+      "temporary_or_canonical": "temporary",
+      "migration_path": "Move patrol bounds and direction state into canonical EnemyPatrolRuntime after validation.",
+      "engine_port_mappings": [
+        {
+          "engine_port_id": "actor.set_actor_location",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/actor.set_actor_location.json",
+          "adapter_or_helper": "ActorMovementAdapter.setActorLocation",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.Actor.SetActorLocation"
+          ]
+        }
+      ],
+      "thin_contracts": [
+        "Move the active undefeated enemy along a short horizontal patrol path.",
+        "Reverse patrol direction at path limits."
+      ],
+      "ability_binding": "Generated enemy tick/update loop invokes this ability while enemy_active is true and is_defeated is false.",
+      "verification_evidence": [
+        "Active undefeated enemy moves horizontally between patrol bounds.",
+        "Defeated enemy does not continue patrolling.",
+        "Validation should confirm SetActorLocation calls stop after defeated state."
+      ]
+    },
+    {
+      "entity_id": "patrolling_melee_enemy",
+      "ability_id": "patrolling_melee_enemy.melee_pressure",
+      "behavior_id": "patrolling_melee_enemy.melee_pressure.threaten_close_player",
+      "flow_id": "flow.patrolling_melee_enemy.melee_pressure.threaten_close_player",
+      "runtime_owner": "TypeScript/content/generated/PatrollingMeleeEnemyMeleePressureThreatenClosePlayerAbility.ts",
+      "implementation_carrier": "template_rendered_ts",
+      "selected_runtime_owner": "PatrollingMeleeEnemyMeleePressureThreatenClosePlayerAbility",
+      "existing_framework_candidates": [
+        "UE.KismetSystemLibrary.SphereOverlapActors",
+        "UE.KismetSystemLibrary.SphereOverlapComponents",
+        "UE.KismetSystemLibrary.GetActorListFromComponentList"
+      ],
+      "why_not_existing_framework": "Overlap query helpers exist, but close-threat state and active-enemy filtering need generated gameplay logic.",
+      "temporary_or_canonical": "temporary",
+      "migration_path": "Fold overlap threat checks into canonical EnemyThreatRuntime when collision setup is stable.",
+      "engine_port_mappings": [
+        {
+          "engine_port_id": "primitive.on_component_begin_overlap",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json",
+          "adapter_or_helper": "OverlapQueryAdapter.detectPlayerThreatOverlap",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.KismetSystemLibrary.SphereOverlapActors",
+            "UE.KismetSystemLibrary.SphereOverlapComponents",
+            "UE.KismetSystemLibrary.GetActorListFromComponentList"
+          ]
+        }
+      ],
+      "thin_contracts": [
+        "Detect when the active enemy is close enough to the player to represent melee danger.",
+        "Expose the close-range threat state for avoidance and combat validation."
+      ],
+      "ability_binding": "Generated enemy update loop invokes this ability to poll or bind overlap detection and publish melee_threat_active.",
+      "verification_evidence": [
+        "Close player overlap marks the enemy as a melee threat.",
+        "No close overlap means no active melee threat.",
+        "Validation should confirm overlap helper output drives melee_threat_active."
+      ]
+    },
+    {
+      "entity_id": "patrolling_melee_enemy",
+      "ability_id": "patrolling_melee_enemy.health",
+      "behavior_id": "patrolling_melee_enemy.health.take_melee_damage",
+      "flow_id": "flow.patrolling_melee_enemy.health.take_melee_damage",
+      "runtime_owner": "TypeScript/content/generated/PatrollingMeleeEnemyHealthTakeMeleeDamageAbility.ts",
+      "implementation_carrier": "generated_runtime_orchestrator",
+      "selected_runtime_owner": "PatrollingMeleeEnemyHealthTakeMeleeDamageAbility",
+      "existing_framework_candidates": [
+        "UE.GameplayStatics.ApplyDamage",
+        "UE.AISense_Damage.ReportDamageEvent",
+        "UE.GameplayStatics.ApplyRadialDamage"
+      ],
+      "why_not_existing_framework": "Damage pipeline evidence exists, but health mutation and health_zero result publication require generated enemy health orchestration.",
+      "temporary_or_canonical": "temporary",
+      "migration_path": "Move health state and damage-event routing into canonical EnemyHealthRuntime after combat validation.",
+      "engine_port_mappings": [
+        {
+          "engine_port_id": "actor.on_take_any_damage",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/actor.on_take_any_damage.json",
+          "adapter_or_helper": "DamageAdapter.routeAppliedDamageToEnemyHealth",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.GameplayStatics.ApplyDamage",
+            "UE.AISense_Damage.ReportDamageEvent",
+            "UE.GameplayStatics.ApplyRadialDamage"
+          ]
+        }
+      ],
+      "thin_contracts": [
+        "Receive melee damage from the player's successful strike.",
+        "Report whether the new health has reached zero."
+      ],
+      "ability_binding": "DamageAdapter routes enemy_damage_event into this generated ability, which decrements health and emits health_zero when depleted.",
+      "verification_evidence": [
+        "A valid melee damage event reduces enemy health.",
+        "Health reaching zero emits the health_zero result.",
+        "Validation should confirm ApplyDamage output reaches this health handler."
+      ]
+    },
+    {
+      "entity_id": "patrolling_melee_enemy",
+      "ability_id": "patrolling_melee_enemy.health",
+      "behavior_id": "patrolling_melee_enemy.health.become_defeated",
+      "flow_id": "flow.patrolling_melee_enemy.health.become_defeated",
+      "runtime_owner": "TypeScript/content/generated/PatrollingMeleeEnemyHealthBecomeDefeatedAbility.ts",
+      "implementation_carrier": "generated_runtime_orchestrator",
+      "selected_runtime_owner": "PatrollingMeleeEnemyHealthBecomeDefeatedAbility",
+      "existing_framework_candidates": [
+        "UE.Actor.SetActorTickEnabled"
+      ],
+      "why_not_existing_framework": "Actor tick disabling exists, but defeated state, threat shutdown, and exit unlock signal need generated orchestration.",
+      "temporary_or_canonical": "temporary",
+      "migration_path": "Merge defeated-state handling into canonical EnemyHealthRuntime and route exit unlock through canonical RoomStateRuntime.",
+      "engine_port_mappings": [
+        {
+          "engine_port_id": "actor.set_actor_tick_enabled",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/actor.set_actor_tick_enabled.json",
+          "adapter_or_helper": "ActorLifecycleAdapter.setActorTickEnabled",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.Actor.SetActorTickEnabled"
+          ]
+        }
+      ],
+      "thin_contracts": [
+        "Enter defeated state when enemy health reaches zero.",
+        "Stop the defeated enemy from acting as an active patrol threat.",
+        "Signal that the room exit is eligible to unlock."
+      ],
+      "ability_binding": "Generated runtime event bus invokes this ability on health_zero; it sets is_defeated, disables enemy ticking, and emits exit_unlock_eligible.",
+      "verification_evidence": [
+        "Enemy at zero health becomes defeated.",
+        "Defeated enemy stops patrol/threat behavior and enables exit eligibility.",
+        "Validation should confirm SetActorTickEnabled false and exit_unlock_eligible emission."
+      ]
+    },
+    {
+      "entity_id": "ice_trap",
+      "ability_id": "ice_trap.freeze_trigger",
+      "behavior_id": "ice_trap.freeze_trigger.freeze_overlapping_player",
+      "flow_id": "flow.ice_trap.freeze_trigger.freeze_overlapping_player",
+      "runtime_owner": "TypeScript/content/generated/IceTrapFreezeTriggerFreezeOverlappingPlayerAbility.ts",
+      "implementation_carrier": "generated_runtime_orchestrator",
+      "selected_runtime_owner": "IceTrapFreezeTriggerFreezeOverlappingPlayerAbility",
+      "existing_framework_candidates": [
+        "UE.KismetSystemLibrary.SphereOverlapActors",
+        "UE.KismetSystemLibrary.SphereOverlapComponents",
+        "UE.KismetSystemLibrary.GetActorListFromComponentList"
+      ],
+      "why_not_existing_framework": "Overlap helpers exist, but player filtering and freeze/feedback event fanout require generated trap orchestration.",
+      "temporary_or_canonical": "temporary",
+      "migration_path": "Move trap overlap and freeze event fanout into canonical TrapRuntime or RoomInteractionRuntime.",
+      "engine_port_mappings": [
+        {
+          "engine_port_id": "primitive.on_component_begin_overlap",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json",
+          "adapter_or_helper": "OverlapQueryAdapter.detectIceTrapPlayerOverlap",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.KismetSystemLibrary.SphereOverlapActors",
+            "UE.KismetSystemLibrary.SphereOverlapComponents",
+            "UE.KismetSystemLibrary.GetActorListFromComponentList"
+          ]
+        }
+      ],
+      "thin_contracts": [
+        "Detect player overlap with the ice trap.",
+        "Emit a freeze event for the overlapping player and feedback systems."
+      ],
+      "ability_binding": "Generated trap overlap hook invokes this ability; player overlaps emit freeze_event and freeze_feedback_event through the generated runtime event bus.",
+      "verification_evidence": [
+        "Player overlap with the trap emits a freeze event.",
+        "Non-player overlap does not freeze the player.",
+        "Validation should confirm overlap detection and both freeze events are emitted."
+      ]
+    },
+    {
+      "entity_id": "freeze_vfx",
+      "ability_id": "freeze_vfx.freeze_feedback",
+      "behavior_id": "freeze_vfx.freeze_feedback.appear_on_freeze",
+      "flow_id": "flow.freeze_vfx.freeze_feedback.appear_on_freeze",
+      "runtime_owner": "TypeScript/content/generated/FreezeVfxFreezeFeedbackAppearOnFreezeAbility.ts",
+      "implementation_carrier": "template_rendered_ts",
+      "selected_runtime_owner": "FreezeVfxFreezeFeedbackAppearOnFreezeAbility",
+      "existing_framework_candidates": [
+        "UE.NiagaraFunctionLibrary.SpawnSystemAttachedWithParams"
+      ],
+      "why_not_existing_framework": "Niagara spawn helper exists, but freeze feedback event subscription and player attachment selection need generated behavior logic.",
+      "temporary_or_canonical": "temporary",
+      "migration_path": "Move VFX asset selection and attachment policy into canonical FeedbackRuntime after visual validation.",
+      "engine_port_mappings": [
+        {
+          "engine_port_id": "niagara.spawn_system_attached",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/niagara.spawn_system_attached.json",
+          "adapter_or_helper": "NiagaraFeedbackAdapter.spawnFreezeSystemAttached",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.NiagaraFunctionLibrary.SpawnSystemAttachedWithParams"
+          ]
+        }
+      ],
+      "thin_contracts": [
+        "Receive the freeze feedback event.",
+        "Show a brief freeze visual effect attached to or around the player."
+      ],
+      "ability_binding": "Generated runtime event bus invokes this ability on freeze_feedback_event, passing player_actor to the Niagara feedback adapter.",
+      "verification_evidence": [
+        "Freeze feedback event spawns visible freeze VFX on the player.",
+        "The VFX is associated with the frozen moment only.",
+        "Validation should confirm Niagara spawn is attached to or around the player."
+      ]
+    },
+    {
+      "entity_id": "side_camera",
+      "ability_id": "side_camera.freeze_feedback_shake",
+      "behavior_id": "side_camera.freeze_feedback_shake.shake_on_freeze",
+      "flow_id": "flow.side_camera.freeze_feedback_shake.shake_on_freeze",
+      "runtime_owner": "TypeScript/content/generated/SideCameraFreezeFeedbackShakeShakeOnFreezeAbility.ts",
+      "implementation_carrier": "template_rendered_ts",
+      "selected_runtime_owner": "SideCameraFreezeFeedbackShakeShakeOnFreezeAbility",
+      "existing_framework_candidates": [
+        "UE.LegacyCameraShake.StartLegacyCameraShake",
+        "UE.GameplayStatics.PlayWorldCameraShake",
+        "UE.GameplayStatics.GetPlayerControllerFromID"
+      ],
+      "why_not_existing_framework": "Camera shake helpers exist, but freeze feedback subscription and side-scroller-safe shake policy need generated behavior logic.",
+      "temporary_or_canonical": "temporary",
+      "migration_path": "Move camera feedback tuning into canonical FeedbackRuntime or CameraRuntime after validation.",
+      "engine_port_mappings": [
+        {
+          "engine_port_id": "player_controller.client_start_camera_shake",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/player_controller.client_start_camera_shake.json",
+          "adapter_or_helper": "CameraFeedbackAdapter.playFreezeCameraShake",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.LegacyCameraShake.StartLegacyCameraShake",
+            "UE.GameplayStatics.PlayWorldCameraShake",
+            "UE.GameplayStatics.GetPlayerControllerFromID"
+          ]
+        }
+      ],
+      "thin_contracts": [
+        "Receive the freeze feedback event.",
+        "Play a small brief camera shake without changing the side-scroller view."
+      ],
+      "ability_binding": "Generated runtime event bus invokes this ability on freeze_feedback_event; it resolves the player controller and plays the configured small camera shake.",
+      "verification_evidence": [
+        "Freeze feedback event plays a brief camera shake.",
+        "Camera shake does not alter room completion or player state.",
+        "Validation should confirm shake playback and unchanged side-scroller camera framing."
+      ]
+    },
+    {
+      "entity_id": "locked_exit",
+      "ability_id": "locked_exit.enemy_gate",
+      "behavior_id": "locked_exit.enemy_gate.remain_locked",
+      "flow_id": "flow.locked_exit.enemy_gate.remain_locked",
+      "runtime_owner": "TypeScript/content/generated/LockedExitEnemyGateRemainLockedAbility.ts",
+      "implementation_carrier": "generated_runtime_orchestrator",
+      "selected_runtime_owner": "LockedExitEnemyGateRemainLockedAbility",
+      "existing_framework_candidates": [
+        "UE.KismetSystemLibrary.SphereOverlapActors",
+        "UE.KismetSystemLibrary.SphereOverlapComponents",
+        "UE.KismetSystemLibrary.GetActorListFromComponentList"
+      ],
+      "why_not_existing_framework": "Overlap helpers exist, but locked-state gating and room completion denial require generated exit orchestration.",
+      "temporary_or_canonical": "temporary",
+      "migration_path": "Move exit lock state and denial policy into canonical RoomExitRuntime.",
+      "engine_port_mappings": [
+        {
+          "engine_port_id": "primitive.on_component_begin_overlap",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json",
+          "adapter_or_helper": "ExitOverlapAdapter.detectLockedExitAttempt",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.KismetSystemLibrary.SphereOverlapActors",
+            "UE.KismetSystemLibrary.SphereOverlapComponents",
+            "UE.KismetSystemLibrary.GetActorListFromComponentList"
+          ]
+        }
+      ],
+      "thin_contracts": [
+        "Detect when the player reaches the exit while the enemy is not defeated.",
+        "Deny room completion while the exit remains locked."
+      ],
+      "ability_binding": "Generated exit overlap hook invokes this ability while enemy_defeated_false is true; it emits room_completion_denied instead of room_complete.",
+      "verification_evidence": [
+        "Player reaching the exit before enemy defeat does not complete the room.",
+        "Locked exit state remains active while the enemy is undefeated.",
+        "Validation should confirm locked exit overlap denies completion."
+      ]
+    },
+    {
+      "entity_id": "locked_exit",
+      "ability_id": "locked_exit.enemy_gate",
+      "behavior_id": "locked_exit.enemy_gate.unlock_after_enemy_defeat",
+      "flow_id": "flow.locked_exit.enemy_gate.unlock_after_enemy_defeat",
+      "runtime_owner": "TypeScript/content/generated/LockedExitEnemyGateUnlockAfterEnemyDefeatAbility.ts",
+      "implementation_carrier": "generated_runtime_orchestrator",
+      "selected_runtime_owner": "LockedExitEnemyGateUnlockAfterEnemyDefeatAbility",
+      "existing_framework_candidates": [
+        "UE.KismetSystemLibrary.SphereOverlapActors",
+        "UE.KismetSystemLibrary.SphereOverlapComponents",
+        "UE.KismetSystemLibrary.GetActorListFromComponentList"
+      ],
+      "why_not_existing_framework": "Overlap helpers exist, but exit state transition from locked to unlocked and unlock eligibility routing require generated orchestration.",
+      "temporary_or_canonical": "temporary",
+      "migration_path": "Move unlock transition and activation boundary ownership into canonical RoomExitRuntime.",
+      "engine_port_mappings": [
+        {
+          "engine_port_id": "primitive.on_component_begin_overlap",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json",
+          "adapter_or_helper": "ExitOverlapAdapter.detectUnlockedExitReachability",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.KismetSystemLibrary.SphereOverlapActors",
+            "UE.KismetSystemLibrary.SphereOverlapComponents",
+            "UE.KismetSystemLibrary.GetActorListFromComponentList"
+          ]
+        }
+      ],
+      "thin_contracts": [
+        "Change the exit runtime state from locked to unlocked when the enemy is defeated.",
+        "Use the exit overlap boundary as the activation point for the now-unlocked exit."
+      ],
+      "ability_binding": "Generated runtime event bus invokes this ability on exit_unlock_eligible; it sets exit_unlocked and enables the exit overlap activation path.",
+      "verification_evidence": [
+        "Enemy defeat changes the exit state to unlocked.",
+        "Unlocked exit can be activated by player reach overlap.",
+        "Validation should confirm exit_unlocked state and overlap activation readiness."
+      ]
+    },
+    {
+      "entity_id": "locked_exit",
+      "ability_id": "locked_exit.room_completion",
+      "behavior_id": "locked_exit.room_completion.complete_on_reach",
+      "flow_id": "flow.locked_exit.room_completion.complete_on_reach",
+      "runtime_owner": "TypeScript/content/generated/LockedExitRoomCompletionCompleteOnReachAbility.ts",
+      "implementation_carrier": "generated_runtime_orchestrator",
+      "selected_runtime_owner": "LockedExitRoomCompletionCompleteOnReachAbility",
+      "existing_framework_candidates": [
+        "UE.KismetSystemLibrary.SphereOverlapActors",
+        "UE.KismetSystemLibrary.SphereOverlapComponents",
+        "UE.KismetSystemLibrary.GetActorListFromComponentList"
+      ],
+      "why_not_existing_framework": "Overlap helpers exist, but unlocked-state validation and room completion mutation require generated room-state orchestration.",
+      "temporary_or_canonical": "temporary",
+      "migration_path": "Move valid exit reach and room_complete mutation into canonical RoomStateRuntime.",
+      "engine_port_mappings": [
+        {
+          "engine_port_id": "primitive.on_component_begin_overlap",
+          "adjudication_path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json",
+          "adapter_or_helper": "ExitOverlapAdapter.detectValidUnlockedExitReach",
+          "verdict": "hit",
+          "evidence_symbols": [
+            "UE.KismetSystemLibrary.SphereOverlapActors",
+            "UE.KismetSystemLibrary.SphereOverlapComponents",
+            "UE.KismetSystemLibrary.GetActorListFromComponentList"
+          ]
+        }
+      ],
+      "thin_contracts": [
+        "Detect player reaching the exit activation boundary.",
+        "Mark the compact combat room complete only when the reached exit is unlocked."
+      ],
+      "ability_binding": "Generated exit overlap hook invokes this ability when exit_unlocked is true; the ability emits room_complete through the generated room-state event bus.",
+      "verification_evidence": [
+        "Player reaching an unlocked exit marks the room complete.",
+        "Player reaching a locked exit does not mark the room complete.",
+        "Validation should confirm valid_exit_reach produces room_complete only when exit_unlocked is true."
+      ]
+    }
+  ],
+  "blocked_mappings": []
+}

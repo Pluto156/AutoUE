@@ -1,0 +1,20 @@
+{
+  "engine_port_id": "actor.on_take_any_damage",
+  "flow_ids": [
+    "flow.patrolling_melee_enemy.health.take_melee_damage"
+  ],
+  "behavior_ids": [
+    "patrolling_melee_enemy.health.take_melee_damage"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for actor.on_take_any_damage; exact symbol hints: Actor.OnTakeAnyDamage, ActorOnTakeAnyDamage, actor on take any damage. Intent: Receive melee damage from the player's successful strike.",
+  "raw_path": "flow/04-ue-api-mcp/raw/actor.on_take_any_damage.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/actor.on_take_any_damage.json",
+  "verdict": "hit",
+  "hit_type": "indirect_hit",
+  "evidence_symbols": [
+    "UE.GameplayStatics.ApplyDamage",
+    "UE.AISense_Damage.ReportDamageEvent",
+    "UE.GameplayStatics.ApplyRadialDamage"
+  ],
+  "notes": "Damage pipeline symbols are usable evidence for damage handling, though the exact OnTakeAnyDamage delegate symbol is absent."
+}

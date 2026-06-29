@@ -27,12 +27,20 @@ CXX_FILE_RE = re.compile(r"(?i)\.(?:h|cpp)\b")
 TS_IDENT_RE = re.compile(r"^[A-Za-z_$][A-Za-z0-9_$]*$")
 ALLOWED_TEMPLATES = {
     "TypeScriptInteractiveObjectGenerator": {"interactive_object"},
-    "TypeScriptCodeGenerator": {"ability_module", "runtime_bootstrap"},
+    "TypeScriptCodeGenerator": {
+        "ability_module",
+        "runtime_bootstrap",
+        "aid_runtime_orchestrator",
+        "aid_character_adapter",
+        "aid_gamemode_adapter",
+        "aid_camera_setup",
+        "scene_manifest_helper",
+    },
 }
 ALLOWED_STAGES = {"Input", "Ability/Action", "SpatialQuery/HitQuery", "Damage/Resource", "Event/Result", "Feedback/HUD", "Cleanup", "Custom"}
 ALLOWED_VERDICTS = {"hit", "miss"}
 ALLOWED_HIT_TYPES = {"direct_hit", "indirect_hit", "none"}
-ALLOWED_CARRIERS = {"template_rendered_ts", "existing_runtime_adapter", "blocked"}
+ALLOWED_CARRIERS = {"template_rendered_ts", "existing_runtime_adapter", "generated_aidev_adapter", "generated_runtime_orchestrator", "blocked"}
 
 class Phase2ValidationError(ValueError):
     pass
@@ -221,11 +229,16 @@ def validate_puerts_runtime_mapping_planner(node: str, data: dict[str, Any]) -> 
             raise Phase2ValidationError(f"{node}: invalid implementation_carrier: {carrier}")
         require_list(node, mapping, "thin_contracts", non_empty=True)
         require_list(node, mapping, "verification_evidence", non_empty=True)
+        require_list(node, mapping, "existing_framework_candidates")
+        require_string(node, mapping, "why_not_existing_framework", non_empty=True)
+        require_string(node, mapping, "temporary_or_canonical", non_empty=True)
+        require_string(node, mapping, "migration_path", non_empty=True)
         for pi, port in enumerate(require_list(node, mapping, "engine_port_mappings", non_empty=True)):
             if not isinstance(port, dict):
                 raise Phase2ValidationError(f"{node}: engine_port_mappings[{pi}] must be object")
             require_string(node, port, "engine_port_id", non_empty=True)
             validate_json_path(node, require_string(node, port, "adjudication_path", non_empty=True), label=f"engine_port_mappings[{pi}].adjudication_path")
+            require_string(node, port, "adapter_or_helper", non_empty=True)
             if require_string(node, port, "verdict", non_empty=True) not in ALLOWED_VERDICTS:
                 raise Phase2ValidationError(f"{node}: invalid engine port verdict")
             require_list(node, port, "evidence_symbols")

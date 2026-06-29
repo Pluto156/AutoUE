@@ -1,0 +1,639 @@
+{
+  "engine_port_id": "primitive.on_component_begin_overlap",
+  "flow_ids": [
+    "flow.patrolling_melee_enemy.melee_pressure.threaten_close_player",
+    "flow.ice_trap.freeze_trigger.freeze_overlapping_player",
+    "flow.locked_exit.enemy_gate.remain_locked",
+    "flow.locked_exit.enemy_gate.unlock_after_enemy_defeat",
+    "flow.locked_exit.room_completion.complete_on_reach"
+  ],
+  "behavior_ids": [
+    "patrolling_melee_enemy.melee_pressure.threaten_close_player",
+    "ice_trap.freeze_trigger.freeze_overlapping_player",
+    "locked_exit.enemy_gate.remain_locked",
+    "locked_exit.enemy_gate.unlock_after_enemy_defeat",
+    "locked_exit.room_completion.complete_on_reach"
+  ],
+  "contracts": [
+    "Detect when the active enemy is close enough to the player to represent melee danger.",
+    "Detect player overlap with the ice trap.",
+    "Detect when the player reaches the exit while the enemy is not defeated.",
+    "Use the exit overlap boundary as the activation point for the now-unlocked exit.",
+    "Detect player reaching the exit activation boundary."
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for primitive.on_component_begin_overlap; exact symbol hints: UE.PrimitiveComponent.OnComponentBeginOverlap, OnComponentBeginOverlap, FComponentBeginOverlapSignature, UE.KismetSystemLibrary.SphereOverlapActors, UE.KismetSystemLibrary.ComponentOverlapActors, component begin overlap, sphere overlap actors. Intent: Detect when the active enemy is close enough to the player to represent melee danger.",
+  "raw_path": "flow/04-ue-api-mcp/raw/primitive.on_component_begin_overlap.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json",
+  "raw_result": {
+    "tool": "ue_api_semantic_search",
+    "query": "Unreal Engine PuerTS gameplay API for primitive.on_component_begin_overlap; exact symbol hints: UE.PrimitiveComponent.OnComponentBeginOverlap, OnComponentBeginOverlap, FComponentBeginOverlapSignature, UE.KismetSystemLibrary.SphereOverlapActors, UE.KismetSystemLibrary.ComponentOverlapActors, component begin overlap, sphere overlap actors. Intent: Detect when the active enemy is close enough to the player to represent melee danger.",
+    "limit": 5,
+    "raw_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"ok\",\n  \"mode\": \"semantic\",\n  \"query\": \"Unreal Engine PuerTS gameplay API for primitive.on_component_begin_overlap; exact symbol hints: UE.PrimitiveComponent.OnComponentBeginOverlap, OnComponentBeginOverlap, FComponentBeginOverlapSignature, UE.KismetSystemLibrary.SphereOverlapActors, UE.KismetSystemLibrary.ComponentOverlapActors, component begin overlap, sphere overlap actors. Intent: Detect when the active enemy is close enough to the player to represent melee danger.\",\n  \"searchText\": \"primitive component actor character OnComponentBeginOverlap FComponentBeginOverlapSignature component begin overlap delegate event sphere overlap actors component overlap SphereOverlapActors ComponentOverlapActors melee range proximity danger detection\",\n  \"rewrite\": {\n    \"status\": \"rewritten\",\n    \"domainStatus\": \"ue_relevant\",\n    \"intentSummary\": \"Detect when an enemy is within melee danger range using PrimitiveComponent overlap events.\",\n    \"warnings\": [],\n    \"activeSubqueries\": [\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The actors and components that carry the overlap detection.\",\n        \"subqueryId\": \"carrier_context_1\",\n        \"text\": \"primitive component actor character\",\n        \"weight\": 1.0,\n        \"subqueryWeight\": 1.0\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The overlap event that triggers when the enemy enters range.\",\n        \"subqueryId\": \"activation_trigger_1\",\n        \"text\": \"OnComponentBeginOverlap FComponentBeginOverlapSignature\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The overlap event that triggers when the enemy enters range.\",\n        \"subqueryId\": \"activation_trigger_2\",\n        \"text\": \"component begin overlap delegate event\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"spatial_targeting\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The spatial overlap queries to detect proximity.\",\n        \"subqueryId\": \"spatial_targeting_1\",\n        \"text\": \"sphere overlap actors component overlap\",\n        \"weight\": 0.6,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"spatial_targeting\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The spatial overlap queries to detect proximity.\",\n        \"subqueryId\": \"spatial_targeting_2\",\n        \"text\": \"SphereOverlapActors ComponentOverlapActors\",\n        \"weight\": 0.4,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"damage_state\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"The melee danger state indicated by proximity.\",\n        \"subqueryId\": \"damage_state_1\",\n        \"text\": \"melee range proximity danger detection\",\n        \"weight\": 0.6,\n        \"subqueryWeight\": 1.0\n      }\n    ]\n  },\n  \"embedding\": {\n    \"enabled\": true,\n    \"provider\": \"ollama\",\n    \"model\": \"bge-m3\",\n    \"dimensions\": 1024,\n    \"indexedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"status\": \"ready\"\n  },\n  \"partitions\": {\n    \"enabled\": true,\n    \"classifierEnabled\": true,\n    \"provider\": \"aaa\",\n    \"binaryAvailable\": true,\n    \"timeoutMs\": 90000,\n    \"candidateCount\": 20361,\n    \"processedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"validAssignmentCount\": 14733,\n    \"partitionedEntryCount\": 12532,\n    \"partitionedEntryRatio\": 0.6155,\n    \"searchReady\": true,\n    \"byFacet\": {\n      \"activation_trigger\": 241,\n      \"ai_behavior\": 948,\n      \"animation\": 1856,\n      \"audio\": 704,\n      \"camera_feedback_ui\": 1336,\n      \"carrier_context\": 1362,\n      \"damage_state\": 548,\n      \"integration_event\": 1069,\n      \"level_world\": 342,\n      \"lighting\": 134,\n      \"material_visual_state\": 1065,\n      \"mesh_geometry\": 1545,\n      \"movement_navigation\": 256,\n      \"networking_authority\": 414,\n      \"persistence_assets\": 612,\n      \"physics\": 666,\n      \"spatial_targeting\": 466,\n      \"spawn_lifecycle\": 117,\n      \"visual_effects\": 1052\n    },\n    \"status\": \"ready\",\n    \"searchScoped\": true\n  },\n  \"filters\": {},\n  \"confidence\": {\n    \"minConfidence\": 0.55,\n    \"status\": \"ok\",\n    \"topConfidence\": 0.736\n  },\n  \"count\": 5,\n  \"results\": [\n    {\n      \"ref\": \"49d255545287\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetSystemLibrary.SphereOverlapActors\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetSystemLibrary\",\n      \"signature\": \"static SphereOverlapActors(WorldContextObject: $Nullable<UE.Object>, SpherePos: UE.Vector, SphereRadius: number, ObjectTypes: TArray<UE.EObjectTypeQuery>, ActorClassFilter: $Nullable<UE.Class>, ActorsToIgnore: TArray<UE.Actor>, OutActors: $Ref<TArray<UE.Actor>>) : boolean;\",\n      \"score\": 93.0,\n      \"confidence\": 0.736,\n      \"summary\": \"Returns an array of actors that overlap the given sphere.\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Detect when an enemy is within melee danger range using PrimitiveComponent overlap events.\",\n        \"name: actors, overlap, sphere\",\n        \"doc: actors, overlap, sphere\",\n        \"params: actors, sphere\",\n        \"facets: spatial_targeting/bm25, spatial_targeting/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"c8c40ad20903\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.GameplayAbilityTargetActor_Trace\",\n      \"kind\": \"class\",\n      \"score\": 90.0,\n      \"confidence\": 0.7617,\n      \"extends\": \"UE.GameplayAbilityTargetActor\",\n      \"source\": \"Plugin/GameplayAbilities\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"9f903c667c2f\",\n          \"symbol\": \"UE.GameplayAbilityTargetActor_Trace.MaxRange\",\n          \"kind\": \"property\",\n          \"signature\": \"MaxRange: number;\",\n          \"summary\": \"\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Detect when an enemy is within melee danger range using PrimitiveComponent overlap events.\",\n        \"name: actor\",\n        \"members: MaxRange\",\n        \"facets: damage_state/bm25, damage_state/vector\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"0eebc6b66da7\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.StateTreeComponent\",\n      \"kind\": \"class\",\n      \"score\": 92.5,\n      \"confidence\": 0.7397,\n      \"extends\": \"UE.BrainComponent\",\n      \"source\": \"Plugin/GameplayStateTreeModule\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"8e9b95517551\",\n          \"symbol\": \"UE.StateTreeComponent.OnStateTreeRunStatusChanged\",\n          \"kind\": \"property\",\n          \"signature\": \"OnStateTreeRunStatusChanged: $MulticastDelegate<(StateTreeRunStatus: UE.EStateTreeRunStatus) => void>;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"f911e3e01e32\",\n          \"symbol\": \"UE.StateTreeComponent.SendStateTreeEvent\",\n          \"kind\": \"method\",\n          \"signature\": \"SendStateTreeEvent(Event: UE.StateTreeEvent) : void;\",\n          \"summary\": \"Sends event to the running StateTree.\"\n        },\n        {\n          \"ref\": \"1cb7bd5a9be3\",\n          \"symbol\": \"UE.StateTreeComponent.SetStartLogicAutomatically\",\n          \"kind\": \"method\",\n          \"signature\": \"SetStartLogicAutomatically(bInStartLogicAutomatically: boolean) : void;\",\n          \"summary\": \"Sets whether the State Tree is started automatically on begin play. This function sets the bStartLogicAutomatically property, and should be used mostly from constructions scripts. If you wish to start the logic manually,\"\n        },\n        {\n          \"ref\": \"861de8ad05dd\",\n          \"symbol\": \"UE.StateTreeComponent.AddLinkedStateTreeOverrides\",\n          \"kind\": \"method\",\n          \"signature\": \"AddLinkedStateTreeOverrides(StateTag: UE.GameplayTag, StateTreeReference: UE.StateTreeReference) : void;\",\n          \"summary\": \"Add a linked state tree override. The override won't be set if it doesn't use the StateTreeComponentSchema schema.\"\n        },\n        {\n          \"ref\": \"04f8345e7c57\",\n          \"symbol\": \"UE.StateTreeComponent.GetStateTreeRunStatus\",\n          \"kind\": \"method\",\n          \"signature\": \"GetStateTreeRunStatus() : UE.EStateTreeRunStatus;\",\n          \"summary\": \"Returns the current run status of the StateTree.\"\n        },\n        {\n          \"ref\": \"c939aa478ee4\",\n          \"symbol\": \"UE.StateTreeComponent.InstanceData\",\n          \"kind\": \"property\",\n          \"signature\": \"InstanceData: UE.StateTreeInstanceData;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"44eebe909203\",\n          \"symbol\": \"UE.StateTreeComponent.LinkedStateTreeOverrides\",\n          \"kind\": \"property\",\n          \"signature\": \"LinkedStateTreeOverrides: UE.StateTreeReferenceOverrides;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"3e7d749fb159\",\n          \"symbol\": \"UE.StateTreeComponent.RemoveLinkedStateTreeOverrides\",\n          \"kind\": \"method\",\n          \"signature\": \"RemoveLinkedStateTreeOverrides(StateTag: UE.GameplayTag) : void;\",\n          \"summary\": \"Remove a linked state tree override.\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Detect when an enemy is within melee danger range using PrimitiveComponent overlap events.\",\n        \"name: component\",\n        \"members: OnStateTreeRunStatusChanged, SendStateTreeEvent, SetStartLogicAutomatically, AddLinkedStateTreeOverrides\",\n        \"facets: activation_trigger/bm25, activation_trigger/vector\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"d503cf53fa89\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetSystemLibrary.GetActorListFromComponentList\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetSystemLibrary\",\n      \"signature\": \"static GetActorListFromComponentList(ComponentList: TArray<UE.PrimitiveComponent>, ActorClassFilter: $Nullable<UE.Class>, OutActorList: $Ref<TArray<UE.Actor>>) : void;\",\n      \"score\": 95.0,\n      \"confidence\": 0.7552,\n      \"summary\": \"Returns an array of unique actors represented by the given list of components.\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Detect when an enemy is within melee danger range using PrimitiveComponent overlap events.\",\n        \"name: actor, component\",\n        \"doc: actors\",\n        \"params: actor, component\",\n        \"facets: carrier_context/bm25, carrier_context/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"83e009355139\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetSystemLibrary.SphereOverlapComponents\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetSystemLibrary\",\n      \"signature\": \"static SphereOverlapComponents(WorldContextObject: $Nullable<UE.Object>, SpherePos: UE.Vector, SphereRadius: number, ObjectTypes: TArray<UE.EObjectTypeQuery>, ComponentClassFilter: $Nullable<UE.Class>, ActorsToIgnore: TArray<UE.Actor>, OutComponents: $Ref<TArray<UE.PrimitiveComponent>>) : boolean;\",\n      \"score\": 92.9907,\n      \"confidence\": 0.7387,\n      \"summary\": \"Returns an array of components that overlap the given sphere.\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Detect when an enemy is within melee danger range using PrimitiveComponent overlap events.\",\n        \"name: overlap, sphere\",\n        \"doc: overlap, sphere\",\n        \"params: actors, sphere\",\n        \"facets: spatial_targeting/bm25, spatial_targeting/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    }\n  ],\n  \"profile\": {\n    \"load\": 0.7576,\n    \"rewrite\": 30.2704,\n    \"embed\": 0.2818,\n    \"bm25\": 0.0922,\n    \"vector\": 0.2257,\n    \"score\": 0.0935,\n    \"select\": 0.0001,\n    \"total\": 31.4398\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "status": "ok",
+        "mode": "semantic",
+        "query": "Unreal Engine PuerTS gameplay API for primitive.on_component_begin_overlap; exact symbol hints: UE.PrimitiveComponent.OnComponentBeginOverlap, OnComponentBeginOverlap, FComponentBeginOverlapSignature, UE.KismetSystemLibrary.SphereOverlapActors, UE.KismetSystemLibrary.ComponentOverlapActors, component begin overlap, sphere overlap actors. Intent: Detect when the active enemy is close enough to the player to represent melee danger.",
+        "searchText": "primitive component actor character OnComponentBeginOverlap FComponentBeginOverlapSignature component begin overlap delegate event sphere overlap actors component overlap SphereOverlapActors ComponentOverlapActors melee range proximity danger detection",
+        "rewrite": {
+          "status": "rewritten",
+          "domainStatus": "ue_relevant",
+          "intentSummary": "Detect when an enemy is within melee danger range using PrimitiveComponent overlap events.",
+          "warnings": [],
+          "activeSubqueries": [
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The actors and components that carry the overlap detection.",
+              "subqueryId": "carrier_context_1",
+              "text": "primitive component actor character",
+              "weight": 1.0,
+              "subqueryWeight": 1.0
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "The overlap event that triggers when the enemy enters range.",
+              "subqueryId": "activation_trigger_1",
+              "text": "OnComponentBeginOverlap FComponentBeginOverlapSignature",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "The overlap event that triggers when the enemy enters range.",
+              "subqueryId": "activation_trigger_2",
+              "text": "component begin overlap delegate event",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "spatial_targeting",
+              "facetStatus": "required",
+              "facetIntent": "The spatial overlap queries to detect proximity.",
+              "subqueryId": "spatial_targeting_1",
+              "text": "sphere overlap actors component overlap",
+              "weight": 0.6,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "spatial_targeting",
+              "facetStatus": "required",
+              "facetIntent": "The spatial overlap queries to detect proximity.",
+              "subqueryId": "spatial_targeting_2",
+              "text": "SphereOverlapActors ComponentOverlapActors",
+              "weight": 0.4,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "damage_state",
+              "facetStatus": "optional",
+              "facetIntent": "The melee danger state indicated by proximity.",
+              "subqueryId": "damage_state_1",
+              "text": "melee range proximity danger detection",
+              "weight": 0.6,
+              "subqueryWeight": 1.0
+            }
+          ]
+        },
+        "embedding": {
+          "enabled": true,
+          "provider": "ollama",
+          "model": "bge-m3",
+          "dimensions": 1024,
+          "indexedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "status": "ready"
+        },
+        "partitions": {
+          "enabled": true,
+          "classifierEnabled": true,
+          "provider": "aaa",
+          "binaryAvailable": true,
+          "timeoutMs": 90000,
+          "candidateCount": 20361,
+          "processedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "validAssignmentCount": 14733,
+          "partitionedEntryCount": 12532,
+          "partitionedEntryRatio": 0.6155,
+          "searchReady": true,
+          "byFacet": {
+            "activation_trigger": 241,
+            "ai_behavior": 948,
+            "animation": 1856,
+            "audio": 704,
+            "camera_feedback_ui": 1336,
+            "carrier_context": 1362,
+            "damage_state": 548,
+            "integration_event": 1069,
+            "level_world": 342,
+            "lighting": 134,
+            "material_visual_state": 1065,
+            "mesh_geometry": 1545,
+            "movement_navigation": 256,
+            "networking_authority": 414,
+            "persistence_assets": 612,
+            "physics": 666,
+            "spatial_targeting": 466,
+            "spawn_lifecycle": 117,
+            "visual_effects": 1052
+          },
+          "status": "ready",
+          "searchScoped": true
+        },
+        "filters": {},
+        "confidence": {
+          "minConfidence": 0.55,
+          "status": "ok",
+          "topConfidence": 0.736
+        },
+        "count": 5,
+        "results": [
+          {
+            "ref": "49d255545287",
+            "entryType": "static_function",
+            "symbol": "UE.KismetSystemLibrary.SphereOverlapActors",
+            "kind": "method",
+            "owner": "UE.KismetSystemLibrary",
+            "signature": "static SphereOverlapActors(WorldContextObject: $Nullable<UE.Object>, SpherePos: UE.Vector, SphereRadius: number, ObjectTypes: TArray<UE.EObjectTypeQuery>, ActorClassFilter: $Nullable<UE.Class>, ActorsToIgnore: TArray<UE.Actor>, OutActors: $Ref<TArray<UE.Actor>>) : boolean;",
+            "score": 93.0,
+            "confidence": 0.736,
+            "summary": "Returns an array of actors that overlap the given sphere.",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Detect when an enemy is within melee danger range using PrimitiveComponent overlap events.",
+              "name: actors, overlap, sphere",
+              "doc: actors, overlap, sphere",
+              "params: actors, sphere",
+              "facets: spatial_targeting/bm25, spatial_targeting/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "c8c40ad20903",
+            "entryType": "type",
+            "symbol": "UE.GameplayAbilityTargetActor_Trace",
+            "kind": "class",
+            "score": 90.0,
+            "confidence": 0.7617,
+            "extends": "UE.GameplayAbilityTargetActor",
+            "source": "Plugin/GameplayAbilities",
+            "matchedMembers": [
+              {
+                "ref": "9f903c667c2f",
+                "symbol": "UE.GameplayAbilityTargetActor_Trace.MaxRange",
+                "kind": "property",
+                "signature": "MaxRange: number;",
+                "summary": ""
+              }
+            ],
+            "why": [
+              "rewrite: Detect when an enemy is within melee danger range using PrimitiveComponent overlap events.",
+              "name: actor",
+              "members: MaxRange",
+              "facets: damage_state/bm25, damage_state/vector",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "0eebc6b66da7",
+            "entryType": "type",
+            "symbol": "UE.StateTreeComponent",
+            "kind": "class",
+            "score": 92.5,
+            "confidence": 0.7397,
+            "extends": "UE.BrainComponent",
+            "source": "Plugin/GameplayStateTreeModule",
+            "matchedMembers": [
+              {
+                "ref": "8e9b95517551",
+                "symbol": "UE.StateTreeComponent.OnStateTreeRunStatusChanged",
+                "kind": "property",
+                "signature": "OnStateTreeRunStatusChanged: $MulticastDelegate<(StateTreeRunStatus: UE.EStateTreeRunStatus) => void>;",
+                "summary": ""
+              },
+              {
+                "ref": "f911e3e01e32",
+                "symbol": "UE.StateTreeComponent.SendStateTreeEvent",
+                "kind": "method",
+                "signature": "SendStateTreeEvent(Event: UE.StateTreeEvent) : void;",
+                "summary": "Sends event to the running StateTree."
+              },
+              {
+                "ref": "1cb7bd5a9be3",
+                "symbol": "UE.StateTreeComponent.SetStartLogicAutomatically",
+                "kind": "method",
+                "signature": "SetStartLogicAutomatically(bInStartLogicAutomatically: boolean) : void;",
+                "summary": "Sets whether the State Tree is started automatically on begin play. This function sets the bStartLogicAutomatically property, and should be used mostly from constructions scripts. If you wish to start the logic manually,"
+              },
+              {
+                "ref": "861de8ad05dd",
+                "symbol": "UE.StateTreeComponent.AddLinkedStateTreeOverrides",
+                "kind": "method",
+                "signature": "AddLinkedStateTreeOverrides(StateTag: UE.GameplayTag, StateTreeReference: UE.StateTreeReference) : void;",
+                "summary": "Add a linked state tree override. The override won't be set if it doesn't use the StateTreeComponentSchema schema."
+              },
+              {
+                "ref": "04f8345e7c57",
+                "symbol": "UE.StateTreeComponent.GetStateTreeRunStatus",
+                "kind": "method",
+                "signature": "GetStateTreeRunStatus() : UE.EStateTreeRunStatus;",
+                "summary": "Returns the current run status of the StateTree."
+              },
+              {
+                "ref": "c939aa478ee4",
+                "symbol": "UE.StateTreeComponent.InstanceData",
+                "kind": "property",
+                "signature": "InstanceData: UE.StateTreeInstanceData;",
+                "summary": ""
+              },
+              {
+                "ref": "44eebe909203",
+                "symbol": "UE.StateTreeComponent.LinkedStateTreeOverrides",
+                "kind": "property",
+                "signature": "LinkedStateTreeOverrides: UE.StateTreeReferenceOverrides;",
+                "summary": ""
+              },
+              {
+                "ref": "3e7d749fb159",
+                "symbol": "UE.StateTreeComponent.RemoveLinkedStateTreeOverrides",
+                "kind": "method",
+                "signature": "RemoveLinkedStateTreeOverrides(StateTag: UE.GameplayTag) : void;",
+                "summary": "Remove a linked state tree override."
+              }
+            ],
+            "why": [
+              "rewrite: Detect when an enemy is within melee danger range using PrimitiveComponent overlap events.",
+              "name: component",
+              "members: OnStateTreeRunStatusChanged, SendStateTreeEvent, SetStartLogicAutomatically, AddLinkedStateTreeOverrides",
+              "facets: activation_trigger/bm25, activation_trigger/vector",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "d503cf53fa89",
+            "entryType": "static_function",
+            "symbol": "UE.KismetSystemLibrary.GetActorListFromComponentList",
+            "kind": "method",
+            "owner": "UE.KismetSystemLibrary",
+            "signature": "static GetActorListFromComponentList(ComponentList: TArray<UE.PrimitiveComponent>, ActorClassFilter: $Nullable<UE.Class>, OutActorList: $Ref<TArray<UE.Actor>>) : void;",
+            "score": 95.0,
+            "confidence": 0.7552,
+            "summary": "Returns an array of unique actors represented by the given list of components.",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Detect when an enemy is within melee danger range using PrimitiveComponent overlap events.",
+              "name: actor, component",
+              "doc: actors",
+              "params: actor, component",
+              "facets: carrier_context/bm25, carrier_context/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "83e009355139",
+            "entryType": "static_function",
+            "symbol": "UE.KismetSystemLibrary.SphereOverlapComponents",
+            "kind": "method",
+            "owner": "UE.KismetSystemLibrary",
+            "signature": "static SphereOverlapComponents(WorldContextObject: $Nullable<UE.Object>, SpherePos: UE.Vector, SphereRadius: number, ObjectTypes: TArray<UE.EObjectTypeQuery>, ComponentClassFilter: $Nullable<UE.Class>, ActorsToIgnore: TArray<UE.Actor>, OutComponents: $Ref<TArray<UE.PrimitiveComponent>>) : boolean;",
+            "score": 92.9907,
+            "confidence": 0.7387,
+            "summary": "Returns an array of components that overlap the given sphere.",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Detect when an enemy is within melee danger range using PrimitiveComponent overlap events.",
+              "name: overlap, sphere",
+              "doc: overlap, sphere",
+              "params: actors, sphere",
+              "facets: spatial_targeting/bm25, spatial_targeting/vector",
+              "static function result",
+              "vector recall"
+            ]
+          }
+        ],
+        "profile": {
+          "load": 0.7576,
+          "rewrite": 30.2704,
+          "embed": 0.2818,
+          "bm25": 0.0922,
+          "vector": 0.2257,
+          "score": 0.0935,
+          "select": 0.0001,
+          "total": 31.4398
+        }
+      },
+      "isError": false
+    },
+    "payload": {
+      "status": "ok",
+      "mode": "semantic",
+      "query": "Unreal Engine PuerTS gameplay API for primitive.on_component_begin_overlap; exact symbol hints: UE.PrimitiveComponent.OnComponentBeginOverlap, OnComponentBeginOverlap, FComponentBeginOverlapSignature, UE.KismetSystemLibrary.SphereOverlapActors, UE.KismetSystemLibrary.ComponentOverlapActors, component begin overlap, sphere overlap actors. Intent: Detect when the active enemy is close enough to the player to represent melee danger.",
+      "searchText": "primitive component actor character OnComponentBeginOverlap FComponentBeginOverlapSignature component begin overlap delegate event sphere overlap actors component overlap SphereOverlapActors ComponentOverlapActors melee range proximity danger detection",
+      "rewrite": {
+        "status": "rewritten",
+        "domainStatus": "ue_relevant",
+        "intentSummary": "Detect when an enemy is within melee danger range using PrimitiveComponent overlap events.",
+        "warnings": [],
+        "activeSubqueries": [
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The actors and components that carry the overlap detection.",
+            "subqueryId": "carrier_context_1",
+            "text": "primitive component actor character",
+            "weight": 1.0,
+            "subqueryWeight": 1.0
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "The overlap event that triggers when the enemy enters range.",
+            "subqueryId": "activation_trigger_1",
+            "text": "OnComponentBeginOverlap FComponentBeginOverlapSignature",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "The overlap event that triggers when the enemy enters range.",
+            "subqueryId": "activation_trigger_2",
+            "text": "component begin overlap delegate event",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "spatial_targeting",
+            "facetStatus": "required",
+            "facetIntent": "The spatial overlap queries to detect proximity.",
+            "subqueryId": "spatial_targeting_1",
+            "text": "sphere overlap actors component overlap",
+            "weight": 0.6,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "spatial_targeting",
+            "facetStatus": "required",
+            "facetIntent": "The spatial overlap queries to detect proximity.",
+            "subqueryId": "spatial_targeting_2",
+            "text": "SphereOverlapActors ComponentOverlapActors",
+            "weight": 0.4,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "damage_state",
+            "facetStatus": "optional",
+            "facetIntent": "The melee danger state indicated by proximity.",
+            "subqueryId": "damage_state_1",
+            "text": "melee range proximity danger detection",
+            "weight": 0.6,
+            "subqueryWeight": 1.0
+          }
+        ]
+      },
+      "embedding": {
+        "enabled": true,
+        "provider": "ollama",
+        "model": "bge-m3",
+        "dimensions": 1024,
+        "indexedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "status": "ready"
+      },
+      "partitions": {
+        "enabled": true,
+        "classifierEnabled": true,
+        "provider": "aaa",
+        "binaryAvailable": true,
+        "timeoutMs": 90000,
+        "candidateCount": 20361,
+        "processedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "validAssignmentCount": 14733,
+        "partitionedEntryCount": 12532,
+        "partitionedEntryRatio": 0.6155,
+        "searchReady": true,
+        "byFacet": {
+          "activation_trigger": 241,
+          "ai_behavior": 948,
+          "animation": 1856,
+          "audio": 704,
+          "camera_feedback_ui": 1336,
+          "carrier_context": 1362,
+          "damage_state": 548,
+          "integration_event": 1069,
+          "level_world": 342,
+          "lighting": 134,
+          "material_visual_state": 1065,
+          "mesh_geometry": 1545,
+          "movement_navigation": 256,
+          "networking_authority": 414,
+          "persistence_assets": 612,
+          "physics": 666,
+          "spatial_targeting": 466,
+          "spawn_lifecycle": 117,
+          "visual_effects": 1052
+        },
+        "status": "ready",
+        "searchScoped": true
+      },
+      "filters": {},
+      "confidence": {
+        "minConfidence": 0.55,
+        "status": "ok",
+        "topConfidence": 0.736
+      },
+      "count": 5,
+      "results": [
+        {
+          "ref": "49d255545287",
+          "entryType": "static_function",
+          "symbol": "UE.KismetSystemLibrary.SphereOverlapActors",
+          "kind": "method",
+          "owner": "UE.KismetSystemLibrary",
+          "signature": "static SphereOverlapActors(WorldContextObject: $Nullable<UE.Object>, SpherePos: UE.Vector, SphereRadius: number, ObjectTypes: TArray<UE.EObjectTypeQuery>, ActorClassFilter: $Nullable<UE.Class>, ActorsToIgnore: TArray<UE.Actor>, OutActors: $Ref<TArray<UE.Actor>>) : boolean;",
+          "score": 93.0,
+          "confidence": 0.736,
+          "summary": "Returns an array of actors that overlap the given sphere.",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Detect when an enemy is within melee danger range using PrimitiveComponent overlap events.",
+            "name: actors, overlap, sphere",
+            "doc: actors, overlap, sphere",
+            "params: actors, sphere",
+            "facets: spatial_targeting/bm25, spatial_targeting/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "c8c40ad20903",
+          "entryType": "type",
+          "symbol": "UE.GameplayAbilityTargetActor_Trace",
+          "kind": "class",
+          "score": 90.0,
+          "confidence": 0.7617,
+          "extends": "UE.GameplayAbilityTargetActor",
+          "source": "Plugin/GameplayAbilities",
+          "matchedMembers": [
+            {
+              "ref": "9f903c667c2f",
+              "symbol": "UE.GameplayAbilityTargetActor_Trace.MaxRange",
+              "kind": "property",
+              "signature": "MaxRange: number;",
+              "summary": ""
+            }
+          ],
+          "why": [
+            "rewrite: Detect when an enemy is within melee danger range using PrimitiveComponent overlap events.",
+            "name: actor",
+            "members: MaxRange",
+            "facets: damage_state/bm25, damage_state/vector",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "0eebc6b66da7",
+          "entryType": "type",
+          "symbol": "UE.StateTreeComponent",
+          "kind": "class",
+          "score": 92.5,
+          "confidence": 0.7397,
+          "extends": "UE.BrainComponent",
+          "source": "Plugin/GameplayStateTreeModule",
+          "matchedMembers": [
+            {
+              "ref": "8e9b95517551",
+              "symbol": "UE.StateTreeComponent.OnStateTreeRunStatusChanged",
+              "kind": "property",
+              "signature": "OnStateTreeRunStatusChanged: $MulticastDelegate<(StateTreeRunStatus: UE.EStateTreeRunStatus) => void>;",
+              "summary": ""
+            },
+            {
+              "ref": "f911e3e01e32",
+              "symbol": "UE.StateTreeComponent.SendStateTreeEvent",
+              "kind": "method",
+              "signature": "SendStateTreeEvent(Event: UE.StateTreeEvent) : void;",
+              "summary": "Sends event to the running StateTree."
+            },
+            {
+              "ref": "1cb7bd5a9be3",
+              "symbol": "UE.StateTreeComponent.SetStartLogicAutomatically",
+              "kind": "method",
+              "signature": "SetStartLogicAutomatically(bInStartLogicAutomatically: boolean) : void;",
+              "summary": "Sets whether the State Tree is started automatically on begin play. This function sets the bStartLogicAutomatically property, and should be used mostly from constructions scripts. If you wish to start the logic manually,"
+            },
+            {
+              "ref": "861de8ad05dd",
+              "symbol": "UE.StateTreeComponent.AddLinkedStateTreeOverrides",
+              "kind": "method",
+              "signature": "AddLinkedStateTreeOverrides(StateTag: UE.GameplayTag, StateTreeReference: UE.StateTreeReference) : void;",
+              "summary": "Add a linked state tree override. The override won't be set if it doesn't use the StateTreeComponentSchema schema."
+            },
+            {
+              "ref": "04f8345e7c57",
+              "symbol": "UE.StateTreeComponent.GetStateTreeRunStatus",
+              "kind": "method",
+              "signature": "GetStateTreeRunStatus() : UE.EStateTreeRunStatus;",
+              "summary": "Returns the current run status of the StateTree."
+            },
+            {
+              "ref": "c939aa478ee4",
+              "symbol": "UE.StateTreeComponent.InstanceData",
+              "kind": "property",
+              "signature": "InstanceData: UE.StateTreeInstanceData;",
+              "summary": ""
+            },
+            {
+              "ref": "44eebe909203",
+              "symbol": "UE.StateTreeComponent.LinkedStateTreeOverrides",
+              "kind": "property",
+              "signature": "LinkedStateTreeOverrides: UE.StateTreeReferenceOverrides;",
+              "summary": ""
+            },
+            {
+              "ref": "3e7d749fb159",
+              "symbol": "UE.StateTreeComponent.RemoveLinkedStateTreeOverrides",
+              "kind": "method",
+              "signature": "RemoveLinkedStateTreeOverrides(StateTag: UE.GameplayTag) : void;",
+              "summary": "Remove a linked state tree override."
+            }
+          ],
+          "why": [
+            "rewrite: Detect when an enemy is within melee danger range using PrimitiveComponent overlap events.",
+            "name: component",
+            "members: OnStateTreeRunStatusChanged, SendStateTreeEvent, SetStartLogicAutomatically, AddLinkedStateTreeOverrides",
+            "facets: activation_trigger/bm25, activation_trigger/vector",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "d503cf53fa89",
+          "entryType": "static_function",
+          "symbol": "UE.KismetSystemLibrary.GetActorListFromComponentList",
+          "kind": "method",
+          "owner": "UE.KismetSystemLibrary",
+          "signature": "static GetActorListFromComponentList(ComponentList: TArray<UE.PrimitiveComponent>, ActorClassFilter: $Nullable<UE.Class>, OutActorList: $Ref<TArray<UE.Actor>>) : void;",
+          "score": 95.0,
+          "confidence": 0.7552,
+          "summary": "Returns an array of unique actors represented by the given list of components.",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Detect when an enemy is within melee danger range using PrimitiveComponent overlap events.",
+            "name: actor, component",
+            "doc: actors",
+            "params: actor, component",
+            "facets: carrier_context/bm25, carrier_context/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "83e009355139",
+          "entryType": "static_function",
+          "symbol": "UE.KismetSystemLibrary.SphereOverlapComponents",
+          "kind": "method",
+          "owner": "UE.KismetSystemLibrary",
+          "signature": "static SphereOverlapComponents(WorldContextObject: $Nullable<UE.Object>, SpherePos: UE.Vector, SphereRadius: number, ObjectTypes: TArray<UE.EObjectTypeQuery>, ComponentClassFilter: $Nullable<UE.Class>, ActorsToIgnore: TArray<UE.Actor>, OutComponents: $Ref<TArray<UE.PrimitiveComponent>>) : boolean;",
+          "score": 92.9907,
+          "confidence": 0.7387,
+          "summary": "Returns an array of components that overlap the given sphere.",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Detect when an enemy is within melee danger range using PrimitiveComponent overlap events.",
+            "name: overlap, sphere",
+            "doc: overlap, sphere",
+            "params: actors, sphere",
+            "facets: spatial_targeting/bm25, spatial_targeting/vector",
+            "static function result",
+            "vector recall"
+          ]
+        }
+      ],
+      "profile": {
+        "load": 0.7576,
+        "rewrite": 30.2704,
+        "embed": 0.2818,
+        "bm25": 0.0922,
+        "vector": 0.2257,
+        "score": 0.0935,
+        "select": 0.0001,
+        "total": 31.4398
+      }
+    }
+  }
+}

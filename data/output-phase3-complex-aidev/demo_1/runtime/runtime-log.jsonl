@@ -1,0 +1,175 @@
+{"level": "info", "event": "runtime_validation_started", "root": "D:\\ClaudeTasks\\active\\autoue-puerts-workflow-adaptation\\repo\\AutoUE\\data\\output-phase3-complex-aidev\\demo_1"}
+{"level": "info", "event": "file_present", "label": "runtime_mapping_path", "path": "flow/05-puerts-runtime-mapping.json", "step_id": 1}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json", "step_id": 1}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/pawn.add_movement_input.json", "step_id": 1}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/PlayerHorizontalMovementMoveLeftRightAbility.ts", "step_id": 1}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/interactive/PlayerHorizontalMovementMoveLeftRightInteractable.ts", "step_id": 1}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json", "step_id": 1}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/pawn.add_movement_input.json", "step_id": 1}
+{"level": "info", "event": "file_present", "label": "ability_module_export", "path": "TypeScript/content/generated/PlayerHorizontalMovementMoveLeftRightAbility.ts", "step_id": 1}
+{"level": "info", "event": "export_present", "step_id": 1, "label": "ability_module_export", "path": "TypeScript/content/generated/PlayerHorizontalMovementMoveLeftRightAbility.ts", "export_name": "runPlayerHorizontalMovementMoveLeftRightAbility"}
+{"level": "info", "event": "file_present", "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/PlayerHorizontalMovementMoveLeftRightInteractable.ts", "step_id": 1}
+{"level": "info", "event": "export_present", "step_id": 1, "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/PlayerHorizontalMovementMoveLeftRightInteractable.ts", "export_name": "runPlayerMoveLeftRightInteraction"}
+{"level": "info", "event": "engine_ports_mapped", "step_id": 1, "engine_port_ids": ["enhanced_input.bind_action", "pawn.add_movement_input"]}
+{"level": "info", "event": "instruction_validated", "step_id": 1, "status": "pass"}
+{"level": "info", "event": "file_present", "label": "runtime_mapping_path", "path": "flow/05-puerts-runtime-mapping.json", "step_id": 2}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/gameplay_statics.apply_damage.json", "step_id": 2}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/kismet.sphere_trace_single.json", "step_id": 2}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/PlayerShortMeleeAttackStrikeEnemyAbility.ts", "step_id": 2}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/interactive/PlayerShortMeleeAttackStrikeEnemyInteractable.ts", "step_id": 2}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/kismet.sphere_trace_single.json", "step_id": 2}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/gameplay_statics.apply_damage.json", "step_id": 2}
+{"level": "info", "event": "file_present", "label": "ability_module_export", "path": "TypeScript/content/generated/PlayerShortMeleeAttackStrikeEnemyAbility.ts", "step_id": 2}
+{"level": "info", "event": "export_present", "step_id": 2, "label": "ability_module_export", "path": "TypeScript/content/generated/PlayerShortMeleeAttackStrikeEnemyAbility.ts", "export_name": "runPlayerShortMeleeAttackStrikeEnemyAbility"}
+{"level": "info", "event": "file_present", "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/PlayerShortMeleeAttackStrikeEnemyInteractable.ts", "step_id": 2}
+{"level": "info", "event": "export_present", "step_id": 2, "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/PlayerShortMeleeAttackStrikeEnemyInteractable.ts", "export_name": "runPlayerStrikeEnemyInteraction"}
+{"level": "info", "event": "engine_ports_mapped", "step_id": 2, "engine_port_ids": ["kismet.sphere_trace_single", "gameplay_statics.apply_damage"]}
+{"level": "info", "event": "instruction_validated", "step_id": 2, "status": "pass"}
+{"level": "info", "event": "file_present", "label": "runtime_mapping_path", "path": "flow/05-puerts-runtime-mapping.json", "step_id": 3}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/character.launch_character.json", "step_id": 3}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json", "step_id": 3}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/PlayerBriefDashDashHorizontallyAbility.ts", "step_id": 3}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/interactive/PlayerBriefDashDashHorizontallyInteractable.ts", "step_id": 3}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json", "step_id": 3}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/character.launch_character.json", "step_id": 3}
+{"level": "info", "event": "file_present", "label": "ability_module_export", "path": "TypeScript/content/generated/PlayerBriefDashDashHorizontallyAbility.ts", "step_id": 3}
+{"level": "info", "event": "export_present", "step_id": 3, "label": "ability_module_export", "path": "TypeScript/content/generated/PlayerBriefDashDashHorizontallyAbility.ts", "export_name": "runPlayerBriefDashDashHorizontallyAbility"}
+{"level": "info", "event": "file_present", "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/PlayerBriefDashDashHorizontallyInteractable.ts", "step_id": 3}
+{"level": "info", "event": "export_present", "step_id": 3, "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/PlayerBriefDashDashHorizontallyInteractable.ts", "export_name": "runPlayerDashHorizontallyInteraction"}
+{"level": "info", "event": "engine_ports_mapped", "step_id": 3, "engine_port_ids": ["enhanced_input.bind_action", "character.launch_character"]}
+{"level": "info", "event": "instruction_validated", "step_id": 3, "status": "pass"}
+{"level": "info", "event": "file_present", "label": "runtime_mapping_path", "path": "flow/05-puerts-runtime-mapping.json", "step_id": 4}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/character_movement.disable_movement.json", "step_id": 4}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/timer.set_timer.json", "step_id": 4}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/PlayerFrozenStateBecomeFrozenAbility.ts", "step_id": 4}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/interactive/PlayerFrozenStateBecomeFrozenInteractable.ts", "step_id": 4}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/character_movement.disable_movement.json", "step_id": 4}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/timer.set_timer.json", "step_id": 4}
+{"level": "info", "event": "file_present", "label": "ability_module_export", "path": "TypeScript/content/generated/PlayerFrozenStateBecomeFrozenAbility.ts", "step_id": 4}
+{"level": "info", "event": "export_present", "step_id": 4, "label": "ability_module_export", "path": "TypeScript/content/generated/PlayerFrozenStateBecomeFrozenAbility.ts", "export_name": "runPlayerFrozenStateBecomeFrozenAbility"}
+{"level": "info", "event": "file_present", "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/PlayerFrozenStateBecomeFrozenInteractable.ts", "step_id": 4}
+{"level": "info", "event": "export_present", "step_id": 4, "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/PlayerFrozenStateBecomeFrozenInteractable.ts", "export_name": "runPlayerBecomeFrozenInteraction"}
+{"level": "info", "event": "engine_ports_mapped", "step_id": 4, "engine_port_ids": ["character_movement.disable_movement", "timer.set_timer"]}
+{"level": "info", "event": "instruction_validated", "step_id": 4, "status": "pass"}
+{"level": "info", "event": "file_present", "label": "runtime_mapping_path", "path": "flow/05-puerts-runtime-mapping.json", "step_id": 5}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/character_movement.set_movement_mode.json", "step_id": 5}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/PlayerFrozenStateThawAbility.ts", "step_id": 5}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/interactive/PlayerFrozenStateThawInteractable.ts", "step_id": 5}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/character_movement.set_movement_mode.json", "step_id": 5}
+{"level": "info", "event": "file_present", "label": "ability_module_export", "path": "TypeScript/content/generated/PlayerFrozenStateThawAbility.ts", "step_id": 5}
+{"level": "info", "event": "export_present", "step_id": 5, "label": "ability_module_export", "path": "TypeScript/content/generated/PlayerFrozenStateThawAbility.ts", "export_name": "runPlayerFrozenStateThawAbility"}
+{"level": "info", "event": "file_present", "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/PlayerFrozenStateThawInteractable.ts", "step_id": 5}
+{"level": "info", "event": "export_present", "step_id": 5, "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/PlayerFrozenStateThawInteractable.ts", "export_name": "runPlayerThawInteraction"}
+{"level": "info", "event": "engine_ports_mapped", "step_id": 5, "engine_port_ids": ["character_movement.set_movement_mode"]}
+{"level": "info", "event": "instruction_validated", "step_id": 5, "status": "pass"}
+{"level": "info", "event": "file_present", "label": "runtime_mapping_path", "path": "flow/05-puerts-runtime-mapping.json", "step_id": 6}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/actor.set_actor_location.json", "step_id": 6}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/PatrollingMeleeEnemyPatrolMoveBackAndForthAbility.ts", "step_id": 6}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/interactive/PatrollingMeleeEnemyPatrolMoveBackAndForthInteractable.ts", "step_id": 6}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/actor.set_actor_location.json", "step_id": 6}
+{"level": "info", "event": "file_present", "label": "ability_module_export", "path": "TypeScript/content/generated/PatrollingMeleeEnemyPatrolMoveBackAndForthAbility.ts", "step_id": 6}
+{"level": "info", "event": "export_present", "step_id": 6, "label": "ability_module_export", "path": "TypeScript/content/generated/PatrollingMeleeEnemyPatrolMoveBackAndForthAbility.ts", "export_name": "runPatrollingMeleeEnemyPatrolMoveBackAndForthAbility"}
+{"level": "info", "event": "file_present", "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/PatrollingMeleeEnemyPatrolMoveBackAndForthInteractable.ts", "step_id": 6}
+{"level": "info", "event": "export_present", "step_id": 6, "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/PatrollingMeleeEnemyPatrolMoveBackAndForthInteractable.ts", "export_name": "runEnemyPatrolInteraction"}
+{"level": "info", "event": "engine_ports_mapped", "step_id": 6, "engine_port_ids": ["actor.set_actor_location"]}
+{"level": "info", "event": "instruction_validated", "step_id": 6, "status": "pass"}
+{"level": "info", "event": "file_present", "label": "runtime_mapping_path", "path": "flow/05-puerts-runtime-mapping.json", "step_id": 7}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json", "step_id": 7}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/PatrollingMeleeEnemyMeleePressureThreatenClosePlayerAbility.ts", "step_id": 7}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/interactive/PatrollingMeleeEnemyMeleePressureThreatenClosePlayerInteractable.ts", "step_id": 7}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json", "step_id": 7}
+{"level": "info", "event": "file_present", "label": "ability_module_export", "path": "TypeScript/content/generated/PatrollingMeleeEnemyMeleePressureThreatenClosePlayerAbility.ts", "step_id": 7}
+{"level": "info", "event": "export_present", "step_id": 7, "label": "ability_module_export", "path": "TypeScript/content/generated/PatrollingMeleeEnemyMeleePressureThreatenClosePlayerAbility.ts", "export_name": "runPatrollingMeleeEnemyMeleePressureThreatenClosePlayerAbility"}
+{"level": "info", "event": "file_present", "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/PatrollingMeleeEnemyMeleePressureThreatenClosePlayerInteractable.ts", "step_id": 7}
+{"level": "info", "event": "export_present", "step_id": 7, "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/PatrollingMeleeEnemyMeleePressureThreatenClosePlayerInteractable.ts", "export_name": "runEnemyThreatenClosePlayerInteraction"}
+{"level": "info", "event": "engine_ports_mapped", "step_id": 7, "engine_port_ids": ["primitive.on_component_begin_overlap"]}
+{"level": "info", "event": "instruction_validated", "step_id": 7, "status": "pass"}
+{"level": "info", "event": "file_present", "label": "runtime_mapping_path", "path": "flow/05-puerts-runtime-mapping.json", "step_id": 8}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/actor.on_take_any_damage.json", "step_id": 8}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/PatrollingMeleeEnemyHealthTakeMeleeDamageAbility.ts", "step_id": 8}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/interactive/PatrollingMeleeEnemyHealthTakeMeleeDamageInteractable.ts", "step_id": 8}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/actor.on_take_any_damage.json", "step_id": 8}
+{"level": "info", "event": "file_present", "label": "ability_module_export", "path": "TypeScript/content/generated/PatrollingMeleeEnemyHealthTakeMeleeDamageAbility.ts", "step_id": 8}
+{"level": "info", "event": "export_present", "step_id": 8, "label": "ability_module_export", "path": "TypeScript/content/generated/PatrollingMeleeEnemyHealthTakeMeleeDamageAbility.ts", "export_name": "runPatrollingMeleeEnemyHealthTakeMeleeDamageAbility"}
+{"level": "info", "event": "file_present", "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/PatrollingMeleeEnemyHealthTakeMeleeDamageInteractable.ts", "step_id": 8}
+{"level": "info", "event": "export_present", "step_id": 8, "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/PatrollingMeleeEnemyHealthTakeMeleeDamageInteractable.ts", "export_name": "runEnemyTakeMeleeDamageInteraction"}
+{"level": "info", "event": "engine_ports_mapped", "step_id": 8, "engine_port_ids": ["actor.on_take_any_damage"]}
+{"level": "info", "event": "instruction_validated", "step_id": 8, "status": "pass"}
+{"level": "info", "event": "file_present", "label": "runtime_mapping_path", "path": "flow/05-puerts-runtime-mapping.json", "step_id": 9}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/actor.set_actor_tick_enabled.json", "step_id": 9}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/PatrollingMeleeEnemyHealthBecomeDefeatedAbility.ts", "step_id": 9}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/interactive/PatrollingMeleeEnemyHealthBecomeDefeatedInteractable.ts", "step_id": 9}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/actor.set_actor_tick_enabled.json", "step_id": 9}
+{"level": "info", "event": "file_present", "label": "ability_module_export", "path": "TypeScript/content/generated/PatrollingMeleeEnemyHealthBecomeDefeatedAbility.ts", "step_id": 9}
+{"level": "info", "event": "export_present", "step_id": 9, "label": "ability_module_export", "path": "TypeScript/content/generated/PatrollingMeleeEnemyHealthBecomeDefeatedAbility.ts", "export_name": "runPatrollingMeleeEnemyHealthBecomeDefeatedAbility"}
+{"level": "info", "event": "file_present", "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/PatrollingMeleeEnemyHealthBecomeDefeatedInteractable.ts", "step_id": 9}
+{"level": "info", "event": "export_present", "step_id": 9, "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/PatrollingMeleeEnemyHealthBecomeDefeatedInteractable.ts", "export_name": "runEnemyBecomeDefeatedInteraction"}
+{"level": "info", "event": "engine_ports_mapped", "step_id": 9, "engine_port_ids": ["actor.set_actor_tick_enabled"]}
+{"level": "info", "event": "instruction_validated", "step_id": 9, "status": "pass"}
+{"level": "info", "event": "file_present", "label": "runtime_mapping_path", "path": "flow/05-puerts-runtime-mapping.json", "step_id": 10}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json", "step_id": 10}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/IceTrapFreezeTriggerFreezeOverlappingPlayerAbility.ts", "step_id": 10}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/interactive/IceTrapFreezeTriggerFreezeOverlappingPlayerInteractable.ts", "step_id": 10}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json", "step_id": 10}
+{"level": "info", "event": "file_present", "label": "ability_module_export", "path": "TypeScript/content/generated/IceTrapFreezeTriggerFreezeOverlappingPlayerAbility.ts", "step_id": 10}
+{"level": "info", "event": "export_present", "step_id": 10, "label": "ability_module_export", "path": "TypeScript/content/generated/IceTrapFreezeTriggerFreezeOverlappingPlayerAbility.ts", "export_name": "runIceTrapFreezeTriggerFreezeOverlappingPlayerAbility"}
+{"level": "info", "event": "file_present", "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/IceTrapFreezeTriggerFreezeOverlappingPlayerInteractable.ts", "step_id": 10}
+{"level": "info", "event": "export_present", "step_id": 10, "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/IceTrapFreezeTriggerFreezeOverlappingPlayerInteractable.ts", "export_name": "runIceTrapFreezePlayerInteraction"}
+{"level": "info", "event": "engine_ports_mapped", "step_id": 10, "engine_port_ids": ["primitive.on_component_begin_overlap"]}
+{"level": "info", "event": "instruction_validated", "step_id": 10, "status": "pass"}
+{"level": "info", "event": "file_present", "label": "runtime_mapping_path", "path": "flow/05-puerts-runtime-mapping.json", "step_id": 11}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/niagara.spawn_system_attached.json", "step_id": 11}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/FreezeVfxFreezeFeedbackAppearOnFreezeAbility.ts", "step_id": 11}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/interactive/FreezeVfxFreezeFeedbackAppearOnFreezeInteractable.ts", "step_id": 11}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/niagara.spawn_system_attached.json", "step_id": 11}
+{"level": "info", "event": "file_present", "label": "ability_module_export", "path": "TypeScript/content/generated/FreezeVfxFreezeFeedbackAppearOnFreezeAbility.ts", "step_id": 11}
+{"level": "info", "event": "export_present", "step_id": 11, "label": "ability_module_export", "path": "TypeScript/content/generated/FreezeVfxFreezeFeedbackAppearOnFreezeAbility.ts", "export_name": "runFreezeVfxFreezeFeedbackAppearOnFreezeAbility"}
+{"level": "info", "event": "file_present", "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/FreezeVfxFreezeFeedbackAppearOnFreezeInteractable.ts", "step_id": 11}
+{"level": "info", "event": "export_present", "step_id": 11, "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/FreezeVfxFreezeFeedbackAppearOnFreezeInteractable.ts", "export_name": "runFreezeVfxAppearInteraction"}
+{"level": "info", "event": "engine_ports_mapped", "step_id": 11, "engine_port_ids": ["niagara.spawn_system_attached"]}
+{"level": "info", "event": "instruction_validated", "step_id": 11, "status": "pass"}
+{"level": "info", "event": "file_present", "label": "runtime_mapping_path", "path": "flow/05-puerts-runtime-mapping.json", "step_id": 12}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/player_controller.client_start_camera_shake.json", "step_id": 12}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/SideCameraFreezeFeedbackShakeShakeOnFreezeAbility.ts", "step_id": 12}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/interactive/SideCameraFreezeFeedbackShakeShakeOnFreezeInteractable.ts", "step_id": 12}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/player_controller.client_start_camera_shake.json", "step_id": 12}
+{"level": "info", "event": "file_present", "label": "ability_module_export", "path": "TypeScript/content/generated/SideCameraFreezeFeedbackShakeShakeOnFreezeAbility.ts", "step_id": 12}
+{"level": "info", "event": "export_present", "step_id": 12, "label": "ability_module_export", "path": "TypeScript/content/generated/SideCameraFreezeFeedbackShakeShakeOnFreezeAbility.ts", "export_name": "runSideCameraFreezeFeedbackShakeShakeOnFreezeAbility"}
+{"level": "info", "event": "file_present", "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/SideCameraFreezeFeedbackShakeShakeOnFreezeInteractable.ts", "step_id": 12}
+{"level": "info", "event": "export_present", "step_id": 12, "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/SideCameraFreezeFeedbackShakeShakeOnFreezeInteractable.ts", "export_name": "runSideCameraShakeOnFreezeInteraction"}
+{"level": "info", "event": "engine_ports_mapped", "step_id": 12, "engine_port_ids": ["player_controller.client_start_camera_shake"]}
+{"level": "info", "event": "instruction_validated", "step_id": 12, "status": "pass"}
+{"level": "info", "event": "file_present", "label": "runtime_mapping_path", "path": "flow/05-puerts-runtime-mapping.json", "step_id": 13}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json", "step_id": 13}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/LockedExitEnemyGateRemainLockedAbility.ts", "step_id": 13}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/interactive/LockedExitEnemyGateRemainLockedInteractable.ts", "step_id": 13}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json", "step_id": 13}
+{"level": "info", "event": "file_present", "label": "ability_module_export", "path": "TypeScript/content/generated/LockedExitEnemyGateRemainLockedAbility.ts", "step_id": 13}
+{"level": "info", "event": "export_present", "step_id": 13, "label": "ability_module_export", "path": "TypeScript/content/generated/LockedExitEnemyGateRemainLockedAbility.ts", "export_name": "runLockedExitEnemyGateRemainLockedAbility"}
+{"level": "info", "event": "file_present", "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/LockedExitEnemyGateRemainLockedInteractable.ts", "step_id": 13}
+{"level": "info", "event": "export_present", "step_id": 13, "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/LockedExitEnemyGateRemainLockedInteractable.ts", "export_name": "runLockedExitRemainLockedInteraction"}
+{"level": "info", "event": "engine_ports_mapped", "step_id": 13, "engine_port_ids": ["primitive.on_component_begin_overlap"]}
+{"level": "info", "event": "instruction_validated", "step_id": 13, "status": "pass"}
+{"level": "info", "event": "file_present", "label": "runtime_mapping_path", "path": "flow/05-puerts-runtime-mapping.json", "step_id": 14}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json", "step_id": 14}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/LockedExitEnemyGateUnlockAfterEnemyDefeatAbility.ts", "step_id": 14}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/interactive/LockedExitEnemyGateUnlockAfterEnemyDefeatInteractable.ts", "step_id": 14}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json", "step_id": 14}
+{"level": "info", "event": "file_present", "label": "ability_module_export", "path": "TypeScript/content/generated/LockedExitEnemyGateUnlockAfterEnemyDefeatAbility.ts", "step_id": 14}
+{"level": "info", "event": "export_present", "step_id": 14, "label": "ability_module_export", "path": "TypeScript/content/generated/LockedExitEnemyGateUnlockAfterEnemyDefeatAbility.ts", "export_name": "runLockedExitEnemyGateUnlockAfterEnemyDefeatAbility"}
+{"level": "info", "event": "file_present", "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/LockedExitEnemyGateUnlockAfterEnemyDefeatInteractable.ts", "step_id": 14}
+{"level": "info", "event": "export_present", "step_id": 14, "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/LockedExitEnemyGateUnlockAfterEnemyDefeatInteractable.ts", "export_name": "runLockedExitUnlockInteraction"}
+{"level": "info", "event": "engine_ports_mapped", "step_id": 14, "engine_port_ids": ["primitive.on_component_begin_overlap"]}
+{"level": "info", "event": "instruction_validated", "step_id": 14, "status": "pass"}
+{"level": "info", "event": "file_present", "label": "runtime_mapping_path", "path": "flow/05-puerts-runtime-mapping.json", "step_id": 15}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json", "step_id": 15}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/LockedExitRoomCompletionCompleteOnReachAbility.ts", "step_id": 15}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/interactive/LockedExitRoomCompletionCompleteOnReachInteractable.ts", "step_id": 15}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json", "step_id": 15}
+{"level": "info", "event": "file_present", "label": "ability_module_export", "path": "TypeScript/content/generated/LockedExitRoomCompletionCompleteOnReachAbility.ts", "step_id": 15}
+{"level": "info", "event": "export_present", "step_id": 15, "label": "ability_module_export", "path": "TypeScript/content/generated/LockedExitRoomCompletionCompleteOnReachAbility.ts", "export_name": "runLockedExitRoomCompletionCompleteOnReachAbility"}
+{"level": "info", "event": "file_present", "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/LockedExitRoomCompletionCompleteOnReachInteractable.ts", "step_id": 15}
+{"level": "info", "event": "export_present", "step_id": 15, "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/LockedExitRoomCompletionCompleteOnReachInteractable.ts", "export_name": "runLockedExitCompleteRoomInteraction"}
+{"level": "info", "event": "engine_ports_mapped", "step_id": 15, "engine_port_ids": ["primitive.on_component_begin_overlap"]}
+{"level": "info", "event": "instruction_validated", "step_id": 15, "status": "pass"}
+{"level": "info", "event": "runtime_validation_finished", "result": "pass", "error_count": 0}

@@ -1,0 +1,781 @@
+{
+  "engine_port_id": "pawn.add_movement_input",
+  "flow_ids": [
+    "flow.player.horizontal_movement.move_left_right"
+  ],
+  "behavior_ids": [
+    "player.horizontal_movement.move_left_right"
+  ],
+  "contracts": [
+    "Apply horizontal movement across the room floor from the accepted input."
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for pawn.add_movement_input; exact symbol hints: Pawn.AddMovementInput, PawnAddMovementInput, pawn add movement input. Intent: Apply horizontal movement across the room floor from the accepted input.",
+  "raw_path": "flow/04-ue-api-mcp/raw/pawn.add_movement_input.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/pawn.add_movement_input.json",
+  "raw_result": {
+    "tool": "ue_api_semantic_search",
+    "query": "Unreal Engine PuerTS gameplay API for pawn.add_movement_input; exact symbol hints: Pawn.AddMovementInput, PawnAddMovementInput, pawn add movement input. Intent: Apply horizontal movement across the room floor from the accepted input.",
+    "limit": 5,
+    "raw_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"ok\",\n  \"mode\": \"semantic\",\n  \"query\": \"Unreal Engine PuerTS gameplay API for pawn.add_movement_input; exact symbol hints: Pawn.AddMovementInput, PawnAddMovementInput, pawn add movement input. Intent: Apply horizontal movement across the room floor from the accepted input.\",\n  \"searchText\": \"Pawn Character Actor input action key binding AxisMapping movement input AddMovementInput movement input movement direction vector\",\n  \"rewrite\": {\n    \"status\": \"rewritten\",\n    \"domainStatus\": \"ue_relevant\",\n    \"intentSummary\": \"Apply horizontal movement input to a pawn across a floor surface.\",\n    \"warnings\": [],\n    \"activeSubqueries\": [\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The gameplay object that receives movement input.\",\n        \"subqueryId\": \"carrier_context_1\",\n        \"text\": \"Pawn Character Actor\",\n        \"weight\": 1.0,\n        \"subqueryWeight\": 1.0\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The input mechanism that triggers movement.\",\n        \"subqueryId\": \"activation_trigger_1\",\n        \"text\": \"input action key binding\",\n        \"weight\": 0.6,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The input mechanism that triggers movement.\",\n        \"subqueryId\": \"activation_trigger_2\",\n        \"text\": \"AxisMapping movement input\",\n        \"weight\": 0.4,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"movement_navigation\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The movement function that applies horizontal input.\",\n        \"subqueryId\": \"movement_navigation_1\",\n        \"text\": \"AddMovementInput movement input\",\n        \"weight\": 0.7,\n        \"subqueryWeight\": 0.7\n      },\n      {\n        \"facetId\": \"movement_navigation\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The movement function that applies horizontal input.\",\n        \"subqueryId\": \"movement_navigation_2\",\n        \"text\": \"movement direction vector\",\n        \"weight\": 0.3,\n        \"subqueryWeight\": 0.3\n      }\n    ]\n  },\n  \"embedding\": {\n    \"enabled\": true,\n    \"provider\": \"ollama\",\n    \"model\": \"bge-m3\",\n    \"dimensions\": 1024,\n    \"indexedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"status\": \"ready\"\n  },\n  \"partitions\": {\n    \"enabled\": true,\n    \"classifierEnabled\": true,\n    \"provider\": \"aaa\",\n    \"binaryAvailable\": true,\n    \"timeoutMs\": 90000,\n    \"candidateCount\": 20361,\n    \"processedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"validAssignmentCount\": 14733,\n    \"partitionedEntryCount\": 12532,\n    \"partitionedEntryRatio\": 0.6155,\n    \"searchReady\": true,\n    \"byFacet\": {\n      \"activation_trigger\": 241,\n      \"ai_behavior\": 948,\n      \"animation\": 1856,\n      \"audio\": 704,\n      \"camera_feedback_ui\": 1336,\n      \"carrier_context\": 1362,\n      \"damage_state\": 548,\n      \"integration_event\": 1069,\n      \"level_world\": 342,\n      \"lighting\": 134,\n      \"material_visual_state\": 1065,\n      \"mesh_geometry\": 1545,\n      \"movement_navigation\": 256,\n      \"networking_authority\": 414,\n      \"persistence_assets\": 612,\n      \"physics\": 666,\n      \"spatial_targeting\": 466,\n      \"spawn_lifecycle\": 117,\n      \"visual_effects\": 1052\n    },\n    \"status\": \"ready\",\n    \"searchScoped\": true\n  },\n  \"filters\": {},\n  \"confidence\": {\n    \"minConfidence\": 0.55,\n    \"status\": \"ok\",\n    \"topConfidence\": 0.733\n  },\n  \"count\": 5,\n  \"results\": [\n    {\n      \"ref\": \"b62b8a9d0bcc\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.NavMovementComponent\",\n      \"kind\": \"class\",\n      \"score\": 92.5,\n      \"confidence\": 0.733,\n      \"extends\": \"UE.MovementComponent\",\n      \"source\": \"Engine/GameFramework\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"0833aa5c6ebc\",\n          \"symbol\": \"UE.NavMovementComponent.RequestPathMove\",\n          \"kind\": \"method\",\n          \"signature\": \"RequestPathMove(MoveInput: UE.Vector) : void;\",\n          \"summary\": \"path following: request movement through a new move input (normal vector = full strength)\"\n        },\n        {\n          \"ref\": \"5cd64b323006\",\n          \"symbol\": \"UE.NavMovementComponent.GetVelocityForNavMovement\",\n          \"kind\": \"method\",\n          \"signature\": \"GetVelocityForNavMovement() : UE.Vector;\",\n          \"summary\": \"Get the current velocity of the movement component\"\n        },\n        {\n          \"ref\": \"cb9503ad1cbf\",\n          \"symbol\": \"UE.NavMovementComponent.RequestDirectMove\",\n          \"kind\": \"method\",\n          \"signature\": \"RequestDirectMove(MoveVelocity: UE.Vector, bForceMaxSpeed: boolean) : void;\",\n          \"summary\": \"path following: request movement through a velocity directly\"\n        },\n        {\n          \"ref\": \"bb0f462aa74a\",\n          \"symbol\": \"UE.NavMovementComponent.FixedPathBrakingDistance\",\n          \"kind\": \"property\",\n          \"signature\": \"FixedPathBrakingDistance: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"2db533ee69aa\",\n          \"symbol\": \"UE.NavMovementComponent.GetMaxSpeedForNavMovement\",\n          \"kind\": \"method\",\n          \"signature\": \"GetMaxSpeedForNavMovement() : number;\",\n          \"summary\": \"Get maximum movement speed of the agent\"\n        },\n        {\n          \"ref\": \"7499a70db863\",\n          \"symbol\": \"UE.NavMovementComponent.IsCrouching\",\n          \"kind\": \"method\",\n          \"signature\": \"IsCrouching() : boolean;\",\n          \"summary\": \"Returns true if currently crouching\"\n        },\n        {\n          \"ref\": \"129c0433d72d\",\n          \"symbol\": \"UE.NavMovementComponent.IsFalling\",\n          \"kind\": \"method\",\n          \"signature\": \"IsFalling() : boolean;\",\n          \"summary\": \"Returns true if currently falling (not flying, in a non-fluid volume, and not on the ground)\"\n        },\n        {\n          \"ref\": \"e0f391571cd9\",\n          \"symbol\": \"UE.NavMovementComponent.IsFlying\",\n          \"kind\": \"method\",\n          \"signature\": \"IsFlying() : boolean;\",\n          \"summary\": \"Returns true if currently flying (moving through a non-fluid volume without resting on the ground)\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Apply horizontal movement input to a pawn across a floor surface.\",\n        \"name: movement\",\n        \"members: RequestPathMove, GetVelocityForNavMovement, RequestDirectMove, FixedPathBrakingDistance\",\n        \"facets: movement_navigation/bm25, movement_navigation/vector\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"e2923b419ed2\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.EnhancedInputLibrary.IsActionKeyMappingPlayerMappable\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.EnhancedInputLibrary\",\n      \"signature\": \"static IsActionKeyMappingPlayerMappable(ActionKeyMapping: UE.EnhancedActionKeyMapping) : boolean;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7424,\n      \"summary\": \"Returns true if this Action Key Mapping either holds a Player Mappable Key Settings or is set bIsPlayerMappable.\",\n      \"source\": \"Plugin/EnhancedInput\",\n      \"why\": [\n        \"rewrite: Apply horizontal movement input to a pawn across a floor surface.\",\n        \"name: action, input, key, mapping\",\n        \"doc: action, key, mapping\",\n        \"facets: activation_trigger/bm25, activation_trigger/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"87417ce50473\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.Pawn.GetMovementBaseActor\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.Pawn\",\n      \"signature\": \"static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;\",\n      \"score\": 94.4463,\n      \"confidence\": 0.7369,\n      \"summary\": \"Gets the owning actor of the Movement Base Component on which the pawn is standing.\",\n      \"source\": \"Engine/GameFramework\",\n      \"why\": [\n        \"rewrite: Apply horizontal movement input to a pawn across a floor surface.\",\n        \"name: actor, movement, pawn\",\n        \"doc: actor, movement, pawn\",\n        \"facets: carrier_context/bm25, carrier_context/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"66e1cf791708\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.MovementComponent\",\n      \"kind\": \"class\",\n      \"score\": 90.6536,\n      \"confidence\": 0.7318,\n      \"extends\": \"UE.ActorComponent\",\n      \"source\": \"Engine/GameFramework\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"592fff08c83f\",\n          \"symbol\": \"UE.MovementComponent.ConstrainDirectionToPlane\",\n          \"kind\": \"method\",\n          \"signature\": \"ConstrainDirectionToPlane(Direction: UE.Vector) : UE.Vector;\",\n          \"summary\": \"Constrain a direction vector to the plane constraint, if enabled.\"\n        },\n        {\n          \"ref\": \"7a7e8f51caf5\",\n          \"symbol\": \"UE.MovementComponent.ConstrainLocationToPlane\",\n          \"kind\": \"method\",\n          \"signature\": \"ConstrainLocationToPlane(Location: UE.Vector) : UE.Vector;\",\n          \"summary\": \"Constrain a position vector to the plane constraint, if enabled.\"\n        },\n        {\n          \"ref\": \"f75d6cf7c7d5\",\n          \"symbol\": \"UE.MovementComponent.ConstrainNormalToPlane\",\n          \"kind\": \"method\",\n          \"signature\": \"ConstrainNormalToPlane(Normal: UE.Vector) : UE.Vector;\",\n          \"summary\": \"Constrain a normal vector (of unit length) to the plane constraint, if enabled.\"\n        },\n        {\n          \"ref\": \"7db4293ce24b\",\n          \"symbol\": \"UE.MovementComponent.GetPlaneConstraintNormal\",\n          \"kind\": \"method\",\n          \"signature\": \"GetPlaneConstraintNormal() : UE.Vector;\",\n          \"summary\": \"Returns the normal of the plane that constrains movement, enforced if the plane constraint is enabled.\"\n        },\n        {\n          \"ref\": \"33633e4a7f20\",\n          \"symbol\": \"UE.MovementComponent.GetPlaneConstraintOrigin\",\n          \"kind\": \"method\",\n          \"signature\": \"GetPlaneConstraintOrigin() : UE.Vector;\",\n          \"summary\": \"Get the plane constraint origin. This defines the behavior of snapping a position to the plane, such as by SnapUpdatedComponentToPlane().\"\n        },\n        {\n          \"ref\": \"e0fa116d7ad5\",\n          \"symbol\": \"UE.MovementComponent.K2_MoveUpdatedComponent\",\n          \"kind\": \"method\",\n          \"signature\": \"K2_MoveUpdatedComponent(Delta: UE.Vector, NewRotation: UE.Rotator, OutHit: $Ref<UE.HitResult>, bSweep?: boolean /* = true */, bTeleport?: boolean /* = false */) : boolean;\",\n          \"summary\": \"Moves our UpdatedComponent by the given Delta, and sets rotation to NewRotation. Respects the plane constraint, if enabled.\"\n        },\n        {\n          \"ref\": \"c8ce23238f1d\",\n          \"symbol\": \"UE.MovementComponent.PlaneConstraintNormal\",\n          \"kind\": \"property\",\n          \"signature\": \"PlaneConstraintNormal: UE.Vector;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"be6e87539b8e\",\n          \"symbol\": \"UE.MovementComponent.PlaneConstraintOrigin\",\n          \"kind\": \"property\",\n          \"signature\": \"PlaneConstraintOrigin: UE.Vector;\",\n          \"summary\": \"\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Apply horizontal movement input to a pawn across a floor surface.\",\n        \"name: movement\",\n        \"members: ConstrainDirectionToPlane, ConstrainLocationToPlane, ConstrainNormalToPlane, GetPlaneConstraintNormal\",\n        \"facets: movement_navigation/bm25, movement_navigation/vector\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"2baba1534087\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.InputActionKeyMapping\",\n      \"kind\": \"class\",\n      \"score\": 89.0463,\n      \"confidence\": 0.7306,\n      \"source\": \"Engine/GameFramework\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"fd009ca5589b\",\n          \"symbol\": \"UE.InputActionKeyMapping.ActionName\",\n          \"kind\": \"property\",\n          \"signature\": \"ActionName: string;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"267d45c36790\",\n          \"symbol\": \"UE.InputActionKeyMapping.Key\",\n          \"kind\": \"property\",\n          \"signature\": \"Key: UE.Key;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"47aed6ff7f1c\",\n          \"symbol\": \"UE.InputActionKeyMapping.bAlt\",\n          \"kind\": \"property\",\n          \"signature\": \"bAlt: boolean;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"48ad8c87517e\",\n          \"symbol\": \"UE.InputActionKeyMapping.bCmd\",\n          \"kind\": \"property\",\n          \"signature\": \"bCmd: boolean;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"b06b8026ace5\",\n          \"symbol\": \"UE.InputActionKeyMapping.bCtrl\",\n          \"kind\": \"property\",\n          \"signature\": \"bCtrl: boolean;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"e51c52d239b4\",\n          \"symbol\": \"UE.InputActionKeyMapping.bShift\",\n          \"kind\": \"property\",\n          \"signature\": \"bShift: boolean;\",\n          \"summary\": \"\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Apply horizontal movement input to a pawn across a floor surface.\",\n        \"name: action, input, key, mapping\",\n        \"members: ActionName, Key, bAlt, bCmd\",\n        \"facets: activation_trigger/bm25, activation_trigger/vector\",\n        \"vector recall\"\n      ]\n    }\n  ],\n  \"profile\": {\n    \"load\": 0.7396,\n    \"rewrite\": 5.0103,\n    \"embed\": 0.1843,\n    \"bm25\": 0.1038,\n    \"vector\": 0.1685,\n    \"score\": 0.0789,\n    \"select\": 0.0001,\n    \"total\": 6.0279\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "status": "ok",
+        "mode": "semantic",
+        "query": "Unreal Engine PuerTS gameplay API for pawn.add_movement_input; exact symbol hints: Pawn.AddMovementInput, PawnAddMovementInput, pawn add movement input. Intent: Apply horizontal movement across the room floor from the accepted input.",
+        "searchText": "Pawn Character Actor input action key binding AxisMapping movement input AddMovementInput movement input movement direction vector",
+        "rewrite": {
+          "status": "rewritten",
+          "domainStatus": "ue_relevant",
+          "intentSummary": "Apply horizontal movement input to a pawn across a floor surface.",
+          "warnings": [],
+          "activeSubqueries": [
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The gameplay object that receives movement input.",
+              "subqueryId": "carrier_context_1",
+              "text": "Pawn Character Actor",
+              "weight": 1.0,
+              "subqueryWeight": 1.0
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "The input mechanism that triggers movement.",
+              "subqueryId": "activation_trigger_1",
+              "text": "input action key binding",
+              "weight": 0.6,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "The input mechanism that triggers movement.",
+              "subqueryId": "activation_trigger_2",
+              "text": "AxisMapping movement input",
+              "weight": 0.4,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "movement_navigation",
+              "facetStatus": "required",
+              "facetIntent": "The movement function that applies horizontal input.",
+              "subqueryId": "movement_navigation_1",
+              "text": "AddMovementInput movement input",
+              "weight": 0.7,
+              "subqueryWeight": 0.7
+            },
+            {
+              "facetId": "movement_navigation",
+              "facetStatus": "required",
+              "facetIntent": "The movement function that applies horizontal input.",
+              "subqueryId": "movement_navigation_2",
+              "text": "movement direction vector",
+              "weight": 0.3,
+              "subqueryWeight": 0.3
+            }
+          ]
+        },
+        "embedding": {
+          "enabled": true,
+          "provider": "ollama",
+          "model": "bge-m3",
+          "dimensions": 1024,
+          "indexedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "status": "ready"
+        },
+        "partitions": {
+          "enabled": true,
+          "classifierEnabled": true,
+          "provider": "aaa",
+          "binaryAvailable": true,
+          "timeoutMs": 90000,
+          "candidateCount": 20361,
+          "processedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "validAssignmentCount": 14733,
+          "partitionedEntryCount": 12532,
+          "partitionedEntryRatio": 0.6155,
+          "searchReady": true,
+          "byFacet": {
+            "activation_trigger": 241,
+            "ai_behavior": 948,
+            "animation": 1856,
+            "audio": 704,
+            "camera_feedback_ui": 1336,
+            "carrier_context": 1362,
+            "damage_state": 548,
+            "integration_event": 1069,
+            "level_world": 342,
+            "lighting": 134,
+            "material_visual_state": 1065,
+            "mesh_geometry": 1545,
+            "movement_navigation": 256,
+            "networking_authority": 414,
+            "persistence_assets": 612,
+            "physics": 666,
+            "spatial_targeting": 466,
+            "spawn_lifecycle": 117,
+            "visual_effects": 1052
+          },
+          "status": "ready",
+          "searchScoped": true
+        },
+        "filters": {},
+        "confidence": {
+          "minConfidence": 0.55,
+          "status": "ok",
+          "topConfidence": 0.733
+        },
+        "count": 5,
+        "results": [
+          {
+            "ref": "b62b8a9d0bcc",
+            "entryType": "type",
+            "symbol": "UE.NavMovementComponent",
+            "kind": "class",
+            "score": 92.5,
+            "confidence": 0.733,
+            "extends": "UE.MovementComponent",
+            "source": "Engine/GameFramework",
+            "matchedMembers": [
+              {
+                "ref": "0833aa5c6ebc",
+                "symbol": "UE.NavMovementComponent.RequestPathMove",
+                "kind": "method",
+                "signature": "RequestPathMove(MoveInput: UE.Vector) : void;",
+                "summary": "path following: request movement through a new move input (normal vector = full strength)"
+              },
+              {
+                "ref": "5cd64b323006",
+                "symbol": "UE.NavMovementComponent.GetVelocityForNavMovement",
+                "kind": "method",
+                "signature": "GetVelocityForNavMovement() : UE.Vector;",
+                "summary": "Get the current velocity of the movement component"
+              },
+              {
+                "ref": "cb9503ad1cbf",
+                "symbol": "UE.NavMovementComponent.RequestDirectMove",
+                "kind": "method",
+                "signature": "RequestDirectMove(MoveVelocity: UE.Vector, bForceMaxSpeed: boolean) : void;",
+                "summary": "path following: request movement through a velocity directly"
+              },
+              {
+                "ref": "bb0f462aa74a",
+                "symbol": "UE.NavMovementComponent.FixedPathBrakingDistance",
+                "kind": "property",
+                "signature": "FixedPathBrakingDistance: number;",
+                "summary": ""
+              },
+              {
+                "ref": "2db533ee69aa",
+                "symbol": "UE.NavMovementComponent.GetMaxSpeedForNavMovement",
+                "kind": "method",
+                "signature": "GetMaxSpeedForNavMovement() : number;",
+                "summary": "Get maximum movement speed of the agent"
+              },
+              {
+                "ref": "7499a70db863",
+                "symbol": "UE.NavMovementComponent.IsCrouching",
+                "kind": "method",
+                "signature": "IsCrouching() : boolean;",
+                "summary": "Returns true if currently crouching"
+              },
+              {
+                "ref": "129c0433d72d",
+                "symbol": "UE.NavMovementComponent.IsFalling",
+                "kind": "method",
+                "signature": "IsFalling() : boolean;",
+                "summary": "Returns true if currently falling (not flying, in a non-fluid volume, and not on the ground)"
+              },
+              {
+                "ref": "e0f391571cd9",
+                "symbol": "UE.NavMovementComponent.IsFlying",
+                "kind": "method",
+                "signature": "IsFlying() : boolean;",
+                "summary": "Returns true if currently flying (moving through a non-fluid volume without resting on the ground)"
+              }
+            ],
+            "why": [
+              "rewrite: Apply horizontal movement input to a pawn across a floor surface.",
+              "name: movement",
+              "members: RequestPathMove, GetVelocityForNavMovement, RequestDirectMove, FixedPathBrakingDistance",
+              "facets: movement_navigation/bm25, movement_navigation/vector",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "e2923b419ed2",
+            "entryType": "static_function",
+            "symbol": "UE.EnhancedInputLibrary.IsActionKeyMappingPlayerMappable",
+            "kind": "method",
+            "owner": "UE.EnhancedInputLibrary",
+            "signature": "static IsActionKeyMappingPlayerMappable(ActionKeyMapping: UE.EnhancedActionKeyMapping) : boolean;",
+            "score": 93.0,
+            "confidence": 0.7424,
+            "summary": "Returns true if this Action Key Mapping either holds a Player Mappable Key Settings or is set bIsPlayerMappable.",
+            "source": "Plugin/EnhancedInput",
+            "why": [
+              "rewrite: Apply horizontal movement input to a pawn across a floor surface.",
+              "name: action, input, key, mapping",
+              "doc: action, key, mapping",
+              "facets: activation_trigger/bm25, activation_trigger/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "87417ce50473",
+            "entryType": "static_function",
+            "symbol": "UE.Pawn.GetMovementBaseActor",
+            "kind": "method",
+            "owner": "UE.Pawn",
+            "signature": "static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;",
+            "score": 94.4463,
+            "confidence": 0.7369,
+            "summary": "Gets the owning actor of the Movement Base Component on which the pawn is standing.",
+            "source": "Engine/GameFramework",
+            "why": [
+              "rewrite: Apply horizontal movement input to a pawn across a floor surface.",
+              "name: actor, movement, pawn",
+              "doc: actor, movement, pawn",
+              "facets: carrier_context/bm25, carrier_context/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "66e1cf791708",
+            "entryType": "type",
+            "symbol": "UE.MovementComponent",
+            "kind": "class",
+            "score": 90.6536,
+            "confidence": 0.7318,
+            "extends": "UE.ActorComponent",
+            "source": "Engine/GameFramework",
+            "matchedMembers": [
+              {
+                "ref": "592fff08c83f",
+                "symbol": "UE.MovementComponent.ConstrainDirectionToPlane",
+                "kind": "method",
+                "signature": "ConstrainDirectionToPlane(Direction: UE.Vector) : UE.Vector;",
+                "summary": "Constrain a direction vector to the plane constraint, if enabled."
+              },
+              {
+                "ref": "7a7e8f51caf5",
+                "symbol": "UE.MovementComponent.ConstrainLocationToPlane",
+                "kind": "method",
+                "signature": "ConstrainLocationToPlane(Location: UE.Vector) : UE.Vector;",
+                "summary": "Constrain a position vector to the plane constraint, if enabled."
+              },
+              {
+                "ref": "f75d6cf7c7d5",
+                "symbol": "UE.MovementComponent.ConstrainNormalToPlane",
+                "kind": "method",
+                "signature": "ConstrainNormalToPlane(Normal: UE.Vector) : UE.Vector;",
+                "summary": "Constrain a normal vector (of unit length) to the plane constraint, if enabled."
+              },
+              {
+                "ref": "7db4293ce24b",
+                "symbol": "UE.MovementComponent.GetPlaneConstraintNormal",
+                "kind": "method",
+                "signature": "GetPlaneConstraintNormal() : UE.Vector;",
+                "summary": "Returns the normal of the plane that constrains movement, enforced if the plane constraint is enabled."
+              },
+              {
+                "ref": "33633e4a7f20",
+                "symbol": "UE.MovementComponent.GetPlaneConstraintOrigin",
+                "kind": "method",
+                "signature": "GetPlaneConstraintOrigin() : UE.Vector;",
+                "summary": "Get the plane constraint origin. This defines the behavior of snapping a position to the plane, such as by SnapUpdatedComponentToPlane()."
+              },
+              {
+                "ref": "e0fa116d7ad5",
+                "symbol": "UE.MovementComponent.K2_MoveUpdatedComponent",
+                "kind": "method",
+                "signature": "K2_MoveUpdatedComponent(Delta: UE.Vector, NewRotation: UE.Rotator, OutHit: $Ref<UE.HitResult>, bSweep?: boolean /* = true */, bTeleport?: boolean /* = false */) : boolean;",
+                "summary": "Moves our UpdatedComponent by the given Delta, and sets rotation to NewRotation. Respects the plane constraint, if enabled."
+              },
+              {
+                "ref": "c8ce23238f1d",
+                "symbol": "UE.MovementComponent.PlaneConstraintNormal",
+                "kind": "property",
+                "signature": "PlaneConstraintNormal: UE.Vector;",
+                "summary": ""
+              },
+              {
+                "ref": "be6e87539b8e",
+                "symbol": "UE.MovementComponent.PlaneConstraintOrigin",
+                "kind": "property",
+                "signature": "PlaneConstraintOrigin: UE.Vector;",
+                "summary": ""
+              }
+            ],
+            "why": [
+              "rewrite: Apply horizontal movement input to a pawn across a floor surface.",
+              "name: movement",
+              "members: ConstrainDirectionToPlane, ConstrainLocationToPlane, ConstrainNormalToPlane, GetPlaneConstraintNormal",
+              "facets: movement_navigation/bm25, movement_navigation/vector",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "2baba1534087",
+            "entryType": "type",
+            "symbol": "UE.InputActionKeyMapping",
+            "kind": "class",
+            "score": 89.0463,
+            "confidence": 0.7306,
+            "source": "Engine/GameFramework",
+            "matchedMembers": [
+              {
+                "ref": "fd009ca5589b",
+                "symbol": "UE.InputActionKeyMapping.ActionName",
+                "kind": "property",
+                "signature": "ActionName: string;",
+                "summary": ""
+              },
+              {
+                "ref": "267d45c36790",
+                "symbol": "UE.InputActionKeyMapping.Key",
+                "kind": "property",
+                "signature": "Key: UE.Key;",
+                "summary": ""
+              },
+              {
+                "ref": "47aed6ff7f1c",
+                "symbol": "UE.InputActionKeyMapping.bAlt",
+                "kind": "property",
+                "signature": "bAlt: boolean;",
+                "summary": ""
+              },
+              {
+                "ref": "48ad8c87517e",
+                "symbol": "UE.InputActionKeyMapping.bCmd",
+                "kind": "property",
+                "signature": "bCmd: boolean;",
+                "summary": ""
+              },
+              {
+                "ref": "b06b8026ace5",
+                "symbol": "UE.InputActionKeyMapping.bCtrl",
+                "kind": "property",
+                "signature": "bCtrl: boolean;",
+                "summary": ""
+              },
+              {
+                "ref": "e51c52d239b4",
+                "symbol": "UE.InputActionKeyMapping.bShift",
+                "kind": "property",
+                "signature": "bShift: boolean;",
+                "summary": ""
+              }
+            ],
+            "why": [
+              "rewrite: Apply horizontal movement input to a pawn across a floor surface.",
+              "name: action, input, key, mapping",
+              "members: ActionName, Key, bAlt, bCmd",
+              "facets: activation_trigger/bm25, activation_trigger/vector",
+              "vector recall"
+            ]
+          }
+        ],
+        "profile": {
+          "load": 0.7396,
+          "rewrite": 5.0103,
+          "embed": 0.1843,
+          "bm25": 0.1038,
+          "vector": 0.1685,
+          "score": 0.0789,
+          "select": 0.0001,
+          "total": 6.0279
+        }
+      },
+      "isError": false
+    },
+    "payload": {
+      "status": "ok",
+      "mode": "semantic",
+      "query": "Unreal Engine PuerTS gameplay API for pawn.add_movement_input; exact symbol hints: Pawn.AddMovementInput, PawnAddMovementInput, pawn add movement input. Intent: Apply horizontal movement across the room floor from the accepted input.",
+      "searchText": "Pawn Character Actor input action key binding AxisMapping movement input AddMovementInput movement input movement direction vector",
+      "rewrite": {
+        "status": "rewritten",
+        "domainStatus": "ue_relevant",
+        "intentSummary": "Apply horizontal movement input to a pawn across a floor surface.",
+        "warnings": [],
+        "activeSubqueries": [
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The gameplay object that receives movement input.",
+            "subqueryId": "carrier_context_1",
+            "text": "Pawn Character Actor",
+            "weight": 1.0,
+            "subqueryWeight": 1.0
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "The input mechanism that triggers movement.",
+            "subqueryId": "activation_trigger_1",
+            "text": "input action key binding",
+            "weight": 0.6,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "The input mechanism that triggers movement.",
+            "subqueryId": "activation_trigger_2",
+            "text": "AxisMapping movement input",
+            "weight": 0.4,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "movement_navigation",
+            "facetStatus": "required",
+            "facetIntent": "The movement function that applies horizontal input.",
+            "subqueryId": "movement_navigation_1",
+            "text": "AddMovementInput movement input",
+            "weight": 0.7,
+            "subqueryWeight": 0.7
+          },
+          {
+            "facetId": "movement_navigation",
+            "facetStatus": "required",
+            "facetIntent": "The movement function that applies horizontal input.",
+            "subqueryId": "movement_navigation_2",
+            "text": "movement direction vector",
+            "weight": 0.3,
+            "subqueryWeight": 0.3
+          }
+        ]
+      },
+      "embedding": {
+        "enabled": true,
+        "provider": "ollama",
+        "model": "bge-m3",
+        "dimensions": 1024,
+        "indexedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "status": "ready"
+      },
+      "partitions": {
+        "enabled": true,
+        "classifierEnabled": true,
+        "provider": "aaa",
+        "binaryAvailable": true,
+        "timeoutMs": 90000,
+        "candidateCount": 20361,
+        "processedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "validAssignmentCount": 14733,
+        "partitionedEntryCount": 12532,
+        "partitionedEntryRatio": 0.6155,
+        "searchReady": true,
+        "byFacet": {
+          "activation_trigger": 241,
+          "ai_behavior": 948,
+          "animation": 1856,
+          "audio": 704,
+          "camera_feedback_ui": 1336,
+          "carrier_context": 1362,
+          "damage_state": 548,
+          "integration_event": 1069,
+          "level_world": 342,
+          "lighting": 134,
+          "material_visual_state": 1065,
+          "mesh_geometry": 1545,
+          "movement_navigation": 256,
+          "networking_authority": 414,
+          "persistence_assets": 612,
+          "physics": 666,
+          "spatial_targeting": 466,
+          "spawn_lifecycle": 117,
+          "visual_effects": 1052
+        },
+        "status": "ready",
+        "searchScoped": true
+      },
+      "filters": {},
+      "confidence": {
+        "minConfidence": 0.55,
+        "status": "ok",
+        "topConfidence": 0.733
+      },
+      "count": 5,
+      "results": [
+        {
+          "ref": "b62b8a9d0bcc",
+          "entryType": "type",
+          "symbol": "UE.NavMovementComponent",
+          "kind": "class",
+          "score": 92.5,
+          "confidence": 0.733,
+          "extends": "UE.MovementComponent",
+          "source": "Engine/GameFramework",
+          "matchedMembers": [
+            {
+              "ref": "0833aa5c6ebc",
+              "symbol": "UE.NavMovementComponent.RequestPathMove",
+              "kind": "method",
+              "signature": "RequestPathMove(MoveInput: UE.Vector) : void;",
+              "summary": "path following: request movement through a new move input (normal vector = full strength)"
+            },
+            {
+              "ref": "5cd64b323006",
+              "symbol": "UE.NavMovementComponent.GetVelocityForNavMovement",
+              "kind": "method",
+              "signature": "GetVelocityForNavMovement() : UE.Vector;",
+              "summary": "Get the current velocity of the movement component"
+            },
+            {
+              "ref": "cb9503ad1cbf",
+              "symbol": "UE.NavMovementComponent.RequestDirectMove",
+              "kind": "method",
+              "signature": "RequestDirectMove(MoveVelocity: UE.Vector, bForceMaxSpeed: boolean) : void;",
+              "summary": "path following: request movement through a velocity directly"
+            },
+            {
+              "ref": "bb0f462aa74a",
+              "symbol": "UE.NavMovementComponent.FixedPathBrakingDistance",
+              "kind": "property",
+              "signature": "FixedPathBrakingDistance: number;",
+              "summary": ""
+            },
+            {
+              "ref": "2db533ee69aa",
+              "symbol": "UE.NavMovementComponent.GetMaxSpeedForNavMovement",
+              "kind": "method",
+              "signature": "GetMaxSpeedForNavMovement() : number;",
+              "summary": "Get maximum movement speed of the agent"
+            },
+            {
+              "ref": "7499a70db863",
+              "symbol": "UE.NavMovementComponent.IsCrouching",
+              "kind": "method",
+              "signature": "IsCrouching() : boolean;",
+              "summary": "Returns true if currently crouching"
+            },
+            {
+              "ref": "129c0433d72d",
+              "symbol": "UE.NavMovementComponent.IsFalling",
+              "kind": "method",
+              "signature": "IsFalling() : boolean;",
+              "summary": "Returns true if currently falling (not flying, in a non-fluid volume, and not on the ground)"
+            },
+            {
+              "ref": "e0f391571cd9",
+              "symbol": "UE.NavMovementComponent.IsFlying",
+              "kind": "method",
+              "signature": "IsFlying() : boolean;",
+              "summary": "Returns true if currently flying (moving through a non-fluid volume without resting on the ground)"
+            }
+          ],
+          "why": [
+            "rewrite: Apply horizontal movement input to a pawn across a floor surface.",
+            "name: movement",
+            "members: RequestPathMove, GetVelocityForNavMovement, RequestDirectMove, FixedPathBrakingDistance",
+            "facets: movement_navigation/bm25, movement_navigation/vector",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "e2923b419ed2",
+          "entryType": "static_function",
+          "symbol": "UE.EnhancedInputLibrary.IsActionKeyMappingPlayerMappable",
+          "kind": "method",
+          "owner": "UE.EnhancedInputLibrary",
+          "signature": "static IsActionKeyMappingPlayerMappable(ActionKeyMapping: UE.EnhancedActionKeyMapping) : boolean;",
+          "score": 93.0,
+          "confidence": 0.7424,
+          "summary": "Returns true if this Action Key Mapping either holds a Player Mappable Key Settings or is set bIsPlayerMappable.",
+          "source": "Plugin/EnhancedInput",
+          "why": [
+            "rewrite: Apply horizontal movement input to a pawn across a floor surface.",
+            "name: action, input, key, mapping",
+            "doc: action, key, mapping",
+            "facets: activation_trigger/bm25, activation_trigger/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "87417ce50473",
+          "entryType": "static_function",
+          "symbol": "UE.Pawn.GetMovementBaseActor",
+          "kind": "method",
+          "owner": "UE.Pawn",
+          "signature": "static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;",
+          "score": 94.4463,
+          "confidence": 0.7369,
+          "summary": "Gets the owning actor of the Movement Base Component on which the pawn is standing.",
+          "source": "Engine/GameFramework",
+          "why": [
+            "rewrite: Apply horizontal movement input to a pawn across a floor surface.",
+            "name: actor, movement, pawn",
+            "doc: actor, movement, pawn",
+            "facets: carrier_context/bm25, carrier_context/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "66e1cf791708",
+          "entryType": "type",
+          "symbol": "UE.MovementComponent",
+          "kind": "class",
+          "score": 90.6536,
+          "confidence": 0.7318,
+          "extends": "UE.ActorComponent",
+          "source": "Engine/GameFramework",
+          "matchedMembers": [
+            {
+              "ref": "592fff08c83f",
+              "symbol": "UE.MovementComponent.ConstrainDirectionToPlane",
+              "kind": "method",
+              "signature": "ConstrainDirectionToPlane(Direction: UE.Vector) : UE.Vector;",
+              "summary": "Constrain a direction vector to the plane constraint, if enabled."
+            },
+            {
+              "ref": "7a7e8f51caf5",
+              "symbol": "UE.MovementComponent.ConstrainLocationToPlane",
+              "kind": "method",
+              "signature": "ConstrainLocationToPlane(Location: UE.Vector) : UE.Vector;",
+              "summary": "Constrain a position vector to the plane constraint, if enabled."
+            },
+            {
+              "ref": "f75d6cf7c7d5",
+              "symbol": "UE.MovementComponent.ConstrainNormalToPlane",
+              "kind": "method",
+              "signature": "ConstrainNormalToPlane(Normal: UE.Vector) : UE.Vector;",
+              "summary": "Constrain a normal vector (of unit length) to the plane constraint, if enabled."
+            },
+            {
+              "ref": "7db4293ce24b",
+              "symbol": "UE.MovementComponent.GetPlaneConstraintNormal",
+              "kind": "method",
+              "signature": "GetPlaneConstraintNormal() : UE.Vector;",
+              "summary": "Returns the normal of the plane that constrains movement, enforced if the plane constraint is enabled."
+            },
+            {
+              "ref": "33633e4a7f20",
+              "symbol": "UE.MovementComponent.GetPlaneConstraintOrigin",
+              "kind": "method",
+              "signature": "GetPlaneConstraintOrigin() : UE.Vector;",
+              "summary": "Get the plane constraint origin. This defines the behavior of snapping a position to the plane, such as by SnapUpdatedComponentToPlane()."
+            },
+            {
+              "ref": "e0fa116d7ad5",
+              "symbol": "UE.MovementComponent.K2_MoveUpdatedComponent",
+              "kind": "method",
+              "signature": "K2_MoveUpdatedComponent(Delta: UE.Vector, NewRotation: UE.Rotator, OutHit: $Ref<UE.HitResult>, bSweep?: boolean /* = true */, bTeleport?: boolean /* = false */) : boolean;",
+              "summary": "Moves our UpdatedComponent by the given Delta, and sets rotation to NewRotation. Respects the plane constraint, if enabled."
+            },
+            {
+              "ref": "c8ce23238f1d",
+              "symbol": "UE.MovementComponent.PlaneConstraintNormal",
+              "kind": "property",
+              "signature": "PlaneConstraintNormal: UE.Vector;",
+              "summary": ""
+            },
+            {
+              "ref": "be6e87539b8e",
+              "symbol": "UE.MovementComponent.PlaneConstraintOrigin",
+              "kind": "property",
+              "signature": "PlaneConstraintOrigin: UE.Vector;",
+              "summary": ""
+            }
+          ],
+          "why": [
+            "rewrite: Apply horizontal movement input to a pawn across a floor surface.",
+            "name: movement",
+            "members: ConstrainDirectionToPlane, ConstrainLocationToPlane, ConstrainNormalToPlane, GetPlaneConstraintNormal",
+            "facets: movement_navigation/bm25, movement_navigation/vector",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "2baba1534087",
+          "entryType": "type",
+          "symbol": "UE.InputActionKeyMapping",
+          "kind": "class",
+          "score": 89.0463,
+          "confidence": 0.7306,
+          "source": "Engine/GameFramework",
+          "matchedMembers": [
+            {
+              "ref": "fd009ca5589b",
+              "symbol": "UE.InputActionKeyMapping.ActionName",
+              "kind": "property",
+              "signature": "ActionName: string;",
+              "summary": ""
+            },
+            {
+              "ref": "267d45c36790",
+              "symbol": "UE.InputActionKeyMapping.Key",
+              "kind": "property",
+              "signature": "Key: UE.Key;",
+              "summary": ""
+            },
+            {
+              "ref": "47aed6ff7f1c",
+              "symbol": "UE.InputActionKeyMapping.bAlt",
+              "kind": "property",
+              "signature": "bAlt: boolean;",
+              "summary": ""
+            },
+            {
+              "ref": "48ad8c87517e",
+              "symbol": "UE.InputActionKeyMapping.bCmd",
+              "kind": "property",
+              "signature": "bCmd: boolean;",
+              "summary": ""
+            },
+            {
+              "ref": "b06b8026ace5",
+              "symbol": "UE.InputActionKeyMapping.bCtrl",
+              "kind": "property",
+              "signature": "bCtrl: boolean;",
+              "summary": ""
+            },
+            {
+              "ref": "e51c52d239b4",
+              "symbol": "UE.InputActionKeyMapping.bShift",
+              "kind": "property",
+              "signature": "bShift: boolean;",
+              "summary": ""
+            }
+          ],
+          "why": [
+            "rewrite: Apply horizontal movement input to a pawn across a floor surface.",
+            "name: action, input, key, mapping",
+            "members: ActionName, Key, bAlt, bCmd",
+            "facets: activation_trigger/bm25, activation_trigger/vector",
+            "vector recall"
+          ]
+        }
+      ],
+      "profile": {
+        "load": 0.7396,
+        "rewrite": 5.0103,
+        "embed": 0.1843,
+        "bm25": 0.1038,
+        "vector": 0.1685,
+        "score": 0.0789,
+        "select": 0.0001,
+        "total": 6.0279
+      }
+    }
+  }
+}

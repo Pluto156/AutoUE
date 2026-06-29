@@ -5,7 +5,7 @@ from core.phase2_validation import validate_phase2_node_output
 from custom_nodes.phase2_file_writer import write_files_from_output
 
 TYPESCRIPT_CODE_GENERATOR_PROMPT = """SCHEMA: TypeScriptCodeGenerator
-Select TypeScript/PuerTS ability/runtime templates for every analyzer target. Return JSON only.
+Select TypeScript/PuerTS ability/runtime and AIDev bridge templates for every analyzer target. Return JSON only.
 """
 
 def build_generation_context(node: BaseLLMNode, state: GraphState, full_input: str) -> None:

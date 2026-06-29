@@ -1,0 +1,21 @@
+{
+  "engine_port_id": "enhanced_input.bind_action",
+  "flow_ids": [
+    "flow.player.horizontal_movement.move_left_right",
+    "flow.player.brief_dash.dash_horizontally"
+  ],
+  "behavior_ids": [
+    "player.horizontal_movement.move_left_right",
+    "player.brief_dash.dash_horizontally"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for enhanced_input.bind_action; exact symbol hints: Enhanced.InputBindAction, EnhancedInputBindAction, enhanced input bind action. Intent: Read horizontal movement input only when the player is not frozen.",
+  "raw_path": "flow/04-ue-api-mcp/raw/enhanced_input.bind_action.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json",
+  "verdict": "hit",
+  "hit_type": "direct_hit",
+  "evidence_symbols": [
+    "UE.BlueprintEnhancedInputActionBinding",
+    "UE.EnhancedInputLibrary.GetBoundActionValue"
+  ],
+  "notes": "Enhanced Input action binding/value-access symbols provide usable PuerTS-visible evidence for bound input action handling."
+}

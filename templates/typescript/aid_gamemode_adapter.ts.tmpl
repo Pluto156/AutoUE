@@ -1,0 +1,21 @@
+import UE = require('ue');
+
+const CHARACTER_CLASS = '/Game/Blueprints/TypeScript/AutoUEGeneratedCharacterAdapter.AutoUEGeneratedCharacterAdapter_C';
+function loadClass(path: string): UE.Class | undefined { try { return UE.Class.Load(path); } catch (_) { return undefined; } }
+
+class {{export_name}} extends UE.GameModeBase {
+    Constructor() {
+        this.PrimaryActorTick.bCanEverTick = true;
+        const pawn = loadClass(CHARACTER_CLASS);
+        if (pawn) this.DefaultPawnClass = pawn;
+    }
+    ReceiveBeginPlay(): void {
+        const pawn = loadClass(CHARACTER_CLASS);
+        if (pawn) this.DefaultPawnClass = pawn;
+        const pc = UE.GameplayStatics.GetPlayerController(this, 0);
+        const currentPawn = pc ? pc.K2_GetPawn() : undefined;
+        console.warn(`[AUTOUE_GENERATED] GameModeBeginPlay pawnClassLoaded=${!!pawn} currentPawn=${currentPawn ? currentPawn.GetName() : '<none>'}`);
+    }
+}
+
+export = {{export_name}};

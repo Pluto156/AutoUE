@@ -1,0 +1,171 @@
+{
+  "engine_port_id": "actor.set_actor_location",
+  "flow_ids": [
+    "flow.patrolling_melee_enemy.patrol.move_back_and_forth"
+  ],
+  "behavior_ids": [
+    "patrolling_melee_enemy.patrol.move_back_and_forth"
+  ],
+  "contracts": [
+    "Move the active undefeated enemy along a short horizontal patrol path."
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for actor.set_actor_location; exact symbol hints: Actor.SetActorLocation, ActorSetActorLocation, actor set actor location. Intent: Move the active undefeated enemy along a short horizontal patrol path.",
+  "raw_path": "flow/04-ue-api-mcp/raw/actor.set_actor_location.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/actor.set_actor_location.json",
+  "raw_result": {
+    "tool": "ue_api_semantic_search",
+    "query": "Unreal Engine PuerTS gameplay API for actor.set_actor_location; exact symbol hints: Actor.SetActorLocation, ActorSetActorLocation, actor set actor location. Intent: Move the active undefeated enemy along a short horizontal patrol path.",
+    "limit": 5,
+    "raw_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"error\",\n  \"mode\": \"semantic\",\n  \"query\": \"Unreal Engine PuerTS gameplay API for actor.set_actor_location; exact symbol hints: Actor.SetActorLocation, ActorSetActorLocation, actor set actor location. Intent: Move the active undefeated enemy along a short horizontal patrol path.\",\n  \"searchText\": \"Unreal Engine PuerTS gameplay API for actor.set_actor_location; exact symbol hints: Actor.SetActorLocation, ActorSetActorLocation, actor set actor location. Intent: Move the active undefeated enemy along a short horizontal patrol path.\",\n  \"rewrite\": {\n    \"status\": \"error\",\n    \"domainStatus\": \"\",\n    \"intentSummary\": \"\",\n    \"warnings\": [],\n    \"activeSubqueries\": [],\n    \"error\": \"Error: openai_chat model call failed\\n\\nCaused by:\\n    Web call failed for model 'deepseek-v4-flash (OpenAIChatCompletions/DeepSeek)'.\\n    Cause: Reqwest error: error sending request for url (https://api.deepseek.com/v1/chat/completions)\"\n  },\n  \"embedding\": {\n    \"enabled\": true,\n    \"provider\": \"ollama\",\n    \"model\": \"bge-m3\",\n    \"dimensions\": 1024,\n    \"indexedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"status\": \"ready\"\n  },\n  \"partitions\": {\n    \"enabled\": true,\n    \"classifierEnabled\": true,\n    \"provider\": \"aaa\",\n    \"binaryAvailable\": true,\n    \"timeoutMs\": 90000,\n    \"candidateCount\": 20361,\n    \"processedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"validAssignmentCount\": 14733,\n    \"partitionedEntryCount\": 12532,\n    \"partitionedEntryRatio\": 0.6155,\n    \"searchReady\": true,\n    \"byFacet\": {\n      \"activation_trigger\": 241,\n      \"ai_behavior\": 948,\n      \"animation\": 1856,\n      \"audio\": 704,\n      \"camera_feedback_ui\": 1336,\n      \"carrier_context\": 1362,\n      \"damage_state\": 548,\n      \"integration_event\": 1069,\n      \"level_world\": 342,\n      \"lighting\": 134,\n      \"material_visual_state\": 1065,\n      \"mesh_geometry\": 1545,\n      \"movement_navigation\": 256,\n      \"networking_authority\": 414,\n      \"persistence_assets\": 612,\n      \"physics\": 666,\n      \"spatial_targeting\": 466,\n      \"spawn_lifecycle\": 117,\n      \"visual_effects\": 1052\n    },\n    \"status\": \"ready\"\n  },\n  \"filters\": {},\n  \"errorCode\": \"rewrite-error\",\n  \"error\": \"rewrite-error\",\n  \"message\": \"Error: openai_chat model call failed\\n\\nCaused by:\\n    Web call failed for model 'deepseek-v4-flash (OpenAIChatCompletions/DeepSeek)'.\\n    Cause: Reqwest error: error sending request for url (https://api.deepseek.com/v1/chat/completions)\",\n  \"count\": 0,\n  \"results\": [],\n  \"profile\": {\n    \"load\": 0.7979,\n    \"rewrite\": 42.1392\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "status": "error",
+        "mode": "semantic",
+        "query": "Unreal Engine PuerTS gameplay API for actor.set_actor_location; exact symbol hints: Actor.SetActorLocation, ActorSetActorLocation, actor set actor location. Intent: Move the active undefeated enemy along a short horizontal patrol path.",
+        "searchText": "Unreal Engine PuerTS gameplay API for actor.set_actor_location; exact symbol hints: Actor.SetActorLocation, ActorSetActorLocation, actor set actor location. Intent: Move the active undefeated enemy along a short horizontal patrol path.",
+        "rewrite": {
+          "status": "error",
+          "domainStatus": "",
+          "intentSummary": "",
+          "warnings": [],
+          "activeSubqueries": [],
+          "error": "Error: openai_chat model call failed\n\nCaused by:\n    Web call failed for model 'deepseek-v4-flash (OpenAIChatCompletions/DeepSeek)'.\n    Cause: Reqwest error: error sending request for url (https://api.deepseek.com/v1/chat/completions)"
+        },
+        "embedding": {
+          "enabled": true,
+          "provider": "ollama",
+          "model": "bge-m3",
+          "dimensions": 1024,
+          "indexedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "status": "ready"
+        },
+        "partitions": {
+          "enabled": true,
+          "classifierEnabled": true,
+          "provider": "aaa",
+          "binaryAvailable": true,
+          "timeoutMs": 90000,
+          "candidateCount": 20361,
+          "processedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "validAssignmentCount": 14733,
+          "partitionedEntryCount": 12532,
+          "partitionedEntryRatio": 0.6155,
+          "searchReady": true,
+          "byFacet": {
+            "activation_trigger": 241,
+            "ai_behavior": 948,
+            "animation": 1856,
+            "audio": 704,
+            "camera_feedback_ui": 1336,
+            "carrier_context": 1362,
+            "damage_state": 548,
+            "integration_event": 1069,
+            "level_world": 342,
+            "lighting": 134,
+            "material_visual_state": 1065,
+            "mesh_geometry": 1545,
+            "movement_navigation": 256,
+            "networking_authority": 414,
+            "persistence_assets": 612,
+            "physics": 666,
+            "spatial_targeting": 466,
+            "spawn_lifecycle": 117,
+            "visual_effects": 1052
+          },
+          "status": "ready"
+        },
+        "filters": {},
+        "errorCode": "rewrite-error",
+        "error": "rewrite-error",
+        "message": "Error: openai_chat model call failed\n\nCaused by:\n    Web call failed for model 'deepseek-v4-flash (OpenAIChatCompletions/DeepSeek)'.\n    Cause: Reqwest error: error sending request for url (https://api.deepseek.com/v1/chat/completions)",
+        "count": 0,
+        "results": [],
+        "profile": {
+          "load": 0.7979,
+          "rewrite": 42.1392
+        }
+      },
+      "isError": false
+    },
+    "payload": {
+      "status": "error",
+      "mode": "semantic",
+      "query": "Unreal Engine PuerTS gameplay API for actor.set_actor_location; exact symbol hints: Actor.SetActorLocation, ActorSetActorLocation, actor set actor location. Intent: Move the active undefeated enemy along a short horizontal patrol path.",
+      "searchText": "Unreal Engine PuerTS gameplay API for actor.set_actor_location; exact symbol hints: Actor.SetActorLocation, ActorSetActorLocation, actor set actor location. Intent: Move the active undefeated enemy along a short horizontal patrol path.",
+      "rewrite": {
+        "status": "error",
+        "domainStatus": "",
+        "intentSummary": "",
+        "warnings": [],
+        "activeSubqueries": [],
+        "error": "Error: openai_chat model call failed\n\nCaused by:\n    Web call failed for model 'deepseek-v4-flash (OpenAIChatCompletions/DeepSeek)'.\n    Cause: Reqwest error: error sending request for url (https://api.deepseek.com/v1/chat/completions)"
+      },
+      "embedding": {
+        "enabled": true,
+        "provider": "ollama",
+        "model": "bge-m3",
+        "dimensions": 1024,
+        "indexedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "status": "ready"
+      },
+      "partitions": {
+        "enabled": true,
+        "classifierEnabled": true,
+        "provider": "aaa",
+        "binaryAvailable": true,
+        "timeoutMs": 90000,
+        "candidateCount": 20361,
+        "processedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "validAssignmentCount": 14733,
+        "partitionedEntryCount": 12532,
+        "partitionedEntryRatio": 0.6155,
+        "searchReady": true,
+        "byFacet": {
+          "activation_trigger": 241,
+          "ai_behavior": 948,
+          "animation": 1856,
+          "audio": 704,
+          "camera_feedback_ui": 1336,
+          "carrier_context": 1362,
+          "damage_state": 548,
+          "integration_event": 1069,
+          "level_world": 342,
+          "lighting": 134,
+          "material_visual_state": 1065,
+          "mesh_geometry": 1545,
+          "movement_navigation": 256,
+          "networking_authority": 414,
+          "persistence_assets": 612,
+          "physics": 666,
+          "spatial_targeting": 466,
+          "spawn_lifecycle": 117,
+          "visual_effects": 1052
+        },
+        "status": "ready"
+      },
+      "filters": {},
+      "errorCode": "rewrite-error",
+      "error": "rewrite-error",
+      "message": "Error: openai_chat model call failed\n\nCaused by:\n    Web call failed for model 'deepseek-v4-flash (OpenAIChatCompletions/DeepSeek)'.\n    Cause: Reqwest error: error sending request for url (https://api.deepseek.com/v1/chat/completions)",
+      "count": 0,
+      "results": [],
+      "profile": {
+        "load": 0.7979,
+        "rewrite": 42.1392
+      }
+    }
+  }
+}

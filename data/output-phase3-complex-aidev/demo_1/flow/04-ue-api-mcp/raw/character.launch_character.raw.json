@@ -1,0 +1,629 @@
+{
+  "engine_port_id": "character.launch_character",
+  "flow_ids": [
+    "flow.player.brief_dash.dash_horizontally"
+  ],
+  "behavior_ids": [
+    "player.brief_dash.dash_horizontally"
+  ],
+  "contracts": [
+    "Move the player a short burst distance in the current horizontal direction."
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for character.launch_character; exact symbol hints: Character.LaunchCharacter, CharacterLaunchCharacter, character launch character. Intent: Move the player a short burst distance in the current horizontal direction.",
+  "raw_path": "flow/04-ue-api-mcp/raw/character.launch_character.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/character.launch_character.json",
+  "raw_result": {
+    "tool": "ue_api_semantic_search",
+    "query": "Unreal Engine PuerTS gameplay API for character.launch_character; exact symbol hints: Character.LaunchCharacter, CharacterLaunchCharacter, character launch character. Intent: Move the player a short burst distance in the current horizontal direction.",
+    "limit": 5,
+    "raw_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"ok\",\n  \"mode\": \"semantic\",\n  \"query\": \"Unreal Engine PuerTS gameplay API for character.launch_character; exact symbol hints: Character.LaunchCharacter, CharacterLaunchCharacter, character launch character. Intent: Move the player a short burst distance in the current horizontal direction.\",\n  \"searchText\": \"character actor pawn character movement component input action key event ability activate launch character burst velocity horizontal dash launch launch character\",\n  \"rewrite\": {\n    \"status\": \"rewritten\",\n    \"domainStatus\": \"ue_relevant\",\n    \"intentSummary\": \"Move the player a short burst distance in the current horizontal direction using Character.LaunchCharacter.\",\n    \"warnings\": [],\n    \"activeSubqueries\": [\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The gameplay object that owns and executes the launch.\",\n        \"subqueryId\": \"carrier_context_1\",\n        \"text\": \"character actor pawn\",\n        \"weight\": 0.6,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The gameplay object that owns and executes the launch.\",\n        \"subqueryId\": \"carrier_context_2\",\n        \"text\": \"character movement component\",\n        \"weight\": 0.4,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"The input or event that triggers the burst launch.\",\n        \"subqueryId\": \"activation_trigger_1\",\n        \"text\": \"input action key event\",\n        \"weight\": 0.36,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"The input or event that triggers the burst launch.\",\n        \"subqueryId\": \"activation_trigger_2\",\n        \"text\": \"ability activate\",\n        \"weight\": 0.24,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"movement_navigation\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The launch movement that propels the character horizontally.\",\n        \"subqueryId\": \"movement_navigation_1\",\n        \"text\": \"launch character burst velocity\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"movement_navigation\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The launch movement that propels the character horizontally.\",\n        \"subqueryId\": \"movement_navigation_2\",\n        \"text\": \"horizontal dash launch\",\n        \"weight\": 0.3,\n        \"subqueryWeight\": 0.3\n      },\n      {\n        \"facetId\": \"movement_navigation\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The launch movement that propels the character horizontally.\",\n        \"subqueryId\": \"movement_navigation_3\",\n        \"text\": \"launch character\",\n        \"weight\": 0.2,\n        \"subqueryWeight\": 0.2\n      }\n    ]\n  },\n  \"embedding\": {\n    \"enabled\": true,\n    \"provider\": \"ollama\",\n    \"model\": \"bge-m3\",\n    \"dimensions\": 1024,\n    \"indexedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"status\": \"ready\"\n  },\n  \"partitions\": {\n    \"enabled\": true,\n    \"classifierEnabled\": true,\n    \"provider\": \"aaa\",\n    \"binaryAvailable\": true,\n    \"timeoutMs\": 90000,\n    \"candidateCount\": 20361,\n    \"processedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"validAssignmentCount\": 14733,\n    \"partitionedEntryCount\": 12532,\n    \"partitionedEntryRatio\": 0.6155,\n    \"searchReady\": true,\n    \"byFacet\": {\n      \"activation_trigger\": 241,\n      \"ai_behavior\": 948,\n      \"animation\": 1856,\n      \"audio\": 704,\n      \"camera_feedback_ui\": 1336,\n      \"carrier_context\": 1362,\n      \"damage_state\": 548,\n      \"integration_event\": 1069,\n      \"level_world\": 342,\n      \"lighting\": 134,\n      \"material_visual_state\": 1065,\n      \"mesh_geometry\": 1545,\n      \"movement_navigation\": 256,\n      \"networking_authority\": 414,\n      \"persistence_assets\": 612,\n      \"physics\": 666,\n      \"spatial_targeting\": 466,\n      \"spawn_lifecycle\": 117,\n      \"visual_effects\": 1052\n    },\n    \"status\": \"ready\",\n    \"searchScoped\": true\n  },\n  \"filters\": {},\n  \"confidence\": {\n    \"minConfidence\": 0.55,\n    \"status\": \"ok\",\n    \"topConfidence\": 0.7654\n  },\n  \"count\": 5,\n  \"results\": [\n    {\n      \"ref\": \"ea456b20ddd3\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.GameplayStatics.SuggestProjectileVelocity_CustomArc\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.GameplayStatics\",\n      \"signature\": \"static SuggestProjectileVelocity_CustomArc(WorldContextObject: $Nullable<UE.Object>, OutLaunchVelocity: $Ref<UE.Vector>, StartPos: UE.Vector, EndPos: UE.Vector, OverrideGravityZ?: number /* = 0.000000 */, ArcParam?: number /* = 0.500000 */) : boolean;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7654,\n      \"summary\": \"Returns the launch velocity needed for a projectile at rest at StartPos to land on EndPos. Assumes a medium arc (e.g. 45 deg on level ground). Projectile velocity is variable and unconstrained. Does no tracing.\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Move the player a short burst distance in the current horizontal direction using Character.LaunchCharacter.\",\n        \"name: velocity\",\n        \"doc: launch, velocity\",\n        \"params: launch, velocity\",\n        \"facets: movement_navigation/bm25, movement_navigation/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"b41605aee56b\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetInputLibrary.Key_GetNavigationActionFromKey\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetInputLibrary\",\n      \"signature\": \"static Key_GetNavigationActionFromKey(InKeyEvent: UE.KeyEvent) : UE.EUINavigationAction;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7374,\n      \"summary\": \"Returns the navigation action corresponding to this key, or Invalid if not found\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Move the player a short burst distance in the current horizontal direction using Character.LaunchCharacter.\",\n        \"name: action, input, key\",\n        \"doc: action, key\",\n        \"facets: activation_trigger/bm25, activation_trigger/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"87417ce50473\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.Pawn.GetMovementBaseActor\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.Pawn\",\n      \"signature\": \"static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;\",\n      \"score\": 95.0,\n      \"confidence\": 0.7641,\n      \"summary\": \"Gets the owning actor of the Movement Base Component on which the pawn is standing.\",\n      \"source\": \"Engine/GameFramework\",\n      \"why\": [\n        \"rewrite: Move the player a short burst distance in the current horizontal direction using Character.LaunchCharacter.\",\n        \"name: actor, movement, pawn\",\n        \"doc: actor, component, movement, pawn\",\n        \"facets: carrier_context/bm25, carrier_context/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"caf4e952a019\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.CharacterMovementComponent\",\n      \"kind\": \"class\",\n      \"score\": 82.2254,\n      \"confidence\": 0.7419,\n      \"extends\": \"UE.PawnMovementComponent\",\n      \"source\": \"Engine/GameFramework\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"0c41cad09e2f\",\n          \"symbol\": \"UE.CharacterMovementComponent.ClearAccumulatedForces\",\n          \"kind\": \"method\",\n          \"signature\": \"ClearAccumulatedForces() : void;\",\n          \"summary\": \"Clears forces accumulated through AddImpulse() and AddForce(), and also pending launch velocity.\"\n        },\n        {\n          \"ref\": \"87b2220a3970\",\n          \"symbol\": \"UE.CharacterMovementComponent.PendingLaunchVelocity\",\n          \"kind\": \"property\",\n          \"signature\": \"PendingLaunchVelocity: UE.Vector;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"2731cd0d6d30\",\n          \"symbol\": \"UE.CharacterMovementComponent.bMaintainHorizontalGroundVelocity\",\n          \"kind\": \"property\",\n          \"signature\": \"bMaintainHorizontalGroundVelocity: boolean;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"9e7b91e4e486\",\n          \"symbol\": \"UE.CharacterMovementComponent.AddImpulse\",\n          \"kind\": \"method\",\n          \"signature\": \"AddImpulse(Impulse: UE.Vector, bVelocityChange?: boolean /* = false */) : void;\",\n          \"summary\": \"Add impulse to character. Impulses are accumulated each tick and applied together so multiple calls to this function will accumulate. An impulse is an instantaneous force, usually applied once. If you want to continually\"\n        },\n        {\n          \"ref\": \"c66117530fa9\",\n          \"symbol\": \"UE.CharacterMovementComponent.AirControlBoostVelocityThreshold\",\n          \"kind\": \"property\",\n          \"signature\": \"AirControlBoostVelocityThreshold: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"d062e55c67fd\",\n          \"symbol\": \"UE.CharacterMovementComponent.AnimRootMotionVelocity\",\n          \"kind\": \"property\",\n          \"signature\": \"AnimRootMotionVelocity: UE.Vector;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"842ce4280259\",\n          \"symbol\": \"UE.CharacterMovementComponent.CalcVelocity\",\n          \"kind\": \"method\",\n          \"signature\": \"CalcVelocity(DeltaTime: number, Friction: number, bFluid: boolean, BrakingDeceleration: number) : void;\",\n          \"summary\": \"Updates Velocity and Acceleration based on the current state, applying the effects of friction and acceleration or deceleration. Does not apply gravity. This is used internally during movement updates. Normally you don't\"\n        },\n        {\n          \"ref\": \"2f22d37946dc\",\n          \"symbol\": \"UE.CharacterMovementComponent.FormerBaseVelocityDecayHalfLife\",\n          \"kind\": \"property\",\n          \"signature\": \"FormerBaseVelocityDecayHalfLife: number;\",\n          \"summary\": \"\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Move the player a short burst distance in the current horizontal direction using Character.LaunchCharacter.\",\n        \"name: character, component, movement\",\n        \"members: ClearAccumulatedForces, PendingLaunchVelocity, bMaintainHorizontalGroundVelocity, AddImpulse\",\n        \"facets: movement_navigation/bm25, movement_navigation/vector\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"6f18d7d93f60\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetInputLibrary.PointerEvent_GetEffectingButton\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetInputLibrary\",\n      \"signature\": \"static PointerEvent_GetEffectingButton(Input: UE.PointerEvent) : UE.Key;\",\n      \"score\": 92.1207,\n      \"confidence\": 0.7441,\n      \"summary\": \"Mouse button that caused this event to be raised (possibly FKey::Invalid)\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Move the player a short burst distance in the current horizontal direction using Character.LaunchCharacter.\",\n        \"name: event, input\",\n        \"doc: event, key\",\n        \"facets: activation_trigger/bm25, activation_trigger/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    }\n  ],\n  \"profile\": {\n    \"load\": 0.751,\n    \"rewrite\": 5.2094,\n    \"embed\": 0.2026,\n    \"bm25\": 0.0667,\n    \"vector\": 0.2146,\n    \"score\": 0.1123,\n    \"select\": 0.0001,\n    \"total\": 6.2932\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "status": "ok",
+        "mode": "semantic",
+        "query": "Unreal Engine PuerTS gameplay API for character.launch_character; exact symbol hints: Character.LaunchCharacter, CharacterLaunchCharacter, character launch character. Intent: Move the player a short burst distance in the current horizontal direction.",
+        "searchText": "character actor pawn character movement component input action key event ability activate launch character burst velocity horizontal dash launch launch character",
+        "rewrite": {
+          "status": "rewritten",
+          "domainStatus": "ue_relevant",
+          "intentSummary": "Move the player a short burst distance in the current horizontal direction using Character.LaunchCharacter.",
+          "warnings": [],
+          "activeSubqueries": [
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The gameplay object that owns and executes the launch.",
+              "subqueryId": "carrier_context_1",
+              "text": "character actor pawn",
+              "weight": 0.6,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The gameplay object that owns and executes the launch.",
+              "subqueryId": "carrier_context_2",
+              "text": "character movement component",
+              "weight": 0.4,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "optional",
+              "facetIntent": "The input or event that triggers the burst launch.",
+              "subqueryId": "activation_trigger_1",
+              "text": "input action key event",
+              "weight": 0.36,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "optional",
+              "facetIntent": "The input or event that triggers the burst launch.",
+              "subqueryId": "activation_trigger_2",
+              "text": "ability activate",
+              "weight": 0.24,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "movement_navigation",
+              "facetStatus": "required",
+              "facetIntent": "The launch movement that propels the character horizontally.",
+              "subqueryId": "movement_navigation_1",
+              "text": "launch character burst velocity",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "movement_navigation",
+              "facetStatus": "required",
+              "facetIntent": "The launch movement that propels the character horizontally.",
+              "subqueryId": "movement_navigation_2",
+              "text": "horizontal dash launch",
+              "weight": 0.3,
+              "subqueryWeight": 0.3
+            },
+            {
+              "facetId": "movement_navigation",
+              "facetStatus": "required",
+              "facetIntent": "The launch movement that propels the character horizontally.",
+              "subqueryId": "movement_navigation_3",
+              "text": "launch character",
+              "weight": 0.2,
+              "subqueryWeight": 0.2
+            }
+          ]
+        },
+        "embedding": {
+          "enabled": true,
+          "provider": "ollama",
+          "model": "bge-m3",
+          "dimensions": 1024,
+          "indexedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "status": "ready"
+        },
+        "partitions": {
+          "enabled": true,
+          "classifierEnabled": true,
+          "provider": "aaa",
+          "binaryAvailable": true,
+          "timeoutMs": 90000,
+          "candidateCount": 20361,
+          "processedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "validAssignmentCount": 14733,
+          "partitionedEntryCount": 12532,
+          "partitionedEntryRatio": 0.6155,
+          "searchReady": true,
+          "byFacet": {
+            "activation_trigger": 241,
+            "ai_behavior": 948,
+            "animation": 1856,
+            "audio": 704,
+            "camera_feedback_ui": 1336,
+            "carrier_context": 1362,
+            "damage_state": 548,
+            "integration_event": 1069,
+            "level_world": 342,
+            "lighting": 134,
+            "material_visual_state": 1065,
+            "mesh_geometry": 1545,
+            "movement_navigation": 256,
+            "networking_authority": 414,
+            "persistence_assets": 612,
+            "physics": 666,
+            "spatial_targeting": 466,
+            "spawn_lifecycle": 117,
+            "visual_effects": 1052
+          },
+          "status": "ready",
+          "searchScoped": true
+        },
+        "filters": {},
+        "confidence": {
+          "minConfidence": 0.55,
+          "status": "ok",
+          "topConfidence": 0.7654
+        },
+        "count": 5,
+        "results": [
+          {
+            "ref": "ea456b20ddd3",
+            "entryType": "static_function",
+            "symbol": "UE.GameplayStatics.SuggestProjectileVelocity_CustomArc",
+            "kind": "method",
+            "owner": "UE.GameplayStatics",
+            "signature": "static SuggestProjectileVelocity_CustomArc(WorldContextObject: $Nullable<UE.Object>, OutLaunchVelocity: $Ref<UE.Vector>, StartPos: UE.Vector, EndPos: UE.Vector, OverrideGravityZ?: number /* = 0.000000 */, ArcParam?: number /* = 0.500000 */) : boolean;",
+            "score": 93.0,
+            "confidence": 0.7654,
+            "summary": "Returns the launch velocity needed for a projectile at rest at StartPos to land on EndPos. Assumes a medium arc (e.g. 45 deg on level ground). Projectile velocity is variable and unconstrained. Does no tracing.",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Move the player a short burst distance in the current horizontal direction using Character.LaunchCharacter.",
+              "name: velocity",
+              "doc: launch, velocity",
+              "params: launch, velocity",
+              "facets: movement_navigation/bm25, movement_navigation/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "b41605aee56b",
+            "entryType": "static_function",
+            "symbol": "UE.KismetInputLibrary.Key_GetNavigationActionFromKey",
+            "kind": "method",
+            "owner": "UE.KismetInputLibrary",
+            "signature": "static Key_GetNavigationActionFromKey(InKeyEvent: UE.KeyEvent) : UE.EUINavigationAction;",
+            "score": 93.0,
+            "confidence": 0.7374,
+            "summary": "Returns the navigation action corresponding to this key, or Invalid if not found",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Move the player a short burst distance in the current horizontal direction using Character.LaunchCharacter.",
+              "name: action, input, key",
+              "doc: action, key",
+              "facets: activation_trigger/bm25, activation_trigger/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "87417ce50473",
+            "entryType": "static_function",
+            "symbol": "UE.Pawn.GetMovementBaseActor",
+            "kind": "method",
+            "owner": "UE.Pawn",
+            "signature": "static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;",
+            "score": 95.0,
+            "confidence": 0.7641,
+            "summary": "Gets the owning actor of the Movement Base Component on which the pawn is standing.",
+            "source": "Engine/GameFramework",
+            "why": [
+              "rewrite: Move the player a short burst distance in the current horizontal direction using Character.LaunchCharacter.",
+              "name: actor, movement, pawn",
+              "doc: actor, component, movement, pawn",
+              "facets: carrier_context/bm25, carrier_context/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "caf4e952a019",
+            "entryType": "type",
+            "symbol": "UE.CharacterMovementComponent",
+            "kind": "class",
+            "score": 82.2254,
+            "confidence": 0.7419,
+            "extends": "UE.PawnMovementComponent",
+            "source": "Engine/GameFramework",
+            "matchedMembers": [
+              {
+                "ref": "0c41cad09e2f",
+                "symbol": "UE.CharacterMovementComponent.ClearAccumulatedForces",
+                "kind": "method",
+                "signature": "ClearAccumulatedForces() : void;",
+                "summary": "Clears forces accumulated through AddImpulse() and AddForce(), and also pending launch velocity."
+              },
+              {
+                "ref": "87b2220a3970",
+                "symbol": "UE.CharacterMovementComponent.PendingLaunchVelocity",
+                "kind": "property",
+                "signature": "PendingLaunchVelocity: UE.Vector;",
+                "summary": ""
+              },
+              {
+                "ref": "2731cd0d6d30",
+                "symbol": "UE.CharacterMovementComponent.bMaintainHorizontalGroundVelocity",
+                "kind": "property",
+                "signature": "bMaintainHorizontalGroundVelocity: boolean;",
+                "summary": ""
+              },
+              {
+                "ref": "9e7b91e4e486",
+                "symbol": "UE.CharacterMovementComponent.AddImpulse",
+                "kind": "method",
+                "signature": "AddImpulse(Impulse: UE.Vector, bVelocityChange?: boolean /* = false */) : void;",
+                "summary": "Add impulse to character. Impulses are accumulated each tick and applied together so multiple calls to this function will accumulate. An impulse is an instantaneous force, usually applied once. If you want to continually"
+              },
+              {
+                "ref": "c66117530fa9",
+                "symbol": "UE.CharacterMovementComponent.AirControlBoostVelocityThreshold",
+                "kind": "property",
+                "signature": "AirControlBoostVelocityThreshold: number;",
+                "summary": ""
+              },
+              {
+                "ref": "d062e55c67fd",
+                "symbol": "UE.CharacterMovementComponent.AnimRootMotionVelocity",
+                "kind": "property",
+                "signature": "AnimRootMotionVelocity: UE.Vector;",
+                "summary": ""
+              },
+              {
+                "ref": "842ce4280259",
+                "symbol": "UE.CharacterMovementComponent.CalcVelocity",
+                "kind": "method",
+                "signature": "CalcVelocity(DeltaTime: number, Friction: number, bFluid: boolean, BrakingDeceleration: number) : void;",
+                "summary": "Updates Velocity and Acceleration based on the current state, applying the effects of friction and acceleration or deceleration. Does not apply gravity. This is used internally during movement updates. Normally you don't"
+              },
+              {
+                "ref": "2f22d37946dc",
+                "symbol": "UE.CharacterMovementComponent.FormerBaseVelocityDecayHalfLife",
+                "kind": "property",
+                "signature": "FormerBaseVelocityDecayHalfLife: number;",
+                "summary": ""
+              }
+            ],
+            "why": [
+              "rewrite: Move the player a short burst distance in the current horizontal direction using Character.LaunchCharacter.",
+              "name: character, component, movement",
+              "members: ClearAccumulatedForces, PendingLaunchVelocity, bMaintainHorizontalGroundVelocity, AddImpulse",
+              "facets: movement_navigation/bm25, movement_navigation/vector",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "6f18d7d93f60",
+            "entryType": "static_function",
+            "symbol": "UE.KismetInputLibrary.PointerEvent_GetEffectingButton",
+            "kind": "method",
+            "owner": "UE.KismetInputLibrary",
+            "signature": "static PointerEvent_GetEffectingButton(Input: UE.PointerEvent) : UE.Key;",
+            "score": 92.1207,
+            "confidence": 0.7441,
+            "summary": "Mouse button that caused this event to be raised (possibly FKey::Invalid)",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Move the player a short burst distance in the current horizontal direction using Character.LaunchCharacter.",
+              "name: event, input",
+              "doc: event, key",
+              "facets: activation_trigger/bm25, activation_trigger/vector",
+              "static function result",
+              "vector recall"
+            ]
+          }
+        ],
+        "profile": {
+          "load": 0.751,
+          "rewrite": 5.2094,
+          "embed": 0.2026,
+          "bm25": 0.0667,
+          "vector": 0.2146,
+          "score": 0.1123,
+          "select": 0.0001,
+          "total": 6.2932
+        }
+      },
+      "isError": false
+    },
+    "payload": {
+      "status": "ok",
+      "mode": "semantic",
+      "query": "Unreal Engine PuerTS gameplay API for character.launch_character; exact symbol hints: Character.LaunchCharacter, CharacterLaunchCharacter, character launch character. Intent: Move the player a short burst distance in the current horizontal direction.",
+      "searchText": "character actor pawn character movement component input action key event ability activate launch character burst velocity horizontal dash launch launch character",
+      "rewrite": {
+        "status": "rewritten",
+        "domainStatus": "ue_relevant",
+        "intentSummary": "Move the player a short burst distance in the current horizontal direction using Character.LaunchCharacter.",
+        "warnings": [],
+        "activeSubqueries": [
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The gameplay object that owns and executes the launch.",
+            "subqueryId": "carrier_context_1",
+            "text": "character actor pawn",
+            "weight": 0.6,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The gameplay object that owns and executes the launch.",
+            "subqueryId": "carrier_context_2",
+            "text": "character movement component",
+            "weight": 0.4,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "optional",
+            "facetIntent": "The input or event that triggers the burst launch.",
+            "subqueryId": "activation_trigger_1",
+            "text": "input action key event",
+            "weight": 0.36,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "optional",
+            "facetIntent": "The input or event that triggers the burst launch.",
+            "subqueryId": "activation_trigger_2",
+            "text": "ability activate",
+            "weight": 0.24,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "movement_navigation",
+            "facetStatus": "required",
+            "facetIntent": "The launch movement that propels the character horizontally.",
+            "subqueryId": "movement_navigation_1",
+            "text": "launch character burst velocity",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "movement_navigation",
+            "facetStatus": "required",
+            "facetIntent": "The launch movement that propels the character horizontally.",
+            "subqueryId": "movement_navigation_2",
+            "text": "horizontal dash launch",
+            "weight": 0.3,
+            "subqueryWeight": 0.3
+          },
+          {
+            "facetId": "movement_navigation",
+            "facetStatus": "required",
+            "facetIntent": "The launch movement that propels the character horizontally.",
+            "subqueryId": "movement_navigation_3",
+            "text": "launch character",
+            "weight": 0.2,
+            "subqueryWeight": 0.2
+          }
+        ]
+      },
+      "embedding": {
+        "enabled": true,
+        "provider": "ollama",
+        "model": "bge-m3",
+        "dimensions": 1024,
+        "indexedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "status": "ready"
+      },
+      "partitions": {
+        "enabled": true,
+        "classifierEnabled": true,
+        "provider": "aaa",
+        "binaryAvailable": true,
+        "timeoutMs": 90000,
+        "candidateCount": 20361,
+        "processedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "validAssignmentCount": 14733,
+        "partitionedEntryCount": 12532,
+        "partitionedEntryRatio": 0.6155,
+        "searchReady": true,
+        "byFacet": {
+          "activation_trigger": 241,
+          "ai_behavior": 948,
+          "animation": 1856,
+          "audio": 704,
+          "camera_feedback_ui": 1336,
+          "carrier_context": 1362,
+          "damage_state": 548,
+          "integration_event": 1069,
+          "level_world": 342,
+          "lighting": 134,
+          "material_visual_state": 1065,
+          "mesh_geometry": 1545,
+          "movement_navigation": 256,
+          "networking_authority": 414,
+          "persistence_assets": 612,
+          "physics": 666,
+          "spatial_targeting": 466,
+          "spawn_lifecycle": 117,
+          "visual_effects": 1052
+        },
+        "status": "ready",
+        "searchScoped": true
+      },
+      "filters": {},
+      "confidence": {
+        "minConfidence": 0.55,
+        "status": "ok",
+        "topConfidence": 0.7654
+      },
+      "count": 5,
+      "results": [
+        {
+          "ref": "ea456b20ddd3",
+          "entryType": "static_function",
+          "symbol": "UE.GameplayStatics.SuggestProjectileVelocity_CustomArc",
+          "kind": "method",
+          "owner": "UE.GameplayStatics",
+          "signature": "static SuggestProjectileVelocity_CustomArc(WorldContextObject: $Nullable<UE.Object>, OutLaunchVelocity: $Ref<UE.Vector>, StartPos: UE.Vector, EndPos: UE.Vector, OverrideGravityZ?: number /* = 0.000000 */, ArcParam?: number /* = 0.500000 */) : boolean;",
+          "score": 93.0,
+          "confidence": 0.7654,
+          "summary": "Returns the launch velocity needed for a projectile at rest at StartPos to land on EndPos. Assumes a medium arc (e.g. 45 deg on level ground). Projectile velocity is variable and unconstrained. Does no tracing.",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Move the player a short burst distance in the current horizontal direction using Character.LaunchCharacter.",
+            "name: velocity",
+            "doc: launch, velocity",
+            "params: launch, velocity",
+            "facets: movement_navigation/bm25, movement_navigation/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "b41605aee56b",
+          "entryType": "static_function",
+          "symbol": "UE.KismetInputLibrary.Key_GetNavigationActionFromKey",
+          "kind": "method",
+          "owner": "UE.KismetInputLibrary",
+          "signature": "static Key_GetNavigationActionFromKey(InKeyEvent: UE.KeyEvent) : UE.EUINavigationAction;",
+          "score": 93.0,
+          "confidence": 0.7374,
+          "summary": "Returns the navigation action corresponding to this key, or Invalid if not found",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Move the player a short burst distance in the current horizontal direction using Character.LaunchCharacter.",
+            "name: action, input, key",
+            "doc: action, key",
+            "facets: activation_trigger/bm25, activation_trigger/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "87417ce50473",
+          "entryType": "static_function",
+          "symbol": "UE.Pawn.GetMovementBaseActor",
+          "kind": "method",
+          "owner": "UE.Pawn",
+          "signature": "static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;",
+          "score": 95.0,
+          "confidence": 0.7641,
+          "summary": "Gets the owning actor of the Movement Base Component on which the pawn is standing.",
+          "source": "Engine/GameFramework",
+          "why": [
+            "rewrite: Move the player a short burst distance in the current horizontal direction using Character.LaunchCharacter.",
+            "name: actor, movement, pawn",
+            "doc: actor, component, movement, pawn",
+            "facets: carrier_context/bm25, carrier_context/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "caf4e952a019",
+          "entryType": "type",
+          "symbol": "UE.CharacterMovementComponent",
+          "kind": "class",
+          "score": 82.2254,
+          "confidence": 0.7419,
+          "extends": "UE.PawnMovementComponent",
+          "source": "Engine/GameFramework",
+          "matchedMembers": [
+            {
+              "ref": "0c41cad09e2f",
+              "symbol": "UE.CharacterMovementComponent.ClearAccumulatedForces",
+              "kind": "method",
+              "signature": "ClearAccumulatedForces() : void;",
+              "summary": "Clears forces accumulated through AddImpulse() and AddForce(), and also pending launch velocity."
+            },
+            {
+              "ref": "87b2220a3970",
+              "symbol": "UE.CharacterMovementComponent.PendingLaunchVelocity",
+              "kind": "property",
+              "signature": "PendingLaunchVelocity: UE.Vector;",
+              "summary": ""
+            },
+            {
+              "ref": "2731cd0d6d30",
+              "symbol": "UE.CharacterMovementComponent.bMaintainHorizontalGroundVelocity",
+              "kind": "property",
+              "signature": "bMaintainHorizontalGroundVelocity: boolean;",
+              "summary": ""
+            },
+            {
+              "ref": "9e7b91e4e486",
+              "symbol": "UE.CharacterMovementComponent.AddImpulse",
+              "kind": "method",
+              "signature": "AddImpulse(Impulse: UE.Vector, bVelocityChange?: boolean /* = false */) : void;",
+              "summary": "Add impulse to character. Impulses are accumulated each tick and applied together so multiple calls to this function will accumulate. An impulse is an instantaneous force, usually applied once. If you want to continually"
+            },
+            {
+              "ref": "c66117530fa9",
+              "symbol": "UE.CharacterMovementComponent.AirControlBoostVelocityThreshold",
+              "kind": "property",
+              "signature": "AirControlBoostVelocityThreshold: number;",
+              "summary": ""
+            },
+            {
+              "ref": "d062e55c67fd",
+              "symbol": "UE.CharacterMovementComponent.AnimRootMotionVelocity",
+              "kind": "property",
+              "signature": "AnimRootMotionVelocity: UE.Vector;",
+              "summary": ""
+            },
+            {
+              "ref": "842ce4280259",
+              "symbol": "UE.CharacterMovementComponent.CalcVelocity",
+              "kind": "method",
+              "signature": "CalcVelocity(DeltaTime: number, Friction: number, bFluid: boolean, BrakingDeceleration: number) : void;",
+              "summary": "Updates Velocity and Acceleration based on the current state, applying the effects of friction and acceleration or deceleration. Does not apply gravity. This is used internally during movement updates. Normally you don't"
+            },
+            {
+              "ref": "2f22d37946dc",
+              "symbol": "UE.CharacterMovementComponent.FormerBaseVelocityDecayHalfLife",
+              "kind": "property",
+              "signature": "FormerBaseVelocityDecayHalfLife: number;",
+              "summary": ""
+            }
+          ],
+          "why": [
+            "rewrite: Move the player a short burst distance in the current horizontal direction using Character.LaunchCharacter.",
+            "name: character, component, movement",
+            "members: ClearAccumulatedForces, PendingLaunchVelocity, bMaintainHorizontalGroundVelocity, AddImpulse",
+            "facets: movement_navigation/bm25, movement_navigation/vector",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "6f18d7d93f60",
+          "entryType": "static_function",
+          "symbol": "UE.KismetInputLibrary.PointerEvent_GetEffectingButton",
+          "kind": "method",
+          "owner": "UE.KismetInputLibrary",
+          "signature": "static PointerEvent_GetEffectingButton(Input: UE.PointerEvent) : UE.Key;",
+          "score": 92.1207,
+          "confidence": 0.7441,
+          "summary": "Mouse button that caused this event to be raised (possibly FKey::Invalid)",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Move the player a short burst distance in the current horizontal direction using Character.LaunchCharacter.",
+            "name: event, input",
+            "doc: event, key",
+            "facets: activation_trigger/bm25, activation_trigger/vector",
+            "static function result",
+            "vector recall"
+          ]
+        }
+      ],
+      "profile": {
+        "load": 0.751,
+        "rewrite": 5.2094,
+        "embed": 0.2026,
+        "bm25": 0.0667,
+        "vector": 0.2146,
+        "score": 0.1123,
+        "select": 0.0001,
+        "total": 6.2932
+      }
+    }
+  }
+}

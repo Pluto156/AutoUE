@@ -9,10 +9,18 @@
       "runtime_owner": "TypeScript/content/generated/SmokeGame.ts",
       "implementation_carrier": "template_rendered_ts",
       "selected_runtime_owner": "SmokeGameAbility",
+      "existing_framework_candidates": [
+        "TypeScriptCodeGenerator templates",
+        "AIDev TypeScript Blueprint adapter"
+      ],
+      "why_not_existing_framework": "scripted smoke uses generated templates to prove the bridge contract",
+      "temporary_or_canonical": "temporary",
+      "migration_path": "replace smoke runtime with canonical generated AIDev bridge after Phase3",
       "engine_port_mappings": [
         {
           "engine_port_id": "input.action_binding",
           "adjudication_path": "flow/04-ue-api-mcp/adjudication/input.action_binding.json",
+          "adapter_or_helper": "CharacterAdapter.bindInput",
           "verdict": "hit",
           "evidence_symbols": [
             "UE.EnhancedInputComponent.BindAction"
@@ -21,6 +29,7 @@
         {
           "engine_port_id": "damage.apply",
           "adjudication_path": "flow/04-ue-api-mcp/adjudication/damage.apply.json",
+          "adapter_or_helper": "RuntimePorts.applyDamage",
           "verdict": "hit",
           "evidence_symbols": [
             "UE.GameplayStatics.ApplyDamage"

@@ -1,0 +1,633 @@
+{
+  "engine_port_id": "player_controller.client_start_camera_shake",
+  "flow_ids": [
+    "flow.side_camera.freeze_feedback_shake.shake_on_freeze"
+  ],
+  "behavior_ids": [
+    "side_camera.freeze_feedback_shake.shake_on_freeze"
+  ],
+  "contracts": [
+    "Play a small brief camera shake without changing the side-scroller view."
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for player_controller.client_start_camera_shake; exact symbol hints: Player.ControllerClientStartCameraShake, PlayerControllerClientStartCameraShake, player controller client start camera shake. Intent: Play a small brief camera shake without changing the side-scroller view.",
+  "raw_path": "flow/04-ue-api-mcp/raw/player_controller.client_start_camera_shake.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/player_controller.client_start_camera_shake.json",
+  "raw_result": {
+    "tool": "ue_api_semantic_search",
+    "query": "Unreal Engine PuerTS gameplay API for player_controller.client_start_camera_shake; exact symbol hints: Player.ControllerClientStartCameraShake, PlayerControllerClientStartCameraShake, player controller client start camera shake. Intent: Play a small brief camera shake without changing the side-scroller view.",
+    "limit": 5,
+    "raw_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"ok\",\n  \"mode\": \"semantic\",\n  \"query\": \"Unreal Engine PuerTS gameplay API for player_controller.client_start_camera_shake; exact symbol hints: Player.ControllerClientStartCameraShake, PlayerControllerClientStartCameraShake, player controller client start camera shake. Intent: Play a small brief camera shake without changing the side-scroller view.\",\n  \"searchText\": \"player controller client start camera shake function play camera shake on controller camera shake class brief camera shake small camera shake duration scale client RPC camera shake ClientStartCameraShake\",\n  \"rewrite\": {\n    \"status\": \"rewritten\",\n    \"domainStatus\": \"ue_relevant\",\n    \"intentSummary\": \"Play a small brief camera shake on the player controller without changing the side-scroller view.\",\n    \"warnings\": [],\n    \"activeSubqueries\": [\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The gameplay object that initiates the camera shake.\",\n        \"subqueryId\": \"carrier_context_1\",\n        \"text\": \"player controller\",\n        \"weight\": 1.0,\n        \"subqueryWeight\": 1.0\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The function call or event that starts the camera shake.\",\n        \"subqueryId\": \"activation_trigger_1\",\n        \"text\": \"client start camera shake function\",\n        \"weight\": 0.6,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The function call or event that starts the camera shake.\",\n        \"subqueryId\": \"activation_trigger_2\",\n        \"text\": \"play camera shake on controller\",\n        \"weight\": 0.4,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"camera_feedback_ui\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The camera shake effect applied to the player view.\",\n        \"subqueryId\": \"camera_feedback_ui_1\",\n        \"text\": \"camera shake class\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"camera_feedback_ui\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The camera shake effect applied to the player view.\",\n        \"subqueryId\": \"camera_feedback_ui_2\",\n        \"text\": \"brief camera shake\",\n        \"weight\": 0.3,\n        \"subqueryWeight\": 0.3\n      },\n      {\n        \"facetId\": \"camera_feedback_ui\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The camera shake effect applied to the player view.\",\n        \"subqueryId\": \"camera_feedback_ui_3\",\n        \"text\": \"small camera shake duration scale\",\n        \"weight\": 0.2,\n        \"subqueryWeight\": 0.2\n      },\n      {\n        \"facetId\": \"networking_authority\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"Client-side RPC call to replicate camera shake authority.\",\n        \"subqueryId\": \"networking_authority_1\",\n        \"text\": \"client RPC camera shake\",\n        \"weight\": 0.42,\n        \"subqueryWeight\": 0.7\n      },\n      {\n        \"facetId\": \"networking_authority\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"Client-side RPC call to replicate camera shake authority.\",\n        \"subqueryId\": \"networking_authority_2\",\n        \"text\": \"ClientStartCameraShake\",\n        \"weight\": 0.18,\n        \"subqueryWeight\": 0.3\n      }\n    ]\n  },\n  \"embedding\": {\n    \"enabled\": true,\n    \"provider\": \"ollama\",\n    \"model\": \"bge-m3\",\n    \"dimensions\": 1024,\n    \"indexedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"status\": \"ready\"\n  },\n  \"partitions\": {\n    \"enabled\": true,\n    \"classifierEnabled\": true,\n    \"provider\": \"aaa\",\n    \"binaryAvailable\": true,\n    \"timeoutMs\": 90000,\n    \"candidateCount\": 20361,\n    \"processedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"validAssignmentCount\": 14733,\n    \"partitionedEntryCount\": 12532,\n    \"partitionedEntryRatio\": 0.6155,\n    \"searchReady\": true,\n    \"byFacet\": {\n      \"activation_trigger\": 241,\n      \"ai_behavior\": 948,\n      \"animation\": 1856,\n      \"audio\": 704,\n      \"camera_feedback_ui\": 1336,\n      \"carrier_context\": 1362,\n      \"damage_state\": 548,\n      \"integration_event\": 1069,\n      \"level_world\": 342,\n      \"lighting\": 134,\n      \"material_visual_state\": 1065,\n      \"mesh_geometry\": 1545,\n      \"movement_navigation\": 256,\n      \"networking_authority\": 414,\n      \"persistence_assets\": 612,\n      \"physics\": 666,\n      \"spatial_targeting\": 466,\n      \"spawn_lifecycle\": 117,\n      \"visual_effects\": 1052\n    },\n    \"status\": \"ready\",\n    \"searchScoped\": true\n  },\n  \"filters\": {},\n  \"confidence\": {\n    \"minConfidence\": 0.55,\n    \"status\": \"ok\",\n    \"topConfidence\": 0.742\n  },\n  \"count\": 5,\n  \"results\": [\n    {\n      \"ref\": \"6af1d031d9b3\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.LegacyCameraShake.StartLegacyCameraShake\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.LegacyCameraShake\",\n      \"signature\": \"static StartLegacyCameraShake(PlayerCameraManager: $Nullable<UE.PlayerCameraManager>, ShakeClass: $Nullable<UE.Class>, Scale?: number /* = 1.000000 */, PlaySpace?: UE.ECameraShakePlaySpace /* = CameraLocal */, UserPlaySpaceRot?: UE.Rotator /* = */) : UE.LegacyCameraShake;\",\n      \"score\": 93.0,\n      \"confidence\": 0.742,\n      \"summary\": \"Backwards compatible method used by core BP redirectors. This is needed because the return value is specifically a legacy camera shake, which some BP logic often uses directly to set oscillator_anim properties.\",\n      \"source\": \"Plugin/EngineCameras\",\n      \"why\": [\n        \"rewrite: Play a small brief camera shake on the player controller without changing the side-scroller view.\",\n        \"name: camera, shake, start\",\n        \"doc: camera, shake\",\n        \"facets: camera_feedback_ui/bm25, camera_feedback_ui/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"d19f1f60f51b\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.TestBeaconClient\",\n      \"kind\": \"class\",\n      \"score\": 90.0,\n      \"confidence\": 0.7424,\n      \"extends\": \"UE.OnlineBeaconClient\",\n      \"source\": \"Plugin/OnlineSubsystemUtils\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"c25b8478faf7\",\n          \"symbol\": \"UE.TestBeaconClient.ClientPing\",\n          \"kind\": \"method\",\n          \"signature\": \"ClientPing() : void;\",\n          \"summary\": \"Send a ping RPC to the client\"\n        },\n        {\n          \"ref\": \"4ac5ffdc6bd5\",\n          \"symbol\": \"UE.TestBeaconClient.ServerPong\",\n          \"kind\": \"method\",\n          \"signature\": \"ServerPong() : void;\",\n          \"summary\": \"Send a pong RPC to the host\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Play a small brief camera shake on the player controller without changing the side-scroller view.\",\n        \"name: client\",\n        \"members: ClientPing, ServerPong\",\n        \"facets: networking_authority/bm25, networking_authority/vector\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"12bef98f5625\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.PlayerInput\",\n      \"kind\": \"class\",\n      \"score\": 90.0,\n      \"confidence\": 0.7317,\n      \"extends\": \"UE.Object\",\n      \"source\": \"Engine/GameFramework\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"95c4bc24c078\",\n          \"symbol\": \"UE.PlayerInput.ClearSmoothing\",\n          \"kind\": \"method\",\n          \"signature\": \"ClearSmoothing() : void;\",\n          \"summary\": \"Exec function to reset mouse smoothing values\"\n        },\n        {\n          \"ref\": \"58031eecfa29\",\n          \"symbol\": \"UE.PlayerInput.GetOuterAPlayerController\",\n          \"kind\": \"method\",\n          \"signature\": \"GetOuterAPlayerController() : UE.PlayerController;\",\n          \"summary\": \"Return's this object casted to a player controller. This can be null if there is no player controller.\"\n        },\n        {\n          \"ref\": \"dce0f726b5e9\",\n          \"symbol\": \"UE.PlayerInput.InvertAxis\",\n          \"kind\": \"method\",\n          \"signature\": \"InvertAxis(AxisName: string) : void;\",\n          \"summary\": \"Exec function to invert an axis mapping\"\n        },\n        {\n          \"ref\": \"98fb5d7996c4\",\n          \"symbol\": \"UE.PlayerInput.InvertAxisKey\",\n          \"kind\": \"method\",\n          \"signature\": \"InvertAxisKey(AxisKey: UE.Key) : void;\",\n          \"summary\": \"Exec function to invert an axis key\"\n        },\n        {\n          \"ref\": \"2f6062a5f5ab\",\n          \"symbol\": \"UE.PlayerInput.SetBind\",\n          \"kind\": \"method\",\n          \"signature\": \"SetBind(BindName: string, Command: string) : void;\",\n          \"summary\": \"Exec function to add a debug exec command. Use + to addmodifiers; do not include any spaces between modifiers, so that it is not conflated with the command to be bound. example usage: SetBind k serverexec slomo 0.1 SetBi\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Play a small brief camera shake on the player controller without changing the side-scroller view.\",\n        \"name: player\",\n        \"members: ClearSmoothing, GetOuterAPlayerController, InvertAxis, InvertAxisKey\",\n        \"facets: activation_trigger/bm25, activation_trigger/vector\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"3bdf576e621e\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.GameplayStatics.GetPlayerControllerFromID\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.GameplayStatics\",\n      \"signature\": \"static GetPlayerControllerFromID(WorldContextObject: $Nullable<UE.Object>, ControllerID: number) : UE.PlayerController;\",\n      \"score\": 99.0,\n      \"confidence\": 0.7532,\n      \"summary\": \"Returns the player controller with the specified physical controller ID. This only works for local players.\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Play a small brief camera shake on the player controller without changing the side-scroller view.\",\n        \"name: controller, player\",\n        \"doc: controller, player\",\n        \"params: controller, player\",\n        \"facets: carrier_context/bm25, carrier_context/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"3cb298d4c80f\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.GameplayStatics.PlayWorldCameraShake\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.GameplayStatics\",\n      \"signature\": \"static PlayWorldCameraShake(WorldContextObject: $Nullable<UE.Object>, Shake: $Nullable<UE.Class>, Epicenter: UE.Vector, InnerRadius: number, OuterRadius: number, Falloff?: number /* = 1.000000 */, bOrientShakeTowardsEpicenter?: boolean /* = false */) : void;\",\n      \"score\": 89.3026,\n      \"confidence\": 0.7483,\n      \"summary\": \"Plays an in-world camera shake that affects all nearby local players, with distance-based attenuation. Does not replicate.\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Play a small brief camera shake on the player controller without changing the side-scroller view.\",\n        \"name: camera, play, shake\",\n        \"doc: camera, shake\",\n        \"params: camera, shake\",\n        \"facets: camera_feedback_ui/bm25, camera_feedback_ui/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    }\n  ],\n  \"profile\": {\n    \"load\": 0.7321,\n    \"rewrite\": 6.3736,\n    \"embed\": 0.1935,\n    \"bm25\": 0.1716,\n    \"vector\": 0.4703,\n    \"score\": 0.1163,\n    \"select\": 0.0001,\n    \"total\": 7.8015\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "status": "ok",
+        "mode": "semantic",
+        "query": "Unreal Engine PuerTS gameplay API for player_controller.client_start_camera_shake; exact symbol hints: Player.ControllerClientStartCameraShake, PlayerControllerClientStartCameraShake, player controller client start camera shake. Intent: Play a small brief camera shake without changing the side-scroller view.",
+        "searchText": "player controller client start camera shake function play camera shake on controller camera shake class brief camera shake small camera shake duration scale client RPC camera shake ClientStartCameraShake",
+        "rewrite": {
+          "status": "rewritten",
+          "domainStatus": "ue_relevant",
+          "intentSummary": "Play a small brief camera shake on the player controller without changing the side-scroller view.",
+          "warnings": [],
+          "activeSubqueries": [
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The gameplay object that initiates the camera shake.",
+              "subqueryId": "carrier_context_1",
+              "text": "player controller",
+              "weight": 1.0,
+              "subqueryWeight": 1.0
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "The function call or event that starts the camera shake.",
+              "subqueryId": "activation_trigger_1",
+              "text": "client start camera shake function",
+              "weight": 0.6,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "The function call or event that starts the camera shake.",
+              "subqueryId": "activation_trigger_2",
+              "text": "play camera shake on controller",
+              "weight": 0.4,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "camera_feedback_ui",
+              "facetStatus": "required",
+              "facetIntent": "The camera shake effect applied to the player view.",
+              "subqueryId": "camera_feedback_ui_1",
+              "text": "camera shake class",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "camera_feedback_ui",
+              "facetStatus": "required",
+              "facetIntent": "The camera shake effect applied to the player view.",
+              "subqueryId": "camera_feedback_ui_2",
+              "text": "brief camera shake",
+              "weight": 0.3,
+              "subqueryWeight": 0.3
+            },
+            {
+              "facetId": "camera_feedback_ui",
+              "facetStatus": "required",
+              "facetIntent": "The camera shake effect applied to the player view.",
+              "subqueryId": "camera_feedback_ui_3",
+              "text": "small camera shake duration scale",
+              "weight": 0.2,
+              "subqueryWeight": 0.2
+            },
+            {
+              "facetId": "networking_authority",
+              "facetStatus": "optional",
+              "facetIntent": "Client-side RPC call to replicate camera shake authority.",
+              "subqueryId": "networking_authority_1",
+              "text": "client RPC camera shake",
+              "weight": 0.42,
+              "subqueryWeight": 0.7
+            },
+            {
+              "facetId": "networking_authority",
+              "facetStatus": "optional",
+              "facetIntent": "Client-side RPC call to replicate camera shake authority.",
+              "subqueryId": "networking_authority_2",
+              "text": "ClientStartCameraShake",
+              "weight": 0.18,
+              "subqueryWeight": 0.3
+            }
+          ]
+        },
+        "embedding": {
+          "enabled": true,
+          "provider": "ollama",
+          "model": "bge-m3",
+          "dimensions": 1024,
+          "indexedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "status": "ready"
+        },
+        "partitions": {
+          "enabled": true,
+          "classifierEnabled": true,
+          "provider": "aaa",
+          "binaryAvailable": true,
+          "timeoutMs": 90000,
+          "candidateCount": 20361,
+          "processedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "validAssignmentCount": 14733,
+          "partitionedEntryCount": 12532,
+          "partitionedEntryRatio": 0.6155,
+          "searchReady": true,
+          "byFacet": {
+            "activation_trigger": 241,
+            "ai_behavior": 948,
+            "animation": 1856,
+            "audio": 704,
+            "camera_feedback_ui": 1336,
+            "carrier_context": 1362,
+            "damage_state": 548,
+            "integration_event": 1069,
+            "level_world": 342,
+            "lighting": 134,
+            "material_visual_state": 1065,
+            "mesh_geometry": 1545,
+            "movement_navigation": 256,
+            "networking_authority": 414,
+            "persistence_assets": 612,
+            "physics": 666,
+            "spatial_targeting": 466,
+            "spawn_lifecycle": 117,
+            "visual_effects": 1052
+          },
+          "status": "ready",
+          "searchScoped": true
+        },
+        "filters": {},
+        "confidence": {
+          "minConfidence": 0.55,
+          "status": "ok",
+          "topConfidence": 0.742
+        },
+        "count": 5,
+        "results": [
+          {
+            "ref": "6af1d031d9b3",
+            "entryType": "static_function",
+            "symbol": "UE.LegacyCameraShake.StartLegacyCameraShake",
+            "kind": "method",
+            "owner": "UE.LegacyCameraShake",
+            "signature": "static StartLegacyCameraShake(PlayerCameraManager: $Nullable<UE.PlayerCameraManager>, ShakeClass: $Nullable<UE.Class>, Scale?: number /* = 1.000000 */, PlaySpace?: UE.ECameraShakePlaySpace /* = CameraLocal */, UserPlaySpaceRot?: UE.Rotator /* = */) : UE.LegacyCameraShake;",
+            "score": 93.0,
+            "confidence": 0.742,
+            "summary": "Backwards compatible method used by core BP redirectors. This is needed because the return value is specifically a legacy camera shake, which some BP logic often uses directly to set oscillator_anim properties.",
+            "source": "Plugin/EngineCameras",
+            "why": [
+              "rewrite: Play a small brief camera shake on the player controller without changing the side-scroller view.",
+              "name: camera, shake, start",
+              "doc: camera, shake",
+              "facets: camera_feedback_ui/bm25, camera_feedback_ui/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "d19f1f60f51b",
+            "entryType": "type",
+            "symbol": "UE.TestBeaconClient",
+            "kind": "class",
+            "score": 90.0,
+            "confidence": 0.7424,
+            "extends": "UE.OnlineBeaconClient",
+            "source": "Plugin/OnlineSubsystemUtils",
+            "matchedMembers": [
+              {
+                "ref": "c25b8478faf7",
+                "symbol": "UE.TestBeaconClient.ClientPing",
+                "kind": "method",
+                "signature": "ClientPing() : void;",
+                "summary": "Send a ping RPC to the client"
+              },
+              {
+                "ref": "4ac5ffdc6bd5",
+                "symbol": "UE.TestBeaconClient.ServerPong",
+                "kind": "method",
+                "signature": "ServerPong() : void;",
+                "summary": "Send a pong RPC to the host"
+              }
+            ],
+            "why": [
+              "rewrite: Play a small brief camera shake on the player controller without changing the side-scroller view.",
+              "name: client",
+              "members: ClientPing, ServerPong",
+              "facets: networking_authority/bm25, networking_authority/vector",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "12bef98f5625",
+            "entryType": "type",
+            "symbol": "UE.PlayerInput",
+            "kind": "class",
+            "score": 90.0,
+            "confidence": 0.7317,
+            "extends": "UE.Object",
+            "source": "Engine/GameFramework",
+            "matchedMembers": [
+              {
+                "ref": "95c4bc24c078",
+                "symbol": "UE.PlayerInput.ClearSmoothing",
+                "kind": "method",
+                "signature": "ClearSmoothing() : void;",
+                "summary": "Exec function to reset mouse smoothing values"
+              },
+              {
+                "ref": "58031eecfa29",
+                "symbol": "UE.PlayerInput.GetOuterAPlayerController",
+                "kind": "method",
+                "signature": "GetOuterAPlayerController() : UE.PlayerController;",
+                "summary": "Return's this object casted to a player controller. This can be null if there is no player controller."
+              },
+              {
+                "ref": "dce0f726b5e9",
+                "symbol": "UE.PlayerInput.InvertAxis",
+                "kind": "method",
+                "signature": "InvertAxis(AxisName: string) : void;",
+                "summary": "Exec function to invert an axis mapping"
+              },
+              {
+                "ref": "98fb5d7996c4",
+                "symbol": "UE.PlayerInput.InvertAxisKey",
+                "kind": "method",
+                "signature": "InvertAxisKey(AxisKey: UE.Key) : void;",
+                "summary": "Exec function to invert an axis key"
+              },
+              {
+                "ref": "2f6062a5f5ab",
+                "symbol": "UE.PlayerInput.SetBind",
+                "kind": "method",
+                "signature": "SetBind(BindName: string, Command: string) : void;",
+                "summary": "Exec function to add a debug exec command. Use + to addmodifiers; do not include any spaces between modifiers, so that it is not conflated with the command to be bound. example usage: SetBind k serverexec slomo 0.1 SetBi"
+              }
+            ],
+            "why": [
+              "rewrite: Play a small brief camera shake on the player controller without changing the side-scroller view.",
+              "name: player",
+              "members: ClearSmoothing, GetOuterAPlayerController, InvertAxis, InvertAxisKey",
+              "facets: activation_trigger/bm25, activation_trigger/vector",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "3bdf576e621e",
+            "entryType": "static_function",
+            "symbol": "UE.GameplayStatics.GetPlayerControllerFromID",
+            "kind": "method",
+            "owner": "UE.GameplayStatics",
+            "signature": "static GetPlayerControllerFromID(WorldContextObject: $Nullable<UE.Object>, ControllerID: number) : UE.PlayerController;",
+            "score": 99.0,
+            "confidence": 0.7532,
+            "summary": "Returns the player controller with the specified physical controller ID. This only works for local players.",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Play a small brief camera shake on the player controller without changing the side-scroller view.",
+              "name: controller, player",
+              "doc: controller, player",
+              "params: controller, player",
+              "facets: carrier_context/bm25, carrier_context/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "3cb298d4c80f",
+            "entryType": "static_function",
+            "symbol": "UE.GameplayStatics.PlayWorldCameraShake",
+            "kind": "method",
+            "owner": "UE.GameplayStatics",
+            "signature": "static PlayWorldCameraShake(WorldContextObject: $Nullable<UE.Object>, Shake: $Nullable<UE.Class>, Epicenter: UE.Vector, InnerRadius: number, OuterRadius: number, Falloff?: number /* = 1.000000 */, bOrientShakeTowardsEpicenter?: boolean /* = false */) : void;",
+            "score": 89.3026,
+            "confidence": 0.7483,
+            "summary": "Plays an in-world camera shake that affects all nearby local players, with distance-based attenuation. Does not replicate.",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Play a small brief camera shake on the player controller without changing the side-scroller view.",
+              "name: camera, play, shake",
+              "doc: camera, shake",
+              "params: camera, shake",
+              "facets: camera_feedback_ui/bm25, camera_feedback_ui/vector",
+              "static function result",
+              "vector recall"
+            ]
+          }
+        ],
+        "profile": {
+          "load": 0.7321,
+          "rewrite": 6.3736,
+          "embed": 0.1935,
+          "bm25": 0.1716,
+          "vector": 0.4703,
+          "score": 0.1163,
+          "select": 0.0001,
+          "total": 7.8015
+        }
+      },
+      "isError": false
+    },
+    "payload": {
+      "status": "ok",
+      "mode": "semantic",
+      "query": "Unreal Engine PuerTS gameplay API for player_controller.client_start_camera_shake; exact symbol hints: Player.ControllerClientStartCameraShake, PlayerControllerClientStartCameraShake, player controller client start camera shake. Intent: Play a small brief camera shake without changing the side-scroller view.",
+      "searchText": "player controller client start camera shake function play camera shake on controller camera shake class brief camera shake small camera shake duration scale client RPC camera shake ClientStartCameraShake",
+      "rewrite": {
+        "status": "rewritten",
+        "domainStatus": "ue_relevant",
+        "intentSummary": "Play a small brief camera shake on the player controller without changing the side-scroller view.",
+        "warnings": [],
+        "activeSubqueries": [
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The gameplay object that initiates the camera shake.",
+            "subqueryId": "carrier_context_1",
+            "text": "player controller",
+            "weight": 1.0,
+            "subqueryWeight": 1.0
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "The function call or event that starts the camera shake.",
+            "subqueryId": "activation_trigger_1",
+            "text": "client start camera shake function",
+            "weight": 0.6,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "The function call or event that starts the camera shake.",
+            "subqueryId": "activation_trigger_2",
+            "text": "play camera shake on controller",
+            "weight": 0.4,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "camera_feedback_ui",
+            "facetStatus": "required",
+            "facetIntent": "The camera shake effect applied to the player view.",
+            "subqueryId": "camera_feedback_ui_1",
+            "text": "camera shake class",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "camera_feedback_ui",
+            "facetStatus": "required",
+            "facetIntent": "The camera shake effect applied to the player view.",
+            "subqueryId": "camera_feedback_ui_2",
+            "text": "brief camera shake",
+            "weight": 0.3,
+            "subqueryWeight": 0.3
+          },
+          {
+            "facetId": "camera_feedback_ui",
+            "facetStatus": "required",
+            "facetIntent": "The camera shake effect applied to the player view.",
+            "subqueryId": "camera_feedback_ui_3",
+            "text": "small camera shake duration scale",
+            "weight": 0.2,
+            "subqueryWeight": 0.2
+          },
+          {
+            "facetId": "networking_authority",
+            "facetStatus": "optional",
+            "facetIntent": "Client-side RPC call to replicate camera shake authority.",
+            "subqueryId": "networking_authority_1",
+            "text": "client RPC camera shake",
+            "weight": 0.42,
+            "subqueryWeight": 0.7
+          },
+          {
+            "facetId": "networking_authority",
+            "facetStatus": "optional",
+            "facetIntent": "Client-side RPC call to replicate camera shake authority.",
+            "subqueryId": "networking_authority_2",
+            "text": "ClientStartCameraShake",
+            "weight": 0.18,
+            "subqueryWeight": 0.3
+          }
+        ]
+      },
+      "embedding": {
+        "enabled": true,
+        "provider": "ollama",
+        "model": "bge-m3",
+        "dimensions": 1024,
+        "indexedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "status": "ready"
+      },
+      "partitions": {
+        "enabled": true,
+        "classifierEnabled": true,
+        "provider": "aaa",
+        "binaryAvailable": true,
+        "timeoutMs": 90000,
+        "candidateCount": 20361,
+        "processedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "validAssignmentCount": 14733,
+        "partitionedEntryCount": 12532,
+        "partitionedEntryRatio": 0.6155,
+        "searchReady": true,
+        "byFacet": {
+          "activation_trigger": 241,
+          "ai_behavior": 948,
+          "animation": 1856,
+          "audio": 704,
+          "camera_feedback_ui": 1336,
+          "carrier_context": 1362,
+          "damage_state": 548,
+          "integration_event": 1069,
+          "level_world": 342,
+          "lighting": 134,
+          "material_visual_state": 1065,
+          "mesh_geometry": 1545,
+          "movement_navigation": 256,
+          "networking_authority": 414,
+          "persistence_assets": 612,
+          "physics": 666,
+          "spatial_targeting": 466,
+          "spawn_lifecycle": 117,
+          "visual_effects": 1052
+        },
+        "status": "ready",
+        "searchScoped": true
+      },
+      "filters": {},
+      "confidence": {
+        "minConfidence": 0.55,
+        "status": "ok",
+        "topConfidence": 0.742
+      },
+      "count": 5,
+      "results": [
+        {
+          "ref": "6af1d031d9b3",
+          "entryType": "static_function",
+          "symbol": "UE.LegacyCameraShake.StartLegacyCameraShake",
+          "kind": "method",
+          "owner": "UE.LegacyCameraShake",
+          "signature": "static StartLegacyCameraShake(PlayerCameraManager: $Nullable<UE.PlayerCameraManager>, ShakeClass: $Nullable<UE.Class>, Scale?: number /* = 1.000000 */, PlaySpace?: UE.ECameraShakePlaySpace /* = CameraLocal */, UserPlaySpaceRot?: UE.Rotator /* = */) : UE.LegacyCameraShake;",
+          "score": 93.0,
+          "confidence": 0.742,
+          "summary": "Backwards compatible method used by core BP redirectors. This is needed because the return value is specifically a legacy camera shake, which some BP logic often uses directly to set oscillator_anim properties.",
+          "source": "Plugin/EngineCameras",
+          "why": [
+            "rewrite: Play a small brief camera shake on the player controller without changing the side-scroller view.",
+            "name: camera, shake, start",
+            "doc: camera, shake",
+            "facets: camera_feedback_ui/bm25, camera_feedback_ui/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "d19f1f60f51b",
+          "entryType": "type",
+          "symbol": "UE.TestBeaconClient",
+          "kind": "class",
+          "score": 90.0,
+          "confidence": 0.7424,
+          "extends": "UE.OnlineBeaconClient",
+          "source": "Plugin/OnlineSubsystemUtils",
+          "matchedMembers": [
+            {
+              "ref": "c25b8478faf7",
+              "symbol": "UE.TestBeaconClient.ClientPing",
+              "kind": "method",
+              "signature": "ClientPing() : void;",
+              "summary": "Send a ping RPC to the client"
+            },
+            {
+              "ref": "4ac5ffdc6bd5",
+              "symbol": "UE.TestBeaconClient.ServerPong",
+              "kind": "method",
+              "signature": "ServerPong() : void;",
+              "summary": "Send a pong RPC to the host"
+            }
+          ],
+          "why": [
+            "rewrite: Play a small brief camera shake on the player controller without changing the side-scroller view.",
+            "name: client",
+            "members: ClientPing, ServerPong",
+            "facets: networking_authority/bm25, networking_authority/vector",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "12bef98f5625",
+          "entryType": "type",
+          "symbol": "UE.PlayerInput",
+          "kind": "class",
+          "score": 90.0,
+          "confidence": 0.7317,
+          "extends": "UE.Object",
+          "source": "Engine/GameFramework",
+          "matchedMembers": [
+            {
+              "ref": "95c4bc24c078",
+              "symbol": "UE.PlayerInput.ClearSmoothing",
+              "kind": "method",
+              "signature": "ClearSmoothing() : void;",
+              "summary": "Exec function to reset mouse smoothing values"
+            },
+            {
+              "ref": "58031eecfa29",
+              "symbol": "UE.PlayerInput.GetOuterAPlayerController",
+              "kind": "method",
+              "signature": "GetOuterAPlayerController() : UE.PlayerController;",
+              "summary": "Return's this object casted to a player controller. This can be null if there is no player controller."
+            },
+            {
+              "ref": "dce0f726b5e9",
+              "symbol": "UE.PlayerInput.InvertAxis",
+              "kind": "method",
+              "signature": "InvertAxis(AxisName: string) : void;",
+              "summary": "Exec function to invert an axis mapping"
+            },
+            {
+              "ref": "98fb5d7996c4",
+              "symbol": "UE.PlayerInput.InvertAxisKey",
+              "kind": "method",
+              "signature": "InvertAxisKey(AxisKey: UE.Key) : void;",
+              "summary": "Exec function to invert an axis key"
+            },
+            {
+              "ref": "2f6062a5f5ab",
+              "symbol": "UE.PlayerInput.SetBind",
+              "kind": "method",
+              "signature": "SetBind(BindName: string, Command: string) : void;",
+              "summary": "Exec function to add a debug exec command. Use + to addmodifiers; do not include any spaces between modifiers, so that it is not conflated with the command to be bound. example usage: SetBind k serverexec slomo 0.1 SetBi"
+            }
+          ],
+          "why": [
+            "rewrite: Play a small brief camera shake on the player controller without changing the side-scroller view.",
+            "name: player",
+            "members: ClearSmoothing, GetOuterAPlayerController, InvertAxis, InvertAxisKey",
+            "facets: activation_trigger/bm25, activation_trigger/vector",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "3bdf576e621e",
+          "entryType": "static_function",
+          "symbol": "UE.GameplayStatics.GetPlayerControllerFromID",
+          "kind": "method",
+          "owner": "UE.GameplayStatics",
+          "signature": "static GetPlayerControllerFromID(WorldContextObject: $Nullable<UE.Object>, ControllerID: number) : UE.PlayerController;",
+          "score": 99.0,
+          "confidence": 0.7532,
+          "summary": "Returns the player controller with the specified physical controller ID. This only works for local players.",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Play a small brief camera shake on the player controller without changing the side-scroller view.",
+            "name: controller, player",
+            "doc: controller, player",
+            "params: controller, player",
+            "facets: carrier_context/bm25, carrier_context/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "3cb298d4c80f",
+          "entryType": "static_function",
+          "symbol": "UE.GameplayStatics.PlayWorldCameraShake",
+          "kind": "method",
+          "owner": "UE.GameplayStatics",
+          "signature": "static PlayWorldCameraShake(WorldContextObject: $Nullable<UE.Object>, Shake: $Nullable<UE.Class>, Epicenter: UE.Vector, InnerRadius: number, OuterRadius: number, Falloff?: number /* = 1.000000 */, bOrientShakeTowardsEpicenter?: boolean /* = false */) : void;",
+          "score": 89.3026,
+          "confidence": 0.7483,
+          "summary": "Plays an in-world camera shake that affects all nearby local players, with distance-based attenuation. Does not replicate.",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Play a small brief camera shake on the player controller without changing the side-scroller view.",
+            "name: camera, play, shake",
+            "doc: camera, shake",
+            "params: camera, shake",
+            "facets: camera_feedback_ui/bm25, camera_feedback_ui/vector",
+            "static function result",
+            "vector recall"
+          ]
+        }
+      ],
+      "profile": {
+        "load": 0.7321,
+        "rewrite": 6.3736,
+        "embed": 0.1935,
+        "bm25": 0.1716,
+        "vector": 0.4703,
+        "score": 0.1163,
+        "select": 0.0001,
+        "total": 7.8015
+      }
+    }
+  }
+}

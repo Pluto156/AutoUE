@@ -1,0 +1,941 @@
+{
+  "evaluation_instructions": [
+    {
+      "step_id": 1,
+      "action": "move_left_right",
+      "target": "player",
+      "description": "Validate static adapter_call trace for player.horizontal_movement.move_left_right.",
+      "driver": "adapter_call",
+      "executor_action": "call_behavior",
+      "expected": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "expected_value": "runPlayerHorizontalMovementMoveLeftRightAbility"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "expected_value": "runPlayerMoveLeftRightInteraction"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "expected_value": [
+            "enhanced_input.bind_action",
+            "pawn.add_movement_input"
+          ]
+        }
+      ],
+      "trace": {
+        "entity_id": "player",
+        "ability_id": "player.horizontal_movement",
+        "behavior_id": "player.horizontal_movement.move_left_right",
+        "flow_id": "flow.player.horizontal_movement.move_left_right",
+        "engine_port_ids": [
+          "enhanced_input.bind_action",
+          "pawn.add_movement_input"
+        ],
+        "adjudication_paths": [
+          "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json",
+          "flow/04-ue-api-mcp/adjudication/pawn.add_movement_input.json"
+        ],
+        "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+        "ts_files": [
+          "TypeScript/content/generated/PlayerHorizontalMovementMoveLeftRightAbility.ts",
+          "TypeScript/content/generated/interactive/PlayerHorizontalMovementMoveLeftRightInteractable.ts"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "action": "strike_enemy",
+      "target": "patrolling_melee_enemy",
+      "description": "Validate static adapter_call trace for player.short_melee_attack.strike_enemy.",
+      "driver": "adapter_call",
+      "executor_action": "call_behavior",
+      "expected": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "expected_value": "runPlayerShortMeleeAttackStrikeEnemyAbility"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "expected_value": "runPlayerStrikeEnemyInteraction"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "expected_value": [
+            "kismet.sphere_trace_single",
+            "gameplay_statics.apply_damage"
+          ]
+        }
+      ],
+      "trace": {
+        "entity_id": "player",
+        "ability_id": "player.short_melee_attack",
+        "behavior_id": "player.short_melee_attack.strike_enemy",
+        "flow_id": "flow.player.short_melee_attack.strike_enemy",
+        "engine_port_ids": [
+          "kismet.sphere_trace_single",
+          "gameplay_statics.apply_damage"
+        ],
+        "adjudication_paths": [
+          "flow/04-ue-api-mcp/adjudication/kismet.sphere_trace_single.json",
+          "flow/04-ue-api-mcp/adjudication/gameplay_statics.apply_damage.json"
+        ],
+        "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+        "ts_files": [
+          "TypeScript/content/generated/PlayerShortMeleeAttackStrikeEnemyAbility.ts",
+          "TypeScript/content/generated/interactive/PlayerShortMeleeAttackStrikeEnemyInteractable.ts"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "action": "dash_horizontally",
+      "target": "player",
+      "description": "Validate static adapter_call trace for player.brief_dash.dash_horizontally.",
+      "driver": "adapter_call",
+      "executor_action": "call_behavior",
+      "expected": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "expected_value": "runPlayerBriefDashDashHorizontallyAbility"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "expected_value": "runPlayerDashHorizontallyInteraction"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "expected_value": [
+            "enhanced_input.bind_action",
+            "character.launch_character"
+          ]
+        }
+      ],
+      "trace": {
+        "entity_id": "player",
+        "ability_id": "player.brief_dash",
+        "behavior_id": "player.brief_dash.dash_horizontally",
+        "flow_id": "flow.player.brief_dash.dash_horizontally",
+        "engine_port_ids": [
+          "enhanced_input.bind_action",
+          "character.launch_character"
+        ],
+        "adjudication_paths": [
+          "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json",
+          "flow/04-ue-api-mcp/adjudication/character.launch_character.json"
+        ],
+        "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+        "ts_files": [
+          "TypeScript/content/generated/PlayerBriefDashDashHorizontallyAbility.ts",
+          "TypeScript/content/generated/interactive/PlayerBriefDashDashHorizontallyInteractable.ts"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "action": "become_frozen",
+      "target": "player",
+      "description": "Validate static adapter_call trace for player.frozen_state.become_frozen.",
+      "driver": "adapter_call",
+      "executor_action": "call_behavior",
+      "expected": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "expected_value": "runPlayerFrozenStateBecomeFrozenAbility"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "expected_value": "runPlayerBecomeFrozenInteraction"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "expected_value": [
+            "character_movement.disable_movement",
+            "timer.set_timer"
+          ]
+        }
+      ],
+      "trace": {
+        "entity_id": "player",
+        "ability_id": "player.frozen_state",
+        "behavior_id": "player.frozen_state.become_frozen",
+        "flow_id": "flow.player.frozen_state.become_frozen",
+        "engine_port_ids": [
+          "character_movement.disable_movement",
+          "timer.set_timer"
+        ],
+        "adjudication_paths": [
+          "flow/04-ue-api-mcp/adjudication/character_movement.disable_movement.json",
+          "flow/04-ue-api-mcp/adjudication/timer.set_timer.json"
+        ],
+        "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+        "ts_files": [
+          "TypeScript/content/generated/PlayerFrozenStateBecomeFrozenAbility.ts",
+          "TypeScript/content/generated/interactive/PlayerFrozenStateBecomeFrozenInteractable.ts"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "action": "thaw",
+      "target": "player",
+      "description": "Validate static adapter_call trace for player.frozen_state.thaw.",
+      "driver": "adapter_call",
+      "executor_action": "call_behavior",
+      "expected": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "expected_value": "runPlayerFrozenStateThawAbility"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "expected_value": "runPlayerThawInteraction"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "expected_value": [
+            "character_movement.set_movement_mode"
+          ]
+        }
+      ],
+      "trace": {
+        "entity_id": "player",
+        "ability_id": "player.frozen_state",
+        "behavior_id": "player.frozen_state.thaw",
+        "flow_id": "flow.player.frozen_state.thaw",
+        "engine_port_ids": [
+          "character_movement.set_movement_mode"
+        ],
+        "adjudication_paths": [
+          "flow/04-ue-api-mcp/adjudication/character_movement.set_movement_mode.json"
+        ],
+        "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+        "ts_files": [
+          "TypeScript/content/generated/PlayerFrozenStateThawAbility.ts",
+          "TypeScript/content/generated/interactive/PlayerFrozenStateThawInteractable.ts"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "action": "patrol_back_and_forth",
+      "target": "patrolling_melee_enemy",
+      "description": "Validate static adapter_call trace for patrolling_melee_enemy.patrol.move_back_and_forth.",
+      "driver": "adapter_call",
+      "executor_action": "call_behavior",
+      "expected": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "expected_value": "runPatrollingMeleeEnemyPatrolMoveBackAndForthAbility"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "expected_value": "runEnemyPatrolInteraction"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "expected_value": [
+            "actor.set_actor_location"
+          ]
+        }
+      ],
+      "trace": {
+        "entity_id": "patrolling_melee_enemy",
+        "ability_id": "patrolling_melee_enemy.patrol",
+        "behavior_id": "patrolling_melee_enemy.patrol.move_back_and_forth",
+        "flow_id": "flow.patrolling_melee_enemy.patrol.move_back_and_forth",
+        "engine_port_ids": [
+          "actor.set_actor_location"
+        ],
+        "adjudication_paths": [
+          "flow/04-ue-api-mcp/adjudication/actor.set_actor_location.json"
+        ],
+        "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+        "ts_files": [
+          "TypeScript/content/generated/PatrollingMeleeEnemyPatrolMoveBackAndForthAbility.ts",
+          "TypeScript/content/generated/interactive/PatrollingMeleeEnemyPatrolMoveBackAndForthInteractable.ts"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "action": "threaten_close_player",
+      "target": "player",
+      "description": "Validate static adapter_call trace for patrolling_melee_enemy.melee_pressure.threaten_close_player.",
+      "driver": "adapter_call",
+      "executor_action": "call_behavior",
+      "expected": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "expected_value": "runPatrollingMeleeEnemyMeleePressureThreatenClosePlayerAbility"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "expected_value": "runEnemyThreatenClosePlayerInteraction"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "expected_value": [
+            "primitive.on_component_begin_overlap"
+          ]
+        }
+      ],
+      "trace": {
+        "entity_id": "patrolling_melee_enemy",
+        "ability_id": "patrolling_melee_enemy.melee_pressure",
+        "behavior_id": "patrolling_melee_enemy.melee_pressure.threaten_close_player",
+        "flow_id": "flow.patrolling_melee_enemy.melee_pressure.threaten_close_player",
+        "engine_port_ids": [
+          "primitive.on_component_begin_overlap"
+        ],
+        "adjudication_paths": [
+          "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json"
+        ],
+        "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+        "ts_files": [
+          "TypeScript/content/generated/PatrollingMeleeEnemyMeleePressureThreatenClosePlayerAbility.ts",
+          "TypeScript/content/generated/interactive/PatrollingMeleeEnemyMeleePressureThreatenClosePlayerInteractable.ts"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "action": "take_melee_damage",
+      "target": "patrolling_melee_enemy",
+      "description": "Validate static adapter_call trace for patrolling_melee_enemy.health.take_melee_damage.",
+      "driver": "adapter_call",
+      "executor_action": "call_behavior",
+      "expected": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "expected_value": "runPatrollingMeleeEnemyHealthTakeMeleeDamageAbility"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "expected_value": "runEnemyTakeMeleeDamageInteraction"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "expected_value": [
+            "actor.on_take_any_damage"
+          ]
+        }
+      ],
+      "trace": {
+        "entity_id": "patrolling_melee_enemy",
+        "ability_id": "patrolling_melee_enemy.health",
+        "behavior_id": "patrolling_melee_enemy.health.take_melee_damage",
+        "flow_id": "flow.patrolling_melee_enemy.health.take_melee_damage",
+        "engine_port_ids": [
+          "actor.on_take_any_damage"
+        ],
+        "adjudication_paths": [
+          "flow/04-ue-api-mcp/adjudication/actor.on_take_any_damage.json"
+        ],
+        "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+        "ts_files": [
+          "TypeScript/content/generated/PatrollingMeleeEnemyHealthTakeMeleeDamageAbility.ts",
+          "TypeScript/content/generated/interactive/PatrollingMeleeEnemyHealthTakeMeleeDamageInteractable.ts"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "action": "become_defeated",
+      "target": "patrolling_melee_enemy",
+      "description": "Validate static adapter_call trace for patrolling_melee_enemy.health.become_defeated.",
+      "driver": "adapter_call",
+      "executor_action": "call_behavior",
+      "expected": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "expected_value": "runPatrollingMeleeEnemyHealthBecomeDefeatedAbility"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "expected_value": "runEnemyBecomeDefeatedInteraction"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "expected_value": [
+            "actor.set_actor_tick_enabled"
+          ]
+        }
+      ],
+      "trace": {
+        "entity_id": "patrolling_melee_enemy",
+        "ability_id": "patrolling_melee_enemy.health",
+        "behavior_id": "patrolling_melee_enemy.health.become_defeated",
+        "flow_id": "flow.patrolling_melee_enemy.health.become_defeated",
+        "engine_port_ids": [
+          "actor.set_actor_tick_enabled"
+        ],
+        "adjudication_paths": [
+          "flow/04-ue-api-mcp/adjudication/actor.set_actor_tick_enabled.json"
+        ],
+        "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+        "ts_files": [
+          "TypeScript/content/generated/PatrollingMeleeEnemyHealthBecomeDefeatedAbility.ts",
+          "TypeScript/content/generated/interactive/PatrollingMeleeEnemyHealthBecomeDefeatedInteractable.ts"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "action": "freeze_overlapping_player",
+      "target": "player",
+      "description": "Validate static adapter_call trace for ice_trap.freeze_trigger.freeze_overlapping_player.",
+      "driver": "adapter_call",
+      "executor_action": "call_behavior",
+      "expected": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "expected_value": "runIceTrapFreezeTriggerFreezeOverlappingPlayerAbility"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "expected_value": "runIceTrapFreezePlayerInteraction"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "expected_value": [
+            "primitive.on_component_begin_overlap"
+          ]
+        }
+      ],
+      "trace": {
+        "entity_id": "ice_trap",
+        "ability_id": "ice_trap.freeze_trigger",
+        "behavior_id": "ice_trap.freeze_trigger.freeze_overlapping_player",
+        "flow_id": "flow.ice_trap.freeze_trigger.freeze_overlapping_player",
+        "engine_port_ids": [
+          "primitive.on_component_begin_overlap"
+        ],
+        "adjudication_paths": [
+          "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json"
+        ],
+        "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+        "ts_files": [
+          "TypeScript/content/generated/IceTrapFreezeTriggerFreezeOverlappingPlayerAbility.ts",
+          "TypeScript/content/generated/interactive/IceTrapFreezeTriggerFreezeOverlappingPlayerInteractable.ts"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "action": "show_freeze_effect",
+      "target": "player",
+      "description": "Validate static adapter_call trace for freeze_vfx.freeze_feedback.appear_on_freeze.",
+      "driver": "adapter_call",
+      "executor_action": "call_behavior",
+      "expected": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "expected_value": "runFreezeVfxFreezeFeedbackAppearOnFreezeAbility"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "expected_value": "runFreezeVfxAppearInteraction"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "expected_value": [
+            "niagara.spawn_system_attached"
+          ]
+        }
+      ],
+      "trace": {
+        "entity_id": "freeze_vfx",
+        "ability_id": "freeze_vfx.freeze_feedback",
+        "behavior_id": "freeze_vfx.freeze_feedback.appear_on_freeze",
+        "flow_id": "flow.freeze_vfx.freeze_feedback.appear_on_freeze",
+        "engine_port_ids": [
+          "niagara.spawn_system_attached"
+        ],
+        "adjudication_paths": [
+          "flow/04-ue-api-mcp/adjudication/niagara.spawn_system_attached.json"
+        ],
+        "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+        "ts_files": [
+          "TypeScript/content/generated/FreezeVfxFreezeFeedbackAppearOnFreezeAbility.ts",
+          "TypeScript/content/generated/interactive/FreezeVfxFreezeFeedbackAppearOnFreezeInteractable.ts"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "action": "shake_on_freeze",
+      "target": "side_camera",
+      "description": "Validate static adapter_call trace for side_camera.freeze_feedback_shake.shake_on_freeze.",
+      "driver": "adapter_call",
+      "executor_action": "call_behavior",
+      "expected": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "expected_value": "runSideCameraFreezeFeedbackShakeShakeOnFreezeAbility"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "expected_value": "runSideCameraShakeOnFreezeInteraction"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "expected_value": [
+            "player_controller.client_start_camera_shake"
+          ]
+        }
+      ],
+      "trace": {
+        "entity_id": "side_camera",
+        "ability_id": "side_camera.freeze_feedback_shake",
+        "behavior_id": "side_camera.freeze_feedback_shake.shake_on_freeze",
+        "flow_id": "flow.side_camera.freeze_feedback_shake.shake_on_freeze",
+        "engine_port_ids": [
+          "player_controller.client_start_camera_shake"
+        ],
+        "adjudication_paths": [
+          "flow/04-ue-api-mcp/adjudication/player_controller.client_start_camera_shake.json"
+        ],
+        "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+        "ts_files": [
+          "TypeScript/content/generated/SideCameraFreezeFeedbackShakeShakeOnFreezeAbility.ts",
+          "TypeScript/content/generated/interactive/SideCameraFreezeFeedbackShakeShakeOnFreezeInteractable.ts"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "action": "remain_locked",
+      "target": "locked_exit",
+      "description": "Validate static adapter_call trace for locked_exit.enemy_gate.remain_locked.",
+      "driver": "adapter_call",
+      "executor_action": "call_behavior",
+      "expected": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "expected_value": "runLockedExitEnemyGateRemainLockedAbility"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "expected_value": "runLockedExitRemainLockedInteraction"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "expected_value": [
+            "primitive.on_component_begin_overlap"
+          ]
+        }
+      ],
+      "trace": {
+        "entity_id": "locked_exit",
+        "ability_id": "locked_exit.enemy_gate",
+        "behavior_id": "locked_exit.enemy_gate.remain_locked",
+        "flow_id": "flow.locked_exit.enemy_gate.remain_locked",
+        "engine_port_ids": [
+          "primitive.on_component_begin_overlap"
+        ],
+        "adjudication_paths": [
+          "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json"
+        ],
+        "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+        "ts_files": [
+          "TypeScript/content/generated/LockedExitEnemyGateRemainLockedAbility.ts",
+          "TypeScript/content/generated/interactive/LockedExitEnemyGateRemainLockedInteractable.ts"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "action": "unlock_after_enemy_defeat",
+      "target": "locked_exit",
+      "description": "Validate static adapter_call trace for locked_exit.enemy_gate.unlock_after_enemy_defeat.",
+      "driver": "adapter_call",
+      "executor_action": "call_behavior",
+      "expected": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "expected_value": "runLockedExitEnemyGateUnlockAfterEnemyDefeatAbility"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "expected_value": "runLockedExitUnlockInteraction"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "expected_value": [
+            "primitive.on_component_begin_overlap"
+          ]
+        }
+      ],
+      "trace": {
+        "entity_id": "locked_exit",
+        "ability_id": "locked_exit.enemy_gate",
+        "behavior_id": "locked_exit.enemy_gate.unlock_after_enemy_defeat",
+        "flow_id": "flow.locked_exit.enemy_gate.unlock_after_enemy_defeat",
+        "engine_port_ids": [
+          "primitive.on_component_begin_overlap"
+        ],
+        "adjudication_paths": [
+          "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json"
+        ],
+        "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+        "ts_files": [
+          "TypeScript/content/generated/LockedExitEnemyGateUnlockAfterEnemyDefeatAbility.ts",
+          "TypeScript/content/generated/interactive/LockedExitEnemyGateUnlockAfterEnemyDefeatInteractable.ts"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "action": "complete_on_reach",
+      "target": "unlocked_exit",
+      "description": "Validate static adapter_call trace for locked_exit.room_completion.complete_on_reach.",
+      "driver": "adapter_call",
+      "executor_action": "call_behavior",
+      "expected": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "expected_value": "runLockedExitRoomCompletionCompleteOnReachAbility"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "expected_value": "runLockedExitCompleteRoomInteraction"
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "expected_value": [
+            "primitive.on_component_begin_overlap"
+          ]
+        }
+      ],
+      "trace": {
+        "entity_id": "locked_exit",
+        "ability_id": "locked_exit.room_completion",
+        "behavior_id": "locked_exit.room_completion.complete_on_reach",
+        "flow_id": "flow.locked_exit.room_completion.complete_on_reach",
+        "engine_port_ids": [
+          "primitive.on_component_begin_overlap"
+        ],
+        "adjudication_paths": [
+          "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json"
+        ],
+        "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+        "ts_files": [
+          "TypeScript/content/generated/LockedExitRoomCompletionCompleteOnReachAbility.ts",
+          "TypeScript/content/generated/interactive/LockedExitRoomCompletionCompleteOnReachInteractable.ts"
+        ]
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "entity_id": "player",
+      "ability_id": "player.horizontal_movement",
+      "behavior_id": "player.horizontal_movement.move_left_right",
+      "flow_id": "flow.player.horizontal_movement.move_left_right",
+      "engine_port_ids": [
+        "enhanced_input.bind_action",
+        "pawn.add_movement_input"
+      ],
+      "adjudication_paths": [
+        "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json",
+        "flow/04-ue-api-mcp/adjudication/pawn.add_movement_input.json"
+      ],
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "ts_files": [
+        "TypeScript/content/generated/PlayerHorizontalMovementMoveLeftRightAbility.ts",
+        "TypeScript/content/generated/interactive/PlayerHorizontalMovementMoveLeftRightInteractable.ts"
+      ]
+    },
+    {
+      "entity_id": "player",
+      "ability_id": "player.short_melee_attack",
+      "behavior_id": "player.short_melee_attack.strike_enemy",
+      "flow_id": "flow.player.short_melee_attack.strike_enemy",
+      "engine_port_ids": [
+        "kismet.sphere_trace_single",
+        "gameplay_statics.apply_damage"
+      ],
+      "adjudication_paths": [
+        "flow/04-ue-api-mcp/adjudication/kismet.sphere_trace_single.json",
+        "flow/04-ue-api-mcp/adjudication/gameplay_statics.apply_damage.json"
+      ],
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "ts_files": [
+        "TypeScript/content/generated/PlayerShortMeleeAttackStrikeEnemyAbility.ts",
+        "TypeScript/content/generated/interactive/PlayerShortMeleeAttackStrikeEnemyInteractable.ts"
+      ]
+    },
+    {
+      "entity_id": "player",
+      "ability_id": "player.brief_dash",
+      "behavior_id": "player.brief_dash.dash_horizontally",
+      "flow_id": "flow.player.brief_dash.dash_horizontally",
+      "engine_port_ids": [
+        "enhanced_input.bind_action",
+        "character.launch_character"
+      ],
+      "adjudication_paths": [
+        "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json",
+        "flow/04-ue-api-mcp/adjudication/character.launch_character.json"
+      ],
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "ts_files": [
+        "TypeScript/content/generated/PlayerBriefDashDashHorizontallyAbility.ts",
+        "TypeScript/content/generated/interactive/PlayerBriefDashDashHorizontallyInteractable.ts"
+      ]
+    },
+    {
+      "entity_id": "player",
+      "ability_id": "player.frozen_state",
+      "behavior_id": "player.frozen_state.become_frozen",
+      "flow_id": "flow.player.frozen_state.become_frozen",
+      "engine_port_ids": [
+        "character_movement.disable_movement",
+        "timer.set_timer"
+      ],
+      "adjudication_paths": [
+        "flow/04-ue-api-mcp/adjudication/character_movement.disable_movement.json",
+        "flow/04-ue-api-mcp/adjudication/timer.set_timer.json"
+      ],
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "ts_files": [
+        "TypeScript/content/generated/PlayerFrozenStateBecomeFrozenAbility.ts",
+        "TypeScript/content/generated/interactive/PlayerFrozenStateBecomeFrozenInteractable.ts"
+      ]
+    },
+    {
+      "entity_id": "player",
+      "ability_id": "player.frozen_state",
+      "behavior_id": "player.frozen_state.thaw",
+      "flow_id": "flow.player.frozen_state.thaw",
+      "engine_port_ids": [
+        "character_movement.set_movement_mode"
+      ],
+      "adjudication_paths": [
+        "flow/04-ue-api-mcp/adjudication/character_movement.set_movement_mode.json"
+      ],
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "ts_files": [
+        "TypeScript/content/generated/PlayerFrozenStateThawAbility.ts",
+        "TypeScript/content/generated/interactive/PlayerFrozenStateThawInteractable.ts"
+      ]
+    },
+    {
+      "entity_id": "patrolling_melee_enemy",
+      "ability_id": "patrolling_melee_enemy.patrol",
+      "behavior_id": "patrolling_melee_enemy.patrol.move_back_and_forth",
+      "flow_id": "flow.patrolling_melee_enemy.patrol.move_back_and_forth",
+      "engine_port_ids": [
+        "actor.set_actor_location"
+      ],
+      "adjudication_paths": [
+        "flow/04-ue-api-mcp/adjudication/actor.set_actor_location.json"
+      ],
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "ts_files": [
+        "TypeScript/content/generated/PatrollingMeleeEnemyPatrolMoveBackAndForthAbility.ts",
+        "TypeScript/content/generated/interactive/PatrollingMeleeEnemyPatrolMoveBackAndForthInteractable.ts"
+      ]
+    },
+    {
+      "entity_id": "patrolling_melee_enemy",
+      "ability_id": "patrolling_melee_enemy.melee_pressure",
+      "behavior_id": "patrolling_melee_enemy.melee_pressure.threaten_close_player",
+      "flow_id": "flow.patrolling_melee_enemy.melee_pressure.threaten_close_player",
+      "engine_port_ids": [
+        "primitive.on_component_begin_overlap"
+      ],
+      "adjudication_paths": [
+        "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json"
+      ],
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "ts_files": [
+        "TypeScript/content/generated/PatrollingMeleeEnemyMeleePressureThreatenClosePlayerAbility.ts",
+        "TypeScript/content/generated/interactive/PatrollingMeleeEnemyMeleePressureThreatenClosePlayerInteractable.ts"
+      ]
+    },
+    {
+      "entity_id": "patrolling_melee_enemy",
+      "ability_id": "patrolling_melee_enemy.health",
+      "behavior_id": "patrolling_melee_enemy.health.take_melee_damage",
+      "flow_id": "flow.patrolling_melee_enemy.health.take_melee_damage",
+      "engine_port_ids": [
+        "actor.on_take_any_damage"
+      ],
+      "adjudication_paths": [
+        "flow/04-ue-api-mcp/adjudication/actor.on_take_any_damage.json"
+      ],
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "ts_files": [
+        "TypeScript/content/generated/PatrollingMeleeEnemyHealthTakeMeleeDamageAbility.ts",
+        "TypeScript/content/generated/interactive/PatrollingMeleeEnemyHealthTakeMeleeDamageInteractable.ts"
+      ]
+    },
+    {
+      "entity_id": "patrolling_melee_enemy",
+      "ability_id": "patrolling_melee_enemy.health",
+      "behavior_id": "patrolling_melee_enemy.health.become_defeated",
+      "flow_id": "flow.patrolling_melee_enemy.health.become_defeated",
+      "engine_port_ids": [
+        "actor.set_actor_tick_enabled"
+      ],
+      "adjudication_paths": [
+        "flow/04-ue-api-mcp/adjudication/actor.set_actor_tick_enabled.json"
+      ],
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "ts_files": [
+        "TypeScript/content/generated/PatrollingMeleeEnemyHealthBecomeDefeatedAbility.ts",
+        "TypeScript/content/generated/interactive/PatrollingMeleeEnemyHealthBecomeDefeatedInteractable.ts"
+      ]
+    },
+    {
+      "entity_id": "ice_trap",
+      "ability_id": "ice_trap.freeze_trigger",
+      "behavior_id": "ice_trap.freeze_trigger.freeze_overlapping_player",
+      "flow_id": "flow.ice_trap.freeze_trigger.freeze_overlapping_player",
+      "engine_port_ids": [
+        "primitive.on_component_begin_overlap"
+      ],
+      "adjudication_paths": [
+        "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json"
+      ],
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "ts_files": [
+        "TypeScript/content/generated/IceTrapFreezeTriggerFreezeOverlappingPlayerAbility.ts",
+        "TypeScript/content/generated/interactive/IceTrapFreezeTriggerFreezeOverlappingPlayerInteractable.ts"
+      ]
+    },
+    {
+      "entity_id": "freeze_vfx",
+      "ability_id": "freeze_vfx.freeze_feedback",
+      "behavior_id": "freeze_vfx.freeze_feedback.appear_on_freeze",
+      "flow_id": "flow.freeze_vfx.freeze_feedback.appear_on_freeze",
+      "engine_port_ids": [
+        "niagara.spawn_system_attached"
+      ],
+      "adjudication_paths": [
+        "flow/04-ue-api-mcp/adjudication/niagara.spawn_system_attached.json"
+      ],
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "ts_files": [
+        "TypeScript/content/generated/FreezeVfxFreezeFeedbackAppearOnFreezeAbility.ts",
+        "TypeScript/content/generated/interactive/FreezeVfxFreezeFeedbackAppearOnFreezeInteractable.ts"
+      ]
+    },
+    {
+      "entity_id": "side_camera",
+      "ability_id": "side_camera.freeze_feedback_shake",
+      "behavior_id": "side_camera.freeze_feedback_shake.shake_on_freeze",
+      "flow_id": "flow.side_camera.freeze_feedback_shake.shake_on_freeze",
+      "engine_port_ids": [
+        "player_controller.client_start_camera_shake"
+      ],
+      "adjudication_paths": [
+        "flow/04-ue-api-mcp/adjudication/player_controller.client_start_camera_shake.json"
+      ],
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "ts_files": [
+        "TypeScript/content/generated/SideCameraFreezeFeedbackShakeShakeOnFreezeAbility.ts",
+        "TypeScript/content/generated/interactive/SideCameraFreezeFeedbackShakeShakeOnFreezeInteractable.ts"
+      ]
+    },
+    {
+      "entity_id": "locked_exit",
+      "ability_id": "locked_exit.enemy_gate",
+      "behavior_id": "locked_exit.enemy_gate.remain_locked",
+      "flow_id": "flow.locked_exit.enemy_gate.remain_locked",
+      "engine_port_ids": [
+        "primitive.on_component_begin_overlap"
+      ],
+      "adjudication_paths": [
+        "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json"
+      ],
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "ts_files": [
+        "TypeScript/content/generated/LockedExitEnemyGateRemainLockedAbility.ts",
+        "TypeScript/content/generated/interactive/LockedExitEnemyGateRemainLockedInteractable.ts"
+      ]
+    },
+    {
+      "entity_id": "locked_exit",
+      "ability_id": "locked_exit.enemy_gate",
+      "behavior_id": "locked_exit.enemy_gate.unlock_after_enemy_defeat",
+      "flow_id": "flow.locked_exit.enemy_gate.unlock_after_enemy_defeat",
+      "engine_port_ids": [
+        "primitive.on_component_begin_overlap"
+      ],
+      "adjudication_paths": [
+        "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json"
+      ],
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "ts_files": [
+        "TypeScript/content/generated/LockedExitEnemyGateUnlockAfterEnemyDefeatAbility.ts",
+        "TypeScript/content/generated/interactive/LockedExitEnemyGateUnlockAfterEnemyDefeatInteractable.ts"
+      ]
+    },
+    {
+      "entity_id": "locked_exit",
+      "ability_id": "locked_exit.room_completion",
+      "behavior_id": "locked_exit.room_completion.complete_on_reach",
+      "flow_id": "flow.locked_exit.room_completion.complete_on_reach",
+      "engine_port_ids": [
+        "primitive.on_component_begin_overlap"
+      ],
+      "adjudication_paths": [
+        "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json"
+      ],
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "ts_files": [
+        "TypeScript/content/generated/LockedExitRoomCompletionCompleteOnReachAbility.ts",
+        "TypeScript/content/generated/interactive/LockedExitRoomCompletionCompleteOnReachInteractable.ts"
+      ]
+    }
+  ]
+}

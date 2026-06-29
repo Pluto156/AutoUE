@@ -1,0 +1,20 @@
+{
+  "engine_port_id": "player_controller.client_start_camera_shake",
+  "flow_ids": [
+    "flow.side_camera.freeze_feedback_shake.shake_on_freeze"
+  ],
+  "behavior_ids": [
+    "side_camera.freeze_feedback_shake.shake_on_freeze"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for player_controller.client_start_camera_shake; exact symbol hints: Player.ControllerClientStartCameraShake, PlayerControllerClientStartCameraShake, player controller client start camera shake. Intent: Play a small brief camera shake without changing the side-scroller view.",
+  "raw_path": "flow/04-ue-api-mcp/raw/player_controller.client_start_camera_shake.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/player_controller.client_start_camera_shake.json",
+  "verdict": "hit",
+  "hit_type": "indirect_hit",
+  "evidence_symbols": [
+    "UE.LegacyCameraShake.StartLegacyCameraShake",
+    "UE.GameplayStatics.PlayWorldCameraShake",
+    "UE.GameplayStatics.GetPlayerControllerFromID"
+  ],
+  "notes": "Camera shake start/play helpers plus player-controller lookup support the requested shake behavior indirectly without the exact ClientStartCameraShake symbol."
+}

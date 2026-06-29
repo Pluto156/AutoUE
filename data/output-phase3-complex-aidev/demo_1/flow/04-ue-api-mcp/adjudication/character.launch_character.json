@@ -1,0 +1,18 @@
+{
+  "engine_port_id": "character.launch_character",
+  "flow_ids": [
+    "flow.player.brief_dash.dash_horizontally"
+  ],
+  "behavior_ids": [
+    "player.brief_dash.dash_horizontally"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for character.launch_character; exact symbol hints: Character.LaunchCharacter, CharacterLaunchCharacter, character launch character. Intent: Move the player a short burst distance in the current horizontal direction.",
+  "raw_path": "flow/04-ue-api-mcp/raw/character.launch_character.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/character.launch_character.json",
+  "verdict": "hit",
+  "hit_type": "indirect_hit",
+  "evidence_symbols": [
+    "UE.CharacterMovementComponent"
+  ],
+  "notes": "CharacterMovementComponent is usable UE movement evidence for carrying a short horizontal dash implementation."
+}

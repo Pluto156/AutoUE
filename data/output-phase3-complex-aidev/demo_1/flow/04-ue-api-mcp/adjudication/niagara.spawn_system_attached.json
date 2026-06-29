@@ -1,0 +1,18 @@
+{
+  "engine_port_id": "niagara.spawn_system_attached",
+  "flow_ids": [
+    "flow.freeze_vfx.freeze_feedback.appear_on_freeze"
+  ],
+  "behavior_ids": [
+    "freeze_vfx.freeze_feedback.appear_on_freeze"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for niagara.spawn_system_attached; exact symbol hints: Niagara.SpawnSystemAttached, NiagaraSpawnSystemAttached, niagara spawn system attached. Intent: Show a brief freeze visual effect attached to or around the player.",
+  "raw_path": "flow/04-ue-api-mcp/raw/niagara.spawn_system_attached.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/niagara.spawn_system_attached.json",
+  "verdict": "hit",
+  "hit_type": "direct_hit",
+  "evidence_symbols": [
+    "UE.NiagaraFunctionLibrary.SpawnSystemAttachedWithParams"
+  ],
+  "notes": "NiagaraFunctionLibrary.SpawnSystemAttachedWithParams directly supports spawning an attached Niagara visual effect."
+}

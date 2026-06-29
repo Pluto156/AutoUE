@@ -66,9 +66,13 @@ def mapping():
     return {'runtime_mapping_path': RUNTIME_MAPPING_PATH, 'mappings': [{
         'entity_id': 'player', 'ability_id': 'player.combat', 'behavior_id': 'player.combat.attack', 'flow_id': 'flow_player_combat_attack',
         'runtime_owner': 'TypeScript/content/generated/SmokeGame.ts', 'implementation_carrier': 'template_rendered_ts', 'selected_runtime_owner': 'SmokeGameAbility',
+        'existing_framework_candidates': ['TypeScriptCodeGenerator templates', 'AIDev TypeScript Blueprint adapter'],
+        'why_not_existing_framework': 'scripted smoke uses generated templates to prove the bridge contract',
+        'temporary_or_canonical': 'temporary',
+        'migration_path': 'replace smoke runtime with canonical generated AIDev bridge after Phase3',
         'engine_port_mappings': [
-            {'engine_port_id': 'input.action_binding', 'adjudication_path': ADJ_INPUT, 'verdict': 'hit', 'evidence_symbols': ['UE.EnhancedInputComponent.BindAction']},
-            {'engine_port_id': 'damage.apply', 'adjudication_path': ADJ_DAMAGE, 'verdict': 'hit', 'evidence_symbols': ['UE.GameplayStatics.ApplyDamage']},
+            {'engine_port_id': 'input.action_binding', 'adjudication_path': ADJ_INPUT, 'adapter_or_helper': 'CharacterAdapter.bindInput', 'verdict': 'hit', 'evidence_symbols': ['UE.EnhancedInputComponent.BindAction']},
+            {'engine_port_id': 'damage.apply', 'adjudication_path': ADJ_DAMAGE, 'adapter_or_helper': 'RuntimePorts.applyDamage', 'verdict': 'hit', 'evidence_symbols': ['UE.GameplayStatics.ApplyDamage']},
         ],
         'thin_contracts': ['bind player attack input', 'apply damage to enemy'], 'ability_binding': 'adapter_call:tickSmokeGame', 'verification_evidence': ['trace']
     }], 'blocked_mappings': []}
@@ -91,13 +95,22 @@ def interactive():
 
 
 def codegen():
-    return {'template_inputs': [{
-        'template': 'ability_module', 'path': 'TypeScript/content/generated/SmokeGame.ts', 'entity_id': 'player', 'behavior_id': 'player.combat.attack', 'flow_id': 'flow_player_combat_attack', 'runtime_mapping_path': RUNTIME_MAPPING_PATH,
-        'export_name': 'tickSmokeGame', 'interface_name': 'SmokeGameContext', 'action_label': 'attacks', 'target_label': 'Enemy', 'result_label': 'enemy defeated'
-    }], 'behavior_traces': [{
+    base = {'entity_id': 'player', 'behavior_id': 'player.combat.attack', 'flow_id': 'flow_player_combat_attack', 'runtime_mapping_path': RUNTIME_MAPPING_PATH, 'action_label': 'attacks', 'target_label': 'Enemy', 'result_label': 'enemy defeated'}
+    support = [
+        {'template': 'aid_runtime_orchestrator', 'path': 'TypeScript/content/generated/AutoUEGeneratedRuntime.ts', 'export_name': 'runAutoUEGeneratedRuntime', 'interface_name': 'AutoUEGeneratedRuntimeContext'},
+        {'template': 'aid_character_adapter', 'path': 'TypeScript/AutoUEGeneratedCharacterAdapter.ts', 'export_name': 'AutoUEGeneratedCharacterAdapter', 'interface_name': 'AutoUEGeneratedCharacterAdapterContext'},
+        {'template': 'aid_gamemode_adapter', 'path': 'TypeScript/AutoUEGeneratedGameModeAdapter.ts', 'export_name': 'AutoUEGeneratedGameModeAdapter', 'interface_name': 'AutoUEGeneratedGameModeAdapterContext'},
+        {'template': 'aid_camera_setup', 'path': 'TypeScript/content/generated/AutoUEGeneratedCameraHelper.ts', 'export_name': 'setupAutoUEGeneratedCamera', 'interface_name': 'AutoUEGeneratedCameraOptions'},
+        {'template': 'scene_manifest_helper', 'path': 'TypeScript/content/generated/AutoUEGeneratedSceneManifest.ts', 'export_name': 'getAutoUEGeneratedSceneManifest', 'interface_name': 'AutoUEGeneratedSceneManifestContext'},
+    ]
+    template_inputs = [{
+        'template': 'ability_module', 'path': 'TypeScript/content/generated/SmokeGame.ts', **base,
+        'export_name': 'tickSmokeGame', 'interface_name': 'SmokeGameContext'
+    }]
+    template_inputs.extend({**item, **base} for item in support)
+    return {'template_inputs': template_inputs, 'behavior_traces': [{
         'entity_id': 'player', 'behavior_id': 'player.combat.attack', 'flow_id': 'flow_player_combat_attack', 'runtime_mapping_path': RUNTIME_MAPPING_PATH, 'file_path': 'TypeScript/content/generated/SmokeGame.ts', 'export_name': 'tickSmokeGame'
     }], 'consumed_interactive_files': ['TypeScript/content/generated/interactive/SmokeInteractable.ts'], 'validation_notes': []}
-
 
 def eval_plan():
     trace = {'entity_id': 'player', 'ability_id': 'player.combat', 'behavior_id': 'player.combat.attack', 'flow_id': 'flow_player_combat_attack', 'engine_port_ids': ['input.action_binding', 'damage.apply'], 'adjudication_paths': [ADJ_INPUT, ADJ_DAMAGE], 'runtime_mapping_path': RUNTIME_MAPPING_PATH, 'ts_files': ['TypeScript/content/generated/interactive/SmokeInteractable.ts', 'TypeScript/content/generated/SmokeGame.ts']}
@@ -284,6 +297,40 @@ def test_template_renderer_writes_from_template_not_model_content(tmp_path):
     assert 'export function runSmokeInteraction' in text
     assert 'FLOW_ID' in text
     assert 'RUNTIME_MAPPING_PATH' in text
+
+
+def test_aidev_bridge_templates_expose_phase3_runtime_contract():
+    runtime = (ROOT / 'templates' / 'typescript' / 'aid_runtime_orchestrator.ts.tmpl').read_text(encoding='utf-8')
+    scene = (ROOT / 'templates' / 'typescript' / 'scene_manifest_helper.ts.tmpl').read_text(encoding='utf-8')
+    for token in [
+        'AUTOUE_INPUT_RIGHT_1S',
+        'AUTOUE_INPUT_ATTACK',
+        'trapArmed',
+        'TRAP_REARM_RADIUS',
+        'AutoUEGenerated_FreezeVFX',
+        'CameraShakeTriggered=1',
+        'latestAutoUEGeneratedSnapshot',
+        'cameraShakeActive',
+        'updateAutoUEGeneratedSideCamera',
+    ]:
+        assert token in runtime
+    for token in [
+        'autoue-generated-scene-manifest/v2',
+        'harness_input_tags',
+        'AUTOUE_INPUT_RIGHT_1S',
+        'AutoUEGenerated_FreezeVFX',
+        'AutoUEGenerated_SideCamera',
+    ]:
+        assert token in scene
+    camera = (ROOT / 'templates' / 'typescript' / 'aid_camera_setup.ts.tmpl').read_text(encoding='utf-8')
+    for token in [
+        'sideOffsetY',
+        'SIDE_CAMERA_YAW = 90',
+        'updateAutoUEGeneratedSideCamera',
+        'K2_SetWorldLocation',
+        'K2_SetWorldRotation',
+    ]:
+        assert token in camera
 
 
 def _has_current_smoke(root: Path) -> bool:

@@ -1,0 +1,651 @@
+{
+  "engine_port_id": "kismet.sphere_trace_single",
+  "flow_ids": [
+    "flow.player.short_melee_attack.strike_enemy"
+  ],
+  "behavior_ids": [
+    "player.short_melee_attack.strike_enemy"
+  ],
+  "contracts": [
+    "Check a short close-range area in front of the player for the patrolling melee enemy."
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for kismet.sphere_trace_single; exact symbol hints: Kismet.SphereTraceSingle, KismetSphereTraceSingle, kismet sphere trace single. Intent: Check a short close-range area in front of the player for the patrolling melee enemy.",
+  "raw_path": "flow/04-ue-api-mcp/raw/kismet.sphere_trace_single.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/kismet.sphere_trace_single.json",
+  "raw_result": {
+    "tool": "ue_api_semantic_search",
+    "query": "Unreal Engine PuerTS gameplay API for kismet.sphere_trace_single; exact symbol hints: Kismet.SphereTraceSingle, KismetSphereTraceSingle, kismet sphere trace single. Intent: Check a short close-range area in front of the player for the patrolling melee enemy.",
+    "limit": 5,
+    "raw_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"ok\",\n  \"mode\": \"semantic\",\n  \"query\": \"Unreal Engine PuerTS gameplay API for kismet.sphere_trace_single; exact symbol hints: Kismet.SphereTraceSingle, KismetSphereTraceSingle, kismet sphere trace single. Intent: Check a short close-range area in front of the player for the patrolling melee enemy.\",\n  \"searchText\": \"player character pawn actor sphere trace single Kismet SphereTraceSingle short range trace forward from actor collision query sphere overlap tick event update trace input action trigger trace AI perception trace detection patrolling enemy melee range check\",\n  \"rewrite\": {\n    \"status\": \"rewritten\",\n    \"domainStatus\": \"ue_relevant\",\n    \"intentSummary\": \"Perform a single sphere trace in a short close-range area in front of the player to detect a patrolling melee enemy.\",\n    \"warnings\": [],\n    \"activeSubqueries\": [\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The gameplay object that performs the sphere trace.\",\n        \"subqueryId\": \"carrier_context_1\",\n        \"text\": \"player character pawn actor\",\n        \"weight\": 1.0,\n        \"subqueryWeight\": 1.0\n      },\n      {\n        \"facetId\": \"spatial_targeting\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The sphere trace query to detect the enemy.\",\n        \"subqueryId\": \"spatial_targeting_1\",\n        \"text\": \"sphere trace single Kismet SphereTraceSingle\",\n        \"weight\": 0.5,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"spatial_targeting\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The sphere trace query to detect the enemy.\",\n        \"subqueryId\": \"spatial_targeting_2\",\n        \"text\": \"short range trace forward from actor\",\n        \"weight\": 0.3,\n        \"subqueryWeight\": 0.3\n      },\n      {\n        \"facetId\": \"spatial_targeting\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The sphere trace query to detect the enemy.\",\n        \"subqueryId\": \"spatial_targeting_3\",\n        \"text\": \"collision query sphere overlap\",\n        \"weight\": 0.2,\n        \"subqueryWeight\": 0.2\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"When the sphere trace is performed.\",\n        \"subqueryId\": \"activation_trigger_1\",\n        \"text\": \"tick event update trace\",\n        \"weight\": 0.36,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"When the sphere trace is performed.\",\n        \"subqueryId\": \"activation_trigger_2\",\n        \"text\": \"input action trigger trace\",\n        \"weight\": 0.24,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"ai_behavior\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"AI detection logic for patrolling melee enemy.\",\n        \"subqueryId\": \"ai_behavior_1\",\n        \"text\": \"AI perception trace detection\",\n        \"weight\": 0.36,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"ai_behavior\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"AI detection logic for patrolling melee enemy.\",\n        \"subqueryId\": \"ai_behavior_2\",\n        \"text\": \"patrolling enemy melee range check\",\n        \"weight\": 0.24,\n        \"subqueryWeight\": 0.4\n      }\n    ]\n  },\n  \"embedding\": {\n    \"enabled\": true,\n    \"provider\": \"ollama\",\n    \"model\": \"bge-m3\",\n    \"dimensions\": 1024,\n    \"indexedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"status\": \"ready\"\n  },\n  \"partitions\": {\n    \"enabled\": true,\n    \"classifierEnabled\": true,\n    \"provider\": \"aaa\",\n    \"binaryAvailable\": true,\n    \"timeoutMs\": 90000,\n    \"candidateCount\": 20361,\n    \"processedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"validAssignmentCount\": 14733,\n    \"partitionedEntryCount\": 12532,\n    \"partitionedEntryRatio\": 0.6155,\n    \"searchReady\": true,\n    \"byFacet\": {\n      \"activation_trigger\": 241,\n      \"ai_behavior\": 948,\n      \"animation\": 1856,\n      \"audio\": 704,\n      \"camera_feedback_ui\": 1336,\n      \"carrier_context\": 1362,\n      \"damage_state\": 548,\n      \"integration_event\": 1069,\n      \"level_world\": 342,\n      \"lighting\": 134,\n      \"material_visual_state\": 1065,\n      \"mesh_geometry\": 1545,\n      \"movement_navigation\": 256,\n      \"networking_authority\": 414,\n      \"persistence_assets\": 612,\n      \"physics\": 666,\n      \"spatial_targeting\": 466,\n      \"spawn_lifecycle\": 117,\n      \"visual_effects\": 1052\n    },\n    \"status\": \"ready\",\n    \"searchScoped\": true\n  },\n  \"filters\": {},\n  \"confidence\": {\n    \"minConfidence\": 0.55,\n    \"status\": \"ok\",\n    \"topConfidence\": 0.7481\n  },\n  \"count\": 5,\n  \"results\": [\n    {\n      \"ref\": \"3588e9d5c512\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetSystemLibrary.SphereTraceSingle\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetSystemLibrary\",\n      \"signature\": \"static SphereTraceSingle(WorldContextObject: $Nullable<UE.Object>, Start: UE.Vector, End: UE.Vector, Radius: number, TraceChannel: UE.ETraceTypeQuery, bTraceComplex: boolean, ActorsToIgnore: TArray<UE.Actor>, DrawDebugType: UE.EDrawDebugTrace, OutHit: $Ref<UE.HitResult>, bIgnoreSelf: boolean, TraceColor?: UE.LinearColor /* = (R=1.000000,G=0.000000,B=0.000000,A=1.000000) */, TraceHitColor?: UE.LinearColor /* = (R=0.000000,G=1.000000,B=0.000000,A=1.000000) */, DrawTime?: number /* = 5.000000 */) : boolean;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7481,\n      \"summary\": \"Sweeps a sphere along the given line and returns the first blocking hit encountered. This trace finds the objects that RESPONDS to the given TraceChannel\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Perform a single sphere trace in a short close-range area in front of the player to detect a patrolling melee enemy.\",\n        \"name: kismet, single, sphere, trace\",\n        \"doc: sphere, trace\",\n        \"params: collision, sphere, trace\",\n        \"facets: spatial_targeting/bm25, spatial_targeting/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"263f7695ec84\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.AISenseConfig_Sight\",\n      \"kind\": \"class\",\n      \"score\": 90.0,\n      \"confidence\": 0.7308,\n      \"extends\": \"UE.AISenseConfig\",\n      \"source\": \"Engine/AIModule\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"bb84125647db\",\n          \"symbol\": \"UE.AISenseConfig_Sight.AutoSuccessRangeFromLastSeenLocation\",\n          \"kind\": \"property\",\n          \"signature\": \"AutoSuccessRangeFromLastSeenLocation: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"dc6ca6967a11\",\n          \"symbol\": \"UE.AISenseConfig_Sight.DetectionByAffiliation\",\n          \"kind\": \"property\",\n          \"signature\": \"DetectionByAffiliation: UE.AISenseAffiliationFilter;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"e11b0639e20e\",\n          \"symbol\": \"UE.AISenseConfig_Sight.Implementation\",\n          \"kind\": \"property\",\n          \"signature\": \"Implementation: UE.Class;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"5822095d47ac\",\n          \"symbol\": \"UE.AISenseConfig_Sight.LoseSightRadius\",\n          \"kind\": \"property\",\n          \"signature\": \"LoseSightRadius: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"28f3f9c82701\",\n          \"symbol\": \"UE.AISenseConfig_Sight.NearClippingRadius\",\n          \"kind\": \"property\",\n          \"signature\": \"NearClippingRadius: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"ad5f899dcb3e\",\n          \"symbol\": \"UE.AISenseConfig_Sight.PeripheralVisionAngleDegrees\",\n          \"kind\": \"property\",\n          \"signature\": \"PeripheralVisionAngleDegrees: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"4616d7b8ee36\",\n          \"symbol\": \"UE.AISenseConfig_Sight.PointOfViewBackwardOffset\",\n          \"kind\": \"property\",\n          \"signature\": \"PointOfViewBackwardOffset: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"856bc3b94161\",\n          \"symbol\": \"UE.AISenseConfig_Sight.SightRadius\",\n          \"kind\": \"property\",\n          \"signature\": \"SightRadius: number;\",\n          \"summary\": \"\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Perform a single sphere trace in a short close-range area in front of the player to detect a patrolling melee enemy.\",\n        \"name: ai\",\n        \"members: AutoSuccessRangeFromLastSeenLocation, DetectionByAffiliation, Implementation, LoseSightRadius\",\n        \"facets: ai_behavior/bm25, ai_behavior/vector\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"338a158893c8\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetInputLibrary.PointerEvent_IsTouchEvent\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetInputLibrary\",\n      \"signature\": \"static PointerEvent_IsTouchEvent(Input: UE.PointerEvent) : boolean;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7406,\n      \"summary\": \"Returns true if this event a result from a touch (as opposed to a mouse)\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Perform a single sphere trace in a short close-range area in front of the player to detect a patrolling melee enemy.\",\n        \"name: event, input, kismet\",\n        \"doc: event\",\n        \"facets: activation_trigger/bm25, activation_trigger/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"b2204af8504b\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.GameplayStatics.GetPlayerCharacter\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.GameplayStatics\",\n      \"signature\": \"static GetPlayerCharacter(WorldContextObject: $Nullable<UE.Object>, PlayerIndex: number) : UE.Character;\",\n      \"score\": 96.94,\n      \"confidence\": 0.7481,\n      \"summary\": \"Returns the pawn for the player controller at the specified player index, will return null if the pawn is not a character. This will not include characters of remote clients with no available player controller, you can iterate the PlayerStates list for that.\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Perform a single sphere trace in a short close-range area in front of the player to detect a patrolling melee enemy.\",\n        \"name: character, player\",\n        \"doc: character, pawn, player\",\n        \"params: player\",\n        \"facets: carrier_context/bm25, carrier_context/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"715348cbed24\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetSystemLibrary.SphereTraceMulti\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetSystemLibrary\",\n      \"signature\": \"static SphereTraceMulti(WorldContextObject: $Nullable<UE.Object>, Start: UE.Vector, End: UE.Vector, Radius: number, TraceChannel: UE.ETraceTypeQuery, bTraceComplex: boolean, ActorsToIgnore: TArray<UE.Actor>, DrawDebugType: UE.EDrawDebugTrace, OutHits: $Ref<TArray<UE.HitResult>>, bIgnoreSelf: boolean, TraceColor?: UE.LinearColor /* = (R=1.000000,G=0.000000,B=0.000000,A=1.000000) */, TraceHitColor?: UE.LinearColor /* = (R=0.000000,G=1.000000,B=0.000000,A=1.000000) */, DrawTime?: number /* = 5.000000 */) : boolean;\",\n      \"score\": 85.4858,\n      \"confidence\": 0.7368,\n      \"summary\": \"Sweeps a sphere along the given line and returns all hits encountered up to and including the first blocking hit. This trace finds the objects that RESPOND to the given TraceChannel\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Perform a single sphere trace in a short close-range area in front of the player to detect a patrolling melee enemy.\",\n        \"name: kismet, sphere, trace\",\n        \"doc: sphere, trace\",\n        \"params: collision, sphere, trace\",\n        \"facets: spatial_targeting/bm25, spatial_targeting/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    }\n  ],\n  \"profile\": {\n    \"load\": 0.756,\n    \"rewrite\": 9.9374,\n    \"embed\": 0.1733,\n    \"bm25\": 0.1013,\n    \"vector\": 0.3869,\n    \"score\": 0.1156,\n    \"select\": 0.0002,\n    \"total\": 11.1891\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "status": "ok",
+        "mode": "semantic",
+        "query": "Unreal Engine PuerTS gameplay API for kismet.sphere_trace_single; exact symbol hints: Kismet.SphereTraceSingle, KismetSphereTraceSingle, kismet sphere trace single. Intent: Check a short close-range area in front of the player for the patrolling melee enemy.",
+        "searchText": "player character pawn actor sphere trace single Kismet SphereTraceSingle short range trace forward from actor collision query sphere overlap tick event update trace input action trigger trace AI perception trace detection patrolling enemy melee range check",
+        "rewrite": {
+          "status": "rewritten",
+          "domainStatus": "ue_relevant",
+          "intentSummary": "Perform a single sphere trace in a short close-range area in front of the player to detect a patrolling melee enemy.",
+          "warnings": [],
+          "activeSubqueries": [
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The gameplay object that performs the sphere trace.",
+              "subqueryId": "carrier_context_1",
+              "text": "player character pawn actor",
+              "weight": 1.0,
+              "subqueryWeight": 1.0
+            },
+            {
+              "facetId": "spatial_targeting",
+              "facetStatus": "required",
+              "facetIntent": "The sphere trace query to detect the enemy.",
+              "subqueryId": "spatial_targeting_1",
+              "text": "sphere trace single Kismet SphereTraceSingle",
+              "weight": 0.5,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "spatial_targeting",
+              "facetStatus": "required",
+              "facetIntent": "The sphere trace query to detect the enemy.",
+              "subqueryId": "spatial_targeting_2",
+              "text": "short range trace forward from actor",
+              "weight": 0.3,
+              "subqueryWeight": 0.3
+            },
+            {
+              "facetId": "spatial_targeting",
+              "facetStatus": "required",
+              "facetIntent": "The sphere trace query to detect the enemy.",
+              "subqueryId": "spatial_targeting_3",
+              "text": "collision query sphere overlap",
+              "weight": 0.2,
+              "subqueryWeight": 0.2
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "optional",
+              "facetIntent": "When the sphere trace is performed.",
+              "subqueryId": "activation_trigger_1",
+              "text": "tick event update trace",
+              "weight": 0.36,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "optional",
+              "facetIntent": "When the sphere trace is performed.",
+              "subqueryId": "activation_trigger_2",
+              "text": "input action trigger trace",
+              "weight": 0.24,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "ai_behavior",
+              "facetStatus": "optional",
+              "facetIntent": "AI detection logic for patrolling melee enemy.",
+              "subqueryId": "ai_behavior_1",
+              "text": "AI perception trace detection",
+              "weight": 0.36,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "ai_behavior",
+              "facetStatus": "optional",
+              "facetIntent": "AI detection logic for patrolling melee enemy.",
+              "subqueryId": "ai_behavior_2",
+              "text": "patrolling enemy melee range check",
+              "weight": 0.24,
+              "subqueryWeight": 0.4
+            }
+          ]
+        },
+        "embedding": {
+          "enabled": true,
+          "provider": "ollama",
+          "model": "bge-m3",
+          "dimensions": 1024,
+          "indexedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "status": "ready"
+        },
+        "partitions": {
+          "enabled": true,
+          "classifierEnabled": true,
+          "provider": "aaa",
+          "binaryAvailable": true,
+          "timeoutMs": 90000,
+          "candidateCount": 20361,
+          "processedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "validAssignmentCount": 14733,
+          "partitionedEntryCount": 12532,
+          "partitionedEntryRatio": 0.6155,
+          "searchReady": true,
+          "byFacet": {
+            "activation_trigger": 241,
+            "ai_behavior": 948,
+            "animation": 1856,
+            "audio": 704,
+            "camera_feedback_ui": 1336,
+            "carrier_context": 1362,
+            "damage_state": 548,
+            "integration_event": 1069,
+            "level_world": 342,
+            "lighting": 134,
+            "material_visual_state": 1065,
+            "mesh_geometry": 1545,
+            "movement_navigation": 256,
+            "networking_authority": 414,
+            "persistence_assets": 612,
+            "physics": 666,
+            "spatial_targeting": 466,
+            "spawn_lifecycle": 117,
+            "visual_effects": 1052
+          },
+          "status": "ready",
+          "searchScoped": true
+        },
+        "filters": {},
+        "confidence": {
+          "minConfidence": 0.55,
+          "status": "ok",
+          "topConfidence": 0.7481
+        },
+        "count": 5,
+        "results": [
+          {
+            "ref": "3588e9d5c512",
+            "entryType": "static_function",
+            "symbol": "UE.KismetSystemLibrary.SphereTraceSingle",
+            "kind": "method",
+            "owner": "UE.KismetSystemLibrary",
+            "signature": "static SphereTraceSingle(WorldContextObject: $Nullable<UE.Object>, Start: UE.Vector, End: UE.Vector, Radius: number, TraceChannel: UE.ETraceTypeQuery, bTraceComplex: boolean, ActorsToIgnore: TArray<UE.Actor>, DrawDebugType: UE.EDrawDebugTrace, OutHit: $Ref<UE.HitResult>, bIgnoreSelf: boolean, TraceColor?: UE.LinearColor /* = (R=1.000000,G=0.000000,B=0.000000,A=1.000000) */, TraceHitColor?: UE.LinearColor /* = (R=0.000000,G=1.000000,B=0.000000,A=1.000000) */, DrawTime?: number /* = 5.000000 */) : boolean;",
+            "score": 93.0,
+            "confidence": 0.7481,
+            "summary": "Sweeps a sphere along the given line and returns the first blocking hit encountered. This trace finds the objects that RESPONDS to the given TraceChannel",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Perform a single sphere trace in a short close-range area in front of the player to detect a patrolling melee enemy.",
+              "name: kismet, single, sphere, trace",
+              "doc: sphere, trace",
+              "params: collision, sphere, trace",
+              "facets: spatial_targeting/bm25, spatial_targeting/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "263f7695ec84",
+            "entryType": "type",
+            "symbol": "UE.AISenseConfig_Sight",
+            "kind": "class",
+            "score": 90.0,
+            "confidence": 0.7308,
+            "extends": "UE.AISenseConfig",
+            "source": "Engine/AIModule",
+            "matchedMembers": [
+              {
+                "ref": "bb84125647db",
+                "symbol": "UE.AISenseConfig_Sight.AutoSuccessRangeFromLastSeenLocation",
+                "kind": "property",
+                "signature": "AutoSuccessRangeFromLastSeenLocation: number;",
+                "summary": ""
+              },
+              {
+                "ref": "dc6ca6967a11",
+                "symbol": "UE.AISenseConfig_Sight.DetectionByAffiliation",
+                "kind": "property",
+                "signature": "DetectionByAffiliation: UE.AISenseAffiliationFilter;",
+                "summary": ""
+              },
+              {
+                "ref": "e11b0639e20e",
+                "symbol": "UE.AISenseConfig_Sight.Implementation",
+                "kind": "property",
+                "signature": "Implementation: UE.Class;",
+                "summary": ""
+              },
+              {
+                "ref": "5822095d47ac",
+                "symbol": "UE.AISenseConfig_Sight.LoseSightRadius",
+                "kind": "property",
+                "signature": "LoseSightRadius: number;",
+                "summary": ""
+              },
+              {
+                "ref": "28f3f9c82701",
+                "symbol": "UE.AISenseConfig_Sight.NearClippingRadius",
+                "kind": "property",
+                "signature": "NearClippingRadius: number;",
+                "summary": ""
+              },
+              {
+                "ref": "ad5f899dcb3e",
+                "symbol": "UE.AISenseConfig_Sight.PeripheralVisionAngleDegrees",
+                "kind": "property",
+                "signature": "PeripheralVisionAngleDegrees: number;",
+                "summary": ""
+              },
+              {
+                "ref": "4616d7b8ee36",
+                "symbol": "UE.AISenseConfig_Sight.PointOfViewBackwardOffset",
+                "kind": "property",
+                "signature": "PointOfViewBackwardOffset: number;",
+                "summary": ""
+              },
+              {
+                "ref": "856bc3b94161",
+                "symbol": "UE.AISenseConfig_Sight.SightRadius",
+                "kind": "property",
+                "signature": "SightRadius: number;",
+                "summary": ""
+              }
+            ],
+            "why": [
+              "rewrite: Perform a single sphere trace in a short close-range area in front of the player to detect a patrolling melee enemy.",
+              "name: ai",
+              "members: AutoSuccessRangeFromLastSeenLocation, DetectionByAffiliation, Implementation, LoseSightRadius",
+              "facets: ai_behavior/bm25, ai_behavior/vector",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "338a158893c8",
+            "entryType": "static_function",
+            "symbol": "UE.KismetInputLibrary.PointerEvent_IsTouchEvent",
+            "kind": "method",
+            "owner": "UE.KismetInputLibrary",
+            "signature": "static PointerEvent_IsTouchEvent(Input: UE.PointerEvent) : boolean;",
+            "score": 93.0,
+            "confidence": 0.7406,
+            "summary": "Returns true if this event a result from a touch (as opposed to a mouse)",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Perform a single sphere trace in a short close-range area in front of the player to detect a patrolling melee enemy.",
+              "name: event, input, kismet",
+              "doc: event",
+              "facets: activation_trigger/bm25, activation_trigger/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "b2204af8504b",
+            "entryType": "static_function",
+            "symbol": "UE.GameplayStatics.GetPlayerCharacter",
+            "kind": "method",
+            "owner": "UE.GameplayStatics",
+            "signature": "static GetPlayerCharacter(WorldContextObject: $Nullable<UE.Object>, PlayerIndex: number) : UE.Character;",
+            "score": 96.94,
+            "confidence": 0.7481,
+            "summary": "Returns the pawn for the player controller at the specified player index, will return null if the pawn is not a character. This will not include characters of remote clients with no available player controller, you can iterate the PlayerStates list for that.",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Perform a single sphere trace in a short close-range area in front of the player to detect a patrolling melee enemy.",
+              "name: character, player",
+              "doc: character, pawn, player",
+              "params: player",
+              "facets: carrier_context/bm25, carrier_context/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "715348cbed24",
+            "entryType": "static_function",
+            "symbol": "UE.KismetSystemLibrary.SphereTraceMulti",
+            "kind": "method",
+            "owner": "UE.KismetSystemLibrary",
+            "signature": "static SphereTraceMulti(WorldContextObject: $Nullable<UE.Object>, Start: UE.Vector, End: UE.Vector, Radius: number, TraceChannel: UE.ETraceTypeQuery, bTraceComplex: boolean, ActorsToIgnore: TArray<UE.Actor>, DrawDebugType: UE.EDrawDebugTrace, OutHits: $Ref<TArray<UE.HitResult>>, bIgnoreSelf: boolean, TraceColor?: UE.LinearColor /* = (R=1.000000,G=0.000000,B=0.000000,A=1.000000) */, TraceHitColor?: UE.LinearColor /* = (R=0.000000,G=1.000000,B=0.000000,A=1.000000) */, DrawTime?: number /* = 5.000000 */) : boolean;",
+            "score": 85.4858,
+            "confidence": 0.7368,
+            "summary": "Sweeps a sphere along the given line and returns all hits encountered up to and including the first blocking hit. This trace finds the objects that RESPOND to the given TraceChannel",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Perform a single sphere trace in a short close-range area in front of the player to detect a patrolling melee enemy.",
+              "name: kismet, sphere, trace",
+              "doc: sphere, trace",
+              "params: collision, sphere, trace",
+              "facets: spatial_targeting/bm25, spatial_targeting/vector",
+              "static function result",
+              "vector recall"
+            ]
+          }
+        ],
+        "profile": {
+          "load": 0.756,
+          "rewrite": 9.9374,
+          "embed": 0.1733,
+          "bm25": 0.1013,
+          "vector": 0.3869,
+          "score": 0.1156,
+          "select": 0.0002,
+          "total": 11.1891
+        }
+      },
+      "isError": false
+    },
+    "payload": {
+      "status": "ok",
+      "mode": "semantic",
+      "query": "Unreal Engine PuerTS gameplay API for kismet.sphere_trace_single; exact symbol hints: Kismet.SphereTraceSingle, KismetSphereTraceSingle, kismet sphere trace single. Intent: Check a short close-range area in front of the player for the patrolling melee enemy.",
+      "searchText": "player character pawn actor sphere trace single Kismet SphereTraceSingle short range trace forward from actor collision query sphere overlap tick event update trace input action trigger trace AI perception trace detection patrolling enemy melee range check",
+      "rewrite": {
+        "status": "rewritten",
+        "domainStatus": "ue_relevant",
+        "intentSummary": "Perform a single sphere trace in a short close-range area in front of the player to detect a patrolling melee enemy.",
+        "warnings": [],
+        "activeSubqueries": [
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The gameplay object that performs the sphere trace.",
+            "subqueryId": "carrier_context_1",
+            "text": "player character pawn actor",
+            "weight": 1.0,
+            "subqueryWeight": 1.0
+          },
+          {
+            "facetId": "spatial_targeting",
+            "facetStatus": "required",
+            "facetIntent": "The sphere trace query to detect the enemy.",
+            "subqueryId": "spatial_targeting_1",
+            "text": "sphere trace single Kismet SphereTraceSingle",
+            "weight": 0.5,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "spatial_targeting",
+            "facetStatus": "required",
+            "facetIntent": "The sphere trace query to detect the enemy.",
+            "subqueryId": "spatial_targeting_2",
+            "text": "short range trace forward from actor",
+            "weight": 0.3,
+            "subqueryWeight": 0.3
+          },
+          {
+            "facetId": "spatial_targeting",
+            "facetStatus": "required",
+            "facetIntent": "The sphere trace query to detect the enemy.",
+            "subqueryId": "spatial_targeting_3",
+            "text": "collision query sphere overlap",
+            "weight": 0.2,
+            "subqueryWeight": 0.2
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "optional",
+            "facetIntent": "When the sphere trace is performed.",
+            "subqueryId": "activation_trigger_1",
+            "text": "tick event update trace",
+            "weight": 0.36,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "optional",
+            "facetIntent": "When the sphere trace is performed.",
+            "subqueryId": "activation_trigger_2",
+            "text": "input action trigger trace",
+            "weight": 0.24,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "ai_behavior",
+            "facetStatus": "optional",
+            "facetIntent": "AI detection logic for patrolling melee enemy.",
+            "subqueryId": "ai_behavior_1",
+            "text": "AI perception trace detection",
+            "weight": 0.36,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "ai_behavior",
+            "facetStatus": "optional",
+            "facetIntent": "AI detection logic for patrolling melee enemy.",
+            "subqueryId": "ai_behavior_2",
+            "text": "patrolling enemy melee range check",
+            "weight": 0.24,
+            "subqueryWeight": 0.4
+          }
+        ]
+      },
+      "embedding": {
+        "enabled": true,
+        "provider": "ollama",
+        "model": "bge-m3",
+        "dimensions": 1024,
+        "indexedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "status": "ready"
+      },
+      "partitions": {
+        "enabled": true,
+        "classifierEnabled": true,
+        "provider": "aaa",
+        "binaryAvailable": true,
+        "timeoutMs": 90000,
+        "candidateCount": 20361,
+        "processedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "validAssignmentCount": 14733,
+        "partitionedEntryCount": 12532,
+        "partitionedEntryRatio": 0.6155,
+        "searchReady": true,
+        "byFacet": {
+          "activation_trigger": 241,
+          "ai_behavior": 948,
+          "animation": 1856,
+          "audio": 704,
+          "camera_feedback_ui": 1336,
+          "carrier_context": 1362,
+          "damage_state": 548,
+          "integration_event": 1069,
+          "level_world": 342,
+          "lighting": 134,
+          "material_visual_state": 1065,
+          "mesh_geometry": 1545,
+          "movement_navigation": 256,
+          "networking_authority": 414,
+          "persistence_assets": 612,
+          "physics": 666,
+          "spatial_targeting": 466,
+          "spawn_lifecycle": 117,
+          "visual_effects": 1052
+        },
+        "status": "ready",
+        "searchScoped": true
+      },
+      "filters": {},
+      "confidence": {
+        "minConfidence": 0.55,
+        "status": "ok",
+        "topConfidence": 0.7481
+      },
+      "count": 5,
+      "results": [
+        {
+          "ref": "3588e9d5c512",
+          "entryType": "static_function",
+          "symbol": "UE.KismetSystemLibrary.SphereTraceSingle",
+          "kind": "method",
+          "owner": "UE.KismetSystemLibrary",
+          "signature": "static SphereTraceSingle(WorldContextObject: $Nullable<UE.Object>, Start: UE.Vector, End: UE.Vector, Radius: number, TraceChannel: UE.ETraceTypeQuery, bTraceComplex: boolean, ActorsToIgnore: TArray<UE.Actor>, DrawDebugType: UE.EDrawDebugTrace, OutHit: $Ref<UE.HitResult>, bIgnoreSelf: boolean, TraceColor?: UE.LinearColor /* = (R=1.000000,G=0.000000,B=0.000000,A=1.000000) */, TraceHitColor?: UE.LinearColor /* = (R=0.000000,G=1.000000,B=0.000000,A=1.000000) */, DrawTime?: number /* = 5.000000 */) : boolean;",
+          "score": 93.0,
+          "confidence": 0.7481,
+          "summary": "Sweeps a sphere along the given line and returns the first blocking hit encountered. This trace finds the objects that RESPONDS to the given TraceChannel",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Perform a single sphere trace in a short close-range area in front of the player to detect a patrolling melee enemy.",
+            "name: kismet, single, sphere, trace",
+            "doc: sphere, trace",
+            "params: collision, sphere, trace",
+            "facets: spatial_targeting/bm25, spatial_targeting/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "263f7695ec84",
+          "entryType": "type",
+          "symbol": "UE.AISenseConfig_Sight",
+          "kind": "class",
+          "score": 90.0,
+          "confidence": 0.7308,
+          "extends": "UE.AISenseConfig",
+          "source": "Engine/AIModule",
+          "matchedMembers": [
+            {
+              "ref": "bb84125647db",
+              "symbol": "UE.AISenseConfig_Sight.AutoSuccessRangeFromLastSeenLocation",
+              "kind": "property",
+              "signature": "AutoSuccessRangeFromLastSeenLocation: number;",
+              "summary": ""
+            },
+            {
+              "ref": "dc6ca6967a11",
+              "symbol": "UE.AISenseConfig_Sight.DetectionByAffiliation",
+              "kind": "property",
+              "signature": "DetectionByAffiliation: UE.AISenseAffiliationFilter;",
+              "summary": ""
+            },
+            {
+              "ref": "e11b0639e20e",
+              "symbol": "UE.AISenseConfig_Sight.Implementation",
+              "kind": "property",
+              "signature": "Implementation: UE.Class;",
+              "summary": ""
+            },
+            {
+              "ref": "5822095d47ac",
+              "symbol": "UE.AISenseConfig_Sight.LoseSightRadius",
+              "kind": "property",
+              "signature": "LoseSightRadius: number;",
+              "summary": ""
+            },
+            {
+              "ref": "28f3f9c82701",
+              "symbol": "UE.AISenseConfig_Sight.NearClippingRadius",
+              "kind": "property",
+              "signature": "NearClippingRadius: number;",
+              "summary": ""
+            },
+            {
+              "ref": "ad5f899dcb3e",
+              "symbol": "UE.AISenseConfig_Sight.PeripheralVisionAngleDegrees",
+              "kind": "property",
+              "signature": "PeripheralVisionAngleDegrees: number;",
+              "summary": ""
+            },
+            {
+              "ref": "4616d7b8ee36",
+              "symbol": "UE.AISenseConfig_Sight.PointOfViewBackwardOffset",
+              "kind": "property",
+              "signature": "PointOfViewBackwardOffset: number;",
+              "summary": ""
+            },
+            {
+              "ref": "856bc3b94161",
+              "symbol": "UE.AISenseConfig_Sight.SightRadius",
+              "kind": "property",
+              "signature": "SightRadius: number;",
+              "summary": ""
+            }
+          ],
+          "why": [
+            "rewrite: Perform a single sphere trace in a short close-range area in front of the player to detect a patrolling melee enemy.",
+            "name: ai",
+            "members: AutoSuccessRangeFromLastSeenLocation, DetectionByAffiliation, Implementation, LoseSightRadius",
+            "facets: ai_behavior/bm25, ai_behavior/vector",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "338a158893c8",
+          "entryType": "static_function",
+          "symbol": "UE.KismetInputLibrary.PointerEvent_IsTouchEvent",
+          "kind": "method",
+          "owner": "UE.KismetInputLibrary",
+          "signature": "static PointerEvent_IsTouchEvent(Input: UE.PointerEvent) : boolean;",
+          "score": 93.0,
+          "confidence": 0.7406,
+          "summary": "Returns true if this event a result from a touch (as opposed to a mouse)",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Perform a single sphere trace in a short close-range area in front of the player to detect a patrolling melee enemy.",
+            "name: event, input, kismet",
+            "doc: event",
+            "facets: activation_trigger/bm25, activation_trigger/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "b2204af8504b",
+          "entryType": "static_function",
+          "symbol": "UE.GameplayStatics.GetPlayerCharacter",
+          "kind": "method",
+          "owner": "UE.GameplayStatics",
+          "signature": "static GetPlayerCharacter(WorldContextObject: $Nullable<UE.Object>, PlayerIndex: number) : UE.Character;",
+          "score": 96.94,
+          "confidence": 0.7481,
+          "summary": "Returns the pawn for the player controller at the specified player index, will return null if the pawn is not a character. This will not include characters of remote clients with no available player controller, you can iterate the PlayerStates list for that.",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Perform a single sphere trace in a short close-range area in front of the player to detect a patrolling melee enemy.",
+            "name: character, player",
+            "doc: character, pawn, player",
+            "params: player",
+            "facets: carrier_context/bm25, carrier_context/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "715348cbed24",
+          "entryType": "static_function",
+          "symbol": "UE.KismetSystemLibrary.SphereTraceMulti",
+          "kind": "method",
+          "owner": "UE.KismetSystemLibrary",
+          "signature": "static SphereTraceMulti(WorldContextObject: $Nullable<UE.Object>, Start: UE.Vector, End: UE.Vector, Radius: number, TraceChannel: UE.ETraceTypeQuery, bTraceComplex: boolean, ActorsToIgnore: TArray<UE.Actor>, DrawDebugType: UE.EDrawDebugTrace, OutHits: $Ref<TArray<UE.HitResult>>, bIgnoreSelf: boolean, TraceColor?: UE.LinearColor /* = (R=1.000000,G=0.000000,B=0.000000,A=1.000000) */, TraceHitColor?: UE.LinearColor /* = (R=0.000000,G=1.000000,B=0.000000,A=1.000000) */, DrawTime?: number /* = 5.000000 */) : boolean;",
+          "score": 85.4858,
+          "confidence": 0.7368,
+          "summary": "Sweeps a sphere along the given line and returns all hits encountered up to and including the first blocking hit. This trace finds the objects that RESPOND to the given TraceChannel",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Perform a single sphere trace in a short close-range area in front of the player to detect a patrolling melee enemy.",
+            "name: kismet, sphere, trace",
+            "doc: sphere, trace",
+            "params: collision, sphere, trace",
+            "facets: spatial_targeting/bm25, spatial_targeting/vector",
+            "static function result",
+            "vector recall"
+          ]
+        }
+      ],
+      "profile": {
+        "load": 0.756,
+        "rewrite": 9.9374,
+        "embed": 0.1733,
+        "bm25": 0.1013,
+        "vector": 0.3869,
+        "score": 0.1156,
+        "select": 0.0002,
+        "total": 11.1891
+      }
+    }
+  }
+}

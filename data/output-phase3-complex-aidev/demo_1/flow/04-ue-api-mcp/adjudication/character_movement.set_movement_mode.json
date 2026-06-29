@@ -1,0 +1,18 @@
+{
+  "engine_port_id": "character_movement.set_movement_mode",
+  "flow_ids": [
+    "flow.player.frozen_state.thaw"
+  ],
+  "behavior_ids": [
+    "player.frozen_state.thaw"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for character_movement.set_movement_mode; exact symbol hints: Character.MovementSetMovementMode, CharacterMovementSetMovementMode, character movement set movement mode. Intent: Restore normal movement capability after thawing.",
+  "raw_path": "flow/04-ue-api-mcp/raw/character_movement.set_movement_mode.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/character_movement.set_movement_mode.json",
+  "verdict": "hit",
+  "hit_type": "indirect_hit",
+  "evidence_symbols": [
+    "UE.NavMovementComponent"
+  ],
+  "notes": "Movement component evidence can carry restoring movement capability after thaw."
+}

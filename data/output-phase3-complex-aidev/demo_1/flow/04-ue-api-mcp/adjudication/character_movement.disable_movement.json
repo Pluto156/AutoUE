@@ -1,0 +1,18 @@
+{
+  "engine_port_id": "character_movement.disable_movement",
+  "flow_ids": [
+    "flow.player.frozen_state.become_frozen"
+  ],
+  "behavior_ids": [
+    "player.frozen_state.become_frozen"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for character_movement.disable_movement; exact symbol hints: Character.MovementDisableMovement, CharacterMovementDisableMovement, character movement disable movement. Intent: Block player movement while frozen.",
+  "raw_path": "flow/04-ue-api-mcp/raw/character_movement.disable_movement.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/character_movement.disable_movement.json",
+  "verdict": "hit",
+  "hit_type": "indirect_hit",
+  "evidence_symbols": [
+    "UE.NavMovementComponent"
+  ],
+  "notes": "Movement component evidence is usable as an indirect carrier for blocking movement while frozen."
+}

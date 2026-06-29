@@ -1,0 +1,444 @@
+{
+  "template_inputs": [
+    {
+      "template": "ability_module",
+      "path": "TypeScript/content/generated/PlayerHorizontalMovementMoveLeftRightAbility.ts",
+      "entity_id": "player",
+      "behavior_id": "player.horizontal_movement.move_left_right",
+      "flow_id": "flow.player.horizontal_movement.move_left_right",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runPlayerHorizontalMovementMoveLeftRightAbility",
+      "interface_name": "PlayerHorizontalMovementMoveLeftRightAbilityContext",
+      "action_label": "move left/right",
+      "target_label": "player",
+      "result_label": "player repositions horizontally"
+    },
+    {
+      "template": "ability_module",
+      "path": "TypeScript/content/generated/PlayerShortMeleeAttackStrikeEnemyAbility.ts",
+      "entity_id": "player",
+      "behavior_id": "player.short_melee_attack.strike_enemy",
+      "flow_id": "flow.player.short_melee_attack.strike_enemy",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runPlayerShortMeleeAttackStrikeEnemyAbility",
+      "interface_name": "PlayerShortMeleeAttackStrikeEnemyAbilityContext",
+      "action_label": "strike enemy",
+      "target_label": "patrolling melee enemy",
+      "result_label": "enemy loses health"
+    },
+    {
+      "template": "ability_module",
+      "path": "TypeScript/content/generated/PlayerBriefDashDashHorizontallyAbility.ts",
+      "entity_id": "player",
+      "behavior_id": "player.brief_dash.dash_horizontally",
+      "flow_id": "flow.player.brief_dash.dash_horizontally",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runPlayerBriefDashDashHorizontallyAbility",
+      "interface_name": "PlayerBriefDashDashHorizontallyAbilityContext",
+      "action_label": "dash horizontally",
+      "target_label": "player",
+      "result_label": "player repositions quickly"
+    },
+    {
+      "template": "ability_module",
+      "path": "TypeScript/content/generated/PlayerFrozenStateBecomeFrozenAbility.ts",
+      "entity_id": "player",
+      "behavior_id": "player.frozen_state.become_frozen",
+      "flow_id": "flow.player.frozen_state.become_frozen",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runPlayerFrozenStateBecomeFrozenAbility",
+      "interface_name": "PlayerFrozenStateBecomeFrozenAbilityContext",
+      "action_label": "become frozen",
+      "target_label": "player",
+      "result_label": "movement is blocked"
+    },
+    {
+      "template": "ability_module",
+      "path": "TypeScript/content/generated/PlayerFrozenStateThawAbility.ts",
+      "entity_id": "player",
+      "behavior_id": "player.frozen_state.thaw",
+      "flow_id": "flow.player.frozen_state.thaw",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runPlayerFrozenStateThawAbility",
+      "interface_name": "PlayerFrozenStateThawAbilityContext",
+      "action_label": "thaw",
+      "target_label": "player",
+      "result_label": "movement is restored"
+    },
+    {
+      "template": "ability_module",
+      "path": "TypeScript/content/generated/PatrollingMeleeEnemyPatrolMoveBackAndForthAbility.ts",
+      "entity_id": "patrolling_melee_enemy",
+      "behavior_id": "patrolling_melee_enemy.patrol.move_back_and_forth",
+      "flow_id": "flow.patrolling_melee_enemy.patrol.move_back_and_forth",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runPatrollingMeleeEnemyPatrolMoveBackAndForthAbility",
+      "interface_name": "PatrollingMeleeEnemyPatrolMoveBackAndForthAbilityContext",
+      "action_label": "patrol back and forth",
+      "target_label": "patrolling melee enemy",
+      "result_label": "enemy creates moving hazard"
+    },
+    {
+      "template": "ability_module",
+      "path": "TypeScript/content/generated/PatrollingMeleeEnemyMeleePressureThreatenClosePlayerAbility.ts",
+      "entity_id": "patrolling_melee_enemy",
+      "behavior_id": "patrolling_melee_enemy.melee_pressure.threaten_close_player",
+      "flow_id": "flow.patrolling_melee_enemy.melee_pressure.threaten_close_player",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runPatrollingMeleeEnemyMeleePressureThreatenClosePlayerAbility",
+      "interface_name": "PatrollingMeleeEnemyMeleePressureThreatenClosePlayerAbilityContext",
+      "action_label": "threaten close player",
+      "target_label": "player",
+      "result_label": "close melee threat is active"
+    },
+    {
+      "template": "ability_module",
+      "path": "TypeScript/content/generated/PatrollingMeleeEnemyHealthTakeMeleeDamageAbility.ts",
+      "entity_id": "patrolling_melee_enemy",
+      "behavior_id": "patrolling_melee_enemy.health.take_melee_damage",
+      "flow_id": "flow.patrolling_melee_enemy.health.take_melee_damage",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runPatrollingMeleeEnemyHealthTakeMeleeDamageAbility",
+      "interface_name": "PatrollingMeleeEnemyHealthTakeMeleeDamageAbilityContext",
+      "action_label": "take melee damage",
+      "target_label": "patrolling melee enemy",
+      "result_label": "enemy health decreases"
+    },
+    {
+      "template": "ability_module",
+      "path": "TypeScript/content/generated/PatrollingMeleeEnemyHealthBecomeDefeatedAbility.ts",
+      "entity_id": "patrolling_melee_enemy",
+      "behavior_id": "patrolling_melee_enemy.health.become_defeated",
+      "flow_id": "flow.patrolling_melee_enemy.health.become_defeated",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runPatrollingMeleeEnemyHealthBecomeDefeatedAbility",
+      "interface_name": "PatrollingMeleeEnemyHealthBecomeDefeatedAbilityContext",
+      "action_label": "become defeated",
+      "target_label": "patrolling melee enemy",
+      "result_label": "exit can unlock"
+    },
+    {
+      "template": "ability_module",
+      "path": "TypeScript/content/generated/IceTrapFreezeTriggerFreezeOverlappingPlayerAbility.ts",
+      "entity_id": "ice_trap",
+      "behavior_id": "ice_trap.freeze_trigger.freeze_overlapping_player",
+      "flow_id": "flow.ice_trap.freeze_trigger.freeze_overlapping_player",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runIceTrapFreezeTriggerFreezeOverlappingPlayerAbility",
+      "interface_name": "IceTrapFreezeTriggerFreezeOverlappingPlayerAbilityContext",
+      "action_label": "freeze overlapping player",
+      "target_label": "player",
+      "result_label": "player is immobilized with feedback"
+    },
+    {
+      "template": "ability_module",
+      "path": "TypeScript/content/generated/FreezeVfxFreezeFeedbackAppearOnFreezeAbility.ts",
+      "entity_id": "freeze_vfx",
+      "behavior_id": "freeze_vfx.freeze_feedback.appear_on_freeze",
+      "flow_id": "flow.freeze_vfx.freeze_feedback.appear_on_freeze",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runFreezeVfxFreezeFeedbackAppearOnFreezeAbility",
+      "interface_name": "FreezeVfxFreezeFeedbackAppearOnFreezeAbilityContext",
+      "action_label": "show freeze effect",
+      "target_label": "player",
+      "result_label": "freeze VFX appears"
+    },
+    {
+      "template": "ability_module",
+      "path": "TypeScript/content/generated/SideCameraFreezeFeedbackShakeShakeOnFreezeAbility.ts",
+      "entity_id": "side_camera",
+      "behavior_id": "side_camera.freeze_feedback_shake.shake_on_freeze",
+      "flow_id": "flow.side_camera.freeze_feedback_shake.shake_on_freeze",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runSideCameraFreezeFeedbackShakeShakeOnFreezeAbility",
+      "interface_name": "SideCameraFreezeFeedbackShakeShakeOnFreezeAbilityContext",
+      "action_label": "shake on freeze",
+      "target_label": "side camera",
+      "result_label": "brief camera shake plays"
+    },
+    {
+      "template": "ability_module",
+      "path": "TypeScript/content/generated/LockedExitEnemyGateRemainLockedAbility.ts",
+      "entity_id": "locked_exit",
+      "behavior_id": "locked_exit.enemy_gate.remain_locked",
+      "flow_id": "flow.locked_exit.enemy_gate.remain_locked",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runLockedExitEnemyGateRemainLockedAbility",
+      "interface_name": "LockedExitEnemyGateRemainLockedAbilityContext",
+      "action_label": "remain locked",
+      "target_label": "locked exit",
+      "result_label": "room completion is denied"
+    },
+    {
+      "template": "ability_module",
+      "path": "TypeScript/content/generated/LockedExitEnemyGateUnlockAfterEnemyDefeatAbility.ts",
+      "entity_id": "locked_exit",
+      "behavior_id": "locked_exit.enemy_gate.unlock_after_enemy_defeat",
+      "flow_id": "flow.locked_exit.enemy_gate.unlock_after_enemy_defeat",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runLockedExitEnemyGateUnlockAfterEnemyDefeatAbility",
+      "interface_name": "LockedExitEnemyGateUnlockAfterEnemyDefeatAbilityContext",
+      "action_label": "unlock after defeat",
+      "target_label": "locked exit",
+      "result_label": "exit becomes reachable"
+    },
+    {
+      "template": "ability_module",
+      "path": "TypeScript/content/generated/LockedExitRoomCompletionCompleteOnReachAbility.ts",
+      "entity_id": "locked_exit",
+      "behavior_id": "locked_exit.room_completion.complete_on_reach",
+      "flow_id": "flow.locked_exit.room_completion.complete_on_reach",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runLockedExitRoomCompletionCompleteOnReachAbility",
+      "interface_name": "LockedExitRoomCompletionCompleteOnReachAbilityContext",
+      "action_label": "complete on reach",
+      "target_label": "unlocked exit",
+      "result_label": "room is completed"
+    },
+    {
+      "template": "aid_runtime_orchestrator",
+      "path": "TypeScript/content/generated/AutoUEGeneratedRuntime.ts",
+      "entity_id": "player",
+      "behavior_id": "player.frozen_state.become_frozen",
+      "flow_id": "flow.player.frozen_state.become_frozen",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "runAutoUEGeneratedRuntime",
+      "interface_name": "AutoUEGeneratedRuntimeContext",
+      "action_label": "orchestrate generated room runtime",
+      "target_label": "compact combat room",
+      "result_label": "input, freeze, combat, exit, and state tags are driven"
+    },
+    {
+      "template": "aid_character_adapter",
+      "path": "TypeScript/AutoUEGeneratedCharacterAdapter.ts",
+      "entity_id": "player",
+      "behavior_id": "player.frozen_state.become_frozen",
+      "flow_id": "flow.player.frozen_state.become_frozen",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "AutoUEGeneratedCharacterAdapter",
+      "interface_name": "AutoUEGeneratedCharacterAdapterContext",
+      "action_label": "adapt generated character",
+      "target_label": "player character",
+      "result_label": "movement and combat inputs are routed"
+    },
+    {
+      "template": "aid_gamemode_adapter",
+      "path": "TypeScript/AutoUEGeneratedGameModeAdapter.ts",
+      "entity_id": "player",
+      "behavior_id": "player.frozen_state.become_frozen",
+      "flow_id": "flow.player.frozen_state.become_frozen",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "AutoUEGeneratedGameModeAdapter",
+      "interface_name": "AutoUEGeneratedGameModeAdapterContext",
+      "action_label": "adapt generated game mode",
+      "target_label": "AIDev game mode",
+      "result_label": "generated room runtime is bootstrapped"
+    },
+    {
+      "template": "aid_camera_setup",
+      "path": "TypeScript/content/generated/AutoUEGeneratedCameraHelper.ts",
+      "entity_id": "player",
+      "behavior_id": "player.frozen_state.become_frozen",
+      "flow_id": "flow.player.frozen_state.become_frozen",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "setupAutoUEGeneratedCamera",
+      "interface_name": "AutoUEGeneratedCameraSetupContext",
+      "action_label": "setup side camera",
+      "target_label": "side camera",
+      "result_label": "side-scroller framing and shake feedback are configured"
+    },
+    {
+      "template": "scene_manifest_helper",
+      "path": "TypeScript/content/generated/AutoUEGeneratedSceneManifest.ts",
+      "entity_id": "player",
+      "behavior_id": "player.frozen_state.become_frozen",
+      "flow_id": "flow.player.frozen_state.become_frozen",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "export_name": "getAutoUEGeneratedSceneManifest",
+      "interface_name": "AutoUEGeneratedSceneManifestContext",
+      "action_label": "describe generated scene",
+      "target_label": "compact combat room",
+      "result_label": "snapshot-friendly scene state is discoverable"
+    }
+  ],
+  "behavior_traces": [
+    {
+      "entity_id": "player",
+      "behavior_id": "player.horizontal_movement.move_left_right",
+      "flow_id": "flow.player.horizontal_movement.move_left_right",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/PlayerHorizontalMovementMoveLeftRightAbility.ts",
+      "export_name": "runPlayerHorizontalMovementMoveLeftRightAbility"
+    },
+    {
+      "entity_id": "player",
+      "behavior_id": "player.short_melee_attack.strike_enemy",
+      "flow_id": "flow.player.short_melee_attack.strike_enemy",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/PlayerShortMeleeAttackStrikeEnemyAbility.ts",
+      "export_name": "runPlayerShortMeleeAttackStrikeEnemyAbility"
+    },
+    {
+      "entity_id": "player",
+      "behavior_id": "player.brief_dash.dash_horizontally",
+      "flow_id": "flow.player.brief_dash.dash_horizontally",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/PlayerBriefDashDashHorizontallyAbility.ts",
+      "export_name": "runPlayerBriefDashDashHorizontallyAbility"
+    },
+    {
+      "entity_id": "player",
+      "behavior_id": "player.frozen_state.become_frozen",
+      "flow_id": "flow.player.frozen_state.become_frozen",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/PlayerFrozenStateBecomeFrozenAbility.ts",
+      "export_name": "runPlayerFrozenStateBecomeFrozenAbility"
+    },
+    {
+      "entity_id": "player",
+      "behavior_id": "player.frozen_state.thaw",
+      "flow_id": "flow.player.frozen_state.thaw",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/PlayerFrozenStateThawAbility.ts",
+      "export_name": "runPlayerFrozenStateThawAbility"
+    },
+    {
+      "entity_id": "patrolling_melee_enemy",
+      "behavior_id": "patrolling_melee_enemy.patrol.move_back_and_forth",
+      "flow_id": "flow.patrolling_melee_enemy.patrol.move_back_and_forth",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/PatrollingMeleeEnemyPatrolMoveBackAndForthAbility.ts",
+      "export_name": "runPatrollingMeleeEnemyPatrolMoveBackAndForthAbility"
+    },
+    {
+      "entity_id": "patrolling_melee_enemy",
+      "behavior_id": "patrolling_melee_enemy.melee_pressure.threaten_close_player",
+      "flow_id": "flow.patrolling_melee_enemy.melee_pressure.threaten_close_player",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/PatrollingMeleeEnemyMeleePressureThreatenClosePlayerAbility.ts",
+      "export_name": "runPatrollingMeleeEnemyMeleePressureThreatenClosePlayerAbility"
+    },
+    {
+      "entity_id": "patrolling_melee_enemy",
+      "behavior_id": "patrolling_melee_enemy.health.take_melee_damage",
+      "flow_id": "flow.patrolling_melee_enemy.health.take_melee_damage",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/PatrollingMeleeEnemyHealthTakeMeleeDamageAbility.ts",
+      "export_name": "runPatrollingMeleeEnemyHealthTakeMeleeDamageAbility"
+    },
+    {
+      "entity_id": "patrolling_melee_enemy",
+      "behavior_id": "patrolling_melee_enemy.health.become_defeated",
+      "flow_id": "flow.patrolling_melee_enemy.health.become_defeated",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/PatrollingMeleeEnemyHealthBecomeDefeatedAbility.ts",
+      "export_name": "runPatrollingMeleeEnemyHealthBecomeDefeatedAbility"
+    },
+    {
+      "entity_id": "ice_trap",
+      "behavior_id": "ice_trap.freeze_trigger.freeze_overlapping_player",
+      "flow_id": "flow.ice_trap.freeze_trigger.freeze_overlapping_player",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/IceTrapFreezeTriggerFreezeOverlappingPlayerAbility.ts",
+      "export_name": "runIceTrapFreezeTriggerFreezeOverlappingPlayerAbility"
+    },
+    {
+      "entity_id": "freeze_vfx",
+      "behavior_id": "freeze_vfx.freeze_feedback.appear_on_freeze",
+      "flow_id": "flow.freeze_vfx.freeze_feedback.appear_on_freeze",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/FreezeVfxFreezeFeedbackAppearOnFreezeAbility.ts",
+      "export_name": "runFreezeVfxFreezeFeedbackAppearOnFreezeAbility"
+    },
+    {
+      "entity_id": "side_camera",
+      "behavior_id": "side_camera.freeze_feedback_shake.shake_on_freeze",
+      "flow_id": "flow.side_camera.freeze_feedback_shake.shake_on_freeze",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/SideCameraFreezeFeedbackShakeShakeOnFreezeAbility.ts",
+      "export_name": "runSideCameraFreezeFeedbackShakeShakeOnFreezeAbility"
+    },
+    {
+      "entity_id": "locked_exit",
+      "behavior_id": "locked_exit.enemy_gate.remain_locked",
+      "flow_id": "flow.locked_exit.enemy_gate.remain_locked",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/LockedExitEnemyGateRemainLockedAbility.ts",
+      "export_name": "runLockedExitEnemyGateRemainLockedAbility"
+    },
+    {
+      "entity_id": "locked_exit",
+      "behavior_id": "locked_exit.enemy_gate.unlock_after_enemy_defeat",
+      "flow_id": "flow.locked_exit.enemy_gate.unlock_after_enemy_defeat",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/LockedExitEnemyGateUnlockAfterEnemyDefeatAbility.ts",
+      "export_name": "runLockedExitEnemyGateUnlockAfterEnemyDefeatAbility"
+    },
+    {
+      "entity_id": "locked_exit",
+      "behavior_id": "locked_exit.room_completion.complete_on_reach",
+      "flow_id": "flow.locked_exit.room_completion.complete_on_reach",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/LockedExitRoomCompletionCompleteOnReachAbility.ts",
+      "export_name": "runLockedExitRoomCompletionCompleteOnReachAbility"
+    },
+    {
+      "entity_id": "player",
+      "behavior_id": "player.frozen_state.become_frozen",
+      "flow_id": "flow.player.frozen_state.become_frozen",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/AutoUEGeneratedRuntime.ts",
+      "export_name": "runAutoUEGeneratedRuntime"
+    },
+    {
+      "entity_id": "player",
+      "behavior_id": "player.frozen_state.become_frozen",
+      "flow_id": "flow.player.frozen_state.become_frozen",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/AutoUEGeneratedCharacterAdapter.ts",
+      "export_name": "AutoUEGeneratedCharacterAdapter"
+    },
+    {
+      "entity_id": "player",
+      "behavior_id": "player.frozen_state.become_frozen",
+      "flow_id": "flow.player.frozen_state.become_frozen",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/AutoUEGeneratedGameModeAdapter.ts",
+      "export_name": "AutoUEGeneratedGameModeAdapter"
+    },
+    {
+      "entity_id": "player",
+      "behavior_id": "player.frozen_state.become_frozen",
+      "flow_id": "flow.player.frozen_state.become_frozen",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/AutoUEGeneratedCameraHelper.ts",
+      "export_name": "setupAutoUEGeneratedCamera"
+    },
+    {
+      "entity_id": "player",
+      "behavior_id": "player.frozen_state.become_frozen",
+      "flow_id": "flow.player.frozen_state.become_frozen",
+      "runtime_mapping_path": "flow/05-puerts-runtime-mapping.json",
+      "file_path": "TypeScript/content/generated/AutoUEGeneratedSceneManifest.ts",
+      "export_name": "getAutoUEGeneratedSceneManifest"
+    }
+  ],
+  "consumed_interactive_files": [
+    "TypeScript/content/generated/interactive/PlayerHorizontalMovementMoveLeftRightInteractable.ts",
+    "TypeScript/content/generated/interactive/PlayerShortMeleeAttackStrikeEnemyInteractable.ts",
+    "TypeScript/content/generated/interactive/PlayerBriefDashDashHorizontallyInteractable.ts",
+    "TypeScript/content/generated/interactive/PlayerFrozenStateBecomeFrozenInteractable.ts",
+    "TypeScript/content/generated/interactive/PlayerFrozenStateThawInteractable.ts",
+    "TypeScript/content/generated/interactive/PatrollingMeleeEnemyPatrolMoveBackAndForthInteractable.ts",
+    "TypeScript/content/generated/interactive/PatrollingMeleeEnemyMeleePressureThreatenClosePlayerInteractable.ts",
+    "TypeScript/content/generated/interactive/PatrollingMeleeEnemyHealthTakeMeleeDamageInteractable.ts",
+    "TypeScript/content/generated/interactive/PatrollingMeleeEnemyHealthBecomeDefeatedInteractable.ts",
+    "TypeScript/content/generated/interactive/IceTrapFreezeTriggerFreezeOverlappingPlayerInteractable.ts",
+    "TypeScript/content/generated/interactive/FreezeVfxFreezeFeedbackAppearOnFreezeInteractable.ts",
+    "TypeScript/content/generated/interactive/SideCameraFreezeFeedbackShakeShakeOnFreezeInteractable.ts",
+    "TypeScript/content/generated/interactive/LockedExitEnemyGateRemainLockedInteractable.ts",
+    "TypeScript/content/generated/interactive/LockedExitEnemyGateUnlockAfterEnemyDefeatInteractable.ts",
+    "TypeScript/content/generated/interactive/LockedExitRoomCompletionCompleteOnReachInteractable.ts"
+  ],
+  "validation_notes": []
+}

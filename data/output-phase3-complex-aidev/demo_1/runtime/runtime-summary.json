@@ -1,0 +1,464 @@
+{
+  "result": "pass",
+  "root": "D:\\ClaudeTasks\\active\\autoue-puerts-workflow-adaptation\\repo\\AutoUE\\data\\output-phase3-complex-aidev\\demo_1",
+  "contract": {
+    "enabled": true,
+    "runner": "tools/run_runtime_validation.py",
+    "validator": "tools/validate_runtime_results.py",
+    "summary_path": "runtime/runtime-summary.json",
+    "log_path": "runtime/runtime-log.jsonl",
+    "supported_drivers": [
+      "adapter_call"
+    ],
+    "supported_expected_types": [
+      "static_trace_present"
+    ],
+    "supported_static_trace_keys": [
+      "ability_module_export",
+      "engine_ports_mapped",
+      "interactive_adapter_export"
+    ],
+    "launches_ue_editor": false,
+    "launches_pie": false,
+    "injects_player_input": false
+  },
+  "instruction_count": 15,
+  "steps": [
+    {
+      "step_id": 1,
+      "action": "move_left_right",
+      "target": "player",
+      "driver": "adapter_call",
+      "status": "pass",
+      "checks": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "step_id": 2,
+      "action": "strike_enemy",
+      "target": "patrolling_melee_enemy",
+      "driver": "adapter_call",
+      "status": "pass",
+      "checks": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "step_id": 3,
+      "action": "dash_horizontally",
+      "target": "player",
+      "driver": "adapter_call",
+      "status": "pass",
+      "checks": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "step_id": 4,
+      "action": "become_frozen",
+      "target": "player",
+      "driver": "adapter_call",
+      "status": "pass",
+      "checks": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "step_id": 5,
+      "action": "thaw",
+      "target": "player",
+      "driver": "adapter_call",
+      "status": "pass",
+      "checks": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "step_id": 6,
+      "action": "patrol_back_and_forth",
+      "target": "patrolling_melee_enemy",
+      "driver": "adapter_call",
+      "status": "pass",
+      "checks": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "step_id": 7,
+      "action": "threaten_close_player",
+      "target": "player",
+      "driver": "adapter_call",
+      "status": "pass",
+      "checks": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "step_id": 8,
+      "action": "take_melee_damage",
+      "target": "patrolling_melee_enemy",
+      "driver": "adapter_call",
+      "status": "pass",
+      "checks": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "step_id": 9,
+      "action": "become_defeated",
+      "target": "patrolling_melee_enemy",
+      "driver": "adapter_call",
+      "status": "pass",
+      "checks": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "step_id": 10,
+      "action": "freeze_overlapping_player",
+      "target": "player",
+      "driver": "adapter_call",
+      "status": "pass",
+      "checks": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "step_id": 11,
+      "action": "show_freeze_effect",
+      "target": "player",
+      "driver": "adapter_call",
+      "status": "pass",
+      "checks": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "step_id": 12,
+      "action": "shake_on_freeze",
+      "target": "side_camera",
+      "driver": "adapter_call",
+      "status": "pass",
+      "checks": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "step_id": 13,
+      "action": "remain_locked",
+      "target": "locked_exit",
+      "driver": "adapter_call",
+      "status": "pass",
+      "checks": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "step_id": 14,
+      "action": "unlock_after_enemy_defeat",
+      "target": "locked_exit",
+      "driver": "adapter_call",
+      "status": "pass",
+      "checks": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "step_id": 15,
+      "action": "complete_on_reach",
+      "target": "unlocked_exit",
+      "driver": "adapter_call",
+      "status": "pass",
+      "checks": [
+        {
+          "type": "static_trace_present",
+          "key": "ability_module_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "interactive_adapter_export",
+          "passed": true
+        },
+        {
+          "type": "static_trace_present",
+          "key": "engine_ports_mapped",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "evidence": {
+    "runtime_mapping_paths": [
+      "flow/05-puerts-runtime-mapping.json"
+    ],
+    "adjudication_paths": [
+      "flow/04-ue-api-mcp/adjudication/actor.on_take_any_damage.json",
+      "flow/04-ue-api-mcp/adjudication/actor.set_actor_location.json",
+      "flow/04-ue-api-mcp/adjudication/actor.set_actor_tick_enabled.json",
+      "flow/04-ue-api-mcp/adjudication/character.launch_character.json",
+      "flow/04-ue-api-mcp/adjudication/character_movement.disable_movement.json",
+      "flow/04-ue-api-mcp/adjudication/character_movement.set_movement_mode.json",
+      "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json",
+      "flow/04-ue-api-mcp/adjudication/gameplay_statics.apply_damage.json",
+      "flow/04-ue-api-mcp/adjudication/kismet.sphere_trace_single.json",
+      "flow/04-ue-api-mcp/adjudication/niagara.spawn_system_attached.json",
+      "flow/04-ue-api-mcp/adjudication/pawn.add_movement_input.json",
+      "flow/04-ue-api-mcp/adjudication/player_controller.client_start_camera_shake.json",
+      "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json",
+      "flow/04-ue-api-mcp/adjudication/timer.set_timer.json"
+    ],
+    "ts_files": [
+      "TypeScript/content/generated/FreezeVfxFreezeFeedbackAppearOnFreezeAbility.ts",
+      "TypeScript/content/generated/IceTrapFreezeTriggerFreezeOverlappingPlayerAbility.ts",
+      "TypeScript/content/generated/LockedExitEnemyGateRemainLockedAbility.ts",
+      "TypeScript/content/generated/LockedExitEnemyGateUnlockAfterEnemyDefeatAbility.ts",
+      "TypeScript/content/generated/LockedExitRoomCompletionCompleteOnReachAbility.ts",
+      "TypeScript/content/generated/PatrollingMeleeEnemyHealthBecomeDefeatedAbility.ts",
+      "TypeScript/content/generated/PatrollingMeleeEnemyHealthTakeMeleeDamageAbility.ts",
+      "TypeScript/content/generated/PatrollingMeleeEnemyMeleePressureThreatenClosePlayerAbility.ts",
+      "TypeScript/content/generated/PatrollingMeleeEnemyPatrolMoveBackAndForthAbility.ts",
+      "TypeScript/content/generated/PlayerBriefDashDashHorizontallyAbility.ts",
+      "TypeScript/content/generated/PlayerFrozenStateBecomeFrozenAbility.ts",
+      "TypeScript/content/generated/PlayerFrozenStateThawAbility.ts",
+      "TypeScript/content/generated/PlayerHorizontalMovementMoveLeftRightAbility.ts",
+      "TypeScript/content/generated/PlayerShortMeleeAttackStrikeEnemyAbility.ts",
+      "TypeScript/content/generated/SideCameraFreezeFeedbackShakeShakeOnFreezeAbility.ts",
+      "TypeScript/content/generated/interactive/FreezeVfxFreezeFeedbackAppearOnFreezeInteractable.ts",
+      "TypeScript/content/generated/interactive/IceTrapFreezeTriggerFreezeOverlappingPlayerInteractable.ts",
+      "TypeScript/content/generated/interactive/LockedExitEnemyGateRemainLockedInteractable.ts",
+      "TypeScript/content/generated/interactive/LockedExitEnemyGateUnlockAfterEnemyDefeatInteractable.ts",
+      "TypeScript/content/generated/interactive/LockedExitRoomCompletionCompleteOnReachInteractable.ts",
+      "TypeScript/content/generated/interactive/PatrollingMeleeEnemyHealthBecomeDefeatedInteractable.ts",
+      "TypeScript/content/generated/interactive/PatrollingMeleeEnemyHealthTakeMeleeDamageInteractable.ts",
+      "TypeScript/content/generated/interactive/PatrollingMeleeEnemyMeleePressureThreatenClosePlayerInteractable.ts",
+      "TypeScript/content/generated/interactive/PatrollingMeleeEnemyPatrolMoveBackAndForthInteractable.ts",
+      "TypeScript/content/generated/interactive/PlayerBriefDashDashHorizontallyInteractable.ts",
+      "TypeScript/content/generated/interactive/PlayerFrozenStateBecomeFrozenInteractable.ts",
+      "TypeScript/content/generated/interactive/PlayerFrozenStateThawInteractable.ts",
+      "TypeScript/content/generated/interactive/PlayerHorizontalMovementMoveLeftRightInteractable.ts",
+      "TypeScript/content/generated/interactive/PlayerShortMeleeAttackStrikeEnemyInteractable.ts",
+      "TypeScript/content/generated/interactive/SideCameraFreezeFeedbackShakeShakeOnFreezeInteractable.ts"
+    ],
+    "engine_port_ids": [
+      "actor.on_take_any_damage",
+      "actor.set_actor_location",
+      "actor.set_actor_tick_enabled",
+      "character.launch_character",
+      "character_movement.disable_movement",
+      "character_movement.set_movement_mode",
+      "enhanced_input.bind_action",
+      "gameplay_statics.apply_damage",
+      "kismet.sphere_trace_single",
+      "niagara.spawn_system_attached",
+      "pawn.add_movement_input",
+      "player_controller.client_start_camera_shake",
+      "primitive.on_component_begin_overlap",
+      "timer.set_timer"
+    ]
+  },
+  "notes": [
+    "Phase3 runtime validation is a Python static adapter_call harness only.",
+    "It does not launch UE Editor, does not launch PIE, and does not inject real player input."
+  ],
+  "summary_path": "D:\\ClaudeTasks\\active\\autoue-puerts-workflow-adaptation\\repo\\AutoUE\\data\\output-phase3-complex-aidev\\demo_1\\runtime\\runtime-summary.json",
+  "log_path": "D:\\ClaudeTasks\\active\\autoue-puerts-workflow-adaptation\\repo\\AutoUE\\data\\output-phase3-complex-aidev\\demo_1\\runtime\\runtime-log.jsonl"
+}

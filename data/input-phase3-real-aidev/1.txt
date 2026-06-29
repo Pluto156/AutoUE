@@ -1,0 +1,1 @@
+Create a tiny side-scroller combat room. The player can move left and right, use one short melee attack to defeat one enemy, and then reach the exit. Keep it minimal: one room, one player, one enemy, one attack, one health state, and one exit. Do not add inventory, quests, upgrades, ranged weapons, complex UI, or extra systems.

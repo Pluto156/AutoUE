@@ -1,0 +1,20 @@
+{
+  "engine_port_id": "pawn.add_movement_input",
+  "flow_ids": [
+    "flow.player.horizontal_movement.move_left_right"
+  ],
+  "behavior_ids": [
+    "player.horizontal_movement.move_left_right"
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for pawn.add_movement_input; exact symbol hints: Pawn.AddMovementInput, PawnAddMovementInput, pawn add movement input. Intent: Apply horizontal movement across the room floor from the accepted input.",
+  "raw_path": "flow/04-ue-api-mcp/raw/pawn.add_movement_input.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/pawn.add_movement_input.json",
+  "verdict": "hit",
+  "hit_type": "indirect_hit",
+  "evidence_symbols": [
+    "UE.NavMovementComponent",
+    "UE.MovementComponent",
+    "UE.Pawn.GetMovementBaseActor"
+  ],
+  "notes": "GameFramework pawn and movement component symbols provide usable movement-carrier evidence for horizontal player movement."
+}

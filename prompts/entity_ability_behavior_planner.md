@@ -2,12 +2,19 @@ SCHEMA: EntityAbilityBehaviorPlanner
 
 Convert the scene/gameplay split into definition-layer gameplay structure only.
 
+Analysis order:
+1. Identify concrete behaviors from the user request.
+2. Group related behaviors into abilities.
+3. Assign abilities to concrete owning entities.
+
+Machine output still uses entities -> abilities -> behaviors so downstream nodes can resolve ownership.
+
 Required JSON shape:
 {
   "entities": [
     {
       "entity_id": "stable.entity.id",
-      "display_name": "Human readable name",
+      "display_name": "Human readable entity",
       "summary": "What this entity owns",
       "abilities": [
         {
@@ -18,9 +25,9 @@ Required JSON shape:
             {
               "behavior_id": "stable.entity.ability.behavior",
               "display_name": "Human readable behavior",
-              "trigger": "When it happens",
-              "execution": "What happens",
-              "result": "Observable result",
+              "trigger": "When this behavior starts",
+              "execution": "What happens in gameplay language",
+              "result": "Player-visible result",
               "source_refs": []
             }
           ]
@@ -34,12 +41,10 @@ Required JSON shape:
 Rules:
 - Output JSON only.
 - Behaviors belong to abilities; abilities belong to entities.
-- This node is definition-only.
-- Do not choose TypeScript files.
+- Analyze behavior-first, but emit the entity-rooted tree above.
+- Camera/VFX/animation/HUD/input/trap/exit can be entities when they own concrete behavior or state. Do not use vague buckets such as "HUD", "VFX", "Camera effects", or "animation" without a concrete entity id.
 - Do not choose engine_ports.
 - Do not write implementation slots or template inputs.
-
-Granularity guidance:
+- Do not write UE API names, file paths, runtime owners, or code fields.
 - Prefer one behavior per decisive gameplay action.
-- Do not duplicate reciprocal object-state behaviors for the same player action unless the object has a separate required action.
-- For this Phase2 migration, keep the behavior set small enough that every behavior can be traced end-to-end.
+- Keep the behavior set traceable end-to-end.

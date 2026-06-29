@@ -1,0 +1,607 @@
+{
+  "flows": [
+    {
+      "flow_id": "flow.player.horizontal_movement.move_left_right",
+      "entity_id": "player",
+      "ability_id": "player.horizontal_movement",
+      "source_behavior_id": "player.horizontal_movement.move_left_right",
+      "stages": [
+        {
+          "stage": "Input",
+          "contract": "Read horizontal movement input only when the player is not frozen.",
+          "inputs": [
+            "horizontal_axis",
+            "is_frozen"
+          ],
+          "outputs": [
+            "movement_intent"
+          ],
+          "engine_ports": [
+            "enhanced_input.bind_action"
+          ]
+        },
+        {
+          "stage": "Ability/Action",
+          "contract": "Apply horizontal movement across the room floor from the accepted input.",
+          "inputs": [
+            "movement_intent"
+          ],
+          "outputs": [
+            "updated_player_position"
+          ],
+          "engine_ports": [
+            "pawn.add_movement_input"
+          ]
+        }
+      ],
+      "verification": [
+        "When not frozen, left/right input changes player horizontal position.",
+        "When frozen, left/right input produces no movement intent."
+      ]
+    },
+    {
+      "flow_id": "flow.player.short_melee_attack.strike_enemy",
+      "entity_id": "player",
+      "ability_id": "player.short_melee_attack",
+      "source_behavior_id": "player.short_melee_attack.strike_enemy",
+      "stages": [
+        {
+          "stage": "Input",
+          "contract": "Accept a melee attack request from the player.",
+          "inputs": [
+            "attack_pressed"
+          ],
+          "outputs": [
+            "attack_intent"
+          ],
+          "engine_ports": []
+        },
+        {
+          "stage": "SpatialQuery/HitQuery",
+          "contract": "Check a short close-range area in front of the player for the patrolling melee enemy.",
+          "inputs": [
+            "player_position",
+            "player_facing",
+            "attack_range"
+          ],
+          "outputs": [
+            "hit_enemy"
+          ],
+          "engine_ports": [
+            "kismet.sphere_trace_single"
+          ]
+        },
+        {
+          "stage": "Damage/Resource",
+          "contract": "Apply melee damage to the hit enemy.",
+          "inputs": [
+            "hit_enemy",
+            "melee_damage"
+          ],
+          "outputs": [
+            "enemy_damage_event"
+          ],
+          "engine_ports": [
+            "gameplay_statics.apply_damage"
+          ]
+        }
+      ],
+      "verification": [
+        "Melee attack near the enemy produces a hit and damage event.",
+        "Melee attack outside short range does not damage the enemy."
+      ]
+    },
+    {
+      "flow_id": "flow.player.brief_dash.dash_horizontally",
+      "entity_id": "player",
+      "ability_id": "player.brief_dash",
+      "source_behavior_id": "player.brief_dash.dash_horizontally",
+      "stages": [
+        {
+          "stage": "Input",
+          "contract": "Accept dash input only when the player is not frozen.",
+          "inputs": [
+            "dash_pressed",
+            "is_frozen",
+            "current_horizontal_direction"
+          ],
+          "outputs": [
+            "dash_intent"
+          ],
+          "engine_ports": [
+            "enhanced_input.bind_action"
+          ]
+        },
+        {
+          "stage": "Ability/Action",
+          "contract": "Move the player a short burst distance in the current horizontal direction.",
+          "inputs": [
+            "dash_intent"
+          ],
+          "outputs": [
+            "updated_player_position"
+          ],
+          "engine_ports": [
+            "character.launch_character"
+          ]
+        }
+      ],
+      "verification": [
+        "Dash while not frozen briefly moves the player faster than normal movement.",
+        "Dash while frozen is ignored."
+      ]
+    },
+    {
+      "flow_id": "flow.player.frozen_state.become_frozen",
+      "entity_id": "player",
+      "ability_id": "player.frozen_state",
+      "source_behavior_id": "player.frozen_state.become_frozen",
+      "stages": [
+        {
+          "stage": "Event/Result",
+          "contract": "Enter frozen state when a freeze event is received.",
+          "inputs": [
+            "freeze_event",
+            "freeze_duration"
+          ],
+          "outputs": [
+            "is_frozen_true"
+          ],
+          "engine_ports": []
+        },
+        {
+          "stage": "Ability/Action",
+          "contract": "Block player movement while frozen.",
+          "inputs": [
+            "is_frozen_true"
+          ],
+          "outputs": [
+            "movement_blocked"
+          ],
+          "engine_ports": [
+            "character_movement.disable_movement"
+          ]
+        },
+        {
+          "stage": "Cleanup",
+          "contract": "Schedule the frozen state to end after the short duration.",
+          "inputs": [
+            "freeze_duration"
+          ],
+          "outputs": [
+            "thaw_pending"
+          ],
+          "engine_ports": [
+            "timer.set_timer"
+          ]
+        }
+      ],
+      "verification": [
+        "Freeze event sets the player frozen state.",
+        "Frozen player cannot move or dash until thaw."
+      ]
+    },
+    {
+      "flow_id": "flow.player.frozen_state.thaw",
+      "entity_id": "player",
+      "ability_id": "player.frozen_state",
+      "source_behavior_id": "player.frozen_state.thaw",
+      "stages": [
+        {
+          "stage": "Event/Result",
+          "contract": "End frozen state when the freeze duration expires.",
+          "inputs": [
+            "thaw_pending"
+          ],
+          "outputs": [
+            "is_frozen_false"
+          ],
+          "engine_ports": []
+        },
+        {
+          "stage": "Ability/Action",
+          "contract": "Restore normal movement capability after thawing.",
+          "inputs": [
+            "is_frozen_false"
+          ],
+          "outputs": [
+            "movement_restored"
+          ],
+          "engine_ports": [
+            "character_movement.set_movement_mode"
+          ]
+        }
+      ],
+      "verification": [
+        "After the freeze duration ends, the player can move again.",
+        "After thawing, dash input is accepted again."
+      ]
+    },
+    {
+      "flow_id": "flow.patrolling_melee_enemy.patrol.move_back_and_forth",
+      "entity_id": "patrolling_melee_enemy",
+      "ability_id": "patrolling_melee_enemy.patrol",
+      "source_behavior_id": "patrolling_melee_enemy.patrol.move_back_and_forth",
+      "stages": [
+        {
+          "stage": "Ability/Action",
+          "contract": "Move the active undefeated enemy along a short horizontal patrol path.",
+          "inputs": [
+            "enemy_active",
+            "is_defeated_false",
+            "patrol_bounds"
+          ],
+          "outputs": [
+            "updated_enemy_position"
+          ],
+          "engine_ports": [
+            "actor.set_actor_location"
+          ]
+        },
+        {
+          "stage": "Event/Result",
+          "contract": "Reverse patrol direction at path limits.",
+          "inputs": [
+            "updated_enemy_position",
+            "patrol_bounds"
+          ],
+          "outputs": [
+            "patrol_direction"
+          ],
+          "engine_ports": []
+        }
+      ],
+      "verification": [
+        "Active undefeated enemy moves horizontally between patrol bounds.",
+        "Defeated enemy does not continue patrolling."
+      ]
+    },
+    {
+      "flow_id": "flow.patrolling_melee_enemy.melee_pressure.threaten_close_player",
+      "entity_id": "patrolling_melee_enemy",
+      "ability_id": "patrolling_melee_enemy.melee_pressure",
+      "source_behavior_id": "patrolling_melee_enemy.melee_pressure.threaten_close_player",
+      "stages": [
+        {
+          "stage": "SpatialQuery/HitQuery",
+          "contract": "Detect when the active enemy is close enough to the player to represent melee danger.",
+          "inputs": [
+            "enemy_active",
+            "enemy_position",
+            "player_position"
+          ],
+          "outputs": [
+            "player_in_threat_range"
+          ],
+          "engine_ports": [
+            "primitive.on_component_begin_overlap"
+          ]
+        },
+        {
+          "stage": "Event/Result",
+          "contract": "Expose the close-range threat state for avoidance and combat validation.",
+          "inputs": [
+            "player_in_threat_range"
+          ],
+          "outputs": [
+            "melee_threat_active"
+          ],
+          "engine_ports": []
+        }
+      ],
+      "verification": [
+        "Close player overlap marks the enemy as a melee threat.",
+        "No close overlap means no active melee threat."
+      ]
+    },
+    {
+      "flow_id": "flow.patrolling_melee_enemy.health.take_melee_damage",
+      "entity_id": "patrolling_melee_enemy",
+      "ability_id": "patrolling_melee_enemy.health",
+      "source_behavior_id": "patrolling_melee_enemy.health.take_melee_damage",
+      "stages": [
+        {
+          "stage": "Damage/Resource",
+          "contract": "Receive melee damage from the player's successful strike.",
+          "inputs": [
+            "enemy_damage_event",
+            "current_health"
+          ],
+          "outputs": [
+            "new_health"
+          ],
+          "engine_ports": [
+            "actor.on_take_any_damage"
+          ]
+        },
+        {
+          "stage": "Event/Result",
+          "contract": "Report whether the new health has reached zero.",
+          "inputs": [
+            "new_health"
+          ],
+          "outputs": [
+            "health_zero"
+          ],
+          "engine_ports": []
+        }
+      ],
+      "verification": [
+        "A valid melee damage event reduces enemy health.",
+        "Health reaching zero emits the health_zero result."
+      ]
+    },
+    {
+      "flow_id": "flow.patrolling_melee_enemy.health.become_defeated",
+      "entity_id": "patrolling_melee_enemy",
+      "ability_id": "patrolling_melee_enemy.health",
+      "source_behavior_id": "patrolling_melee_enemy.health.become_defeated",
+      "stages": [
+        {
+          "stage": "Event/Result",
+          "contract": "Enter defeated state when enemy health reaches zero.",
+          "inputs": [
+            "health_zero"
+          ],
+          "outputs": [
+            "is_defeated_true"
+          ],
+          "engine_ports": []
+        },
+        {
+          "stage": "Cleanup",
+          "contract": "Stop the defeated enemy from acting as an active patrol threat.",
+          "inputs": [
+            "is_defeated_true"
+          ],
+          "outputs": [
+            "enemy_inactive"
+          ],
+          "engine_ports": [
+            "actor.set_actor_tick_enabled"
+          ]
+        },
+        {
+          "stage": "Event/Result",
+          "contract": "Signal that the room exit is eligible to unlock.",
+          "inputs": [
+            "is_defeated_true"
+          ],
+          "outputs": [
+            "exit_unlock_eligible"
+          ],
+          "engine_ports": []
+        }
+      ],
+      "verification": [
+        "Enemy at zero health becomes defeated.",
+        "Defeated enemy stops patrol/threat behavior and enables exit eligibility."
+      ]
+    },
+    {
+      "flow_id": "flow.ice_trap.freeze_trigger.freeze_overlapping_player",
+      "entity_id": "ice_trap",
+      "ability_id": "ice_trap.freeze_trigger",
+      "source_behavior_id": "ice_trap.freeze_trigger.freeze_overlapping_player",
+      "stages": [
+        {
+          "stage": "SpatialQuery/HitQuery",
+          "contract": "Detect player overlap with the ice trap.",
+          "inputs": [
+            "trap_overlap_component",
+            "player_actor"
+          ],
+          "outputs": [
+            "player_overlap"
+          ],
+          "engine_ports": [
+            "primitive.on_component_begin_overlap"
+          ]
+        },
+        {
+          "stage": "Event/Result",
+          "contract": "Emit a freeze event for the overlapping player and feedback systems.",
+          "inputs": [
+            "player_overlap"
+          ],
+          "outputs": [
+            "freeze_event",
+            "freeze_feedback_event"
+          ],
+          "engine_ports": []
+        }
+      ],
+      "verification": [
+        "Player overlap with the trap emits a freeze event.",
+        "Non-player overlap does not freeze the player."
+      ]
+    },
+    {
+      "flow_id": "flow.freeze_vfx.freeze_feedback.appear_on_freeze",
+      "entity_id": "freeze_vfx",
+      "ability_id": "freeze_vfx.freeze_feedback",
+      "source_behavior_id": "freeze_vfx.freeze_feedback.appear_on_freeze",
+      "stages": [
+        {
+          "stage": "Event/Result",
+          "contract": "Receive the freeze feedback event.",
+          "inputs": [
+            "freeze_feedback_event",
+            "player_actor"
+          ],
+          "outputs": [
+            "vfx_spawn_intent"
+          ],
+          "engine_ports": []
+        },
+        {
+          "stage": "Feedback/HUD",
+          "contract": "Show a brief freeze visual effect attached to or around the player.",
+          "inputs": [
+            "vfx_spawn_intent",
+            "player_actor"
+          ],
+          "outputs": [
+            "freeze_vfx_visible"
+          ],
+          "engine_ports": [
+            "niagara.spawn_system_attached"
+          ]
+        }
+      ],
+      "verification": [
+        "Freeze feedback event spawns visible freeze VFX on the player.",
+        "The VFX is associated with the frozen moment only."
+      ]
+    },
+    {
+      "flow_id": "flow.side_camera.freeze_feedback_shake.shake_on_freeze",
+      "entity_id": "side_camera",
+      "ability_id": "side_camera.freeze_feedback_shake",
+      "source_behavior_id": "side_camera.freeze_feedback_shake.shake_on_freeze",
+      "stages": [
+        {
+          "stage": "Event/Result",
+          "contract": "Receive the freeze feedback event.",
+          "inputs": [
+            "freeze_feedback_event"
+          ],
+          "outputs": [
+            "camera_shake_intent"
+          ],
+          "engine_ports": []
+        },
+        {
+          "stage": "Feedback/HUD",
+          "contract": "Play a small brief camera shake without changing the side-scroller view.",
+          "inputs": [
+            "camera_shake_intent"
+          ],
+          "outputs": [
+            "camera_shake_played"
+          ],
+          "engine_ports": [
+            "player_controller.client_start_camera_shake"
+          ]
+        }
+      ],
+      "verification": [
+        "Freeze feedback event plays a brief camera shake.",
+        "Camera shake does not alter room completion or player state."
+      ]
+    },
+    {
+      "flow_id": "flow.locked_exit.enemy_gate.remain_locked",
+      "entity_id": "locked_exit",
+      "ability_id": "locked_exit.enemy_gate",
+      "source_behavior_id": "locked_exit.enemy_gate.remain_locked",
+      "stages": [
+        {
+          "stage": "SpatialQuery/HitQuery",
+          "contract": "Detect when the player reaches the exit while the enemy is not defeated.",
+          "inputs": [
+            "exit_overlap_component",
+            "player_actor",
+            "enemy_defeated_false"
+          ],
+          "outputs": [
+            "locked_exit_attempt"
+          ],
+          "engine_ports": [
+            "primitive.on_component_begin_overlap"
+          ]
+        },
+        {
+          "stage": "Event/Result",
+          "contract": "Deny room completion while the exit remains locked.",
+          "inputs": [
+            "locked_exit_attempt"
+          ],
+          "outputs": [
+            "room_completion_denied"
+          ],
+          "engine_ports": []
+        }
+      ],
+      "verification": [
+        "Player reaching the exit before enemy defeat does not complete the room.",
+        "Locked exit state remains active while the enemy is undefeated."
+      ]
+    },
+    {
+      "flow_id": "flow.locked_exit.enemy_gate.unlock_after_enemy_defeat",
+      "entity_id": "locked_exit",
+      "ability_id": "locked_exit.enemy_gate",
+      "source_behavior_id": "locked_exit.enemy_gate.unlock_after_enemy_defeat",
+      "stages": [
+        {
+          "stage": "Event/Result",
+          "contract": "Change the exit runtime state from locked to unlocked when the enemy is defeated.",
+          "inputs": [
+            "exit_unlock_eligible"
+          ],
+          "outputs": [
+            "exit_unlocked"
+          ],
+          "engine_ports": []
+        },
+        {
+          "stage": "SpatialQuery/HitQuery",
+          "contract": "Use the exit overlap boundary as the activation point for the now-unlocked exit.",
+          "inputs": [
+            "exit_unlocked",
+            "player_actor"
+          ],
+          "outputs": [
+            "unlocked_exit_reachable"
+          ],
+          "engine_ports": [
+            "primitive.on_component_begin_overlap"
+          ]
+        }
+      ],
+      "verification": [
+        "Enemy defeat changes the exit state to unlocked.",
+        "Unlocked exit can be activated by player reach overlap."
+      ]
+    },
+    {
+      "flow_id": "flow.locked_exit.room_completion.complete_on_reach",
+      "entity_id": "locked_exit",
+      "ability_id": "locked_exit.room_completion",
+      "source_behavior_id": "locked_exit.room_completion.complete_on_reach",
+      "stages": [
+        {
+          "stage": "SpatialQuery/HitQuery",
+          "contract": "Detect player reaching the exit activation boundary.",
+          "inputs": [
+            "exit_overlap_component",
+            "player_actor",
+            "exit_unlocked"
+          ],
+          "outputs": [
+            "valid_exit_reach"
+          ],
+          "engine_ports": [
+            "primitive.on_component_begin_overlap"
+          ]
+        },
+        {
+          "stage": "Event/Result",
+          "contract": "Mark the compact combat room complete only when the reached exit is unlocked.",
+          "inputs": [
+            "valid_exit_reach"
+          ],
+          "outputs": [
+            "room_complete"
+          ],
+          "engine_ports": []
+        }
+      ],
+      "verification": [
+        "Player reaching an unlocked exit marks the room complete.",
+        "Player reaching a locked exit does not mark the room complete."
+      ]
+    }
+  ]
+}

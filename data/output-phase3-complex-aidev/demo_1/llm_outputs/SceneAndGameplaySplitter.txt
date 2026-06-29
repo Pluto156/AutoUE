@@ -1,0 +1,4 @@
+{
+  "scene_description": "A compact one-room side-scroller combat room with a side camera, a visible floor platform, one patrolling melee enemy, one ice trap placed inside the room, and a locked exit at the end of the room. The mood is focused and contained, with no extra rooms or complex UI.",
+  "gameplay_description": "The player can move left and right, perform one short melee attack, and briefly dash. One melee enemy patrols, has health, and can enter a defeated state. When the player overlaps the ice trap, the player becomes frozen for a short time, movement is blocked, a freeze VFX appears, and the side camera gives a small feedback shake. The exit remains locked until the enemy is defeated; after that, reaching the exit completes the room. No inventory, quests, upgrades, ranged weapons, or complex UI are added."
+}

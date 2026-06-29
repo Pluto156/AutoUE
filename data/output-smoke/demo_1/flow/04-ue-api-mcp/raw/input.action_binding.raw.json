@@ -9,12 +9,12 @@
   "contracts": [
     "bind player attack input"
   ],
-  "query": "Unreal Engine PuerTS gameplay API for input.action_binding: bind player attack input",
+  "query": "Unreal Engine PuerTS gameplay API for input.action_binding; exact symbol hints: Input.ActionBinding, InputActionBinding, input action binding. Intent: bind player attack input",
   "raw_path": "flow/04-ue-api-mcp/raw/input.action_binding.raw.json",
   "adjudication_path": "flow/04-ue-api-mcp/adjudication/input.action_binding.json",
   "raw_result": {
     "tool": "ue_api_semantic_search",
-    "query": "Unreal Engine PuerTS gameplay API for input.action_binding: bind player attack input",
+    "query": "Unreal Engine PuerTS gameplay API for input.action_binding; exact symbol hints: Input.ActionBinding, InputActionBinding, input action binding. Intent: bind player attack input",
     "limit": 5,
     "fixture": true,
     "payload": {

@@ -1,0 +1,440 @@
+
+===== initial =====
+label initial
+
+
+game_world <Object '/Game/ThirdPerson/UEDPIE_0_Lvl_ThirdPerson.Lvl_ThirdPerson' (0x0000021751E78C00) Class 'World'>
+
+
+gm /Game/Blueprints/TypeScript/AutoUEGeneratedGameModeAdapter.AutoUEGeneratedGameModeAdapter_C
+
+
+view_target /Game/Blueprints/TypeScript/AutoUEGeneratedCharacterAdapter.AutoUEGeneratedCharacterAdapter_C
+
+
+pawn_class /Game/Blueprints/TypeScript/AutoUEGeneratedCharacterAdapter.AutoUEGeneratedCharacterAdapter_C
+
+
+pawn_loc 0.0 0.0 128.15
+
+
+pawn_vel 0.0 0.0 0.0
+
+
+pawn_tags ['AUTOUE_GENERATED_ACTIVE']
+
+
+mesh AutoUEGenerated_RoomFloor loc 410.0 0.0 25.0 visible True
+
+
+mesh AutoUEGenerated_Enemy loc 360.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_IceTrap loc 160.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_Exit loc 820.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_FreezeVFX loc 0.0 0.0 208.15 visible False
+
+
+camera AutoUEGenerated_SideCamera loc 0.0 -1650.0 388.15 rot 0.0 90.0 -0.0 ortho 1450.0
+
+
+spring_arm AutoUEGenerated_SideCameraArm loc 0.0 -1650.0 388.15 rot 0.0 90.0 -0.0
+
+
+
+
+===== add_AUTOUE_INPUT_RIGHT_1S =====
+added_tag AUTOUE_INPUT_RIGHT_1S loc 0.0 0.0 128.15 tags ['AUTOUE_GENERATED_ACTIVE', 'AUTOUE_INPUT_RIGHT_1S']
+
+
+
+
+===== after_right_0p35s_frozen_trap_camera_shake =====
+label after_right_0p35s_frozen_trap_camera_shake
+
+
+game_world <Object '/Game/ThirdPerson/UEDPIE_0_Lvl_ThirdPerson.Lvl_ThirdPerson' (0x0000021751E78C00) Class 'World'>
+
+
+gm /Game/Blueprints/TypeScript/AutoUEGeneratedGameModeAdapter.AutoUEGeneratedGameModeAdapter_C
+
+
+view_target /Game/Blueprints/TypeScript/AutoUEGeneratedCharacterAdapter.AutoUEGeneratedCharacterAdapter_C
+
+
+pawn_class /Game/Blueprints/TypeScript/AutoUEGeneratedCharacterAdapter.AutoUEGeneratedCharacterAdapter_C
+
+
+pawn_loc 69.82 0.0 128.15
+
+
+pawn_vel 0.0 0.0 0.0
+
+
+pawn_tags ['AUTOUE_GENERATED_ACTIVE', 'AUTOUE_GENERATED_PLAYER_FROZEN', 'AUTOUE_GENERATED_TRAP_SPENT']
+
+
+mesh AutoUEGenerated_RoomFloor loc 410.0 0.0 25.0 visible True
+
+
+mesh AutoUEGenerated_Enemy loc 360.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_IceTrap loc 160.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_Exit loc 820.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_FreezeVFX loc 69.82 0.0 208.15 visible True
+
+
+camera AutoUEGenerated_SideCamera loc 69.82 -1650.0 388.86 rot 0.0 90.0 -0.0 ortho 1450.0
+
+
+spring_arm AutoUEGenerated_SideCameraArm loc 69.82 -1650.0 388.86 rot 0.0 90.0 -0.0
+
+
+
+
+===== after_thaw =====
+label after_thaw
+
+
+game_world <Object '/Game/ThirdPerson/UEDPIE_0_Lvl_ThirdPerson.Lvl_ThirdPerson' (0x0000021751E78C00) Class 'World'>
+
+
+gm /Game/Blueprints/TypeScript/AutoUEGeneratedGameModeAdapter.AutoUEGeneratedGameModeAdapter_C
+
+
+view_target /Game/Blueprints/TypeScript/AutoUEGeneratedCharacterAdapter.AutoUEGeneratedCharacterAdapter_C
+
+
+pawn_class /Game/Blueprints/TypeScript/AutoUEGeneratedCharacterAdapter.AutoUEGeneratedCharacterAdapter_C
+
+
+pawn_loc 69.82 0.0 128.15
+
+
+pawn_vel 0.0 0.0 0.0
+
+
+pawn_tags ['AUTOUE_GENERATED_ACTIVE', 'AUTOUE_GENERATED_TRAP_SPENT']
+
+
+mesh AutoUEGenerated_RoomFloor loc 410.0 0.0 25.0 visible True
+
+
+mesh AutoUEGenerated_Enemy loc 360.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_IceTrap loc 160.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_Exit loc 820.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_FreezeVFX loc 69.82 0.0 208.15 visible False
+
+
+camera AutoUEGenerated_SideCamera loc 69.82 -1650.0 388.15 rot 0.0 90.0 -0.0 ortho 1450.0
+
+
+spring_arm AutoUEGenerated_SideCameraArm loc 69.82 -1650.0 388.15 rot 0.0 90.0 -0.0
+
+
+
+
+===== add_AUTOUE_INPUT_RIGHT_1S =====
+added_tag AUTOUE_INPUT_RIGHT_1S loc 69.82 0.0 128.15 tags ['AUTOUE_GENERATED_ACTIVE', 'AUTOUE_GENERATED_TRAP_SPENT', 'AUTOUE_INPUT_RIGHT_1S']
+
+
+
+
+===== after_second_right_past_enemy =====
+label after_second_right_past_enemy
+
+
+game_world <Object '/Game/ThirdPerson/UEDPIE_0_Lvl_ThirdPerson.Lvl_ThirdPerson' (0x0000021751E78C00) Class 'World'>
+
+
+gm /Game/Blueprints/TypeScript/AutoUEGeneratedGameModeAdapter.AutoUEGeneratedGameModeAdapter_C
+
+
+view_target /Game/Blueprints/TypeScript/AutoUEGeneratedCharacterAdapter.AutoUEGeneratedCharacterAdapter_C
+
+
+pawn_class /Game/Blueprints/TypeScript/AutoUEGeneratedCharacterAdapter.AutoUEGeneratedCharacterAdapter_C
+
+
+pawn_loc 696.93 0.0 128.15
+
+
+pawn_vel 0.0 0.0 0.0
+
+
+pawn_tags ['AUTOUE_GENERATED_ACTIVE']
+
+
+mesh AutoUEGenerated_RoomFloor loc 410.0 0.0 25.0 visible True
+
+
+mesh AutoUEGenerated_Enemy loc 360.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_IceTrap loc 160.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_Exit loc 820.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_FreezeVFX loc 696.93 0.0 208.15 visible False
+
+
+camera AutoUEGenerated_SideCamera loc 696.93 -1650.0 388.15 rot 0.0 90.0 -0.0 ortho 1450.0
+
+
+spring_arm AutoUEGenerated_SideCameraArm loc 696.93 -1650.0 388.15 rot 0.0 90.0 -0.0
+
+
+
+
+===== add_AUTOUE_INPUT_LEFT =====
+added_tag AUTOUE_INPUT_LEFT loc 696.93 0.0 128.15 tags ['AUTOUE_GENERATED_ACTIVE', 'AUTOUE_INPUT_LEFT']
+
+
+
+
+===== add_AUTOUE_INPUT_LEFT =====
+added_tag AUTOUE_INPUT_LEFT loc 538.11 0.0 128.15 tags ['AUTOUE_GENERATED_ACTIVE', 'AUTOUE_INPUT_LEFT']
+
+
+
+
+===== near_enemy_for_melee =====
+label near_enemy_for_melee
+
+
+game_world <Object '/Game/ThirdPerson/UEDPIE_0_Lvl_ThirdPerson.Lvl_ThirdPerson' (0x0000021751E78C00) Class 'World'>
+
+
+gm /Game/Blueprints/TypeScript/AutoUEGeneratedGameModeAdapter.AutoUEGeneratedGameModeAdapter_C
+
+
+view_target /Game/Blueprints/TypeScript/AutoUEGeneratedCharacterAdapter.AutoUEGeneratedCharacterAdapter_C
+
+
+pawn_class /Game/Blueprints/TypeScript/AutoUEGeneratedCharacterAdapter.AutoUEGeneratedCharacterAdapter_C
+
+
+pawn_loc 373.99 0.0 128.15
+
+
+pawn_vel 0.0 0.0 0.0
+
+
+pawn_tags ['AUTOUE_GENERATED_ACTIVE']
+
+
+mesh AutoUEGenerated_RoomFloor loc 410.0 0.0 25.0 visible True
+
+
+mesh AutoUEGenerated_Enemy loc 360.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_IceTrap loc 160.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_Exit loc 820.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_FreezeVFX loc 373.99 0.0 208.15 visible False
+
+
+camera AutoUEGenerated_SideCamera loc 373.99 -1650.0 388.15 rot 0.0 90.0 -0.0 ortho 1450.0
+
+
+spring_arm AutoUEGenerated_SideCameraArm loc 373.99 -1650.0 388.15 rot 0.0 90.0 -0.0
+
+
+
+
+===== add_AUTOUE_INPUT_ATTACK =====
+added_tag AUTOUE_INPUT_ATTACK loc 373.99 0.0 128.15 tags ['AUTOUE_GENERATED_ACTIVE', 'AUTOUE_INPUT_ATTACK']
+
+
+
+
+===== after_attack_1_enemy_hit =====
+label after_attack_1_enemy_hit
+
+
+game_world <Object '/Game/ThirdPerson/UEDPIE_0_Lvl_ThirdPerson.Lvl_ThirdPerson' (0x0000021751E78C00) Class 'World'>
+
+
+gm /Game/Blueprints/TypeScript/AutoUEGeneratedGameModeAdapter.AutoUEGeneratedGameModeAdapter_C
+
+
+view_target /Game/Blueprints/TypeScript/AutoUEGeneratedCharacterAdapter.AutoUEGeneratedCharacterAdapter_C
+
+
+pawn_class /Game/Blueprints/TypeScript/AutoUEGeneratedCharacterAdapter.AutoUEGeneratedCharacterAdapter_C
+
+
+pawn_loc 373.99 0.0 128.15
+
+
+pawn_vel 0.0 0.0 0.0
+
+
+pawn_tags ['AUTOUE_GENERATED_ACTIVE']
+
+
+mesh AutoUEGenerated_RoomFloor loc 410.0 0.0 25.0 visible True
+
+
+mesh AutoUEGenerated_Enemy loc 360.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_IceTrap loc 160.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_Exit loc 820.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_FreezeVFX loc 373.99 0.0 208.15 visible False
+
+
+camera AutoUEGenerated_SideCamera loc 373.99 -1650.0 388.15 rot 0.0 90.0 -0.0 ortho 1450.0
+
+
+spring_arm AutoUEGenerated_SideCameraArm loc 373.99 -1650.0 388.15 rot 0.0 90.0 -0.0
+
+
+
+
+===== add_AUTOUE_INPUT_ATTACK =====
+added_tag AUTOUE_INPUT_ATTACK loc 373.99 0.0 128.15 tags ['AUTOUE_GENERATED_ACTIVE', 'AUTOUE_INPUT_ATTACK']
+
+
+
+
+===== after_attack_2_enemy_defeated_exit_unlocked =====
+label after_attack_2_enemy_defeated_exit_unlocked
+
+
+game_world <Object '/Game/ThirdPerson/UEDPIE_0_Lvl_ThirdPerson.Lvl_ThirdPerson' (0x0000021751E78C00) Class 'World'>
+
+
+gm /Game/Blueprints/TypeScript/AutoUEGeneratedGameModeAdapter.AutoUEGeneratedGameModeAdapter_C
+
+
+view_target /Game/Blueprints/TypeScript/AutoUEGeneratedCharacterAdapter.AutoUEGeneratedCharacterAdapter_C
+
+
+pawn_class /Game/Blueprints/TypeScript/AutoUEGeneratedCharacterAdapter.AutoUEGeneratedCharacterAdapter_C
+
+
+pawn_loc 373.99 0.0 128.15
+
+
+pawn_vel 0.0 0.0 0.0
+
+
+pawn_tags ['AUTOUE_GENERATED_ACTIVE', 'AUTOUE_GENERATED_ENEMY_DEFEATED', 'AUTOUE_GENERATED_EXIT_UNLOCKED']
+
+
+mesh AutoUEGenerated_RoomFloor loc 410.0 0.0 25.0 visible True
+
+
+mesh AutoUEGenerated_Enemy loc 360.0 0.0 92.0 visible False
+
+
+mesh AutoUEGenerated_IceTrap loc 160.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_Exit loc 820.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_FreezeVFX loc 373.99 0.0 208.15 visible False
+
+
+camera AutoUEGenerated_SideCamera loc 373.99 -1650.0 388.15 rot 0.0 90.0 -0.0 ortho 1450.0
+
+
+spring_arm AutoUEGenerated_SideCameraArm loc 373.99 -1650.0 388.15 rot 0.0 90.0 -0.0
+
+
+
+
+===== add_AUTOUE_INPUT_RIGHT_1S =====
+added_tag AUTOUE_INPUT_RIGHT_1S loc 373.99 0.0 128.15 tags ['AUTOUE_GENERATED_ACTIVE', 'AUTOUE_GENERATED_ENEMY_DEFEATED', 'AUTOUE_GENERATED_EXIT_UNLOCKED', 'AUTOUE_INPUT_RIGHT_1S']
+
+
+
+
+===== after_exit_room_complete_set_viewport_camera =====
+label after_exit_room_complete_set_viewport_camera
+
+
+game_world <Object '/Game/ThirdPerson/UEDPIE_0_Lvl_ThirdPerson.Lvl_ThirdPerson' (0x0000021751E78C00) Class 'World'>
+
+
+gm /Game/Blueprints/TypeScript/AutoUEGeneratedGameModeAdapter.AutoUEGeneratedGameModeAdapter_C
+
+
+view_target /Game/Blueprints/TypeScript/AutoUEGeneratedCharacterAdapter.AutoUEGeneratedCharacterAdapter_C
+
+
+pawn_class /Game/Blueprints/TypeScript/AutoUEGeneratedCharacterAdapter.AutoUEGeneratedCharacterAdapter_C
+
+
+pawn_loc 999.88 0.0 128.15
+
+
+pawn_vel 0.0 0.0 0.0
+
+
+pawn_tags ['AUTOUE_GENERATED_ACTIVE', 'AUTOUE_GENERATED_ENEMY_DEFEATED', 'AUTOUE_GENERATED_EXIT_UNLOCKED', 'AUTOUE_GENERATED_ROOM_COMPLETE']
+
+
+mesh AutoUEGenerated_RoomFloor loc 410.0 0.0 25.0 visible True
+
+
+mesh AutoUEGenerated_Enemy loc 360.0 0.0 92.0 visible False
+
+
+mesh AutoUEGenerated_IceTrap loc 160.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_Exit loc 820.0 0.0 92.0 visible True
+
+
+mesh AutoUEGenerated_FreezeVFX loc 999.88 0.0 208.15 visible False
+
+
+camera AutoUEGenerated_SideCamera loc 999.88 -1650.0 388.15 rot 0.0 90.0 -0.0 ortho 1450.0
+
+
+editor_viewport_camera_set AutoUEGenerated_SideCamera
+
+
+spring_arm AutoUEGenerated_SideCameraArm loc 999.88 -1650.0 388.15 rot 0.0 90.0 -0.0
+
+
+
+# WARNINGS
+[Warning] <string>:33: DeprecationWarning: EditorLevelLibrary: Function 'set_level_viewport_camera_info' on 'EditorLevelLibrary' is deprecated: The Editor Scripting Utilities Plugin is deprecated - Use the function in Unreal Editor Subsystem
+
+
+
+
+===== screenshot_response_keys =====
+{"jsonrpc": "2.0", "id": 116, "result": {"content": [{"type": "text", "text": "Level viewport screenshot captured (Lit mode)\nCamera: Location=(999.9, -1650.0, 388.1) Rotation=(Pitch=0.0, Yaw=90.0, Roll=-0.0) FOV=90.0 (1280x679)\n"}, {"type": "image", "data": "iVBORw0KGgoAAAANSUhEUgAABQAAAAKnCAYAAADZWuAvAAAgAElEQVR4XoS9y85t25Kd9a/LPvvkcaYTO7HNxUiWLJCwhIQEFYwQNWR4D56D96BAAV4AUaAGBQrUSAogIYNAFhR8EfI1M89tr7XorX2tRY8x/3XMf85ec84xx+g9ekSLFtGj9zHmh//03/svvn379vb29kH/P/+sPx3/8OEeW29z1keu+KAG8r7Xuz1d//H8+/Xt7ZsO0MO387+e/+3D13Plx3Pk6/mOc7nmg8/yX+T79u20804+CzBHJbPaeneduv/27Oftwyc3/hh35J4GLUvPGYkio0aBeNUfZ7y02e+tT13B+RrPfJYUUvAZQPXcUanN2/P9YH1YrWdcNmKGbT2dftTcV85BqqeN3U8vy/uxcezGpZUktsyRDx/P59hmOn+cb5PPeHrOx3OdMDC4k5w/fnj7zX/0F95+/Pnntx8+f3j7/Onj21/8vc9vf/Ov/+Hbv/aX/8LbDz98evv06dPbx48HJef6T+pbeAKAwSFy/vH/+Lff/vv/6u+8/epPvrz99Ntvb1/Of9KPYIq4p3/pxdaTDsDLtQUjRjXCtXSosQZX7gZdfKw9ff3BbAeVwbq/c77Oe1XVPT99pX2h5yq24F9m0Lc915gybMZMG8/WT20ZWW0Tu9gZ2d/48e3tb/z+26dz4GdH7z/7/PHt3/lXf//tr/3l33/7c7/349svfu9n1rf
+
+===== screenshot_saved =====
+True D:\ClaudeTasks\active\autoue-puerts-workflow-adaptation\test\phase3-complex-pie-camera-20260629.png size=913542

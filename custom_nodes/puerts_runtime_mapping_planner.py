@@ -7,7 +7,7 @@ from core.BaseLLMNode import BaseLLMNode, GraphState
 from core.phase2_validation import RUNTIME_MAPPING_PATH, parse_phase2_json, validate_phase2_node_output, validate_phase2_output
 
 PUERTS_RUNTIME_MAPPING_PLANNER_PROMPT = """SCHEMA: PuerTSRuntimeMappingPlanner
-Map thin gameplay flows and UE API MCP adjudications to PuerTS runtime carriers. Return JSON only.
+Map thin gameplay flows and UE API MCP adjudications to PuerTS runtime carriers with explicit implementation_carrier, adapter_or_helper, existing framework decision, and verification evidence. Return JSON only.
 """
 
 def _output_root(state: GraphState) -> Path:
@@ -30,7 +30,7 @@ def build_runtime_mapping_context(node: BaseLLMNode, state: GraphState, full_inp
     node.full_input = "\n\n".join(f"{name} JSON:\n{value}" for name, value in required.items()) + (
         "\n\nCreate one mapping for every behavior. runtime_mapping_path must be "
         + RUNTIME_MAPPING_PATH
-        + ". runtime_owner should be a generated TypeScript ability file under TypeScript/content/generated/."
+        + ". runtime_owner should be the behavior-level generated TypeScript ability file under TypeScript/content/generated/. Include implementation_carrier, existing_framework_candidates, why_not_existing_framework, temporary_or_canonical, migration_path, and adapter_or_helper for every engine port."
     )
 
 def write_runtime_mapping(state: GraphState, output: str) -> None:

@@ -1,0 +1,258 @@
+{
+  "entities": [
+    {
+      "entity_id": "player",
+      "display_name": "Player",
+      "summary": "Owns player movement, short melee attack, dash, and temporary frozen state response.",
+      "abilities": [
+        {
+          "ability_id": "player.horizontal_movement",
+          "display_name": "Horizontal Movement",
+          "summary": "Allows basic side-scroller movement when not frozen.",
+          "behaviors": [
+            {
+              "behavior_id": "player.horizontal_movement.move_left_right",
+              "display_name": "Move Left and Right",
+              "trigger": "When the player gives left or right movement input while not frozen",
+              "execution": "The player moves horizontally across the room floor.",
+              "result": "The player can reposition within the compact combat room.",
+              "source_refs": []
+            }
+          ]
+        },
+        {
+          "ability_id": "player.short_melee_attack",
+          "display_name": "Short Melee Attack",
+          "summary": "Allows the player to perform one close-range attack.",
+          "behaviors": [
+            {
+              "behavior_id": "player.short_melee_attack.strike_enemy",
+              "display_name": "Strike Enemy",
+              "trigger": "When the player performs the melee attack near the enemy",
+              "execution": "The player makes a short close-range strike that can hit the patrolling melee enemy.",
+              "result": "A hit enemy loses health.",
+              "source_refs": []
+            }
+          ]
+        },
+        {
+          "ability_id": "player.brief_dash",
+          "display_name": "Brief Dash",
+          "summary": "Allows a short burst of horizontal movement when not frozen.",
+          "behaviors": [
+            {
+              "behavior_id": "player.brief_dash.dash_horizontally",
+              "display_name": "Dash Horizontally",
+              "trigger": "When the player dashes while not frozen",
+              "execution": "The player quickly moves a short distance in the current horizontal direction.",
+              "result": "The player briefly repositions faster than normal movement.",
+              "source_refs": []
+            }
+          ]
+        },
+        {
+          "ability_id": "player.frozen_state",
+          "display_name": "Frozen State",
+          "summary": "Temporarily blocks player movement after ice trap overlap.",
+          "behaviors": [
+            {
+              "behavior_id": "player.frozen_state.become_frozen",
+              "display_name": "Become Frozen",
+              "trigger": "When the ice trap freezes the player",
+              "execution": "The player enters a short frozen state and horizontal movement is blocked.",
+              "result": "The player visibly cannot move for a brief time.",
+              "source_refs": []
+            },
+            {
+              "behavior_id": "player.frozen_state.thaw",
+              "display_name": "Thaw",
+              "trigger": "When the short frozen duration ends",
+              "execution": "The player leaves the frozen state and movement is restored.",
+              "result": "The player can move and dash again.",
+              "source_refs": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "entity_id": "patrolling_melee_enemy",
+      "display_name": "Patrolling Melee Enemy",
+      "summary": "Owns enemy patrol, health loss, close-range threat, and defeated state.",
+      "abilities": [
+        {
+          "ability_id": "patrolling_melee_enemy.patrol",
+          "display_name": "Patrol",
+          "summary": "Moves the enemy back and forth inside the room.",
+          "behaviors": [
+            {
+              "behavior_id": "patrolling_melee_enemy.patrol.move_back_and_forth",
+              "display_name": "Move Back and Forth",
+              "trigger": "When the enemy is active and not defeated",
+              "execution": "The enemy patrols along a short horizontal path in the room.",
+              "result": "The enemy creates a moving melee hazard for the player.",
+              "source_refs": []
+            }
+          ]
+        },
+        {
+          "ability_id": "patrolling_melee_enemy.melee_pressure",
+          "display_name": "Melee Pressure",
+          "summary": "Represents the enemy's close-range combat behavior.",
+          "behaviors": [
+            {
+              "behavior_id": "patrolling_melee_enemy.melee_pressure.threaten_close_player",
+              "display_name": "Threaten Close Player",
+              "trigger": "When the active enemy is close to the player",
+              "execution": "The enemy presents a melee danger at close range.",
+              "result": "The player must avoid or defeat the enemy in close combat.",
+              "source_refs": []
+            }
+          ]
+        },
+        {
+          "ability_id": "patrolling_melee_enemy.health",
+          "display_name": "Health",
+          "summary": "Tracks enemy damage and defeat.",
+          "behaviors": [
+            {
+              "behavior_id": "patrolling_melee_enemy.health.take_melee_damage",
+              "display_name": "Take Melee Damage",
+              "trigger": "When the player's short melee attack hits the enemy",
+              "execution": "The enemy loses health.",
+              "result": "Repeated successful hits can reduce the enemy to defeat.",
+              "source_refs": []
+            },
+            {
+              "behavior_id": "patrolling_melee_enemy.health.become_defeated",
+              "display_name": "Become Defeated",
+              "trigger": "When the enemy health reaches zero",
+              "execution": "The enemy enters its defeated state and stops acting as an active patrol threat.",
+              "result": "The room exit becomes eligible to unlock.",
+              "source_refs": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "entity_id": "ice_trap",
+      "display_name": "Ice Trap",
+      "summary": "Owns overlap-triggered freezing behavior.",
+      "abilities": [
+        {
+          "ability_id": "ice_trap.freeze_trigger",
+          "display_name": "Freeze Trigger",
+          "summary": "Freezes the player when overlapped.",
+          "behaviors": [
+            {
+              "behavior_id": "ice_trap.freeze_trigger.freeze_overlapping_player",
+              "display_name": "Freeze Overlapping Player",
+              "trigger": "When the player overlaps the ice trap",
+              "execution": "The trap applies a short frozen state to the player and signals freeze feedback.",
+              "result": "The player is temporarily immobilized, freeze VFX appears, and the side camera shakes slightly.",
+              "source_refs": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "entity_id": "freeze_vfx",
+      "display_name": "Freeze VFX",
+      "summary": "Owns the visible freeze feedback shown when the player is trapped.",
+      "abilities": [
+        {
+          "ability_id": "freeze_vfx.freeze_feedback",
+          "display_name": "Freeze Feedback",
+          "summary": "Displays a brief visual effect for the frozen state.",
+          "behaviors": [
+            {
+              "behavior_id": "freeze_vfx.freeze_feedback.appear_on_freeze",
+              "display_name": "Appear on Freeze",
+              "trigger": "When the ice trap freezes the player",
+              "execution": "A visible freeze effect appears around or on the player for the frozen moment.",
+              "result": "The player can see that the frozen state has been applied.",
+              "source_refs": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "entity_id": "side_camera",
+      "display_name": "Side Camera",
+      "summary": "Owns small camera feedback when the ice trap freezes the player.",
+      "abilities": [
+        {
+          "ability_id": "side_camera.freeze_feedback_shake",
+          "display_name": "Freeze Feedback Shake",
+          "summary": "Provides a small camera shake for trap feedback.",
+          "behaviors": [
+            {
+              "behavior_id": "side_camera.freeze_feedback_shake.shake_on_freeze",
+              "display_name": "Shake on Freeze",
+              "trigger": "When the ice trap freezes the player",
+              "execution": "The side camera gives a small brief shake.",
+              "result": "The trap hit feels noticeable without changing the one-room side-scroller view.",
+              "source_refs": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "entity_id": "locked_exit",
+      "display_name": "Locked Exit",
+      "summary": "Owns exit lock state and room completion.",
+      "abilities": [
+        {
+          "ability_id": "locked_exit.enemy_gate",
+          "display_name": "Enemy Gate",
+          "summary": "Keeps the exit locked until the enemy is defeated.",
+          "behaviors": [
+            {
+              "behavior_id": "locked_exit.enemy_gate.remain_locked",
+              "display_name": "Remain Locked",
+              "trigger": "While the patrolling melee enemy is not defeated",
+              "execution": "The exit prevents room completion.",
+              "result": "The player cannot finish the room before defeating the enemy.",
+              "source_refs": []
+            },
+            {
+              "behavior_id": "locked_exit.enemy_gate.unlock_after_enemy_defeat",
+              "display_name": "Unlock After Enemy Defeat",
+              "trigger": "When the patrolling melee enemy becomes defeated",
+              "execution": "The exit changes from locked to unlocked.",
+              "result": "The player can now complete the room by reaching the exit.",
+              "source_refs": []
+            }
+          ]
+        },
+        {
+          "ability_id": "locked_exit.room_completion",
+          "display_name": "Room Completion",
+          "summary": "Completes the room after the exit is unlocked and reached.",
+          "behaviors": [
+            {
+              "behavior_id": "locked_exit.room_completion.complete_on_reach",
+              "display_name": "Complete on Reach",
+              "trigger": "When the player reaches the unlocked exit",
+              "execution": "The room is marked complete.",
+              "result": "The player completes the compact combat room.",
+              "source_refs": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "non_goals": [
+    "multiple rooms",
+    "inventory",
+    "quests",
+    "upgrades",
+    "ranged weapons",
+    "complex UI"
+  ]
+}

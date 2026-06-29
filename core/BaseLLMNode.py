@@ -244,13 +244,34 @@ class BaseLLMNode:
                 self.full_input += f"\n{feedback}"
 
             # -------- LLM call --------
-            output = self.call_model(self.full_input, state)
-            if callable(self.output_validator):
-                if self.isDebug:
-                    print(f"[DEBUG] Validating {node} output ...")
-                validated_output = self.output_validator(self, state, output)
-                if isinstance(validated_output, str):
-                    output = validated_output
+            max_validation_attempts = 3 if callable(self.output_validator) else 1
+            validation_error = None
+            output = ""
+            for attempt in range(1, max_validation_attempts + 1):
+                output = self.call_model(self.full_input, state)
+                try:
+                    if callable(self.output_validator):
+                        if self.isDebug:
+                            print(f"[DEBUG] Validating {node} output (attempt {attempt}/{max_validation_attempts}) ...")
+                        validated_output = self.output_validator(self, state, output)
+                        if isinstance(validated_output, str):
+                            output = validated_output
+                    validation_error = None
+                    break
+                except Exception as exc:
+                    validation_error = exc
+                    if self.isDebug:
+                        preview = str(output)[:1200].replace("\n", " ")
+                        print(f"[WARN] {node} validation failed on attempt {attempt}/{max_validation_attempts}: {exc}")
+                        print(f"[WARN] {node} invalid output preview: {preview}")
+                    if attempt >= max_validation_attempts:
+                        raise
+                    self.full_input += (
+                        "\n\nValidator feedback: your previous JSON failed validation. "
+                        f"Error: {exc}. Return corrected JSON only, preserving the required schema exactly. "
+                        "Do not omit required nested lists. Previous invalid output:\n"
+                        + str(output)
+                    )
             llm_outputs[node] = output
 
             if self.isDebug:

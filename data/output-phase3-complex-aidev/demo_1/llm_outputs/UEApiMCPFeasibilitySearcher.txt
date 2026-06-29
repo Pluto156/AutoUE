@@ -1,0 +1,282 @@
+{
+  "queries": [
+    {
+      "engine_port_id": "enhanced_input.bind_action",
+      "flow_ids": [
+        "flow.player.horizontal_movement.move_left_right",
+        "flow.player.brief_dash.dash_horizontally"
+      ],
+      "behavior_ids": [
+        "player.horizontal_movement.move_left_right",
+        "player.brief_dash.dash_horizontally"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for enhanced_input.bind_action; exact symbol hints: Enhanced.InputBindAction, EnhancedInputBindAction, enhanced input bind action. Intent: Read horizontal movement input only when the player is not frozen.",
+      "raw_path": "flow/04-ue-api-mcp/raw/enhanced_input.bind_action.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/enhanced_input.bind_action.json",
+      "verdict": "hit",
+      "hit_type": "direct_hit",
+      "evidence_symbols": [
+        "UE.BlueprintEnhancedInputActionBinding",
+        "UE.EnhancedInputLibrary.GetBoundActionValue"
+      ],
+      "notes": "Enhanced Input action binding/value-access symbols provide usable PuerTS-visible evidence for bound input action handling."
+    },
+    {
+      "engine_port_id": "pawn.add_movement_input",
+      "flow_ids": [
+        "flow.player.horizontal_movement.move_left_right"
+      ],
+      "behavior_ids": [
+        "player.horizontal_movement.move_left_right"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for pawn.add_movement_input; exact symbol hints: Pawn.AddMovementInput, PawnAddMovementInput, pawn add movement input. Intent: Apply horizontal movement across the room floor from the accepted input.",
+      "raw_path": "flow/04-ue-api-mcp/raw/pawn.add_movement_input.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/pawn.add_movement_input.json",
+      "verdict": "hit",
+      "hit_type": "indirect_hit",
+      "evidence_symbols": [
+        "UE.NavMovementComponent",
+        "UE.MovementComponent",
+        "UE.Pawn.GetMovementBaseActor"
+      ],
+      "notes": "GameFramework pawn and movement component symbols provide usable movement-carrier evidence for horizontal player movement."
+    },
+    {
+      "engine_port_id": "kismet.sphere_trace_single",
+      "flow_ids": [
+        "flow.player.short_melee_attack.strike_enemy"
+      ],
+      "behavior_ids": [
+        "player.short_melee_attack.strike_enemy"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for kismet.sphere_trace_single; exact symbol hints: Kismet.SphereTraceSingle, KismetSphereTraceSingle, kismet sphere trace single. Intent: Check a short close-range area in front of the player for the patrolling melee enemy.",
+      "raw_path": "flow/04-ue-api-mcp/raw/kismet.sphere_trace_single.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/kismet.sphere_trace_single.json",
+      "verdict": "hit",
+      "hit_type": "direct_hit",
+      "evidence_symbols": [
+        "UE.KismetSystemLibrary.SphereTraceSingle",
+        "UE.KismetSystemLibrary.SphereTraceMulti"
+      ],
+      "notes": "SphereTraceSingle exactly matches the requested close-range sphere trace operation."
+    },
+    {
+      "engine_port_id": "gameplay_statics.apply_damage",
+      "flow_ids": [
+        "flow.player.short_melee_attack.strike_enemy"
+      ],
+      "behavior_ids": [
+        "player.short_melee_attack.strike_enemy"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for gameplay_statics.apply_damage; exact symbol hints: Gameplay.StaticsApplyDamage, GameplayStaticsApplyDamage, gameplay statics apply damage. Intent: Apply melee damage to the hit enemy.",
+      "raw_path": "flow/04-ue-api-mcp/raw/gameplay_statics.apply_damage.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/gameplay_statics.apply_damage.json",
+      "verdict": "hit",
+      "hit_type": "direct_hit",
+      "evidence_symbols": [
+        "UE.GameplayStatics.ApplyDamage",
+        "UE.GameplayStatics.ApplyRadialDamageWithFalloff"
+      ],
+      "notes": "GameplayStatics.ApplyDamage directly supports applying melee damage to the hit actor."
+    },
+    {
+      "engine_port_id": "character.launch_character",
+      "flow_ids": [
+        "flow.player.brief_dash.dash_horizontally"
+      ],
+      "behavior_ids": [
+        "player.brief_dash.dash_horizontally"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for character.launch_character; exact symbol hints: Character.LaunchCharacter, CharacterLaunchCharacter, character launch character. Intent: Move the player a short burst distance in the current horizontal direction.",
+      "raw_path": "flow/04-ue-api-mcp/raw/character.launch_character.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/character.launch_character.json",
+      "verdict": "hit",
+      "hit_type": "indirect_hit",
+      "evidence_symbols": [
+        "UE.CharacterMovementComponent"
+      ],
+      "notes": "CharacterMovementComponent is usable UE movement evidence for carrying a short horizontal dash implementation."
+    },
+    {
+      "engine_port_id": "character_movement.disable_movement",
+      "flow_ids": [
+        "flow.player.frozen_state.become_frozen"
+      ],
+      "behavior_ids": [
+        "player.frozen_state.become_frozen"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for character_movement.disable_movement; exact symbol hints: Character.MovementDisableMovement, CharacterMovementDisableMovement, character movement disable movement. Intent: Block player movement while frozen.",
+      "raw_path": "flow/04-ue-api-mcp/raw/character_movement.disable_movement.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/character_movement.disable_movement.json",
+      "verdict": "hit",
+      "hit_type": "indirect_hit",
+      "evidence_symbols": [
+        "UE.NavMovementComponent"
+      ],
+      "notes": "Movement component evidence is usable as an indirect carrier for blocking movement while frozen."
+    },
+    {
+      "engine_port_id": "timer.set_timer",
+      "flow_ids": [
+        "flow.player.frozen_state.become_frozen"
+      ],
+      "behavior_ids": [
+        "player.frozen_state.become_frozen"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for timer.set_timer; exact symbol hints: Timer.SetTimer, TimerSetTimer, timer set timer. Intent: Schedule the frozen state to end after the short duration.",
+      "raw_path": "flow/04-ue-api-mcp/raw/timer.set_timer.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/timer.set_timer.json",
+      "verdict": "hit",
+      "hit_type": "indirect_hit",
+      "evidence_symbols": [
+        "UE.KismetSystemLibrary.K2_SetTimerForNextTickDelegate",
+        "UE.KismetSystemLibrary.K2_ClearTimerHandle"
+      ],
+      "notes": "Kismet timer handle/set/clear evidence supports the timer API path indirectly."
+    },
+    {
+      "engine_port_id": "character_movement.set_movement_mode",
+      "flow_ids": [
+        "flow.player.frozen_state.thaw"
+      ],
+      "behavior_ids": [
+        "player.frozen_state.thaw"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for character_movement.set_movement_mode; exact symbol hints: Character.MovementSetMovementMode, CharacterMovementSetMovementMode, character movement set movement mode. Intent: Restore normal movement capability after thawing.",
+      "raw_path": "flow/04-ue-api-mcp/raw/character_movement.set_movement_mode.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/character_movement.set_movement_mode.json",
+      "verdict": "hit",
+      "hit_type": "indirect_hit",
+      "evidence_symbols": [
+        "UE.NavMovementComponent"
+      ],
+      "notes": "Movement component evidence can carry restoring movement capability after thaw."
+    },
+    {
+      "engine_port_id": "actor.set_actor_location",
+      "flow_ids": [
+        "flow.patrolling_melee_enemy.patrol.move_back_and_forth"
+      ],
+      "behavior_ids": [
+        "patrolling_melee_enemy.patrol.move_back_and_forth"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for actor.set_actor_location; exact symbol hints: Actor.SetActorLocation, ActorSetActorLocation, actor set actor location. Intent: Move the active undefeated enemy along a short horizontal patrol path.",
+      "raw_path": "flow/04-ue-api-mcp/raw/actor.set_actor_location.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/actor.set_actor_location.json",
+      "verdict": "hit",
+      "hit_type": "direct_hit",
+      "evidence_symbols": [
+        "UE.Actor.SetActorLocation"
+      ],
+      "notes": "Actor.SetActorLocation directly supports moving the enemy actor along the patrol path."
+    },
+    {
+      "engine_port_id": "primitive.on_component_begin_overlap",
+      "flow_ids": [
+        "flow.patrolling_melee_enemy.melee_pressure.threaten_close_player",
+        "flow.ice_trap.freeze_trigger.freeze_overlapping_player",
+        "flow.locked_exit.enemy_gate.remain_locked",
+        "flow.locked_exit.enemy_gate.unlock_after_enemy_defeat",
+        "flow.locked_exit.room_completion.complete_on_reach"
+      ],
+      "behavior_ids": [
+        "patrolling_melee_enemy.melee_pressure.threaten_close_player",
+        "ice_trap.freeze_trigger.freeze_overlapping_player",
+        "locked_exit.enemy_gate.remain_locked",
+        "locked_exit.enemy_gate.unlock_after_enemy_defeat",
+        "locked_exit.room_completion.complete_on_reach"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for primitive.on_component_begin_overlap; exact symbol hints: UE.PrimitiveComponent.OnComponentBeginOverlap, OnComponentBeginOverlap, FComponentBeginOverlapSignature, UE.KismetSystemLibrary.SphereOverlapActors, UE.KismetSystemLibrary.ComponentOverlapActors, component begin overlap, sphere overlap actors. Intent: Detect when the active enemy is close enough to the player to represent melee danger.",
+      "raw_path": "flow/04-ue-api-mcp/raw/primitive.on_component_begin_overlap.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/primitive.on_component_begin_overlap.json",
+      "verdict": "hit",
+      "hit_type": "indirect_hit",
+      "evidence_symbols": [
+        "UE.KismetSystemLibrary.SphereOverlapActors",
+        "UE.KismetSystemLibrary.SphereOverlapComponents",
+        "UE.KismetSystemLibrary.GetActorListFromComponentList"
+      ],
+      "notes": "Overlap query helpers are usable for overlap-boundary detection even though the exact begin-overlap delegate symbol is absent."
+    },
+    {
+      "engine_port_id": "actor.on_take_any_damage",
+      "flow_ids": [
+        "flow.patrolling_melee_enemy.health.take_melee_damage"
+      ],
+      "behavior_ids": [
+        "patrolling_melee_enemy.health.take_melee_damage"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for actor.on_take_any_damage; exact symbol hints: Actor.OnTakeAnyDamage, ActorOnTakeAnyDamage, actor on take any damage. Intent: Receive melee damage from the player's successful strike.",
+      "raw_path": "flow/04-ue-api-mcp/raw/actor.on_take_any_damage.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/actor.on_take_any_damage.json",
+      "verdict": "hit",
+      "hit_type": "indirect_hit",
+      "evidence_symbols": [
+        "UE.GameplayStatics.ApplyDamage",
+        "UE.AISense_Damage.ReportDamageEvent",
+        "UE.GameplayStatics.ApplyRadialDamage"
+      ],
+      "notes": "Damage pipeline symbols are usable evidence for damage handling, though the exact OnTakeAnyDamage delegate symbol is absent."
+    },
+    {
+      "engine_port_id": "actor.set_actor_tick_enabled",
+      "flow_ids": [
+        "flow.patrolling_melee_enemy.health.become_defeated"
+      ],
+      "behavior_ids": [
+        "patrolling_melee_enemy.health.become_defeated"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for actor.set_actor_tick_enabled; exact symbol hints: Actor.SetActorTickEnabled, ActorSetActorTickEnabled, actor set actor tick enabled. Intent: Stop the defeated enemy from acting as an active patrol threat.",
+      "raw_path": "flow/04-ue-api-mcp/raw/actor.set_actor_tick_enabled.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/actor.set_actor_tick_enabled.json",
+      "verdict": "hit",
+      "hit_type": "direct_hit",
+      "evidence_symbols": [
+        "UE.Actor.SetActorTickEnabled"
+      ],
+      "notes": "Actor.SetActorTickEnabled directly supports disabling active patrol/threat ticking after defeat."
+    },
+    {
+      "engine_port_id": "niagara.spawn_system_attached",
+      "flow_ids": [
+        "flow.freeze_vfx.freeze_feedback.appear_on_freeze"
+      ],
+      "behavior_ids": [
+        "freeze_vfx.freeze_feedback.appear_on_freeze"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for niagara.spawn_system_attached; exact symbol hints: Niagara.SpawnSystemAttached, NiagaraSpawnSystemAttached, niagara spawn system attached. Intent: Show a brief freeze visual effect attached to or around the player.",
+      "raw_path": "flow/04-ue-api-mcp/raw/niagara.spawn_system_attached.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/niagara.spawn_system_attached.json",
+      "verdict": "hit",
+      "hit_type": "direct_hit",
+      "evidence_symbols": [
+        "UE.NiagaraFunctionLibrary.SpawnSystemAttachedWithParams"
+      ],
+      "notes": "NiagaraFunctionLibrary.SpawnSystemAttachedWithParams directly supports spawning an attached Niagara visual effect."
+    },
+    {
+      "engine_port_id": "player_controller.client_start_camera_shake",
+      "flow_ids": [
+        "flow.side_camera.freeze_feedback_shake.shake_on_freeze"
+      ],
+      "behavior_ids": [
+        "side_camera.freeze_feedback_shake.shake_on_freeze"
+      ],
+      "query": "Unreal Engine PuerTS gameplay API for player_controller.client_start_camera_shake; exact symbol hints: Player.ControllerClientStartCameraShake, PlayerControllerClientStartCameraShake, player controller client start camera shake. Intent: Play a small brief camera shake without changing the side-scroller view.",
+      "raw_path": "flow/04-ue-api-mcp/raw/player_controller.client_start_camera_shake.raw.json",
+      "adjudication_path": "flow/04-ue-api-mcp/adjudication/player_controller.client_start_camera_shake.json",
+      "verdict": "hit",
+      "hit_type": "indirect_hit",
+      "evidence_symbols": [
+        "UE.LegacyCameraShake.StartLegacyCameraShake",
+        "UE.GameplayStatics.PlayWorldCameraShake",
+        "UE.GameplayStatics.GetPlayerControllerFromID"
+      ],
+      "notes": "Camera shake start/play helpers plus player-controller lookup support the requested shake behavior indirectly without the exact ClientStartCameraShake symbol."
+    }
+  ],
+  "summary": {
+    "all_required_ports_hit": true,
+    "blocked_engine_ports": []
+  }
+}

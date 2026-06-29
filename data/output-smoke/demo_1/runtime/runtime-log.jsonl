@@ -1,0 +1,15 @@
+{"level": "info", "event": "runtime_validation_started", "root": "D:\\ClaudeTasks\\active\\autoue-puerts-workflow-adaptation\\repo\\AutoUE\\data\\output-smoke\\demo_1"}
+{"level": "info", "event": "file_present", "label": "runtime_mapping_path", "path": "flow/05-puerts-runtime-mapping.json", "step_id": 1}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/damage.apply.json", "step_id": 1}
+{"level": "info", "event": "file_present", "label": "adjudication_paths", "path": "flow/04-ue-api-mcp/adjudication/input.action_binding.json", "step_id": 1}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/interactive/SmokeInteractable.ts", "step_id": 1}
+{"level": "info", "event": "file_present", "label": "ts_files", "path": "TypeScript/content/generated/SmokeGame.ts", "step_id": 1}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/input.action_binding.json", "step_id": 1}
+{"level": "info", "event": "file_present", "label": "runtime mapping adjudication_path", "path": "flow/04-ue-api-mcp/adjudication/damage.apply.json", "step_id": 1}
+{"level": "info", "event": "file_present", "label": "ability_module_export", "path": "TypeScript/content/generated/SmokeGame.ts", "step_id": 1}
+{"level": "info", "event": "export_present", "step_id": 1, "label": "ability_module_export", "path": "TypeScript/content/generated/SmokeGame.ts", "export_name": "tickSmokeGame"}
+{"level": "info", "event": "file_present", "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/SmokeInteractable.ts", "step_id": 1}
+{"level": "info", "event": "export_present", "step_id": 1, "label": "interactive_adapter_export", "path": "TypeScript/content/generated/interactive/SmokeInteractable.ts", "export_name": "runSmokeInteraction"}
+{"level": "info", "event": "engine_ports_mapped", "step_id": 1, "engine_port_ids": ["input.action_binding", "damage.apply"]}
+{"level": "info", "event": "instruction_validated", "step_id": 1, "status": "pass"}
+{"level": "info", "event": "runtime_validation_finished", "result": "pass", "error_count": 0}

@@ -1,0 +1,649 @@
+{
+  "engine_port_id": "actor.set_actor_tick_enabled",
+  "flow_ids": [
+    "flow.patrolling_melee_enemy.health.become_defeated"
+  ],
+  "behavior_ids": [
+    "patrolling_melee_enemy.health.become_defeated"
+  ],
+  "contracts": [
+    "Stop the defeated enemy from acting as an active patrol threat."
+  ],
+  "query": "Unreal Engine PuerTS gameplay API for actor.set_actor_tick_enabled; exact symbol hints: Actor.SetActorTickEnabled, ActorSetActorTickEnabled, actor set actor tick enabled. Intent: Stop the defeated enemy from acting as an active patrol threat.",
+  "raw_path": "flow/04-ue-api-mcp/raw/actor.set_actor_tick_enabled.raw.json",
+  "adjudication_path": "flow/04-ue-api-mcp/adjudication/actor.set_actor_tick_enabled.json",
+  "raw_result": {
+    "tool": "ue_api_semantic_search",
+    "query": "Unreal Engine PuerTS gameplay API for actor.set_actor_tick_enabled; exact symbol hints: Actor.SetActorTickEnabled, ActorSetActorTickEnabled, actor set actor tick enabled. Intent: Stop the defeated enemy from acting as an active patrol threat.",
+    "limit": 5,
+    "raw_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"ok\",\n  \"mode\": \"semantic\",\n  \"query\": \"Unreal Engine PuerTS gameplay API for actor.set_actor_tick_enabled; exact symbol hints: Actor.SetActorTickEnabled, ActorSetActorTickEnabled, actor set actor tick enabled. Intent: Stop the defeated enemy from acting as an active patrol threat.\",\n  \"searchText\": \"actor pawn character actor component SetActorTickEnabled on defeated death event health zero delegate health attribute death gameplay effect defeated state patrol behavior tree disable AI controller stop logic tick\",\n  \"rewrite\": {\n    \"status\": \"rewritten\",\n    \"domainStatus\": \"ue_relevant\",\n    \"intentSummary\": \"Disable tick on a defeated enemy actor so it stops updating patrol and threat behavior.\",\n    \"warnings\": [],\n    \"activeSubqueries\": [\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The enemy actor whose tick is disabled upon defeat.\",\n        \"subqueryId\": \"carrier_context_1\",\n        \"text\": \"actor pawn character\",\n        \"weight\": 0.6,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"carrier_context\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The enemy actor whose tick is disabled upon defeat.\",\n        \"subqueryId\": \"carrier_context_2\",\n        \"text\": \"actor component SetActorTickEnabled\",\n        \"weight\": 0.4,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The trigger event that causes tick to be disabled.\",\n        \"subqueryId\": \"activation_trigger_1\",\n        \"text\": \"on defeated death event\",\n        \"weight\": 0.6,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"activation_trigger\",\n        \"facetStatus\": \"required\",\n        \"facetIntent\": \"The trigger event that causes tick to be disabled.\",\n        \"subqueryId\": \"activation_trigger_2\",\n        \"text\": \"health zero delegate\",\n        \"weight\": 0.4,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"damage_state\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"The health or state change that indicates the enemy is defeated.\",\n        \"subqueryId\": \"damage_state_1\",\n        \"text\": \"health attribute death\",\n        \"weight\": 0.36,\n        \"subqueryWeight\": 0.6\n      },\n      {\n        \"facetId\": \"damage_state\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"The health or state change that indicates the enemy is defeated.\",\n        \"subqueryId\": \"damage_state_2\",\n        \"text\": \"gameplay effect defeated state\",\n        \"weight\": 0.24,\n        \"subqueryWeight\": 0.4\n      },\n      {\n        \"facetId\": \"ai_behavior\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"The patrol or threat behavior that should stop when tick is disabled.\",\n        \"subqueryId\": \"ai_behavior_1\",\n        \"text\": \"patrol behavior tree disable\",\n        \"weight\": 0.3,\n        \"subqueryWeight\": 0.5\n      },\n      {\n        \"facetId\": \"ai_behavior\",\n        \"facetStatus\": \"optional\",\n        \"facetIntent\": \"The patrol or threat behavior that should stop when tick is disabled.\",\n        \"subqueryId\": \"ai_behavior_2\",\n        \"text\": \"AI controller stop logic tick\",\n        \"weight\": 0.3,\n        \"subqueryWeight\": 0.5\n      }\n    ]\n  },\n  \"embedding\": {\n    \"enabled\": true,\n    \"provider\": \"ollama\",\n    \"model\": \"bge-m3\",\n    \"dimensions\": 1024,\n    \"indexedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"status\": \"ready\"\n  },\n  \"partitions\": {\n    \"enabled\": true,\n    \"classifierEnabled\": true,\n    \"provider\": \"aaa\",\n    \"binaryAvailable\": true,\n    \"timeoutMs\": 90000,\n    \"candidateCount\": 20361,\n    \"processedCount\": 20361,\n    \"missingCount\": 0,\n    \"staleCount\": 0,\n    \"validAssignmentCount\": 14733,\n    \"partitionedEntryCount\": 12532,\n    \"partitionedEntryRatio\": 0.6155,\n    \"searchReady\": true,\n    \"byFacet\": {\n      \"activation_trigger\": 241,\n      \"ai_behavior\": 948,\n      \"animation\": 1856,\n      \"audio\": 704,\n      \"camera_feedback_ui\": 1336,\n      \"carrier_context\": 1362,\n      \"damage_state\": 548,\n      \"integration_event\": 1069,\n      \"level_world\": 342,\n      \"lighting\": 134,\n      \"material_visual_state\": 1065,\n      \"mesh_geometry\": 1545,\n      \"movement_navigation\": 256,\n      \"networking_authority\": 414,\n      \"persistence_assets\": 612,\n      \"physics\": 666,\n      \"spatial_targeting\": 466,\n      \"spawn_lifecycle\": 117,\n      \"visual_effects\": 1052\n    },\n    \"status\": \"ready\",\n    \"searchScoped\": true\n  },\n  \"filters\": {},\n  \"confidence\": {\n    \"minConfidence\": 0.55,\n    \"status\": \"ok\",\n    \"topConfidence\": 0.7522\n  },\n  \"count\": 5,\n  \"results\": [\n    {\n      \"ref\": \"1d449f65cfdf\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.AbilitySystemBlueprintLibrary.GetModifiedAttributeMagnitude\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.AbilitySystemBlueprintLibrary\",\n      \"signature\": \"static GetModifiedAttributeMagnitude(SpecHandle: UE.GameplayEffectSpecHandle, Attribute: UE.GameplayAttribute) : number;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7522,\n      \"summary\": \"Gets the magnitude of change for an attribute on an APPLIED GameplayEffectSpec.\",\n      \"source\": \"Plugin/GameplayAbilities\",\n      \"why\": [\n        \"rewrite: Disable tick on a defeated enemy actor so it stops updating patrol and threat behavior.\",\n        \"name: attribute\",\n        \"doc: attribute, effect, gameplay\",\n        \"facets: damage_state/bm25, damage_state/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"5e2e98b9b5db\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.AIBlueprintHelperLibrary.SpawnAIFromClass\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.AIBlueprintHelperLibrary\",\n      \"signature\": \"static SpawnAIFromClass(WorldContextObject: $Nullable<UE.Object>, PawnClass: $Nullable<UE.Class>, BehaviorTree: $Nullable<UE.BehaviorTree>, Location: UE.Vector, Rotation?: UE.Rotator /* = */, bNoCollisionFail?: boolean /* = false */, Owner?: UE.Actor /* = None */) : UE.Pawn;\",\n      \"score\": 93.0,\n      \"confidence\": 0.783,\n      \"summary\": \"Spawns AI agent of a given class. The PawnClass needs to have AIController set for the function to spawn a controller as well.\",\n      \"source\": \"Engine/AIModule\",\n      \"why\": [\n        \"rewrite: Disable tick on a defeated enemy actor so it stops updating patrol and threat behavior.\",\n        \"name: ai\",\n        \"doc: ai, controller, pawn, set\",\n        \"params: ai, behavior, controller, set, tree\",\n        \"facets: ai_behavior/bm25, ai_behavior/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"c9ab6b22972c\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.KismetSystemLibrary.K2_GetTimerElapsedTimeDelegate\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.KismetSystemLibrary\",\n      \"signature\": \"static K2_GetTimerElapsedTimeDelegate(Delegate: $Delegate<() => void>) : number;\",\n      \"score\": 93.0,\n      \"confidence\": 0.7439,\n      \"summary\": \"Returns elapsed time for the given delegate (time since current countdown iteration began).\",\n      \"source\": \"Engine/Kismet\",\n      \"why\": [\n        \"rewrite: Disable tick on a defeated enemy actor so it stops updating patrol and threat behavior.\",\n        \"name: delegate\",\n        \"doc: delegate\",\n        \"params: event\",\n        \"facets: activation_trigger/bm25, activation_trigger/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"87417ce50473\",\n      \"entryType\": \"static_function\",\n      \"symbol\": \"UE.Pawn.GetMovementBaseActor\",\n      \"kind\": \"method\",\n      \"owner\": \"UE.Pawn\",\n      \"signature\": \"static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;\",\n      \"score\": 95.0,\n      \"confidence\": 0.7648,\n      \"summary\": \"Gets the owning actor of the Movement Base Component on which the pawn is standing.\",\n      \"source\": \"Engine/GameFramework\",\n      \"why\": [\n        \"rewrite: Disable tick on a defeated enemy actor so it stops updating patrol and threat behavior.\",\n        \"name: actor, pawn\",\n        \"doc: actor, component, pawn\",\n        \"facets: carrier_context/bm25, carrier_context/vector\",\n        \"static function result\",\n        \"vector recall\"\n      ]\n    },\n    {\n      \"ref\": \"7365d346c842\",\n      \"entryType\": \"type\",\n      \"symbol\": \"UE.AbilitySystemTestAttributeSet\",\n      \"kind\": \"class\",\n      \"score\": 82.9258,\n      \"confidence\": 0.7373,\n      \"extends\": \"UE.AttributeSet\",\n      \"source\": \"Plugin/GameplayAbilities\",\n      \"matchedMembers\": [\n        {\n          \"ref\": \"cc7ee97426d9\",\n          \"symbol\": \"UE.AbilitySystemTestAttributeSet.Health\",\n          \"kind\": \"property\",\n          \"signature\": \"Health: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"ef30de14bd08\",\n          \"symbol\": \"UE.AbilitySystemTestAttributeSet.Mana\",\n          \"kind\": \"property\",\n          \"signature\": \"Mana: UE.GameplayAttributeData;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"77c388ccc7ff\",\n          \"symbol\": \"UE.AbilitySystemTestAttributeSet.MaxHealth\",\n          \"kind\": \"property\",\n          \"signature\": \"MaxHealth: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"45068bb5cfd5\",\n          \"symbol\": \"UE.AbilitySystemTestAttributeSet.ArmorDamageReduction\",\n          \"kind\": \"property\",\n          \"signature\": \"ArmorDamageReduction: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"85860719cdd7\",\n          \"symbol\": \"UE.AbilitySystemTestAttributeSet.CritChance\",\n          \"kind\": \"property\",\n          \"signature\": \"CritChance: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"e8d3bb0e1a81\",\n          \"symbol\": \"UE.AbilitySystemTestAttributeSet.CritMultiplier\",\n          \"kind\": \"property\",\n          \"signature\": \"CritMultiplier: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"fef4811febea\",\n          \"symbol\": \"UE.AbilitySystemTestAttributeSet.Damage\",\n          \"kind\": \"property\",\n          \"signature\": \"Damage: number;\",\n          \"summary\": \"\"\n        },\n        {\n          \"ref\": \"6838137d69cc\",\n          \"symbol\": \"UE.AbilitySystemTestAttributeSet.DodgeChance\",\n          \"kind\": \"property\",\n          \"signature\": \"DodgeChance: number;\",\n          \"summary\": \"\"\n        }\n      ],\n      \"why\": [\n        \"rewrite: Disable tick on a defeated enemy actor so it stops updating patrol and threat behavior.\",\n        \"name: attribute, set\",\n        \"members: Health, Mana, MaxHealth, ArmorDamageReduction\",\n        \"facets: damage_state/bm25, damage_state/vector\",\n        \"vector recall\"\n      ]\n    }\n  ],\n  \"profile\": {\n    \"load\": 0.7342,\n    \"rewrite\": 8.7629,\n    \"embed\": 0.1777,\n    \"bm25\": 0.1059,\n    \"vector\": 0.3398,\n    \"score\": 0.1328,\n    \"select\": 0.0002,\n    \"total\": 10.0083\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "status": "ok",
+        "mode": "semantic",
+        "query": "Unreal Engine PuerTS gameplay API for actor.set_actor_tick_enabled; exact symbol hints: Actor.SetActorTickEnabled, ActorSetActorTickEnabled, actor set actor tick enabled. Intent: Stop the defeated enemy from acting as an active patrol threat.",
+        "searchText": "actor pawn character actor component SetActorTickEnabled on defeated death event health zero delegate health attribute death gameplay effect defeated state patrol behavior tree disable AI controller stop logic tick",
+        "rewrite": {
+          "status": "rewritten",
+          "domainStatus": "ue_relevant",
+          "intentSummary": "Disable tick on a defeated enemy actor so it stops updating patrol and threat behavior.",
+          "warnings": [],
+          "activeSubqueries": [
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The enemy actor whose tick is disabled upon defeat.",
+              "subqueryId": "carrier_context_1",
+              "text": "actor pawn character",
+              "weight": 0.6,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "carrier_context",
+              "facetStatus": "required",
+              "facetIntent": "The enemy actor whose tick is disabled upon defeat.",
+              "subqueryId": "carrier_context_2",
+              "text": "actor component SetActorTickEnabled",
+              "weight": 0.4,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "The trigger event that causes tick to be disabled.",
+              "subqueryId": "activation_trigger_1",
+              "text": "on defeated death event",
+              "weight": 0.6,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "activation_trigger",
+              "facetStatus": "required",
+              "facetIntent": "The trigger event that causes tick to be disabled.",
+              "subqueryId": "activation_trigger_2",
+              "text": "health zero delegate",
+              "weight": 0.4,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "damage_state",
+              "facetStatus": "optional",
+              "facetIntent": "The health or state change that indicates the enemy is defeated.",
+              "subqueryId": "damage_state_1",
+              "text": "health attribute death",
+              "weight": 0.36,
+              "subqueryWeight": 0.6
+            },
+            {
+              "facetId": "damage_state",
+              "facetStatus": "optional",
+              "facetIntent": "The health or state change that indicates the enemy is defeated.",
+              "subqueryId": "damage_state_2",
+              "text": "gameplay effect defeated state",
+              "weight": 0.24,
+              "subqueryWeight": 0.4
+            },
+            {
+              "facetId": "ai_behavior",
+              "facetStatus": "optional",
+              "facetIntent": "The patrol or threat behavior that should stop when tick is disabled.",
+              "subqueryId": "ai_behavior_1",
+              "text": "patrol behavior tree disable",
+              "weight": 0.3,
+              "subqueryWeight": 0.5
+            },
+            {
+              "facetId": "ai_behavior",
+              "facetStatus": "optional",
+              "facetIntent": "The patrol or threat behavior that should stop when tick is disabled.",
+              "subqueryId": "ai_behavior_2",
+              "text": "AI controller stop logic tick",
+              "weight": 0.3,
+              "subqueryWeight": 0.5
+            }
+          ]
+        },
+        "embedding": {
+          "enabled": true,
+          "provider": "ollama",
+          "model": "bge-m3",
+          "dimensions": 1024,
+          "indexedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "status": "ready"
+        },
+        "partitions": {
+          "enabled": true,
+          "classifierEnabled": true,
+          "provider": "aaa",
+          "binaryAvailable": true,
+          "timeoutMs": 90000,
+          "candidateCount": 20361,
+          "processedCount": 20361,
+          "missingCount": 0,
+          "staleCount": 0,
+          "validAssignmentCount": 14733,
+          "partitionedEntryCount": 12532,
+          "partitionedEntryRatio": 0.6155,
+          "searchReady": true,
+          "byFacet": {
+            "activation_trigger": 241,
+            "ai_behavior": 948,
+            "animation": 1856,
+            "audio": 704,
+            "camera_feedback_ui": 1336,
+            "carrier_context": 1362,
+            "damage_state": 548,
+            "integration_event": 1069,
+            "level_world": 342,
+            "lighting": 134,
+            "material_visual_state": 1065,
+            "mesh_geometry": 1545,
+            "movement_navigation": 256,
+            "networking_authority": 414,
+            "persistence_assets": 612,
+            "physics": 666,
+            "spatial_targeting": 466,
+            "spawn_lifecycle": 117,
+            "visual_effects": 1052
+          },
+          "status": "ready",
+          "searchScoped": true
+        },
+        "filters": {},
+        "confidence": {
+          "minConfidence": 0.55,
+          "status": "ok",
+          "topConfidence": 0.7522
+        },
+        "count": 5,
+        "results": [
+          {
+            "ref": "1d449f65cfdf",
+            "entryType": "static_function",
+            "symbol": "UE.AbilitySystemBlueprintLibrary.GetModifiedAttributeMagnitude",
+            "kind": "method",
+            "owner": "UE.AbilitySystemBlueprintLibrary",
+            "signature": "static GetModifiedAttributeMagnitude(SpecHandle: UE.GameplayEffectSpecHandle, Attribute: UE.GameplayAttribute) : number;",
+            "score": 93.0,
+            "confidence": 0.7522,
+            "summary": "Gets the magnitude of change for an attribute on an APPLIED GameplayEffectSpec.",
+            "source": "Plugin/GameplayAbilities",
+            "why": [
+              "rewrite: Disable tick on a defeated enemy actor so it stops updating patrol and threat behavior.",
+              "name: attribute",
+              "doc: attribute, effect, gameplay",
+              "facets: damage_state/bm25, damage_state/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "5e2e98b9b5db",
+            "entryType": "static_function",
+            "symbol": "UE.AIBlueprintHelperLibrary.SpawnAIFromClass",
+            "kind": "method",
+            "owner": "UE.AIBlueprintHelperLibrary",
+            "signature": "static SpawnAIFromClass(WorldContextObject: $Nullable<UE.Object>, PawnClass: $Nullable<UE.Class>, BehaviorTree: $Nullable<UE.BehaviorTree>, Location: UE.Vector, Rotation?: UE.Rotator /* = */, bNoCollisionFail?: boolean /* = false */, Owner?: UE.Actor /* = None */) : UE.Pawn;",
+            "score": 93.0,
+            "confidence": 0.783,
+            "summary": "Spawns AI agent of a given class. The PawnClass needs to have AIController set for the function to spawn a controller as well.",
+            "source": "Engine/AIModule",
+            "why": [
+              "rewrite: Disable tick on a defeated enemy actor so it stops updating patrol and threat behavior.",
+              "name: ai",
+              "doc: ai, controller, pawn, set",
+              "params: ai, behavior, controller, set, tree",
+              "facets: ai_behavior/bm25, ai_behavior/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "c9ab6b22972c",
+            "entryType": "static_function",
+            "symbol": "UE.KismetSystemLibrary.K2_GetTimerElapsedTimeDelegate",
+            "kind": "method",
+            "owner": "UE.KismetSystemLibrary",
+            "signature": "static K2_GetTimerElapsedTimeDelegate(Delegate: $Delegate<() => void>) : number;",
+            "score": 93.0,
+            "confidence": 0.7439,
+            "summary": "Returns elapsed time for the given delegate (time since current countdown iteration began).",
+            "source": "Engine/Kismet",
+            "why": [
+              "rewrite: Disable tick on a defeated enemy actor so it stops updating patrol and threat behavior.",
+              "name: delegate",
+              "doc: delegate",
+              "params: event",
+              "facets: activation_trigger/bm25, activation_trigger/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "87417ce50473",
+            "entryType": "static_function",
+            "symbol": "UE.Pawn.GetMovementBaseActor",
+            "kind": "method",
+            "owner": "UE.Pawn",
+            "signature": "static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;",
+            "score": 95.0,
+            "confidence": 0.7648,
+            "summary": "Gets the owning actor of the Movement Base Component on which the pawn is standing.",
+            "source": "Engine/GameFramework",
+            "why": [
+              "rewrite: Disable tick on a defeated enemy actor so it stops updating patrol and threat behavior.",
+              "name: actor, pawn",
+              "doc: actor, component, pawn",
+              "facets: carrier_context/bm25, carrier_context/vector",
+              "static function result",
+              "vector recall"
+            ]
+          },
+          {
+            "ref": "7365d346c842",
+            "entryType": "type",
+            "symbol": "UE.AbilitySystemTestAttributeSet",
+            "kind": "class",
+            "score": 82.9258,
+            "confidence": 0.7373,
+            "extends": "UE.AttributeSet",
+            "source": "Plugin/GameplayAbilities",
+            "matchedMembers": [
+              {
+                "ref": "cc7ee97426d9",
+                "symbol": "UE.AbilitySystemTestAttributeSet.Health",
+                "kind": "property",
+                "signature": "Health: number;",
+                "summary": ""
+              },
+              {
+                "ref": "ef30de14bd08",
+                "symbol": "UE.AbilitySystemTestAttributeSet.Mana",
+                "kind": "property",
+                "signature": "Mana: UE.GameplayAttributeData;",
+                "summary": ""
+              },
+              {
+                "ref": "77c388ccc7ff",
+                "symbol": "UE.AbilitySystemTestAttributeSet.MaxHealth",
+                "kind": "property",
+                "signature": "MaxHealth: number;",
+                "summary": ""
+              },
+              {
+                "ref": "45068bb5cfd5",
+                "symbol": "UE.AbilitySystemTestAttributeSet.ArmorDamageReduction",
+                "kind": "property",
+                "signature": "ArmorDamageReduction: number;",
+                "summary": ""
+              },
+              {
+                "ref": "85860719cdd7",
+                "symbol": "UE.AbilitySystemTestAttributeSet.CritChance",
+                "kind": "property",
+                "signature": "CritChance: number;",
+                "summary": ""
+              },
+              {
+                "ref": "e8d3bb0e1a81",
+                "symbol": "UE.AbilitySystemTestAttributeSet.CritMultiplier",
+                "kind": "property",
+                "signature": "CritMultiplier: number;",
+                "summary": ""
+              },
+              {
+                "ref": "fef4811febea",
+                "symbol": "UE.AbilitySystemTestAttributeSet.Damage",
+                "kind": "property",
+                "signature": "Damage: number;",
+                "summary": ""
+              },
+              {
+                "ref": "6838137d69cc",
+                "symbol": "UE.AbilitySystemTestAttributeSet.DodgeChance",
+                "kind": "property",
+                "signature": "DodgeChance: number;",
+                "summary": ""
+              }
+            ],
+            "why": [
+              "rewrite: Disable tick on a defeated enemy actor so it stops updating patrol and threat behavior.",
+              "name: attribute, set",
+              "members: Health, Mana, MaxHealth, ArmorDamageReduction",
+              "facets: damage_state/bm25, damage_state/vector",
+              "vector recall"
+            ]
+          }
+        ],
+        "profile": {
+          "load": 0.7342,
+          "rewrite": 8.7629,
+          "embed": 0.1777,
+          "bm25": 0.1059,
+          "vector": 0.3398,
+          "score": 0.1328,
+          "select": 0.0002,
+          "total": 10.0083
+        }
+      },
+      "isError": false
+    },
+    "payload": {
+      "status": "ok",
+      "mode": "semantic",
+      "query": "Unreal Engine PuerTS gameplay API for actor.set_actor_tick_enabled; exact symbol hints: Actor.SetActorTickEnabled, ActorSetActorTickEnabled, actor set actor tick enabled. Intent: Stop the defeated enemy from acting as an active patrol threat.",
+      "searchText": "actor pawn character actor component SetActorTickEnabled on defeated death event health zero delegate health attribute death gameplay effect defeated state patrol behavior tree disable AI controller stop logic tick",
+      "rewrite": {
+        "status": "rewritten",
+        "domainStatus": "ue_relevant",
+        "intentSummary": "Disable tick on a defeated enemy actor so it stops updating patrol and threat behavior.",
+        "warnings": [],
+        "activeSubqueries": [
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The enemy actor whose tick is disabled upon defeat.",
+            "subqueryId": "carrier_context_1",
+            "text": "actor pawn character",
+            "weight": 0.6,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "carrier_context",
+            "facetStatus": "required",
+            "facetIntent": "The enemy actor whose tick is disabled upon defeat.",
+            "subqueryId": "carrier_context_2",
+            "text": "actor component SetActorTickEnabled",
+            "weight": 0.4,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "The trigger event that causes tick to be disabled.",
+            "subqueryId": "activation_trigger_1",
+            "text": "on defeated death event",
+            "weight": 0.6,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "activation_trigger",
+            "facetStatus": "required",
+            "facetIntent": "The trigger event that causes tick to be disabled.",
+            "subqueryId": "activation_trigger_2",
+            "text": "health zero delegate",
+            "weight": 0.4,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "damage_state",
+            "facetStatus": "optional",
+            "facetIntent": "The health or state change that indicates the enemy is defeated.",
+            "subqueryId": "damage_state_1",
+            "text": "health attribute death",
+            "weight": 0.36,
+            "subqueryWeight": 0.6
+          },
+          {
+            "facetId": "damage_state",
+            "facetStatus": "optional",
+            "facetIntent": "The health or state change that indicates the enemy is defeated.",
+            "subqueryId": "damage_state_2",
+            "text": "gameplay effect defeated state",
+            "weight": 0.24,
+            "subqueryWeight": 0.4
+          },
+          {
+            "facetId": "ai_behavior",
+            "facetStatus": "optional",
+            "facetIntent": "The patrol or threat behavior that should stop when tick is disabled.",
+            "subqueryId": "ai_behavior_1",
+            "text": "patrol behavior tree disable",
+            "weight": 0.3,
+            "subqueryWeight": 0.5
+          },
+          {
+            "facetId": "ai_behavior",
+            "facetStatus": "optional",
+            "facetIntent": "The patrol or threat behavior that should stop when tick is disabled.",
+            "subqueryId": "ai_behavior_2",
+            "text": "AI controller stop logic tick",
+            "weight": 0.3,
+            "subqueryWeight": 0.5
+          }
+        ]
+      },
+      "embedding": {
+        "enabled": true,
+        "provider": "ollama",
+        "model": "bge-m3",
+        "dimensions": 1024,
+        "indexedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "status": "ready"
+      },
+      "partitions": {
+        "enabled": true,
+        "classifierEnabled": true,
+        "provider": "aaa",
+        "binaryAvailable": true,
+        "timeoutMs": 90000,
+        "candidateCount": 20361,
+        "processedCount": 20361,
+        "missingCount": 0,
+        "staleCount": 0,
+        "validAssignmentCount": 14733,
+        "partitionedEntryCount": 12532,
+        "partitionedEntryRatio": 0.6155,
+        "searchReady": true,
+        "byFacet": {
+          "activation_trigger": 241,
+          "ai_behavior": 948,
+          "animation": 1856,
+          "audio": 704,
+          "camera_feedback_ui": 1336,
+          "carrier_context": 1362,
+          "damage_state": 548,
+          "integration_event": 1069,
+          "level_world": 342,
+          "lighting": 134,
+          "material_visual_state": 1065,
+          "mesh_geometry": 1545,
+          "movement_navigation": 256,
+          "networking_authority": 414,
+          "persistence_assets": 612,
+          "physics": 666,
+          "spatial_targeting": 466,
+          "spawn_lifecycle": 117,
+          "visual_effects": 1052
+        },
+        "status": "ready",
+        "searchScoped": true
+      },
+      "filters": {},
+      "confidence": {
+        "minConfidence": 0.55,
+        "status": "ok",
+        "topConfidence": 0.7522
+      },
+      "count": 5,
+      "results": [
+        {
+          "ref": "1d449f65cfdf",
+          "entryType": "static_function",
+          "symbol": "UE.AbilitySystemBlueprintLibrary.GetModifiedAttributeMagnitude",
+          "kind": "method",
+          "owner": "UE.AbilitySystemBlueprintLibrary",
+          "signature": "static GetModifiedAttributeMagnitude(SpecHandle: UE.GameplayEffectSpecHandle, Attribute: UE.GameplayAttribute) : number;",
+          "score": 93.0,
+          "confidence": 0.7522,
+          "summary": "Gets the magnitude of change for an attribute on an APPLIED GameplayEffectSpec.",
+          "source": "Plugin/GameplayAbilities",
+          "why": [
+            "rewrite: Disable tick on a defeated enemy actor so it stops updating patrol and threat behavior.",
+            "name: attribute",
+            "doc: attribute, effect, gameplay",
+            "facets: damage_state/bm25, damage_state/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "5e2e98b9b5db",
+          "entryType": "static_function",
+          "symbol": "UE.AIBlueprintHelperLibrary.SpawnAIFromClass",
+          "kind": "method",
+          "owner": "UE.AIBlueprintHelperLibrary",
+          "signature": "static SpawnAIFromClass(WorldContextObject: $Nullable<UE.Object>, PawnClass: $Nullable<UE.Class>, BehaviorTree: $Nullable<UE.BehaviorTree>, Location: UE.Vector, Rotation?: UE.Rotator /* = */, bNoCollisionFail?: boolean /* = false */, Owner?: UE.Actor /* = None */) : UE.Pawn;",
+          "score": 93.0,
+          "confidence": 0.783,
+          "summary": "Spawns AI agent of a given class. The PawnClass needs to have AIController set for the function to spawn a controller as well.",
+          "source": "Engine/AIModule",
+          "why": [
+            "rewrite: Disable tick on a defeated enemy actor so it stops updating patrol and threat behavior.",
+            "name: ai",
+            "doc: ai, controller, pawn, set",
+            "params: ai, behavior, controller, set, tree",
+            "facets: ai_behavior/bm25, ai_behavior/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "c9ab6b22972c",
+          "entryType": "static_function",
+          "symbol": "UE.KismetSystemLibrary.K2_GetTimerElapsedTimeDelegate",
+          "kind": "method",
+          "owner": "UE.KismetSystemLibrary",
+          "signature": "static K2_GetTimerElapsedTimeDelegate(Delegate: $Delegate<() => void>) : number;",
+          "score": 93.0,
+          "confidence": 0.7439,
+          "summary": "Returns elapsed time for the given delegate (time since current countdown iteration began).",
+          "source": "Engine/Kismet",
+          "why": [
+            "rewrite: Disable tick on a defeated enemy actor so it stops updating patrol and threat behavior.",
+            "name: delegate",
+            "doc: delegate",
+            "params: event",
+            "facets: activation_trigger/bm25, activation_trigger/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "87417ce50473",
+          "entryType": "static_function",
+          "symbol": "UE.Pawn.GetMovementBaseActor",
+          "kind": "method",
+          "owner": "UE.Pawn",
+          "signature": "static GetMovementBaseActor(Pawn: $Nullable<UE.Pawn>) : UE.Actor;",
+          "score": 95.0,
+          "confidence": 0.7648,
+          "summary": "Gets the owning actor of the Movement Base Component on which the pawn is standing.",
+          "source": "Engine/GameFramework",
+          "why": [
+            "rewrite: Disable tick on a defeated enemy actor so it stops updating patrol and threat behavior.",
+            "name: actor, pawn",
+            "doc: actor, component, pawn",
+            "facets: carrier_context/bm25, carrier_context/vector",
+            "static function result",
+            "vector recall"
+          ]
+        },
+        {
+          "ref": "7365d346c842",
+          "entryType": "type",
+          "symbol": "UE.AbilitySystemTestAttributeSet",
+          "kind": "class",
+          "score": 82.9258,
+          "confidence": 0.7373,
+          "extends": "UE.AttributeSet",
+          "source": "Plugin/GameplayAbilities",
+          "matchedMembers": [
+            {
+              "ref": "cc7ee97426d9",
+              "symbol": "UE.AbilitySystemTestAttributeSet.Health",
+              "kind": "property",
+              "signature": "Health: number;",
+              "summary": ""
+            },
+            {
+              "ref": "ef30de14bd08",
+              "symbol": "UE.AbilitySystemTestAttributeSet.Mana",
+              "kind": "property",
+              "signature": "Mana: UE.GameplayAttributeData;",
+              "summary": ""
+            },
+            {
+              "ref": "77c388ccc7ff",
+              "symbol": "UE.AbilitySystemTestAttributeSet.MaxHealth",
+              "kind": "property",
+              "signature": "MaxHealth: number;",
+              "summary": ""
+            },
+            {
+              "ref": "45068bb5cfd5",
+              "symbol": "UE.AbilitySystemTestAttributeSet.ArmorDamageReduction",
+              "kind": "property",
+              "signature": "ArmorDamageReduction: number;",
+              "summary": ""
+            },
+            {
+              "ref": "85860719cdd7",
+              "symbol": "UE.AbilitySystemTestAttributeSet.CritChance",
+              "kind": "property",
+              "signature": "CritChance: number;",
+              "summary": ""
+            },
+            {
+              "ref": "e8d3bb0e1a81",
+              "symbol": "UE.AbilitySystemTestAttributeSet.CritMultiplier",
+              "kind": "property",
+              "signature": "CritMultiplier: number;",
+              "summary": ""
+            },
+            {
+              "ref": "fef4811febea",
+              "symbol": "UE.AbilitySystemTestAttributeSet.Damage",
+              "kind": "property",
+              "signature": "Damage: number;",
+              "summary": ""
+            },
+            {
+              "ref": "6838137d69cc",
+              "symbol": "UE.AbilitySystemTestAttributeSet.DodgeChance",
+              "kind": "property",
+              "signature": "DodgeChance: number;",
+              "summary": ""
+            }
+          ],
+          "why": [
+            "rewrite: Disable tick on a defeated enemy actor so it stops updating patrol and threat behavior.",
+            "name: attribute, set",
+            "members: Health, Mana, MaxHealth, ArmorDamageReduction",
+            "facets: damage_state/bm25, damage_state/vector",
+            "vector recall"
+          ]
+        }
+      ],
+      "profile": {
+        "load": 0.7342,
+        "rewrite": 8.7629,
+        "embed": 0.1777,
+        "bm25": 0.1059,
+        "vector": 0.3398,
+        "score": 0.1328,
+        "select": 0.0002,
+        "total": 10.0083
+      }
+    }
+  }
+}

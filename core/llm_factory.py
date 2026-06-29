@@ -189,11 +189,21 @@ class ScriptedSmokeChatModel:
                 "coverage": [trace],
             })
         elif "SCHEMA: TypeScriptCodeGenerator" in system:
+            base = {"entity_id": "player", "behavior_id": "player.combat.attack", "flow_id": "flow_player_combat_attack", "runtime_mapping_path": runtime_mapping_path, "action_label": "attacks", "target_label": "Enemy", "result_label": "enemy defeated"}
+            support = [
+                {"template": "aid_runtime_orchestrator", "path": "TypeScript/content/generated/AutoUEGeneratedRuntime.ts", "export_name": "runAutoUEGeneratedRuntime", "interface_name": "AutoUEGeneratedRuntimeContext"},
+                {"template": "aid_character_adapter", "path": "TypeScript/AutoUEGeneratedCharacterAdapter.ts", "export_name": "AutoUEGeneratedCharacterAdapter", "interface_name": "AutoUEGeneratedCharacterAdapterContext"},
+                {"template": "aid_gamemode_adapter", "path": "TypeScript/AutoUEGeneratedGameModeAdapter.ts", "export_name": "AutoUEGeneratedGameModeAdapter", "interface_name": "AutoUEGeneratedGameModeAdapterContext"},
+                {"template": "aid_camera_setup", "path": "TypeScript/content/generated/AutoUEGeneratedCameraHelper.ts", "export_name": "setupAutoUEGeneratedCamera", "interface_name": "AutoUEGeneratedCameraOptions"},
+                {"template": "scene_manifest_helper", "path": "TypeScript/content/generated/AutoUEGeneratedSceneManifest.ts", "export_name": "getAutoUEGeneratedSceneManifest", "interface_name": "AutoUEGeneratedSceneManifestContext"},
+            ]
+            template_inputs = [{"template": "ability_module", "path": "TypeScript/content/generated/SmokeGame.ts", **base, "export_name": "tickSmokeGame", "interface_name": "SmokeGameContext"}]
+            template_inputs.extend({**item, **base} for item in support)
             content = json.dumps({
-                "template_inputs": [{"template": "ability_module", "path": "TypeScript/content/generated/SmokeGame.ts", "entity_id": "player", "behavior_id": "player.combat.attack", "flow_id": "flow_player_combat_attack", "runtime_mapping_path": runtime_mapping_path, "export_name": "tickSmokeGame", "interface_name": "SmokeGameContext", "action_label": "attacks", "target_label": "Enemy", "result_label": "enemy defeated"}],
+                "template_inputs": template_inputs,
                 "behavior_traces": [{"entity_id": "player", "behavior_id": "player.combat.attack", "flow_id": "flow_player_combat_attack", "runtime_mapping_path": runtime_mapping_path, "file_path": "TypeScript/content/generated/SmokeGame.ts", "export_name": "tickSmokeGame"}],
                 "consumed_interactive_files": ["TypeScript/content/generated/interactive/SmokeInteractable.ts"],
-                "validation_notes": ["scripted smoke runtime template"],
+                "validation_notes": ["scripted smoke runtime and AIDev bridge templates"],
             })
         elif "SCHEMA: TypeScriptInteractiveObjectGenerator" in system:
             content = json.dumps({
@@ -218,9 +228,13 @@ class ScriptedSmokeChatModel:
                     "runtime_owner": "TypeScript/content/generated/SmokeGame.ts",
                     "implementation_carrier": "template_rendered_ts",
                     "selected_runtime_owner": "SmokeGameAbility",
+                    "existing_framework_candidates": ["TypeScriptCodeGenerator templates", "AIDev TypeScript Blueprint adapter"],
+                    "why_not_existing_framework": "scripted smoke uses generated templates to prove the bridge contract",
+                    "temporary_or_canonical": "temporary",
+                    "migration_path": "replace smoke runtime with canonical generated AIDev bridge after Phase3",
                     "engine_port_mappings": [
-                        {"engine_port_id": port_input, "adjudication_path": adj_input, "verdict": "hit", "evidence_symbols": ["UE.EnhancedInputComponent.BindAction"]},
-                        {"engine_port_id": port_damage, "adjudication_path": adj_damage, "verdict": "hit", "evidence_symbols": ["UE.GameplayStatics.ApplyDamage"]},
+                        {"engine_port_id": port_input, "adjudication_path": adj_input, "adapter_or_helper": "CharacterAdapter.bindInput", "verdict": "hit", "evidence_symbols": ["UE.EnhancedInputComponent.BindAction"]},
+                        {"engine_port_id": port_damage, "adjudication_path": adj_damage, "adapter_or_helper": "RuntimePorts.applyDamage", "verdict": "hit", "evidence_symbols": ["UE.GameplayStatics.ApplyDamage"]},
                     ],
                     "thin_contracts": ["bind attack input", "apply damage to enemy"],
                     "ability_binding": "adapter_call:tickSmokeGame",

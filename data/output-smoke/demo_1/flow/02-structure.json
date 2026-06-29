@@ -1,0 +1,30 @@
+{
+  "schema_version": "autoue-02-structure/v1",
+  "analysis_order": "behavior -> ability -> entity",
+  "machine_tree": "entities -> abilities -> behaviors",
+  "entities": [
+    {
+      "entity_id": "player",
+      "display_name": "Player",
+      "summary": "Playable character",
+      "abilities": [
+        {
+          "ability_id": "player.combat",
+          "display_name": "Combat",
+          "summary": "Attack behavior",
+          "behaviors": [
+            {
+              "behavior_id": "player.combat.attack",
+              "display_name": "Attack Enemy",
+              "trigger": "attack input",
+              "execution": "strike the enemy",
+              "result": "enemy is defeated",
+              "source_refs": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "non_goals": []
+}
